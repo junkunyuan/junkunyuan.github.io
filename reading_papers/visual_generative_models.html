@@ -11,6 +11,10 @@
     
     <div id="layout-content" style="margin-top:25px"></div>
     <style>
+        .table-container {
+            display: none;
+            margin: 10px 0;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -93,14 +97,14 @@
             <li><a href="#evaluation">Evaluation</a></li>
         </ul>
     </li>
-    <li><a href="#papers">Papers & Reading Notes (total: 31)</a></li>
+    <li><a href="#papers">Papers & Reading Notes (total: 32)</a></li>
 </ul>
 
 <br>
 <a href="reading_papers.html">[back to main contents]</a>
 
 <br><br>
-Last updated on March 7, 2025.
+Last updated on March 9, 2025.
 
 
 <!-- Section: Foundation Models and Algorithms -->
@@ -229,21 +233,6 @@ Foundation models and algorithms on visual generative models.
                 Replace U-Net by <b>transformer</b> for scalable <u>image generation</u>, the timestep and prompt are injected by adaLN-Zero structure.
             </span></td>
         </tr>
-        <!-- 2022-07-26-CFG -->
-        <tr>
-            <td><span class="datetext">2022-07-26</span>
-                <br><a href="#2022-07-26-CFG" class="modeltext"><b>CFG</b></a>
-                <br><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/visual_generative_models-cfg.ipynb" class="notetext">(notes in jupyter)</a>
-            </td>
-            <td>
-                <a href="https://arxiv.org/pdf/2207.12598"><span class="papertext">
-                    Classifier-Free Diffusion Guidance <b><i>(NeurIPS workshop 2021)</i></b>
-                </span></a> 
-            </td>
-            <td><span class="summarytext">
-                <u>Image generation</u> with <b>classifier-free condition guidance</b> by jointly training a conditional model and an unconditional model. 
-            </span></td>
-        </tr>
         <!-- 2022-05-29-cogvideo -->
         <tr>
             <td><span class="datetext">2022-05-29</span><br><a href="#2022-05-29-cogvideo" class="modeltext">CogVideo</a></td>
@@ -270,10 +259,40 @@ Foundation models and algorithms on visual generative models.
                 Efficient high-quality <u>image generation</u> by applying diffusion and denoising processes in the <b>VAE latent space</b>.
             </span></td>
         </tr>
-        <!-- 2020-12-16-ddpm -->
+        <!-- 2021-12-08-CFG -->
         <tr>
-            <td><span class="datetext">2020-12-16</span>
-                <br><a href="#2020-12-16-ddpm" class="modeltext"><b>DDPM</b></a>
+            <td><span class="datetext">2021-12-08</span>
+                <br><a href="#2021-12-08-CFG" class="modeltext"><b>CFG</b></a>
+                <br><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/visual_generative_models-cfg.ipynb" class="notetext">(notes in jupyter)</a>
+            </td>
+            <td>
+                <a href="https://arxiv.org/pdf/2207.12598"><span class="papertext">
+                    Classifier-Free Diffusion Guidance <b><i>(NeurIPS workshop 2021)</i></b>
+                </span></a> 
+            </td>
+            <td><span class="summarytext">
+                <u>Image generation</u> with <b>classifier-free condition guidance</b> by jointly training a conditional model and an unconditional model. 
+            </span></td>
+        </tr>
+        <!-- 2020-10-06-ddim -->
+        <tr>
+            <td><span class="datetext">2020-10-06</span>
+                <br><a href="#2020-10-06-ddim" class="modeltext"><b>DDIM</b></a>
+            </td>
+            <td>
+                <a href="https://arxiv.org/pdf/2010.02502"><span class="papertext">
+                    Denoising Diffusion Implicit Models <b><i>(ICLR 2021)</i></b>
+                </span></a> 
+                <a href="https://github.com/ermongroup/ddim/"><img src="https://img.shields.io/github/stars/ermongroup/ddim.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+            </td>
+            <td><span class="summarytext">
+                <u>Accelerate sampling</u> of diffusion models by introducing a <b>non-Markovian, deterministic process</b> that achieves high-quality results with fewer steps while <u>preserving training consistency</u>.
+            </span></td>
+        </tr>
+        <!-- 2020-06-19-ddpm -->
+        <tr>
+            <td><span class="datetext">2020-06-19</span>
+                <br><a href="#2020-06-19-ddpm" class="modeltext"><b>DDPM</b></a>
                 <br><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/visual_generative_models-ddpm.ipynb" class="notetext">(notes in jupyter)</a>
             </td>
             <td>
@@ -706,6 +725,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> Insert reasoning prompts to improve <u>auto-regressive image generation</u> performance by <b>Chain-of-Thought</b>.
 </p>
+<button onclick="toggleTable('2025-02-24-IGTR-table')">Read more</button>
+<div id="2025-02-24-IGTR-table" class="table-container">
 <table>
     <tr>
         <td>
@@ -716,6 +737,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
@@ -770,6 +792,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> Apply <b>Chain-of-Thought</b> into <u>image generation</u> and combine it with reinforcement learning to further improve performance.
 </p>
+<button onclick="toggleTable('2025-01-23-cot-table')">Read more</button>
+<div id="2025-01-23-cot-table" class="table-container">
 <ul>
     <li>Test-time verification and DPO are effective, where Outcome Reward Model (ORM) and DPO performs better than Process Reward Model (PRM).</li>
     <li>Verification and DPO are complementary.</li>
@@ -792,6 +816,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
@@ -809,6 +834,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> Analysis on inference-time scaling of diffusion models for <u>image generation</u> from the axes of <b>verifiers</b> and <b>algorithms</b>.
 </p>
+<button onclick="toggleTable('2025-01-16-scaling-analysis-table')">Read more</button>
+<div id="2025-01-16-scaling-analysis-table" class="table-container">
 <ul>
     <li>Use some <u>verifiers</u> to provide <u>feedback</u>: FID, IS, CLIP, DINO; Aesthetic Score Predictor, CLIPScore, ImageReward, Ensemble.</li>
     <li>Use some <u>algorithms</u> to find <u>better noise</u>: <u>Random Search</u>, Zero-Order Search, Search Over Paths.</li>
@@ -838,6 +865,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
@@ -857,6 +885,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> Use <b>guidance gap between denosing and inversion</b> and iteratively perform them to improve <u>image generation</u> quality.
 </p>
+<button onclick="toggleTable('2024-12-14-Z-Sampling-table')">Read more</button>
+<div id="2024-12-14-Z-Sampling-table" class="table-container">
 <table>
     <tr>
         <td>
@@ -879,6 +909,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
@@ -959,6 +990,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> Use 1400 prompts to evaluate <u>video generation</u> on <b>compositional generation</b>, including consistent attribute binding, dynamic attribute binding, sptial relationships, motion binding, action binding, object interations, generative numeracy.
 </p>
+<button onclick="toggleTable('2024-07-19-t2vcompbench-table')">Read more</button>
+<div id="2024-07-19-t2vcompbench-table" class="table-container">
 <ul>
     <li> Find nouns and verbs by identifying them using WordNet from Pika Discord channels, used to generate prompts by GPT-4.
     <li> <u>Consistent attribute binding:</u> two objects, two attributes, and at least one active verb from color, shape, texture, and human-related attributes.
@@ -983,6 +1016,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
@@ -1001,6 +1035,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> A <u>diffusion transformer</u> (16B) with <b>MoE</b> that inserts experts into DiT blocks for <u>image generation</u>.
 </p>
+<button onclick="toggleTable('2024-07-16-DiT-MoE-table')">Read more</button>
+<div id="2024-07-16-DiT-MoE-table" class="table-container">
 <ul>
     <li> Incorporating shared expert routing accelerates training and improves performance, but the improvement is little when using more than one expert.
     <li> Observe the scaling performance.
@@ -1016,6 +1052,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
@@ -1034,6 +1071,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> ELLA: Replace CLIP with <b>LLM</b> to understand dense prompts; DPG-Bench: evaluate <u>image generation</u> on <b>dense prompts</b>.
 </p>
+<button onclick="toggleTable('2024-03-08-DPG-Bench-table')">Read more</button>
+<div id="2024-03-08-DPG-Bench-table" class="table-container">
 <table>
     <tr>
         <td>
@@ -1043,6 +1082,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
@@ -1061,9 +1101,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> Use HPS v2 to provide reward and train <u>video generation</u> models in an editing manner.
 </p>
-<ul>
-    <li>
-</ul>
+<button onclick="toggleTable('2023-12-19-InstructVideo-table')">Read more</button>
+<div id="2023-12-19-InstructVideo-table" class="table-container">
 <table>
     <tr>
         <td>
@@ -1074,6 +1113,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
@@ -1092,6 +1132,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> Evaluate <u>video generation</u> from 16 dimensions within the perspectives of video quality and video-prompt consistency.
 </p>
+<button onclick="toggleTable('2023-11-29-vbench-table')">Read more</button>
+<div id="2023-11-29-vbench-table" class="table-container">
 <ul>
     <li> <u>Content Categories:</u> <u>animal</u>, <u>architecture</u>, <u>food</u>, <u>human</u>, <u>lifestyle</u>, <u>plant</u>, <u>scenary</u>, <u>vehicles</u>.
     <li> <u>Temporal quality-subject consistency:</u> DINO feature similarity across frames.
@@ -1121,6 +1163,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
@@ -1140,6 +1183,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> An <b>object-focused</b> framework for <u>image generation</u> evaluation by providing scores of single object, two objects, counting, colors, position, attribute binding, and overall.
 </p>
+<button onclick="toggleTable('2023-10-17-GenEval-table')">Read more</button>
+<div id="2023-10-17-GenEval-table" class="table-container">
 <table>
     <tr>
         <td>
@@ -1158,6 +1203,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
@@ -1177,6 +1223,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> Use 6000 prompts to train and evaluate <u>image generation</u> on <b>compositional generation</b>, including attribute binding, object relationship, and complex compositions.
 </p>
+<button onclick="toggleTable('2023-07-12-t2icompbench-table')">Read more</button>
+<div id="2023-07-12-t2icompbench-table" class="table-container">
 <ul>
     <li> <u>Attribute binding prompts:</u> at least two objects with two attributes from color, shape, texture.
     <li> <u>Object relationship prompts:</u> at least two objects with spatial relationship or non-spatial relationship.
@@ -1193,6 +1241,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
@@ -1212,6 +1261,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> HPD v2: 798K binary human preference choices on 433K pairs of generated images; HPS v2: use HPD v2 to fine-tune CLIP for <u>image generation</u> evaluation.
 </p>
+<button onclick="toggleTable('2023-06-15-hpsv2-table')">Read more</button>
+<div id="2023-06-15-hpsv2-table" class="table-container">
 <table>
     <tr>
         <td>
@@ -1222,6 +1273,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
@@ -1262,6 +1314,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> Train BLIP on 137K human preference image pairs for <u>image generation</u> and use it to tune diffusion models by Reward Feedback Learning (ReFL).
 </p>
+<button onclick="toggleTable('2023-04-12-imagereward-table')">Read more</button>
+<div id="2023-04-12-imagereward-table" class="table-container">
 <table>
     <tr>
         <td>
@@ -1272,6 +1326,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
@@ -1290,6 +1345,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> Fine-tune CLIP using annotated 98K SD generated images from 25K prompts for <u>image generation</u> evaluation.
 </p>
+<button onclick="toggleTable('2023-03-25-hps-table')">Read more</button>
+<div id="2023-03-25-hps-table" class="table-container">
 <ul>
     <li> Both IS and FID are not aligned well with human preference.
     <li> The calculation of HPS is similar to CLIPScore, except for multiplying by 100 rather than 2.5.
@@ -1304,6 +1361,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
@@ -1323,6 +1381,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> Replace U-Net by <b>transformer</b> for scalable <u>image generation</u>, the timestep and prompt are injected by adaLN-Zero structure.
 </p>
+<button onclick="toggleTable('2022-12-19-DiT-table')">Read more</button>
+<div id="2022-12-19-DiT-table" class="table-container">
 <ul>
     <li> <u>Increase model size</u> and <u>decrease patch size</u> yield considerably improved diffusion models.
     <li> <u>Scale model Gflops</u> is the key to improved performance.
@@ -1338,6 +1398,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
@@ -1357,6 +1418,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> Use <b>LLM to refine prompts</b> for <u>preference-aligned image generation</u> by taking relevance and aesthetics as reward.
 </p>
+<button onclick="toggleTable('2022-12-19-promptist-table')">Read more</button>
+<div id="2022-12-19-promptist-table" class="table-container">
 <table>
     <tr>
         <td>
@@ -1367,6 +1430,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
@@ -1391,25 +1455,6 @@ Metrics and benchmarks for evaluating visual generation performance.
 
 
 <!-- Beginning of a paper -->
-<h4 id="2022-07-26-CFG">
-    [2022-07-26] Classifier-Free Diffusion Guidance <b><i>(NeurIPS workshop 2021)</i></b>
-</h4>
-<p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/visual_generative_models-cfg.ipynb" class="notetext">(notes in jupyter)</a></p>
-<p>
-    <b>Authors:</b> Jonathan Ho, Tim Salimans
-</p>
-<p>
-    <b>Organizations:</b> Google Research, Brain team
-</p>
-<p>
-    <b>Summary:</b> <u>Image generation</u> with <b>classifier-free condition guidance</b> by jointly training a conditional model and an unconditional model. 
-</p>
-<p><a href="#top">[back to top]</a></p>
-<!-- End of a paper -->
-
-
-
-<!-- Beginning of a paper -->
 <h4 id="2022-05-29-cogvideo">
     [2022-05-29] CogVideo: Large-scale Pretraining for Text-to-Video Generation via Transformers <b><i>(ICLR 2023)</i></b>
 </h4>
@@ -1422,6 +1467,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> An <u>open-sourced</u> <u>transformer</u>-based <u>video generation</u> model (9B) that <b>auto-regressively</b> generates frame sequences and then performs auto-regressive frame interpolatation.
 </p>
+<button onclick="toggleTable('2022-05-29-cogvideo-table')">Read more</button>
+<div id="2022-05-29-cogvideo-table" class="table-container">
 <table>
     <tr>
         <td>
@@ -1432,6 +1479,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
@@ -1450,6 +1498,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> Efficient high-quality <u>image generation</u> by applying diffusion and denoising processes in the <b>VAE latent space</b>.
 </p>
+<button onclick="toggleTable('2021-12-20-ldm-table')">Read more</button>
+<div id="2021-12-20-ldm-table" class="table-container">
 <table>
     <tr>
         <td>
@@ -1460,9 +1510,30 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
  
+
+
+<!-- Beginning of a paper -->
+<h4 id="2021-12-08-CFG">
+    [2021-12-08] Classifier-Free Diffusion Guidance <b><i>(NeurIPS workshop 2021)</i></b>
+</h4>
+<p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/visual_generative_models-cfg.ipynb" class="notetext">(notes in jupyter)</a></p>
+<p>
+    <b>Authors:</b> Jonathan Ho, Tim Salimans
+</p>
+<p>
+    <b>Organizations:</b> Google Research, Brain team
+</p>
+<p>
+    <b>Summary:</b> <u>Image generation</u> with <b>classifier-free condition guidance</b> by jointly training a conditional model and an unconditional model. 
+</p>
+<p><a href="#top">[back to top]</a></p>
+<!-- End of a paper -->
+
+
 
 <!-- Beginning of a paper -->
 <h4 id="2021-04-18-clipscore">
@@ -1478,6 +1549,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> A reference-free metric mainly focusing on <b>semantic alignment</b> for <u>image generation</u> evaluation.
 </p>
+<button onclick="toggleTable('2021-04-18-clipscore-table')">Read more</button>
+<div id="2021-04-18-clipscore-table" class="table-container">
 <ul>
     <li> CLIPScore calculates <u>the cosine similarity between a caption and an image, multiplying the result by 2.5</u>.
     <li> CLIPScore is  <u>complementary to common metrics</u> (like BLEU-4, SPICE, and CIDEr).
@@ -1496,13 +1569,52 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
 
+
 <!-- Beginning of a paper -->
-<h4 id="2020-12-16-ddpm">
-    [2020-12-16] Denoising Diffusion Probabilistic Models <b><i>(NeurIPS 2020)</i></b>
+<h4 id="2020-10-06-ddim">
+    [2020-10-06] Denoising Diffusion Implicit Models <b><i>(ICLR 2021)</i></b>
+</h4>
+<p>
+    <b>Authors:</b> Jiaming Song, Chenlin Meng, Stefano Ermon
+</p>
+<p>
+    <b>Organizations:</b> Stanford University
+</p>
+<p>
+    <b>Summary:</b> <u>Accelerate sampling</u> of diffusion models by introducing a <b>non-Markovian, deterministic process</b> that achieves high-quality results with fewer steps while <u>preserving training consistency</u>.
+</p>
+<button onclick="toggleTable('2020-10-06-ddim-table')">Read more</button>
+<div id="2020-10-06-ddim-table" class="table-container">
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2020-10-06-ddim-fig1.png' width=600>
+                <figcaption>Comparisons between Markovian DDPM (left) and non-Markovian DDIM (right).</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2020-10-06-ddim-fig2.png' width=300>
+        <figcaption>Accelerate sampling by skipping time steps.</figcaption>
+            </figure>
+        </td>
+    </tr>
+</table>
+</div>
+<p><a href="#top">[back to top]</a></p>
+<!-- End of a paper -->
+
+
+
+<!-- Beginning of a paper -->
+<h4 id="2020-06-19-ddpm">
+    [2020-06-19] Denoising Diffusion Probabilistic Models <b><i>(NeurIPS 2020)</i></b>
 </h4>
 <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/visual_generative_models-ddpm.ipynb" class="notetext">(notes in jupyter)</a></p>
 <p>
@@ -1514,26 +1626,27 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> Denoising <b>diffusion</b> probabilistic models that iteratively denoises data from random noise for <u>image generation</u>.
 </p>
+<button onclick="toggleTable('2020-06-19-ddpm-table')">Read more</button>
+<div id="2020-06-19-ddpm-table" class="table-container">
 <table>
     <tr>
         <td>
             <figure>
-                <img src='figs/2020-12-16-ddpm-fig1.png' width=400>
+                <img src='figs/2020-06-19-ddpm-fig1.png' width=400>
                 <figcaption>Forward and reverse processes of DDPM.</figcaption>
             </figure>
         </td>
         <td>
             <figure>
-                <img src='figs/2020-12-16-ddpm-fig2.png' width=500>
+                <img src='figs/2020-06-19-ddpm-fig2.png' width=500>
         <figcaption>Training and sampling algorithms of DDPM.</figcaption>
             </figure>
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
-
-
 
 <!-- Beginning of a paper -->
 <h4 id="2019-05-04-fvd">
@@ -1592,6 +1705,31 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
+<script>
+    function toggleTable(tableId) {
+        const container = document.getElementById(tableId);
+        const button = container.previousElementSibling;
+        
+        // 使用实际计算的显示状态
+        const isVisible = window.getComputedStyle(container).display !== 'none';
+        
+        if (!isVisible) {
+            // 展开时加载图片
+            const images = container.querySelectorAll('.lazy-load');
+            images.forEach(img => {
+                if (!img.src && img.dataset.src) {
+                    img.src = img.dataset.src;
+                }
+            });
+            container.style.display = 'block';
+            button.textContent = 'Close';
+        } else {
+            container.style.display = 'none';
+            button.textContent = 'Read more';
+        }
+    }
+</script>
+
 <!-- Beginning of a paper -->
 <!-- <h4 id="template">
     [2020-12-16] Template
@@ -1605,6 +1743,8 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> 
 </p>
+<button onclick="toggleTable('template-table')">Read more</button>
+<div id="template-table" class="table-container">
 <ul>
     <li>
 </ul>
@@ -1624,6 +1764,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
 <p><a href="#top">[back to top]</a></p> -->
 <!-- End of a paper -->
 
