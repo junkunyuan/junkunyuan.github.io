@@ -97,14 +97,14 @@
             <li><a href="#evaluation">Evaluation</a></li>
         </ul>
     </li>
-    <li><a href="#papers">Papers & Reading Notes (total: 33)</a></li>
+    <li><a href="#papers">Papers & Reading Notes (total: 34)</a></li>
 </ul>
 
 <br>
 <a href="reading_papers.html">[back to main contents]</a>
 
 <br><br>
-Last updated on March 13, 2025.
+Last updated on March 14, 2025.
 
 
 <!-- Section: Foundation Models and Algorithms -->
@@ -557,6 +557,17 @@ Metrics and benchmarks for evaluating visual generation performance.
             </td>
             <td><span class="summarytext">
                 Use 1400 prompts to evaluate <u>video generation</u> on <b>compositional generation</b>, including consistent attribute binding, dynamic attribute binding, sptial relationships, motion binding, action binding, object interations, generative numeracy.
+            </span></td>
+        </tr>
+        <!-- 2024-04-01-VQAScore -->
+        <tr>
+            <td><span class="datetext">2024-04-01</span><br><a href="#2024-04-01-VQAScore" class="modeltext"><b>VQAScore</b></a></td>
+            <td>
+                <a href="https://arxiv.org/pdf/2404.01291"><span class="papertext">Evaluating Text-to-Visual Generation with Image-to-Text Generation <b><i>(ECCV 2024)</i></b></span></a> 
+                <a href="https://github.com/linzhiqiu/t2v_metrics/"><img src="https://img.shields.io/github/stars/linzhiqiu/t2v_metrics.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+            </td>
+            <td><span class="summarytext">
+                <u>VQAScore</u>: alignment probability of "yes" answer from a <b>VQA</b> model with CLIP-FlanT5 structure; <u>GenAI-Bench</u>: evaluation benchmark with 1600 prompts for <u>image generation</u>.
             </span></td>
         </tr>
         <!-- 2024-03-08-DPG-Bench -->
@@ -1148,6 +1159,38 @@ Metrics and benchmarks for evaluating visual generation performance.
 </div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
+
+
+
+<!-- Beginning of a paper -->
+<h4 id="2024-04-01-VQAScore">
+    [2024-04-01] Evaluating Text-to-Visual Generation with Image-to-Text Generation <b><i>(ECCV 2024)</i></b>
+</h4>
+<p>
+    <b>Authors:</b> Zhiqiu Lin, Deepak Pathak, Baiqi Li, Jiayao Li, Xide Xia, Graham Neubig, Pengchuan Zhang, Deva Ramanan
+</p>
+<p>
+    <b>Organizations:</b> Crnegie Mellon University, Meta
+</p>
+<p>
+    <b>Summary:</b> <u>VQAScore</u>: alignment probability of "yes" answer from a <b>VQA</b> model with CLIP-FlanT5 structure; <u>GenAI-Bench</u>: evaluation benchmark with 1600 prompts for <u>image generation</u>.
+</p>
+<button onclick="toggleTable('2024-04-01-VQAScore-table')">Read more</button>
+<div id="2024-04-01-VQAScore-table" class="table-container">
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2024-04-01-VQAScore-fig1.png' width=600>
+                <figcaption>Evaluate by computing probability of answering "yes" from a trained <b>VQA</b> model by feeding the prompt and the generated image.</figcaption>
+            </figure>
+        </td>
+    </tr>
+</table>
+</div>
+<p><a href="#top">[back to top]</a></p>
+<!-- End of a paper -->
+
 
 
 
