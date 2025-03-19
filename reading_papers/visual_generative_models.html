@@ -156,7 +156,7 @@ Surveys and interesting insights on visual generative models.
         </tr>
         <!-- 2022-08-25-Unified-Perspective -->
         <tr>
-            <td><span class="datetext">2022-08-25</span><br><a href="#2022-08-25-Unified-Perspective" class="modeltext"><b>Unified Perspective</b></a></td>
+            <td><span class="datetext">2022-08-25</span><br><a href="#2022-08-25-Unified-Perspective" class="modeltext">Unified Perspective</a></td>
             <td>
                 <a href="https://arxiv.org/pdf/2412.03603"><span class="papertext">
                     Understanding Diffusion Models: A Unified Perspective <b><i>(arXiv 2022)</i></b>
@@ -444,6 +444,19 @@ Post-training by employing reinforcement learning.
             </td>
             <td><span class="summarytext">
                 Use HPS v2 to provide reward and train <u>video generation</u> models in an editing manner.
+            </span></td>
+        </tr>
+        <!-- 2023-11-21-Diffusion-DPO -->
+        <tr>
+            <td><span class="datetext">2023-11-21</span><br><a href="#2023-11-21-Diffusion-DPO" class="modeltext"><b>Diffusion-DPO</b></a></td>
+            <td>
+                <a href="https://arxiv.org/pdf/2311.12908"><span class="papertext">
+                    Diffusion Model Alignment Using Direct Preference Optimization <b><i>(CVPR 2024)</i></b>
+                </span></a>
+                <a href="https://github.com/SalesforceAIResearch/DiffusionDPO/"><img src="https://img.shields.io/github/stars/SalesforceAIResearch/DiffusionDPO.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+            </td>
+            <td><span class="summarytext">
+                Adapt <b>Direct Preference Optimization (DPO)</b> from large language models to diffusion models for <u>image generation</u>.
             </span></td>
         </tr>
         <!-- 2022-12-19-promptist -->
@@ -1298,6 +1311,33 @@ Metrics and benchmarks for evaluating visual generation performance.
 </div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
+
+
+
+
+<!-- Beginning of a paper -->
+<h4 id="2023-11-21-Diffusion-DPO">
+    [2023-11-21] Diffusion Model Alignment Using Direct Preference Optimization <b><i>(CVPR 2024)</i></b>
+</h4>
+<p>
+    <b>Authors:</b> Bram Wallace, Meihua Dang, Rafael Rafailov, Linqi Zhou, Aaron Lou, Senthil Purushwalkam, Stefano Ermon, Caiming Xiong, Shafiq Joty, Nikhil Naik
+</p>
+<p>
+    <b>Organizations:</b> Nikhil Naik, Salesforce AI, Stanford University
+</p>
+<p>
+    <b>Summary:</b> Adapt <b>Direct Preference Optimization (DPO)</b> from large language models to diffusion models for <u>image generation</u>.
+</p>
+<button onclick="toggleTable('2023-11-21-Diffusion-DPO-table')">Read more</button>
+<div id="2023-11-21-Diffusion-DPO-table" class="table-container">
+<ul>
+    <li> Train SD1.5 and SDXL1.0 on Pick-a-Pic training set consisting of 850K pairs from 59K unique prompts.
+    <li> Evaluate on Pick-a-Pic validation set, and final evaluation is on Partiprompt and HPS v2.
+</ul>
+</div>
+<p><a href="#top">[back to top]</a></p>
+<!-- End of a paper -->
+
 
 
 
