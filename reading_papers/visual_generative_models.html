@@ -50,7 +50,8 @@
         }
 
         .papertext {
-            color: #D92043;
+            /* color: #D92043; */
+            color: #000000;
             font-size: 15px;
         }
 
@@ -97,14 +98,14 @@
             <li><a href="#evaluation">Evaluation</a></li>
         </ul>
     </li>
-    <li><a href="#papers">Papers & Reading Notes (total: 36)</a></li>
+    <li><a href="#papers">Papers & Reading Notes (total: 38)</a></li>
 </ul>
 
 <br>
 <a href="reading_papers.html">[back to main contents]</a>
 
 <br><br>
-Last updated on March 17, 2025.
+Last updated on March 27, 2025.
 
 
 <!-- Section: Foundation Models and Algorithms -->
@@ -217,6 +218,19 @@ Foundation models and algorithms on visual generative models.
             </td>
             <td><span class="summarytext">
                 <b>ByteDance</b> (Seed Vision Team)'s foundation model for <u>image genertion</u> with native <u>Chinese-English</u> bilingual capability, where some techniques such as scaled RoPE, SFT, RLHF are employed.
+            </span></td>
+        </tr>
+        <!-- 2025-02-14-Step-Video-T2V -->
+        <tr>
+            <td><span class="datetext">2025-02-14</span><br><a href="#2025-02-14-Step-Video-T2V" class="modeltext"><b>Step-Video-T2V</b></a></td>
+            <td>
+                <a href="https://arxiv.org/pdf/2502.10248"><span class="papertext">
+                    Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model <b><i>(arXiv 2025)</i></b>
+                    <a href="https://github.com/stepfun-ai/Step-Video-T2V/"><img src="https://img.shields.io/github/stars/stepfun-ai/Step-Video-T2V.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                </span></a> 
+            </td>
+            <td><span class="summarytext">
+                <b>StepFun</b>'s <b>open-sourced</b> model (30B) for <u>text-to-video generation</u>, using DiT structure & RoPE-3D & QK-Norm & 16x16x8 VAE & two bilingual text encoders & DPO.
             </span></td>
         </tr>
         <!-- 2024-12-03-hunyuanvideo -->
@@ -949,6 +963,7 @@ Metrics and benchmarks for evaluating visual generation performance.
 
 
 
+
 <!-- Beginning of a paper -->
 <h4 id="2025-02-18-noise-unconditional-model">
     [2025-02-18] Is Noise Conditioning Necessary for Denoising Generative Models? <b><i>(arXiv 2025)</i></b>
@@ -962,9 +977,88 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> Theoretical and empirical analysis on noise-unconditional denoising <u>diffusion models</u> <b>without a timestep input</b> for <u>image generation</u>.
 </p>
+<button onclick="toggleTable('2025-02-18-noise-unconditional-model-table')">Read more</button>
+<div id="2025-02-18-noise-unconditional-model-table" class="table-container">
 <ul>
     <li> Many denoising generative models perform robustly even in the absence of noise conditioning, flow-based ones can even produce improved results without noise conditioning.
 </ul>
+</div>
+<p><a href="#top">[back to top]</a></p>
+<!-- End of a paper -->
+
+
+
+
+<!-- Beginning of a paper -->
+<h4 id="2025-02-14-Step-Video-T2V">
+    [2025-02-14] Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model <b><i>(arXiv 2025)</i></b>
+</h4>
+<p>
+    <b>Authors:</b> Step-Video Team
+</p>
+<p>
+    <b>Organizations:</b> StepFun
+</p>
+<p>
+    <b>Summary:</b> <b>StepFun</b>'s <b>open-sourced</b> model (30B) for <u>text-to-video generation</u>, using DiT structure & RoPE-3D & QK-Norm & 16x16x8 VAE & two bilingual text encoders & DPO.
+</p>
+<button onclick="toggleTable('2025-02-14-Step-Video-T2V-table')">Read more</button>
+<div id="2025-02-14-Step-Video-T2V-table" class="table-container">
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-02-14-Step-Video-T2V-fig1.png' width=500>
+                <figcaption><b>Main structure:</b> a VAE, bilingual text encoders, DiT, and DPO.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2025-02-14-Step-Video-T2V-fig2.png' width=400>
+            <figcaption><b>Video-VAE</b> compresses videos by <b>8x16x16</b> & <b>16-channel features</b>.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-02-14-Step-Video-T2V-fig4.png' width=500>
+            <figcaption><b>DPO framework:</b> use data & synthesis prompts to generate winning & losing samples from different seeds, followed by human annotation. Adapt <b>Diffusion-DPO</b> here and <u>reduce beta</u> & <u>increase learning rate</u> to achieve faster convergence.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2025-02-14-Step-Video-T2V-fig3.png' width=400>
+            <figcaption>Use <u>DiT</u> with <u>3D full-attention</u>, <u>cross-attention for prompts</u>, <u>RoPE-3D</u>, and <u>QK-Norm</u>. <u>HunyuanCLIP</u> and <u>Step-LLM</u> are used as the bilingual text encoders.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-02-14-Step-Video-T2V-fig5.png' width=900>
+            <figcaption><b>2B video-text pairs</b>, <b>3.8B image-text pairs</b>. <b>Video segmentation:</b> use AdaptiveDetector in <u>PySceneDetect</u> to identify scene changes and use <u>FFmpeg</u> to split them. <b>Video quality assessment:</b> sample eight frames and evaluate. <b>Aesthetic score:</b> <u>LAION CLIP</u>-based aesthetic predictor. <b>NSFW score:</b> <u>LAION CLIP</u>-based NSFW detector. <b>Watermark detection:</b> EfficientNet-based model. <b>Subtitle detection:</b> use <u>PaddleOCR</u> to recognize and localize tests. <b>Saturation score:</b> transform from RGB to HSV and extract saturation channel. <b>Blur score:</b> <u>Laplacian variance</u>. <b>Black border detection:</b> <u>FFmpeg</u>. <b>Video motion assessment:</b> <u>mean optical flow</u>.<b>Video captioning:</b> short caption, dense caption, original title. <b>Video concept balancing:</b> use <u>K-means</u> to group into 120K clusters. <b>Video-text alignment:</b> CLIP Score. </figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-02-14-Step-Video-T2V-fig7.png' width=700>
+            <figcaption>Pre-training details. </figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-02-14-Step-Video-T2V-fig6.png' width=900>
+                <figcaption>Data filtering details. </figcaption>
+            </figure>
+        </td>
+    </tr>
+</table>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
@@ -1157,10 +1251,13 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <b>Summary:</b> The <b>noises initialized by reliable seeds</b> result in accurate <u>image generation</u> such as <u>numeracy</u> and <u>position</u>, and use these generated data for fine-tuning further improves performance.
 </p>
+<button onclick="toggleTable('2024-11-27-Reliable-Seed-table')">Read more</button>
+<div id="2024-11-27-Reliable-Seed-table" class="table-container">
 <ul>
     <li> There is a strong correlation between initial seeds and object arrangement.
     <li> Certain noise signals are more likely to result in accurate compositional generation: numeracy and position.
 </ul>
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
