@@ -99,18 +99,19 @@
             <li><a href="#foundation-model-and-algorithms">Foundation Models & Algorithms</a></li>
             <li><a href="#finetuning">Fine-Tuning</a></li>
             <li><a href="#reinforcement-learning">Reinforcement Learning</a></li>
+            <li><a href="#acceleration">Acceleration</a></li>
             <li><a href="#inference-time-improvement">Inference-Time Improvement</a></li>
             <li><a href="#evaluation">Evaluation</a></li>
         </ul>
     </li>
-    <li><a href="#papers">Papers & Reading Notes (total: 41)</a></li>
+    <li><a href="#papers">Papers & Reading Notes (total: 42)</a></li>
 </ul>
 
 <br>
 <a href="reading_papers.html">[back to main contents of reading papers]</a>
 
 <br><br>
-Last updated on March 30, 2025.
+Last updated on April 3, 2025.
 
 
 <!-- Section: Foundation Models and Algorithms -->
@@ -546,6 +547,44 @@ Post-training by employing reinforcement learning.
             </td>
             <td><span class="summarytext">
                 Use <b>LLM to refine prompts</b> for <u>preference-aligned image generation</u> by taking relevance and aesthetics as reward.
+            </span></td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="#top">[back to top]</a>
+<br><br>
+<hr>
+
+
+
+<!-- Section: Acceleration -->
+<h3 id="acceleration">Acceleration</h3>
+
+Accelerate inference of diffusion models by employing distillation, quantization, and pruning algorithms.
+
+<table>
+    <colgroup>
+        <col style="width: 16%;">
+        <col style="width: 36%;">
+        <col style="width: 48%;">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Date & Model</th>
+            <th>Paper & Publication & Project</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- 2024-03-18-SD3-Turbo -->
+        <tr>
+            <td><span class="datetext">2024-03-18</span><br><a href="#2024-03-18-SD3-Turbo" class="modeltext"><b>SD3-Turbo<br>LADD</b></a></td>
+            <td>
+                <a href="https://arxiv.org/pdf/2502.16965"><span class="papertext">Fast High-Resolution Image Synthesis with Latent Adversarial Diffusion Distillation <b><i>(SIGGRAPH Asia 2024)</i></b></span></a> 
+            </td>
+            <td><span class="summarytext">
+                Perform distillation of diffusion models in <b>latent space</b> using <b>teacher-synthetic data</b> and optimizing only an adversarial loss with the <b>teacher as the discriminator</b>.
             </span></td>
         </tr>
     </tbody>
@@ -1515,6 +1554,72 @@ Metrics and benchmarks for evaluating visual generation performance.
             <figure>
                 <img src='figs/2024-04-01-VQAScore-fig1.png' width=600>
                 <figcaption>Evaluate by computing probability of answering "yes" from a trained <b>VQA</b> model by feeding the prompt and the generated image.</figcaption>
+            </figure>
+        </td>
+    </tr>
+</table>
+</div>
+<p><a href="#top">[back to top]</a></p>
+<!-- End of a paper -->
+
+
+
+<!-- Beginning of a paper -->
+<h4 id="2024-03-18-SD3-Turbo">
+    [2024-03-18] Fast High-Resolution Image Synthesis with Latent Adversarial Diffusion Distillation <b><i>(SIGGRAPH Asia 2024)</i></b>
+</h4>
+<p>
+    <b>Authors:</b> Axel Sauer, Frederic Boesel, Tim Dockhorn, Andreas Blattmann, Patrick Esser, Robin Rombach
+</p>
+<p>
+    <b>Organizations:</b> Stability AI
+</p>
+<p>
+    <b>Summary:</b> Perform distillation of diffusion models in <b>latent space</b> using <b>teacher-synthetic data</b> and optimizing only an adversarial loss with the <b>teacher as the discriminator</b>.
+</p>
+<button onclick="toggleTable('template-table')">Read more</button>
+<div id="template-table" class="table-container">
+<ul>
+    <li>
+</ul>
+<table>
+    <tr colspan="2">
+        <td>
+            <figure>
+                <img src='figs/2024-03-18-SD3-Turbo-fig1.png' width=600>
+                <figcaption><b>ADD:</b> (1) An adversarial loss for deceiving a discriminator (DINO v2); (2) A distillation loss for matching denoised output to that of a teacher. <br><b>LADD:</b> (1) Use teacher generated images instead of real images for distillation; (2) Use teacher as the discrinimator. <br><b>Advantages:</b> (1) Save memory and improve efficiency; (2) Diffusion model teacher as the discriminator provides noise-level feedback; (3) Diffusion model as the discriminator handles multi-aspect ratio; (4) Diffusion model as the discriminator aligns with human perception on shape.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr colspan="2">
+        <td>
+            <figure>
+                <img src='figs/2024-03-18-SD3-Turbo-fig2.png' width=700>
+                <figcaption><b>Observations:</b> (1) Training with <u>synthetic data works better than with real data</u>. (2) Training on synthetic data <u>only needs the adversarial loss</u>.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr colspan="2">
+        <td>
+            <figure>
+                <img src='figs/2024-03-18-SD3-Turbo-fig3.png' width=700>
+                <figcaption><b>Observations:</b> (1) Training using <u>LADD performs better than LCM</u>. (2) LCM may need larger models like SDXL-LCM, instand of SD1.5-LCM.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr colspan="2">
+        <td>
+            <figure>
+                <img src='figs/2024-03-18-SD3-Turbo-fig4.png' width=700>
+                <figcaption><b>Observations:</b> <u>Student model size significant impacts performance</u>, while the benefits of teacher models and data quality plateau.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr colspan="2">
+        <td>
+            <figure>
+                <img src='figs/2024-03-18-SD3-Turbo-fig5.png' width=700>
+                <figcaption>Use <u>LoRA for DPO-traning</u>, and <u>apply DPO-LoRA after LADD training</u>.</figcaption>
             </figure>
         </td>
     </tr>
