@@ -119,7 +119,7 @@
 <a href="reading_papers.html">[back to main contents of reading papers]</a>
 
 <br><br>
-Last updated on April 3, 2025.
+Last updated on April 4, 2025.
 
 
 <!-- Section: Foundation Models and Algorithms -->
@@ -321,7 +321,7 @@ Foundation models and algorithms on visual generative models.
                 </span></a> 
             </td>
             <td><span class="summarytext">
-                
+                Employ three times <b>larger UNet backbone</b> of SD, use resolution & crop coordinates & bucketing information as <b>resolution condition</b> for training, employ a <b>refinement model</b>.
             </span></td>
         </tr>
         <!-- 2022-12-19-DiT -->
@@ -1890,8 +1890,8 @@ Metrics and benchmarks for evaluating visual generation performance.
     <tr>
         <td>
             <figure>
-                <img src='temp1.png' width=300>
-                <figcaption>caption1.</figcaption>
+                <img src='figs/2023-07-04-SDXL-fig1.png' width=600>
+                <figcaption><b>Architecture:</b>. <br>(1) SDXL uses <u>different transformer</u> blocks compared to SD.<br>(2) Use <u>two text encoders</u> OpenCLIP VIT-bigG & CLIP ViT-L.<br>(3) The final model has 2.6B parameters with 817M parameters for text encoders.<br>(4) Embeddings of <u>height & width and cropping top & left and bucketing heigh & width</u> are added to timestep embeddings.<br>(5) <u>Improve auto-encoder</u> by employing larger batchsize of 256 and EMA.<br>(6) Use a <u>refiner</u> of SDEdit for refining details. <br>(7) Training: Stage 1: 256 x 256, 600K steps, batchsize 2048. Stage 2: 512 x 512, 200K steps. Stage 3: multi-aspect training. </figcaption>
             </figure>
         </td>
         <td>
