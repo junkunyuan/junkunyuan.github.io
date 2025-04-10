@@ -10,85 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <div id="layout-content" style="margin-top:25px"></div>
-    <style>
-        .table-container {
-            display: none;
-            margin: 10px 0;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        th, td {
-            border: 1px solid #adadad;
-            text-align: left;
-            padding: 8px;
-        }
-        th {
-            background-color: #e2e2e2;
-        }
-
-        hr {
-            border: none; /* 去掉默认边框 */
-            height: 1px; /* 设置线的高度 */
-            background-color: #aaaaaa; /* 设置线的颜色 */
-            margin: 0; /* 去掉外边距 */
-        }
-
-        figure {
-            margin: 0 10px;
-            text-align: center;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        figcaption {
-            font-size: 14px;
-            color: #CC6600;
-        }
-
-        .papertext {
-            /* color: #D92043; */
-            color: #000000;
-            font-size: 15px;
-        }
-
-        .summarytext {
-            color: #000000;
-            font-size: 15px;
-        }
-
-        .datetext {
-            color: #888888;
-            font-size: 15px;
-        }
-
-        .modeltext {
-            color: #224bbd;
-            font-size: 15px;
-            font-weight: bold;
-        }
-        
-        .impactmodeltext {
-            color: #224bbd;
-            font-size: 15px;
-            font-weight: bold;
-        }
-
-        .veryimpactmodeltext {
-            color: #D93053;
-            font-size: 15px;
-            font-weight: bold;
-        }
-
-        .notetext {
-            color: #CC6600;
-            font-size: 15px;
-            /* font-weight: bold; */
-        }
-    </style>
 </head>
 
 <body>
@@ -112,14 +33,14 @@
             <li><a href="#evaluation">Evaluation</a></li>
         </ul>
     </li>
-    <li><a href="#papers">Papers & Reading Notes (total: 44)</a></li>
+    <li><a href="#papers">Papers & Reading Notes (total: 45)</a></li>
 </ul>
 
 <br>
 <a href="reading_papers.html">[back to main contents of reading papers]</a>
 
 <br><br>
-Last updated on April 8, 2025.
+Last updated on April 10, 2025.
 
 
 <!-- Section: Foundation Models and Algorithms -->
@@ -724,6 +645,17 @@ Metrics and benchmarks for evaluating visual generation performance.
         </tr>
     </thead>
     <tbody>
+        <!-- 2025-03-07-UnifiedReward -->
+        <tr>
+            <td><span class="datetext">2025-03-07</span><br><a href="#2025-03-07-UnifiedReward" class="modeltext">UnifiedReward</a></td>
+            <td>
+                <a href="https://arxiv.org/pdf/2503.05236"><span class="papertext">Unified Reward Model for Multimodal Understanding and Generation<b><i>(arXiv 2025)</i></b></span></a> 
+                <a href="https://github.com/CodeGoat24/UnifiedReward/"><img src="https://img.shields.io/github/stars/CodeGoat24/UnifiedReward.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+            </td>
+            <td><span class="summarytext">
+                A unified reward model for both <b>multimodal understanding & generation evaluation</b> by <u>pairwise ranking & pointwise scoring</u>.
+            </span></td>
+        </tr>
         <!-- 2024-07-19-t2vcompbench -->
         <tr>
             <td><span class="datetext">2024-07-19</span><br><a href="#2024-07-19-t2vcompbench" class="modeltext">T2V-CompBench</a></td>
@@ -1113,6 +1045,42 @@ Metrics and benchmarks for evaluating visual generation performance.
 </div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
+
+
+
+
+<!-- Beginning of a paper -->
+<h4 id="2025-03-07-UnifiedReward">
+    [2025-03-07] Unified Reward Model for Multimodal Understanding and Generation<b><i>(arXiv 2025)</i></b>
+</h4>
+<p>
+    <b>Authors:</b> Yibin Wang, Yuhang Zang, Hao Li, Cheng Jin, Jiaqi Wang
+</p>
+<p>
+    <b>Organizations:</b> Fudan University, Shanghai Innovation Institute, Shanghai AI Lab, Shanghai Academy of Artificial Intelligence for Science
+</p>
+<p>
+    <b>Summary:</b> A unified reward model for both <b>multimodal understanding & generation evaluation</b> by <u>pairwise ranking & pointwise scoring</u>.
+</p>
+<button onclick="toggleTable('2025-03-07-UnifiedReward-table')">Read more</button>
+<div id="2025-03-07-UnifiedReward-table" class="table-container">
+<ul>
+    <li>
+</ul>
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-03-07-UnifiedReward-fig2.png' width=700>
+                <figcaption>Pipeline: (1) <b>Unified Reward Model Training:</b> train a unified reward model for <u>generation & understanding</u> tasks using pointwise <u>scoring & pairwise ranking</u>; (2) <b>Preference Data Construction:</b> data generation, pairwise ranking, pointwise filtering; (3) <b>Generation/Understanding Model Alignment:</b> DPO. The trained model is initialized from <b>LLaVA-OneVision 7B (OV-7B)</b>.</figcaption>
+            </figure>
+        </td>
+    </tr>
+</table>
+</div>
+<p><a href="#top">[back to top]</a></p>
+<!-- End of a paper -->
+
 
 
 
