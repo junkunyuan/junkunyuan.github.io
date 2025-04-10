@@ -33,7 +33,7 @@
             <li><a href="#evaluation">Evaluation</a></li>
         </ul>
     </li>
-    <li><a href="#papers">Papers & Reading Notes (total: 45)</a></li>
+    <li><a href="#papers">Papers & Reading Notes (total: 46)</a></li>
 </ul>
 
 <br>
@@ -360,6 +360,20 @@ Foundation models and algorithms on visual generative models.
             </td>
             <td><span class="summarytext">
                 Denoising <b>diffusion</b> probabilistic models that iteratively denoises data from random noise for <u>image generation</u>.
+            </span></td>
+        </tr>
+        <!-- 2017-11-02-VQ-VAE -->
+        <tr>
+            <td><span class="datetext">2017-11-02</span>
+                <br><a href="#2017-11-02-VQ-VAE" class="veryimpactmodeltext">VQ-VAE</a>
+            </td>
+            <td>
+                <a href="https://arxiv.org/pdf/1711.00937"><span class="papertext">
+                    Neural Discrete Representation Learning <b><i>(NeurIPS 2017)</i></b>
+                </span></a> 
+            </td>
+            <td><span class="summarytext">
+                Propose <b>vector quantised variational autoencoder</b> to generate discrete codes by learning a prior.
             </span></td>
         </tr>
     </tbody>
@@ -2383,6 +2397,42 @@ Metrics and benchmarks for evaluating visual generation performance.
 
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
+
+
+
+
+<!-- Beginning of a paper -->
+<h4 id="2017-11-02-VQ-VAE">
+    [2017-11-02] Neural Discrete Representation Learning <b><i>(NeurIPS 2017)</i></b>
+</h4>
+<p>
+    <b>Authors:</b> Aaron van den Oord, Oriol Vinyals, Koray Kavukcuoglu
+</p>
+<p>
+    <b>Organizations:</b> DeepMind
+</p>
+<p>
+    <b>Summary:</b> 
+</p>
+<button onclick="toggleTable('2017-11-02-VQ-VAE-table')">Read more</button>
+<div id="2017-11-02-VQ-VAE-table" class="table-container">
+<ul>
+    <li> VQ-VAE is simple to train, does not suffer from large variance, and avoids "posterior collapse", while getting similar performance as VAE.</li>
+    <li>The decoder optimizes the recontruction loss; the encoder optimizes the reconstruction loss and a matching loss; the embedding optimizes a matching loss.</li>
+</ul>
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2017-11-02-VQ-VAE-fig1.png' width=900>
+            </figure>
+        </td>
+    </tr>
+</table>
+</div>
+<p><a href="#top">[back to top]</a></p>
+<!-- End of a paper -->
+
 
 
 
