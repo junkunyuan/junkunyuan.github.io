@@ -33,14 +33,14 @@
             <li><a href="#evaluation">Evaluation</a></li>
         </ul>
     </li>
-    <li><a href="#papers">Papers & Reading Notes (total: 47)</a></li>
+    <li><a href="#papers">Papers & Reading Notes (total: 48)</a></li>
 </ul>
 
 <br>
 <a href="reading_papers.html">[back to main contents of reading papers]</a>
 
 <br><br>
-Last updated on April 10, 2025.
+Last updated on April 15, 2025.
 
 
 <!-- Section: Foundation Models and Algorithms -->
@@ -143,6 +143,18 @@ Foundation models and algorithms on visual generative models.
         </tr>
     </thead>
     <tbody>
+        <!-- 2025-04-11-Seaweed-7B -->
+        <tr>
+            <td><span class="datetext">2025-04-11</span><br><a href="#2025-04-11-Seaweed-7B" class="impactmodeltext">Seaweed-7B</a></td>
+            <td>
+                <a href="https://arxiv.org/pdf/2504.08685"><span class="papertext">
+                    Seaweed-7B: Cost-Effective Training of Video Generation Foundation Model <b><i>(arXiv 2025)</i></b>
+                </span></a> 
+            </td>
+            <td><span class="summarytext">
+                <b>ByteDance Seaweed Team</b>'s <u>text-to-video</u> & <u>image-to-video</u> generation model (7B) with DiT structure, trained (multi-task learning) on O(100M) video clips using 665K H100 GPU hours.
+            </span></td>
+        </tr>
         <!-- 2025-03-26-Wan -->
         <tr>
             <td><span class="datetext">2025-03-26 </span><br><a href="#2025-03-26-Wan" class="impactmodeltext">Wan</a></td>
@@ -178,7 +190,7 @@ Foundation models and algorithms on visual generative models.
                 </span></a> 
             </td>
             <td><span class="summarytext">
-                <b>ByteDance</b> (Seed Vision Team)'s foundation model for <u>image genertion</u> with native <u>Chinese-English</u> bilingual capability, where some techniques such as scaled RoPE, SFT, RLHF are employed.
+                <b>ByteDance (Seed Vision Team)</b> 's foundation model for <u>image genertion</u> with native <u>Chinese-English</u> bilingual capability, where some techniques such as scaled RoPE, SFT, RLHF are employed.
             </span></td>
         </tr>
         <!-- 2025-02-14-Step-Video-T2V -->
@@ -879,6 +891,89 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h2 id="papers">Papers & Reading Notes</h2>
 
 
+
+<!-- Beginning of a paper -->
+<h4 id="2025-04-11-Seaweed-7B">
+    [2025-04-11] Seaweed-7B: Cost-Effective Training of Video Generation Foundation Model <b><i>(arXiv 2025)</i></b>
+</h4>
+<p>
+    <b>Authors:</b> ByteDance Seaweed Team
+</p>
+<p>
+    <b>Organizations:</b> ByteDance
+</p>
+<p>
+    <b>Summary:</b> <b>ByteDance Seaweed Team</b>'s <u>text-to-video</u> & <u>image-to-video</u> generation model (7B) with DiT structure, trained (multi-task learning) on O(100M) video clips using 665K H100 GPU hours.
+</p>
+<button onclick="toggleTable('2025-04-11-Seaweed-7B-table')">Read more</button>
+<div id="2025-04-11-Seaweed-7B-table" class="table-container">
+<table>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-04-11-Seaweed-7B-fig1.png' width=900>
+                <figcaption><b>Video data processing.</b> <b>Temporal splitting:</b> internal splitter; Spatial cropping: use FFmpeg to remove black border, and develop models for text, logo, watermark, and special effects detection; <b>Quality filtering:</b> >256 pixels, within [1/3, 3/1] aspect ratio, elimitenate static clips and undeseirable movements, camera shake & playback speed detection, safty, artifact detection. <b>Multi-aspect data balancing & video deduplication:</b> clustering. <b>Simulation data:</b> use graphics engines to synthesize videos. <b>Video captioning:</b> a short & a long caption. <b>System prompt:</b> video types, camera position, camera angles, camera movement, visual styles.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-04-11-Seaweed-7B-fig2.png' width=400>
+                <figcaption><b>VAE</b>. Use L1 + LPIPS + adversarial loss. Use both an image discriminator and a video discriminator performs better than using either one. Downsample by 16x16x4-48c or 8x8x4-16c. Smaller downsample ratios lead to faster convergence. Compress information using VAE outperforms patchification in DiT and faster.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2025-04-11-Seaweed-7B-fig3.png' width=500>
+                <figcaption><b>VAE training stages</b> for images and videos.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-04-11-Seaweed-7B-fig4.png' width=900>
+                <figcaption>Use mixed resolution & durations & frame rate training converges slower but performs better than training on low resolution.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-04-11-Seaweed-7B-fig6.png' width=650>
+                <figcaption>Full attention enjoys training scalability.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2025-04-11-Seaweed-7B-fig5.png' width=250>
+                <figcaption>Hybrid-stream is better than dual-stream.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-04-11-Seaweed-7B-fig7.png' width=600>
+                <figcaption>Four-stage training procedure. Use <u>multi-task training</u>: text-to-video, image-to-video, video-to-video. Input features and conditioning features are channel-concatenated, with a binary mask indicating the condition. Ratio of image-to-video is 20% during pre-training, and increasing to 50%-75% detached for fine-tuning. <b>SFT:</b> use 700k good videos and 50k top videos, the following ability drops a little. <b>RLHF:</b> lr=1e-7, beta=100, select from 4 samples from different seeds. <b>Distillation:</b> trajectory segmented consistency distillation + CFG distillation + adversarial training, distill to 8 steps.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-04-11-Seaweed-7B-fig8.png' width=400>
+                <figcaption><b>Image-to-video ELO performance.</b></figcaption>
+            </figure>
+        </td>
+    </tr>
+</table>
+</div>
+<p><a href="#top">[back to top]</a></p>
+<!-- End of a paper -->
+
+
 <!-- Beginning of a paper -->
 <h4 id="2025-03-26-Wan">
     [2025-03-26] Wan: Open and Advanced Large-Scale Video Generative Models <b><i>(arXiv 2025)</i></b>
@@ -1013,7 +1108,7 @@ Metrics and benchmarks for evaluating visual generation performance.
     <b>Organizations:</b> ByteDance
 </p>
 <p>
-    <b>Summary:</b> <b>ByteDance</b> (Seed Vision Team)'s foundation model for <u>image genertion</u> with native <u>Chinese-English</u> bilingual capability, where some techniques such as scaled RoPE, SFT, RLHF are employed.
+    <b>Summary:</b> <b>ByteDance (Seed Vision Team)</b> 's foundation model for <u>image genertion</u> with native <u>Chinese-English</u> bilingual capability, where some techniques such as scaled RoPE, SFT, RLHF are employed.
 </p>
 <button onclick="toggleTable('2025-03-10-Seedream2.0-')">Read more</button>
 <div id="2025-03-10-Seedream2.0-" class="table-container">
