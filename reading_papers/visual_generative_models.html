@@ -33,7 +33,7 @@
             <li><a href="#evaluation">Evaluation</a></li>
         </ul>
     </li>
-    <li><a href="#papers">Papers & Reading Notes (total: 49)</a></li>
+    <li><a href="#papers">Papers & Reading Notes (total: 50)</a></li>
 </ul>
 
 <br>
@@ -143,6 +143,19 @@ Foundation models and algorithms on visual generative models.
         </tr>
     </thead>
     <tbody>
+        <!-- 2025-04-15-SimpleAR -->
+        <tr>
+            <td><span class="datetext">2025-04-15</span><br><a href="#2025-04-15-SimpleAR" class="impactmodeltext">SimpleAR</a></td>
+            <td>
+                <a href="https://arxiv.org/pdf/2504.11455"><span class="papertext">
+                    SimpleAR: Pushing the Frontier of Autoregressive Visual Generation through Pretraining, SFT, and RL <b><i>(arXiv 2025)</i></b>
+                    <a href="https://github.com/wdrink/SimpleAR/"><img src="https://img.shields.io/github/stars/wdrink/SimpleAR.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                </span></a> 
+            </td>
+            <td><span class="summarytext">
+                A <b>vanilla, open-sourced AR</b> model (0.5B) for <u>1K text-to-image generation</u>, trained by pre-training, SFT, RL (GRPO), acceleration (KV cache, vLLM serving, speculative jacobi decoding).
+            </span></td>
+        </tr>
         <!-- 2025-04-15-Seedream 3.0 -->
         <tr>
             <td><span class="datetext">2025-04-15</span><br><a href="#2025-04-15-Seedream 3.0" class="impactmodeltext">Seedream 3.0</a></td>
@@ -901,6 +914,36 @@ Metrics and benchmarks for evaluating visual generation performance.
 
 <!-- Section: Papers -->
 <h2 id="papers">Papers & Reading Notes</h2>
+
+
+
+<!-- Beginning of a paper -->
+<h4 id="2025-04-15-SimpleAR">
+    [2025-04-15] SimpleAR: Pushing the Frontier of Autoregressive Visual Generation through Pretraining, SFT, and RL <b><i>(arXiv 2025)</i></b>
+</h4>
+<p>
+    <i><b>Authors:</b></i> Junke Wang, Zhi Tian, Xun Wang, Xinyu Zhang, Weilin Huang, Zuxuan Wu, Yu-Gang Jiang
+</p>
+<p>
+    <i><b>Organizations:</b></i> Fudan University, ByteDance Seed
+</p>
+<p>
+    <i><b>Summary:</b></i> A <b>vanilla, open-sourced AR</b> model (0.5B) for <u>1K text-to-image generation</u>, trained by pre-training, SFT, RL (GRPO), acceleration (KV cache, vLLM serving, speculative jacobi decoding).
+</p>
+<button onclick="toggleTable('2025-04-15-SimpleAR-table')">Read more</button>
+<div id="2025-04-15-SimpleAR-table" class="table-container">
+<ul>
+    <li> Use Qwen structure, Cosmos visual tokenizer: 64k codebook & 16 ratio downsample.
+    <li> Training stages: (1) 512 reso pretraining; (2) 1024 resol SFT; (3) 1024 reso RL.
+    <li> Use LLM initialization does not have remarkable effect on DPG-Bench performance (it only contains short prompts).
+    <li> 2D RoPE will not improve generation, but is necessary for dynamic resolution generation.
+    <li> Use GRPO with CLIP as reward model improves more than using HPS v2.
+</ul>
+</div>
+<p><a href="#top">[back to top]</a></p>
+<!-- End of a paper -->
+
+
 
 
 <!-- Beginning of a paper -->
