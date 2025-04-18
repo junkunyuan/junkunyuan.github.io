@@ -10,61 +10,214 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <div id="layout-content" style="margin-top:25px"></div>
-
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse; /* 合并边框 */
-            margin: 20px 0;
-        }
-        th, td {
-            border: 1px solid #adadad; /* 设置单元格边框 */
-            text-align: left;
-            padding: 8px;
-        }
-        th {
-            background-color: #e2e2e2; /* 表头背景颜色 */
-        }
-
-        .image-container {
-            display: flex; /* 使用flexbox布局 */
-            justify-content: center; /* 居中对齐 */
-            margin: 20px; /* 设置外边距 */
-        }
-        figure {
-            margin: 0 10px; /* 设置每个figure的左右外边距 */
-            text-align: center; /* 使说明居中 */
-        }
-        img {
-            max-width: 100%; /* 使图片自适应容器宽度 */
-            height: auto; /* 保持图片比例 */
-        }
-        figcaption {
-            font-size: 14px; /* 设置说明文字大小 */
-            color: #555; /* 设置说明文字颜色 */
-        }
-    </style>
-
-    <style>
-        .papertext {
-            color: #D93053;
-            font-weight: bolder;
-            font-size: 14px;
-        }
-    </style>
 </head>
 
 <body>
 
 <h1 id="top">Native Large Multimodal Models</h1>
 
+<b><font size=4>The reading papers curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
+
+<br><br>
+<b>Contents:</b>
+<ul>
+    <li>
+        <a href="#summaries">Summaries</a>
+        <ul>
+            <li><a href="#foundation-model-and-algorithms">Foundation Models & Algorithms</a></li>
+        </ul>
+    </li>
+    <li><a href="#papers">Papers & Reading Notes (total: 1)</a></li>
+</ul>
+
 <br>
-<b><font size=4>Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
+<a href="reading_papers.html">[back to main contents of reading papers]</a>
 
 <br><br>
-<a href="reading_papers.html">[back to main contents]</a>
+Last updated on April 18, 2025.
 
+
+<!-- Section: Foundation Models and Algorithms -->
+<h2 id="summaries">Summaries</h2>
+
+
+<!-- Section: Foundation Models and Algorithms -->
+<h3 id="foundation-model-and-algorithms">Foundation Models & Algorithms</h3>
+
+Foundation models and algorithms on native large multimodal models.
+
+<table>
+    <colgroup>
+        <col style="width: 16%;">
+        <col style="width: 36%;">
+        <col style="width: 48%;">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Date & Model</th>
+            <th>Paper & Publication & Project</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- 2024-05-16-Chameleon -->
+        <tr>
+            <td><span class="datetext">2024-05-16</span><br><a href="#2024-05-16-Chameleon" class="veryimpactmodeltext">Chameleon</a></td>
+            <td>
+                <a href="https://arxiv.org/pdf/2405.09818"><span class="papertext">
+                    Chameleon: Mixed-Modal Early-Fusion Foundation Models <b><i>(arXiv 2024)</i></b>
+                    <!-- <a href="https://github.com/Wan-Video/Wan2.1/"><img src="https://img.shields.io/github/stars/Wan-Video/Wan2.1.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a> -->
+                </span></a> 
+            </td>
+            <td><span class="summarytext">
+                <b>Early-fusion token-based mixed-modal</b> model (34B) trained on 10T interleaved mixed-modal data for <u>understanding & generation of text & images</u>.
+            </span></td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="#top">[back to top]</a>
 <br><br>
-Last updated on Feb. 9, 2025.
+<hr>
+
+
+
+
+
+
+<!-- Section: Papers -->
+<h2 id="papers">Papers & Reading Notes</h2>
+
+<!-- Beginning of a paper -->
+<h4 id="2024-05-16-Chameleon">
+    [2024-05-16] Chameleon: Mixed-Modal Early-Fusion Foundation Models <b><i>(arXiv 2024)</i></b>
+</h4>
+<p>
+    <i><b>Authors:</b></i> Chameleon Team
+</p>
+<p>
+    <i><b>Organizations:</b></i> FAIR at Meta
+</p>
+<p>
+    <i><b>Summary:</b></i> <b>Early-fusion token-based mixed-modal</b> model (34B) trained on 10T interleaved mixed-modal data for <u>understanding & generation of text & images</u>.
+</p>
+<button onclick="toggleTable('2024-05-16-Chameleon-table')">Read more</button>
+<div id="2024-05-16-Chameleon-table" class="table-container">
+<ul>
+    <li> Pre-training data for the first stage. Text: data used to train LLaMa-2 and CodeLLaMa, 2.9T text-only tokens; Text-image: public + licensed data with 512x512 resized image, 1.4B text-image pairs, 1.5T text-image tokens; Text-image interleaved: public data, 400B tokens.
+    <li> Pre-training data for the second stage. Lower the weight of the first stage by 50%; mix in higher quality data and instruction tuning data.
+    <li> Architecture: follow LLaMa-2, RMSNorm, SwiGLU, RoPE, AdamW.
+    <li> Fine-tuning strategy: balance data modalities, cosine lr schedule.
+    <li> Evaluation: prompts from crowdsourcing; 
+</ul>
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2024-05-16-Chameleon-fig1.png' width=900>
+                <figcaption>Represent all modalities as <u>discrete tokens</u>. Train a <u>uniform transformer</u>-based architecture <u>from scratch</u> on <u>10T</u> interleaved mixed-modal data. <b>Image tokenization:</b> train a new image tokenizer, encode 512x512 image into 1024 discrete tokens from a codebook of size 8192. <b>Tokenizer:</b> train a new BPE tokenizer with vocabulary size of 65536. </figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2024-05-16-Chameleon-fig2.png' width=900>
+                <figcaption><b>QK-norm</b> and <b>dropout</b> improves training stability.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2024-05-16-Chameleon-fig3.png' width=900>
+                <figcaption>Model structure.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2024-05-16-Chameleon-fig4.png' width=600>
+                <figcaption>Data for supervised fine-tuning.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2024-05-16-Chameleon-fig5.png' width=800>
+                <figcaption>Performance of Cameleon.</figcaption>
+            </figure>
+        </td>
+    </tr>
+</table>
+</div>
+<p><a href="#top">[back to top]</a></p>
+<!-- End of a paper -->
+
+<script>
+    function toggleTable(tableId) {
+        const container = document.getElementById(tableId);
+        const button = container.previousElementSibling;
+        
+        // 使用实际计算的显示状态
+        const isVisible = window.getComputedStyle(container).display !== 'none';
+        
+        if (!isVisible) {
+            // 展开时加载图片
+            const images = container.querySelectorAll('.lazy-load');
+            images.forEach(img => {
+                if (!img.src && img.dataset.src) {
+                    img.src = img.dataset.src;
+                }
+            });
+            container.style.display = 'block';
+            button.textContent = 'Close';
+        } else {
+            container.style.display = 'none';
+            button.textContent = 'Read more';
+        }
+    }
+</script>
+
+<!-- Beginning of a paper -->
+<!-- <h4 id="template">
+    [2020-12-16] Template
+</h4>
+<p>
+    <i><b>Authors:</b></i>
+</p>
+<p>
+    <i><b>Organizations:</b></i>
+</p>
+<p>
+    <i><b>Summary:</b></i> 
+</p>
+<button onclick="toggleTable('template-table')">Read more</button>
+<div id="template-table" class="table-container">
+<ul>
+    <li>
+</ul>
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='temp1.png' width=300>
+                <figcaption>caption1.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='temp2.png' width=600>
+        <figcaption>caption2.</figcaption>
+            </figure>
+        </td>
+    </tr>
+</table>
+</div>
+<p><a href="#top">[back to top]</a></p> -->
+<!-- End of a paper -->
+
 </body>
 </html>
