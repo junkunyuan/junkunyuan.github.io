@@ -33,14 +33,14 @@
             <li><a href="#evaluation">Evaluation</a></li>
         </ul>
     </li>
-    <li><a href="#papers">Papers & Reading Notes (total: 52)</a></li>
+    <li><a href="#papers">Papers & Reading Notes (total: 53)</a></li>
 </ul>
 
 <br>
 <a href="reading_papers.html">[back to main contents of reading papers]</a>
 
 <br><br>
-Last updated on April 17, 2025.
+Last updated on April 18, 2025.
 
 
 <!-- Section: Summaries -->
@@ -269,9 +269,22 @@ Foundation models and algorithms on visual generative models.
                 A <u>diffusion transformer</u> (16B) with <b>MoE</b> that inserts experts into DiT blocks for <u>image generation</u>.
             </span></td>
         </tr>
+        <!-- 2024-06-10-LlamaGen -->
+        <tr>
+            <td><span class="datetext">2024-06-10</span><br><a href="#2024-06-10-LlamaGen" class="veryimpactmodeltext">LlamaGen</a></td>
+            <td>
+                <a href="https://arxiv.org/pdf/2406.06525"><span class="papertext">
+                    Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation <b><i>(arXiv 2024)</i></b>
+                    <a href="https://github.com/FoundationVision/LlamaGen/"><img src="https://img.shields.io/github/stars/FoundationVision/LlamaGen.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                </span></a> 
+            </td>
+            <td><span class="summarytext">
+                Show that applying "next-token prediction" to <b>vanilla autoregressive models</b> achieves good <u>class-conditional & text-conditional image generation</u> performance.
+            </span></td>
+        </tr>
         <!-- 2024-04-03-VAR -->
         <tr>
-            <td><span class="datetext">2024-04-03-VAR</span><br><a href="#2024-04-03-VAR" class="veryimpactmodeltext">VAR</a></td>
+            <td><span class="datetext">2024-04-03</span><br><a href="#2024-04-03-VAR" class="veryimpactmodeltext">VAR</a></td>
             <td>
                 <a href="https://arxiv.org/pdf/2404.02905"><span class="papertext">
                     Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction <b><i><font color="#D93053">(NeurIPS 2024 Best Paper)</font></i></b>
@@ -1786,6 +1799,32 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
+</div>
+<p><a href="#top">[back to top]</a></p>
+<!-- End of a paper -->
+
+
+
+<!-- Beginning of a paper -->
+<h4 id="2024-06-10-LlamaGen">
+    [2024-06-10] Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation <b><i>(arXiv 2024)</i></b>
+</h4>
+<p>
+    <i><b>Authors:</b></i> Peize Sun, Yi Jiang, Shoufa Chen, Shilong Zhang, Bingyue Peng, Ping Luo, Zehuan Yuan
+</p>
+<p>
+    <i><b>Organizations:</b></i> The University of Hong Kong, ByteDance
+</p>
+<p>
+    <i><b>Summary:</b></i> Show that applying "next-token prediction" to <b>vanilla autoregressive models</b> achieves good <u>class-conditional & text-conditional image generation</u> performance.
+</p>
+<button onclick="toggleTable('2024-06-10-LlamaGen-table')">Read more</button>
+<div id="2024-06-10-LlamaGen-table" class="table-container">
+<ul>
+    <li> Discrete representation in image tokenizers is no longer the bottleneck of the image reconstruction.
+    <li> Vanilla autoregressive models without inductive biases on visual signals can serve as the basis of image generation system.
+    <li> High-quality training data: 50M subset of LAION-COCO & 10M internal high aesthetics quality images.
+</ul>
 </div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
