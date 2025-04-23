@@ -33,14 +33,14 @@
             <li><a href="#evaluation">Evaluation</a></li>
         </ul>
     </li>
-    <li><a href="#papers">Papers & Reading Notes (total: 53)</a></li>
+    <li><a href="#papers">Papers & Reading Notes (total: 54)</a></li>
 </ul>
 
 <br>
 <a href="reading_papers.html">[back to main contents of reading papers]</a>
 
 <br><br>
-Last updated on April 18, 2025.
+Last updated on April 23, 2025.
 
 
 <!-- Section: Summaries -->
@@ -254,6 +254,18 @@ Foundation models and algorithms on visual generative models.
             </td>
             <td><span class="summarytext">
                 A <u>diffusion transformer</u>-based model (30B) for 16s / 1080p / 16 fps <u>video and synchronized audio generation</u>.
+            </span></td>
+        </tr>
+        <!-- 2024-10-17-Fluid -->
+        <tr>
+            <td><span class="datetext">2024-10-17 </span><br><a href="#2024-10-17-Fluid" class="modeltext">Fluid</a></td>
+            <td>
+                <a href="https://arxiv.org/pdf/2410.13863"><span class="papertext">
+                    Fluid: Scaling Autoregressive Text-to-image Generative Models with Continuous Tokens <b><i>(ICLR 2025)</i></b>
+                </span></a>
+            </td>
+            <td><span class="summarytext">
+                
             </span></td>
         </tr>
         <!-- 2024-07-16-DiT-MoE -->
@@ -1718,6 +1730,79 @@ Metrics and benchmarks for evaluating visual generation performance.
 <p>
     <i><b>Summary:</b></i> A <u>diffusion transformer</u>-based model (30B) for 16s / 1080p / 16 fps <u>video and synchronized audio generation</u>.
 </p>
+<p><a href="#top">[back to top]</a></p>
+<!-- End of a paper -->
+
+
+
+
+
+<!-- Beginning of a paper -->
+<h4 id="2024-10-17-Fluid">
+    [2024-10-17] Fluid: Scaling Autoregressive Text-to-image Generative Models with Continuous Tokens <b><i>(ICLR 2025)</i></b>
+</h4>
+<p>
+    <i><b>Authors:</b></i> Lijie Fan, Tianhong Li, Siyang Qin, Yuanzhen Li, Chen Sun, Michael Rubinstein, Deqing Sun, Kaiming He, Yonglong Tian
+</p>
+<p>
+    <i><b>Organizations:</b></i> Google DeepMind, MIT
+</p>
+<p>
+    <i><b>Summary:</b></i> 
+</p>
+<!-- <button onclick="toggleTable('template-table')">Read more</button> -->
+<!-- <div id="template-table" class="table-container"> -->
+<ul>
+    <li>
+</ul>
+<table>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-10-17-Fluid-fig1.png' width=700>
+                <figcaption>
+                    <b>Image tokenizer:</b> images are converted to either discrete (VQGAN, 16x16 tokens with 8192 vocabulary) or continuous tokens (VAE, 32x32 with 4 channels, pathisize to 256 tokens with 16 channels).
+                    <br><b>Text tokenizer:</b> text (max length 128) is converted to discrete tokens using T5-XXL.
+                    <br><b>Model structure:</b> transformer with cross-attention attending to text embedding.
+                    <br><b>Decoder:</b> text: softmax with cross-entropy loss; image: MLP with diffusion loss.
+                </figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-10-17-Fluid-fig2.png' width=700>
+                <figcaption>Validation losses consistently scale with model size.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-10-17-Fluid-fig3.png' width=700>
+                <figcaption>Random-order models & continuous tokens scale the best in evaluation scores.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-10-17-Fluid-fig4.png' width=700>
+                <figcaption>Random-order models with continuous tokens scale with training computes.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-10-17-Fluid-fig5.png' width=700>
+                <figcaption>Strong correlation between validation loss and evaluation metrics.</figcaption>
+            </figure>
+        </td>
+    </tr>
+</table>
+<!-- </div> -->
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
