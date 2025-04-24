@@ -33,14 +33,14 @@
             <li><a href="#evaluation">Evaluation</a></li>
         </ul>
     </li>
-    <li><a href="#papers">Papers & Reading Notes (total: 54)</a></li>
+    <li><a href="#papers">Papers & Reading Notes (total: 55)</a></li>
 </ul>
 
 <br>
 <a href="reading_papers.html">[back to main contents of reading papers]</a>
 
 <br><br>
-Last updated on April 23, 2025.
+Last updated on April 24, 2025.
 
 
 <!-- Section: Summaries -->
@@ -231,6 +231,19 @@ Foundation models and algorithms on visual generative models.
                 <b>StepFun</b>'s <b>open-sourced</b> model (30B) for <u>text-to-video generation</u>, using DiT structure & RoPE-3D & QK-Norm & 16x16x8 VAE & two bilingual text encoders & DPO.
             </span></td>
         </tr>
+        <!-- 2024-12-05-Infinity -->
+        <tr>
+            <td><span class="datetext">2024-12-05 </span><br><a href="#2024-12-05-Infinity" class="impactmodeltext">Infinity</a></td>
+            <td>
+                <a href="https://arxiv.org/pdf/2412.04431"><span class="papertext">
+                    Infinity: Scaling Bitwise AutoRegressive Modeling for High-Resolution Image Synthesis <b><i>(arXiv 2024)</i></b>
+                </span></a> 
+                <a href="https://github.com/FoundationVision/Infinity/"><img src="https://img.shields.io/github/stars/FoundationVision/Infinity.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+            </td>
+            <td><span class="summarytext">
+                It improves VAR by applying <b>bitwise modeling</b> that makes vocabulary "infinity" to open up new posibilities of discrete <u>text-to-image generation</u> with <u>next-scale prediction</u> paradigm.
+            </span></td>
+        </tr>
         <!-- 2024-12-03-hunyuanvideo -->
         <tr>
             <td><span class="datetext">2024-12-03 </span><br><a href="#2024-12-03-hunyuanvideo" class="impactmodeltext">HunyuanVideo</a></td>
@@ -265,7 +278,7 @@ Foundation models and algorithms on visual generative models.
                 </span></a>
             </td>
             <td><span class="summarytext">
-                
+                It shows <u>auto-regressive</u> models with <b>continuous tokens beat discrete tokens counterpart</b>, and some interesting empirical observations during scaling progress.
             </span></td>
         </tr>
         <!-- 2024-07-16-DiT-MoE -->
@@ -283,7 +296,7 @@ Foundation models and algorithms on visual generative models.
         </tr>
         <!-- 2024-06-10-LlamaGen -->
         <tr>
-            <td><span class="datetext">2024-06-10</span><br><a href="#2024-06-10-LlamaGen" class="veryimpactmodeltext">LlamaGen</a></td>
+            <td><span class="datetext">2024-06-10</span><br><a href="#2024-06-10-LlamaGen" class="impactmodeltext">LlamaGen</a></td>
             <td>
                 <a href="https://arxiv.org/pdf/2406.06525"><span class="papertext">
                     Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation <b><i>(arXiv 2024)</i></b>
@@ -296,7 +309,7 @@ Foundation models and algorithms on visual generative models.
         </tr>
         <!-- 2024-04-03-VAR -->
         <tr>
-            <td><span class="datetext">2024-04-03</span><br><a href="#2024-04-03-VAR" class="veryimpactmodeltext">VAR</a></td>
+            <td><span class="datetext">2024-04-03</span><br><a href="#2024-04-03-VAR" class="impactmodeltext">VAR</a></td>
             <td>
                 <a href="https://arxiv.org/pdf/2404.02905"><span class="papertext">
                     Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction <b><i><font color="#D93053">(NeurIPS 2024 Best Paper)</font></i></b>
@@ -1672,6 +1685,99 @@ Metrics and benchmarks for evaluating visual generation performance.
 
 
 
+
+<!-- Beginning of a paper -->
+<h4 id="2024-12-05-Infinity">
+    [2024-12-05] Infinity: Scaling Bitwise AutoRegressive Modeling for High-Resolution Image Synthesis <b><i>(arXiv 2024)</i></b>
+</h4>
+<p>
+    <i><b>Authors:</b></i> Jian Han, Jinlai Liu, Yi Jiang, Bin Yan, Yuqi Zhang, Zehuan Yuan, Bingyue Peng, Xiaobing Liu
+</p>
+<p>
+    <i><b>Organizations:</b></i> ByteDance
+</p>
+<p>
+    <i><b>Summary:</b></i> It improves VAR by applying <b>bitwise modeling</b> that makes vocabulary "infinity" to open up new posibilities of discrete <u>text-to-image generation</u> with <u>next-scale prediction</u> paradigm.
+</p>
+<button onclick="toggleTable('2024-12-05-Infinity-table')">Read more</button>
+<div id="2024-12-05-Infinity-table" class="table-container">
+<table>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-12-05-Infinity-fig1.png' width=600>
+                <figcaption><b>Viusal tokenization and quantization:</b> instead of predicting 2**d indices, infinite-vocabulary classifier predicts d bits instead.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-12-05-Infinity-fig2.png' width=600>
+        <figcaption><b>Text prompt:</b> T5 text embedding is projected into a token as the input of the first scale.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2024-12-05-Infinity-fig3.png' width=500>
+                <figcaption><b>Performance:</b> Infinity is fast & better.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2024-12-05-Infinity-fig4.png' width=400>
+                <figcaption><b>Tokenizer performance:</b> discrete outperforms continuous.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2024-12-05-Infinity-fig5.png' width=500>
+                <figcaption><b>Inifinite-Vocabulary Classifier:</b> low memory & better.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2024-12-05-Infinity-fig8.png' width=400>
+                <figcaption><b>Self-correction</b> mitigates the train-test discrepancy.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-12-05-Infinity-fig6.png' width=900>
+                <figcaption><b>Scaling up vocabulary:</b> larger vocabulary & larger model size performs the best.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-12-05-Infinity-fig7.png' width=900>
+                <figcaption><b>Scaling model size:</b> strong correlation between validation loss and evaluation metrics.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-12-05-Infinity-fig9.png' width=900>
+                <figcaption><b>2D RoPE</b> outperforms APE.</figcaption>
+            </figure>
+        </td>
+    </tr>
+</table>
+</div>
+<p><a href="#top">[back to top]</a></p>
+<!-- End of a paper -->
+
+
+
+
 <!-- Beginning of a paper -->
 <h4 id="2024-12-03-hunyuanvideo">
     [2024-12-03] HunyuanVideo: A Systematic Framework For Large Video Generative Models <b><i>(arXiv 2024)</i></b>
@@ -1748,13 +1854,10 @@ Metrics and benchmarks for evaluating visual generation performance.
     <i><b>Organizations:</b></i> Google DeepMind, MIT
 </p>
 <p>
-    <i><b>Summary:</b></i> 
+    <i><b>Summary:</b></i> It shows <u>auto-regressive</u> models with <b>continuous tokens beat discrete tokens counterpart</b>, and some interesting empirical observations during scaling progress.
 </p>
-<!-- <button onclick="toggleTable('template-table')">Read more</button> -->
-<!-- <div id="template-table" class="table-container"> -->
-<ul>
-    <li>
-</ul>
+<button onclick="toggleTable('2024-10-17-Fluid-table')">Read more</button>
+<div id="2024-10-17-Fluid-table" class="table-container">
 <table>
     <tr>
         <td colspan="2">
@@ -1802,7 +1905,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         </td>
     </tr>
 </table>
-<!-- </div> -->
+</div>
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
