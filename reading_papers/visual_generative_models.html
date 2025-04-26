@@ -40,7 +40,7 @@
 <a href="reading_papers.html">[back to main contents of reading papers]</a>
 
 <br><br>
-Last updated on April 24, 2025.
+Last updated on April 26, 2025.
 
 
 <!-- Section: Summaries -->
@@ -910,7 +910,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         <!-- 2021-04-18-clipscore -->
         <tr>
             <td><span class="datetext">2021-04-18</span><br><a href="#2021-04-18-clipscore" class="veryimpactmodeltext">
-                CLIP Score
+                CLIPScore
                 <br><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/visual_generative_models-clipscore.ipynb" class="notetext">(notes in jupyter)</a>
             </a></td>
             <td>
@@ -982,6 +982,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2025-04-15] SimpleAR: Pushing the Frontier of Autoregressive Visual Generation through Pretraining, SFT, and RL <b><i>(arXiv 2025)</i></b>
 </h4>
 <p>
+    <i><b>Project:</b></i> SimpleAR
+</p>
+<p>
     <i><b>Authors:</b></i> Junke Wang, Zhi Tian, Xun Wang, Xinyu Zhang, Weilin Huang, Zuxuan Wu, Yu-Gang Jiang
 </p>
 <p>
@@ -1008,8 +1011,11 @@ Metrics and benchmarks for evaluating visual generation performance.
 
 <!-- Beginning of a paper -->
 <h4 id="2025-04-15-Seedream 3.0">
-    [2025-04-15] Seedream 3.0 Technical Report
+    [2025-04-15] Seedream 3.0 Technical Report <b><i>(arXiv 2025)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> Seedream 3.0
+</p>
 <p>
     <i><b>Authors:</b></i> ByteDance Seed Vision Team
 </p>
@@ -1034,7 +1040,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td>
             <figure>
                 <img src='figs/2025-04-15-Seedream 3.0-fig1.png' width=600>
-                <figcaption>Seedream3.0 achieves the best ELO performance.</figcaption>
+                <figcaption>Seedream3.0 achieves <b>the best ELO performance</b>.</figcaption>
             </figure>
         </td>
     </tr>
@@ -1049,6 +1055,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2025-04-11-Seaweed-7B">
     [2025-04-11] Seaweed-7B: Cost-Effective Training of Video Generation Foundation Model <b><i>(arXiv 2025)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> Seaweed-7B
+</p>
 <p>
     <i><b>Authors:</b></i> ByteDance Seaweed Team
 </p>
@@ -1065,7 +1074,14 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td colspan="2">
             <figure>
                 <img src='figs/2025-04-11-Seaweed-7B-fig1.png' width=900>
-                <figcaption><b>Video data processing.</b> <b>Temporal splitting:</b> internal splitter; Spatial cropping: use FFmpeg to remove black border, and develop models for text, logo, watermark, and special effects detection; <b>Quality filtering:</b> >256 pixels, within [1/3, 3/1] aspect ratio, elimitenate static clips and undeseirable movements, camera shake & playback speed detection, safty, artifact detection. <b>Multi-aspect data balancing & video deduplication:</b> clustering. <b>Simulation data:</b> use graphics engines to synthesize videos. <b>Video captioning:</b> a short & a long caption. <b>System prompt:</b> video types, camera position, camera angles, camera movement, visual styles.</figcaption>
+                <figcaption>
+                    <b>Video data processing.</b>
+                    <br><b>Temporal splitting:</b> internal splitter; Spatial cropping: use FFmpeg to remove black border, and develop models for text, logo, watermark, and special effects detection;
+                    <br><b>Quality filtering:</b> >256 pixels, within [1/3, 3/1] aspect ratio, elimitenate static clips and undeseirable movements, camera shake & playback speed detection, safty, artifact detection. 
+                    <br><b>Multi-aspect data balancing & video deduplication:</b> clustering. 
+                    <br><b>Simulation data:</b> use graphics engines to synthesize videos. 
+                    <br><b>Video captioning:</b> a short & a long caption. 
+                    <br><b>System prompt:</b> video types, camera position, camera angles, camera movement, visual styles.</figcaption>
             </figure>
         </td>
     </tr>
@@ -1087,7 +1103,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td colspan="2">
             <figure>
                 <img src='figs/2025-04-11-Seaweed-7B-fig4.png' width=900>
-                <figcaption>Use mixed resolution & durations & frame rate training converges slower but performs better than training on low resolution.</figcaption>
+                <figcaption>Use <b>mixed resolution & durations & frame rate</b> training converges slower but performs better than training on low resolution.</figcaption>
             </figure>
         </td>
     </tr>
@@ -1095,7 +1111,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td>
             <figure>
                 <img src='figs/2025-04-11-Seaweed-7B-fig6.png' width=650>
-                <figcaption>Full attention enjoys training scalability.</figcaption>
+                <figcaption><b>Full attention</b> enjoys training scalability.</figcaption>
             </figure>
         </td>
         <td>
@@ -1109,7 +1125,11 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td colspan="2">
             <figure>
                 <img src='figs/2025-04-11-Seaweed-7B-fig7.png' width=600>
-                <figcaption>Four-stage training procedure. Use <u>multi-task training</u>: text-to-video, image-to-video, video-to-video. Input features and conditioning features are channel-concatenated, with a binary mask indicating the condition. Ratio of image-to-video is 20% during pre-training, and increasing to 50%-75% detached for fine-tuning. <b>SFT:</b> use 700k good videos and 50k top videos, the following ability drops a little. <b>RLHF:</b> lr=1e-7, beta=100, select from 4 samples from different seeds. <b>Distillation:</b> trajectory segmented consistency distillation + CFG distillation + adversarial training, distill to 8 steps.</figcaption>
+                <figcaption><b>Four-stage training procedure.
+                <br></b> Use <b>multi-task training</b>: text-to-video, image-to-video, video-to-video. Input features and conditioning features are channel-concatenated, with a binary mask indicating the condition. Ratio of image-to-video is 20% during pre-training, and increasing to 50%-75% detached for fine-tuning.
+                <br><b>SFT:</b> use 700k good videos and 50k top videos, the following ability drops a little.
+                <br><b>RLHF:</b> lr=1e-7, beta=100, select from 4 samples from different seeds.
+                <br><b>Distillation:</b> trajectory segmented consistency distillation + CFG distillation + adversarial training, distill to 8 steps.</figcaption>
             </figure>
         </td>
     </tr>
@@ -1132,6 +1152,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2025-03-26] Wan: Open and Advanced Large-Scale Video Generative Models <b><i>(arXiv 2025)</i></b>
 </h4>
 <p>
+    <i><b>Project:</b></i> Wan
+</p>
+<p>
     <i><b>Authors:</b></i> Wan
 </p>
 <p>
@@ -1147,7 +1170,14 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td colspan="2">
             <figure>
                 <img src='figs/2025-03-26-Wan-fig1.png' width=900>
-                <figcaption><b>Data procssing pipeline</b>. <b>Fundenmental dimensions:</b> text detection, aesthetic evaluation, NSFW score, watermark & logo detection, black border detection, overexposure detection, synthetic image detection, blur detection, duration & resolution. <b>Visual quality:</b> clustering, scoring. <b>Motion quality:</b> optimal motion, medium-quality motion, static videos, camera-driven motion, low-quality motion, shaky camera footage. <b>Visual text data:</b> hundreds of millions of text-containing images by rendering Chinese characters on a pure white background and large amounts from real-world data. <b>Captions:</b> celebrities, landmarks, movie characters, object counting, OCR, camera angle and motion, fine-grained categories, relational understanding, re-caption, editing instruction caption, group image description, human-annotated image and video captions.</figcaption>
+                <figcaption>
+                    <b>Data procssing pipeline</b>. 
+                    <br><b>Fundenmental dimensions:</b> text detection, aesthetic evaluation, NSFW score, watermark & logo detection, black border detection, overexposure detection, synthetic image detection, blur detection, duration & resolution.
+                    <br><b>Visual quality:</b> clustering, scoring.
+                    <br><b>Motion quality:</b> optimal motion, medium-quality motion, static videos, camera-driven motion, low-quality motion, shaky camera footage.
+                    <br><b>Visual text data:</b> hundreds of millions of text-containing images by rendering Chinese characters on a pure white background and large amounts from real-world data.
+                    <br><b>Captions:</b> celebrities, landmarks, movie characters, object counting, OCR, camera angle and motion, fine-grained categories, relational understanding, re-caption, editing instruction caption, group image description, human-annotated image and video captions.
+                </figcaption>
             </figure>
         </td>
     </tr>
@@ -1177,7 +1207,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td colspan="2">
             <figure>
                 <img src='figs/2025-03-26-Wan-fig5.png' width=600>
-                <figcaption>I2V framework. Image condition is injected by channel-concat and CLIP image encoder.</figcaption>
+                <figcaption><b>I2V framework.</b> Image condition is injected by channel-concat and CLIP image encoder.</figcaption>
             </figure>
         </td>
     </tr>
@@ -1192,6 +1222,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2025-03-14-Step-Video-TI2V">
     [2025-03-14] Step-Video-TI2V Technical Report: A State-of-the-Art Text-Driven Image-to-Video Generation Model <b><i>(arXiv 2025)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> Step-Video-TI2V
+</p>
 <p>
     <i><b>Authors:</b></i> Step-Video Team
 </p>
@@ -1210,7 +1243,9 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td>
             <figure>
                 <img src='figs/2025-03-14-Step-Video-TI2V-fig1.png' width=700>
-                <figcaption><b>Image conditioning:</b> <u>channel-wise concatenation</u> of <u>noise-augmented</u> and <u>zero-padded</u> image condition and input noise. <b>Motion conditioning:</b> motion is extracted using optical flow and is <u>combined with timestep</u>. </figcaption>
+                <figcaption>
+                    <b>Image conditioning:</b> <u>channel-wise concatenation</u> of <u>noise-augmented</u> and <u>zero-padded</u> image condition and input noise.
+                    <br><b>Motion conditioning:</b> motion is extracted using optical flow and is <u>combined with timestep</u>. </figcaption>
             </figure>
         </td>
     </tr>
@@ -1225,6 +1260,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2025-03-10-Inference-Beat-Pretraining">
     [2025-03-10] Ideas in Inference-time Scaling can Benefit Generative Pre-training Algorithms <b><i>(arXiv 2025)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> Inference Beat Pretraining
+</p>
 <p>
     <i><b>Authors:</b></i> Jiaming Song, Linqi Zhou
 </p>
@@ -1254,6 +1292,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2025-03-10-Seedream2.0">
     [2025-03-10] Seedream 2.0: A Native Chinese-English Bilingual Image Generation Foundation Model <b><i>(arXiv 2025)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> Seedream2.0
+</p>
 <p>
     <i><b>Authors:</b></i> ByteDance's Seed Vision Team
 </p>
@@ -1330,6 +1371,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2025-03-07] Unified Reward Model for Multimodal Understanding and Generation<b><i>(arXiv 2025)</i></b>
 </h4>
 <p>
+    <i><b>Project:</b></i> UnifiedReward
+</p>
+<p>
     <i><b>Authors:</b></i> Yibin Wang, Yuhang Zang, Hao Li, Cheng Jin, Jiaqi Wang
 </p>
 <p>
@@ -1340,9 +1384,6 @@ Metrics and benchmarks for evaluating visual generation performance.
 </p>
 <button onclick="toggleTable('2025-03-07-UnifiedReward-table')">Read more</button>
 <div id="2025-03-07-UnifiedReward-table" class="table-container">
-<ul>
-    <li>
-</ul>
 <table>
     <tr>
         <td>
@@ -1364,6 +1405,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2025-02-24-IGTR">
     [2025-02-24] Autoregressive Image Generation Guided by Chains of Thought <b><i>(arXiv 2025)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> IGTR
+</p>
 <p>
     <i><b>Authors:</b></i> Miaomiao Cai, Guanjie Wang, Wei Li, Zhijun Tu, Hanting Chen, Shaohui Lin, Jie Hu
 </p>
@@ -1397,6 +1441,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2025-02-18] Is Noise Conditioning Necessary for Denoising Generative Models? <b><i>(arXiv 2025)</i></b>
 </h4>
 <p>
+    <i><b>Project:</b></i> noise-unconditional-model
+</p>
+<p>
     <i><b>Authors:</b></i> Qiao Sun, Zhicheng Jiang, Hanhong Zhao, Kaiming He
 </p>
 <p>
@@ -1421,6 +1468,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2025-02-14-Step-Video-T2V">
     [2025-02-14] Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model <b><i>(arXiv 2025)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> Step-Video-T2V
+</p>
 <p>
     <i><b>Authors:</b></i> Step-Video Team
 </p>
@@ -1473,7 +1523,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td colspan="2">
             <figure>
                 <img src='figs/2025-02-14-Step-Video-T2V-fig7.png' width=700>
-            <figcaption>Pre-training details. </figcaption>
+            <figcaption><b>Pre-training</b> details. </figcaption>
             </figure>
         </td>
     </tr>
@@ -1481,7 +1531,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td colspan="2">
             <figure>
                 <img src='figs/2025-02-14-Step-Video-T2V-fig6.png' width=900>
-                <figcaption>Data filtering details. </figcaption>
+                <figcaption><b>Data filtering</b> details. </figcaption>
             </figure>
         </td>
     </tr>
@@ -1496,6 +1546,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2025-01-23-flowrar">
     [2025-01-23] Improving Video Generation with Human Feedback <b><i>(arXiv 2025)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> Flow-RAR, Flow-DPO
+</p>
 <p>
     <i><b>Authors:</b></i> Jie Liu, Gongye Liu, Jiajun Liang, Ziyang Yuan, Xiaokun Liu, Mingwu Zheng, Xiele Wu, Qiulin Wang, Wenyu Qin, Menghan Xia, Xintao Wang, Xiaohong Liu, Fei Yang, Pengfei Wan, Di Zhang, Kun Gai, Yujiu Yang, Wanli Ouyang
 </p>
@@ -1514,6 +1567,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2025-01-23-cot">
     [2025-01-23] Can We Generate Images with CoT? Let's Verify and Reinforce Image Generation Step by Step <b><i>(arXiv 2025)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> PARM
+</p>
 <p>
     <i><b>Authors:</b></i> Ziyu Guo, Renrui Zhang, Chengzhuo Tong, Zhizheng Zhao, Peng Gao, Hongsheng Li, Pheng-Ann Heng
 </p>
@@ -1557,6 +1613,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2025-01-16] Inference-Time Scaling for Diffusion Models beyond Scaling Denoising Steps <b><i>(CVPR 2025)</i></b>
 </h4>
 <p>
+    <i><b>Project:</b></i> Scaling Analysis
+</p>
+<p>
     <i><b>Authors:</b></i> Ma, Shangyuan Tong, Haolin Jia, Hexiang Hu, Yu-Chuan Su, Mingda Zhang, Xuan Yang, Yandong Li, Tommi Jaakkola, Xuhui Jia, Saining Xie
 </p>
 <p>
@@ -1585,13 +1644,13 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td>
             <figure>
                 <img src='figs/2025-01-16-scaling-analysis fig1.png' width=400>
-                <figcaption>Scale with search is more effective than with denoising steps.</figcaption>
+                <figcaption><b>Scale with search</b> is more effective than denoising steps.</figcaption>
             </figure>
         </td>
         <td>
             <figure>
                 <img src='figs/2025-01-16-scaling-analysis fig2.png' width=500>
-        <figcaption>Random Search performs the best because it converges fastest.</figcaption>
+                <figcaption><b>Random Search</b> performs the best because it converges fastest.</figcaption>
             </figure>
         </td>
     </tr>
@@ -1606,6 +1665,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2024-12-24-FGA-BLIP2">
     [2024-12-24] EvalMuse-40K: A Reliable and Fine-Grained Benchmark with Comprehensive Human Annotations for Text-to-Image Generation Model Evaluation <b><i>(arXiv 2024)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> FGA-BLIP2
+</p>
 <p>
     <i><b>Authors:</b></i> Shuhao Han, Haotian Fan, Jiachen Fu, Liang Li, Tao Li, Junhui Cui, Yunqiu Wang, Yang Tai, Jingwei Sun, Chunle Guo, Chongyi Li
 </p>
@@ -1627,6 +1689,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2024-12-14] Zigzag Diffusion Sampling: Diffusion Models Can Self-Improve via Self-Reflection <b><i>(ICLR 2025)</i></b>
 </h4>
 <p>
+    <i><b>Project:</b></i> Sampling
+</p>
+<p>
     <i><b>Authors:</b></i> Lichen Bai, Shitong Shao, Zikai Zhou, Zipeng Qi, Zhiqiang Xu, Haoyi Xiong, Zeke Xie
 </p>
 <p>
@@ -1642,19 +1707,19 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td>
             <figure>
                 <img src='figs/2024-12-14-Z-Sampling-fig1.png' width=230>
-                <figcaption>Iteratively denoising & inversion.</figcaption>
+                <figcaption>Iterative <b>denoising & inversion</b>.</figcaption>
             </figure>
         </td>
         <td>
             <figure>
                 <img src='figs/2024-12-14-Z-Sampling-fig2.png' width=340>
-        <figcaption>Capture more semantics by denoising more times.</figcaption>
+        <figcaption>Capture more <b>semantics</b> by denoising more times.</figcaption>
             </figure>
         </td>
         <td>
             <figure>
                 <img src='figs/2024-12-14-Z-Sampling-fig3.png' width=330>
-        <figcaption>More efficient & effective than standard sampling.</figcaption>
+        <figcaption>More <b>efficient & effective</b> than standard.</figcaption>
             </figure>
         </td>
     </tr>
@@ -1670,6 +1735,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2024-12-09-Flow Matching Guide and Code">
     [2024-12-09] Flow Matching Guide and Code <b><i>(arXiv 2024)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> Flow Matchiing Guide and Code
+</p>
 <p>
     <i><b>Authors:</b></i> Yaron Lipman, Marton Havasi, Peter Holderrieth, Neta Shaul, Matt Le, Brian Karrer, Ricky T. Q. Chen, David Lopez-Paz, Heli Ben-Hamu, Itai Gat
 </p>
@@ -1690,6 +1758,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2024-12-05-Infinity">
     [2024-12-05] Infinity: Scaling Bitwise AutoRegressive Modeling for High-Resolution Image Synthesis <b><i>(arXiv 2024)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> Infinity
+</p>
 <p>
     <i><b>Authors:</b></i> Jian Han, Jinlai Liu, Yi Jiang, Bin Yan, Yuqi Zhang, Zehuan Yuan, Bingyue Peng, Xiaobing Liu
 </p>
@@ -1783,6 +1854,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2024-12-03] HunyuanVideo: A Systematic Framework For Large Video Generative Models <b><i>(arXiv 2024)</i></b>
 </h4>
 <p>
+    <i><b>Project:</b></i> HunyuanVideo
+</p>
+<p>
     <i><b>Authors:</b></i> Hunyuan Foundation Model Team
 </p>
 <p>
@@ -1801,6 +1875,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2024-11-27-Reliable-Seed">
     [2024-11-27] Enhancing Compositional Text-to-Image Generation with Reliable Random Seeds <b><i>(ICLR 2025)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> Reliable-Seed
+</p>
 <p>
     <i><b>Authors:</b></i> Shuangqi Li, Hieu Le, Jingyi Xu, Mathieu Salzmann
 </p>
@@ -1828,6 +1905,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2024-10-17] Movie Gen: A Cast of Media Foundation Models <b><i>(arXiv 2024)</i></b>
 </h4>
 <p>
+    <i><b>Project:</b></i> MovieGen
+</p>
+<p>
     <i><b>Authors:</b></i> Adam Polyak et al.
 </p>
 <p>
@@ -1847,6 +1927,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2024-10-17-Fluid">
     [2024-10-17] Fluid: Scaling Autoregressive Text-to-image Generative Models with Continuous Tokens <b><i>(ICLR 2025)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> Fluid
+</p>
 <p>
     <i><b>Authors:</b></i> Lijie Fan, Tianhong Li, Siyang Qin, Yuanzhen Li, Chen Sun, Michael Rubinstein, Deqing Sun, Kaiming He, Yonglong Tian
 </p>
@@ -1876,7 +1959,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td colspan="2">
             <figure>
                 <img src='figs/2024-10-17-Fluid-fig2.png' width=700>
-                <figcaption>Validation losses consistently scale with model size.</figcaption>
+                <figcaption><b>Validation losses</b> consistently scale with model size.</figcaption>
             </figure>
         </td>
     </tr>
@@ -1884,7 +1967,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td colspan="2">
             <figure>
                 <img src='figs/2024-10-17-Fluid-fig3.png' width=700>
-                <figcaption>Random-order models & continuous tokens scale the best in evaluation scores.</figcaption>
+                <figcaption><b>Random-order</b> models & <b>continuous tokens</b> the best in <b>evaluation scores</b>.</figcaption>
             </figure>
         </td>
     </tr>
@@ -1892,7 +1975,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td colspan="2">
             <figure>
                 <img src='figs/2024-10-17-Fluid-fig4.png' width=700>
-                <figcaption>Random-order models with continuous tokens scale with training computes.</figcaption>
+                <figcaption><b>Random-order</b> models & <b>continuous tokens</b> scale with <b>training computes</b>.</figcaption>
             </figure>
         </td>
     </tr>
@@ -1900,7 +1983,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td colspan="2">
             <figure>
                 <img src='figs/2024-10-17-Fluid-fig5.png' width=700>
-                <figcaption>Strong correlation between validation loss and evaluation metrics.</figcaption>
+                <figcaption>Strong correlation between <b>validation loss & evaluation metrics</b>.</figcaption>
             </figure>
         </td>
     </tr>
@@ -1916,6 +1999,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2024-07-19-t2vcompbench">
     [2024-07-19] T2V-CompBench: A Comprehensive Benchmark for Compositional Text-to-video Generation <b><i>(arXiv 2024)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> T2V-CompBench
+</p>
 <p>
     <i><b>Authors:</b></i> Kaiyue Sun, Kaiyi Huang, Xian Liu, Yue Wu, Zihan Xu, Zhenguo Li, Xihui Liu
 </p>
@@ -1962,6 +2048,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2024-07-16] Scaling Diffusion Transformers to 16 Billion Parameters <b><i>(arXiv 2024)</i></b>
 </h4>
 <p>
+    <i><b>Project:</b></i> DiT-MoE
+</p>
+<p>
     <i><b>Authors:</b></i> Zhengcong Fei, Mingyuan Fan, Changqian Yu, Debang Li, Junshi Huang
 </p>
 <p>
@@ -1982,7 +2071,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td>
             <figure>
                 <img src='figs/2024-07-16-DiT-MoE-fig1.png' width=700>
-                <figcaption>DiT-MoE is built upon DiT and replaces MLP of Transformer block by sparsely activatd mixture of MLPs as experts.</figcaption>
+                <figcaption>DiT-MoE is built upon <b>DiT</b> and replaces MLP of Transformer block by sparsely activatd mixture of MLPs as experts.</figcaption>
             </figure>
         </td>
     </tr>
@@ -1997,6 +2086,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2024-06-10-LlamaGen">
     [2024-06-10] Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation <b><i>(arXiv 2024)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> LlamaGen
+</p>
 <p>
     <i><b>Authors:</b></i> Peize Sun, Yi Jiang, Shoufa Chen, Shilong Zhang, Bingyue Peng, Ping Luo, Zehuan Yuan
 </p>
@@ -2025,6 +2117,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2024-05-23] Learning Multi-dimensional Human Preference for Text-to-Image Generation <b><i>(CVPR 2024)</i></b>
 </h4>
 <p>
+    <i><b>Project:</b></i> MPS
+</p>
+<p>
     <i><b>Authors:</b></i> Sixian Zhang, Bohan Wang, Junqiang Wu, Yan Li, Tingting Gao, Di Zhang, Zhongyuan Wang
 </p>
 <p>
@@ -2043,6 +2138,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2024-04-03-VAR">
     [2024-04-03] Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction <b><i>(NeurIPS 2024 Best Paper)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> VAR
+</p>
 <p>
     <i><b>Authors:</b></i> Keyu Tian, Yi Jiang, Zehuan Yuan, Bingyue Peng, Liwei Wang
 </p>
@@ -2100,6 +2198,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2024-04-01] Evaluating Text-to-Visual Generation with Image-to-Text Generation <b><i>(ECCV 2024)</i></b>
 </h4>
 <p>
+    <i><b>Project:</b></i> VQAScore
+</p>
+<p>
     <i><b>Authors:</b></i> Zhiqiu Lin, Deepak Pathak, Baiqi Li, Jiayao Li, Xide Xia, Graham Neubig, Pengchuan Zhang, Deva Ramanan
 </p>
 <p>
@@ -2131,6 +2232,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2024-03-18] Fast High-Resolution Image Synthesis with Latent Adversarial Diffusion Distillation <b><i>(SIGGRAPH Asia 2024)</i></b>
 </h4>
 <p>
+    <i><b>Project:</b></i> SD3-Turbo
+</p>
+<p>
     <i><b>Authors:</b></i> Axel Sauer, Frederic Boesel, Tim Dockhorn, Andreas Blattmann, Patrick Esser, Robin Rombach
 </p>
 <p>
@@ -2141,9 +2245,6 @@ Metrics and benchmarks for evaluating visual generation performance.
 </p>
 <button onclick="toggleTable('2024-03-18-SD3-Turbo-table')">Read more</button>
 <div id="2024-03-18-SD3-Turbo-table" class="table-container">
-<ul>
-    <li>
-</ul>
 <table>
     <tr colspan="2">
         <td>
@@ -2157,7 +2258,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td>
             <figure>
                 <img src='figs/2024-03-18-SD3-Turbo-fig2.png' width=700>
-                <figcaption><b>Observations:</b> (1) Training with <u>synthetic data works better than with real data</u>. (2) Training on synthetic data <u>only needs the adversarial loss</u>.</figcaption>
+                <figcaption>(1) Training with <b>synthetic data works better than real data</b>. (2) Training on synthetic data <b>only needs the adversarial loss</b>.</figcaption>
             </figure>
         </td>
     </tr>
@@ -2165,7 +2266,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td>
             <figure>
                 <img src='figs/2024-03-18-SD3-Turbo-fig3.png' width=700>
-                <figcaption><b>Observations:</b> (1) Training using <u>LADD performs better than LCM</u>. (2) LCM may need larger models like SDXL-LCM, instand of SD1.5-LCM.</figcaption>
+                <figcaption>(1) Training using <b>LADD performs better than LCM</b>. (2) LCM may need larger models like SDXL-LCM, instand of SD1.5-LCM.</figcaption>
             </figure>
         </td>
     </tr>
@@ -2173,7 +2274,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td>
             <figure>
                 <img src='figs/2024-03-18-SD3-Turbo-fig4.png' width=700>
-                <figcaption><b>Observations:</b> <u>Student model size significant impacts performance</u>, while the benefits of teacher models and data quality plateau.</figcaption>
+                <figcaption><b>Student model size</b> significant impacts performance, while the benefits of teacher models and data quality plateau.</figcaption>
             </figure>
         </td>
     </tr>
@@ -2181,7 +2282,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td>
             <figure>
                 <img src='figs/2024-03-18-SD3-Turbo-fig5.png' width=700>
-                <figcaption>Use <u>LoRA for DPO-traning</u>, and <u>apply DPO-LoRA after LADD training</u>.</figcaption>
+                <figcaption>Use <b>LoRA for DPO-traning</b>, and <b>apply DPO-LoRA after LADD training</b>.</figcaption>
             </figure>
         </td>
     </tr>
@@ -2197,6 +2298,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2024-03-08-DPG-Bench">
     [2024-03-08] ELLA: Equip Diffusion Models with LLM for Enhanced Semantic Alignment <b><i>(arXiv 2024)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> DPG-Bench
+</p>
 <p>
     <i><b>Authors:</b></i> Xiwei Hu, Rui Wang, Yixiao Fang, Bin Fu, Pei Cheng, Gang Yu
 </p>
@@ -2228,6 +2332,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2023-12-19] InstructVideo: Instructing Video Diffusion Models with Human Feedback <b><i>(CVPR 2024)</i></b>
 </h4>
 <p>
+    <i><b>Project:</b></i> InstructVideo
+</p>
+<p>
     <i><b>Authors:</b></i> Hangjie Yuan, Shiwei Zhang, Xiang Wang, Yujie Wei, Tao Feng, Yining Pan, Yingya Zhang, Ziwei Liu, Samuel Albanie, Dong Ni
 </p>
 <p>
@@ -2243,7 +2350,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td>
             <figure>
                 <img src='figs/2023-12-19-InstructVideo-fig1.png' width=700>
-                <figcaption>It takes reward fine-tuning as an <u>editing task</u> to accelerate training. The reward model is HPS v2. TAR assigns larger weight to central frames.</figcaption>
+                <figcaption>It takes reward fine-tuning as an <b>editing task</b> to accelerate training. The reward model is HPS v2. TAR assigns larger weight to central frames.</figcaption>
             </figure>
         </td>
     </tr>
@@ -2259,6 +2366,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2023-11-21-Diffusion-DPO">
     [2023-11-21] Diffusion Model Alignment Using Direct Preference Optimization <b><i>(CVPR 2024)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> Diffusion-DPO
+</p>
 <p>
     <i><b>Authors:</b></i> Bram Wallace, Meihua Dang, Rafael Rafailov, Linqi Zhou, Aaron Lou, Senthil Purushwalkam, Stefano Ermon, Caiming Xiong, Shafiq Joty, Nikhil Naik
 </p>
@@ -2285,6 +2395,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2023-11-29-vbench">
     [2023-11-29] VBench: Comprehensive Benchmark Suite for Video Generative Models <b><i>(CVPR 2024)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> VBench
+</p>
 <p>
     <i><b>Authors:</b></i> Ziqi Huang, Yinan He, Jiashuo Yu, Fan Zhang, Chenyang Si, Yuming Jiang, Yuanhan Zhang, Tianxing Wu, Qingyang Jin, Nattapol Chanpaisit, Yaohui Wang, Xinyuan Chen, Limin Wang, Dahua Lin, Yu Qiao, Ziwei Liu
 </p>
@@ -2337,6 +2450,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2023-10-17] GenEval: An Object-Focused Framework for Evaluating Text-to-Image Alignment <b><i>(NeurIPS 2023)</i></b>
 </h4>
 <p>
+    <i><b>Project:</b></i> GenEval
+</p>
+<p>
     <i><b>Authors:</b></i> Dhruba Ghosh, Hanna Hajishirzi, Ludwig Schmidt
 </p>
 <p>
@@ -2360,7 +2476,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td>
             <figure>
                 <img src='figs/2023-10-17-GenEval-fig2.png' width=600>
-                <figcaption>Specific evaluation perspectives of GenEval.</figcaption>
+                <figcaption>Specific <b>evaluation perspectives</b> of GenEval.</figcaption>
             </figure>
         </td>
     </tr>
@@ -2376,6 +2492,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2023-07-12] T2I-CompBench: A Comprehensive Benchmark for Open-world Compositional Text-to-image Generation <b><i>(NeurIPS 2023)</i></b>
 </h4>
 <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/visual_generative_models-t2icompbench.ipynb" class="notetext">(notes in jupyter)</a></p>
+<p>
+    <i><b>Project:</b></i> T2I-CompBench
+</p>
 <p>
     <i><b>Authors:</b></i> Kaiyi Huang, Kaiyue Sun, Enze Xie, Zhenguo Li, Xihui Liu
 </p>
@@ -2398,7 +2517,7 @@ Metrics and benchmarks for evaluating visual generation performance.
         <td>
             <figure>
                 <img src='figs/2023-07-12-t2icompbench-fig1.png' width=900>
-                <figcaption><li> Use <u>disentangled BLIP-VQA</u> to evaluate attribute binding, <u>UniDet-based mstric</u> to evaluate spatial relationship, <u>CLIPScore</u> to evaluate non-spatial relationship, <u>3-in-1 metric</u> (average score of the three metrics) to evaluate complex compositions.</figcaption>
+                <figcaption><li> Use <b>disentangled BLIP-VQA</b> to evaluate attribute binding, <b>UniDet-based metric</b> to evaluate spatial relationship, <b>CLIPScore</b> to evaluate non-spatial relationship, <b>3-in-1 metric</b> (average score of the three metrics) to evaluate complex compositions.</figcaption>
             </figure>
         </td>
     </tr>
@@ -2413,6 +2532,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2023-07-04-SDXL">
     [2023-07-04] SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis <b><i>(ICLR 2024)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> SDXL
+</p>
 <p>
     <i><b>Authors:</b></i> Dustin Podell, Zion English, Kyle Lacey, Andreas Blattmann, Tim Dockhorn, Jonas Müller, Joe Penna, Robin Rombach
 </p>
@@ -2455,6 +2577,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 </h4>
 <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/visual_generative_models-hpsv2.ipynb" class="notetext">(notes in jupyter)</a></p>
 <p>
+    <i><b>Project:</b></i> HPS v2
+</p>
+<p>
     <i><b>Authors:</b></i> Xiaoshi Wu, Yiming Hao, Keqiang Sun, Yixiong Chen, Feng Zhu, Rui Zhao, Hongsheng Li
 </p>
 <p>
@@ -2488,6 +2613,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 </h4>
 <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/visual_generative_models-pick_score.ipynb" class="notetext">(notes in jupyter)</a></p>
 <p>
+    <i><b>Project:</b></i> PickScore
+</p>
+<p>
     <i><b>Authors:</b></i> Yuval Kirstain, Adam Polyak, Uriel Singer, Shahbuland Matiana, Joe Penna, Omer Levy
 </p>
 <p>
@@ -2507,6 +2635,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2023-04-12] ImageReward: Learning and Evaluating Human Preferences for Text-to-Image Generation <b><i>(NeurIPS 2023)</i></b>
 </h4>
 <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/visual_generative_models-image_reward.ipynb" class="notetext">(notes in jupyter)</a></p>
+<p>
+    <i><b>Project:</b></i> ImageRewward
+</p>
 <p>
     <i><b>Authors:</b></i> Jiazheng Xu, Xiao Liu, Yuchen Wu, Yuxuan Tong, Qinkai Li, Ming Ding, Jie Tang, Yuxiao Dong
 </p>
@@ -2538,6 +2669,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2023-03-25-hps">
     [2023-03-25-hps] Human Preference Score: Better Aligning Text-to-Image Models with Human Preference <b><i>(ICCV 2023)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> HPS
+</p>
 <p>
     <i><b>Authors:</b></i> Xiaoshi Wu, Keqiang Sun, Feng Zhu, Rui Zhao, Hongsheng Li
 </p>
@@ -2576,6 +2710,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 </h4>
 <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/visual_generative_models-dit.ipynb" class="notetext">(notes in jupyter)</a></p>
 <p>
+    <i><b>Project:</b></i> DiT
+</p>
+<p>
     <i><b>Authors:</b></i> William Peebles, Saining Xie
 </p>
 <p>
@@ -2613,6 +2750,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2022-12-19] Optimizing Prompts for Text-to-Image Generation <b><i>(NeurIPS 2023)</i></b>
 </h4>
 <p>
+    <i><b>Project:</b></i> promptist
+</p>
+<p>
     <i><b>Authors:</b></i> Yaru Hao, Zewen Chi, Li Dong, Furu Wei
 </p>
 <p>
@@ -2641,8 +2781,11 @@ Metrics and benchmarks for evaluating visual generation performance.
 
 <!-- Beginning of a paper -->
 <h4 id="2022-10-06-Flow Matching">
-    [2022-10-06] Flow Matching for Generative Modeling
+    [2022-10-06] Flow Matching for Generative Modeling <b><i>(ICLR 2023)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> Flow Matching
+</p>
 <p>
     <i><b>Authors:</b></i> Yaron Lipman, Ricky T. Q. Chen, Heli Ben-Hamu, Maximilian Nickel, Matt Le
 </p>
@@ -2662,6 +2805,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2022-08-25] Understanding Diffusion Models: A Unified Perspective <b><i>(arXiv 2022)</i></b>
 </h4>
 <p>
+    <i><b>Project:</b></i> Unified Perspective
+</p>
+<p>
     <i><b>Authors:</b></i> Calvin Luo
 </p>
 <p>
@@ -2679,6 +2825,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2022-05-29-cogvideo">
     [2022-05-29] CogVideo: Large-scale Pretraining for Text-to-Video Generation via Transformers <b><i>(ICLR 2023)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> CogVideo
+</p>
 <p>
     <i><b>Authors:</b></i> Wenyi Hong, Ming Ding, Wendi Zheng, Xinghan Liu, Jie Tang
 </p>
@@ -2710,6 +2859,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2021-12-20-ldm">
     [2021-12-20] High-Resolution Image Synthesis with Latent Diffusion Models <b><i>(CVPR 2022)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> LDM
+</p>
 <p>
     <i><b>Authors:</b></i> Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, Björn Ommer
 </p>
@@ -2743,6 +2895,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 </h4>
 <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/visual_generative_models-cfg.ipynb" class="notetext">(notes in jupyter)</a></p>
 <p>
+    <i><b>Project:</b></i> CFG
+</p>
+<p>
     <i><b>Authors:</b></i> Jonathan Ho, Tim Salimans
 </p>
 <p>
@@ -2761,6 +2916,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2021-04-18] CLIPScore: A Reference-free Evaluation Metric for Image Captioning <b><i>(EMNLP 2021)</i></b>
 </h4>
 <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/visual_generative_models-clipscore.ipynb" class="notetext">(notes in jupyter)</a></p>
+<p>
+    <i><b>Project:</b></i> CLIPScore
+</p>
 <p>
     <i><b>Authors:</b></i> Jack Hessel, Ari Holtzman, Maxwell Forbes, Ronan Le Bras, Yejin Choi
 </p>
@@ -2802,6 +2960,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 </h4>
 <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/visual_generative_models-ddim.ipynb" class="notetext">(notes in jupyter)</a></p>
 <p>
+    <i><b>Project:</b></i> DDIM
+</p>
+<p>
     <i><b>Authors:</b></i> Jiaming Song, Chenlin Meng, Stefano Ermon
 </p>
 <p>
@@ -2840,6 +3001,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 </h4>
 <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/visual_generative_models-ddpm.ipynb" class="notetext">(notes in jupyter)</a></p>
 <p>
+    <i><b>Project:</b></i> DDPM
+</p>
+<p>
     <i><b>Authors:</b></i> Jonathan Ho, Ajay Jain, Pieter Abbeel
 </p>
 <p>
@@ -2877,6 +3041,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2019-06-02] Generating Diverse High-Fidelity Images with VQ-VAE-2 <b><i>(NeurIPS 2019)</i></b>
 </h4>
 <p>
+    <i><b>Project:</b></i> VQ-VAE-2
+</p>
+<p>
     <i><b>Authors:</b></i> Ali Razavi, Aaron van den Oord, Oriol Vinyals
 </p>
 <p>
@@ -2908,6 +3075,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2019-05-04] FVD: A new Metric for Video Generation <b><i>(ICLR workshop 2019)</i></b>
 </h4>
 <p>
+    <i><b>Project:</b></i> FVD
+</p>
+<p>
     <i><b>Authors:</b></i> Thomas Unterthiner, Sjoerd van Steenkiste, Karol Kurach, Raphaël Marinier, Marcin Michalski, Sylvain Gelly
 </p>
 <p>
@@ -2927,6 +3097,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 <h4 id="2017-11-02-VQ-VAE">
     [2017-11-02] Neural Discrete Representation Learning <b><i>(NeurIPS 2017)</i></b>
 </h4>
+<p>
+    <i><b>Project:</b></i> VQ-VAE
+</p>
 <p>
     <i><b>Authors:</b></i> Aaron van den Oord, Oriol Vinyals, Koray Kavukcuoglu
 </p>
@@ -2964,6 +3137,9 @@ Metrics and benchmarks for evaluating visual generation performance.
 </h4>
 <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/visual_generative_models-inceptionscore_fid.ipynb" class="notetext">(notes in jupyter)</a></p>
 <p>
+    <i><b>Project:</b></i> FID
+</p>
+<p>
     <i><b>Authors:</b></i> Martin Heusel, Hubert Ramsauer, Thomas Unterthiner, Bernhard Nessler, Sepp Hochreiter
 </p>
 <p>
@@ -2983,6 +3159,9 @@ Metrics and benchmarks for evaluating visual generation performance.
     [2016-06-10] Improved Techniques for Training GANs <b><i>(NeurIPS 2016)</i></b>
 </h4>
 <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/visual_generative_models-inceptionscore_fid.ipynb" class="notetext">(notes in jupyter)</a></p>
+<p>
+    <i><b>Project:</b></i> Inception Score
+</p>
 <p>
     <i><b>Authors:</b></i> Tim Salimans, Ian Goodfellow, Wojciech Zaremba, Vicki Cheung, Alec Radford, Xi Chen
 </p>

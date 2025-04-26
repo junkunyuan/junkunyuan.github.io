@@ -27,14 +27,14 @@
             <li><a href="#foundation-model-and-algorithms">Foundation Models & Algorithms</a></li>
         </ul>
     </li>
-    <li><a href="#papers">Papers & Reading Notes (total: 3)</a></li>
+    <li><a href="#papers">Papers & Reading Notes (total: 4)</a></li>
 </ul>
 
 <br>
 <a href="reading_papers.html">[back to main contents of reading papers]</a>
 
 <br><br>
-Last updated on April 22, 2025.
+Last updated on April 26, 2025.
 
 
 <!-- Section: Foundation Models and Algorithms -->
@@ -113,13 +113,25 @@ Foundation models and algorithms on native large multimodal models.
                 An autoregressive framework for joint visual generation and understanding, using <b>continuous visual tokens</b>.
             </span></td>
         </tr>
+        <!-- 2024-08-22-Show-o -->
+        <tr>
+            <td><span class="datetext">2024-08-22</span><br><a href="#2024-08-22-Show-o" class="impactmodeltext">Show-o</a></td>
+            <td>
+                <a href="https://arxiv.org/pdf/2408.12528"><span class="papertext">
+                    Show-o: One Single Transformer to Unify Multimodal Understanding and Generation <b><i>(ICLR 2025)</i></b>
+                    <a href="https://github.com/showlab/Show-o/"><img src="https://img.shields.io/github/stars/showlab/Show-o.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                </span></a> 
+            </td>
+            <td><span class="summarytext">
+                A transformer to unify <u>multimodal understanding and generation</u>, supporting VQA, text-to-image generation, text-guided inpainting/extrapolation, mixed-modality generation.
+            </span></td>
+        </tr>
         <!-- 2024-05-16-Chameleon -->
         <tr>
             <td><span class="datetext">2024-05-16</span><br><a href="#2024-05-16-Chameleon" class="impactmodeltext">Chameleon</a></td>
             <td>
                 <a href="https://arxiv.org/pdf/2405.09818"><span class="papertext">
                     Chameleon: Mixed-Modal Early-Fusion Foundation Models <b><i>(arXiv 2024)</i></b>
-                    <!-- <a href="https://github.com/Wan-Video/Wan2.1/"><img src="https://img.shields.io/github/stars/Wan-Video/Wan2.1.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a> -->
                 </span></a> 
             </td>
             <td><span class="summarytext">
@@ -208,14 +220,22 @@ Foundation models and algorithms on native large multimodal models.
     <tr>
         <td colspan="2">
             <figure>
-                <img src='figs/2025-03-17-UniFluid-fig1.png' width=900>
+                <img src='figs/2025-03-17-UniFluid-fig1.png' width=800>
                 <figcaption><b>Framework:</b> it performs joint training of image generation and understanding through <u>next-token prediction</u>.
                 <br><b>Tokenizer:</b> use <u>VAE</u> image tokenizer for <u>generation</u>, <u>SigLIP</u> image encoder for <u>understanding</u>, <u>SentencePiece</u> tokenizer for text. 
                 <br><b>Prediction head:</b> use <u>modality-specific prediction heads</u> to calculate losses and sampling for each modality.
                 <br><b>Token split:</b> "Beginning of Image (BOI)" token to indicate continuous image tokens.
                 <br><b>Loss:</b> loss1: image understanding loss on text answer; loss 2: image generation loss on image tokens.
                 <br><b>Training details:</b> batchsize=2048, optimizer=AdamW, lr=1e-4, steps=1M, init_ckpt=Gemma-2.
-            </figcaption>
+                </figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-03-17-UniFluid-fig3.png' width=900>
+                <figcaption>There is <b>trade-off</b> between generation & understanding.</figcaption>
             </figure>
         </td>
     </tr>
@@ -223,27 +243,13 @@ Foundation models and algorithms on native large multimodal models.
         <td>
             <figure>
                 <img src='figs/2025-03-17-UniFluid-fig2.png' width=300>
-                <figcaption>Unified Training Improves Generation Performance.</figcaption>
-            </figure>
-        </td>
-        <td>
-            <figure>
-                <img src='figs/2025-03-17-UniFluid-fig3.png' width=600>
-                <figcaption>There is trade-off between generation and understanding.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2025-03-17-UniFluid-fig2.png' width=300>
-                <figcaption>Unified Training Improves Generation Performance.</figcaption>
+                <figcaption><b>Unified training</b> improves generation.</figcaption>
             </figure>
         </td>
         <td>
             <figure>
                 <img src='figs/2025-03-17-UniFluid-fig4.png' width=600>
-                <figcaption>Better Pre-trained LLM Backbone Leads to Better Visual Generation and Understanding.</figcaption>
+                <figcaption><b>Better pre-trained LLM backbone</b> leads to better visual generation & understanding.</figcaption>
             </figure>
         </td>
     </tr>
@@ -252,6 +258,80 @@ Foundation models and algorithms on native large multimodal models.
 <p><a href="#top">[back to top]</a></p>
 <!-- End of a paper -->
 
+
+
+
+<!-- Beginning of a paper -->
+<h4 id="2024-08-22-Show-o">
+    [2024-08-22] Show-o: One Single Transformer to Unify Multimodal Understanding and Generation <b><i>(ICLR 2025)</i></b>
+</h4>
+<p>
+    <i><b>Authors:</b></i> Jinheng Xie, Weijia Mao, Zechen Bai, David Junhao Zhang, Weihao Wang, Kevin Qinghong Lin, Yuchao Gu, Zhijie Chen, Zhenheng Yang, Mike Zheng Shou
+</p>
+<p>
+    <i><b>Organizations:</b></i> National University of Singapore, ByteDance
+</p>
+<p>
+    <i><b>Summary:</b></i> A transformer to unify <u>multimodal understanding and generation</u>, supporting VQA, text-to-image generation, text-guided inpainting/extrapolation, mixed-modality generation.
+</p>
+<!-- <button onclick="toggleTable('template-table')">Read more</button> -->
+<!-- <div id="template-table" class="table-container"> -->
+<table>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-08-22-Show-o-fig2.png' width=800>
+                <figcaption>
+                    <b>LLaVA:</b> input continuous vision & discrete language; use LLM; output discrete language
+                    <br><b>SD3:</b> input continuous language; use diffusion; output continous vision
+                    <br><b>LlamaGen:</b> input discrete language; use LLM; output discrete vision
+                    <br><b>NExT-GPT, SEED-X:</b> input discrete language & continuous vision; use LLM & diffusion; output discrete language & continuous vision
+                    <br><b>LWM, Chameleon:</b> input discrete language & discrete vision; use LLM; output discrete language & discrete vision
+                    <br><b>Show-o:</b> intput discrete language & discrete vision; use LLM + diffusion; output discrete language & discrete vision
+                </figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-08-22-Show-o-fig1.png' width=900>
+                <figcaption>
+                    <b>Structure:</b> it is built upon a pre-trained LLM Phi-1.5.
+                    <br><b>Tokenizer:</b> do not change text tokenizer; employ discrete image tokenizer.
+                    <br><b>Training objective:</b> next-token prediction for text; masked token prediction for images.
+                    <br><b>Training stages:</b> 
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;(1) use RefinedWeb & ImageNet-1K to learn class-conditional image generation and image captioning; 
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;(2) use image-text data CC12M, SA1B, LAION-aesthetics-12M, DataComp, COYO700M to learn t2i generation;
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;(3) use high-quality / instructional data LLaVA-Pretrain-558K, LLaVA-v1.5-mix-665K, GenHowTo to learn t2i generation & multimodal understanding & mixed-modality generation.
+                </figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-08-22-Show-o-fig3.png' width=900>
+                <figcaption>
+                    <b>Multimodal task unification:</b> using special tokens.
+                </figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-08-22-Show-o-fig4.png' width=900>
+                <figcaption>
+                    <b>Attention mechanism:</b> causal attention for text, full attention for images.
+                </figcaption>
+            </figure>
+        </td>
+    </tr>
+</table>
+<!-- </div> -->
+<p><a href="#top">[back to top]</a></p>
+<!-- End of a paper -->
 
 
 
