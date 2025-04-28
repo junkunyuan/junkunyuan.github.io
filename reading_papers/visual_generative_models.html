@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -31,16 +31,17 @@
             <li><a href="#acceleration">Acceleration</a></li>
             <li><a href="#inference-time-improvement">Inference-Time Improvement</a></li>
             <li><a href="#evaluation">Evaluation</a></li>
+            <li><a href="#downstream_tasks">Downstream Tasks</a></li>
         </ul>
     </li>
-    <li><a href="#papers">Papers & Reading Notes (total: 55)</a></li>
+    <li><a href="#papers">Papers & Reading Notes (total: 56)</a></li>
 </ul>
 
 <br>
 <a href="reading_papers.html">[back to main contents of reading papers]</a>
 
 <br><br>
-Last updated on April 26, 2025.
+Last updated on April 28, 2025.
 
 
 <!-- Section: Summaries -->
@@ -968,13 +969,87 @@ Metrics and benchmarks for evaluating visual generation performance.
 <hr>
 
 
+<!-- Section: Downstream Tasks -->
+<h3 id="downstream_tasks">Downstream Tasks</h3>
 
+Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting, etc.
+
+<table>
+    <colgroup>
+        <col style="width: 16%;">
+        <col style="width: 36%;">
+        <col style="width: 48%;">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Date & Model</th>
+            <th>Paper & Publication & Project</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- 2025-04-24-Step1X-Edit -->
+        <tr>
+            <td><span class="datetext">2025-04-24</span><br><a href="#2025-04-24-Step1X-Edit" class="modeltext">Step1X-Edit</a></td>
+            <td>
+                <a href="https://arxiv.org/pdf/2504.17761"><span class="papertext">Step1X-Edit: A Practical Framework for General Image Editing <b><i>(arXiv 2025)</i></b></span></a> 
+                <a href="https://github.com/stepfun-ai/Step1X-Edit/"><img src="https://img.shields.io/github/stars/stepfun-ai/Step1X-Edit.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+            </td>
+            <td><span class="summarytext">
+                Use a <b>MLLM to generate condition embedding</b> of the reference image and user's editing instruction, trained on 20M instruction-image data for <u>image generation editing</u>.
+            </span></td>
+        </tr>
+        </tr>
+    </tbody>
+</table>
+
+<a href="#top">[back to top]</a>
+<br><br>
+<hr>
 
 
 
 <!-- Section: Papers -->
 <h2 id="papers">Papers & Reading Notes</h2>
 
+
+<!-- Beginning of a paper -->
+<h4 id="2025-04-24-Step1X-Edit">
+    [2025-04-24] Step1X-Edit: A Practical Framework for General Image Editing <b><i>(arXiv 2025)</i></b>
+</h4>
+<p>
+    <i><b>Authors:</b></i> Step1X-Image Team
+</p>
+<p>
+    <i><b>Organizations:</b></i> StepFun
+</p>
+<p>
+    <i><b>Summary:</b></i> Use a <b>MLLM to generate condition embedding</b> of the reference image and user's editing instruction, trained on 20M instruction-image data for <u>image generation editing</u>.
+</p>
+<button onclick="toggleTable('2025-04-24-Step1X-Edit-table')">Read more</button>
+<div id="2025-04-24-Step1X-Edit-table" class="table-container">
+<ul>
+    <li>1M images & 20M instruction-image data.
+    <li><b>Data construction.</b> <u>Subject addition & removal:</u> Floerence for detection & classification; SAM-2 for segmentation; ObjectRemovalAlpha for inpainting. <u>Subject replacement & background change:</u> Floerence for detection & classification; SAM-2 for segmentation; Qwen-2.5-VL & Recognize-Anything Model & Flux-Fill for content-aware inpainting. <u>Color Alteration & material modification:</u> Floerence for detection & classification; Zeodepth for depth detection; ControlNet for generation. <u>Text modification:</u> PPOCR for OCR recognition. <u>Motion change:</u> BiRefNet & RAFT for foreground-background separation and optical flow estimation. <u>Portrait editing & beautification:</u>. <u>Style transfer:</u> edge-to-image controlled diffusion model. <u>Tone transformation:</u> color grading, dehazing, deraining, seasonal transformations, etc.
+    <li><b>Caption strategy.</b> <u>Redundancy-enhanced annotation:</u> multi-round annotation strategy. <u>Stylized annotation via contextual examples:</u> use style-aligned examples as contextual references. <u>Cost-efficient pipeline:</u> use GPT-4o to annotation training data of in-house annotator. <u>Bilingual annotation:</u> Chinese & English.
+</ul>
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-04-24-Step1X-Edit-fig1.png' width=900>
+                <figcaption>
+                    <b>Multimodal large language model:</b> generate embeddings of instruction and reference images; use Qwen-VL.
+                    <b>Connector:</b> substitute text embedding; use token refiner.
+                    <b>Diffusion Transformer</b>.
+                </figcaption>
+            </figure>
+        </td>
+    </tr>
+</table>
+</div>
+<p><a href="#top">[back to top]</a></p>
+<!-- End of a paper -->
 
 
 <!-- Beginning of a paper -->
