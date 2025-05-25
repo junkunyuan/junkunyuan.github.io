@@ -166,7 +166,7 @@ Foundation models and algorithms on visual generative models.
                 </span></a> 
             </td>
             <td><span class="summarytext">
-                <b>ByteDance Sead Vision Team</b>'s <u>text-to-image</u> generation model, improve Seedream 2.0 by defect-aware training paradigm, representation alignment, larger reward model, etc.
+                <b>ByteDance Sead Vision Team</b>'s <u>text-to-image</u> generation model (<u>MMDiT structure</u>), improve Seedream 2.0 by defect-aware training, representation alignment, larger reward model, etc.
             </span></td>
         </tr>
         <!-- 2025-04-11-Seaweed-7B -->
@@ -178,7 +178,7 @@ Foundation models and algorithms on visual generative models.
                 </span></a> 
             </td>
             <td><span class="summarytext">
-                <b>ByteDance Seaweed Team</b>'s <u>text-to-video</u> & <u>image-to-video</u> generation model (7B) with DiT structure, trained (multi-task learning) on O(100M) video clips using 665K H100 GPU hours.
+                <b>ByteDance Seaweed Team</b>'s <u>text-to-video</u> & <u>image-to-video</u> generation model (7B) with <u>DiT structure</u>, trained (multi-task learning) on O(100M) video clips using 665K H100 GPU hours.
             </span></td>
         </tr>
         <!-- 2025-03-26-Wan -->
@@ -191,7 +191,7 @@ Foundation models and algorithms on visual generative models.
                 </span></a> 
             </td>
             <td><span class="summarytext">
-                <b>Alibaba Tongyi</b>'s <b>open-sourced</b> model (14B) for <u>text-to-video & image-to-video generation</u>, using 8x8x4 VAE, DiT structure, etc.
+                <b>Alibaba Tongyi Wanxiang</b>'s <b>open-sourced</b> model (14B) for <u>text-to-video & image-to-video generation</u>, using 8x8x4 VAE, <u>DiT structure</u>, etc.
             </span></td>
         </tr>
         <!-- 2025-03-14-Step-Video-TI2V -->
@@ -229,7 +229,7 @@ Foundation models and algorithms on visual generative models.
                 </span></a> 
             </td>
             <td><span class="summarytext">
-                <b>StepFun</b>'s <b>open-sourced</b> model (30B) for <u>text-to-video generation</u>, using DiT structure & RoPE-3D & QK-Norm & 16x16x8 VAE & two bilingual text encoders & DPO.
+                <b>StepFun</b>'s <b>open-sourced</b> model (30B) for <u>text-to-video generation</u>, using <u>DiT structure</u> & RoPE-3D & QK-Norm & 16x16x8 VAE & two bilingual text encoders & DPO.
             </span></td>
         </tr>
         <!-- 2024-12-05-Infinity -->
@@ -1071,11 +1071,11 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
 <button onclick="toggleTable('2025-04-15-SimpleAR-table')">Read more</button>
 <div id="2025-04-15-SimpleAR-table" class="table-container">
 <ul>
-    <li> Use Qwen structure, Cosmos visual tokenizer: 64k codebook & 16 ratio downsample.
-    <li> Training stages: (1) 512 reso pretraining; (2) 1024 resol SFT; (3) 1024 reso RL.
+    <li> Use <b>Qwen</b> structure, <b>Cosmos</b> visual tokenizer: 64k codebook & 16 ratio downsample.
+    <li> Training stages: (1) <u>512 reso pretraining</u>; (2) <u>1024 resol SFT</u>; (3) <u>1024 reso RL</u>.
     <li> Use LLM initialization does not have remarkable effect on DPG-Bench performance (it only contains short prompts).
-    <li> 2D RoPE will not improve generation, but is necessary for dynamic resolution generation.
-    <li> Use GRPO with CLIP as reward model improves more than using HPS v2.
+    <li> <u>2D RoPE</u> <u>will not improve generation</u>, but is necessary for <u>dynamic resolution generation</u>.
+    <li> Use <u>GRPO with CLIP</u> as reward model improves more than using HPS v2.
 </ul>
 </div>
 <p><a href="#top">[back to top]</a></p>
@@ -1098,17 +1098,17 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
     <i><b>Organizations:</b></i> ByteDance
 </p>
 <p>
-    <i><b>Summary:</b></i> <b>ByteDance Sead Vision Team</b>'s <u>text-to-image</u> generation model, improve Seedream 2.0 by defect-aware training paradigm, representation alignment, larger reward model, etc.
+    <i><b>Summary:</b></i> <b>ByteDance Sead Vision Team</b>'s <u>text-to-image</u> generation model (<u>MMDiT structure</u>), improve Seedream 2.0 by defect-aware training, representation alignment, larger reward model, etc.
 </p>
 <button onclick="toggleTable('2025-04-15-Seedream 3.0-table')">Read more</button>
 <div id="2025-04-15-Seedream 3.0-table" class="table-container">
 <ul>
-    <li> Defect-aware training paradigm: stop gradient on watermarks, subtitles, overlaid text, mosaic pattern.
-    <li> Hierarchical clustering: balance term and address long-tail distributions.
-    <li> Representation alignment loss: cosine distance between the intermediate feature of MMDiT and DINOv2-L.
-    <li> Resolution-aware timestep sampling: larger shift to larger resolution training.
-    <li> Find scaling property of VLM-based reward model.
-    <li> Other improvements: (1) mixed-resolution training; (2) cross-modality RoPE; (3) diverse aesthetic captions in SFT.
+    <li> Defect-aware training paradigm: <u>stop gradient on watermarks, subtitles, overlaid text, mosaic pattern</u>.
+    <li> <u>Hierarchical clustering</u> balance term and address long-tail distributions.
+    <li> Representation alignment loss: <b>cosine distance between the intermediate feature of MMDiT and DINOv2-L</b>.
+    <li> Resolution-aware timestep sampling: <u>larger shift to larger resolution training</u>.
+    <li> Find <u>scaling property of VLM-based reward model</u>.
+    <li> Other improvements: (1) mixed-resolution training; (2) <u>cross-modality RoPE</u>; (3) diverse aesthetic captions in SFT.
 </ul>
 <table>
     <tr>
@@ -1140,7 +1140,7 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
     <i><b>Organizations:</b></i> ByteDance
 </p>
 <p>
-    <i><b>Summary:</b></i> <b>ByteDance Seaweed Team</b>'s <u>text-to-video</u> & <u>image-to-video</u> generation model (7B) with DiT structure, trained (multi-task learning) on O(100M) video clips using 665K H100 GPU hours.
+    <i><b>Summary:</b></i> <b>ByteDance Seaweed Team</b>'s <u>text-to-video</u> & <u>image-to-video</u> generation model (7B) with <u>DiT structure</u>, trained (multi-task learning) on O(100M) video clips using 665K H100 GPU hours.
 </p>
 <button onclick="toggleTable('2025-04-11-Seaweed-7B-table')">Read more</button>
 <div id="2025-04-11-Seaweed-7B-table" class="table-container">
@@ -1151,12 +1151,13 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
                 <img src='figs/2025-04-11-Seaweed-7B-fig1.png' width=900>
                 <figcaption>
                     <b>Video data processing.</b>
-                    <br><b>Temporal splitting:</b> internal splitter; Spatial cropping: use FFmpeg to remove black border, and develop models for text, logo, watermark, and special effects detection;
-                    <br><b>Quality filtering:</b> >256 pixels, within [1/3, 3/1] aspect ratio, elimitenate static clips and undeseirable movements, camera shake & playback speed detection, safty, artifact detection. 
-                    <br><b>Multi-aspect data balancing & video deduplication:</b> clustering. 
-                    <br><b>Simulation data:</b> use graphics engines to synthesize videos. 
-                    <br><b>Video captioning:</b> a short & a long caption. 
-                    <br><b>System prompt:</b> video types, camera position, camera angles, camera movement, visual styles.</figcaption>
+                    <br><u>Temporal splitting:</u> internal splitter.
+                    <br><u>Spatial cropping:</u> use FFmpeg to remove black border, and develop models for text, logo, watermark, and special effects detection;
+                    <br><u>Quality filtering:</u> >256 pixels, within [1/3, 3/1] aspect ratio, elimitenate static clips and undeseirable movements, camera shake & playback speed detection, safety, artifact detection. 
+                    <br><u>Multi-aspect data balancing & video deduplication:</u> clustering. 
+                    <br><u>Simulation data:</u> use graphics engines to synthesize videos. 
+                    <br><u>Video captioning:</u> a short & a long caption. 
+                    <br><u>System prompt:</u> video types, camera position, camera angles, camera movement, visual styles.</figcaption>
             </figure>
         </td>
     </tr>
@@ -1164,7 +1165,7 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
         <td>
             <figure>
                 <img src='figs/2025-04-11-Seaweed-7B-fig2.png' width=400>
-                <figcaption><b>VAE</b>. Use L1 + LPIPS + adversarial loss. Use both an image discriminator and a video discriminator performs better than using either one. Downsample by 16x16x4-48c or 8x8x4-16c. Smaller downsample ratios lead to faster convergence. Compress information using VAE outperforms patchification in DiT and faster.</figcaption>
+                <figcaption><b>VAE</b>. Use <u>L1 + LPIPS + adversarial loss</u>. Use both an <b>image discriminator and a video discriminator</b> performs better than using either one. Downsample by 16x16x4-48c or 8x8x4-16c. Smaller downsample ratios lead to faster convergence. <b>Compress information using VAE outperforms patchification in DiT and faster</b>.</figcaption>
             </figure>
         </td>
         <td>
@@ -1178,7 +1179,7 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
         <td colspan="2">
             <figure>
                 <img src='figs/2025-04-11-Seaweed-7B-fig4.png' width=900>
-                <figcaption>Use <b>mixed resolution & durations & frame rate</b> training converges slower but performs better than training on low resolution.</figcaption>
+                <figcaption>Use <b>mixed resolution & durations & frame rate</b> VAE training converges slower but performs better than training on low resolution.</figcaption>
             </figure>
         </td>
     </tr>
@@ -1201,9 +1202,9 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
             <figure>
                 <img src='figs/2025-04-11-Seaweed-7B-fig7.png' width=600>
                 <figcaption><b>Four-stage training procedure.
-                <br></b> Use <b>multi-task training</b>: text-to-video, image-to-video, video-to-video. Input features and conditioning features are channel-concatenated, with a binary mask indicating the condition. Ratio of image-to-video is 20% during pre-training, and increasing to 50%-75% detached for fine-tuning.
-                <br><b>SFT:</b> use 700k good videos and 50k top videos, the following ability drops a little.
-                <br><b>RLHF:</b> lr=1e-7, beta=100, select from 4 samples from different seeds.
+                <br></b> Use <b>multi-task training</b>: text-to-video, image-to-video, video-to-video. Input features and conditioning features are <u>channel-concatenated</u>, with a <u>binary mask</u> indicating the condition. Ratio of image-to-video is 20% during pre-training, and increasing to 50%-75% detached for fine-tuning.
+                <br><b>SFT:</b> use 700K good videos and 50K top videos, the following ability drops a little.
+                <br><b>RLHF:</b> <u>lr=1e-7</u>, <u>beta=100</u>, select from 4 samples from different seeds.
                 <br><b>Distillation:</b> trajectory segmented consistency distillation + CFG distillation + adversarial training, distill to 8 steps.</figcaption>
             </figure>
         </td>
@@ -1236,7 +1237,7 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
     <i><b>Organizations:</b></i> Alibaba Group
 </p>
 <p>
-    <i><b>Summary:</b></i> <b>Alibaba Tongyi</b>'s <b>open-sourced</b> model (14B) for <u>text-to-video & image-to-video generation</u>, using 8x8x4 VAE, DiT structure, etc.
+    <i><b>Summary:</b></i> <b>Alibaba Tongyi Wanxiang</b>'s <b>open-sourced</b> model (14B) for <u>text-to-video & image-to-video generation</u>, using 8x8x4 VAE, <u>DiT structure</u>, etc.
 </p>
 <button onclick="toggleTable('2025-03-26-Wan-table')">Read more</button>
 <div id="2025-03-26-Wan-table" class="table-container">
@@ -1247,11 +1248,11 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
                 <img src='figs/2025-03-26-Wan-fig1.png' width=900>
                 <figcaption>
                     <b>Data procssing pipeline</b>. 
-                    <br><b>Fundenmental dimensions:</b> text detection, aesthetic evaluation, NSFW score, watermark & logo detection, black border detection, overexposure detection, synthetic image detection, blur detection, duration & resolution.
-                    <br><b>Visual quality:</b> clustering, scoring.
-                    <br><b>Motion quality:</b> optimal motion, medium-quality motion, static videos, camera-driven motion, low-quality motion, shaky camera footage.
-                    <br><b>Visual text data:</b> hundreds of millions of text-containing images by rendering Chinese characters on a pure white background and large amounts from real-world data.
-                    <br><b>Captions:</b> celebrities, landmarks, movie characters, object counting, OCR, camera angle and motion, fine-grained categories, relational understanding, re-caption, editing instruction caption, group image description, human-annotated image and video captions.
+                    <br><u>Fundamental dimensions:</u> text detection, aesthetic evaluation, NSFW score, watermark & logo detection, black border detection, overexposure detection, synthetic image detection, blur detection, duration & resolution.
+                    <br><u>Visual quality:</u> clustering, scoring.
+                    <br><u>Motion quality:</u> optimal motion, medium-quality motion, static videos, camera-driven motion, low-quality motion, shaky camera footage.
+                    <br><u>Visual text data:</u> hundreds of millions of text-containing images by rendering Chinese characters on a pure white background and large amounts from real-world data.
+                    <br><u>Captions:</u> celebrities, landmarks, movie characters, object counting, OCR, camera angle and motion, fine-grained categories, relational understanding, re-caption, editing instruction caption, group image description, human-annotated image and video captions.
                 </figcaption>
             </figure>
         </td>
@@ -1268,7 +1269,7 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
         <td>
             <figure>
                 <img src='figs/2025-03-26-Wan-fig3.png' width=600>
-                <figcaption><b>Architecture</b>. Cross-attention for text prompts; MLP for time embeddings; Text encoder is umT5; training objective is flow-matching. Image pre-training -> image-video joint training. </figcaption>
+                <figcaption><b>Architecture</b>. Cross-attention for text prompts; MLP for time embeddings; Text encoder is umT5; training objective is flow-matching. <b>Image pre-training -> image-video joint training.</b> </figcaption>
             </figure>
         </td>
         <td>
@@ -1282,7 +1283,7 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
         <td colspan="2">
             <figure>
                 <img src='figs/2025-03-26-Wan-fig5.png' width=600>
-                <figcaption><b>I2V framework.</b> Image condition is injected by channel-concat and CLIP image encoder.</figcaption>
+                <figcaption><b>I2V framework.</b> Image condition is injected by <u>channel-concat</u> and <u>CLIP image encoder</u>.</figcaption>
             </figure>
         </td>
     </tr>
@@ -1352,7 +1353,7 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
 <ul>
     <li> Pre-training algorithms should have inference-scalability in <b>sequence length & refinement steps</b>.
     <li> Algorithms should <b>scale training efficiently</b> by reduing inference computation.
-    <li> Verifiey whether the model has <b>enough capacity to represent the target distribution</b> during inference.
+    <li> Verify whether the model has <b>enough capacity to represent the target distribution</b> during inference.
     <li> Not scalable in either sequence length or refinement steps: VAE, GAN, Normalizing Flows.
     <li> <u>Scalable in sequence length but not refinement steps:</u> GPT, PixelCNN, MaskGiT, VAR.
     <li> <u>Scalable in refinement steps but not in sequence length:</u> diffusion models, energy-based models, consistency models.
@@ -1382,10 +1383,10 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
 <button onclick="toggleTable('2025-03-10-Seedream2.0-')">Read more</button>
 <div id="2025-03-10-Seedream2.0-" class="table-container">
 <ul>
-    <li> Use a <b>self-developed bilingual LLM</b> and Glyph-Aligned <b>ByT5</b> as text encoders.
-    <li> Use a <b>self-developed VAE</b>.
-    <li> Use <b>learned positional embeddings on text tokens</b> & <b>scaled 2D RoPE on image tokens</b>.
-    <li> <b>Continue training</b>, <b>supervised fine-tuning</b>, <b>human feedback alignment</b>.
+    <li> Use a <u>self-developed bilingual LLM</u> and Glyph-Aligned <b>ByT5</b> as text encoders.
+    <li> Use a <u>self-developed VAE</u>.
+    <li> Use <u>learned positional embeddings on text tokens</u> & <u>scaled 2D RoPE on image tokens</u>.
+    <li> <u>Continue training</u>, <u>supervised fine-tuning</u>, <u>human feedback alignment</u>.
     <li> It has been incorporated into Doubao (豆包) and Dreamina (即梦).
 </ul>
 <table>
@@ -1530,7 +1531,7 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
 <button onclick="toggleTable('2025-02-18-noise-unconditional-model-table')">Read more</button>
 <div id="2025-02-18-noise-unconditional-model-table" class="table-container">
 <ul>
-    <li> Many denoising generative models perform robustly even in the absence of noise conditioning, flow-based ones can even produce improved results without noise conditioning.
+    <li> Many denoising generative models perform robustly even in the absence of noise conditioning, <u>flow-based ones can even produce improved results without noise conditioning</u>.
 </ul>
 </div>
 <p><a href="#top">[back to top]</a></p>
@@ -1553,7 +1554,7 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
     <i><b>Organizations:</b></i> StepFun
 </p>
 <p>
-    <i><b>Summary:</b></i> <b>StepFun</b>'s <b>open-sourced</b> model (30B) for <u>text-to-video generation</u>, using DiT structure & RoPE-3D & QK-Norm & 16x16x8 VAE & two bilingual text encoders & DPO.
+    <i><b>Summary:</b></i> <b>StepFun</b>'s <b>open-sourced</b> model (30B) for <u>text-to-video generation</u>, using <u>DiT structure</u> & RoPE-3D & QK-Norm & 16x16x8 VAE & two bilingual text encoders & DPO.
 </p>
 <button onclick="toggleTable('2025-02-14-Step-Video-T2V-table')">Read more</button>
 <div id="2025-02-14-Step-Video-T2V-table" class="table-container">
@@ -1667,7 +1668,7 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
         <td>
             <figure>
                 <img src='figs/2025-01-23-cot-fig1.png' width=650>
-                <figcaption>ORM is coarse, PRM does not know when to make decision, PARM combines them.</figcaption>
+                <figcaption><b>ORM is coarse, PRM does not know when to make decision, PARM combines them.</b></figcaption>
             </figure>
         </td>
         <td>
@@ -1707,10 +1708,10 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
     <li><u>Random Search</u>: run using different initial random noise and select the best by verifier.</li>
     <li><u>Zero-Order Search</u>: run under different random noise around a pivot noise and select the best by verifier, the best one is then served as a new pivot.</li>
     <li><u>Search Over Paths</u>: run under different random noise to a specific step, sample noises for each noisy sample and simulate forward process, then perform denoise and select the best candiates using verifier, continue this process until finish denoising.</li>
-    <li>Random Search performs the best because it has larger search space and accelerates the convergence.</li>
+    <li><b>Random Search performs the best because it has larger search space and accelerates the convergence.</b></li>
     <li>Scaling through search leads to substantial improvement across model sizes.</li>
     <li>No single verifier-algorithm configuration is universally optimal.</li>
-    <li>Inference-time search further improves performance of the model which has already been fine-tuned.</li>
+    <li><b>Inference-time search further improves performance of the model which has already been fine-tuned.</b></li>
     <li>Fewer denoising steps but more searching iterations enables efficient convergence but lower final performance.</li>
     <li>With a fixed inference compute budget, <u>performing search on small models can outperform larger models without search</u>.</li>
 </ul>
@@ -2022,8 +2023,8 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
             <figure>
                 <img src='figs/2024-10-17-Fluid-fig1.png' width=700>
                 <figcaption>
-                    <b>Image tokenizer:</b> images are converted to either discrete (VQGAN, 16x16 tokens with 8192 vocabulary) or continuous tokens (VAE, 32x32 with 4 channels, pathisize to 256 tokens with 16 channels).
-                    <br><b>Text tokenizer:</b> text (max length 128) is converted to discrete tokens using T5-XXL.
+                    <b>Image tokenizer:</b> images are converted to either discrete (<u>VQGAN</u>, 16x16 tokens with 8192 vocabulary) or continuous tokens (<u>VAE</u>, 32x32 with 4 channels, patchisize to 256 tokens with 16 channels).
+                    <br><b>Text tokenizer:</b> text (max length 128) is converted to discrete tokens using <u>T5-XXL</u>.
                     <br><b>Model structure:</b> transformer with cross-attention attending to text embedding.
                     <br><b>Decoder:</b> text: softmax with cross-entropy loss; image: MLP with diffusion loss.
                 </figcaption>
@@ -2042,7 +2043,7 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
         <td colspan="2">
             <figure>
                 <img src='figs/2024-10-17-Fluid-fig3.png' width=700>
-                <figcaption><b>Random-order</b> models & <b>continuous tokens</b> the best in <b>evaluation scores</b>.</figcaption>
+                <figcaption><b>Random-order</b> models & <b>continuous tokens</b> perform the best in <b>evaluation scores</b>.</figcaption>
             </figure>
         </td>
     </tr>
@@ -2137,9 +2138,9 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
 <button onclick="toggleTable('2024-07-16-DiT-MoE-table')">Read more</button>
 <div id="2024-07-16-DiT-MoE-table" class="table-container">
 <ul>
-    <li> Incorporating shared expert routing accelerates training and improves performance, but the improvement is little when using more than one expert.
-    <li> Observe the scaling performance.
-    <li> Increasing experts reduces loss but introduces more loss spikes.
+    <li> Incorporating <u>shared expert</u> routing accelerates training and improves performance, but the improvement is little when using more than one expert.
+    <li> Observe the <u>scaling performance</u>.
+    <li> <u>Increasing experts</u> <u>reduces loss</u> but introduces <u>more loss spikes</u>.
 </ul>
 <table>
     <tr>
@@ -2441,6 +2442,8 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
 <h4 id="2023-11-21-Diffusion-DPO">
     [2023-11-21] Diffusion Model Alignment Using Direct Preference Optimization <b><i>(CVPR 2024)</i></b>
 </h4>
+<p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/visual_generative_models-diffusion_dpo.ipynb" class="notetext">(notes in jupyter)</a>
+</p>
 <p>
     <i><b>Project:</b></i> Diffusion-DPO
 </p>
@@ -2617,25 +2620,16 @@ Models & techniques on downstream tasks, e.g., editing, inpainting, outpainting,
     <i><b>Organizations:</b></i> Stability AI
 </p>
 <p>
-    <i><b>Summary:</b></i> 
+    <i><b>Summary:</b></i> Employ three times <b>larger UNet backbone</b> of SD, use resolution & crop coordinates & bucketing information as <b>resolution condition</b> for training, employ a <b>refinement model</b>.
 </p>
 <button onclick="toggleTable('2023-07-04-SDXL-table')">Read more</button>
 <div id="2023-07-04-SDXL-table" class="table-container">
-<ul>
-    <li>
-</ul>
 <table>
     <tr>
         <td>
             <figure>
                 <img src='figs/2023-07-04-SDXL-fig1.png' width=600>
-                <figcaption><b>Architecture:</b>. <br>(1) SDXL uses <u>different transformer</u> blocks compared to SD.<br>(2) Use <u>two text encoders</u> OpenCLIP VIT-bigG & CLIP ViT-L.<br>(3) The final model has 2.6B parameters with 817M parameters for text encoders.<br>(4) Embeddings of <u>height & width and cropping top & left and bucketing heigh & width</u> are added to timestep embeddings.<br>(5) <u>Improve auto-encoder</u> by employing larger batchsize of 256 and EMA.<br>(6) Use a <u>refiner</u> of SDEdit for refining details. <br>(7) Training: Stage 1: 256 x 256, 600K steps, batchsize 2048. Stage 2: 512 x 512, 200K steps. Stage 3: multi-aspect training. </figcaption>
-            </figure>
-        </td>
-        <td>
-            <figure>
-                <img src='temp2.png' width=600>
-        <figcaption>caption2.</figcaption>
+                <figcaption><b>Architecture:</b>. <br>(1) SDXL uses <u>different transformer</u> blocks compared to SD.<br>(2) Use <b>two text encoders</b> OpenCLIP VIT-bigG & CLIP ViT-L.<br>(3) The final model has 2.6B parameters with 817M parameters for text encoders.<br>(4) Embeddings of <b>height & width and cropping top & left and bucketing heigh & width</b> are added to timestep embeddings.<br>(5) <u>Improve auto-encoder</u> by employing larger batchsize of 256 and EMA.<br>(6) Use a <b>refiner</b> of SDEdit for refining details. <br>(7) Training: Stage 1: 256 x 256, 600K steps, batchsize 2048. Stage 2: 512 x 512, 200K steps. Stage 3: multi-aspect training. </figcaption>
             </figure>
         </td>
     </tr>
