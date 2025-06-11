@@ -1,5 +1,5 @@
 ﻿category,date,model,paper,author,organization,paper_url,publication,project,jupyter_note,summary,detail
-Downstream Task,2025-04-24,Step1X-Edit,Step1X-Edit: A Practical Framework for General Image Editing,Step1X-Image Team,StepFun,https://arxiv.org/pdf/2504.17761,arXiv 2025,https://github.com/stepfun-ai/Step1X-Edit/,,"Use a <b>MLLM to generate condition embedding</b> of the reference image and user's editing instruction, trained on 20M instruction-image data for <u>image generation editing</u>.","<ul>
+Downstream Task,2025/4/24,Step1X-Edit,Step1X-Edit: A Practical Framework for General Image Editing,Step1X-Image Team,StepFun,https://arxiv.org/pdf/2504.17761,arXiv 2025,https://github.com/stepfun-ai/Step1X-Edit/,,"Use a <b>MLLM to generate condition embedding</b> of the reference image and user's editing instruction, trained on 20M instruction-image data for <u>image generation editing</u>.","<ul>
     <li>1M images & 20M instruction-image data.
     <li><b>Data construction.</b> <u>Subject addition & removal:</u> Floerence for detection & classification; SAM-2 for segmentation; ObjectRemovalAlpha for inpainting. <u>Subject replacement & background change:</u> Floerence for detection & classification; SAM-2 for segmentation; Qwen-2.5-VL & Recognize-Anything Model & Flux-Fill for content-aware inpainting. <u>Color Alteration & material modification:</u> Floerence for detection & classification; Zeodepth for depth detection; ControlNet for generation. <u>Text modification:</u> PPOCR for OCR recognition. <u>Motion change:</u> BiRefNet & RAFT for foreground-background separation and optical flow estimation. <u>Portrait editing & beautification:</u>. <u>Style transfer:</u> edge-to-image controlled diffusion model. <u>Tone transformation:</u> color grading, dehazing, deraining, seasonal transformations, etc.
     <li><b>Caption strategy.</b> <u>Redundancy-enhanced annotation:</u> multi-round annotation strategy. <u>Stylized annotation via contextual examples:</u> use style-aligned examples as contextual references. <u>Cost-efficient pipeline:</u> use GPT-4o to annotation training data of in-house annotator. <u>Bilingual annotation:</u> Chinese & English.
@@ -18,14 +18,14 @@ Downstream Task,2025-04-24,Step1X-Edit,Step1X-Edit: A Practical Framework for Ge
         </td>
     </tr>
 </table>"
-Foundation Models & Algorithms,2025-04-15,SimpleAR,"SimpleAR: Pushing the Frontier of Autoregressive Visual Generation through Pretraining, SFT, and RL","Junke Wang, Zhi Tian, Xun Wang, Xinyu Zhang, Weilin Huang, Zuxuan Wu, Yu-Gang Jiang","Fudan University, ByteDance Seed",https://arxiv.org/pdf/2504.11455,arXiv 2025,https://github.com/wdrink/SimpleAR/,,"A <b>vanilla, open-sourced AR</b> model (0.5B) for <u>1K text-to-image generation</u>, trained by pre-training, SFT, RL (GRPO), acceleration (KV cache, vLLM serving, speculative jacobi decoding).","<ul>
+Foundation Model & Algorithm,2025/4/15,SimpleAR,"SimpleAR: Pushing the Frontier of Autoregressive Visual Generation through Pretraining, SFT, and RL","Junke Wang, Zhi Tian, Xun Wang, Xinyu Zhang, Weilin Huang, Zuxuan Wu, Yu-Gang Jiang","Fudan University, ByteDance Seed",https://arxiv.org/pdf/2504.11455,arXiv 2025,https://github.com/wdrink/SimpleAR/,,"A <b>vanilla, open-sourced AR</b> model (0.5B) for <u>1K text-to-image generation</u>, trained by pre-training, SFT, RL (GRPO), acceleration (KV cache, vLLM serving, speculative jacobi decoding).","<ul>
     <li> Use <b>Qwen</b> structure, <b>Cosmos</b> visual tokenizer: 64k codebook & 16 ratio downsample.
     <li> Training stages: (1) <u>512 reso pretraining</u>; (2) <u>1024 resol SFT</u>; (3) <u>1024 reso RL</u>.
     <li> Use LLM initialization does not have remarkable effect on DPG-Bench performance (it only contains short prompts).
     <li> <u>2D RoPE</u> <u>will not improve generation</u>, but is necessary for <u>dynamic resolution generation</u>.
     <li> Use <u>GRPO with CLIP</u> as reward model improves more than using HPS v2.
 </ul>"
-Foundation Models & Algorithms,2025-04-15,Seedream 3.0,Seedream 3.0 Technical Report,ByteDance Seed Vision Team,ByteDance,https://arxiv.org/pdf/2504.11346,arXiv 2025,,,"<b>ByteDance Sead Vision Team</b>'s <u>text-to-image</u> generation model (<u>MMDiT structure</u>), improve Seedream 2.0 by defect-aware training, representation alignment, larger reward model, etc.","<ul>
+Foundation Model & Algorithm,2025/4/15,Seedream 3.0,Seedream 3.0 Technical Report,ByteDance Seed Vision Team,ByteDance,https://arxiv.org/pdf/2504.11346,arXiv 2025,,,"<b>ByteDance Sead Vision Team</b>'s <u>text-to-image</u> generation model (<u>MMDiT structure</u>), improve Seedream 2.0 by defect-aware training, representation alignment, larger reward model, etc.","<ul>
     <li> Defect-aware training paradigm: <u>stop gradient on watermarks, subtitles, overlaid text, mosaic pattern</u>.
     <li> <u>Hierarchical clustering</u> balance term and address long-tail distributions.
     <li> Representation alignment loss: <b>cosine distance between the intermediate feature of MMDiT and DINOv2-L</b>.
@@ -43,7 +43,7 @@ Foundation Models & Algorithms,2025-04-15,Seedream 3.0,Seedream 3.0 Technical Re
         </td>
     </tr>
 </table>"
-Foundation Models & Algorithms,2025-04-11,Seaweed-7B,Seaweed-7B: Cost-Effective Training of Video Generation Foundation Model,ByteDance Seaweed Team,ByteDance,https://arxiv.org/pdf/2504.08685,arXiv 2025,,,"<b>ByteDance Seaweed Team</b>'s <u>text-to-video</u> & <u>image-to-video</u> generation model (7B) with <u>DiT structure</u>, trained (multi-task learning) on O(100M) video clips using 665K H100 GPU hours.","<table>
+Foundation Model & Algorithm,2025/4/11,Seaweed-7B,Seaweed-7B: Cost-Effective Training of Video Generation Foundation Model,ByteDance Seaweed Team,ByteDance,https://arxiv.org/pdf/2504.08685,arXiv 2025,,,"<b>ByteDance Seaweed Team</b>'s <u>text-to-video</u> & <u>image-to-video</u> generation model (7B) with <u>DiT structure</u>, trained (multi-task learning) on O(100M) video clips using 665K H100 GPU hours.","<table>
     <tr>
         <td colspan=""2"">
             <figure>
@@ -117,7 +117,7 @@ Foundation Models & Algorithms,2025-04-11,Seaweed-7B,Seaweed-7B: Cost-Effective 
         </td>
     </tr>
 </table>"
-Foundation Models & Algorithms,2025-03-26,Wan,Wan: Open and Advanced Large-Scale Video Generative Models,Wan,Alibaba Group,https://arxiv.org/pdf/2503.20314,arXiv 2025,https://github.com/Wan-Video/Wan2.1/,,"<b>Alibaba Tongyi Wanxiang</b>'s <b>open-sourced</b> model (14B) for <u>text-to-video & image-to-video generation</u>, using 8x8x4 VAE, <u>DiT structure</u>, etc.","<table>
+Foundation Model & Algorithm,2025/3/26,Wan,Wan: Open and Advanced Large-Scale Video Generative Models,Wan,Alibaba Group,https://arxiv.org/pdf/2503.20314,arXiv 2025,https://github.com/Wan-Video/Wan2.1/,,"<b>Alibaba Tongyi Wanxiang</b>'s <b>open-sourced</b> model (14B) for <u>text-to-video & image-to-video generation</u>, using 8x8x4 VAE, <u>DiT structure</u>, etc.","<table>
     <tr>
         <td colspan=""2"">
             <figure>
@@ -164,7 +164,7 @@ Foundation Models & Algorithms,2025-03-26,Wan,Wan: Open and Advanced Large-Scale
         </td>
     </tr>
 </table>"
-Foundation Models & Algorithms,2025-03-14,Step-Video-TI2V,Step-Video-TI2V Technical Report: A State-of-the-Art Text-Driven Image-to-Video Generation Model,Step-Video Team,StepFun,https://arxiv.org/pdf/2503.11251,arXiv 2025,https://github.com/stepfun-ai/Step-Video-TI2V/,,"<b>StepFun</b>'s <b>open-sourced</b> model (30B) for <u>image-to-video generation</u>, trained upon Step-Video-T2V, by using channel concat of image condition and timestep-combined motion condition.","<table>
+Foundation Model & Algorithm,2025/3/14,Step-Video-TI2V,Step-Video-TI2V Technical Report: A State-of-the-Art Text-Driven Image-to-Video Generation Model,Step-Video Team,StepFun,https://arxiv.org/pdf/2503.11251,arXiv 2025,https://github.com/stepfun-ai/Step-Video-TI2V/,,"<b>StepFun</b>'s <b>open-sourced</b> model (30B) for <u>image-to-video generation</u>, trained upon Step-Video-T2V, by using channel concat of image condition and timestep-combined motion condition.","<table>
     <tr>
         <td>
             <figure>
@@ -176,17 +176,17 @@ Foundation Models & Algorithms,2025-03-14,Step-Video-TI2V,Step-Video-TI2V Techni
         </td>
     </tr>
 </table>"
-Surveys & Insights,2025-03-10,Inference Beat Pretraining,Ideas in Inference-time Scaling can Benefit Generative Pre-training Algorithms,"Jiaming Song, Linqi Zhou",Luma AI,https://arxiv.org/pdf/2503.07154,arXiv 2025,,,"Analyze pre-training algorithm design from a <b>inference-first perspective</b>, and scaling inference from a unified perspective of scaling <u>sequence length & refinement steps</u>.","<ul>
+Survey & Insight,2025/3/10,Inference Beat Pretraining,Ideas in Inference-time Scaling can Benefit Generative Pre-training Algorithms,"Jiaming Song, Linqi Zhou",Luma AI,https://arxiv.org/pdf/2503.07154,arXiv 2025,,,"Analyze generative pre-training algorithm design from an <b>inference-first perspective</b>, and scaling inference from a unified perspective of scaling <u>sequence length & refinement steps</u>.","<ul>
     <li> Pre-training algorithms should have inference-scalability in <b>sequence length & refinement steps</b>.
     <li> Algorithms should <b>scale training efficiently</b> by reduing inference computation.
-    <li> Verify whether the model has <b>enough capacity to represent the target distribution</b> during inference.
-    <li> Not scalable in either sequence length or refinement steps: VAE, GAN, Normalizing Flows.
+    <li> One should verify whether the model has <b>enough capacity to represent the target distribution</b> during inference.
+    <li> <u>Not scalable in either sequence length or refinement steps:</u> VAE, GAN, Normalizing Flows.
     <li> <u>Scalable in sequence length but not refinement steps:</u> GPT, PixelCNN, MaskGiT, VAR.
     <li> <u>Scalable in refinement steps but not in sequence length:</u> diffusion models, energy-based models, consistency models.
     <li> <u>Scalable in both, with sequence length in the outer loop:</u> AR-Diffusion, Rolling diffusion, MAR.
     <li> <u>Scalable in both, with refinement steps in the outer loop:</u> autoregression distribution smoothing.
 </ul>"
-Foundation Models & Algorithms,2025-03-10,Seedream2.0,Seedream 2.0: A Native Chinese-English Bilingual Image Generation Foundation Model,ByteDance's Seed Vision Team,ByteDance's Seed Vision Team,https://arxiv.org/pdf/2503.07703,arXiv 2025,,,"<b>ByteDance Sead Vision Team</b> 's foundation model for <u>image genertion</u> with native <u>Chinese-English</u> bilingual capability, where some techniques such as scaled RoPE, SFT, RLHF are employed.","<ul>
+Foundation Model & Algorithm,2025/3/10,Seedream2.0,Seedream 2.0: A Native Chinese-English Bilingual Image Generation Foundation Model,ByteDance's Seed Vision Team,ByteDance's Seed Vision Team,https://arxiv.org/pdf/2503.07703,arXiv 2025,,,"<b>ByteDance Sead Vision Team</b> 's foundation model for <u>image genertion</u> with native <u>Chinese-English</u> bilingual capability, where some techniques such as scaled RoPE, SFT, RLHF are employed.","<ul>
     <li> Use a <u>self-developed bilingual LLM</u> and Glyph-Aligned <b>ByT5</b> as text encoders.
     <li> Use a <u>self-developed VAE</u>.
     <li> Use <u>learned positional embeddings on text tokens</u> & <u>scaled 2D RoPE on image tokens</u>.
@@ -239,7 +239,7 @@ Foundation Models & Algorithms,2025-03-10,Seedream2.0,Seedream 2.0: A Native Chi
         </td>
     </tr>
 </table>"
-Evaluation,2025-03-07,UnifiedReward,Unified Reward Model for Multimodal Understanding and Generation,"Yibin Wang, Yuhang Zang, Hao Li, Cheng Jin, Jiaqi Wang","Fudan University, Shanghai Innovation Institute, Shanghai AI Lab, Shanghai Academy of Artificial Intelligence for Science",https://arxiv.org/pdf/2503.05236,arXiv 2025,https://github.com/CodeGoat24/UnifiedReward/,,A unified reward model for both <b>multimodal understanding & generation evaluation</b> by <u>pairwise ranking & pointwise scoring</u>.,"<table>
+Evaluation,2025/3/7,UnifiedReward,Unified Reward Model for Multimodal Understanding and Generation,"Yibin Wang, Yuhang Zang, Hao Li, Cheng Jin, Jiaqi Wang","Fudan University, Shanghai Innovation Institute, Shanghai AI Lab, Shanghai Academy of Artificial Intelligence for Science",https://arxiv.org/pdf/2503.05236,arXiv 2025,https://github.com/CodeGoat24/UnifiedReward/,,A unified reward model for both <b>multimodal understanding & generation evaluation</b> by <u>pairwise ranking & pointwise scoring</u>.,"<table>
     <tr>
         <td>
             <figure>
@@ -249,7 +249,7 @@ Evaluation,2025-03-07,UnifiedReward,Unified Reward Model for Multimodal Understa
         </td>
     </tr>
 </table>"
-Inference-Time Improvement,2025-02-24,IGTR,Autoregressive Image Generation Guided by Chains of Thought,"Miaomiao Cai, Guanjie Wang, Wei Li, Zhijun Tu, Hanting Chen, Shaohui Lin, Jie Hu","University of Science and Technology of China, Huawei Noah's Ark Lab, East China Normal University",https://arxiv.org/pdf/2502.16965,arXiv 2025,,,Insert reasoning prompts to improve <u>auto-regressive image generation</u> performance by <b>Chain-of-Thought</b>.,"<table>
+Inference-Time Improvement,2025/2/24,IGTR,Autoregressive Image Generation Guided by Chains of Thought,"Miaomiao Cai, Guanjie Wang, Wei Li, Zhijun Tu, Hanting Chen, Shaohui Lin, Jie Hu","University of Science and Technology of China, Huawei Noah's Ark Lab, East China Normal University",https://arxiv.org/pdf/2502.16965,arXiv 2025,,,Insert reasoning prompts to improve <u>auto-regressive image generation</u> performance by <b>Chain-of-Thought</b>.,"<table>
     <tr>
         <td>
             <figure>
@@ -259,10 +259,11 @@ Inference-Time Improvement,2025-02-24,IGTR,Autoregressive Image Generation Guide
         </td>
     </tr>
 </table>"
-Surveys & Insights,2025-02-18,noise-unconditional model,Is Noise Conditioning Necessary for Denoising Generative Models?,"Qiao Sun, Zhicheng Jiang, Hanhong Zhao, Kaiming He",MiT,https://arxiv.org/pdf/2502.13129,arXiv 2025,,,Theoretical and empirical analysis on noise-unconditional denoising <u>diffusion models</u> <b>without a timestep input</b> for <u>image generation</u>.,"<ul>
-    <li> Many denoising generative models perform robustly even in the absence of noise conditioning, <u>flow-based ones can even produce improved results without noise conditioning</u>.
+Survey & Insight,2025/2/18,noise-unconditional model,Is Noise Conditioning Necessary for Denoising Generative Models?,"Qiao Sun, Zhicheng Jiang, Hanhong Zhao, Kaiming He",MiT,https://arxiv.org/pdf/2502.13129,ICML 2025,,,Theoretical and empirical analysis on denoising <u>diffusion models</u> <b>without a timestep input</b> for <u>image generation</u>.,"<ul>
+    <li> Many denoising generative models perform robustly even in the absence of noise conditioning.
+    <li> <u>Flow-based ones can even produce improved results without noise conditioning</u>.
 </ul>"
-Foundation Models & Algorithms,2025-02-14,Step-Video-T2V,"Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model",Step-Video Team,StepFun,https://arxiv.org/pdf/2502.10248,arXiv 2025,https://github.com/stepfun-ai/Step-Video-T2V/,,"<b>StepFun</b>'s <b>open-sourced</b> model (30B) for <u>text-to-video generation</u>, using <u>DiT structure</u> & RoPE-3D & QK-Norm & 16x16x8 VAE & two bilingual text encoders & DPO.","<table>
+Foundation Model & Algorithm,2025/2/14,Step-Video-T2V,"Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model",Step-Video Team,StepFun,https://arxiv.org/pdf/2502.10248,arXiv 2025,https://github.com/stepfun-ai/Step-Video-T2V/,,"<b>StepFun</b>'s <b>open-sourced</b> model (30B) for <u>text-to-video generation</u>, using <u>DiT structure</u> & RoPE-3D & QK-Norm & 16x16x8 VAE & two bilingual text encoders & DPO.","<table>
     <tr>
         <td>
             <figure>
@@ -316,7 +317,7 @@ Foundation Models & Algorithms,2025-02-14,Step-Video-T2V,"Step-Video-T2V Technic
         </td>
     </tr>
 </table>"
-"Reinforcement Learning, Inference-Time Improvement",2025-01-23,PARM,Images with CoT? Let's Verify and Reinforce Image Generation Step by Step,"Ziyu Guo, Renrui Zhang, Chengzhuo Tong, Zhizheng Zhao, Peng Gao, Hongsheng Li, Pheng-Ann Heng","CUHK, Peking University, Shanghai AI Lab",https://arxiv.org/pdf/2501.13926,arXiv 2025,https://github.com/ZiyuGuo99/Image-Generation-CoT/,,Apply <b>Chain-of-Thought</b> into <u>image generation</u> and combine it with reinforcement learning to further improve performance.,"<ul>
+"Reinforcement Learning, Inference-Time Improvement",2025/1/23,PARM,Images with CoT? Let's Verify and Reinforce Image Generation Step by Step,"Ziyu Guo, Renrui Zhang, Chengzhuo Tong, Zhizheng Zhao, Peng Gao, Hongsheng Li, Pheng-Ann Heng","CUHK, Peking University, Shanghai AI Lab",https://arxiv.org/pdf/2501.13926,arXiv 2025,https://github.com/ZiyuGuo99/Image-Generation-CoT/,,Apply <b>Chain-of-Thought</b> into <u>image generation</u> and combine it with reinforcement learning to further improve performance.,"<ul>
     <li>Test-time verification and DPO are effective, where Outcome Reward Model (ORM) and DPO performs better than Process Reward Model (PRM).</li>
     <li>Verification and DPO are complementary.</li>
     <li>Propose Potential Assessment Reward Model (PARM) to combine the advantages of ORM and PRM.</li>
@@ -338,8 +339,8 @@ Foundation Models & Algorithms,2025-02-14,Step-Video-T2V,"Step-Video-T2V Technic
         </td>
     </tr>
 </table>"
-Reinforcement Learning,2025-01-23,Flow-RWR<br>Flow-DPO,Improving Video Generation with Human Feedback,"Jie Liu, Gongye Liu, Jiajun Liang, Ziyang Yuan, Xiaokun Liu, Mingwu Zheng, Xiele Wu, Qiulin Wang, Wenyu Qin, Menghan Xia, Xintao Wang, Xiaohong Liu, Fei Yang, Pengfei Wan, Di Zhang, Kun Gai, Yujiu Yang, Wanli Ouyang","CUHK, Tsinghua University, Kuaishou Technology, Shanghai Jiao Tong University, Shanghai AI Lab",https://arxiv.org/pdf/2501.13918,arXiv 2025,https://github.com/KwaiVGI/VideoAlign/,,A <u>human preference video dataset</u>; Adapt diffusion-based reinforcement learning to <u>flow-based</u> <u>video generation</u> models.,
-Inference-Time Improvement,2025-01-16,Scaling Analysis,Inference-Time Scaling for Diffusion Models beyond Scaling Denoising Steps,"Ma, Shangyuan Tong, Haolin Jia, Hexiang Hu, Yu-Chuan Su, Mingda Zhang, Xuan Yang, Yandong Li, Tommi Jaakkola, Xuhui Jia, Saining Xie","NYU, MIT, Google",https://arxiv.org/pdf/2501.09732,CVPR 2025,,,Analysis on <b>inference-time scaling</b> of diffusion models for <u>image generation</u> from the axes of <b>verifiers</b> and <b>algorithms</b>.,"<ul>
+Reinforcement Learning,2025/1/23,Flow-RWR<br>Flow-DPO,Improving Video Generation with Human Feedback,"Jie Liu, Gongye Liu, Jiajun Liang, Ziyang Yuan, Xiaokun Liu, Mingwu Zheng, Xiele Wu, Qiulin Wang, Wenyu Qin, Menghan Xia, Xintao Wang, Xiaohong Liu, Fei Yang, Pengfei Wan, Di Zhang, Kun Gai, Yujiu Yang, Wanli Ouyang","CUHK, Tsinghua University, Kuaishou Technology, Shanghai Jiao Tong University, Shanghai AI Lab",https://arxiv.org/pdf/2501.13918,arXiv 2025,https://github.com/KwaiVGI/VideoAlign/,,A <u>human preference video dataset</u>; Adapt diffusion-based reinforcement learning to <u>flow-based</u> <u>video generation</u> models.,
+Inference-Time Improvement,2025/1/16,Scaling Analysis,Inference-Time Scaling for Diffusion Models beyond Scaling Denoising Steps,"Ma, Shangyuan Tong, Haolin Jia, Hexiang Hu, Yu-Chuan Su, Mingda Zhang, Xuan Yang, Yandong Li, Tommi Jaakkola, Xuhui Jia, Saining Xie","NYU, MIT, Google",https://arxiv.org/pdf/2501.09732,CVPR 2025,,,Analysis on <b>inference-time scaling</b> of diffusion models for <u>image generation</u> from the axes of <b>verifiers</b> and <b>algorithms</b>.,"<ul>
     <li>Use some <u>verifiers</u> to provide <u>feedback</u>: FID, IS, CLIP, DINO; Aesthetic Score Predictor, CLIPScore, ImageReward, Ensemble.</li>
     <li>Use some <u>algorithms</u> to find <u>better noise</u>: <u>Random Search</u>, Zero-Order Search, Search Over Paths.</li>
     <li><u>Random Search</u>: run using different initial random noise and select the best by verifier.</li>
@@ -368,8 +369,8 @@ Inference-Time Improvement,2025-01-16,Scaling Analysis,Inference-Time Scaling fo
         </td>
     </tr>
 </table>"
-Evaluation,2024-12-24,FGA-BLIP2,EvalMuse-40K: A Reliable and Fine-Grained Benchmark with Comprehensive Human Annotations for Text-to-Image Generation Model Evaluation,"Shuhao Han, Haotian Fan, Jiachen Fu, Liang Li, Tao Li, Junhui Cui, Yunqiu Wang, Yang Tai, Jingwei Sun, Chunle Guo, Chongyi Li","Nankai University, ByteDance Inc, NKIARI",https://arxiv.org/pdf/2412.18150,arXiv 2024,https://github.com/DYEvaLab/EvalMuse/,,Use 40K image-text pairs with fine-grained human annotations for <u>image generation evaluation</u>.,
-Inference-Time Improvement,2024-12-14,Z-Sampling,Zigzag Diffusion Sampling: Diffusion Models Can Self-Improve via Self-Reflection,"Lichen Bai, Shitong Shao, Zikai Zhou, Zipeng Qi, Zhiqiang Xu, Haoyi Xiong, Zeke Xie","The Hong Kong University of Science and Technology (Guangzhou), Mohamed bin Zayed University of Artificial Intelligence, Baidu Inc",https://arxiv.org/pdf/2412.10891,ICLR 2025,https://github.com/xie-lab-ml/Zigzag-Diffusion-Sampling/,,Use <b>guidance gap between denosing and inversion</b> and iteratively perform them to improve <u>image generation</u> quality.,"<table>
+Evaluation,2024/12/24,FGA-BLIP2,EvalMuse-40K: A Reliable and Fine-Grained Benchmark with Comprehensive Human Annotations for Text-to-Image Generation Model Evaluation,"Shuhao Han, Haotian Fan, Jiachen Fu, Liang Li, Tao Li, Junhui Cui, Yunqiu Wang, Yang Tai, Jingwei Sun, Chunle Guo, Chongyi Li","Nankai University, ByteDance Inc, NKIARI",https://arxiv.org/pdf/2412.18150,arXiv 2024,https://github.com/DYEvaLab/EvalMuse/,,Use 40K image-text pairs with fine-grained human annotations for <u>image generation evaluation</u>.,
+Inference-Time Improvement,2024/12/14,Z-Sampling,Zigzag Diffusion Sampling: Diffusion Models Can Self-Improve via Self-Reflection,"Lichen Bai, Shitong Shao, Zikai Zhou, Zipeng Qi, Zhiqiang Xu, Haoyi Xiong, Zeke Xie","The Hong Kong University of Science and Technology (Guangzhou), Mohamed bin Zayed University of Artificial Intelligence, Baidu Inc",https://arxiv.org/pdf/2412.10891,ICLR 2025,https://github.com/xie-lab-ml/Zigzag-Diffusion-Sampling/,,Use <b>guidance gap between denosing and inversion</b> and iteratively perform them to improve <u>image generation</u> quality.,"<table>
     <tr>
         <td>
             <figure>
@@ -391,8 +392,8 @@ Inference-Time Improvement,2024-12-14,Z-Sampling,Zigzag Diffusion Sampling: Diff
         </td>
     </tr>
 </table>"
-Surveys & Insights,2024-12-09,Flow Matching Guide and Code,Flow Matching Guide and Code,"Yaron Lipman, Marton Havasi, Peter Holderrieth, Neta Shaul, Matt Le, Brian Karrer, Ricky T. Q. Chen, David Lopez-Paz, Heli Ben-Hamu, Itai Gat","FAIR at Meta, MIT CSAIL, Weizmann Institute of Science",https://arxiv.org/pdf/2412.06264,arXiv 2024,https://github.com/facebookresearch/flow_matching/,,"Comprehensive and self-contained review of the <b>flow matching</b> algorithm, covering its mathmatical foundations, design choices, extensions, and code implementations.",
-Foundation Models & Algorithms,2024-12-05,Infinity,Infinity: Scaling Bitwise AutoRegressive Modeling for High-Resolution Image Synthesis,"Jian Han, Jinlai Liu, Yi Jiang, Bin Yan, Yuqi Zhang, Zehuan Yuan, Bingyue Peng, Xiaobing Liu",ByteDance,https://arxiv.org/pdf/2412.04431,arXiv 2024,https://github.com/FoundationVision/Infinity/,,"It improves VAR by applying <b>bitwise modeling</b> that makes vocabulary ""infinity"" to open up new posibilities of discrete <u>text-to-image generation</u> with <u>next-scale prediction</u> paradigm.","<table>
+Survey & Insight,2024/12/9,Flow Matching Guide and Code,Flow Matching Guide and Code,"Yaron Lipman, Marton Havasi, Peter Holderrieth, Neta Shaul, Matt Le, Brian Karrer, Ricky T. Q. Chen, David Lopez-Paz, Heli Ben-Hamu, Itai Gat","FAIR at Meta, MIT CSAIL, Weizmann Institute of Science",https://arxiv.org/pdf/2412.06264,arXiv 2024,https://github.com/facebookresearch/flow_matching/,,"Comprehensive and self-contained review of the <b>flow matching</b> algorithm, covering its mathmatical foundations, design choices, extensions, and code implementations.",
+Foundation Model & Algorithm,2024/12/5,Infinity,Infinity: Scaling Bitwise AutoRegressive Modeling for High-Resolution Image Synthesis,"Jian Han, Jinlai Liu, Yi Jiang, Bin Yan, Yuqi Zhang, Zehuan Yuan, Bingyue Peng, Xiaobing Liu",ByteDance,https://arxiv.org/pdf/2412.04431,arXiv 2024,https://github.com/FoundationVision/Infinity/,,"It improves VAR by applying <b>bitwise modeling</b> that makes vocabulary ""infinity"" to open up new posibilities of discrete <u>text-to-image generation</u> with <u>next-scale prediction</u> paradigm.","<table>
     <tr>
         <td colspan=""2"">
             <figure>
@@ -462,13 +463,13 @@ Foundation Models & Algorithms,2024-12-05,Infinity,Infinity: Scaling Bitwise Aut
         </td>
     </tr>
 </table>"
-Foundation Models & Algorithms,2024-12-03,HunyuanVideo,HunyuanVideo: A Systematic Framework For Large Video Generative Models,Hunyuan Multimodal Generation Team,Tencent,https://arxiv.org/pdf/2412.03603,arXiv 2024,https://github.com/Tencent/HunyuanVideo/,,"<b>Tencent</b> (Hunyuan Team)'s <b>open-sourced</b> <u>video generation</u> model (13B) using <u>diffusion transformer</u> and conducting fine-grained data curation, captioning, and training scaling.",
-Fine-Tuning,2024-11-27,Reliable Seed,Enhancing Compositional Text-to-Image Generation with Reliable Random Seeds,"Shuangqi Li, Hieu Le, Jingyi Xu, Mathieu Salzmann","EPFL, Stony Brook University",https://arxiv.org/pdf/2411.18810,ICLR 2025,,,"The <b>noises initialized by reliable seeds</b> result in accurate <u>image generation</u> such as <u>numeracy</u> and <u>position</u>, and use these generated data for fine-tuning further improves performance.","<ul>
+Foundation Model & Algorithm,2024/12/3,HunyuanVideo,HunyuanVideo: A Systematic Framework For Large Video Generative Models,Hunyuan Multimodal Generation Team,Tencent,https://arxiv.org/pdf/2412.03603,arXiv 2024,https://github.com/Tencent/HunyuanVideo/,,"<b>Tencent</b> (Hunyuan Team)'s <b>open-sourced</b> <u>video generation</u> model (13B) using <u>diffusion transformer</u> and conducting fine-grained data curation, captioning, and training scaling.",
+Fine-Tuning,2024/11/27,Reliable Seed,Enhancing Compositional Text-to-Image Generation with Reliable Random Seeds,"Shuangqi Li, Hieu Le, Jingyi Xu, Mathieu Salzmann","EPFL, Stony Brook University",https://arxiv.org/pdf/2411.18810,ICLR 2025,,,"The <b>noises initialized by reliable seeds</b> result in accurate <u>image generation</u> such as <u>numeracy</u> and <u>position</u>, and use these generated data for fine-tuning further improves performance.","<ul>
     <li> There is a strong correlation between initial seeds and object arrangement.
     <li> Certain noise signals are more likely to result in accurate compositional generation: numeracy and position.
 </ul>"
-Foundation Models & Algorithms,2024-10-17,MovieGen,Movie Gen: A Cast of Media Foundation Models, Adam Polyak et al.,Meta,https://arxiv.org/pdf/2410.13720,arXiv 2024,,,A <u>diffusion transformer</u>-based model (30B) for 16s / 1080p / 16 fps <u>video and synchronized audio generation</u>.,
-Foundation Models & Algorithms,2024-10-17,Fluid,Fluid: Scaling Autoregressive Text-to-image Generative Models with Continuous Tokens,"Lijie Fan, Tianhong Li, Siyang Qin, Yuanzhen Li, Chen Sun, Michael Rubinstein, Deqing Sun, Kaiming He, Yonglong Tian","Google DeepMind, MIT",https://arxiv.org/pdf/2410.13863,ICLR 2025,,,"It shows <u>auto-regressive</u> models with <b>continuous tokens beat discrete tokens counterpart</b>, and some interesting empirical observations during scaling progress.","<table>
+Foundation Model & Algorithm,2024/10/17,MovieGen,Movie Gen: A Cast of Media Foundation Models, Adam Polyak et al.,Meta,https://arxiv.org/pdf/2410.13720,arXiv 2024,,,A <u>diffusion transformer</u>-based model (30B) for 16s / 1080p / 16 fps <u>video and synchronized audio generation</u>.,
+Foundation Model & Algorithm,2024/10/17,Fluid,Fluid: Scaling Autoregressive Text-to-image Generative Models with Continuous Tokens,"Lijie Fan, Tianhong Li, Siyang Qin, Yuanzhen Li, Chen Sun, Michael Rubinstein, Deqing Sun, Kaiming He, Yonglong Tian","Google DeepMind, MIT",https://arxiv.org/pdf/2410.13863,ICLR 2025,,,"It shows <u>auto-regressive</u> models with <b>continuous tokens beat discrete tokens counterpart</b>, and some interesting empirical observations during scaling progress.","<table>
     <tr>
         <td colspan=""2"">
             <figure>
@@ -515,7 +516,7 @@ Foundation Models & Algorithms,2024-10-17,Fluid,Fluid: Scaling Autoregressive Te
         </td>
     </tr>
 </table>"
-Evaluation,2024-07-19,T2V-CompBench,T2V-CompBench: A Comprehensive Benchmark for Compositional Text-to-video Generation,"Kaiyue Sun, Kaiyi Huang, Xian Liu, Yue Wu, Zihan Xu, Zhenguo Li, Xihui Liu","The University of Hong Kong, The Chinese University of Hong Kon, Huawei Noah's Ark Lab",https://arxiv.org/pdf/2407.14505,arXiv 2024,https://github.com/KaiyueSun98/T2V-CompBench/,,"Use 1400 prompts to evaluate <u>video generation</u> on <b>compositional generation</b>, including consistent attribute binding, dynamic attribute binding, sptial relationships, motion binding, action binding, object interations, generative numeracy.","<ul>
+Evaluation,2024/7/19,T2V-CompBench,T2V-CompBench: A Comprehensive Benchmark for Compositional Text-to-video Generation,"Kaiyue Sun, Kaiyi Huang, Xian Liu, Yue Wu, Zihan Xu, Zhenguo Li, Xihui Liu","The University of Hong Kong, The Chinese University of Hong Kon, Huawei Noah's Ark Lab",https://arxiv.org/pdf/2407.14505,arXiv 2024,https://github.com/KaiyueSun98/T2V-CompBench/,,"Use 1400 prompts to evaluate <u>video generation</u> on <b>compositional generation</b>, including consistent attribute binding, dynamic attribute binding, sptial relationships, motion binding, action binding, object interations, generative numeracy.","<ul>
     <li> Find nouns and verbs by identifying them using WordNet from Pika Discord channels, used to generate prompts by GPT-4.
     <li> <u>Consistent attribute binding:</u> two objects, two attributes, and at least one active verb from color, shape, texture, and human-related attributes.
     <li> <u>Dynamic attribute binding:</u> color and light change, shape and size change, texture change, combined change.
@@ -539,7 +540,7 @@ Evaluation,2024-07-19,T2V-CompBench,T2V-CompBench: A Comprehensive Benchmark for
         </td>
     </tr>
 </table>"
-Foundation Models & Algorithms,2024-07-16,DiT-MoE,Scaling Diffusion Transformers to 16 Billion Parameters,"Zhengcong Fei, Mingyuan Fan, Changqian Yu, Debang Li, Junshi Huang",Kunlun Inc.,https://arxiv.org/pdf/2407.11633,arXiv 2024,https://github.com/feizc/DiT-MoE/,,A <u>diffusion transformer</u> (16B) with <b>MoE</b> that inserts experts into DiT blocks for <u>image generation</u>.,"<ul>
+Foundation Model & Algorithm,2024/7/16,DiT-MoE,Scaling Diffusion Transformers to 16 Billion Parameters,"Zhengcong Fei, Mingyuan Fan, Changqian Yu, Debang Li, Junshi Huang",Kunlun Inc.,https://arxiv.org/pdf/2407.11633,arXiv 2024,https://github.com/feizc/DiT-MoE/,,A <u>diffusion transformer</u> (16B) with <b>MoE</b> that inserts experts into DiT blocks for <u>image generation</u>.,"<ul>
     <li> Incorporating <u>shared expert</u> routing accelerates training and improves performance, but the improvement is little when using more than one expert.
     <li> Observe the <u>scaling performance</u>.
     <li> <u>Increasing experts</u> <u>reduces loss</u> but introduces <u>more loss spikes</u>.
@@ -554,13 +555,13 @@ Foundation Models & Algorithms,2024-07-16,DiT-MoE,Scaling Diffusion Transformers
         </td>
     </tr>
 </table>"
-Foundation Models & Algorithms,2024-06-10,LlamaGen,Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation,"Peize Sun, Yi Jiang, Shoufa Chen, Shilong Zhang, Bingyue Peng, Ping Luo, Zehuan Yuan","The University of Hong Kong, ByteDance",https://arxiv.org/pdf/2406.06525,arXiv 2024,https://github.com/FoundationVision/LlamaGen/,,"Show that applying ""next-token prediction"" to <b>vanilla autoregressive models</b> achieves good <u>class-conditional & text-conditional image generation</u> performance.","<ul>
+Foundation Model & Algorithm,2024/6/10,LlamaGen,Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation,"Peize Sun, Yi Jiang, Shoufa Chen, Shilong Zhang, Bingyue Peng, Ping Luo, Zehuan Yuan","The University of Hong Kong, ByteDance",https://arxiv.org/pdf/2406.06525,arXiv 2024,https://github.com/FoundationVision/LlamaGen/,,"Show that applying ""next-token prediction"" to <b>vanilla autoregressive models</b> achieves good <u>class-conditional & text-conditional image generation</u> performance.","<ul>
     <li> Discrete representation in image tokenizers is no longer the bottleneck of the image reconstruction.
     <li> Vanilla autoregressive models without inductive biases on visual signals can serve as the basis of image generation system.
     <li> High-quality training data: 50M subset of LAION-COCO & 10M internal high aesthetics quality images.
 </ul>"
-Evaluation,2024-05-23,MPS,Learning Multi-dimensional Human Preference for Text-to-Image Generation,"Sixian Zhang, Bohan Wang, Junqiang Wu, Yan Li, Tingting Gao, Di Zhang, Zhongyuan Wang",Kuaishou Technology,https://arxiv.org/pdf/2405.14705,CVPR 2024,https://github.com/Kwai-Kolors/MPS?tab=readme-ov-file/,,"Apply condition upon CLIP to learn <b>multi-dimensional preference score</b>: aesthetics & alignment & detail & overall, trained on a dataset with 92K preference choices of 61K images.",
-Foundation Models & Algorithms,2024-04-03,VAR,Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction,"Keyu Tian, Yi Jiang, Zehuan Yuan, Bingyue Peng, Liwei Wang","Peking University, Bytedance Inc",https://arxiv.org/pdf/2404.02905,"<font color=""#D93053"">NeurIPS 2024 Best Paper</font>",https://github.com/FoundationVision/VAR/,,"Employ <b>next-scale prediction</b> to make <u>auto-regressive models surpass diffusion transformers</u> for <u>image generation</u> on image quality, inference speed, data efficiency, scalability.","<table>
+Evaluation,2024/5/23,MPS,Learning Multi-dimensional Human Preference for Text-to-Image Generation,"Sixian Zhang, Bohan Wang, Junqiang Wu, Yan Li, Tingting Gao, Di Zhang, Zhongyuan Wang",Kuaishou Technology,https://arxiv.org/pdf/2405.14705,CVPR 2024,https://github.com/Kwai-Kolors/MPS?tab=readme-ov-file/,,"Apply condition upon CLIP to learn <b>multi-dimensional preference score</b>: aesthetics & alignment & detail & overall, trained on a dataset with 92K preference choices of 61K images.",
+Foundation Model & Algorithm,2024/4/3,VAR,Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction,"Keyu Tian, Yi Jiang, Zehuan Yuan, Bingyue Peng, Liwei Wang","Peking University, Bytedance Inc",https://arxiv.org/pdf/2404.02905,"<font color=""#D93053"">NeurIPS 2024 Best Paper</font>",https://github.com/FoundationVision/VAR/,,"Employ <b>next-scale prediction</b> to make <u>auto-regressive models surpass diffusion transformers</u> for <u>image generation</u> on image quality, inference speed, data efficiency, scalability.","<table>
     <tr colspan=""2"">
         <td>
             <figure>
@@ -594,7 +595,7 @@ Foundation Models & Algorithms,2024-04-03,VAR,Visual Autoregressive Modeling: Sc
         </td>
     </tr>
 </table>"
-Evaluation,2024-04-01,VQAScore,Evaluating Text-to-Visual Generation with Image-to-Text Generation,"Zhiqiu Lin, Deepak Pathak, Baiqi Li, Jiayao Li, Xide Xia, Graham Neubig, Pengchuan Zhang, Deva Ramanan","Crnegie Mellon University, Meta",https://arxiv.org/pdf/2404.01291,ECCV 2024,https://github.com/linzhiqiu/t2v_metrics/,,"<u>VQAScore</u>: alignment probability of ""yes"" answer from a <b>VQA</b> model with CLIP-FlanT5 structure; <u>GenAI-Bench</u>: evaluation benchmark with 1600 prompts for <u>image generation</u>.","<table>
+Evaluation,2024/4/1,VQAScore,Evaluating Text-to-Visual Generation with Image-to-Text Generation,"Zhiqiu Lin, Deepak Pathak, Baiqi Li, Jiayao Li, Xide Xia, Graham Neubig, Pengchuan Zhang, Deva Ramanan","Crnegie Mellon University, Meta",https://arxiv.org/pdf/2404.01291,ECCV 2024,https://github.com/linzhiqiu/t2v_metrics/,,"<u>VQAScore</u>: alignment probability of ""yes"" answer from a <b>VQA</b> model with CLIP-FlanT5 structure; <u>GenAI-Bench</u>: evaluation benchmark with 1600 prompts for <u>image generation</u>.","<table>
     <tr>
         <td>
             <figure>
@@ -604,7 +605,7 @@ Evaluation,2024-04-01,VQAScore,Evaluating Text-to-Visual Generation with Image-t
         </td>
     </tr>
 </table>"
-Acceleration,2024-03-18,SD3-Turbo,High-Resolution Image Synthesis with Latent Adversarial Diffusion Distillation,"Axel Sauer, Frederic Boesel, Tim Dockhorn, Andreas Blattmann, Patrick Esser, Robin Rombach",Stability AI,https://arxiv.org/pdf/2502.16965,SIGGRAPH Asia 2024,,,Perform distillation of diffusion models in <b>latent space</b> using <b>teacher-synthetic data</b> and optimizing only an adversarial loss with the <b>teacher as the discriminator</b>.,"<table>
+Acceleration,2024/3/18,SD3-Turbo,High-Resolution Image Synthesis with Latent Adversarial Diffusion Distillation,"Axel Sauer, Frederic Boesel, Tim Dockhorn, Andreas Blattmann, Patrick Esser, Robin Rombach",Stability AI,https://arxiv.org/pdf/2502.16965,SIGGRAPH Asia 2024,,,Perform distillation of diffusion models in <b>latent space</b> using <b>teacher-synthetic data</b> and optimizing only an adversarial loss with the <b>teacher as the discriminator</b>.,"<table>
     <tr colspan=""2"">
         <td>
             <figure>
@@ -646,7 +647,7 @@ Acceleration,2024-03-18,SD3-Turbo,High-Resolution Image Synthesis with Latent Ad
         </td>
     </tr>
 </table>"
-"Fine-Tuning, Evaluation",2024-03-08,DPG-Bench<br>ELLA,ELLA: Equip Diffusion Models with LLM for Enhanced Semantic Alignment,"Xiwei Hu, Rui Wang, Yixiao Fang, Bin Fu, Pei Cheng, Gang Yu",Tencent,https://arxiv.org/pdf/2403.05135,arXiv 2024,https://github.com/TencentQQGYLab/ELLA/,,ELLA: Replace CLIP with <b>LLM</b> to understand dense prompts; DPG-Bench: evaluate <u>image generation</u> on <b>dense prompts</b>.,"<table>
+"Fine-Tuning, Evaluation",2024/3/8,DPG-Bench<br>ELLA,ELLA: Equip Diffusion Models with LLM for Enhanced Semantic Alignment,"Xiwei Hu, Rui Wang, Yixiao Fang, Bin Fu, Pei Cheng, Gang Yu",Tencent,https://arxiv.org/pdf/2403.05135,arXiv 2024,https://github.com/TencentQQGYLab/ELLA/,,ELLA: Replace CLIP with <b>LLM</b> to understand dense prompts; DPG-Bench: evaluate <u>image generation</u> on <b>dense prompts</b>.,"<table>
     <tr>
         <td>
             <figure>
@@ -655,7 +656,7 @@ Acceleration,2024-03-18,SD3-Turbo,High-Resolution Image Synthesis with Latent Ad
         </td>
     </tr>
 </table>"
-Reinforcement Learning,2023-12-19,InstructVideo,InstructVideo: Instructing Video Diffusion Models with Human Feedback,"Hangjie Yuan, Shiwei Zhang, Xiang Wang, Yujie Wei, Tao Feng, Yining Pan, Yingya Zhang, Ziwei Liu, Samuel Albanie, Dong Ni","Zhejiang University, Alibaba Group, Tsinghua University, Singapore University of Technology and Design, Nanyang Technological University, University of Cambridge",https://arxiv.org/pdf/2312.12490,CVPR 2024,https://github.com/ali-vilab/VGen/,,Use HPS v2 to provide reward and train <u>video generation</u> models in an editing manner.,"<table>
+Reinforcement Learning,2023/12/19,InstructVideo,InstructVideo: Instructing Video Diffusion Models with Human Feedback,"Hangjie Yuan, Shiwei Zhang, Xiang Wang, Yujie Wei, Tao Feng, Yining Pan, Yingya Zhang, Ziwei Liu, Samuel Albanie, Dong Ni","Zhejiang University, Alibaba Group, Tsinghua University, Singapore University of Technology and Design, Nanyang Technological University, University of Cambridge",https://arxiv.org/pdf/2312.12490,CVPR 2024,https://github.com/ali-vilab/VGen/,,Use HPS v2 to provide reward and train <u>video generation</u> models in an editing manner.,"<table>
     <tr>
         <td>
             <figure>
@@ -665,7 +666,7 @@ Reinforcement Learning,2023-12-19,InstructVideo,InstructVideo: Instructing Video
         </td>
     </tr>
 </table>"
-Evaluation,2023-11-29,Vbench,VBench: Comprehensive Benchmark Suite for Video Generative Models,"Ziqi Huang, Yinan He, Jiashuo Yu, Fan Zhang, Chenyang Si, Yuming Jiang, Yuanhan Zhang, Tianxing Wu, Qingyang Jin, Nattapol Chanpaisit, Yaohui Wang, Xinyuan Chen, Limin Wang, Dahua Lin, Yu Qiao, Ziwei Liu","Nanyang Technological University, Shanghai Artificial Intelligence Laboratory, The Chinese University of Hong Kong, Nanjing University",https://arxiv.org/pdf/2311.17982,CVPR 2024,https://github.com/Vchitect/VBench/,,Evaluate <u>video generation</u> from 16 dimensions within the perspectives of video quality and video-prompt consistency.,"<ul>
+Evaluation,2023/11/29,Vbench,VBench: Comprehensive Benchmark Suite for Video Generative Models,"Ziqi Huang, Yinan He, Jiashuo Yu, Fan Zhang, Chenyang Si, Yuming Jiang, Yuanhan Zhang, Tianxing Wu, Qingyang Jin, Nattapol Chanpaisit, Yaohui Wang, Xinyuan Chen, Limin Wang, Dahua Lin, Yu Qiao, Ziwei Liu","Nanyang Technological University, Shanghai Artificial Intelligence Laboratory, The Chinese University of Hong Kong, Nanjing University",https://arxiv.org/pdf/2311.17982,CVPR 2024,https://github.com/Vchitect/VBench/,,Evaluate <u>video generation</u> from 16 dimensions within the perspectives of video quality and video-prompt consistency.,"<ul>
     <li> <u>Content Categories:</u> <u>animal</u>, <u>architecture</u>, <u>food</u>, <u>human</u>, <u>lifestyle</u>, <u>plant</u>, <u>scenary</u>, <u>vehicles</u>.
     <li> <u>Temporal quality-subject consistency:</u> DINO feature similarity across frames.
     <li> <u>Temporal quality-background consistency:</u> CLIP feature similarity across frames.
@@ -694,11 +695,11 @@ Evaluation,2023-11-29,Vbench,VBench: Comprehensive Benchmark Suite for Video Gen
         </td>
     </tr>
 </table>"
-Reinforcement Learning,2023-11-21,Diffusion-DPO,Diffusion Model Alignment Using Direct Preference Optimization,"Bram Wallace, Meihua Dang, Rafael Rafailov, Linqi Zhou, Aaron Lou, Senthil Purushwalkam, Stefano Ermon, Caiming Xiong, Shafiq Joty, Nikhil Naik","Nikhil Naik, Salesforce AI, Stanford University",https://arxiv.org/pdf/2311.12908,CVPR 2024,https://github.com/SalesforceAIResearch/DiffusionDPO/,visual_generative_models-diffusion_dpo.ipynb,Adapt <b>Direct Preference Optimization (DPO)</b> from large language models to diffusion models for <u>image generation</u>.,"<ul>
+Reinforcement Learning,2023/11/21,Diffusion-DPO,Diffusion Model Alignment Using Direct Preference Optimization,"Bram Wallace, Meihua Dang, Rafael Rafailov, Linqi Zhou, Aaron Lou, Senthil Purushwalkam, Stefano Ermon, Caiming Xiong, Shafiq Joty, Nikhil Naik","Nikhil Naik, Salesforce AI, Stanford University",https://arxiv.org/pdf/2311.12908,CVPR 2024,https://github.com/SalesforceAIResearch/DiffusionDPO/,visual_generative_models-diffusion_dpo.ipynb,Adapt <b>Direct Preference Optimization (DPO)</b> from large language models to diffusion models for <u>image generation</u>.,"<ul>
     <li> Train SD1.5 and SDXL1.0 on Pick-a-Pic training set consisting of 850K pairs from 59K unique prompts.
     <li> Evaluate on Pick-a-Pic validation set, and final evaluation is on Partiprompt and HPS v2.
 </ul>"
-Evaluation,2023-10-17,GenEval,GenEval: An Object-Focused Framework for Evaluating Text-to-Image Alignment,"Dhruba Ghosh, Hanna Hajishirzi, Ludwig Schmidt","University of Washington, Allen Institute for AI, LAION",https://arxiv.org/pdf/2310.11513,NeurIPS 2023,https://github.com/djghosh13/geneval/,,"An <b>object-focused</b> framework for <u>image generation</u> evaluation by providing scores of single object, two objects, counting, colors, position, attribute binding, and overall.","<table>
+Evaluation,2023/10/17,GenEval,GenEval: An Object-Focused Framework for Evaluating Text-to-Image Alignment,"Dhruba Ghosh, Hanna Hajishirzi, Ludwig Schmidt","University of Washington, Allen Institute for AI, LAION",https://arxiv.org/pdf/2310.11513,NeurIPS 2023,https://github.com/djghosh13/geneval/,,"An <b>object-focused</b> framework for <u>image generation</u> evaluation by providing scores of single object, two objects, counting, colors, position, attribute binding, and overall.","<table>
     <tr>
         <td>
             <figure>
@@ -716,7 +717,7 @@ Evaluation,2023-10-17,GenEval,GenEval: An Object-Focused Framework for Evaluatin
         </td>
     </tr>
 </table>"
-Evaluation,2023-07-12,T2I-CompBench,T2I-CompBench: A Comprehensive Benchmark for Open-world Compositional Text-to-image Generation,"Kaiyi Huang, Kaiyue Sun, Enze Xie, Zhenguo Li, Xihui Liu","The University of Hong Kong, Huawei Noah's Ark Lab",https://arxiv.org/pdf/2307.06350,NeurIPS 2023,https://github.com/Karine-Huang/T2I-CompBench/,visual_generative_models-t2icompbench.ipynb,"Use 6000 prompts to train and evaluate <u>image generation</u> on <b>compositional generation</b>, including attribute binding, object relationship, and complex compositions.","<ul>
+Evaluation,2023/7/12,T2I-CompBench,T2I-CompBench: A Comprehensive Benchmark for Open-world Compositional Text-to-image Generation,"Kaiyi Huang, Kaiyue Sun, Enze Xie, Zhenguo Li, Xihui Liu","The University of Hong Kong, Huawei Noah's Ark Lab",https://arxiv.org/pdf/2307.06350,NeurIPS 2023,https://github.com/Karine-Huang/T2I-CompBench/,visual_generative_models-t2icompbench.ipynb,"Use 6000 prompts to train and evaluate <u>image generation</u> on <b>compositional generation</b>, including attribute binding, object relationship, and complex compositions.","<ul>
     <li> <u>Attribute binding prompts:</u> at least two objects with two attributes from color, shape, texture.
     <li> <u>Object relationship prompts:</u> at least two objects with spatial relationship or non-spatial relationship.
     <li> <u>Complex compositions prompts:</u> more than two objects or more than two sub-categories.
@@ -732,7 +733,7 @@ Evaluation,2023-07-12,T2I-CompBench,T2I-CompBench: A Comprehensive Benchmark for
         </td>
     </tr>
 </table>"
-Foundation Models & Algorithms,2023-07-04,SDXL,SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis,"Dustin Podell, Zion English, Kyle Lacey, Andreas Blattmann, Tim Dockhorn, Jonas Müller, Joe Penna, Robin Rombach",Stability AI,https://arxiv.org/pdf/2307.01952,ICLR 2024,https://github.com/Stability-AI/generative-models/,,"Employ three times <b>larger UNet backbone</b> of SD, use resolution & crop coordinates & bucketing information as <b>resolution condition</b> for training, employ a <b>refinement model</b>.","<table>
+Foundation Model & Algorithm,2023/7/4,SDXL,SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis,"Dustin Podell, Zion English, Kyle Lacey, Andreas Blattmann, Tim Dockhorn, Jonas Müller, Joe Penna, Robin Rombach",Stability AI,https://arxiv.org/pdf/2307.01952,ICLR 2024,https://github.com/Stability-AI/generative-models/,,"Employ three times <b>larger UNet backbone</b> of SD, use resolution & crop coordinates & bucketing information as <b>resolution condition</b> for training, employ a <b>refinement model</b>.","<table>
     <tr>
         <td>
             <figure>
@@ -742,7 +743,7 @@ Foundation Models & Algorithms,2023-07-04,SDXL,SDXL: Improving Latent Diffusion 
         </td>
     </tr>
 </table>"
-Evaluation,2023-06-15,HPS v2,Human Preference Score v2: A Solid Benchmark for Evaluating Human Preferences of Text-to-Image Synthesis,"Xiaoshi Wu, Yiming Hao, Keqiang Sun, Yixiong Chen, Feng Zhu, Rui Zhao, Hongsheng Li","CUHK, SenseTime Research, Shanghai Jiao Tong University, Centre for Perceptual and Interactive Intelligence",https://arxiv.org/pdf/2306.09341,arXiv 2023,https://github.com/tgxs002/HPSv2/,visual_generative_models-hpsv2.ipynb,HPD v2: 798K binary human preference choices on 433K pairs of generated images; HPS v2: use HPD v2 to fine-tune CLIP for <u>image generation</u> evaluation.,"<table>
+Evaluation,2023/6/15,HPS v2,Human Preference Score v2: A Solid Benchmark for Evaluating Human Preferences of Text-to-Image Synthesis,"Xiaoshi Wu, Yiming Hao, Keqiang Sun, Yixiong Chen, Feng Zhu, Rui Zhao, Hongsheng Li","CUHK, SenseTime Research, Shanghai Jiao Tong University, Centre for Perceptual and Interactive Intelligence",https://arxiv.org/pdf/2306.09341,arXiv 2023,https://github.com/tgxs002/HPSv2/,visual_generative_models-hpsv2.ipynb,HPD v2: 798K binary human preference choices on 433K pairs of generated images; HPS v2: use HPD v2 to fine-tune CLIP for <u>image generation</u> evaluation.,"<table>
     <tr>
         <td>
             <figure>
@@ -752,7 +753,7 @@ Evaluation,2023-06-15,HPS v2,Human Preference Score v2: A Solid Benchmark for Ev
         </td>
     </tr>
 </table>"
-Evaluation,2023-05-02,PickScore,Pick-a-Pic: An Open Dataset of User Preferences for Text-to-Image Generation,"Yuval Kirstain, Adam Polyak, Uriel Singer, Shahbuland Matiana, Joe Penna, Omer Levy","Tel Aviv University, Stability AI",https://arxiv.org/pdf/2305.01569,NeurIPS 2023,https://github.com/yuvalkirstain/PickScore/,visual_generative_models-pick_score.ipynb,Pick-a-Pic: use a web app to collect user preferences; PickScore: train a CLIP-based model for <u>image generation</u> evaluation.,"<table>
+Evaluation,2023/5/2,PickScore,Pick-a-Pic: An Open Dataset of User Preferences for Text-to-Image Generation,"Yuval Kirstain, Adam Polyak, Uriel Singer, Shahbuland Matiana, Joe Penna, Omer Levy","Tel Aviv University, Stability AI",https://arxiv.org/pdf/2305.01569,NeurIPS 2023,https://github.com/yuvalkirstain/PickScore/,visual_generative_models-pick_score.ipynb,Pick-a-Pic: use a web app to collect user preferences; PickScore: train a CLIP-based model for <u>image generation</u> evaluation.,"<table>
     <tr>
         <td>
             <figure>
@@ -762,8 +763,8 @@ Evaluation,2023-05-02,PickScore,Pick-a-Pic: An Open Dataset of User Preferences 
         </td>
     </tr>
 </table>"
-Evaluation,2023-04-12,ImageReward,ImageReward: Learning and Evaluating Human Preferences for Text-to-Image Generation,"Jiazheng Xu, Xiao Liu, Yuchen Wu, Yuxuan Tong, Qinkai Li, Ming Ding, Jie Tang, Yuxiao Dong","Tsinghua University, Zhipu AI, Beijing University of Posts and Telecommunications",https://arxiv.org/pdf/2304.05977,NeurIPS 2023,https://github.com/THUDM/ImageReward/,visual_generative_models-image_reward.ipynb,Train BLIP on 137K human preference image pairs for <u>image generation</u> and use it to tune diffusion models by Reward Feedback Learning (ReFL).,
-Evaluation,2023-03-25,HPS,Human Preference Score: Better Aligning Text-to-Image Models with Human Preference,"Xiaoshi Wu, Keqiang Sun, Feng Zhu, Rui Zhao, Hongsheng Li","CUHK, SenseTime Research, Shanghai Jiao Tong University, Centre for Perceptual and Interactive Intelligence, Shanghai AI Lab",https://arxiv.org/pdf/2303.14420,ICCV 2023,https://github.com/tgxs002/align_sd/,,Fine-tune CLIP using annotated 98K SD generated images from 25K prompts for <u>image generation</u> evaluation.,"<table>
+Evaluation,2023/4/12,ImageReward,ImageReward: Learning and Evaluating Human Preferences for Text-to-Image Generation,"Jiazheng Xu, Xiao Liu, Yuchen Wu, Yuxuan Tong, Qinkai Li, Ming Ding, Jie Tang, Yuxiao Dong","Tsinghua University, Zhipu AI, Beijing University of Posts and Telecommunications",https://arxiv.org/pdf/2304.05977,NeurIPS 2023,https://github.com/THUDM/ImageReward/,visual_generative_models-image_reward.ipynb,Train BLIP on 137K human preference image pairs for <u>image generation</u> and use it to tune diffusion models by Reward Feedback Learning (ReFL).,
+Evaluation,2023/3/25,HPS,Human Preference Score: Better Aligning Text-to-Image Models with Human Preference,"Xiaoshi Wu, Keqiang Sun, Feng Zhu, Rui Zhao, Hongsheng Li","CUHK, SenseTime Research, Shanghai Jiao Tong University, Centre for Perceptual and Interactive Intelligence, Shanghai AI Lab",https://arxiv.org/pdf/2303.14420,ICCV 2023,https://github.com/tgxs002/align_sd/,,Fine-tune CLIP using annotated 98K SD generated images from 25K prompts for <u>image generation</u> evaluation.,"<table>
     <tr>
         <td>
             <figure>
@@ -773,7 +774,7 @@ Evaluation,2023-03-25,HPS,Human Preference Score: Better Aligning Text-to-Image 
         </td>
     </tr>
 </table>"
-Foundation Models & Algorithms,2022-12-19,DiT,Scalable Diffusion Models with Transformers,"William Peebles, Saining Xie","UC Berkeley, New York University",https://arxiv.org/pdf/2212.09748,ICCV 2023,https://github.com/facebookresearch/DiT/,visual_generative_models-dit.ipynb,"Replace U-Net by <b>transformer</b> for scalable <u>image generation</u>, the timestep and prompt are injected by adaLN-Zero structure.","<ul>
+Foundation Model & Algorithm,2022/12/19,DiT,Scalable Diffusion Models with Transformers,"William Peebles, Saining Xie","UC Berkeley, New York University",https://arxiv.org/pdf/2212.09748,ICCV 2023,https://github.com/facebookresearch/DiT/,visual_generative_models-dit.ipynb,"Replace U-Net by <b>transformer</b> for scalable <u>image generation</u>, the timestep and prompt are injected by adaLN-Zero structure.","<ul>
     <li> <u>Increase model size</u> and <u>decrease patch size</u> yield considerably improved diffusion models.
     <li> <u>Scale model Gflops</u> is the key to improved performance.
     <li> <u>Larger DiT models</u> are more <u>compute-efficient</u>.
@@ -788,7 +789,7 @@ Foundation Models & Algorithms,2022-12-19,DiT,Scalable Diffusion Models with Tra
         </td>
     </tr>
 </table>"
-Reinforcement Learning,2022-12-19,promptist,Optimizing Prompts for Text-to-Image Generation,"Yaru Hao, Zewen Chi, Li Dong, Furu Wei",Microsoft Research,https://arxiv.org/pdf/2212.09611,NeurIPS 2023,https://github.com/microsoft/LMOps/,,Use <b>LLM to refine prompts</b> for <u>preference-aligned image generation</u> by taking relevance and aesthetics as reward.,"<table>
+Reinforcement Learning,2022/12/19,promptist,Optimizing Prompts for Text-to-Image Generation,"Yaru Hao, Zewen Chi, Li Dong, Furu Wei",Microsoft Research,https://arxiv.org/pdf/2212.09611,NeurIPS 2023,https://github.com/microsoft/LMOps/,,Use <b>LLM to refine prompts</b> for <u>preference-aligned image generation</u> by taking relevance and aesthetics as reward.,"<table>
     <tr>
         <td>
             <figure>
@@ -798,9 +799,9 @@ Reinforcement Learning,2022-12-19,promptist,Optimizing Prompts for Text-to-Image
         </td>
     </tr>
 </table>"
-Foundation Models & Algorithms,2022-10-06,Flow Matching,Flow Matching for Generative Modeling,"Yaron Lipman, Ricky T. Q. Chen, Heli Ben-Hamu, Maximilian Nickel, Matt Le","Meta AI (FAIR), Weizmann Institute of Science",https://arxiv.org/pdf/2210.02747,ICLR 2023,https://github.com/facebookresearch/flow_matching/,,A type of generative models built on <b>continuous normalizing flows</b> by learning a time-dependent vector field that transports data from the source distribution to the target distribution.,
-Surveys & Insights,2022-08-25,Unified Perspective,Understanding Diffusion Models: A Unified Perspective,Calvin Luo,Google Brain,https://arxiv.org/pdf/2412.03603,arXiv 2022,,,"Introduction to <u>VAE</u>, <u>DDPM</u>, <u>score-based generative model</u>, <u>guidance</u> from a <b>unified generative perspective</b>.",
-Foundation Models & Algorithms,2022-05-29,CogVideo,CogVideo: Large-scale Pretraining for Text-to-Video Generation via Transformers,"Wenyi Hong, Ming Ding, Wendi Zheng, Xinghan Liu, Jie Tang","Tsinghua University, BAAI",https://arxiv.org/pdf/2205.15868,ICLR 2023,https://github.com/THUDM/CogVideo/,,An <u>open-sourced</u> <u>transformer</u>-based <u>video generation</u> model (9B) that <b>auto-regressively</b> generates frame sequences and then performs auto-regressive frame interpolatation.,"<table>
+Foundation Model & Algorithm,2022/10/6,Flow Matching,Flow Matching for Generative Modeling,"Yaron Lipman, Ricky T. Q. Chen, Heli Ben-Hamu, Maximilian Nickel, Matt Le","Meta AI (FAIR), Weizmann Institute of Science",https://arxiv.org/pdf/2210.02747,ICLR 2023,https://github.com/facebookresearch/flow_matching/,,A type of generative models built on <b>continuous normalizing flows</b> by learning a time-dependent vector field that transports data from the source distribution to the target distribution.,
+Survey & Insight,2022/8/25,Unified Perspective,Understanding Diffusion Models: A Unified Perspective,Calvin Luo,Google Brain,https://arxiv.org/pdf/2412.03603,arXiv 2022,,,"Introduction to <u>VAE</u>, <u>DDPM</u>, <u>score-based generative model</u>, <u>guidance</u> from a <b>unified generative perspective</b>.",
+Foundation Model & Algorithm,2022/5/29,CogVideo,CogVideo: Large-scale Pretraining for Text-to-Video Generation via Transformers,"Wenyi Hong, Ming Ding, Wendi Zheng, Xinghan Liu, Jie Tang","Tsinghua University, BAAI",https://arxiv.org/pdf/2205.15868,ICLR 2023,https://github.com/THUDM/CogVideo/,,An <u>open-sourced</u> <u>transformer</u>-based <u>video generation</u> model (9B) that <b>auto-regressively</b> generates frame sequences and then performs auto-regressive frame interpolatation.,"<table>
     <tr>
         <td>
             <figure>
@@ -810,7 +811,7 @@ Foundation Models & Algorithms,2022-05-29,CogVideo,CogVideo: Large-scale Pretrai
         </td>
     </tr>
 </table>"
-Foundation Models & Algorithms,2021-12-20,LDM,High-Resolution Image Synthesis with Latent Diffusion Models,"Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, Björn Ommer","Heidelberg University, Runway ML",https://arxiv.org/pdf/2112.10752,CVPR 2022,https://github.com/CompVis/latent-diffusion/,,Efficient high-quality <u>image generation</u> by applying diffusion and denoising processes in the <b>VAE latent space</b>.,"<table>
+Foundation Model & Algorithm,2021/12/20,LDM,High-Resolution Image Synthesis with Latent Diffusion Models,"Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, Björn Ommer","Heidelberg University, Runway ML",https://arxiv.org/pdf/2112.10752,CVPR 2022,https://github.com/CompVis/latent-diffusion/,,Efficient high-quality <u>image generation</u> by applying diffusion and denoising processes in the <b>VAE latent space</b>.,"<table>
     <tr>
         <td>
             <figure>
@@ -820,8 +821,8 @@ Foundation Models & Algorithms,2021-12-20,LDM,High-Resolution Image Synthesis wi
         </td>
     </tr>
 </table>"
-Foundation Models & Algorithms,2021-12-08,CFG,Classifier-Free Diffusion Guidance,"Jonathan Ho, Tim Salimans","Google Research, Brain team",https://arxiv.org/pdf/2207.12598,NeurIPS workshop 2021,,visual_generative_models-cfg.ipynb,<u>Image generation</u> with <b>classifier-free condition guidance</b> by jointly training a conditional model and an unconditional model. ,
-Evaluation,2021-04-18,CLIPScore,CLIPScore: A Reference-free Evaluation Metric for Image Captioning,"Jack Hessel, Ari Holtzman, Maxwell Forbes, Ronan Le Bras, Yejin Choi","Allen Institute for AI, University of Washington",https://arxiv.org/pdf/2104.08718,EMNLP 2021,https://github.com/tgxs002/align_sd/,visual_generative_models-clipscore.ipynb,A reference-free metric mainly focusing on <b>semantic alignment</b> for <u>image generation</u> evaluation.,"<ul>
+Foundation Model & Algorithm,2021/12/8,CFG,Classifier-Free Diffusion Guidance,"Jonathan Ho, Tim Salimans","Google Research, Brain team",https://arxiv.org/pdf/2207.12598,NeurIPS workshop 2021,,visual_generative_models-cfg.ipynb,<u>Image generation</u> with <b>classifier-free condition guidance</b> by jointly training a conditional model and an unconditional model. ,
+Evaluation,2021/4/18,CLIPScore,CLIPScore: A Reference-free Evaluation Metric for Image Captioning,"Jack Hessel, Ari Holtzman, Maxwell Forbes, Ronan Le Bras, Yejin Choi","Allen Institute for AI, University of Washington",https://arxiv.org/pdf/2104.08718,EMNLP 2021,https://github.com/tgxs002/align_sd/,visual_generative_models-clipscore.ipynb,A reference-free metric mainly focusing on <b>semantic alignment</b> for <u>image generation</u> evaluation.,"<ul>
     <li> CLIPScore calculates <u>the cosine similarity between a caption and an image, multiplying the result by 2.5</u>.
     <li> CLIPScore is  <u>complementary to common metrics</u> (like BLEU-4, SPICE, and CIDEr).
     <li> ""A photo depicts"" as a prompt to CLIP is sligtly better than the official ""A photo of"".
@@ -839,7 +840,7 @@ Evaluation,2021-04-18,CLIPScore,CLIPScore: A Reference-free Evaluation Metric fo
         </td>
     </tr>
 </table>"
-Foundation Models & Algorithms,2020-10-06,DDIM,Denoising Diffusion Implicit Models,"Jiaming Song, Chenlin Meng, Stefano Ermon",Stanford University,https://arxiv.org/pdf/2010.02502,ICLR 2021,https://github.com/ermongroup/ddim/,visual_generative_models-ddim.ipynb,"<u>Accelerate sampling</u> of diffusion models by introducing a <b>non-Markovian, deterministic process</b> that achieves high-quality results with fewer steps while <u>preserving training consistency</u>.","<table>
+Foundation Model & Algorithm,2020/10/6,DDIM,Denoising Diffusion Implicit Models,"Jiaming Song, Chenlin Meng, Stefano Ermon",Stanford University,https://arxiv.org/pdf/2010.02502,ICLR 2021,https://github.com/ermongroup/ddim/,visual_generative_models-ddim.ipynb,"<u>Accelerate sampling</u> of diffusion models by introducing a <b>non-Markovian, deterministic process</b> that achieves high-quality results with fewer steps while <u>preserving training consistency</u>.","<table>
     <tr>
         <td>
             <figure>
@@ -855,7 +856,7 @@ Foundation Models & Algorithms,2020-10-06,DDIM,Denoising Diffusion Implicit Mode
         </td>
     </tr>
 </table>"
-Foundation Models & Algorithms,2020-06-19,DDPM,Denoising Diffusion Probabilistic Models,"Jonathan Ho, Ajay Jain, Pieter Abbeel",UC Berkeley,https://arxiv.org/pdf/2006.11239,NeurIPS 2020,https://github.com/hojonathanho/diffusion/,visual_generative_models-ddpm.ipynb,Denoising <b>diffusion</b> probabilistic models that iteratively denoises data from random noise for <u>image generation</u>.,"<table>
+Foundation Model & Algorithm,2020/6/19,DDPM,Denoising Diffusion Probabilistic Models,"Jonathan Ho, Ajay Jain, Pieter Abbeel",UC Berkeley,https://arxiv.org/pdf/2006.11239,NeurIPS 2020,https://github.com/hojonathanho/diffusion/,visual_generative_models-ddpm.ipynb,Denoising <b>diffusion</b> probabilistic models that iteratively denoises data from random noise for <u>image generation</u>.,"<table>
     <tr>
         <td>
             <figure>
@@ -871,7 +872,7 @@ Foundation Models & Algorithms,2020-06-19,DDPM,Denoising Diffusion Probabilistic
         </td>
     </tr>
 </table>"
-Foundation Models & Algorithms,2019-06-02,VQ-VAE-2,Generating Diverse High-Fidelity Images with VQ-VAE-2,"Ali Razavi, Aaron van den Oord, Oriol Vinyals",DeepMind,https://arxiv.org/pdf/1906.00446,NeurIPS 2019,,,"Introduce <b>hierarchical VQ-VAE</b> and make sampling in the compressed latent space (which is faster than sampling in pixel space), inspired by the idea of lossy compression. ","<table>
+Foundation Model & Algorithm,2019/6/2,VQ-VAE-2,Generating Diverse High-Fidelity Images with VQ-VAE-2,"Ali Razavi, Aaron van den Oord, Oriol Vinyals",DeepMind,https://arxiv.org/pdf/1906.00446,NeurIPS 2019,,,"Introduce <b>hierarchical VQ-VAE</b> and make sampling in the compressed latent space (which is faster than sampling in pixel space), inspired by the idea of lossy compression. ","<table>
     <tr>
         <td>
             <figure>
@@ -881,8 +882,8 @@ Foundation Models & Algorithms,2019-06-02,VQ-VAE-2,Generating Diverse High-Fidel
         </td>
     </tr>
 </table>"
-Evaluation,2019-05-04,FVD,FVD: A new Metric for Video Generation,"Thomas Unterthiner, Sjoerd van Steenkiste, Karol Kurach, Raphaël Marinier, Marcin Michalski, Sylvain Gelly","Johannes Kepler University, IDSIA, Google Brain",https://openreview.net/pdf?id=rylgEULtdN,ICLR workshop 2019,,,Extend FID for <u>video generation</u> evaluation by replacing 2D InceptionNet with pre-trained Inflated 3D convnet.,
-Foundation Models & Algorithms,2017-11-02,VQ-VAE,Neural Discrete Representation Learning,"Aaron van den Oord, Oriol Vinyals, Koray Kavukcuoglu",DeepMind,https://arxiv.org/pdf/1711.00937,NeurIPS 2017,,,Propose <b>vector quantised variational autoencoder</b> to generate discrete codes while the prior is also learned.,"<ul>
+Evaluation,2019/5/4,FVD,FVD: A new Metric for Video Generation,"Thomas Unterthiner, Sjoerd van Steenkiste, Karol Kurach, Raphaël Marinier, Marcin Michalski, Sylvain Gelly","Johannes Kepler University, IDSIA, Google Brain",https://openreview.net/pdf?id=rylgEULtdN,ICLR workshop 2019,,,Extend FID for <u>video generation</u> evaluation by replacing 2D InceptionNet with pre-trained Inflated 3D convnet.,
+Foundation Model & Algorithm,2017/11/2,VQ-VAE,Neural Discrete Representation Learning,"Aaron van den Oord, Oriol Vinyals, Koray Kavukcuoglu",DeepMind,https://arxiv.org/pdf/1711.00937,NeurIPS 2017,,,Propose <b>vector quantised variational autoencoder</b> to generate discrete codes while the prior is also learned.,"<ul>
     <li> VQ-VAE is simple to train, does not suffer from large variance, and avoids ""posterior collapse"", while getting similar performance as VAE.</li>
     <li>The decoder optimizes the recontruction loss; the encoder optimizes the reconstruction loss and a matching loss; the embedding optimizes a matching loss.</li>
 </ul>
@@ -895,5 +896,5 @@ Foundation Models & Algorithms,2017-11-02,VQ-VAE,Neural Discrete Representation 
         </td>
     </tr>
 </table>"
-Evaluation,2017-06-26,FID,GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium,"Martin Heusel, Hubert Ramsauer, Thomas Unterthiner, Bernhard Nessler, Sepp Hochreiter",Johannes Kepler University Linz,https://arxiv.org/pdf/1706.08500,NeurIPS 2017,,visual_generative_models-inceptionscore_fid.ipynb,Calculate <b>Fréchet distance</b> between Gaussian distributions of InceptionNet feature maps of real-world data and synthetic data for <u>image generation</u> evaluation.,
-Evaluation,2016-06-10,Inception Score,Improved Techniques for Training GANs,"Tim Salimans, Ian Goodfellow, Wojciech Zaremba, Vicki Cheung, Alec Radford, Xi Chen",OpenAI,https://arxiv.org/pdf/1606.03498,NeurIPS 2016,https://github.com/openai/improved-gan/,visual_generative_models-inceptionscore_fid.ipynb,Calculate <b>KL divergence between p(y|x) and p(y)</b> that aims to minimize the entropy across samples and maximize the entropy across classes for <u>image generation</u> evaluation.,
+Evaluation,2017/6/26,FID,GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium,"Martin Heusel, Hubert Ramsauer, Thomas Unterthiner, Bernhard Nessler, Sepp Hochreiter",Johannes Kepler University Linz,https://arxiv.org/pdf/1706.08500,NeurIPS 2017,,visual_generative_models-inceptionscore_fid.ipynb,Calculate <b>Fréchet distance</b> between Gaussian distributions of InceptionNet feature maps of real-world data and synthetic data for <u>image generation</u> evaluation.,
+Evaluation,2016/6/10,Inception Score,Improved Techniques for Training GANs,"Tim Salimans, Ian Goodfellow, Wojciech Zaremba, Vicki Cheung, Alec Radford, Xi Chen",OpenAI,https://arxiv.org/pdf/1606.03498,NeurIPS 2016,https://github.com/openai/improved-gan/,visual_generative_models-inceptionscore_fid.ipynb,Calculate <b>KL divergence between p(y|x) and p(y)</b> that aims to minimize the entropy across samples and maximize the entropy across classes for <u>image generation</u> evaluation.,

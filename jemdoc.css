@@ -88,7 +88,7 @@ a:hover {
 
 #layout-menu a.current:link, #layout-menu a.current:visited {
     color: #022b6d;
-    border-bottom: 1px gray solid;
+    /* border-bottom: 1px gray solid; */
 }
 #layout-menu a:link, #layout-menu a:visited, #layout-menu a:hover {
     color: #527bbd;
@@ -99,7 +99,7 @@ a:hover {
 }
 
 div.menu-category {
-    border-bottom: 1px solid gray;
+    /* border-bottom: 1px solid gray; */
     margin-top: 0.8em;
     padding-top: 0.2em;
     padding-bottom: 0.1em;
@@ -145,7 +145,7 @@ h1, h2 {
     padding-bottom: 0.2em;
     line-height: 1.0;
     padding-top: 0.5em;
-    border-bottom: 1px solid #aaaaaa;
+    /* border-bottom: 1px solid #aaaaaa; */
     font-family: "times";
 }
 
@@ -156,7 +156,7 @@ h3 {
     padding-bottom: 0.2em;
     line-height: 1.0;
     padding-top: 0.5em;
-    border-bottom: 1px solid #aaaaaa;
+    /* border-bottom: 1px solid #aaaaaa; */
     font-family: "times";
 }
 
@@ -176,7 +176,7 @@ h2 + h3 {
 
 h3 {
     font-size: 130%;
-    border-bottom: none;
+    /* border-bottom: none; */
 }
 
 p {
@@ -193,7 +193,7 @@ pre {
 
 div#footer {
     font-size: small;
-    border-top: 1px solid #c0c0c0;
+    /* border-top: 1px solid #c0c0c0; */
     padding-top: 0.1em;
     margin-top: 4.0em;
     color: #c0c0c0;
@@ -280,7 +280,7 @@ div.blocktitle {
 }
 
 div.blockcontent {
-    border: 1px solid silver;
+    /* border: 1px solid silver; */
     padding: 0.3em 0.5em;
 }
 
@@ -353,7 +353,7 @@ div#toptitle h1, #layout-content div#toptitle h1 {
     padding-bottom: 0.1em;
     padding-top: 0;
     margin-top: 0.5em;
-    border-bottom: none;
+    /* border-bottom: none; */
 }
 
 img.eq {
@@ -376,14 +376,14 @@ table + table {
 
 tr.heading {
     font-weight: bold;
-    border-bottom: 2px solid black;
+    /* border-bottom: 2px solid black; */
 }
 
 img {
-    border: none;
+    /* border: none; */
 }
 
 table.imgtable, table.imgtable td {
-    border: none;
+    /* border: none; */
     text-align: left;
 }

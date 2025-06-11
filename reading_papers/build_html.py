@@ -27,11 +27,11 @@ visual_generative_models["prefix"] = \
 visual_generative_models["title"] = \
     f"""
     <h1 id="top">Visual Generative Models</h1>
-    <b><font size=4>The reading papers curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
+    <b><font size=3>Reading papers on visual generative models. Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
+    <br><br>
+    Last updated on {datetime.now().strftime('%A, %B %d %Y at %I:%M %p')}.
     <br><br>
     <a href="reading_papers.html">[back to main contents]</a>
-    <br><br>
-    Last updated on {datetime.now().strftime('%B %d, %Y')}.
     """
 visual_generative_models["suffix"] = \
     """
@@ -39,8 +39,8 @@ visual_generative_models["suffix"] = \
     </html>
     """
 visual_generative_models["categories"] = {
-    "Surveys & Insights": "surveys-and-insights",
-    "Foundation Models & Algorithms": "foundation-model-and-algorithms",
+    "Survey & Insight": "survey-and-insight",
+    "Foundation Model & Algorithm": "foundation-model-and-algorithm",
     "Fine-Tuning": "finetuning",
     "Reinforcement Learning": "reinforcement-learning",
     "Acceleration": "acceleration",
@@ -131,14 +131,14 @@ def build_main_content(df, categories):
     <b>Contents:</b>
     <ul>
         <li>
-            <a href="#summaries">Summaries</a>
+            <a href="#summary">Summary</a>
             <ul>
                 {table_of_content}
             </ul>
         </li>
-        <li><a href="#papers">Papers & Reading Notes (total: {len(df)})</a></li>
+        <li><a href="#papers">Papers & Reading Notes</a></li>
     </ul>
-    <h2 id="summaries">Summaries</h2>
+    <h2 id="summary">Summary</h2>
     {cate_content}
     """
 
@@ -147,7 +147,8 @@ def build_main_content(df, categories):
 def build_details(df):
     df = df.sort_values(by="date", ascending=False)
     detail_items = ""
-    for _, item in df.iterrows():
+    all_items = len(df)
+    for idx, item in df.iterrows():
         if isinstance(item["detail"], str) and len(item["detail"]) > 5:
             detail = \
                 f"""
@@ -166,11 +167,11 @@ def build_details(df):
         detail_items += \
             f"""
             <h4 id="{item["date"]}-{item["model"].replace("<br>", "--")}">
-            [{item["date"]}] {item["paper"]} <b><i>({item["publication"]})</i></b>
+            [{all_items - idx}] {item["paper"]}
             </h4>
             {jupyter_note}
             <p>
-                <i><b>Project:</b></i> {item["model"].replace("<br>", ", ")}
+                <i><b>Project:</b></i> {item["model"].replace("<br>", ", ")} ({item["date"]}, <i>{item["publication"]}</i>)
             </p>
             <p>
                 <i><b>Authors:</b></i> {item["author"]}
@@ -190,12 +191,9 @@ def build_details(df):
             function toggleTable(tableId) {
                 const container = document.getElementById(tableId);
                 const button = container.previousElementSibling;
-                
-                // 使用实际计算的显示状态
                 const isVisible = window.getComputedStyle(container).display !== 'none';
                 
                 if (!isVisible) {
-                    // 展开时加载图片
                     const images = container.querySelectorAll('.lazy-load');
                     images.forEach(img => {
                         if (!img.src && img.dataset.src) {
@@ -218,7 +216,7 @@ if __name__ == "__main__":
         df = pd.read_csv(f"{domain_name}.csv")
         main_content = build_main_content(df, domain["categories"])
         details = build_details(df)
-        html_content = domain["prefix"] + domain["title"] + main_content + details + domain["suffix"]
+        html_content = domain["prefix"] + domain["title"].replace("Reading papers", f"{len(df)} papers") + main_content + details + domain["suffix"]
         with open(domain["file"], 'w', encoding="utf-8-sig") as f: 
             f.write(html_content)
     
