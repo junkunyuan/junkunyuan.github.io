@@ -164,14 +164,14 @@ Foundation Model & Algorithm,2025/3/26,Wan,Wan: Open and Advanced Large-Scale Vi
         </td>
     </tr>
 </table>"
-Foundation Model & Algorithm,2025/3/14,Step-Video-TI2V,Step-Video-TI2V Technical Report: A State-of-the-Art Text-Driven Image-to-Video Generation Model,Step-Video Team,StepFun,https://arxiv.org/pdf/2503.11251,arXiv 2025,https://github.com/stepfun-ai/Step-Video-TI2V/,,"<b>StepFun</b>'s <b>open-sourced</b> model (30B) for <u>image-to-video generation</u>, trained upon Step-Video-T2V, by using channel concat of image condition and timestep-combined motion condition.","<table>
+Foundation Model & Algorithm,2025/3/14,Step-Video-TI2V,Step-Video-TI2V Technical Report: A State-of-the-Art Text-Driven Image-to-Video Generation Model,Step-Video Team,StepFun,https://arxiv.org/pdf/2503.11251,arXiv 2025,https://github.com/stepfun-ai/Step-Video-TI2V/,,"<b>StepFun</b>'s <b>open-sourced</b> model (30B) for <u>image-to-video generation</u>, trained upon Step-Video-T2V, by using channel-concat image condition, and timestep-combined motion condition.","<table>
     <tr>
         <td>
             <figure>
                 <img src='figs/2025-03-14-Step-Video-TI2V-fig1.png' width=700>
                 <figcaption>
-                    <b>Image conditioning:</b> <u>channel-wise concatenation</u> of <u>noise-augmented</u> and <u>zero-padded</u> image condition and input noise.
-                    <br><b>Motion conditioning:</b> motion is extracted using optical flow and is <u>combined with timestep</u>. </figcaption>
+                    <b>Image condition:</b> <u>channel-wise concatenation</u> of noised data and <b>noise-augmented</b> and zero-padded image condition.
+                    <br><b>Motion condition:</b> motion is extracted using optical flow and is <b>combined with timestep</b>. </figcaption>
             </figure>
         </td>
     </tr>

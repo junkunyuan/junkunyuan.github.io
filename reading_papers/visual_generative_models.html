@@ -16,7 +16,7 @@
     <h1 id="top">Visual Generative Models</h1>
     <b><font size=3>56 papers on visual generative models. Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
     <br><br>
-    Last updated on Thursday, June 12 2025 at 08:32 PM.
+    Last updated on Thursday, June 12 2025 at 09:45 PM.
     <br><br>
     <a href="reading_papers.html">[back to main contents]</a>
     
@@ -235,7 +235,7 @@
                 
                     </td>
                     <td><span class="summary">
-                        <b>StepFun</b>'s <b>open-sourced</b> model (30B) for <u>image-to-video generation</u>, trained upon Step-Video-T2V, by using channel concat of image condition and timestep-combined motion condition.
+                        <b>StepFun</b>'s <b>open-sourced</b> model (30B) for <u>image-to-video generation</u>, trained upon Step-Video-T2V, by using channel-concat image condition, and timestep-combined motion condition.
                     </span></td>
                 </tr>
                 
@@ -1679,7 +1679,7 @@
                 <i><b>Organizations:</b></i> StepFun
             </p>
             <p>
-                <i><b>Summary:</b></i> <b>StepFun</b>'s <b>open-sourced</b> model (30B) for <u>image-to-video generation</u>, trained upon Step-Video-T2V, by using channel concat of image condition and timestep-combined motion condition.
+                <i><b>Summary:</b></i> <b>StepFun</b>'s <b>open-sourced</b> model (30B) for <u>image-to-video generation</u>, trained upon Step-Video-T2V, by using channel-concat image condition, and timestep-combined motion condition.
             </p>
             
                 <button onclick="toggleTable('2025/3/14-Step-Video-TI2V-table')">Read more</button>
@@ -1690,8 +1690,8 @@
             <figure>
                 <img src='figs/2025-03-14-Step-Video-TI2V-fig1.png' width=700>
                 <figcaption>
-                    <b>Image conditioning:</b> <u>channel-wise concatenation</u> of <u>noise-augmented</u> and <u>zero-padded</u> image condition and input noise.
-                    <br><b>Motion conditioning:</b> motion is extracted using optical flow and is <u>combined with timestep</u>. </figcaption>
+                    <b>Image condition:</b> <u>channel-wise concatenation</u> of noised data and <b>noise-augmented</b> and zero-padded image condition.
+                    <br><b>Motion condition:</b> motion is extracted using optical flow and is <b>combined with timestep</b>. </figcaption>
             </figure>
         </td>
     </tr>
