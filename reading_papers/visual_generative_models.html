@@ -16,7 +16,7 @@
     <h1 id="top">Visual Generative Models</h1>
     <b><font size=3>56 papers on visual generative models. Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
     <br><br>
-    Last updated on Thursday, June 12 2025 at 10:18 AM.
+    Last updated on Thursday, June 12 2025 at 12:14 PM.
     <br><br>
     <a href="reading_papers.html">[back to main contents]</a>
     
@@ -1492,12 +1492,12 @@
                 <figcaption>
                     <b>Video data processing.</b>
                     <br><u>Temporal splitting:</u> internal splitter.
-                    <br><u>Spatial cropping:</u> use FFmpeg to remove black border, and develop models for text, logo, watermark, and special effects detection;
-                    <br><u>Quality filtering:</u> >256 pixels, within [1/3, 3/1] aspect ratio, elimitenate static clips and undeseirable movements, camera shake & playback speed detection, safety, artifact detection. 
-                    <br><u>Multi-aspect data balancing & video deduplication:</u> clustering. 
-                    <br><u>Simulation data:</u> use graphics engines to synthesize videos. 
-                    <br><u>Video captioning:</u> a short & a long caption. 
-                    <br><u>System prompt:</u> video types, camera position, camera angles, camera movement, visual styles.</figcaption>
+                    <br><u>Spatial cropping:</u> use FFmpeg to remove black border, and develop models for text, logo, watermark, and special effects detection.
+                    <br><u>Quality filtering:</u> >256 pixels, within [1/3, 3/1] aspect ratio, not static, camera shake & playback speed, safety, artifact detection. 
+                    <br><u>Multi-aspect balancing & deduplication:</u> clustering. 
+                    <br><u>Simulation data:</u> graphics engines. 
+                    <br><u>Video captioning:</u> a short & a long. 
+                    <br><u>System prompt:</u> video type, camera position, camera angle, camera movement, visual style.</figcaption>
             </figure>
         </td>
     </tr>
@@ -1505,7 +1505,7 @@
         <td>
             <figure>
                 <img src='figs/2025-04-11-Seaweed-7B-fig2.png' width=400>
-                <figcaption><b>VAE</b>. Use <u>L1 + LPIPS + adversarial loss</u>. Use both an <b>image discriminator and a video discriminator</b> performs better than using either one. Downsample by 16x16x4-48c or 8x8x4-16c. Smaller downsample ratios lead to faster convergence. <b>Compress information using VAE outperforms patchification in DiT and faster</b>.</figcaption>
+                <figcaption><b>VAE</b>. Use <u>L1 + KL + LPIPS + adversarial loss</u>. Use an <b>image discriminator and a video discriminator</b> performs better than using either one. Downsample by 16x16x4-48c or 8x8x4-16c. <b>Compress information using VAE outperforms patchification in DiT, and faster</b>.</figcaption>
             </figure>
         </td>
         <td>
@@ -1542,9 +1542,9 @@
             <figure>
                 <img src='figs/2025-04-11-Seaweed-7B-fig7.png' width=600>
                 <figcaption><b>Four-stage training procedure.
-                <br></b> Use <b>multi-task training</b>: text-to-video, image-to-video, video-to-video. Input features and conditioning features are <u>channel-concatenated</u>, with a <u>binary mask</u> indicating the condition. Ratio of image-to-video is 20% during pre-training, and increasing to 50%-75% detached for fine-tuning.
-                <br><b>SFT:</b> use 700K good videos and 50K top videos, the following ability drops a little.
-                <br><b>RLHF:</b> <u>lr=1e-7</u>, <u>beta=100</u>, select from 4 samples from different seeds.
+                <br></b> Use <b>multi-task pre-training</b>: text-to-video, image-to-video, video-to-video. Input features and conditioning features are <u>channel-concatenated</u>, with a <u>binary mask</u> indicating the condition. Ratio of image-to-video is 20% during pre-training, and increasing to 50%-75% detached for fine-tuning.
+                <br><b>SFT:</b> use 700K good videos and 50K top videos, the semantic alignment ability drops a little.
+                <br><b>RLHF:</b> <u>lr=1e-7</u>, <u>beta=100</u>, select from 4 samples under different seeds.
                 <br><b>Distillation:</b> trajectory segmented consistency distillation + CFG distillation + adversarial training, distill to 8 steps.</figcaption>
             </figure>
         </td>
