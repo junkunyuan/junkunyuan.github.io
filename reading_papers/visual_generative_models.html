@@ -16,7 +16,7 @@
     <h1 id="top">Visual Generative Models</h1>
     <b><font size=3>56 papers on visual generative models. Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
     <br><br>
-    Last updated on Thursday, June 12 2025 at 03:52 PM.
+    Last updated on Thursday, June 12 2025 at 08:32 PM.
     <br><br>
     <a href="reading_papers.html">[back to main contents]</a>
     
@@ -215,7 +215,7 @@
                 
                     </td>
                     <td><span class="summary">
-                        <b>Alibaba Tongyi Wanxiang</b>'s <b>open-sourced</b> model (14B) for <u>text-to-video & image-to-video generation</u>, using 8x8x4 VAE, <u>DiT structure</u>, etc.
+                        <b>Alibaba Tongyi Wanxiang</b>'s <b>open-sourced</b> model (14B) for <u>text-to-video & image-to-video generation</u>, using <u>DiT structure</u>.
                     </span></td>
                 </tr>
                 
@@ -1603,13 +1603,13 @@
                 <i><b>Project:</b></i> Wan (2025/3/26, <i>arXiv 2025</i>)
             </p>
             <p>
-                <i><b>Authors:</b></i> Wan
+                <i><b>Authors:</b></i> Tongyi Wanxiang
             </p>
             <p>
-                <i><b>Organizations:</b></i> Alibaba Group
+                <i><b>Organizations:</b></i> Alibaba
             </p>
             <p>
-                <i><b>Summary:</b></i> <b>Alibaba Tongyi Wanxiang</b>'s <b>open-sourced</b> model (14B) for <u>text-to-video & image-to-video generation</u>, using 8x8x4 VAE, <u>DiT structure</u>, etc.
+                <i><b>Summary:</b></i> <b>Alibaba Tongyi Wanxiang</b>'s <b>open-sourced</b> model (14B) for <u>text-to-video & image-to-video generation</u>, using <u>DiT structure</u>.
             </p>
             
                 <button onclick="toggleTable('2025/3/26-Wan-table')">Read more</button>
@@ -1621,10 +1621,10 @@
                 <img src='figs/2025-03-26-Wan-fig1.png' width=900>
                 <figcaption>
                     <b>Data procssing pipeline</b>. 
-                    <br><u>Fundamental dimensions:</u> text detection, aesthetic evaluation, NSFW score, watermark & logo detection, black border detection, overexposure detection, synthetic image detection, blur detection, duration & resolution.
+                    <br><u>Fundamental dimensions:</u> text, aesthetic, NSFW score, watermark & logo, black border, overexposure, synthetic image, blur, duration & resolution.
                     <br><u>Visual quality:</u> clustering, scoring.
                     <br><u>Motion quality:</u> optimal motion, medium-quality motion, static videos, camera-driven motion, low-quality motion, shaky camera footage.
-                    <br><u>Visual text data:</u> hundreds of millions of text-containing images by rendering Chinese characters on a pure white background and large amounts from real-world data.
+                    <br><b>Visual text data:</b> hundreds of millions of text-containing images by rendering Chinese characters on a pure white background and large amounts from real-world data.
                     <br><u>Captions:</u> celebrities, landmarks, movie characters, object counting, OCR, camera angle and motion, fine-grained categories, relational understanding, re-caption, editing instruction caption, group image description, human-annotated image and video captions.
                 </figcaption>
             </figure>
@@ -1634,7 +1634,7 @@
         <td colspan="2">
             <figure>
                 <img src='figs/2025-03-26-Wan-fig2.png' width=700>
-                <figcaption><b>VAE</b> compresses data by <b>8x8x4</b>. It is trained using <u>L1 reconstruction loss, KL loss, LPIPS perceptual loss</u>. </figcaption>
+                <figcaption><b>VAE with 8x8x4 compression ratio</b> is trained by L1 reconstruction loss + KL loss + LPIPS perceptual loss. </figcaption>
             </figure>
         </td>
     </tr>
@@ -1642,7 +1642,7 @@
         <td>
             <figure>
                 <img src='figs/2025-03-26-Wan-fig3.png' width=600>
-                <figcaption><b>Architecture</b>. Cross-attention for text prompts; MLP for time embeddings; Text encoder is umT5; training objective is flow-matching. <b>Image pre-training -> image-video joint training.</b> </figcaption>
+                <figcaption><b>Architecture</b>. Text prompt is encoded by <u>umT5</u> and injected into model by <u>cross-attention</u>; timestep is embedded by MLP; using flow-matching loss. Image pre-training -> image-video joint training. </figcaption>
             </figure>
         </td>
         <td>
@@ -1656,7 +1656,7 @@
         <td colspan="2">
             <figure>
                 <img src='figs/2025-03-26-Wan-fig5.png' width=600>
-                <figcaption><b>I2V framework.</b> Image condition is injected by <u>channel-concat</u> and <u>CLIP image encoder</u>.</figcaption>
+                <figcaption><b>I2V framework.</b> Image condition is injected through <u>channel-concat</u> and <b>CLIP image encoder</b>.</figcaption>
             </figure>
         </td>
     </tr>

@@ -117,17 +117,17 @@ Foundation Model & Algorithm,2025/4/11,Seaweed-7B,Seaweed-7B: Cost-Effective Tra
         </td>
     </tr>
 </table>"
-Foundation Model & Algorithm,2025/3/26,Wan,Wan: Open and Advanced Large-Scale Video Generative Models,Wan,Alibaba Group,https://arxiv.org/pdf/2503.20314,arXiv 2025,https://github.com/Wan-Video/Wan2.1/,,"<b>Alibaba Tongyi Wanxiang</b>'s <b>open-sourced</b> model (14B) for <u>text-to-video & image-to-video generation</u>, using 8x8x4 VAE, <u>DiT structure</u>, etc.","<table>
+Foundation Model & Algorithm,2025/3/26,Wan,Wan: Open and Advanced Large-Scale Video Generative Models,Tongyi Wanxiang,Alibaba,https://arxiv.org/pdf/2503.20314,arXiv 2025,https://github.com/Wan-Video/Wan2.1/,,"<b>Alibaba Tongyi Wanxiang</b>'s <b>open-sourced</b> model (14B) for <u>text-to-video & image-to-video generation</u>, using <u>DiT structure</u>.","<table>
     <tr>
         <td colspan=""2"">
             <figure>
                 <img src='figs/2025-03-26-Wan-fig1.png' width=900>
                 <figcaption>
                     <b>Data procssing pipeline</b>. 
-                    <br><u>Fundamental dimensions:</u> text detection, aesthetic evaluation, NSFW score, watermark & logo detection, black border detection, overexposure detection, synthetic image detection, blur detection, duration & resolution.
+                    <br><u>Fundamental dimensions:</u> text, aesthetic, NSFW score, watermark & logo, black border, overexposure, synthetic image, blur, duration & resolution.
                     <br><u>Visual quality:</u> clustering, scoring.
                     <br><u>Motion quality:</u> optimal motion, medium-quality motion, static videos, camera-driven motion, low-quality motion, shaky camera footage.
-                    <br><u>Visual text data:</u> hundreds of millions of text-containing images by rendering Chinese characters on a pure white background and large amounts from real-world data.
+                    <br><b>Visual text data:</b> hundreds of millions of text-containing images by rendering Chinese characters on a pure white background and large amounts from real-world data.
                     <br><u>Captions:</u> celebrities, landmarks, movie characters, object counting, OCR, camera angle and motion, fine-grained categories, relational understanding, re-caption, editing instruction caption, group image description, human-annotated image and video captions.
                 </figcaption>
             </figure>
@@ -137,7 +137,7 @@ Foundation Model & Algorithm,2025/3/26,Wan,Wan: Open and Advanced Large-Scale Vi
         <td colspan=""2"">
             <figure>
                 <img src='figs/2025-03-26-Wan-fig2.png' width=700>
-                <figcaption><b>VAE</b> compresses data by <b>8x8x4</b>. It is trained using <u>L1 reconstruction loss, KL loss, LPIPS perceptual loss</u>. </figcaption>
+                <figcaption><b>VAE with 8x8x4 compression ratio</b> is trained by L1 reconstruction loss + KL loss + LPIPS perceptual loss. </figcaption>
             </figure>
         </td>
     </tr>
@@ -145,7 +145,7 @@ Foundation Model & Algorithm,2025/3/26,Wan,Wan: Open and Advanced Large-Scale Vi
         <td>
             <figure>
                 <img src='figs/2025-03-26-Wan-fig3.png' width=600>
-                <figcaption><b>Architecture</b>. Cross-attention for text prompts; MLP for time embeddings; Text encoder is umT5; training objective is flow-matching. <b>Image pre-training -> image-video joint training.</b> </figcaption>
+                <figcaption><b>Architecture</b>. Text prompt is encoded by <u>umT5</u> and injected into model by <u>cross-attention</u>; timestep is embedded by MLP; using flow-matching loss. Image pre-training -> image-video joint training. </figcaption>
             </figure>
         </td>
         <td>
@@ -159,7 +159,7 @@ Foundation Model & Algorithm,2025/3/26,Wan,Wan: Open and Advanced Large-Scale Vi
         <td colspan=""2"">
             <figure>
                 <img src='figs/2025-03-26-Wan-fig5.png' width=600>
-                <figcaption><b>I2V framework.</b> Image condition is injected by <u>channel-concat</u> and <u>CLIP image encoder</u>.</figcaption>
+                <figcaption><b>I2V framework.</b> Image condition is injected through <u>channel-concat</u> and <b>CLIP image encoder</b>.</figcaption>
             </figure>
         </td>
     </tr>
