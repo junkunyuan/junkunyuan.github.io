@@ -76,7 +76,7 @@ def build_main_content(df, categories):
             if isinstance(item["jupyter_note"], str) and ".ipynb" in item["jupyter_note"]:
                 jupyter_note = \
                 f""" 
-                <br><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/{item["jupyter_note"]}" class="notetext">(notes in jupyter)</a>
+                <br><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/{item["jupyter_note"]}" class="note">(notes in jupyter)</a>
                 """
             else:
                 jupyter_note = ""
@@ -84,18 +84,18 @@ def build_main_content(df, categories):
                 f"""
                 <tr>
                     <td>
-                        <span class="datetext">{item["date"]}</span><br><a href="#{item["date"]}-{item["model"].replace("<br>", "--")}" class="impactmodeltext">
+                        <span class="date">{item["date"]}</span><br><a href="#{item["date"]}-{item["model"].replace("<br>", "--")}" class="model">
                             {item["model"]}
                             {jupyter_note}
                         </a>
                     </td>
                     <td>
-                        <a href="{item["paper_url"]}"><span class="papertext">
+                        <a href="{item["paper_url"]}"><span class="paper">
                             {item["paper"]} <b><i>({item["publication"]})</i></b>
                         </span></a>
                         {project}
                     </td>
-                    <td><span class="summarytext">
+                    <td><span class="summary">
                         {item["summary"]}
                     </span></td>
                 </tr>
@@ -161,7 +161,7 @@ def build_details(df):
             detail = ""
         
         if isinstance(item["jupyter_note"], str) and ".ipynb" in item["jupyter_note"]:
-            jupyter_note = f"""<p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/{item["jupyter_note"]}" class="notetext">(notes in jupyter)</a></p>"""
+            jupyter_note = f"""<p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/{item["jupyter_note"]}" class="note">(notes in jupyter)</a></p>"""
         else:
             jupyter_note = ""
         detail_items += \
