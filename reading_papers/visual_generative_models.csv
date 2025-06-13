@@ -456,7 +456,7 @@ Foundation Model & Algorithm,2024/12/5,Infinity,Infinity: Scaling Bitwise AutoRe
         </td>
     </tr>
 </table>"
-Foundation Model & Algorithm,2024/12/3,HunyuanVideo,HunyuanVideo: A Systematic Framework For Large Video Generative Models,Hunyuan Multimodal Generation Team,Tencent,https://arxiv.org/pdf/2412.03603,arXiv 2024,https://github.com/Tencent/HunyuanVideo/,,"<b>Tencent</b> (Hunyuan Team)'s <b>open-sourced</b> <u>video generation</u> model (13B) using <u>diffusion transformer</u> and conducting fine-grained data curation, captioning, and training scaling.",
+Foundation Model & Algorithm,2024/12/3,HunyuanVideo,HunyuanVideo: A Systematic Framework For Large Video Generative Models,Hunyuan Multimodal Generation Team,Tencent,https://arxiv.org/pdf/2412.03603,arXiv 2024,https://github.com/Tencent/HunyuanVideo/,,"<b>Tencent Hunyuan Team</b>'s <b>open-sourced</b> <u>text-to-video & image-to-video generation</u> model (13B) with <u>diffusion transformer (FLUX structure)</u>, designed by training scaling.",
 Fine-Tuning,2024/11/27,Reliable Seed,Enhancing Compositional Text-to-Image Generation with Reliable Random Seeds,"Shuangqi Li, Hieu Le, Jingyi Xu, Mathieu Salzmann","EPFL, Stony Brook University",https://arxiv.org/pdf/2411.18810,ICLR 2025,,,"The <b>noises initialized by reliable seeds</b> result in accurate <u>image generation</u> such as <u>numeracy</u> and <u>position</u>, and use these generated data for fine-tuning further improves performance.","<ul>
     <li> There is a strong correlation between initial seeds and object arrangement.
     <li> Certain noise signals are more likely to result in accurate compositional generation: numeracy and position.

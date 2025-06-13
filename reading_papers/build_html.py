@@ -86,7 +86,8 @@ def build_main_content(df, categories):
                 f"""
                 <tr>
                     <td>
-                        <span class="date">{item["date"]}</span><br><a href="#{item["date"]}-{item["model"].replace("<br>", "--")}" class="model">
+                        <a id="{item["date"]}-{item["model"].replace("<br>", "--")}-item" class="date">{item["date"]}</a>
+                        <br><a href="#{item["date"]}-{item["model"].replace("<br>", "--")}" class="model">
                             {item["model"]}
                             {jupyter_note}
                         </a>
@@ -168,7 +169,7 @@ def build_details(df):
         detail_items += \
             f"""
             <h4 id="{item["date"]}-{item["model"].replace("<br>", "--")}">
-            [{all_items - idx}] {item["paper"]}
+            [{all_items - idx}] &nbsp;{item["paper"]}
             </h4>
             {jupyter_note}
             <p>
@@ -184,7 +185,7 @@ def build_details(df):
                 <i><b>Summary:</b></i> {item["summary"]}
             </p>
             {detail}
-            <p><a href="#top">[back to top]</a></p>
+            <p><a href="#{item["date"]}-{item["model"].replace("<br>", "--")}-item">[back to item]</a> &nbsp; <a href="#top">[back to top]</a> </p>
             """
     details = """<h2 id="papers">Papers & Reading Notes</h2>""" + detail_items + \
         """
