@@ -186,12 +186,13 @@ Survey & Insight,2025/3/10,Inference Beat Pretraining,Ideas in Inference-time Sc
     <li> <u>Scalable in both, with sequence length in the outer loop:</u> AR-Diffusion, Rolling diffusion, MAR.
     <li> <u>Scalable in both, with refinement steps in the outer loop:</u> autoregression distribution smoothing.
 </ul>"
-Foundation Model & Algorithm,2025/3/10,Seedream2.0,Seedream 2.0: A Native Chinese-English Bilingual Image Generation Foundation Model,ByteDance's Seed Vision Team,ByteDance's Seed Vision Team,https://arxiv.org/pdf/2503.07703,arXiv 2025,,,"<b>ByteDance Sead Vision Team</b> 's foundation model for <u>image genertion</u> with native <u>Chinese-English</u> bilingual capability, where some techniques such as scaled RoPE, SFT, RLHF are employed.","<ul>
-    <li> Use a <u>self-developed bilingual LLM</u> and Glyph-Aligned <b>ByT5</b> as text encoders.
+Foundation Model & Algorithm,2025/3/10,Seedream2.0,Seedream 2.0: A Native Chinese-English Bilingual Image Generation Foundation Model,ByteDance's Seed Vision Team,ByteDance,https://arxiv.org/pdf/2503.07703,arXiv 2025,,,"<b>ByteDance Sead Vision Team</b> 's foundation model for <u>image genertion</u> with native <u>Chinese-English</u> bilingual capability, where some techniques such as scaled RoPE, SFT, RLHF are employed.","<ul>
+    <li> Use a <b>self-developed bilingual LLM</b> and Glyph-Aligned <u>ByT5</u> as text encoders.
     <li> Use a <u>self-developed VAE</u>.
-    <li> Use <u>learned positional embeddings on text tokens</u> & <u>scaled 2D RoPE on image tokens</u>.
-    <li> <u>Continue training</u>, <u>supervised fine-tuning</u>, <u>human feedback alignment</u>.
-    <li> It has been incorporated into Doubao (豆包) and Dreamina (即梦).
+    <li> Use learned positional embeddings on text tokens & scaled 2D RoPE on image tokens.
+    <li> Training stages: pre-training => continue training => supervised fine-tuning => human feedback alignment.
+    <li> Inference stages: user prompt => prompt engineering => text encoding => generation => refinement => output
+    <li> Platform: Doubao (豆包) & Dreamina (即梦).
 </ul>
 <table>
     <tr>
@@ -230,15 +231,7 @@ Foundation Model & Algorithm,2025/3/10,Seedream2.0,Seedream 2.0: A Native Chines
             </figure>
         </td>
     </tr>
-    <tr>
-        <td colspan=""2"">
-            <figure>
-                <img src='figs/2025-03-10-Seedream2.0-fig5.png' width=700>
-                <figcaption>Overview of <b>training</b> and <b>inference</b> stages.</figcaption>
-            </figure>
-        </td>
-    </tr>
-</table>"
+    </table>"
 Evaluation,2025/3/7,UnifiedReward,Unified Reward Model for Multimodal Understanding and Generation,"Yibin Wang, Yuhang Zang, Hao Li, Cheng Jin, Jiaqi Wang","Fudan University, Shanghai Innovation Institute, Shanghai AI Lab, Shanghai Academy of Artificial Intelligence for Science",https://arxiv.org/pdf/2503.05236,arXiv 2025,https://github.com/CodeGoat24/UnifiedReward/,,A unified reward model for both <b>multimodal understanding & generation evaluation</b> by <u>pairwise ranking & pointwise scoring</u>.,"<table>
     <tr>
         <td>
