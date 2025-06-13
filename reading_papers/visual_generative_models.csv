@@ -267,7 +267,7 @@ Foundation Model & Algorithm,2025/2/14,Step-Video-T2V,"Step-Video-T2V Technical 
         <td>
             <figure>
                 <img src='figs/2025-02-14-Step-Video-T2V-fig2.png' width=400>
-            <figcaption><b>Video-VAE</b> compresses videos by <b>8x16x16</b> & <b>16-channel features</b>.</figcaption>
+            <figcaption><b>VAE</b> compresses videos to <b>16x16x8-16 channels</b>.</figcaption>
             </figure>
         </td>
     </tr>
@@ -275,13 +275,13 @@ Foundation Model & Algorithm,2025/2/14,Step-Video-T2V,"Step-Video-T2V Technical 
         <td>
             <figure>
                 <img src='figs/2025-02-14-Step-Video-T2V-fig4.png' width=500>
-            <figcaption><b>DPO framework:</b> use data & synthesis prompts to generate winning & losing samples from different seeds, followed by human annotation. Adapt <b>Diffusion-DPO</b> here and <u>reduce beta</u> & <u>increase learning rate</u> to achieve faster convergence.</figcaption>
+            <figcaption><b>DPO framework:</b> use synthesis prompts to generate winning & losing samples from different seeds, followed by human annotation. Adapt <b>Diffusion-DPO</b> here and <b>reduce beta</b> & <b>increase learning rate</b> to achieve faster convergence.</figcaption>
             </figure>
         </td>
         <td>
             <figure>
                 <img src='figs/2025-02-14-Step-Video-T2V-fig3.png' width=400>
-            <figcaption>Use <u>DiT</u> with <u>3D full-attention</u>, <u>cross-attention for prompts</u>, <u>RoPE-3D</u>, and <u>QK-Norm</u>. <u>HunyuanCLIP</u> and <u>Step-LLM</u> are used as the bilingual text encoders.</figcaption>
+            <figcaption>Use <b>DiT structure</b> with 3D full-attention, <u>cross-attention for prompts</u>, RoPE-3D, and QK-Norm. <b>HunyuanCLIP</b> and <b>Step-LLM</b> are used as the bilingual text encoders.</figcaption>
             </figure>
         </td>
     </tr>
@@ -289,7 +289,7 @@ Foundation Model & Algorithm,2025/2/14,Step-Video-T2V,"Step-Video-T2V Technical 
         <td colspan=""2"">
             <figure>
                 <img src='figs/2025-02-14-Step-Video-T2V-fig5.png' width=900>
-            <figcaption><b>2B video-text pairs</b>, <b>3.8B image-text pairs</b>. <b>Video segmentation:</b> use AdaptiveDetector in <u>PySceneDetect</u> to identify scene changes and use <u>FFmpeg</u> to split them. <b>Video quality assessment:</b> sample eight frames and evaluate. <b>Aesthetic score:</b> <u>LAION CLIP</u>-based aesthetic predictor. <b>NSFW score:</b> <u>LAION CLIP</u>-based NSFW detector. <b>Watermark detection:</b> EfficientNet-based model. <b>Subtitle detection:</b> use <u>PaddleOCR</u> to recognize and localize tests. <b>Saturation score:</b> transform from RGB to HSV and extract saturation channel. <b>Blur score:</b> <u>Laplacian variance</u>. <b>Black border detection:</b> <u>FFmpeg</u>. <b>Video motion assessment:</b> <u>mean optical flow</u>.<b>Video captioning:</b> short caption, dense caption, original title. <b>Video concept balancing:</b> use <u>K-means</u> to group into 120K clusters. <b>Video-text alignment:</b> CLIP Score. </figcaption>
+            <figcaption><b>2B video-text pairs</b>, <b>3.8B image-text pairs</b>. <br><u>Video segmentation:</u> use AdaptiveDetector in PySceneDetect to identify scene changes and use FFmpeg to split them. <br><u>Video quality assessment:</u> sample eight frames and evaluate. <br><u>Aesthetic score:</u> LAION CLIP-based aesthetic predictor. <br><u>NSFW score:</u> LAION CLIP-based NSFW detector. <br><u>Watermark detection:</u> EfficientNet-based model. <br><u>Subtitle detection:</u> use PaddleOCR to recognize and localize tests. <br><u>Saturation score:</u> transform from RGB to HSV and extract saturation channel. <br><u>Blur score:</u> Laplacian variance. <br><u>Black border detection:</u> FFmpeg. <br><u>Video motion assessment:</u> mean optical flow. <br><u>Video captioning:</u> short caption, dense caption, original title. <br><u>Video concept balancing:</u> use K-means to group into 120K clusters. <br><u>Video-text alignment:</u> CLIP Score. </figcaption>
             </figure>
         </td>
     </tr>
@@ -297,7 +297,7 @@ Foundation Model & Algorithm,2025/2/14,Step-Video-T2V,"Step-Video-T2V Technical 
         <td colspan=""2"">
             <figure>
                 <img src='figs/2025-02-14-Step-Video-T2V-fig7.png' width=700>
-            <figcaption><b>Pre-training</b> details. </figcaption>
+            <figcaption><b>Pre-training stages.</b> </figcaption>
             </figure>
         </td>
     </tr>
@@ -305,7 +305,7 @@ Foundation Model & Algorithm,2025/2/14,Step-Video-T2V,"Step-Video-T2V Technical 
         <td colspan=""2"">
             <figure>
                 <img src='figs/2025-02-14-Step-Video-T2V-fig6.png' width=900>
-                <figcaption><b>Data filtering</b> details. </figcaption>
+                <figcaption><b>Data filtering stages.</b> </figcaption>
             </figure>
         </td>
     </tr>
