@@ -16,7 +16,7 @@
     <h1 id="top">Visual Generative Models</h1>
     <b><font size=3><font color='#D93053'>56</font> papers on visual generative models. Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
     <br><br>
-    Last updated on Friday, June 13 2025 at 09:43 PM.
+    Last updated on Friday, June 13 2025 at 10:21 PM.
     <br><br>
     <a href="reading_papers.html">[back to main contents]</a>
     <br>
@@ -346,7 +346,7 @@
                         
                     </td>
                     <td><span class="summary">
-                        A <u>diffusion transformer</u>-based model (30B) for 16s / 1080p / 16 fps <u>video and synchronized audio generation</u>.
+                        <b>Meta Movie Gen Team</b>'s <u>diffusion transformer</u>-based model (30B) for 16s / 1080p / 16 fps <u>video and audio generation</u>.
                     </span></td>
                 </tr>
                 
@@ -365,7 +365,7 @@
                         
                     </td>
                     <td><span class="summary">
-                        It shows <u>auto-regressive</u> models with <b>continuous tokens beat discrete tokens counterpart</b>, and some interesting empirical observations during scaling progress.
+                        It shows <u>auto-regressive</u> models with <b>continuous tokens beat discrete tokens counterpart</b>, and finds some interesting empirical observations during scaling progress.
                     </span></td>
                 </tr>
                 
@@ -2344,13 +2344,13 @@
                 <i><b>Project:</b></i> MovieGen (2024-10-17, <i>arXiv 2024</i>)
             </p>
             <p>
-                <i><b>Authors:</b></i>  Adam Polyak et al.
+                <i><b>Authors:</b></i>  Movie Gen Team
             </p>
             <p>
                 <i><b>Organizations:</b></i> Meta
             </p>
             <p>
-                <i><b>Summary:</b></i> A <u>diffusion transformer</u>-based model (30B) for 16s / 1080p / 16 fps <u>video and synchronized audio generation</u>.
+                <i><b>Summary:</b></i> <b>Meta Movie Gen Team</b>'s <u>diffusion transformer</u>-based model (30B) for 16s / 1080p / 16 fps <u>video and audio generation</u>.
             </p>
             
             <p><a href="#2024-10-17-MovieGen-item">[back to item]</a> &nbsp; <a href="#top">[back to top]</a> </p>
@@ -2369,7 +2369,7 @@
                 <i><b>Organizations:</b></i> Google DeepMind, MIT
             </p>
             <p>
-                <i><b>Summary:</b></i> It shows <u>auto-regressive</u> models with <b>continuous tokens beat discrete tokens counterpart</b>, and some interesting empirical observations during scaling progress.
+                <i><b>Summary:</b></i> It shows <u>auto-regressive</u> models with <b>continuous tokens beat discrete tokens counterpart</b>, and finds some interesting empirical observations during scaling progress.
             </p>
             
                 <button onclick="toggleTable('2024-10-17-Fluid-table')">Read more</button>
@@ -2382,8 +2382,8 @@
                 <figcaption>
                     <b>Image tokenizer:</b> images are converted to either discrete (<u>VQGAN</u>, 16x16 tokens with 8192 vocabulary) or continuous tokens (<u>VAE</u>, 32x32 with 4 channels, patchisize to 256 tokens with 16 channels).
                     <br><b>Text tokenizer:</b> text (max length 128) is converted to discrete tokens using <u>T5-XXL</u>.
-                    <br><b>Model structure:</b> transformer with cross-attention attending to text embedding.
-                    <br><b>Decoder:</b> text: softmax with cross-entropy loss; image: MLP with diffusion loss.
+                    <br><b>Model structure:</b> transformer with <u>cross-attention</u> attending to text embedding.
+                    <br><b>Loss: cross-entropy loss on text; diffusion loss on images.</b>
                 </figcaption>
             </figure>
         </td>
@@ -2400,7 +2400,7 @@
         <td colspan="2">
             <figure>
                 <img src='figs/2024-10-17-Fluid-fig3.png' width=700>
-                <figcaption><b>Random-order</b> models & <b>continuous tokens</b> perform the best in <b>evaluation scores</b>.</figcaption>
+                <figcaption><b>Random-order</b> models & <b>continuous image tokens</b> perform the best.<br><u>Continuous image tokens </u>perform better when using <u>random order</u>; <u>Discrete image tokens</u> perform better when using <u>raster order</u>. </figcaption>
             </figure>
         </td>
     </tr>
@@ -2568,7 +2568,7 @@
                 <i><b>Authors:</b></i> Keyu Tian, Yi Jiang, Zehuan Yuan, Bingyue Peng, Liwei Wang
             </p>
             <p>
-                <i><b>Organizations:</b></i> Peking University, Bytedance Inc
+                <i><b>Organizations:</b></i> Peking University, Bytedance
             </p>
             <p>
                 <i><b>Summary:</b></i> Employ <b>next-scale prediction</b> to make <u>auto-regressive models surpass diffusion transformers</u> for <u>image generation</u> on image quality, inference speed, data efficiency, scalability.
@@ -2581,7 +2581,7 @@
         <td>
             <figure>
                 <img src='figs/2024-04-03-VAR-fig1.png' width=800>
-                <figcaption><b>Next-scale prediction:</b> it starts from the 1x1 token map, and progressively expands in resolution; at each step, the transformer predicts the next higher-resolution token map conditioned on all previous ones.</figcaption>
+                <figcaption><b>Next-scale prediction:</b> start from 1x1 token map; at each step, it predicts the next higher-resolution token map conditioned on all previous ones.</figcaption>
             </figure>
         </td>
     </tr>
@@ -2597,7 +2597,7 @@
         <td>
             <figure>
                 <img src='figs/2024-04-03-VAR-fig3.png' width=900>
-                <figcaption><b>Training pipeline of tokenzier and VAR.</b>  Tokenzier: the same architecture, training data (OpemImages) as VQVAE, using codebook of 4096 and spatial downsample ratio of 16x. VAR: the standard transformers architecture with AdaLN; do not use RoPE, SwiGLU MLP, RMS Norm. </figcaption>
+                <figcaption><b>Training pipeline of tokenzier and VAR.</b>  Tokenzier (similar to VQVAE): the same architecture and training data (OpemImages), using codebook of 4096 and spatial downsample ratio of 16x. VAR: the standard transformer with AdaLN; do not use RoPE, SwiGLU MLP, RMS Norm. </figcaption>
             </figure>
         </td>
     </tr>

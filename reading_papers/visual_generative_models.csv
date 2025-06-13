@@ -461,8 +461,8 @@ Fine-Tuning,2024/11/27,Reliable Seed,Enhancing Compositional Text-to-Image Gener
     <li> There is a strong correlation between initial seeds and object arrangement.
     <li> Certain noise signals are more likely to result in accurate compositional generation: numeracy and position.
 </ul>"
-Foundation Model & Algorithm,2024/10/17,MovieGen,Movie Gen: A Cast of Media Foundation Models, Adam Polyak et al.,Meta,https://arxiv.org/pdf/2410.13720,arXiv 2024,,,A <u>diffusion transformer</u>-based model (30B) for 16s / 1080p / 16 fps <u>video and synchronized audio generation</u>.,
-Foundation Model & Algorithm,2024/10/17,Fluid,Fluid: Scaling Autoregressive Text-to-image Generative Models with Continuous Tokens,"Lijie Fan, Tianhong Li, Siyang Qin, Yuanzhen Li, Chen Sun, Michael Rubinstein, Deqing Sun, Kaiming He, Yonglong Tian","Google DeepMind, MIT",https://arxiv.org/pdf/2410.13863,ICLR 2025,,,"It shows <u>auto-regressive</u> models with <b>continuous tokens beat discrete tokens counterpart</b>, and some interesting empirical observations during scaling progress.","<table>
+Foundation Model & Algorithm,2024/10/17,MovieGen,Movie Gen: A Cast of Media Foundation Models, Movie Gen Team,Meta,https://arxiv.org/pdf/2410.13720,arXiv 2024,,,<b>Meta Movie Gen Team</b>'s <u>diffusion transformer</u>-based model (30B) for 16s / 1080p / 16 fps <u>video and audio generation</u>.,
+Foundation Model & Algorithm,2024/10/17,Fluid,Fluid: Scaling Autoregressive Text-to-image Generative Models with Continuous Tokens,"Lijie Fan, Tianhong Li, Siyang Qin, Yuanzhen Li, Chen Sun, Michael Rubinstein, Deqing Sun, Kaiming He, Yonglong Tian","Google DeepMind, MIT",https://arxiv.org/pdf/2410.13863,ICLR 2025,,,"It shows <u>auto-regressive</u> models with <b>continuous tokens beat discrete tokens counterpart</b>, and finds some interesting empirical observations during scaling progress.","<table>
     <tr>
         <td colspan=""2"">
             <figure>
@@ -470,8 +470,8 @@ Foundation Model & Algorithm,2024/10/17,Fluid,Fluid: Scaling Autoregressive Text
                 <figcaption>
                     <b>Image tokenizer:</b> images are converted to either discrete (<u>VQGAN</u>, 16x16 tokens with 8192 vocabulary) or continuous tokens (<u>VAE</u>, 32x32 with 4 channels, patchisize to 256 tokens with 16 channels).
                     <br><b>Text tokenizer:</b> text (max length 128) is converted to discrete tokens using <u>T5-XXL</u>.
-                    <br><b>Model structure:</b> transformer with cross-attention attending to text embedding.
-                    <br><b>Decoder:</b> text: softmax with cross-entropy loss; image: MLP with diffusion loss.
+                    <br><b>Model structure:</b> transformer with <u>cross-attention</u> attending to text embedding.
+                    <br><b>Loss: cross-entropy loss on text; diffusion loss on images.</b>
                 </figcaption>
             </figure>
         </td>
@@ -488,7 +488,7 @@ Foundation Model & Algorithm,2024/10/17,Fluid,Fluid: Scaling Autoregressive Text
         <td colspan=""2"">
             <figure>
                 <img src='figs/2024-10-17-Fluid-fig3.png' width=700>
-                <figcaption><b>Random-order</b> models & <b>continuous tokens</b> perform the best in <b>evaluation scores</b>.</figcaption>
+                <figcaption><b>Random-order</b> models & <b>continuous image tokens</b> perform the best.<br><u>Continuous image tokens </u>perform better when using <u>random order</u>; <u>Discrete image tokens</u> perform better when using <u>raster order</u>. </figcaption>
             </figure>
         </td>
     </tr>
@@ -554,12 +554,12 @@ Foundation Model & Algorithm,2024/6/10,LlamaGen,Autoregressive Model Beats Diffu
     <li> High-quality training data: 50M subset of LAION-COCO & 10M internal high aesthetics quality images.
 </ul>"
 Evaluation,2024/5/23,MPS,Learning Multi-dimensional Human Preference for Text-to-Image Generation,"Sixian Zhang, Bohan Wang, Junqiang Wu, Yan Li, Tingting Gao, Di Zhang, Zhongyuan Wang",Kuaishou Technology,https://arxiv.org/pdf/2405.14705,CVPR 2024,https://github.com/Kwai-Kolors/MPS?tab=readme-ov-file/,,"Apply condition upon CLIP to learn <b>multi-dimensional preference score</b>: aesthetics & alignment & detail & overall, trained on a dataset with 92K preference choices of 61K images.",
-Foundation Model & Algorithm,2024/4/3,VAR,Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction,"Keyu Tian, Yi Jiang, Zehuan Yuan, Bingyue Peng, Liwei Wang","Peking University, Bytedance Inc",https://arxiv.org/pdf/2404.02905,"<font color=""#D93053"">NeurIPS 2024 Best Paper</font>",https://github.com/FoundationVision/VAR/,,"Employ <b>next-scale prediction</b> to make <u>auto-regressive models surpass diffusion transformers</u> for <u>image generation</u> on image quality, inference speed, data efficiency, scalability.","<table>
+Foundation Model & Algorithm,2024/4/3,VAR,Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction,"Keyu Tian, Yi Jiang, Zehuan Yuan, Bingyue Peng, Liwei Wang","Peking University, Bytedance",https://arxiv.org/pdf/2404.02905,"<font color=""#D93053"">NeurIPS 2024 Best Paper</font>",https://github.com/FoundationVision/VAR/,,"Employ <b>next-scale prediction</b> to make <u>auto-regressive models surpass diffusion transformers</u> for <u>image generation</u> on image quality, inference speed, data efficiency, scalability.","<table>
     <tr colspan=""2"">
         <td>
             <figure>
                 <img src='figs/2024-04-03-VAR-fig1.png' width=800>
-                <figcaption><b>Next-scale prediction:</b> it starts from the 1x1 token map, and progressively expands in resolution; at each step, the transformer predicts the next higher-resolution token map conditioned on all previous ones.</figcaption>
+                <figcaption><b>Next-scale prediction:</b> start from 1x1 token map; at each step, it predicts the next higher-resolution token map conditioned on all previous ones.</figcaption>
             </figure>
         </td>
     </tr>
@@ -575,7 +575,7 @@ Foundation Model & Algorithm,2024/4/3,VAR,Visual Autoregressive Modeling: Scalab
         <td>
             <figure>
                 <img src='figs/2024-04-03-VAR-fig3.png' width=900>
-                <figcaption><b>Training pipeline of tokenzier and VAR.</b>  Tokenzier: the same architecture, training data (OpemImages) as VQVAE, using codebook of 4096 and spatial downsample ratio of 16x. VAR: the standard transformers architecture with AdaLN; do not use RoPE, SwiGLU MLP, RMS Norm. </figcaption>
+                <figcaption><b>Training pipeline of tokenzier and VAR.</b>  Tokenzier (similar to VQVAE): the same architecture and training data (OpemImages), using codebook of 4096 and spatial downsample ratio of 16x. VAR: the standard transformer with AdaLN; do not use RoPE, SwiGLU MLP, RMS Norm. </figcaption>
             </figure>
         </td>
     </tr>
