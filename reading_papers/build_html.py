@@ -214,7 +214,10 @@ def build_details(df):
 
 if __name__ == "__main__":
     for domain_name, domain in domains.items():
+        ## Load paper pool
         df = pd.read_csv(f"{domain_name}.csv")
+        df['date'] = pd.to_datetime(df['date'], format='%Y/%m/%d').dt.strftime('%Y-%m-%d')
+
         main_content = build_main_content(df, domain["categories"])
         details = build_details(df)
         html_content = domain["prefix"] + domain["title"].replace("Reading papers", f"<font color='#D93053'>{len(df)}</font> papers") + main_content + details + domain["suffix"]
