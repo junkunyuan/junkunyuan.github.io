@@ -549,8 +549,8 @@ Foundation Model & Algorithm,2024/7/16,DiT-MoE,Scaling Diffusion Transformers to
     </tr>
 </table>"
 Foundation Model & Algorithm,2024/6/10,LlamaGen,Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation,"Peize Sun, Yi Jiang, Shoufa Chen, Shilong Zhang, Bingyue Peng, Ping Luo, Zehuan Yuan","The University of Hong Kong, ByteDance",https://arxiv.org/pdf/2406.06525,arXiv 2024,https://github.com/FoundationVision/LlamaGen/,,"Show that applying ""next-token prediction"" to <b>vanilla autoregressive models</b> achieves good <u>class-conditional & text-conditional image generation</u> performance.","<ul>
-    <li> Discrete representation in image tokenizers is no longer the bottleneck of the image reconstruction.
-    <li> Vanilla autoregressive models without inductive biases on visual signals can serve as the basis of image generation system.
+    <li> <u>Discrete representation in image tokenizers is no longer the bottleneck for image reconstruction.</u>
+    <li> <u>Vanilla autoregressive models</u> without inductive biases on visual signals can serve as the basis of image generation system.
     <li> High-quality training data: 50M subset of LAION-COCO & 10M internal high aesthetics quality images.
 </ul>"
 Evaluation,2024/5/23,MPS,Learning Multi-dimensional Human Preference for Text-to-Image Generation,"Sixian Zhang, Bohan Wang, Junqiang Wu, Yan Li, Tingting Gao, Di Zhang, Zhongyuan Wang",Kuaishou Technology,https://arxiv.org/pdf/2405.14705,CVPR 2024,https://github.com/Kwai-Kolors/MPS?tab=readme-ov-file/,,"Apply condition upon CLIP to learn <b>multi-dimensional preference score</b>: aesthetics & alignment & detail & overall, trained on a dataset with 92K preference choices of 61K images.",
