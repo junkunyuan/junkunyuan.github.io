@@ -543,7 +543,7 @@ Foundation Model & Algorithm,2024/7/16,DiT-MoE,Scaling Diffusion Transformers to
         <td>
             <figure>
                 <img src='figs/2024-07-16-DiT-MoE-fig1.png' width=700>
-                <figcaption>DiT-MoE is built upon <b>DiT</b> and replaces MLP of Transformer block by sparsely activatd mixture of MLPs as experts.</figcaption>
+                <figcaption>DiT-MoE is built upon <b>DiT</b> and replaces MLP of Transformer block by <u>sparsely activatd mixture of MLPs as experts</u>.</figcaption>
             </figure>
         </td>
     </tr>
