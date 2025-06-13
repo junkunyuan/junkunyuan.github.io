@@ -14,13 +14,14 @@
     <body>
     
     <h1 id="top">Visual Generative Models</h1>
-    <b><font size=3>56 papers on visual generative models. Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
+    <b><font size=3><font color='#D93053'>56</font> papers on visual generative models. Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
     <br><br>
-    Last updated on Thursday, June 12 2025 at 09:45 PM.
+    Last updated on Friday, June 13 2025 at 10:41 AM.
     <br><br>
     <a href="reading_papers.html">[back to main contents]</a>
+    <br>
+    <hr>
     
-    <br><br>
     <b>Contents:</b>
     <ul>
         <li>
@@ -1371,24 +1372,24 @@
             
                 <button onclick="toggleTable('2025/4/24-Step1X-Edit-table')">Read more</button>
                 <div id='2025/4/24-Step1X-Edit-table' class="table-container">
-                <ul>
-    <li>1M images & 20M instruction-image data.
-    <li><b>Data construction.</b> <u>Subject addition & removal:</u> Floerence for detection & classification; SAM-2 for segmentation; ObjectRemovalAlpha for inpainting. <u>Subject replacement & background change:</u> Floerence for detection & classification; SAM-2 for segmentation; Qwen-2.5-VL & Recognize-Anything Model & Flux-Fill for content-aware inpainting. <u>Color Alteration & material modification:</u> Floerence for detection & classification; Zeodepth for depth detection; ControlNet for generation. <u>Text modification:</u> PPOCR for OCR recognition. <u>Motion change:</u> BiRefNet & RAFT for foreground-background separation and optical flow estimation. <u>Portrait editing & beautification:</u>. <u>Style transfer:</u> edge-to-image controlled diffusion model. <u>Tone transformation:</u> color grading, dehazing, deraining, seasonal transformations, etc.
-    <li><b>Caption strategy.</b> <u>Redundancy-enhanced annotation:</u> multi-round annotation strategy. <u>Stylized annotation via contextual examples:</u> use style-aligned examples as contextual references. <u>Cost-efficient pipeline:</u> use GPT-4o to annotation training data of in-house annotator. <u>Bilingual annotation:</u> Chinese & English.
-</ul>
-<table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2025-04-24-Step1X-Edit-fig1.png' width=900>
-                <figcaption>
-                    <b>Multimodal large language model:</b> generate embeddings of instruction and reference images; use Qwen-VL.
-                    <b>Connector:</b> substitute text embedding; use token refiner.
-                    <b>Diffusion Transformer</b>.
-                </figcaption>
-            </figure>
-        </td>
-    </tr>
+                <ul>
+    <li>1M images & 20M instruction-image data.
+    <li><b>Data construction.</b> <u>Subject addition & removal:</u> Floerence for detection & classification; SAM-2 for segmentation; ObjectRemovalAlpha for inpainting. <u>Subject replacement & background change:</u> Floerence for detection & classification; SAM-2 for segmentation; Qwen-2.5-VL & Recognize-Anything Model & Flux-Fill for content-aware inpainting. <u>Color Alteration & material modification:</u> Floerence for detection & classification; Zeodepth for depth detection; ControlNet for generation. <u>Text modification:</u> PPOCR for OCR recognition. <u>Motion change:</u> BiRefNet & RAFT for foreground-background separation and optical flow estimation. <u>Portrait editing & beautification:</u>. <u>Style transfer:</u> edge-to-image controlled diffusion model. <u>Tone transformation:</u> color grading, dehazing, deraining, seasonal transformations, etc.
+    <li><b>Caption strategy.</b> <u>Redundancy-enhanced annotation:</u> multi-round annotation strategy. <u>Stylized annotation via contextual examples:</u> use style-aligned examples as contextual references. <u>Cost-efficient pipeline:</u> use GPT-4o to annotation training data of in-house annotator. <u>Bilingual annotation:</u> Chinese & English.
+</ul>
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-04-24-Step1X-Edit-fig1.png' width=900>
+                <figcaption>
+                    <b>Multimodal large language model:</b> generate embeddings of instruction and reference images; use Qwen-VL.
+                    <b>Connector:</b> substitute text embedding; use token refiner.
+                    <b>Diffusion Transformer</b>.
+                </figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -1413,12 +1414,12 @@
             
                 <button onclick="toggleTable('2025/4/15-SimpleAR-table')">Read more</button>
                 <div id='2025/4/15-SimpleAR-table' class="table-container">
-                <ul>
-    <li> Use <b>Qwen</b> structure, <b>Cosmos</b> visual tokenizer: 64k codebook & 16 ratio downsampling.
-    <li> Training stages: (1) <u>512 resolution pretraining</u>; (2) <u>1024 resolution SFT</u>; (3) <u>1024 resolution RL</u>.
-    <li> Use <u>LLM initialization does not improve</u> DPG-Bench performance.
-    <li> <u>2D RoPE</u> <u>will not improve generation</u>, but is necessary for <u>dynamic resolution generation</u>.
-    <li> Use <u>GRPO with CLIP</u> as the reward model improves more than using <u>HPS v2</u>.
+                <ul>
+    <li> Use <b>Qwen</b> structure, <b>Cosmos</b> visual tokenizer: 64k codebook & 16 ratio downsampling.
+    <li> Training stages: (1) <u>512 resolution pretraining</u>; (2) <u>1024 resolution SFT</u>; (3) <u>1024 resolution RL</u>.
+    <li> Use <u>LLM initialization does not improve</u> DPG-Bench performance.
+    <li> <u>2D RoPE</u> <u>will not improve generation</u>, but is necessary for <u>dynamic resolution generation</u>.
+    <li> Use <u>GRPO with CLIP</u> as the reward model improves more than using <u>HPS v2</u>.
 </ul>
                 </div>
                 
@@ -1443,23 +1444,23 @@
             
                 <button onclick="toggleTable('2025/4/15-Seedream 3.0-table')">Read more</button>
                 <div id='2025/4/15-Seedream 3.0-table' class="table-container">
-                <ul>
-    <li> <u>Defect-aware training:</u> stop gradient on watermarks, subtitles, overlaid text, mosaic pattern.
-    <li> <u>Hierarchical clustering</u> balance term and address long-tail distributions.
-    <li> Introduce a <u>representation alignment loss</u>: <b>cosine distance between the feature of MMDiT and DINOv2-L</b>.
-    <li> Resolution-aware timestep sampling: larger shift to larger resolution training (similar to SD3).
-    <li> Find <b>scaling property of VLM-based reward model</b>.
-    <li> Other improvements: (1) mixed-resolution training; (2) <u>cross-modality RoPE</u>; (3) diverse aesthetic captions in SFT.
-</ul>
-<table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2025-04-15-Seedream 3.0-fig1.png' width=600>
-                <figcaption>Seedream3.0 achieves <b>the best ELO performance</b>.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <ul>
+    <li> <u>Defect-aware training:</u> stop gradient on watermarks, subtitles, overlaid text, mosaic pattern.
+    <li> <u>Hierarchical clustering</u> balance term and address long-tail distributions.
+    <li> Introduce a <u>representation alignment loss</u>: <b>cosine distance between the feature of MMDiT and DINOv2-L</b>.
+    <li> Resolution-aware timestep sampling: larger shift to larger resolution training (similar to SD3).
+    <li> Find <b>scaling property of VLM-based reward model</b>.
+    <li> Other improvements: (1) mixed-resolution training; (2) <u>cross-modality RoPE</u>; (3) diverse aesthetic captions in SFT.
+</ul>
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-04-15-Seedream 3.0-fig1.png' width=600>
+                <figcaption>Seedream3.0 achieves <b>the best ELO performance</b>.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -1484,79 +1485,79 @@
             
                 <button onclick="toggleTable('2025/4/11-Seaweed-7B-table')">Read more</button>
                 <div id='2025/4/11-Seaweed-7B-table' class="table-container">
-                <table>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2025-04-11-Seaweed-7B-fig1.png' width=900>
-                <figcaption>
-                    <b>Video data processing.</b>
-                    <br><u>Temporal splitting:</u> internal splitter.
-                    <br><u>Spatial cropping:</u> use FFmpeg to remove black border, and develop models for text, logo, watermark, and special effects detection.
-                    <br><u>Quality filtering:</u> >256 pixels, within [1/3, 3/1] aspect ratio, not static, camera shake & playback speed, safety, artifact detection. 
-                    <br><u>Multi-aspect balancing & deduplication:</u> clustering. 
-                    <br><u>Simulation data:</u> graphics engines. 
-                    <br><u>Video captioning:</u> a short & a long. 
-                    <br><u>System prompt:</u> video type, camera position, camera angle, camera movement, visual style.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2025-04-11-Seaweed-7B-fig2.png' width=400>
-                <figcaption><b>VAE</b>. Use <u>L1 + KL + LPIPS + adversarial loss</u>. Use an <b>image discriminator and a video discriminator</b> performs better than using either one. Downsample by 16x16x4-48c or 8x8x4-16c. <b>Compress information using VAE outperforms patchification in DiT, and faster</b>.</figcaption>
-            </figure>
-        </td>
-        <td>
-            <figure>
-                <img src='figs/2025-04-11-Seaweed-7B-fig3.png' width=500>
-                <figcaption><b>VAE training stages</b> for images and videos.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2025-04-11-Seaweed-7B-fig4.png' width=900>
-                <figcaption>Use <b>mixed resolution & durations & frame rate</b> VAE training converges slower but performs better than training on low resolution.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2025-04-11-Seaweed-7B-fig6.png' width=650>
-                <figcaption><b>Full attention</b> enjoys training scalability.</figcaption>
-            </figure>
-        </td>
-        <td>
-            <figure>
-                <img src='figs/2025-04-11-Seaweed-7B-fig5.png' width=250>
-                <figcaption>Hybrid-stream is better than dual-stream.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2025-04-11-Seaweed-7B-fig7.png' width=600>
-                <figcaption><b>Four-stage training procedure.
-                <br></b> Use <b>multi-task pre-training</b>: text-to-video, image-to-video, video-to-video. Input features and conditioning features are <u>channel-concatenated</u>, with a <u>binary mask</u> indicating the condition. Ratio of image-to-video is 20% during pre-training, and increasing to 50%-75% detached for fine-tuning.
-                <br><b>SFT:</b> use 700K good videos and 50K top videos, the semantic alignment ability drops a little.
-                <br><b>RLHF:</b> <u>lr=1e-7</u>, <u>beta=100</u>, select from 4 samples under different seeds.
-                <br><b>Distillation:</b> trajectory segmented consistency distillation + CFG distillation + adversarial training, distill to 8 steps.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2025-04-11-Seaweed-7B-fig8.png' width=400>
-                <figcaption><b>Image-to-video ELO performance.</b></figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-04-11-Seaweed-7B-fig1.png' width=900>
+                <figcaption>
+                    <b>Video data processing.</b>
+                    <br><u>Temporal splitting:</u> internal splitter.
+                    <br><u>Spatial cropping:</u> use FFmpeg to remove black border, and develop models for text, logo, watermark, and special effects detection.
+                    <br><u>Quality filtering:</u> >256 pixels, within [1/3, 3/1] aspect ratio, not static, camera shake & playback speed, safety, artifact detection. 
+                    <br><u>Multi-aspect balancing & deduplication:</u> clustering. 
+                    <br><u>Simulation data:</u> graphics engines. 
+                    <br><u>Video captioning:</u> a short & a long. 
+                    <br><u>System prompt:</u> video type, camera position, camera angle, camera movement, visual style.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-04-11-Seaweed-7B-fig2.png' width=400>
+                <figcaption><b>VAE</b>. Use <u>L1 + KL + LPIPS + adversarial loss</u>. Use an <b>image discriminator and a video discriminator</b> performs better than using either one. Downsample by 16x16x4-48c or 8x8x4-16c. <b>Compress information using VAE outperforms patchification in DiT, and faster</b>.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2025-04-11-Seaweed-7B-fig3.png' width=500>
+                <figcaption><b>VAE training stages</b> for images and videos.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-04-11-Seaweed-7B-fig4.png' width=900>
+                <figcaption>Use <b>mixed resolution & durations & frame rate</b> VAE training converges slower but performs better than training on low resolution.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-04-11-Seaweed-7B-fig6.png' width=650>
+                <figcaption><b>Full attention</b> enjoys training scalability.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2025-04-11-Seaweed-7B-fig5.png' width=250>
+                <figcaption>Hybrid-stream is better than dual-stream.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-04-11-Seaweed-7B-fig7.png' width=600>
+                <figcaption><b>Four-stage training procedure.
+                <br></b> Use <b>multi-task pre-training</b>: text-to-video, image-to-video, video-to-video. Input features and conditioning features are <u>channel-concatenated</u>, with a <u>binary mask</u> indicating the condition. Ratio of image-to-video is 20% during pre-training, and increasing to 50%-75% detached for fine-tuning.
+                <br><b>SFT:</b> use 700K good videos and 50K top videos, the semantic alignment ability drops a little.
+                <br><b>RLHF:</b> <u>lr=1e-7</u>, <u>beta=100</u>, select from 4 samples under different seeds.
+                <br><b>Distillation:</b> trajectory segmented consistency distillation + CFG distillation + adversarial training, distill to 8 steps.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-04-11-Seaweed-7B-fig8.png' width=400>
+                <figcaption><b>Image-to-video ELO performance.</b></figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -1581,15 +1582,15 @@
             
                 <button onclick="toggleTable('2025/3/7-UnifiedReward-table')">Read more</button>
                 <div id='2025/3/7-UnifiedReward-table' class="table-container">
-                <table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2025-03-07-UnifiedReward-fig2.png' width=700>
-                <figcaption>Pipeline: (1) <b>Unified Reward Model Training:</b> train a unified reward model for <u>generation & understanding</u> tasks using pointwise <u>scoring & pairwise ranking</u>; (2) <b>Preference Data Construction:</b> data generation, pairwise ranking, pointwise filtering; (3) <b>Generation/Understanding Model Alignment:</b> DPO. The trained model is initialized from <b>LLaVA-OneVision 7B (OV-7B)</b>.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-03-07-UnifiedReward-fig2.png' width=700>
+                <figcaption>Pipeline: (1) <b>Unified Reward Model Training:</b> train a unified reward model for <u>generation & understanding</u> tasks using pointwise <u>scoring & pairwise ranking</u>; (2) <b>Preference Data Construction:</b> data generation, pairwise ranking, pointwise filtering; (3) <b>Generation/Understanding Model Alignment:</b> DPO. The trained model is initialized from <b>LLaVA-OneVision 7B (OV-7B)</b>.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -1614,52 +1615,52 @@
             
                 <button onclick="toggleTable('2025/3/26-Wan-table')">Read more</button>
                 <div id='2025/3/26-Wan-table' class="table-container">
-                <table>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2025-03-26-Wan-fig1.png' width=900>
-                <figcaption>
-                    <b>Data procssing pipeline</b>. 
-                    <br><u>Fundamental dimensions:</u> text, aesthetic, NSFW score, watermark & logo, black border, overexposure, synthetic image, blur, duration & resolution.
-                    <br><u>Visual quality:</u> clustering, scoring.
-                    <br><u>Motion quality:</u> optimal motion, medium-quality motion, static videos, camera-driven motion, low-quality motion, shaky camera footage.
-                    <br><b>Visual text data:</b> hundreds of millions of text-containing images by rendering Chinese characters on a pure white background and large amounts from real-world data.
-                    <br><u>Captions:</u> celebrities, landmarks, movie characters, object counting, OCR, camera angle and motion, fine-grained categories, relational understanding, re-caption, editing instruction caption, group image description, human-annotated image and video captions.
-                </figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2025-03-26-Wan-fig2.png' width=700>
-                <figcaption><b>VAE with 8x8x4 compression ratio</b> is trained by L1 reconstruction loss + KL loss + LPIPS perceptual loss. </figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2025-03-26-Wan-fig3.png' width=600>
-                <figcaption><b>Architecture</b>. Text prompt is encoded by <u>umT5</u> and injected into model by <u>cross-attention</u>; timestep is embedded by MLP; using flow-matching loss. Image pre-training -> image-video joint training. </figcaption>
-            </figure>
-        </td>
-        <td>
-            <figure>
-                <img src='figs/2025-03-26-Wan-fig4.png' width=300>
-                <figcaption><b>Transformer blocks</b>. </figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2025-03-26-Wan-fig5.png' width=600>
-                <figcaption><b>I2V framework.</b> Image condition is injected through <u>channel-concat</u> and <b>CLIP image encoder</b>.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-03-26-Wan-fig1.png' width=900>
+                <figcaption>
+                    <b>Data procssing pipeline</b>. 
+                    <br><u>Fundamental dimensions:</u> text, aesthetic, NSFW score, watermark & logo, black border, overexposure, synthetic image, blur, duration & resolution.
+                    <br><u>Visual quality:</u> clustering, scoring.
+                    <br><u>Motion quality:</u> optimal motion, medium-quality motion, static videos, camera-driven motion, low-quality motion, shaky camera footage.
+                    <br><b>Visual text data:</b> hundreds of millions of text-containing images by rendering Chinese characters on a pure white background and large amounts from real-world data.
+                    <br><u>Captions:</u> celebrities, landmarks, movie characters, object counting, OCR, camera angle and motion, fine-grained categories, relational understanding, re-caption, editing instruction caption, group image description, human-annotated image and video captions.
+                </figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-03-26-Wan-fig2.png' width=700>
+                <figcaption><b>VAE with 8x8x4 compression ratio</b> is trained by L1 reconstruction loss + KL loss + LPIPS perceptual loss. </figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-03-26-Wan-fig3.png' width=600>
+                <figcaption><b>Architecture</b>. Text prompt is encoded by <u>umT5</u> and injected into model by <u>cross-attention</u>; timestep is embedded by MLP; using flow-matching loss. Image pre-training -> image-video joint training. </figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2025-03-26-Wan-fig4.png' width=300>
+                <figcaption><b>Transformer blocks</b>. </figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-03-26-Wan-fig5.png' width=600>
+                <figcaption><b>I2V framework.</b> Image condition is injected through <u>channel-concat</u> and <b>CLIP image encoder</b>.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -1684,17 +1685,17 @@
             
                 <button onclick="toggleTable('2025/3/14-Step-Video-TI2V-table')">Read more</button>
                 <div id='2025/3/14-Step-Video-TI2V-table' class="table-container">
-                <table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2025-03-14-Step-Video-TI2V-fig1.png' width=700>
-                <figcaption>
-                    <b>Image condition:</b> <u>channel-wise concatenation</u> of noised data and <b>noise-augmented</b> and zero-padded image condition.
-                    <br><b>Motion condition:</b> motion is extracted using optical flow and is <b>combined with timestep</b>. </figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-03-14-Step-Video-TI2V-fig1.png' width=700>
+                <figcaption>
+                    <b>Image condition:</b> <u>channel-wise concatenation</u> of noised data and <b>noise-augmented</b> and zero-padded image condition.
+                    <br><b>Motion condition:</b> motion is extracted using optical flow and is <b>combined with timestep</b>. </figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -1719,15 +1720,15 @@
             
                 <button onclick="toggleTable('2025/3/10-Inference Beat Pretraining-table')">Read more</button>
                 <div id='2025/3/10-Inference Beat Pretraining-table' class="table-container">
-                <ul>
-    <li> Pre-training algorithms should have inference-scalability in <b>sequence length & refinement steps</b>.
-    <li> Algorithms should <b>scale training efficiently</b> by reduing inference computation.
-    <li> One should verify whether the model has <b>enough capacity to represent the target distribution</b> during inference.
-    <li> <u>Not scalable in either sequence length or refinement steps:</u> VAE, GAN, Normalizing Flows.
-    <li> <u>Scalable in sequence length but not refinement steps:</u> GPT, PixelCNN, MaskGiT, VAR.
-    <li> <u>Scalable in refinement steps but not in sequence length:</u> diffusion models, energy-based models, consistency models.
-    <li> <u>Scalable in both, with sequence length in the outer loop:</u> AR-Diffusion, Rolling diffusion, MAR.
-    <li> <u>Scalable in both, with refinement steps in the outer loop:</u> autoregression distribution smoothing.
+                <ul>
+    <li> Pre-training algorithms should have inference-scalability in <b>sequence length & refinement steps</b>.
+    <li> Algorithms should <b>scale training efficiently</b> by reduing inference computation.
+    <li> One should verify whether the model has <b>enough capacity to represent the target distribution</b> during inference.
+    <li> <u>Not scalable in either sequence length or refinement steps:</u> VAE, GAN, Normalizing Flows.
+    <li> <u>Scalable in sequence length but not refinement steps:</u> GPT, PixelCNN, MaskGiT, VAR.
+    <li> <u>Scalable in refinement steps but not in sequence length:</u> diffusion models, energy-based models, consistency models.
+    <li> <u>Scalable in both, with sequence length in the outer loop:</u> AR-Diffusion, Rolling diffusion, MAR.
+    <li> <u>Scalable in both, with refinement steps in the outer loop:</u> autoregression distribution smoothing.
 </ul>
                 </div>
                 
@@ -1752,58 +1753,58 @@
             
                 <button onclick="toggleTable('2025/3/10-Seedream2.0-table')">Read more</button>
                 <div id='2025/3/10-Seedream2.0-table' class="table-container">
-                <ul>
-    <li> Use a <u>self-developed bilingual LLM</u> and Glyph-Aligned <b>ByT5</b> as text encoders.
-    <li> Use a <u>self-developed VAE</u>.
-    <li> Use <u>learned positional embeddings on text tokens</u> & <u>scaled 2D RoPE on image tokens</u>.
-    <li> <u>Continue training</u>, <u>supervised fine-tuning</u>, <u>human feedback alignment</u>.
-    <li> It has been incorporated into Doubao (豆包) and Dreamina (即梦).
-</ul>
-<table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2025-03-10-Seedream2.0-fig1.png' width=650>
-                <figcaption><b>Performance</b> with English and Chinese prompts.</figcaption>
-            </figure>
-        </td>
-        <td>
-            <figure>
-                <img src='figs/2025-03-10-Seedream2.0-fig2.png' width=350>
-        <figcaption><b>Pre-training data system</b>.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2025-03-10-Seedream2.0-fig6.png' width=500>
-                <figcaption><b>Model structure</b> is designed following <b>SD3</b>.</figcaption>
-            </figure>
-        </td>
-        <td>
-            <figure>
-                <img src='figs/2025-03-10-Seedream2.0-fig3.png' width=500>
-                <figcaption><b>Data cleaning process</b>.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2025-03-10-Seedream2.0-fig4.png' width=900>
-                <figcaption><b>Generic captions:</b> long & short; <b>specialied captions:</b> style, color, composition, light, textual; <b>surreal captions:</b> surreal & fantastical aspects. </figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2025-03-10-Seedream2.0-fig5.png' width=700>
-                <figcaption>Overview of <b>training</b> and <b>inference</b> stages.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <ul>
+    <li> Use a <u>self-developed bilingual LLM</u> and Glyph-Aligned <b>ByT5</b> as text encoders.
+    <li> Use a <u>self-developed VAE</u>.
+    <li> Use <u>learned positional embeddings on text tokens</u> & <u>scaled 2D RoPE on image tokens</u>.
+    <li> <u>Continue training</u>, <u>supervised fine-tuning</u>, <u>human feedback alignment</u>.
+    <li> It has been incorporated into Doubao (豆包) and Dreamina (即梦).
+</ul>
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-03-10-Seedream2.0-fig1.png' width=650>
+                <figcaption><b>Performance</b> with English and Chinese prompts.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2025-03-10-Seedream2.0-fig2.png' width=350>
+        <figcaption><b>Pre-training data system</b>.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-03-10-Seedream2.0-fig6.png' width=500>
+                <figcaption><b>Model structure</b> is designed following <b>SD3</b>.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2025-03-10-Seedream2.0-fig3.png' width=500>
+                <figcaption><b>Data cleaning process</b>.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-03-10-Seedream2.0-fig4.png' width=900>
+                <figcaption><b>Generic captions:</b> long & short; <b>specialied captions:</b> style, color, composition, light, textual; <b>surreal captions:</b> surreal & fantastical aspects. </figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-03-10-Seedream2.0-fig5.png' width=700>
+                <figcaption>Overview of <b>training</b> and <b>inference</b> stages.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -1828,15 +1829,15 @@
             
                 <button onclick="toggleTable('2025/2/24-IGTR-table')">Read more</button>
                 <div id='2025/2/24-IGTR-table' class="table-container">
-                <table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2025-02-24-IGTR-fig1.png' width=400>
-                <figcaption>Take an image in the same class as a <b>Class Reasoning Prompt</b> or indices from codebook of image tokenizer as a <b>Universal Reasoning Prompt</b>.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-02-24-IGTR-fig1.png' width=400>
+                <figcaption>Take an image in the same class as a <b>Class Reasoning Prompt</b> or indices from codebook of image tokenizer as a <b>Universal Reasoning Prompt</b>.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -1861,9 +1862,9 @@
             
                 <button onclick="toggleTable('2025/2/18-noise-unconditional model-table')">Read more</button>
                 <div id='2025/2/18-noise-unconditional model-table' class="table-container">
-                <ul>
-    <li> Many denoising generative models perform robustly even in the absence of noise conditioning.
-    <li> <u>Flow-based ones can even produce improved results without noise conditioning</u>.
+                <ul>
+    <li> Many denoising generative models perform robustly even in the absence of noise conditioning.
+    <li> <u>Flow-based ones can even produce improved results without noise conditioning</u>.
 </ul>
                 </div>
                 
@@ -1888,59 +1889,59 @@
             
                 <button onclick="toggleTable('2025/2/14-Step-Video-T2V-table')">Read more</button>
                 <div id='2025/2/14-Step-Video-T2V-table' class="table-container">
-                <table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2025-02-14-Step-Video-T2V-fig1.png' width=500>
-                <figcaption><b>Main structure:</b> a VAE, bilingual text encoders, DiT, and DPO.</figcaption>
-            </figure>
-        </td>
-        <td>
-            <figure>
-                <img src='figs/2025-02-14-Step-Video-T2V-fig2.png' width=400>
-            <figcaption><b>Video-VAE</b> compresses videos by <b>8x16x16</b> & <b>16-channel features</b>.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2025-02-14-Step-Video-T2V-fig4.png' width=500>
-            <figcaption><b>DPO framework:</b> use data & synthesis prompts to generate winning & losing samples from different seeds, followed by human annotation. Adapt <b>Diffusion-DPO</b> here and <u>reduce beta</u> & <u>increase learning rate</u> to achieve faster convergence.</figcaption>
-            </figure>
-        </td>
-        <td>
-            <figure>
-                <img src='figs/2025-02-14-Step-Video-T2V-fig3.png' width=400>
-            <figcaption>Use <u>DiT</u> with <u>3D full-attention</u>, <u>cross-attention for prompts</u>, <u>RoPE-3D</u>, and <u>QK-Norm</u>. <u>HunyuanCLIP</u> and <u>Step-LLM</u> are used as the bilingual text encoders.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2025-02-14-Step-Video-T2V-fig5.png' width=900>
-            <figcaption><b>2B video-text pairs</b>, <b>3.8B image-text pairs</b>. <b>Video segmentation:</b> use AdaptiveDetector in <u>PySceneDetect</u> to identify scene changes and use <u>FFmpeg</u> to split them. <b>Video quality assessment:</b> sample eight frames and evaluate. <b>Aesthetic score:</b> <u>LAION CLIP</u>-based aesthetic predictor. <b>NSFW score:</b> <u>LAION CLIP</u>-based NSFW detector. <b>Watermark detection:</b> EfficientNet-based model. <b>Subtitle detection:</b> use <u>PaddleOCR</u> to recognize and localize tests. <b>Saturation score:</b> transform from RGB to HSV and extract saturation channel. <b>Blur score:</b> <u>Laplacian variance</u>. <b>Black border detection:</b> <u>FFmpeg</u>. <b>Video motion assessment:</b> <u>mean optical flow</u>.<b>Video captioning:</b> short caption, dense caption, original title. <b>Video concept balancing:</b> use <u>K-means</u> to group into 120K clusters. <b>Video-text alignment:</b> CLIP Score. </figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2025-02-14-Step-Video-T2V-fig7.png' width=700>
-            <figcaption><b>Pre-training</b> details. </figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2025-02-14-Step-Video-T2V-fig6.png' width=900>
-                <figcaption><b>Data filtering</b> details. </figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-02-14-Step-Video-T2V-fig1.png' width=500>
+                <figcaption><b>Main structure:</b> a VAE, bilingual text encoders, DiT, and DPO.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2025-02-14-Step-Video-T2V-fig2.png' width=400>
+            <figcaption><b>Video-VAE</b> compresses videos by <b>8x16x16</b> & <b>16-channel features</b>.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-02-14-Step-Video-T2V-fig4.png' width=500>
+            <figcaption><b>DPO framework:</b> use data & synthesis prompts to generate winning & losing samples from different seeds, followed by human annotation. Adapt <b>Diffusion-DPO</b> here and <u>reduce beta</u> & <u>increase learning rate</u> to achieve faster convergence.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2025-02-14-Step-Video-T2V-fig3.png' width=400>
+            <figcaption>Use <u>DiT</u> with <u>3D full-attention</u>, <u>cross-attention for prompts</u>, <u>RoPE-3D</u>, and <u>QK-Norm</u>. <u>HunyuanCLIP</u> and <u>Step-LLM</u> are used as the bilingual text encoders.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-02-14-Step-Video-T2V-fig5.png' width=900>
+            <figcaption><b>2B video-text pairs</b>, <b>3.8B image-text pairs</b>. <b>Video segmentation:</b> use AdaptiveDetector in <u>PySceneDetect</u> to identify scene changes and use <u>FFmpeg</u> to split them. <b>Video quality assessment:</b> sample eight frames and evaluate. <b>Aesthetic score:</b> <u>LAION CLIP</u>-based aesthetic predictor. <b>NSFW score:</b> <u>LAION CLIP</u>-based NSFW detector. <b>Watermark detection:</b> EfficientNet-based model. <b>Subtitle detection:</b> use <u>PaddleOCR</u> to recognize and localize tests. <b>Saturation score:</b> transform from RGB to HSV and extract saturation channel. <b>Blur score:</b> <u>Laplacian variance</u>. <b>Black border detection:</b> <u>FFmpeg</u>. <b>Video motion assessment:</b> <u>mean optical flow</u>.<b>Video captioning:</b> short caption, dense caption, original title. <b>Video concept balancing:</b> use <u>K-means</u> to group into 120K clusters. <b>Video-text alignment:</b> CLIP Score. </figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-02-14-Step-Video-T2V-fig7.png' width=700>
+            <figcaption><b>Pre-training</b> details. </figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2025-02-14-Step-Video-T2V-fig6.png' width=900>
+                <figcaption><b>Data filtering</b> details. </figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -1965,27 +1966,27 @@
             
                 <button onclick="toggleTable('2025/1/23-PARM-table')">Read more</button>
                 <div id='2025/1/23-PARM-table' class="table-container">
-                <ul>
-    <li>Test-time verification and DPO are effective, where Outcome Reward Model (ORM) and DPO performs better than Process Reward Model (PRM).</li>
-    <li>Verification and DPO are complementary.</li>
-    <li>Propose Potential Assessment Reward Model (PARM) to combine the advantages of ORM and PRM.</li>
-    <li>Self-correction is useful.</li>
-</ul>
-<table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2025-01-23-cot-fig1.png' width=650>
-                <figcaption><b>ORM is coarse, PRM does not know when to make decision, PARM combines them.</b></figcaption>
-            </figure>
-        </td>
-        <td>
-            <figure>
-                <img src='figs/2025-01-23-cot-fig2.png' width=250>
-                <figcaption>Self-correction makes use of bad cases.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <ul>
+    <li>Test-time verification and DPO are effective, where Outcome Reward Model (ORM) and DPO performs better than Process Reward Model (PRM).</li>
+    <li>Verification and DPO are complementary.</li>
+    <li>Propose Potential Assessment Reward Model (PARM) to combine the advantages of ORM and PRM.</li>
+    <li>Self-correction is useful.</li>
+</ul>
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-01-23-cot-fig1.png' width=650>
+                <figcaption><b>ORM is coarse, PRM does not know when to make decision, PARM combines them.</b></figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2025-01-23-cot-fig2.png' width=250>
+                <figcaption>Self-correction makes use of bad cases.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -2029,34 +2030,34 @@
             
                 <button onclick="toggleTable('2025/1/16-Scaling Analysis-table')">Read more</button>
                 <div id='2025/1/16-Scaling Analysis-table' class="table-container">
-                <ul>
-    <li>Use some <u>verifiers</u> to provide <u>feedback</u>: FID, IS, CLIP, DINO; Aesthetic Score Predictor, CLIPScore, ImageReward, Ensemble.</li>
-    <li>Use some <u>algorithms</u> to find <u>better noise</u>: <u>Random Search</u>, Zero-Order Search, Search Over Paths.</li>
-    <li><u>Random Search</u>: run using different initial random noise and select the best by verifier.</li>
-    <li><u>Zero-Order Search</u>: run under different random noise around a pivot noise and select the best by verifier, the best one is then served as a new pivot.</li>
-    <li><u>Search Over Paths</u>: run under different random noise to a specific step, sample noises for each noisy sample and simulate forward process, then perform denoise and select the best candiates using verifier, continue this process until finish denoising.</li>
-    <li><b>Random Search performs the best because it has larger search space and accelerates the convergence.</b></li>
-    <li>Scaling through search leads to substantial improvement across model sizes.</li>
-    <li>No single verifier-algorithm configuration is universally optimal.</li>
-    <li><b>Inference-time search further improves performance of the model which has already been fine-tuned.</b></li>
-    <li>Fewer denoising steps but more searching iterations enables efficient convergence but lower final performance.</li>
-    <li>With a fixed inference compute budget, <u>performing search on small models can outperform larger models without search</u>.</li>
-</ul>
-<table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2025-01-16-scaling-analysis fig1.png' width=400>
-                <figcaption><b>Scale with search</b> is more effective than denoising steps.</figcaption>
-            </figure>
-        </td>
-        <td>
-            <figure>
-                <img src='figs/2025-01-16-scaling-analysis fig2.png' width=500>
-                <figcaption><b>Random Search</b> performs the best because it converges fastest.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <ul>
+    <li>Use some <u>verifiers</u> to provide <u>feedback</u>: FID, IS, CLIP, DINO; Aesthetic Score Predictor, CLIPScore, ImageReward, Ensemble.</li>
+    <li>Use some <u>algorithms</u> to find <u>better noise</u>: <u>Random Search</u>, Zero-Order Search, Search Over Paths.</li>
+    <li><u>Random Search</u>: run using different initial random noise and select the best by verifier.</li>
+    <li><u>Zero-Order Search</u>: run under different random noise around a pivot noise and select the best by verifier, the best one is then served as a new pivot.</li>
+    <li><u>Search Over Paths</u>: run under different random noise to a specific step, sample noises for each noisy sample and simulate forward process, then perform denoise and select the best candiates using verifier, continue this process until finish denoising.</li>
+    <li><b>Random Search performs the best because it has larger search space and accelerates the convergence.</b></li>
+    <li>Scaling through search leads to substantial improvement across model sizes.</li>
+    <li>No single verifier-algorithm configuration is universally optimal.</li>
+    <li><b>Inference-time search further improves performance of the model which has already been fine-tuned.</b></li>
+    <li>Fewer denoising steps but more searching iterations enables efficient convergence but lower final performance.</li>
+    <li>With a fixed inference compute budget, <u>performing search on small models can outperform larger models without search</u>.</li>
+</ul>
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-01-16-scaling-analysis fig1.png' width=400>
+                <figcaption><b>Scale with search</b> is more effective than denoising steps.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2025-01-16-scaling-analysis fig2.png' width=500>
+                <figcaption><b>Random Search</b> performs the best because it converges fastest.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -2081,29 +2082,29 @@
             
                 <button onclick="toggleTable('2024/7/19-T2V-CompBench-table')">Read more</button>
                 <div id='2024/7/19-T2V-CompBench-table' class="table-container">
-                <ul>
-    <li> Find nouns and verbs by identifying them using WordNet from Pika Discord channels, used to generate prompts by GPT-4.
-    <li> <u>Consistent attribute binding:</u> two objects, two attributes, and at least one active verb from color, shape, texture, and human-related attributes.
-    <li> <u>Dynamic attribute binding:</u> color and light change, shape and size change, texture change, combined change.
-    <li> <u>Spatial relationships:</u> two objects with spatial relationships like "on the left of".
-    <li> <u>Motion binding:</u> one or two objects with specified moving direction like "leftwards".
-    <li> <u>Action binding:</u> bind actions to corresponding objects.
-    <li> <u>Object interactions:</u> dynamic interactions like pysical interactions.
-    <li> <u>Generative numeracy:</u> a specific number of objects.
-    <li> <u>Video LLM-based metrics (Grid-LLaVa)</u> is used for evaluating consistent attribute binding, action binding, object interactions.
-    <li> <u>Image LLM-based metrics (LLaVa)</u> is used for evaluating dynamic attribute binding.
-    <li> <u>Grounding DINO</u> is used for evaluating spatial relationships and numeracy.
-    <li> <u>Grounding SAM + DOT</u> is used for evaluating motion binding.
-</ul>
-<table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2024-07-19-t2vcompbench-fig1.png' width=900>
-                <figcaption>T2V-CompBench: categories (left), evaluation methods (middle), and benchmarking model performance (right).</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <ul>
+    <li> Find nouns and verbs by identifying them using WordNet from Pika Discord channels, used to generate prompts by GPT-4.
+    <li> <u>Consistent attribute binding:</u> two objects, two attributes, and at least one active verb from color, shape, texture, and human-related attributes.
+    <li> <u>Dynamic attribute binding:</u> color and light change, shape and size change, texture change, combined change.
+    <li> <u>Spatial relationships:</u> two objects with spatial relationships like "on the left of".
+    <li> <u>Motion binding:</u> one or two objects with specified moving direction like "leftwards".
+    <li> <u>Action binding:</u> bind actions to corresponding objects.
+    <li> <u>Object interactions:</u> dynamic interactions like pysical interactions.
+    <li> <u>Generative numeracy:</u> a specific number of objects.
+    <li> <u>Video LLM-based metrics (Grid-LLaVa)</u> is used for evaluating consistent attribute binding, action binding, object interactions.
+    <li> <u>Image LLM-based metrics (LLaVa)</u> is used for evaluating dynamic attribute binding.
+    <li> <u>Grounding DINO</u> is used for evaluating spatial relationships and numeracy.
+    <li> <u>Grounding SAM + DOT</u> is used for evaluating motion binding.
+</ul>
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2024-07-19-t2vcompbench-fig1.png' width=900>
+                <figcaption>T2V-CompBench: categories (left), evaluation methods (middle), and benchmarking model performance (right).</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -2128,20 +2129,20 @@
             
                 <button onclick="toggleTable('2024/7/16-DiT-MoE-table')">Read more</button>
                 <div id='2024/7/16-DiT-MoE-table' class="table-container">
-                <ul>
-    <li> Incorporating <u>shared expert</u> routing accelerates training and improves performance, but the improvement is little when using more than one expert.
-    <li> Observe the <u>scaling performance</u>.
-    <li> <u>Increasing experts</u> <u>reduces loss</u> but introduces <u>more loss spikes</u>.
-</ul>
-<table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2024-07-16-DiT-MoE-fig1.png' width=700>
-                <figcaption>DiT-MoE is built upon <b>DiT</b> and replaces MLP of Transformer block by sparsely activatd mixture of MLPs as experts.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <ul>
+    <li> Incorporating <u>shared expert</u> routing accelerates training and improves performance, but the improvement is little when using more than one expert.
+    <li> Observe the <u>scaling performance</u>.
+    <li> <u>Increasing experts</u> <u>reduces loss</u> but introduces <u>more loss spikes</u>.
+</ul>
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2024-07-16-DiT-MoE-fig1.png' width=700>
+                <figcaption>DiT-MoE is built upon <b>DiT</b> and replaces MLP of Transformer block by sparsely activatd mixture of MLPs as experts.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -2166,10 +2167,10 @@
             
                 <button onclick="toggleTable('2024/6/10-LlamaGen-table')">Read more</button>
                 <div id='2024/6/10-LlamaGen-table' class="table-container">
-                <ul>
-    <li> Discrete representation in image tokenizers is no longer the bottleneck of the image reconstruction.
-    <li> Vanilla autoregressive models without inductive biases on visual signals can serve as the basis of image generation system.
-    <li> High-quality training data: 50M subset of LAION-COCO & 10M internal high aesthetics quality images.
+                <ul>
+    <li> Discrete representation in image tokenizers is no longer the bottleneck of the image reconstruction.
+    <li> Vanilla autoregressive models without inductive biases on visual signals can serve as the basis of image generation system.
+    <li> High-quality training data: 50M subset of LAION-COCO & 10M internal high aesthetics quality images.
 </ul>
                 </div>
                 
@@ -2213,39 +2214,39 @@
             
                 <button onclick="toggleTable('2024/4/3-VAR-table')">Read more</button>
                 <div id='2024/4/3-VAR-table' class="table-container">
-                <table>
-    <tr colspan="2">
-        <td>
-            <figure>
-                <img src='figs/2024-04-03-VAR-fig1.png' width=800>
-                <figcaption><b>Next-scale prediction:</b> it starts from the 1x1 token map, and progressively expands in resolution; at each step, the transformer predicts the next higher-resolution token map conditioned on all previous ones.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr >
-        <td>
-            <figure>
-                <img src='figs/2024-04-03-VAR-fig2.png' width=400>
-                <figcaption>VAR shows good <b>scaling behavior</b>, and significantly outperforms DiT.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr colspan="2">
-        <td>
-            <figure>
-                <img src='figs/2024-04-03-VAR-fig3.png' width=900>
-                <figcaption><b>Training pipeline of tokenzier and VAR.</b>  Tokenzier: the same architecture, training data (OpemImages) as VQVAE, using codebook of 4096 and spatial downsample ratio of 16x. VAR: the standard transformers architecture with AdaLN; do not use RoPE, SwiGLU MLP, RMS Norm. </figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr colspan="2">
-        <td>
-            <figure>
-                <img src='figs/2024-04-03-VAR-fig4.png' width=800>
-                <figcaption><b>Encoding & reconstruction process of tokenizer.</b></figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr colspan="2">
+        <td>
+            <figure>
+                <img src='figs/2024-04-03-VAR-fig1.png' width=800>
+                <figcaption><b>Next-scale prediction:</b> it starts from the 1x1 token map, and progressively expands in resolution; at each step, the transformer predicts the next higher-resolution token map conditioned on all previous ones.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr >
+        <td>
+            <figure>
+                <img src='figs/2024-04-03-VAR-fig2.png' width=400>
+                <figcaption>VAR shows good <b>scaling behavior</b>, and significantly outperforms DiT.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr colspan="2">
+        <td>
+            <figure>
+                <img src='figs/2024-04-03-VAR-fig3.png' width=900>
+                <figcaption><b>Training pipeline of tokenzier and VAR.</b>  Tokenzier: the same architecture, training data (OpemImages) as VQVAE, using codebook of 4096 and spatial downsample ratio of 16x. VAR: the standard transformers architecture with AdaLN; do not use RoPE, SwiGLU MLP, RMS Norm. </figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr colspan="2">
+        <td>
+            <figure>
+                <img src='figs/2024-04-03-VAR-fig4.png' width=800>
+                <figcaption><b>Encoding & reconstruction process of tokenizer.</b></figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -2270,15 +2271,15 @@
             
                 <button onclick="toggleTable('2024/4/1-VQAScore-table')">Read more</button>
                 <div id='2024/4/1-VQAScore-table' class="table-container">
-                <table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2024-04-01-VQAScore-fig1.png' width=600>
-                <figcaption>Evaluate by computing probability of answering "yes" from a trained <b>VQA</b> model by feeding the prompt and the generated image.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2024-04-01-VQAScore-fig1.png' width=600>
+                <figcaption>Evaluate by computing probability of answering "yes" from a trained <b>VQA</b> model by feeding the prompt and the generated image.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -2303,14 +2304,14 @@
             
                 <button onclick="toggleTable('2024/3/8-DPG-Bench--ELLA-table')">Read more</button>
                 <div id='2024/3/8-DPG-Bench--ELLA-table' class="table-container">
-                <table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2024-03-08-DPG-Bench-fig1.png' width=800>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2024-03-08-DPG-Bench-fig1.png' width=800>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -2335,47 +2336,47 @@
             
                 <button onclick="toggleTable('2024/3/18-SD3-Turbo-table')">Read more</button>
                 <div id='2024/3/18-SD3-Turbo-table' class="table-container">
-                <table>
-    <tr colspan="2">
-        <td>
-            <figure>
-                <img src='figs/2024-03-18-SD3-Turbo-fig1.png' width=600>
-                <figcaption><b>ADD:</b> (1) An adversarial loss for deceiving a discriminator (DINO v2); (2) A distillation loss for matching denoised output to that of a teacher. <br><b>LADD:</b> (1) Use teacher generated images instead of real images for distillation; (2) Use teacher as the discrinimator. <br><b>Advantages:</b> (1) Save memory and improve efficiency; (2) Diffusion model teacher as the discriminator provides noise-level feedback; (3) Diffusion model as the discriminator handles multi-aspect ratio; (4) Diffusion model as the discriminator aligns with human perception on shape.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr colspan="2">
-        <td>
-            <figure>
-                <img src='figs/2024-03-18-SD3-Turbo-fig2.png' width=700>
-                <figcaption>(1) Training with <b>synthetic data works better than real data</b>. (2) Training on synthetic data <b>only needs the adversarial loss</b>.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr colspan="2">
-        <td>
-            <figure>
-                <img src='figs/2024-03-18-SD3-Turbo-fig3.png' width=700>
-                <figcaption>(1) Training using <b>LADD performs better than LCM</b>. (2) LCM may need larger models like SDXL-LCM, instand of SD1.5-LCM.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr colspan="2">
-        <td>
-            <figure>
-                <img src='figs/2024-03-18-SD3-Turbo-fig4.png' width=700>
-                <figcaption><b>Student model size</b> significant impacts performance, while the benefits of teacher models and data quality plateau.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr colspan="2">
-        <td>
-            <figure>
-                <img src='figs/2024-03-18-SD3-Turbo-fig5.png' width=700>
-                <figcaption>Use <b>LoRA for DPO-traning</b>, and <b>apply DPO-LoRA after LADD training</b>.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr colspan="2">
+        <td>
+            <figure>
+                <img src='figs/2024-03-18-SD3-Turbo-fig1.png' width=600>
+                <figcaption><b>ADD:</b> (1) An adversarial loss for deceiving a discriminator (DINO v2); (2) A distillation loss for matching denoised output to that of a teacher. <br><b>LADD:</b> (1) Use teacher generated images instead of real images for distillation; (2) Use teacher as the discrinimator. <br><b>Advantages:</b> (1) Save memory and improve efficiency; (2) Diffusion model teacher as the discriminator provides noise-level feedback; (3) Diffusion model as the discriminator handles multi-aspect ratio; (4) Diffusion model as the discriminator aligns with human perception on shape.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr colspan="2">
+        <td>
+            <figure>
+                <img src='figs/2024-03-18-SD3-Turbo-fig2.png' width=700>
+                <figcaption>(1) Training with <b>synthetic data works better than real data</b>. (2) Training on synthetic data <b>only needs the adversarial loss</b>.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr colspan="2">
+        <td>
+            <figure>
+                <img src='figs/2024-03-18-SD3-Turbo-fig3.png' width=700>
+                <figcaption>(1) Training using <b>LADD performs better than LCM</b>. (2) LCM may need larger models like SDXL-LCM, instand of SD1.5-LCM.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr colspan="2">
+        <td>
+            <figure>
+                <img src='figs/2024-03-18-SD3-Turbo-fig4.png' width=700>
+                <figcaption><b>Student model size</b> significant impacts performance, while the benefits of teacher models and data quality plateau.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr colspan="2">
+        <td>
+            <figure>
+                <img src='figs/2024-03-18-SD3-Turbo-fig5.png' width=700>
+                <figcaption>Use <b>LoRA for DPO-traning</b>, and <b>apply DPO-LoRA after LADD training</b>.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -2419,75 +2420,75 @@
             
                 <button onclick="toggleTable('2024/12/5-Infinity-table')">Read more</button>
                 <div id='2024/12/5-Infinity-table' class="table-container">
-                <table>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2024-12-05-Infinity-fig1.png' width=600>
-                <figcaption><b>Viusal tokenization and quantization:</b> instead of predicting 2**d indices, infinite-vocabulary classifier predicts d bits instead.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2024-12-05-Infinity-fig2.png' width=600>
-        <figcaption><b>Text prompt:</b> T5 text embedding is projected into a token as the input of the first scale.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2024-12-05-Infinity-fig3.png' width=500>
-                <figcaption><b>Performance:</b> Infinity is fast & better.</figcaption>
-            </figure>
-        </td>
-        <td>
-            <figure>
-                <img src='figs/2024-12-05-Infinity-fig4.png' width=400>
-                <figcaption><b>Tokenizer performance:</b> discrete outperforms continuous.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2024-12-05-Infinity-fig5.png' width=500>
-                <figcaption><b>Inifinite-Vocabulary Classifier:</b> low memory & better.</figcaption>
-            </figure>
-        </td>
-        <td>
-            <figure>
-                <img src='figs/2024-12-05-Infinity-fig8.png' width=400>
-                <figcaption><b>Self-correction</b> mitigates the train-test discrepancy.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2024-12-05-Infinity-fig6.png' width=900>
-                <figcaption><b>Scaling up vocabulary:</b> larger vocabulary & larger model size performs the best.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2024-12-05-Infinity-fig7.png' width=900>
-                <figcaption><b>Scaling model size:</b> strong correlation between validation loss and evaluation metrics.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2024-12-05-Infinity-fig9.png' width=900>
-                <figcaption><b>2D RoPE</b> outperforms APE.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-12-05-Infinity-fig1.png' width=600>
+                <figcaption><b>Viusal tokenization and quantization:</b> instead of predicting 2**d indices, infinite-vocabulary classifier predicts d bits instead.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-12-05-Infinity-fig2.png' width=600>
+        <figcaption><b>Text prompt:</b> T5 text embedding is projected into a token as the input of the first scale.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2024-12-05-Infinity-fig3.png' width=500>
+                <figcaption><b>Performance:</b> Infinity is fast & better.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2024-12-05-Infinity-fig4.png' width=400>
+                <figcaption><b>Tokenizer performance:</b> discrete outperforms continuous.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2024-12-05-Infinity-fig5.png' width=500>
+                <figcaption><b>Inifinite-Vocabulary Classifier:</b> low memory & better.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2024-12-05-Infinity-fig8.png' width=400>
+                <figcaption><b>Self-correction</b> mitigates the train-test discrepancy.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-12-05-Infinity-fig6.png' width=900>
+                <figcaption><b>Scaling up vocabulary:</b> larger vocabulary & larger model size performs the best.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-12-05-Infinity-fig7.png' width=900>
+                <figcaption><b>Scaling model size:</b> strong correlation between validation loss and evaluation metrics.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-12-05-Infinity-fig9.png' width=900>
+                <figcaption><b>2D RoPE</b> outperforms APE.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -2550,27 +2551,27 @@
             
                 <button onclick="toggleTable('2024/12/14-Z-Sampling-table')">Read more</button>
                 <div id='2024/12/14-Z-Sampling-table' class="table-container">
-                <table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2024-12-14-Z-Sampling-fig1.png' width=230>
-                <figcaption>Iterative <b>denoising & inversion</b>.</figcaption>
-            </figure>
-        </td>
-        <td>
-            <figure>
-                <img src='figs/2024-12-14-Z-Sampling-fig2.png' width=340>
-        <figcaption>Capture more <b>semantics</b> by denoising more times.</figcaption>
-            </figure>
-        </td>
-        <td>
-            <figure>
-                <img src='figs/2024-12-14-Z-Sampling-fig3.png' width=330>
-        <figcaption>More <b>efficient & effective</b> than standard.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2024-12-14-Z-Sampling-fig1.png' width=230>
+                <figcaption>Iterative <b>denoising & inversion</b>.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2024-12-14-Z-Sampling-fig2.png' width=340>
+        <figcaption>Capture more <b>semantics</b> by denoising more times.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2024-12-14-Z-Sampling-fig3.png' width=330>
+        <figcaption>More <b>efficient & effective</b> than standard.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -2595,9 +2596,9 @@
             
                 <button onclick="toggleTable('2024/11/27-Reliable Seed-table')">Read more</button>
                 <div id='2024/11/27-Reliable Seed-table' class="table-container">
-                <ul>
-    <li> There is a strong correlation between initial seeds and object arrangement.
-    <li> Certain noise signals are more likely to result in accurate compositional generation: numeracy and position.
+                <ul>
+    <li> There is a strong correlation between initial seeds and object arrangement.
+    <li> Certain noise signals are more likely to result in accurate compositional generation: numeracy and position.
 </ul>
                 </div>
                 
@@ -2641,52 +2642,52 @@
             
                 <button onclick="toggleTable('2024/10/17-Fluid-table')">Read more</button>
                 <div id='2024/10/17-Fluid-table' class="table-container">
-                <table>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2024-10-17-Fluid-fig1.png' width=700>
-                <figcaption>
-                    <b>Image tokenizer:</b> images are converted to either discrete (<u>VQGAN</u>, 16x16 tokens with 8192 vocabulary) or continuous tokens (<u>VAE</u>, 32x32 with 4 channels, patchisize to 256 tokens with 16 channels).
-                    <br><b>Text tokenizer:</b> text (max length 128) is converted to discrete tokens using <u>T5-XXL</u>.
-                    <br><b>Model structure:</b> transformer with cross-attention attending to text embedding.
-                    <br><b>Decoder:</b> text: softmax with cross-entropy loss; image: MLP with diffusion loss.
-                </figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2024-10-17-Fluid-fig2.png' width=700>
-                <figcaption><b>Validation losses</b> consistently scale with model size.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2024-10-17-Fluid-fig3.png' width=700>
-                <figcaption><b>Random-order</b> models & <b>continuous tokens</b> perform the best in <b>evaluation scores</b>.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2024-10-17-Fluid-fig4.png' width=700>
-                <figcaption><b>Random-order</b> models & <b>continuous tokens</b> scale with <b>training computes</b>.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <figure>
-                <img src='figs/2024-10-17-Fluid-fig5.png' width=700>
-                <figcaption>Strong correlation between <b>validation loss & evaluation metrics</b>.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-10-17-Fluid-fig1.png' width=700>
+                <figcaption>
+                    <b>Image tokenizer:</b> images are converted to either discrete (<u>VQGAN</u>, 16x16 tokens with 8192 vocabulary) or continuous tokens (<u>VAE</u>, 32x32 with 4 channels, patchisize to 256 tokens with 16 channels).
+                    <br><b>Text tokenizer:</b> text (max length 128) is converted to discrete tokens using <u>T5-XXL</u>.
+                    <br><b>Model structure:</b> transformer with cross-attention attending to text embedding.
+                    <br><b>Decoder:</b> text: softmax with cross-entropy loss; image: MLP with diffusion loss.
+                </figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-10-17-Fluid-fig2.png' width=700>
+                <figcaption><b>Validation losses</b> consistently scale with model size.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-10-17-Fluid-fig3.png' width=700>
+                <figcaption><b>Random-order</b> models & <b>continuous tokens</b> perform the best in <b>evaluation scores</b>.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-10-17-Fluid-fig4.png' width=700>
+                <figcaption><b>Random-order</b> models & <b>continuous tokens</b> scale with <b>training computes</b>.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <figure>
+                <img src='figs/2024-10-17-Fluid-fig5.png' width=700>
+                <figcaption>Strong correlation between <b>validation loss & evaluation metrics</b>.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -2711,15 +2712,15 @@
             
                 <button onclick="toggleTable('2023/7/4-SDXL-table')">Read more</button>
                 <div id='2023/7/4-SDXL-table' class="table-container">
-                <table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2023-07-04-SDXL-fig1.png' width=600>
-                <figcaption><b>Architecture:</b>. <br>(1) SDXL uses <u>different transformer</u> blocks compared to SD.<br>(2) Use <b>two text encoders</b> OpenCLIP VIT-bigG & CLIP ViT-L.<br>(3) The final model has 2.6B parameters with 817M parameters for text encoders.<br>(4) Embeddings of <b>height & width and cropping top & left and bucketing heigh & width</b> are added to timestep embeddings.<br>(5) <u>Improve auto-encoder</u> by employing larger batchsize of 256 and EMA.<br>(6) Use a <b>refiner</b> of SDEdit for refining details. <br>(7) Training: Stage 1: 256 x 256, 600K steps, batchsize 2048. Stage 2: 512 x 512, 200K steps. Stage 3: multi-aspect training. </figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2023-07-04-SDXL-fig1.png' width=600>
+                <figcaption><b>Architecture:</b>. <br>(1) SDXL uses <u>different transformer</u> blocks compared to SD.<br>(2) Use <b>two text encoders</b> OpenCLIP VIT-bigG & CLIP ViT-L.<br>(3) The final model has 2.6B parameters with 817M parameters for text encoders.<br>(4) Embeddings of <b>height & width and cropping top & left and bucketing heigh & width</b> are added to timestep embeddings.<br>(5) <u>Improve auto-encoder</u> by employing larger batchsize of 256 and EMA.<br>(6) Use a <b>refiner</b> of SDEdit for refining details. <br>(7) Training: Stage 1: 256 x 256, 600K steps, batchsize 2048. Stage 2: 512 x 512, 200K steps. Stage 3: multi-aspect training. </figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -2744,21 +2745,21 @@
             
                 <button onclick="toggleTable('2023/7/12-T2I-CompBench-table')">Read more</button>
                 <div id='2023/7/12-T2I-CompBench-table' class="table-container">
-                <ul>
-    <li> <u>Attribute binding prompts:</u> at least two objects with two attributes from color, shape, texture.
-    <li> <u>Object relationship prompts:</u> at least two objects with spatial relationship or non-spatial relationship.
-    <li> <u>Complex compositions prompts:</u> more than two objects or more than two sub-categories.
-    <li> Introduce Generative mOdel finetuning with Reward-driven Sample selection (GORS) that finetunes LoRA of SD2 with generated images which highly align with the compositional prompts.
-</ul>
-<table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2023-07-12-t2icompbench-fig1.png' width=900>
-                <figcaption><li> Use <b>disentangled BLIP-VQA</b> to evaluate attribute binding, <b>UniDet-based metric</b> to evaluate spatial relationship, <b>CLIPScore</b> to evaluate non-spatial relationship, <b>3-in-1 metric</b> (average score of the three metrics) to evaluate complex compositions.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <ul>
+    <li> <u>Attribute binding prompts:</u> at least two objects with two attributes from color, shape, texture.
+    <li> <u>Object relationship prompts:</u> at least two objects with spatial relationship or non-spatial relationship.
+    <li> <u>Complex compositions prompts:</u> more than two objects or more than two sub-categories.
+    <li> Introduce Generative mOdel finetuning with Reward-driven Sample selection (GORS) that finetunes LoRA of SD2 with generated images which highly align with the compositional prompts.
+</ul>
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2023-07-12-t2icompbench-fig1.png' width=900>
+                <figcaption><li> Use <b>disentangled BLIP-VQA</b> to evaluate attribute binding, <b>UniDet-based metric</b> to evaluate spatial relationship, <b>CLIPScore</b> to evaluate non-spatial relationship, <b>3-in-1 metric</b> (average score of the three metrics) to evaluate complex compositions.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -2783,15 +2784,15 @@
             
                 <button onclick="toggleTable('2023/6/15-HPS v2-table')">Read more</button>
                 <div id='2023/6/15-HPS v2-table' class="table-container">
-                <table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2023-06-15-hpsv2-fig1.png' width=900>
-                <figcaption>Step 1: Clean prompts from COCO captions and DiffusionDB by ChatGPT; Step 2: Generate images using 9 models; Step 3: Rand and annotate each pair of images; Step 4: Train CLIP and obtain preference model for providing HPS v2 score.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2023-06-15-hpsv2-fig1.png' width=900>
+                <figcaption>Step 1: Clean prompts from COCO captions and DiffusionDB by ChatGPT; Step 2: Generate images using 9 models; Step 3: Rand and annotate each pair of images; Step 4: Train CLIP and obtain preference model for providing HPS v2 score.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -2816,15 +2817,15 @@
             
                 <button onclick="toggleTable('2023/5/2-PickScore-table')">Read more</button>
                 <div id='2023/5/2-PickScore-table' class="table-container">
-                <table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2023-04-12-imagereward-fig1.png' width=700>
-                <figcaption>Step 1: use DiffusionDB prompts to generate images; Step 2: Rate and rank images; Step 3: Train ImageReward using ranking data; Step 4: tune diffusion models using ImageReward; Step 5: provide scores to the generated images.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2023-04-12-imagereward-fig1.png' width=700>
+                <figcaption>Step 1: use DiffusionDB prompts to generate images; Step 2: Rate and rank images; Step 3: Train ImageReward using ranking data; Step 4: tune diffusion models using ImageReward; Step 5: provide scores to the generated images.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -2868,15 +2869,15 @@
             
                 <button onclick="toggleTable('2023/3/25-HPS-table')">Read more</button>
                 <div id='2023/3/25-HPS-table' class="table-container">
-                <table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2023-03-25-hps-fig1.png' width=900>
-                <figcaption>Train human preference classifier: similar to CLIP except for the sample with the highest preference is taken as the positive; append a special token to the prompts of worse images and train SD LoRA; remove the special token during inference.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2023-03-25-hps-fig1.png' width=900>
+                <figcaption>Train human preference classifier: similar to CLIP except for the sample with the highest preference is taken as the positive; append a special token to the prompts of worse images and train SD LoRA; remove the special token during inference.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -2901,15 +2902,15 @@
             
                 <button onclick="toggleTable('2023/12/19-InstructVideo-table')">Read more</button>
                 <div id='2023/12/19-InstructVideo-table' class="table-container">
-                <table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2023-12-19-InstructVideo-fig1.png' width=700>
-                <figcaption>It takes reward fine-tuning as an <b>editing task</b> to accelerate training. The reward model is HPS v2. TAR assigns larger weight to central frames.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2023-12-19-InstructVideo-fig1.png' width=700>
+                <figcaption>It takes reward fine-tuning as an <b>editing task</b> to accelerate training. The reward model is HPS v2. TAR assigns larger weight to central frames.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -2934,34 +2935,34 @@
             
                 <button onclick="toggleTable('2023/11/29-Vbench-table')">Read more</button>
                 <div id='2023/11/29-Vbench-table' class="table-container">
-                <ul>
-    <li> <u>Content Categories:</u> <u>animal</u>, <u>architecture</u>, <u>food</u>, <u>human</u>, <u>lifestyle</u>, <u>plant</u>, <u>scenary</u>, <u>vehicles</u>.
-    <li> <u>Temporal quality-subject consistency:</u> DINO feature similarity across frames.
-    <li> <u>Temporal quality-background consistency:</u> CLIP feature similarity across frames.
-    <li> <u>Temporal quality-temporal flickering:</u> mean absolute difference across frames.
-    <li> <u>Temporal quality-motion smoothness:</u> use video frame interpolation model to evaluate motion smoothness.
-    <li> <u>Temporal quality-dynamic degree:</u> use RAFT to estimate degree of dynamics.
-    <li> <u>Frame-wise quality-aesthetic quality:</u> use LAION aesthetic predictor.
-    <li> <u>Frame-wise quality-imaging quality:</u> use MUSIQ image quality predictor.
-    <li> <u>Semantics-object class:</u> use GRiT to detect classes.
-    <li> <u>Semantics-multiple objects:</u> detect success rate of generating all objects.
-    <li> <u>Semantics-human action:</u> use UMT to detect specific actions.
-    <li> <u>Semantics-color:</u> use GRiT for color captioning.
-    <li> <u>Semantics-spatial relationship:</u> use rule-based evaluation.
-    <li> <u>Semantics-scene:</u> use Tag2Text for scene captioning.
-    <li> <u>Style-appearance style:</u> use CLIP feature similarity.
-    <li> <u>Style-temporal style:</u> use ViCLIP to calculate video feature and temporal style description feature similarity.
-    <li> <u>Overall consistency:</u> use ViCLIP to evaluate overall semantics and style consistency.
-</ul>
-<table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2023-11-29-vbench-fig1.png' width=900>
-                <figcaption>caption1.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <ul>
+    <li> <u>Content Categories:</u> <u>animal</u>, <u>architecture</u>, <u>food</u>, <u>human</u>, <u>lifestyle</u>, <u>plant</u>, <u>scenary</u>, <u>vehicles</u>.
+    <li> <u>Temporal quality-subject consistency:</u> DINO feature similarity across frames.
+    <li> <u>Temporal quality-background consistency:</u> CLIP feature similarity across frames.
+    <li> <u>Temporal quality-temporal flickering:</u> mean absolute difference across frames.
+    <li> <u>Temporal quality-motion smoothness:</u> use video frame interpolation model to evaluate motion smoothness.
+    <li> <u>Temporal quality-dynamic degree:</u> use RAFT to estimate degree of dynamics.
+    <li> <u>Frame-wise quality-aesthetic quality:</u> use LAION aesthetic predictor.
+    <li> <u>Frame-wise quality-imaging quality:</u> use MUSIQ image quality predictor.
+    <li> <u>Semantics-object class:</u> use GRiT to detect classes.
+    <li> <u>Semantics-multiple objects:</u> detect success rate of generating all objects.
+    <li> <u>Semantics-human action:</u> use UMT to detect specific actions.
+    <li> <u>Semantics-color:</u> use GRiT for color captioning.
+    <li> <u>Semantics-spatial relationship:</u> use rule-based evaluation.
+    <li> <u>Semantics-scene:</u> use Tag2Text for scene captioning.
+    <li> <u>Style-appearance style:</u> use CLIP feature similarity.
+    <li> <u>Style-temporal style:</u> use ViCLIP to calculate video feature and temporal style description feature similarity.
+    <li> <u>Overall consistency:</u> use ViCLIP to evaluate overall semantics and style consistency.
+</ul>
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2023-11-29-vbench-fig1.png' width=900>
+                <figcaption>caption1.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -2986,9 +2987,9 @@
             
                 <button onclick="toggleTable('2023/11/21-Diffusion-DPO-table')">Read more</button>
                 <div id='2023/11/21-Diffusion-DPO-table' class="table-container">
-                <ul>
-    <li> Train SD1.5 and SDXL1.0 on Pick-a-Pic training set consisting of 850K pairs from 59K unique prompts.
-    <li> Evaluate on Pick-a-Pic validation set, and final evaluation is on Partiprompt and HPS v2.
+                <ul>
+    <li> Train SD1.5 and SDXL1.0 on Pick-a-Pic training set consisting of 850K pairs from 59K unique prompts.
+    <li> Evaluate on Pick-a-Pic validation set, and final evaluation is on Partiprompt and HPS v2.
 </ul>
                 </div>
                 
@@ -3013,23 +3014,23 @@
             
                 <button onclick="toggleTable('2023/10/17-GenEval-table')">Read more</button>
                 <div id='2023/10/17-GenEval-table' class="table-container">
-                <table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2023-10-17-GenEval-fig1.png' width=700>
-                <figcaption>GenEval detects objects using Mask2Former detector and evaluates attributes of them.</figcaption>
-            </figure>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2023-10-17-GenEval-fig2.png' width=600>
-                <figcaption>Specific <b>evaluation perspectives</b> of GenEval.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2023-10-17-GenEval-fig1.png' width=700>
+                <figcaption>GenEval detects objects using Mask2Former detector and evaluates attributes of them.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2023-10-17-GenEval-fig2.png' width=600>
+                <figcaption>Specific <b>evaluation perspectives</b> of GenEval.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -3073,15 +3074,15 @@
             
                 <button onclick="toggleTable('2022/5/29-CogVideo-table')">Read more</button>
                 <div id='2022/5/29-CogVideo-table' class="table-container">
-                <table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2022-05-29-cogvideo-fig1.png' width=500>
-                <figcaption>It is trained on CogView2. In stage 1, it generates frames sequentially. In stage 2, it recursively interpolates frames.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2022-05-29-cogvideo-fig1.png' width=500>
+                <figcaption>It is trained on CogView2. In stage 1, it generates frames sequentially. In stage 2, it recursively interpolates frames.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -3106,15 +3107,15 @@
             
                 <button onclick="toggleTable('2022/12/19-promptist-table')">Read more</button>
                 <div id='2022/12/19-promptist-table' class="table-container">
-                <table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2022-12-19-promptist-fig1.png' width=600>
-                <figcaption>Step 1: fine-tune a language model (LM) to optimize prompts; Step 2: further fine-tune LM with PPO, where aesthetic and relevance are the reward.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2022-12-19-promptist-fig1.png' width=600>
+                <figcaption>Step 1: fine-tune a language model (LM) to optimize prompts; Step 2: further fine-tune LM with PPO, where aesthetic and relevance are the reward.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -3139,20 +3140,20 @@
             
                 <button onclick="toggleTable('2022/12/19-DiT-table')">Read more</button>
                 <div id='2022/12/19-DiT-table' class="table-container">
-                <ul>
-    <li> <u>Increase model size</u> and <u>decrease patch size</u> yield considerably improved diffusion models.
-    <li> <u>Scale model Gflops</u> is the key to improved performance.
-    <li> <u>Larger DiT models</u> are more <u>compute-efficient</u>.
-</ul>
-<table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2022-12-19-DiT-fig1.png' width=800>
-                <figcaption>Use <u>adaLN-Zero</u> structure to inject timestep and prompt is better than cross-attention or in-context.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <ul>
+    <li> <u>Increase model size</u> and <u>decrease patch size</u> yield considerably improved diffusion models.
+    <li> <u>Scale model Gflops</u> is the key to improved performance.
+    <li> <u>Larger DiT models</u> are more <u>compute-efficient</u>.
+</ul>
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2022-12-19-DiT-fig1.png' width=800>
+                <figcaption>Use <u>adaLN-Zero</u> structure to inject timestep and prompt is better than cross-attention or in-context.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -3196,23 +3197,23 @@
             
                 <button onclick="toggleTable('2021/4/18-CLIPScore-table')">Read more</button>
                 <div id='2021/4/18-CLIPScore-table' class="table-container">
-                <ul>
-    <li> CLIPScore calculates <u>the cosine similarity between a caption and an image, multiplying the result by 2.5</u>.
-    <li> CLIPScore is  <u>complementary to common metrics</u> (like BLEU-4, SPICE, and CIDEr).
-    <li> "A photo depicts" as a prompt to CLIP is sligtly better than the official "A photo of".
-    <li> CLIPScore is sensitive to adversarially constructed image captions.
-    <li> CLIPScore can reconstruct judgments on never-before-seen images.
-    <li> Propose a reference-augmented version of CLIPScore, called RefCLIPScore, which is a harmonic mean of CLIPScore and the maximum of cosine similarity between the caption and all the references.
-</ul>
-<table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2021-04-18-clipscore-fig1.png' width=400>
-                <figcaption>CLIPScore frees from the shortcomings of n-gram matching that disfavors good captions with new words and favors captions with familiar words.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <ul>
+    <li> CLIPScore calculates <u>the cosine similarity between a caption and an image, multiplying the result by 2.5</u>.
+    <li> CLIPScore is  <u>complementary to common metrics</u> (like BLEU-4, SPICE, and CIDEr).
+    <li> "A photo depicts" as a prompt to CLIP is sligtly better than the official "A photo of".
+    <li> CLIPScore is sensitive to adversarially constructed image captions.
+    <li> CLIPScore can reconstruct judgments on never-before-seen images.
+    <li> Propose a reference-augmented version of CLIPScore, called RefCLIPScore, which is a harmonic mean of CLIPScore and the maximum of cosine similarity between the caption and all the references.
+</ul>
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2021-04-18-clipscore-fig1.png' width=400>
+                <figcaption>CLIPScore frees from the shortcomings of n-gram matching that disfavors good captions with new words and favors captions with familiar words.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -3256,15 +3257,15 @@
             
                 <button onclick="toggleTable('2021/12/20-LDM-table')">Read more</button>
                 <div id='2021/12/20-LDM-table' class="table-container">
-                <table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2021-12-20-ldm-fig1.png' width=400>
-                <figcaption>LDM performs the diffusion process in the latent space of VAE.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2021-12-20-ldm-fig1.png' width=400>
+                <figcaption>LDM performs the diffusion process in the latent space of VAE.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -3289,21 +3290,21 @@
             
                 <button onclick="toggleTable('2020/6/19-DDPM-table')">Read more</button>
                 <div id='2020/6/19-DDPM-table' class="table-container">
-                <table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2020-06-19-ddpm-fig1.png' width=400>
-                <figcaption>Forward and reverse processes of DDPM.</figcaption>
-            </figure>
-        </td>
-        <td>
-            <figure>
-                <img src='figs/2020-06-19-ddpm-fig2.png' width=500>
-        <figcaption>Training and sampling algorithms of DDPM.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2020-06-19-ddpm-fig1.png' width=400>
+                <figcaption>Forward and reverse processes of DDPM.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2020-06-19-ddpm-fig2.png' width=500>
+        <figcaption>Training and sampling algorithms of DDPM.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -3328,21 +3329,21 @@
             
                 <button onclick="toggleTable('2020/10/6-DDIM-table')">Read more</button>
                 <div id='2020/10/6-DDIM-table' class="table-container">
-                <table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2020-10-06-ddim-fig1.png' width=600>
-                <figcaption>Comparisons between Markovian DDPM (left) and non-Markovian DDIM (right).</figcaption>
-            </figure>
-        </td>
-        <td>
-            <figure>
-                <img src='figs/2020-10-06-ddim-fig2.png' width=300>
-        <figcaption>Accelerate sampling by skipping time steps.</figcaption>
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2020-10-06-ddim-fig1.png' width=600>
+                <figcaption>Comparisons between Markovian DDPM (left) and non-Markovian DDIM (right).</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2020-10-06-ddim-fig2.png' width=300>
+        <figcaption>Accelerate sampling by skipping time steps.</figcaption>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -3367,15 +3368,15 @@
             
                 <button onclick="toggleTable('2019/6/2-VQ-VAE-2-table')">Read more</button>
                 <div id='2019/6/2-VQ-VAE-2-table' class="table-container">
-                <table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2019-06-02-VQ-VAE-2-fig1.png' width=900>
-                <!-- <figcaption>It trains a hierarchical VQ-VAE.</figcaption> -->
-            </figure>
-        </td>
-    </tr>
+                <table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2019-06-02-VQ-VAE-2-fig1.png' width=900>
+                <!-- <figcaption>It trains a hierarchical VQ-VAE.</figcaption> -->
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
@@ -3438,18 +3439,18 @@
             
                 <button onclick="toggleTable('2017/11/2-VQ-VAE-table')">Read more</button>
                 <div id='2017/11/2-VQ-VAE-table' class="table-container">
-                <ul>
-    <li> VQ-VAE is simple to train, does not suffer from large variance, and avoids "posterior collapse", while getting similar performance as VAE.</li>
-    <li>The decoder optimizes the recontruction loss; the encoder optimizes the reconstruction loss and a matching loss; the embedding optimizes a matching loss.</li>
-</ul>
-<table>
-    <tr>
-        <td>
-            <figure>
-                <img src='figs/2017-11-02-VQ-VAE-fig1.png' width=900>
-            </figure>
-        </td>
-    </tr>
+                <ul>
+    <li> VQ-VAE is simple to train, does not suffer from large variance, and avoids "posterior collapse", while getting similar performance as VAE.</li>
+    <li>The decoder optimizes the recontruction loss; the encoder optimizes the reconstruction loss and a matching loss; the embedding optimizes a matching loss.</li>
+</ul>
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2017-11-02-VQ-VAE-fig1.png' width=900>
+            </figure>
+        </td>
+    </tr>
 </table>
                 </div>
                 
