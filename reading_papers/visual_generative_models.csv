@@ -731,7 +731,7 @@ Foundation Model & Algorithm,2023/7/4,SDXL,SDXL: Improving Latent Diffusion Mode
         <td>
             <figure>
                 <img src='figs/2023-07-04-SDXL-fig1.png' width=600>
-                <figcaption><b>Architecture:</b>. <br>(1) SDXL uses <u>different transformer</u> blocks compared to SD.<br>(2) Use <b>two text encoders</b> OpenCLIP VIT-bigG & CLIP ViT-L.<br>(3) The final model has 2.6B parameters with 817M parameters for text encoders.<br>(4) Embeddings of <b>height & width and cropping top & left and bucketing heigh & width</b> are added to timestep embeddings.<br>(5) <u>Improve auto-encoder</u> by employing larger batchsize of 256 and EMA.<br>(6) Use a <b>refiner</b> of SDEdit for refining details. <br>(7) Training: Stage 1: 256 x 256, 600K steps, batchsize 2048. Stage 2: 512 x 512, 200K steps. Stage 3: multi-aspect training. </figcaption>
+                <figcaption><b>Architecture:</b>. <br>(1) SDXL has <u>different transformer blocks</u> compared to SD.<br>(2) Use <b>two text encoders</b> OpenCLIP VIT-bigG & CLIP ViT-L.<br>(3) The final model has <b>2.6B</b> parameters with 817M parameters for text encoders.<br>(4) Embeddings of <b>height & width and cropping top & left and bucketing heigh & width</b> are added to timestep embeddings.<br>(5) <b>Improve VAE</b> by employing larger batchsize of 256 and EMA.<br>(6) Use a <b>refiner</b> of SDEdit for refining details. <br><b>Training stages:</b> 1) 256 x 256, 600K steps, batchsize 2048; 2) 512 x 512, 200K steps; 3) multi-aspect training. </figcaption>
             </figure>
         </td>
     </tr>

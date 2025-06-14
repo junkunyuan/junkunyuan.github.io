@@ -16,7 +16,7 @@
     <h1 id="top">Visual Generative Models</h1>
     <b><font size=3><font color='#D93053'>56</font> papers on visual generative models. Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
     <br><br>
-    Last updated on Friday, June 13 2025 at 10:21 PM.
+    Last updated on Saturday, June 14 2025 at 10:34 AM.
     <br><br>
     <a href="reading_papers.html">[back to main contents]</a>
     <br>
@@ -2960,7 +2960,7 @@
         <td>
             <figure>
                 <img src='figs/2023-07-04-SDXL-fig1.png' width=600>
-                <figcaption><b>Architecture:</b>. <br>(1) SDXL uses <u>different transformer</u> blocks compared to SD.<br>(2) Use <b>two text encoders</b> OpenCLIP VIT-bigG & CLIP ViT-L.<br>(3) The final model has 2.6B parameters with 817M parameters for text encoders.<br>(4) Embeddings of <b>height & width and cropping top & left and bucketing heigh & width</b> are added to timestep embeddings.<br>(5) <u>Improve auto-encoder</u> by employing larger batchsize of 256 and EMA.<br>(6) Use a <b>refiner</b> of SDEdit for refining details. <br>(7) Training: Stage 1: 256 x 256, 600K steps, batchsize 2048. Stage 2: 512 x 512, 200K steps. Stage 3: multi-aspect training. </figcaption>
+                <figcaption><b>Architecture:</b>. <br>(1) SDXL has <u>different transformer blocks</u> compared to SD.<br>(2) Use <b>two text encoders</b> OpenCLIP VIT-bigG & CLIP ViT-L.<br>(3) The final model has <b>2.6B</b> parameters with 817M parameters for text encoders.<br>(4) Embeddings of <b>height & width and cropping top & left and bucketing heigh & width</b> are added to timestep embeddings.<br>(5) <b>Improve VAE</b> by employing larger batchsize of 256 and EMA.<br>(6) Use a <b>refiner</b> of SDEdit for refining details. <br><b>Training stages:</b> 1) 256 x 256, 600K steps, batchsize 2048; 2) 512 x 512, 200K steps; 3) multi-aspect training. </figcaption>
             </figure>
         </td>
     </tr>
