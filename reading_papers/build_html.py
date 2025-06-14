@@ -78,7 +78,7 @@ def build_main_content(df, categories):
             if isinstance(item["jupyter_note"], str) and ".ipynb" in item["jupyter_note"]:
                 jupyter_note = \
                 f""" 
-                <br><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/{item["jupyter_note"]}" class="note">(notes in jupyter)</a>
+                <br><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/reading_papers/jupyters/{item["jupyter_note"]}" class="note">(notes in jupyter)</a>
                 """
             else:
                 jupyter_note = ""
@@ -163,29 +163,34 @@ def build_details(df):
             detail = ""
         
         if isinstance(item["jupyter_note"], str) and ".ipynb" in item["jupyter_note"]:
-            jupyter_note = f"""<p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/master/reading_papers/jupyters/{item["jupyter_note"]}" class="note">(notes in jupyter)</a></p>"""
+            jupyter_note = f"""<p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/reading_papers/jupyters/{item["jupyter_note"]}" class="note">(notes in jupyter)</a></p>"""
         else:
             jupyter_note = ""
+        
+        if isinstance(item["project"], str) and item["project"].startswith("https://github.com/"):
+                project_name = item["project"].split("https://github.com/")[1]
+                project_name = project_name[:-1] if project_name.endswith("/") else project_name
+                project = \
+                f"""
+                <a href="{item["project"]}"><img src="https://img.shields.io/github/stars/{project_name}.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                """
+        else:
+            project = ""
+
         detail_items += \
             f"""
             <h4 id="{item["date"]}-{item["model"].replace("<br>", "--")}">
-            [{all_items - idx}] &nbsp;{item["paper"]}
+            [{all_items - idx}] &nbsp;{item["paper"]} <i>({item["publication"]})</i>
             </h4>
             {jupyter_note}
-            <p>
-                <i><b>Project:</b></i> {item["model"].replace("<br>", ", ")} ({item["date"]}, <i>{item["publication"]}</i>)
-            </p>
-            <p>
-                <i><b>Authors:</b></i> {item["author"]}
-            </p>
-            <p>
-                <i><b>Organizations:</b></i> {item["organization"]}
-            </p>
-            <p>
-                <i><b>Summary:</b></i> {item["summary"]}
-            </p>
+            <p><i><b>Date:</b></i> {item["date"]}</p>
+            <p><i><b>Project:</b></i> {item["model"].replace("<br>", ", ")} {project}</p>
+            <p><i><b>Authors:</b></i> {item["author"]}</p>
+            <p><i><b>Organizations:</b></i> {item["organization"]}</p>
+            <p><i><b>Summary:</b></i> {item["summary"]}</p>
             {detail}
             <p><a href="#{item["date"]}-{item["model"].replace("<br>", "--")}-item">[back to item]</a> &nbsp; <a href="#top">[back to top]</a> </p>
+            <hr>
             """
     details = """<h2 id="papers">Papers & Reading Notes</h2>""" + detail_items + \
         """
