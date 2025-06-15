@@ -16,7 +16,7 @@
     <h1 id="top">Visual Generative Models</h1>
     <b><font size=3><font color='#D93053'>55</font> papers on visual generative models. Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
     <br><br>
-    Last updated on Saturday, June 14 2025 at 10:53 PM.
+    Last updated on Sunday, June 15 2025 at 11:12 AM.
     <br><br>
     <a href="reading_papers.html">[back to main contents]</a>
     <br>
@@ -1276,7 +1276,7 @@
                 
                     </td>
                     <td><span class="summary">
-                        Train BLIP on 137K human preference image pairs for <u>image generation</u> and use it to tune diffusion models by Reward Feedback Learning (ReFL).
+                        Train <u>BLIP</u> on 137K human preference image pairs for <u>image generation</u> and use it to tune diffusion models by Reward Feedback Learning (ReFL).
                     </span></td>
                 </tr>
                 
@@ -1297,7 +1297,7 @@
                 
                     </td>
                     <td><span class="summary">
-                        Fine-tune CLIP using annotated 98K SD generated images from 25K prompts for <u>image generation</u> evaluation.
+                        Fine-tune <u>CLIP</u> using annotated 98K SD generated images from 25K prompts for <u>image generation</u> evaluation.
                     </span></td>
                 </tr>
                 
@@ -1316,7 +1316,7 @@
                             CLIPScore: A Reference-free Evaluation Metric for Image Captioning <b><i>(EMNLP 2021)</i></b>
                         </span></a>
                         
-                <a href="https://github.com/tgxs002/align_sd/"><img src="https://img.shields.io/github/stars/tgxs002/align_sd.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                <a href="https://github.com/jmhessel/clipscore"><img src="https://img.shields.io/github/stars/jmhessel/clipscore.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
                 
                     </td>
                     <td><span class="summary">
@@ -2455,7 +2455,7 @@
     <tr>
         <td>
             <figure>
-                <img src='figs/2024-04-01-VQAScore-fig1.png' width=600>
+                <img src='figs/2024-04-01-VQAScore-fig1.png' width=700>
                 <figcaption>Evaluate by computing probability of answering "yes" from a trained <b>VQA</b> model by feeding the prompt and the generated image.</figcaption>
             </figure>
         </td>
@@ -2597,7 +2597,7 @@
                 <button onclick="toggleTable('2023-11-29-Vbench-table')">Read more</button>
                 <div id='2023-11-29-Vbench-table' class="table-container">
                 <ul>
-    <li> <u>Content Categories:</u> <u>animal</u>, <u>architecture</u>, <u>food</u>, <u>human</u>, <u>lifestyle</u>, <u>plant</u>, <u>scenary</u>, <u>vehicles</u>.
+    <li> <u>Content Categories:</u> animal, architecture, food, human, lifestyle, plant, scenary, vehicles.
     <li> <u>Temporal quality-subject consistency:</u> DINO feature similarity across frames.
     <li> <u>Temporal quality-background consistency:</u> CLIP feature similarity across frames.
     <li> <u>Temporal quality-temporal flickering:</u> mean absolute difference across frames.
@@ -2620,7 +2620,6 @@
         <td>
             <figure>
                 <img src='figs/2023-11-29-vbench-fig1.png' width=900>
-                <figcaption>caption1.</figcaption>
             </figure>
         </td>
     </tr>
@@ -2672,7 +2671,7 @@
         <td>
             <figure>
                 <img src='figs/2023-10-17-GenEval-fig1.png' width=700>
-                <figcaption>GenEval detects objects using Mask2Former detector and evaluates attributes of them.</figcaption>
+                <figcaption>GenEval detects objects using <u>Mask2Former</u> detector and evaluates attributes of them.</figcaption>
             </figure>
         </td>
     </tr>
@@ -2773,7 +2772,7 @@
         <td>
             <figure>
                 <img src='figs/2023-06-15-hpsv2-fig1.png' width=900>
-                <figcaption>Step 1: Clean prompts from COCO captions and DiffusionDB by ChatGPT; Step 2: Generate images using 9 models; Step 3: Rand and annotate each pair of images; Step 4: Train CLIP and obtain preference model for providing HPS v2 score.</figcaption>
+                <figcaption>(1) Clean prompts from COCO captions and DiffusionDB by ChatGPT => (2) Generate images using <u>9 models</u> => (3) Rank and annotate each pair of images; => (4) Finetune CLIP and obtain preference model to output HPS v2 score.</figcaption>
             </figure>
         </td>
     </tr>
@@ -2822,7 +2821,7 @@
                 </p>
             <p><i><b>Authors:</b></i> Jiazheng Xu, Xiao Liu, Yuchen Wu, Yuxuan Tong, Qinkai Li, Ming Ding, Jie Tang, Yuxiao Dong</p>
             <p><i><b>Organizations:</b></i> Tsinghua University, Zhipu AI, Beijing University of Posts and Telecommunications</p>
-            <p><i><b>Summary:</b></i> Train BLIP on 137K human preference image pairs for <u>image generation</u> and use it to tune diffusion models by Reward Feedback Learning (ReFL).</p>
+            <p><i><b>Summary:</b></i> Train <u>BLIP</u> on 137K human preference image pairs for <u>image generation</u> and use it to tune diffusion models by Reward Feedback Learning (ReFL).</p>
             
             <p><a href="#2023-04-12-ImageReward-item">[back to item]</a> &nbsp; <a href="#top">[back to top]</a> </p>
             <hr>
@@ -2837,7 +2836,7 @@
                 </p>
             <p><i><b>Authors:</b></i> Xiaoshi Wu, Keqiang Sun, Feng Zhu, Rui Zhao, Hongsheng Li</p>
             <p><i><b>Organizations:</b></i> CUHK, SenseTime Research, Shanghai Jiao Tong University, Centre for Perceptual and Interactive Intelligence, Shanghai AI Lab</p>
-            <p><i><b>Summary:</b></i> Fine-tune CLIP using annotated 98K SD generated images from 25K prompts for <u>image generation</u> evaluation.</p>
+            <p><i><b>Summary:</b></i> Fine-tune <u>CLIP</u> using annotated 98K SD generated images from 25K prompts for <u>image generation</u> evaluation.</p>
             
                 <button onclick="toggleTable('2023-03-25-HPS-table')">Read more</button>
                 <div id='2023-03-25-HPS-table' class="table-container">
@@ -2846,7 +2845,7 @@
         <td>
             <figure>
                 <img src='figs/2023-03-25-hps-fig1.png' width=900>
-                <figcaption>Train human preference classifier: similar to CLIP except for the sample with the highest preference is taken as the positive; append a special token to the prompts of worse images and train SD LoRA; remove the special token during inference.</figcaption>
+                <figcaption><u>Train score model:</u> similar to CLIP except for the sample with the highest preference is taken as the positive;<br> <u>Finetune image generation model using the score model:</u> append a <u>special token</u> to the prompts of worse images and train SD LoRA; remove the special token during inference.</figcaption>
             </figure>
         </td>
     </tr>
@@ -3023,7 +3022,7 @@
             <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/reading_papers/jupyters/visual_generative_models-clipscore.ipynb" class="note">(notes in jupyter)</a></p>
             <p><i><b>Date:</b></i> 2021-04-18</p>
             <p><i><b>Project:</b></i> CLIPScore 
-                <a href="https://github.com/tgxs002/align_sd/"><img src="https://img.shields.io/github/stars/tgxs002/align_sd.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                <a href="https://github.com/jmhessel/clipscore"><img src="https://img.shields.io/github/stars/jmhessel/clipscore.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
                 </p>
             <p><i><b>Authors:</b></i> Jack Hessel, Ari Holtzman, Maxwell Forbes, Ronan Le Bras, Yejin Choi</p>
             <p><i><b>Organizations:</b></i> Allen Institute for AI, University of Washington</p>

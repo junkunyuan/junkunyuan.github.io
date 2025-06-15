@@ -579,7 +579,7 @@ Evaluation,2024/4/1,VQAScore,Evaluating Text-to-Visual Generation with Image-to-
     <tr>
         <td>
             <figure>
-                <img src='figs/2024-04-01-VQAScore-fig1.png' width=600>
+                <img src='figs/2024-04-01-VQAScore-fig1.png' width=700>
                 <figcaption>Evaluate by computing probability of answering ""yes"" from a trained <b>VQA</b> model by feeding the prompt and the generated image.</figcaption>
             </figure>
         </td>
@@ -647,7 +647,7 @@ Reinforcement Learning,2023/12/19,InstructVideo,InstructVideo: Instructing Video
     </tr>
 </table>"
 Evaluation,2023/11/29,Vbench,VBench: Comprehensive Benchmark Suite for Video Generative Models,"Ziqi Huang, Yinan He, Jiashuo Yu, Fan Zhang, Chenyang Si, Yuming Jiang, Yuanhan Zhang, Tianxing Wu, Qingyang Jin, Nattapol Chanpaisit, Yaohui Wang, Xinyuan Chen, Limin Wang, Dahua Lin, Yu Qiao, Ziwei Liu","Nanyang Technological University, Shanghai Artificial Intelligence Laboratory, The Chinese University of Hong Kong, Nanjing University",https://arxiv.org/pdf/2311.17982,CVPR 2024,https://github.com/Vchitect/VBench/,,Evaluate <u>video generation</u> from 16 dimensions within the perspectives of video quality and video-prompt consistency.,"<ul>
-    <li> <u>Content Categories:</u> <u>animal</u>, <u>architecture</u>, <u>food</u>, <u>human</u>, <u>lifestyle</u>, <u>plant</u>, <u>scenary</u>, <u>vehicles</u>.
+    <li> <u>Content Categories:</u> animal, architecture, food, human, lifestyle, plant, scenary, vehicles.
     <li> <u>Temporal quality-subject consistency:</u> DINO feature similarity across frames.
     <li> <u>Temporal quality-background consistency:</u> CLIP feature similarity across frames.
     <li> <u>Temporal quality-temporal flickering:</u> mean absolute difference across frames.
@@ -670,7 +670,6 @@ Evaluation,2023/11/29,Vbench,VBench: Comprehensive Benchmark Suite for Video Gen
         <td>
             <figure>
                 <img src='figs/2023-11-29-vbench-fig1.png' width=900>
-                <figcaption>caption1.</figcaption>
             </figure>
         </td>
     </tr>
@@ -684,7 +683,7 @@ Evaluation,2023/10/17,GenEval,GenEval: An Object-Focused Framework for Evaluatin
         <td>
             <figure>
                 <img src='figs/2023-10-17-GenEval-fig1.png' width=700>
-                <figcaption>GenEval detects objects using Mask2Former detector and evaluates attributes of them.</figcaption>
+                <figcaption>GenEval detects objects using <u>Mask2Former</u> detector and evaluates attributes of them.</figcaption>
             </figure>
         </td>
     </tr>
@@ -728,7 +727,7 @@ Evaluation,2023/6/15,HPS v2,Human Preference Score v2: A Solid Benchmark for Eva
         <td>
             <figure>
                 <img src='figs/2023-06-15-hpsv2-fig1.png' width=900>
-                <figcaption>Step 1: Clean prompts from COCO captions and DiffusionDB by ChatGPT; Step 2: Generate images using 9 models; Step 3: Rand and annotate each pair of images; Step 4: Train CLIP and obtain preference model for providing HPS v2 score.</figcaption>
+                <figcaption>(1) Clean prompts from COCO captions and DiffusionDB by ChatGPT => (2) Generate images using <u>9 models</u> => (3) Rank and annotate each pair of images; => (4) Finetune CLIP and obtain preference model to output HPS v2 score.</figcaption>
             </figure>
         </td>
     </tr>
@@ -743,13 +742,13 @@ Evaluation,2023/5/2,PickScore,Pick-a-Pic: An Open Dataset of User Preferences fo
         </td>
     </tr>
 </table>"
-Evaluation,2023/4/12,ImageReward,ImageReward: Learning and Evaluating Human Preferences for Text-to-Image Generation,"Jiazheng Xu, Xiao Liu, Yuchen Wu, Yuxuan Tong, Qinkai Li, Ming Ding, Jie Tang, Yuxiao Dong","Tsinghua University, Zhipu AI, Beijing University of Posts and Telecommunications",https://arxiv.org/pdf/2304.05977,NeurIPS 2023,https://github.com/THUDM/ImageReward/,visual_generative_models-image_reward.ipynb,Train BLIP on 137K human preference image pairs for <u>image generation</u> and use it to tune diffusion models by Reward Feedback Learning (ReFL).,
-Evaluation,2023/3/25,HPS,Human Preference Score: Better Aligning Text-to-Image Models with Human Preference,"Xiaoshi Wu, Keqiang Sun, Feng Zhu, Rui Zhao, Hongsheng Li","CUHK, SenseTime Research, Shanghai Jiao Tong University, Centre for Perceptual and Interactive Intelligence, Shanghai AI Lab",https://arxiv.org/pdf/2303.14420,ICCV 2023,https://github.com/tgxs002/align_sd/,,Fine-tune CLIP using annotated 98K SD generated images from 25K prompts for <u>image generation</u> evaluation.,"<table>
+Evaluation,2023/4/12,ImageReward,ImageReward: Learning and Evaluating Human Preferences for Text-to-Image Generation,"Jiazheng Xu, Xiao Liu, Yuchen Wu, Yuxuan Tong, Qinkai Li, Ming Ding, Jie Tang, Yuxiao Dong","Tsinghua University, Zhipu AI, Beijing University of Posts and Telecommunications",https://arxiv.org/pdf/2304.05977,NeurIPS 2023,https://github.com/THUDM/ImageReward/,visual_generative_models-image_reward.ipynb,Train <u>BLIP</u> on 137K human preference image pairs for <u>image generation</u> and use it to tune diffusion models by Reward Feedback Learning (ReFL).,
+Evaluation,2023/3/25,HPS,Human Preference Score: Better Aligning Text-to-Image Models with Human Preference,"Xiaoshi Wu, Keqiang Sun, Feng Zhu, Rui Zhao, Hongsheng Li","CUHK, SenseTime Research, Shanghai Jiao Tong University, Centre for Perceptual and Interactive Intelligence, Shanghai AI Lab",https://arxiv.org/pdf/2303.14420,ICCV 2023,https://github.com/tgxs002/align_sd/,,Fine-tune <u>CLIP</u> using annotated 98K SD generated images from 25K prompts for <u>image generation</u> evaluation.,"<table>
     <tr>
         <td>
             <figure>
                 <img src='figs/2023-03-25-hps-fig1.png' width=900>
-                <figcaption>Train human preference classifier: similar to CLIP except for the sample with the highest preference is taken as the positive; append a special token to the prompts of worse images and train SD LoRA; remove the special token during inference.</figcaption>
+                <figcaption><u>Train score model:</u> similar to CLIP except for the sample with the highest preference is taken as the positive;<br> <u>Finetune image generation model using the score model:</u> append a <u>special token</u> to the prompts of worse images and train SD LoRA; remove the special token during inference.</figcaption>
             </figure>
         </td>
     </tr>
@@ -801,7 +800,7 @@ Foundation Model & Algorithm,2021/12/20,LDM,High-Resolution Image Synthesis with
     </tr>
 </table>"
 Foundation Model & Algorithm,2021/12/8,CFG,Classifier-Free Diffusion Guidance,"Jonathan Ho, Tim Salimans","Google Research, Brain team",https://arxiv.org/pdf/2207.12598,NeurIPS workshop 2021,,visual_generative_models-cfg.ipynb,<u>Image generation</u> with <b>classifier-free condition guidance</b> by jointly training a conditional model and an unconditional model. ,
-Evaluation,2021/4/18,CLIPScore,CLIPScore: A Reference-free Evaluation Metric for Image Captioning,"Jack Hessel, Ari Holtzman, Maxwell Forbes, Ronan Le Bras, Yejin Choi","Allen Institute for AI, University of Washington",https://arxiv.org/pdf/2104.08718,EMNLP 2021,https://github.com/tgxs002/align_sd/,visual_generative_models-clipscore.ipynb,A reference-free metric mainly focusing on <b>semantic alignment</b> for <u>image generation</u> evaluation.,"<ul>
+Evaluation,2021/4/18,CLIPScore,CLIPScore: A Reference-free Evaluation Metric for Image Captioning,"Jack Hessel, Ari Holtzman, Maxwell Forbes, Ronan Le Bras, Yejin Choi","Allen Institute for AI, University of Washington",https://arxiv.org/pdf/2104.08718,EMNLP 2021,https://github.com/jmhessel/clipscore,visual_generative_models-clipscore.ipynb,A reference-free metric mainly focusing on <b>semantic alignment</b> for <u>image generation</u> evaluation.,"<ul>
     <li> CLIPScore calculates <u>the cosine similarity between a caption and an image, multiplying the result by 2.5</u>.
     <li> CLIPScore is  <u>complementary to common metrics</u> (like BLEU-4, SPICE, and CIDEr).
     <li> ""A photo depicts"" as a prompt to CLIP is sligtly better than the official ""A photo of"".
