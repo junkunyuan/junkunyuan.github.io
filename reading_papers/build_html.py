@@ -17,7 +17,7 @@ visual_generative_models["prefix"] = \
     <head>
         <link rel="stylesheet" href="jemdoc_reading_papers.css" type="text/css">
         <link rel="shortcut icon" href="../resource/citations.jpg">
-        <title>JunkunYuan's Reading Papers</title>
+        <title>JunkunYuan's Paper Reading List</title>
         <meta name="description" content="Junkun Yuan&#39;s Reading Papers">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
