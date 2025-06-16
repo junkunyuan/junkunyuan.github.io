@@ -7,7 +7,9 @@ domains = dict()
 ## Visual Generative Models
 ## --------------------------------------------------------------------------------
 visual_generative_models = dict()
+visual_generative_models["name"] = "Visual Generative Models"
 visual_generative_models["file"] = "visual_generative_models.html"
+visual_generative_models["description"] = "Models that <b>generate visual outputs</b>, including images, videos, 3D, etc."
 visual_generative_models["prefix"] = \
     """
     <!DOCTYPE html>
@@ -26,8 +28,8 @@ visual_generative_models["prefix"] = \
     """
 visual_generative_models["title"] = \
     f"""
-    <h1 id="top">Visual Generative Models</h1>
-    <b><font size=3>Reading papers on visual generative models. Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
+    <h1 id="top">{visual_generative_models["name"]}</h1>
+    <b><font size=3>xxx papers on visual generative models. Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
     <br><br>
     Last updated on {datetime.now().strftime('%A, %B %d %Y at %I:%M %p')}.
     <br><br>
@@ -52,6 +54,81 @@ visual_generative_models["categories"] = {
 }
 domains["visual_generative_models"] = visual_generative_models
 ## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+domains_all = dict()
+domains_all["file"] = "reading_papers.html"
+domains_all["prefix"] = \
+    """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <link rel="stylesheet" href="jemdoc_reading_papers.css" type="text/css">
+        <link rel="shortcut icon" href="../resource/citations.jpg">
+        <title>JunkunYuan's Reading Papers</title>
+        <meta name="description" content="Junkun Yuan&#39;s Reading Papers">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <div id="layout-content" style="margin-top:25px"></div>
+    </head>
+    <body>
+    """
+domains_all["title"] = \
+    f"""
+    <h1 id="top">Junkun Yuan's Reading Papers</h1>
+    <b><font size=3>xxx papers on Artificial Intelligence (AI). Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
+    <br><br>
+    Last updated on {datetime.now().strftime('%A, %B %d %Y at %I:%M %p')}.
+    <br>
+    <hr>
+    """
+domains_all["suffix"] = \
+    """
+    </body>
+    </html>
+    """
+## --------------------------------------------------------------------------------
+
+def build_main_content_all_domains(domains, num_items):
+    domain_table = ""
+    for domain_name, domain in domains.items():
+        domain_table += \
+        f"""
+        <tr>
+            <td>
+                <a href="{domain["file"]}" class="modeltext"><b>{domain["name"]}</b></a>
+            </td>
+            <td>
+                <span class="summarytext"> {num_items[domain_name]}</span>
+            </td>
+            <td>
+                <span class="summarytext"> {domain["description"]}</span>
+            </td>
+        </tr>
+        """
+    main_content = \
+    f"""
+    <table>
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 8%;">
+            <col style="width: 62%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Papers</th>
+                <th>Modality</th>
+            </tr>
+        </thead>
+        <tbody>
+            {domain_table}
+        </tbody>
+    </table>
+    """
+    return main_content
+    
 
 def build_main_content(df, categories):
     table_of_content = [f"""<li><a href="#{c_id}">{c}</a></li>""" for c, c_id in categories.items()]
@@ -219,14 +296,25 @@ def build_details(df):
     return details
 
 if __name__ == "__main__":
+    num_items = dict()
     for domain_name, domain in domains.items():
-        ## Load paper pool
+        ## Load paper pool of each domain
         df = pd.read_csv(f"{domain_name}.csv")
         df['date'] = pd.to_datetime(df['date'], format='%Y/%m/%d').dt.strftime('%Y-%m-%d')
 
         main_content = build_main_content(df, domain["categories"])
         details = build_details(df)
-        html_content = domain["prefix"] + domain["title"].replace("Reading papers", f"<font color='#D93053'>{len(df)}</font> papers") + main_content + details + domain["suffix"]
+
+        ## Write contents to html of each domain
+        num = len(df)
+        num_items[domain_name] = num
+        html_content = domain["prefix"] + domain["title"].replace("xxx", f"<font color='#D93053'>{num}</font>") + main_content + details + domain["suffix"]
         with open(domain["file"], 'w', encoding="utf-8-sig") as f: 
             f.write(html_content)
     
+    main_content_all_domains = build_main_content_all_domains(domains, num_items)
+
+    ## Write contents to html of all domains
+    html_content = domains_all["prefix"] + domains_all["title"].replace("xxx", f"<font color='#D93053'>{sum(num_items.values())}</font>") + main_content_all_domains + domains_all["suffix"]
+    with open(domains_all["file"], 'w', encoding="utf-8-sig") as f: 
+        f.write(html_content)
