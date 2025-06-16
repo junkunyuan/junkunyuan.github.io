@@ -9,7 +9,7 @@ domains = dict()
 visual_generative_models = dict()
 visual_generative_models["name"] = "Visual Generative Models"
 visual_generative_models["file"] = "visual_generative_models.html"
-visual_generative_models["description"] = "Models that <b>generate visual outputs</b>, including images, videos, 3D, etc."
+visual_generative_models["description"] = "Only model and generate visual outputs, including images, videos, 3D, etc."
 visual_generative_models["prefix"] = \
     """
     <!DOCTYPE html>
@@ -18,7 +18,7 @@ visual_generative_models["prefix"] = \
         <link rel="stylesheet" href="jemdoc_reading_papers.css" type="text/css">
         <link rel="shortcut icon" href="../resource/citations.jpg">
         <title>JunkunYuan's Paper Reading List</title>
-        <meta name="description" content="Junkun Yuan&#39;s Reading Papers">
+        <meta name="description" content="Junkun Yuan&#39;s Paper Reading List">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -65,8 +65,8 @@ domains_all["prefix"] = \
     <head>
         <link rel="stylesheet" href="jemdoc_reading_papers.css" type="text/css">
         <link rel="shortcut icon" href="../resource/citations.jpg">
-        <title>JunkunYuan's Reading Papers</title>
-        <meta name="description" content="Junkun Yuan&#39;s Reading Papers">
+        <title>JunkunYuan's Paper Reading List</title>
+        <meta name="description" content="Junkun Yuan&#39;s Paper Reading List">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -76,7 +76,7 @@ domains_all["prefix"] = \
     """
 domains_all["title"] = \
     f"""
-    <h1 id="top">Junkun Yuan's Reading Papers</h1>
+    <h1 id="top">Junkun Yuan's Paper Reading List</h1>
     <b><font size=3>xxx papers on Artificial Intelligence (AI). Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
     <br><br>
     Last updated on {datetime.now().strftime('%A, %B %d %Y at %I:%M %p')}.
@@ -119,7 +119,7 @@ def build_main_content_all_domains(domains, num_items):
             <tr>
                 <th>Category</th>
                 <th>Papers</th>
-                <th>Modality</th>
+                <th>Description</th>
             </tr>
         </thead>
         <tbody>
