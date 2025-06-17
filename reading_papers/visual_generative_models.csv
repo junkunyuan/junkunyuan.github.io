@@ -696,7 +696,7 @@ Evaluation,2023/10/17,GenEval,GenEval: An Object-Focused Framework for Evaluatin
         </td>
     </tr>
 </table>"
-Evaluation,2023/7/12,T2I-CompBench,T2I-CompBench: A Comprehensive Benchmark for Open-world Compositional Text-to-image Generation,"Kaiyi Huang, Kaiyue Sun, Enze Xie, Zhenguo Li, Xihui Liu","The University of Hong Kong, Huawei Noah's Ark Lab",https://arxiv.org/pdf/2307.06350,NeurIPS 2023,https://github.com/Karine-Huang/T2I-CompBench/,visual_generative_models-t2icompbench.ipynb,"Use 6000 prompts to train and evaluate <u>image generation</u> on <b>compositional generation</b>, including attribute binding, object relationship, and complex compositions.","<ul>
+Evaluation,2023/7/12,T2I-CompBench,T2I-CompBench: A Comprehensive Benchmark for Open-world Compositional Text-to-image Generation,"Kaiyi Huang, Kaiyue Sun, Enze Xie, Zhenguo Li, Xihui Liu","The University of Hong Kong, Huawei Noah's Ark Lab",https://arxiv.org/pdf/2307.06350,NeurIPS 2023,https://github.com/Karine-Huang/T2I-CompBench/,,"Use 6000 prompts to train and evaluate <u>image generation</u> on <b>compositional generation</b>, including attribute binding, object relationship, and complex compositions.","<ul>
     <li> <u>Attribute binding prompts:</u> at least two objects with two attributes from color, shape, texture.
     <li> <u>Object relationship prompts:</u> at least two objects with spatial relationship or non-spatial relationship.
     <li> <u>Complex compositions prompts:</u> more than two objects or more than two sub-categories.
