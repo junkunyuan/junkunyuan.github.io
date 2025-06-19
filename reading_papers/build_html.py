@@ -26,14 +26,13 @@ SUFFIX = """</body></html>"""
 visual_generative_models = dict()
 visual_generative_models["name"] = "Visual Generative Models"
 visual_generative_models["file"] = "visual_generative_models.html"
-visual_generative_models["description"] = "Only model and generate visual outputs, including images, videos, 3D, etc."
+visual_generative_models["description"] = "Learning to generate (real-world) <b>visual signals</b>, e.g., images, videos, 3D, etc."
 visual_generative_models["prefix"] = PREFIX
 visual_generative_models["title"] = \
     f"""
     <h1 id="top">{visual_generative_models["name"]}</h1>
-    <b><font size=3>xxx papers on visual generative models. Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
-    <br><br>
-    Last updated on {datetime.now().strftime('%A, %B %d %Y at %I:%M %p')}.<br><br>
+    <b><font size=3>xxx papers on {visual_generative_models["name"].lower()}. Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
+    <br><br>Last updated on {datetime.now().strftime('%A, %B %d %Y at %I:%M %p')}.<br><br>
     <a href="reading_papers.html">[back to main contents]</a><br><hr>
     """
 visual_generative_models["suffix"] = SUFFIX
@@ -51,6 +50,35 @@ domains["visual_generative_models"] = visual_generative_models
 ## --------------------------------------------------------------------------------
 
 ## --------------------------------------------------------------------------------
+## Native Multimodal Models
+## --------------------------------------------------------------------------------
+large_native_multimodal_models = dict()
+large_native_multimodal_models["name"] = "Large Native Multimodal Models"
+large_native_multimodal_models["file"] = "large_native_multimodal_models.html"
+large_native_multimodal_models["description"] = "Learning to generate <b>mutlimodal signals</b>, e.g., text, images, audios, etc."
+large_native_multimodal_models["prefix"] = PREFIX
+large_native_multimodal_models["title"] = \
+    f"""
+    <h1 id="top">{large_native_multimodal_models["name"]}</h1>
+    <b><font size=3>xxx papers on {large_native_multimodal_models["name"].lower()}. Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
+    <br><br>Last updated on {datetime.now().strftime('%A, %B %d %Y at %I:%M %p')}.<br><br>
+    <a href="reading_papers.html">[back to main contents]</a><br><hr>
+    """
+large_native_multimodal_models["suffix"] = SUFFIX
+large_native_multimodal_models["categories"] = {
+    "Survey & Insight": "survey-and-insight",
+    "Foundation Model & Algorithm": "foundation-model-and-algorithm",
+    "Fine-Tuning": "finetuning",
+    "Reinforcement Learning": "reinforcement-learning",
+    "Acceleration": "acceleration",
+    "Inference-Time Improvement": "inference-time-improvement",
+    "Downstream Task": "downstream_task",
+    "Evaluation": "evaluation"
+}
+domains["large_native_multimodal_models"] = large_native_multimodal_models
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
 ## All domains / main contents
 ## --------------------------------------------------------------------------------
 domains_all = dict()
@@ -59,8 +87,8 @@ domains_all["prefix"] = PREFIX
 domains_all["title"] = \
     f"""
     <h1 id="top">Junkun Yuan's Paper Reading List</h1>
-    <b><font size=3>xxx papers on Artificial Intelligence (AI). Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b><br><br>
-    Last updated on {datetime.now().strftime('%A, %B %d %Y at %I:%M %p')}.<br><hr>
+    <b><font size=3>xxx papers on Artificial Intelligence (AI). Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
+    <br><br>Last updated on {datetime.now().strftime('%A, %B %d %Y at %I:%M %p')}.<br><hr>
     """
 domains_all["suffix"] = SUFFIX
 ## --------------------------------------------------------------------------------
@@ -79,17 +107,9 @@ def build_main_content_all_domains(domains, num_items):
     main_content = \
     f"""
     <table>
-        <colgroup>
-            <col style="width: 30%;"><col style="width: 8%;"><col style="width: 62%;">
-        </colgroup>
-        <thead>
-            <tr>
-                <th>Category</th><th>Papers</th><th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            {domain_table}
-        </tbody>
+        <colgroup><col style="width: 30%;"><col style="width: 8%;"><col style="width: 62%;"></colgroup>
+        <thead><tr><th>Category</th><th>Papers</th><th>Description</th></tr></thead>
+        <tbody>{domain_table}</tbody>
     </table>
     """
     return main_content
@@ -103,7 +123,10 @@ def build_main_content(df, categories):
     for category, category_id in categories.items():
         main_content_cate = f"""<h3 id="{category_id}">{category}</h3>"""
         
-        df_cate = df[df["category"].str.contains(category)]
+        df_choose = df["category"].str.contains(category)
+        if df_choose.sum() == 0:
+            continue
+        df_cate = df[df_choose]
         df_cate = df_cate.sort_values(by="date", ascending=False)
 
         items = ""
@@ -129,16 +152,10 @@ def build_main_content(df, categories):
                 <tr>
                     <td>
                         <a id="{item["date"]}-{item["model"].replace("<br>", "--")}-item" class="date">{item["date"]}</a>
-                        <br><a href="#{item["date"]}-{item["model"].replace("<br>", "--")}" class="model">
-                            {item["model"]}
-                            {jupyter_note}
-                        </a>
+                        <br><a href="#{item["date"]}-{item["model"].replace("<br>", "--")}" class="model">{item["model"]}<br>{jupyter_note}</a>
                     </td>
                     <td>
-                        <a href="{item["paper_url"]}"><span class="paper">
-                            {item["paper"]} <b><i>({item["publication"]})</i></b>
-                        </span></a>
-                        {project}
+                        <a href="{item["paper_url"]}"><span class="paper">{item["paper"]} <b><i>({item["publication"]})</i></b></span></a>{project}
                     </td>
                     <td><span class="summary">{item["summary"]}</span></td>
                 </tr>
@@ -146,14 +163,8 @@ def build_main_content(df, categories):
         main_content_cate += \
             f"""
             <table>
-                <colgroup>
-                    <col style="width: 16%;"><col style="width: 36%;"><col style="width: 48%;">
-                </colgroup>
-                <thead>
-                    <tr>
-                        <th>Date & Model</th><th>Paper & Publication & Project</th><th>Summary</th>
-                    </tr>
-                </thead>
+                <colgroup><col style="width: 16%;"><col style="width: 36%;"><col style="width: 48%;"></colgroup>
+                <thead><tr><th>Date & Model</th><th>Paper & Publication & Project</th><th>Summary</th></tr></thead>
                 <tbody>{items}</tbody>
             </table>
             <a href="#top">[back to top]</a><br><br><hr>
@@ -164,10 +175,7 @@ def build_main_content(df, categories):
     f"""
     <b>Contents:</b>
     <ul>
-        <li>
-            <a href="#summary">Summary</a>
-            <ul>{table_of_content}</ul>
-        </li>
+        <li><a href="#summary">Summary</a><ul>{table_of_content}</ul></li>
         <li><a href="#papers">Papers & Reading Notes</a></li>
     </ul>
     <h2 id="summary">Summary</h2>
@@ -175,6 +183,7 @@ def build_main_content(df, categories):
     """
 
     return main_content
+
 
 def build_details(df):
     df = df.sort_values(by="date", ascending=False)
@@ -186,9 +195,7 @@ def build_details(df):
             detail = \
                 f"""
                 <button onclick="toggleTable('{item["date"]}-{item["model"].replace("<br>", "--")}-table')">Read more</button>
-                <div id='{item["date"]}-{item["model"].replace("<br>", "--")}-table' class="table-container">
-                {item["detail"]}
-                </div>
+                <div id='{item["date"]}-{item["model"].replace("<br>", "--")}-table' class="table-container">{item["detail"]}</div>
                 """
         
         jupyter_note = ""
@@ -225,7 +232,6 @@ def build_details(df):
                 const container = document.getElementById(tableId);
                 const button = container.previousElementSibling;
                 const isVisible = window.getComputedStyle(container).display !== 'none';
-                
                 if (!isVisible) {
                     const images = container.querySelectorAll('.lazy-load');
                     images.forEach(img => {
@@ -244,13 +250,18 @@ def build_details(df):
         """
     return details
 
+
 if __name__ == "__main__":
     num_items = dict()
     for domain_name, domain in domains.items():
         ## Load paper pool of each domain
-        df = pd.read_csv(f"{domain_name}.csv")
+        csv_file = f"{domain_name}.csv"
+        df = pd.read_csv(csv_file)
+        print(f"Load {len(df)} from {csv_file}")
+
         df['date'] = pd.to_datetime(df['date'], format='%Y/%m/%d').dt.strftime('%Y-%m-%d')
 
+        ## Build main content and details of each paper
         main_content = build_main_content(df, domain["categories"])
         details = build_details(df)
 
@@ -263,7 +274,7 @@ if __name__ == "__main__":
     
     main_content_all_domains = build_main_content_all_domains(domains, num_items)
 
-    ## Write contents to html of all domains
+    ## Write main contents to html
     html_content = domains_all["prefix"] + domains_all["title"].replace("xxx", f"<font color='#D93053'>{sum(num_items.values())}</font>") + main_content_all_domains + domains_all["suffix"]
     with open(domains_all["file"], 'w', encoding="utf-8-sig") as f: 
         f.write(html_content)
