@@ -3,14 +3,7 @@ from datetime import datetime
 
 domains = dict()
 
-## --------------------------------------------------------------------------------
-## Visual Generative Models
-## --------------------------------------------------------------------------------
-visual_generative_models = dict()
-visual_generative_models["name"] = "Visual Generative Models"
-visual_generative_models["file"] = "visual_generative_models.html"
-visual_generative_models["description"] = "Only model and generate visual outputs, including images, videos, 3D, etc."
-visual_generative_models["prefix"] = \
+PREFIX = \
     """
     <!DOCTYPE html>
     <html>
@@ -21,27 +14,29 @@ visual_generative_models["prefix"] = \
         <meta name="description" content="Junkun Yuan&#39;s Paper Reading List">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
         <div id="layout-content" style="margin-top:25px"></div>
     </head>
     <body>
     """
+SUFFIX = """</body></html>"""
+
+## --------------------------------------------------------------------------------
+## Visual Generative Models
+## --------------------------------------------------------------------------------
+visual_generative_models = dict()
+visual_generative_models["name"] = "Visual Generative Models"
+visual_generative_models["file"] = "visual_generative_models.html"
+visual_generative_models["description"] = "Only model and generate visual outputs, including images, videos, 3D, etc."
+visual_generative_models["prefix"] = PREFIX
 visual_generative_models["title"] = \
     f"""
     <h1 id="top">{visual_generative_models["name"]}</h1>
     <b><font size=3>xxx papers on visual generative models. Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
     <br><br>
-    Last updated on {datetime.now().strftime('%A, %B %d %Y at %I:%M %p')}.
-    <br><br>
-    <a href="reading_papers.html">[back to main contents]</a>
-    <br>
-    <hr>
+    Last updated on {datetime.now().strftime('%A, %B %d %Y at %I:%M %p')}.<br><br>
+    <a href="reading_papers.html">[back to main contents]</a><br><hr>
     """
-visual_generative_models["suffix"] = \
-    """
-    </body>
-    </html>
-    """
+visual_generative_models["suffix"] = SUFFIX
 visual_generative_models["categories"] = {
     "Survey & Insight": "survey-and-insight",
     "Foundation Model & Algorithm": "foundation-model-and-algorithm",
@@ -56,38 +51,18 @@ domains["visual_generative_models"] = visual_generative_models
 ## --------------------------------------------------------------------------------
 
 ## --------------------------------------------------------------------------------
+## All domains / main contents
+## --------------------------------------------------------------------------------
 domains_all = dict()
 domains_all["file"] = "reading_papers.html"
-domains_all["prefix"] = \
-    """
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <link rel="stylesheet" href="jemdoc_reading_papers.css" type="text/css">
-        <link rel="shortcut icon" href="../resource/citations.jpg">
-        <title>JunkunYuan's Paper Reading List</title>
-        <meta name="description" content="Junkun Yuan&#39;s Paper Reading List">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <div id="layout-content" style="margin-top:25px"></div>
-    </head>
-    <body>
-    """
+domains_all["prefix"] = PREFIX
 domains_all["title"] = \
     f"""
     <h1 id="top">Junkun Yuan's Paper Reading List</h1>
-    <b><font size=3>xxx papers on Artificial Intelligence (AI). Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
-    <br><br>
-    Last updated on {datetime.now().strftime('%A, %B %d %Y at %I:%M %p')}.
-    <br>
-    <hr>
+    <b><font size=3>xxx papers on Artificial Intelligence (AI). Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b><br><br>
+    Last updated on {datetime.now().strftime('%A, %B %d %Y at %I:%M %p')}.<br><hr>
     """
-domains_all["suffix"] = \
-    """
-    </body>
-    </html>
-    """
+domains_all["suffix"] = SUFFIX
 ## --------------------------------------------------------------------------------
 
 def build_main_content_all_domains(domains, num_items):
@@ -96,30 +71,20 @@ def build_main_content_all_domains(domains, num_items):
         domain_table += \
         f"""
         <tr>
-            <td>
-                <a href="{domain["file"]}" class="modeltext"><b>{domain["name"]}</b></a>
-            </td>
-            <td>
-                <span class="summarytext"> {num_items[domain_name]}</span>
-            </td>
-            <td>
-                <span class="summarytext"> {domain["description"]}</span>
-            </td>
+            <td><a href="{domain["file"]}" class="modeltext"><b>{domain["name"]}</b></a></td>
+            <td><span class="summarytext"> {num_items[domain_name]}</span></td>
+            <td><span class="summarytext"> {domain["description"]}</span></td>
         </tr>
         """
     main_content = \
     f"""
     <table>
         <colgroup>
-            <col style="width: 30%;">
-            <col style="width: 8%;">
-            <col style="width: 62%;">
+            <col style="width: 30%;"><col style="width: 8%;"><col style="width: 62%;">
         </colgroup>
         <thead>
             <tr>
-                <th>Category</th>
-                <th>Papers</th>
-                <th>Description</th>
+                <th>Category</th><th>Papers</th><th>Description</th>
             </tr>
         </thead>
         <tbody>
@@ -143,6 +108,7 @@ def build_main_content(df, categories):
 
         items = ""
         for _, item in df_cate.iterrows():
+            project = ""
             if isinstance(item["project"], str) and item["project"].startswith("https://github.com/"):
                 project_name = item["project"].split("https://github.com/")[1]
                 project_name = project_name[:-1] if project_name.endswith("/") else project_name
@@ -150,15 +116,14 @@ def build_main_content(df, categories):
                 f"""
                 <a href="{item["project"]}"><img src="https://img.shields.io/github/stars/{project_name}.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
                 """
-            else:
-                project = ""
+
+            jupyter_note = ""
             if isinstance(item["jupyter_note"], str) and ".ipynb" in item["jupyter_note"]:
                 jupyter_note = \
                 f""" 
                 <br><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/reading_papers/jupyters/{item["jupyter_note"]}" class="note">(notes in jupyter)</a>
                 """
-            else:
-                jupyter_note = ""
+
             items += \
                 f"""
                 <tr>
@@ -175,33 +140,23 @@ def build_main_content(df, categories):
                         </span></a>
                         {project}
                     </td>
-                    <td><span class="summary">
-                        {item["summary"]}
-                    </span></td>
+                    <td><span class="summary">{item["summary"]}</span></td>
                 </tr>
                 """      
         main_content_cate += \
             f"""
             <table>
                 <colgroup>
-                    <col style="width: 16%;">
-                    <col style="width: 36%;">
-                    <col style="width: 48%;">
+                    <col style="width: 16%;"><col style="width: 36%;"><col style="width: 48%;">
                 </colgroup>
                 <thead>
                     <tr>
-                        <th>Date & Model</th>
-                        <th>Paper & Publication & Project</th>
-                        <th>Summary</th>
+                        <th>Date & Model</th><th>Paper & Publication & Project</th><th>Summary</th>
                     </tr>
                 </thead>
-                <tbody>
-                    {items}
-                </tbody>
+                <tbody>{items}</tbody>
             </table>
-            <a href="#top">[back to top]</a>
-            <br><br>
-            <hr>
+            <a href="#top">[back to top]</a><br><br><hr>
             """
         cate_content += main_content_cate
 
@@ -211,9 +166,7 @@ def build_main_content(df, categories):
     <ul>
         <li>
             <a href="#summary">Summary</a>
-            <ul>
-                {table_of_content}
-            </ul>
+            <ul>{table_of_content}</ul>
         </li>
         <li><a href="#papers">Papers & Reading Notes</a></li>
     </ul>
@@ -228,6 +181,7 @@ def build_details(df):
     detail_items = ""
     all_items = len(df)
     for idx, item in df.iterrows():
+        detail = ""
         if isinstance(item["detail"], str) and len(item["detail"]) > 5:
             detail = \
                 f"""
@@ -236,14 +190,12 @@ def build_details(df):
                 {item["detail"]}
                 </div>
                 """
-        else:
-            detail = ""
         
+        jupyter_note = ""
         if isinstance(item["jupyter_note"], str) and ".ipynb" in item["jupyter_note"]:
             jupyter_note = f"""<p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/reading_papers/jupyters/{item["jupyter_note"]}" class="note">(notes in jupyter)</a></p>"""
-        else:
-            jupyter_note = ""
         
+        project = ""
         if isinstance(item["project"], str) and item["project"].startswith("https://github.com/"):
                 project_name = item["project"].split("https://github.com/")[1]
                 project_name = project_name[:-1] if project_name.endswith("/") else project_name
@@ -251,8 +203,6 @@ def build_details(df):
                 f"""
                 <a href="{item["project"]}"><img src="https://img.shields.io/github/stars/{project_name}.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
                 """
-        else:
-            project = ""
 
         detail_items += \
             f"""
@@ -266,8 +216,7 @@ def build_details(df):
             <p><i><b>Organizations:</b></i> {item["organization"]}</p>
             <p><i><b>Summary:</b></i> {item["summary"]}</p>
             {detail}
-            <p><a href="#{item["date"]}-{item["model"].replace("<br>", "--")}-item">[back to item]</a> &nbsp; <a href="#top">[back to top]</a> </p>
-            <hr>
+            <p><a href="#{item["date"]}-{item["model"].replace("<br>", "--")}-item">[back to item]</a> &nbsp; <a href="#top">[back to top]</a> </p><hr>
             """
     details = """<h2 id="papers">Papers & Reading Notes</h2>""" + detail_items + \
         """
