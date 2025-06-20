@@ -22,3 +22,41 @@ Survey & Insight,2025/4/8,GPT-4o Visual Generation Study,An Empirical Study of G
         </td>
     </tr>
 </table>"
+Foundation Model & Algorithm,2025/3/17,UniFluid,Unified Autoregressive Visual Generation and Understanding with Continuous Tokens,"Lijie Fan, Luming Tang, Siyang Qin, Tianhong Li, Xuan Yang, Siyuan Qiao, Andreas Steiner, Chen Sun, Yuanzhen Li, Tao Zhu, Michael Rubinstein, Michalis Raptis, Deqing Sun, Radu Soricut","Google DeepMind, MIT",https://arxiv.org/pdf/2503.13436,arXiv 2025,,,"An autoregressive framework for <u>joint visual generation and understanding</u>, applying diffusion loss on continuous visual tokens (VAE latents) & cross-entropy loss on discrete text tokens.","<table>
+    <tr>
+        <td colspan=""2"">
+            <figure>
+                <img src='figs/2025-03-17-UniFluid-fig1.png' width=800>
+                <figcaption><b>Framework:</b> it performs joint training of image generation and understanding through <u>next-token prediction</u>.
+                <br><b>Tokenizer:</b> use <u>VAE</u> image tokenizer for <u>generation</u>, <u>SigLIP</u> image encoder for <u>understanding</u>, <u>SentencePiece</u> tokenizer for text. 
+                <br><b>Prediction head:</b> use <u>modality-specific prediction heads</u> to calculate losses and sampling for each modality.
+                <br><b>Token split:</b> ""Beginning of Image (BOI)"" token to indicate continuous image tokens.
+                <br><b>Loss:</b> loss1: image understanding loss on text answer; loss 2: image generation loss on image tokens.
+                <br><b>Training details:</b> batchsize=2048, optimizer=AdamW, lr=1e-4, steps=1M, init_ckpt=Gemma-2.
+                </figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td colspan=""2"">
+            <figure>
+                <img src='figs/2025-03-17-UniFluid-fig3.png' width=900>
+                <figcaption>There is <b>trade-off</b> between generation & understanding.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-03-17-UniFluid-fig2.png' width=300>
+                <figcaption><b>Unified training</b> improves generation.</figcaption>
+            </figure>
+        </td>
+        <td>
+            <figure>
+                <img src='figs/2025-03-17-UniFluid-fig4.png' width=600>
+                <figcaption><b>Better pre-trained LLM backbone</b> leads to better visual generation & understanding.</figcaption>
+            </figure>
+        </td>
+    </tr>
+</table>"
