@@ -14,69 +14,36 @@
     
     <h1 id="top">Visual Generative Models</h1>
     <b><font size=3><font color='#D93053'>55</font> papers on visual generative models. Curated by Junkun Yuan (yuanjk0921@outlook.com)</font></b>
-    <br><br>Last updated on Thursday, June 19 2025 at 04:46 PM.<br><br>
+    <br><br>Last updated on Friday, June 20 2025 at 03:11 PM.<br><br>
     <a href="reading_papers.html">[back to main contents]</a><br><hr>
     
     <b>Contents:</b>
     <ul>
-        <li><a href="#summary">Summary</a><ul><li><a href="#survey-and-insight">Survey & Insight</a></li><li><a href="#foundation-model-and-algorithm">Foundation Model & Algorithm</a></li><li><a href="#finetuning">Fine-Tuning</a></li><li><a href="#reinforcement-learning">Reinforcement Learning</a></li><li><a href="#acceleration">Acceleration</a></li><li><a href="#inference-time-improvement">Inference-Time Improvement</a></li><li><a href="#downstream_task">Downstream Task</a></li><li><a href="#evaluation">Evaluation</a></li></ul></li>
+        <li><a href="#summary">Summary</a><ul><li><a href="#Downstream Task">Downstream Task</a></li><li><a href="#Foundation Model & Algorithm">Foundation Model & Algorithm</a></li><li><a href="#Survey & Insight">Survey & Insight</a></li><li><a href="#Evaluation">Evaluation</a></li><li><a href="#Reinforcement Learning, Inference-Time Improvement">Reinforcement Learning, Inference-Time Improvement</a></li><li><a href="#Reinforcement Learning">Reinforcement Learning</a></li><li><a href="#Inference-Time Improvement">Inference-Time Improvement</a></li><li><a href="#Fine-Tuning">Fine-Tuning</a></li><li><a href="#Acceleration">Acceleration</a></li><li><a href="#Fine-Tuning, Evaluation">Fine-Tuning, Evaluation</a></li></ul></li>
         <li><a href="#papers">Papers & Reading Notes</a></li>
     </ul>
     <h2 id="summary">Summary</h2>
-    <h3 id="survey-and-insight">Survey & Insight</h3>
+    <h3 id="Downstream Task">Downstream Task</h3>
             <table>
                 <colgroup><col style="width: 16%;"><col style="width: 36%;"><col style="width: 48%;"></colgroup>
                 <thead><tr><th>Date & Model</th><th>Paper & Publication & Project</th><th>Summary</th></tr></thead>
                 <tbody>
                 <tr>
                     <td>
-                        <a id="2025-03-10-Inference Beat Pretraining-item" class="date">2025-03-10</a>
-                        <br><a href="#2025-03-10-Inference Beat Pretraining" class="model">Inference Beat Pretraining<br></a>
+                        <a id="2025-04-24-Step1X-Edit-item" class="date">2025-04-24</a>
+                        <br><a href="#2025-04-24-Step1X-Edit" class="model">Step1X-Edit<br></a>
                     </td>
                     <td>
-                        <a href="https://arxiv.org/pdf/2503.07154"><span class="paper">Ideas in Inference-time Scaling can Benefit Generative Pre-training Algorithms <b><i>(arXiv 2025)</i></b></span></a>
-                    </td>
-                    <td><span class="summary">Analyze generative pre-training algorithm design from an <b>inference-first perspective</b>, and scaling inference from a unified perspective of scaling <u>sequence length & refinement steps</u>.</span></td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <a id="2025-02-18-noise-unconditional model-item" class="date">2025-02-18</a>
-                        <br><a href="#2025-02-18-noise-unconditional model" class="model">noise-unconditional model<br></a>
-                    </td>
-                    <td>
-                        <a href="https://arxiv.org/pdf/2502.13129"><span class="paper">Is Noise Conditioning Necessary for Denoising Generative Models? <b><i>(ICML 2025)</i></b></span></a>
-                    </td>
-                    <td><span class="summary">Theoretical and empirical analysis on denoising <u>diffusion models</u> <b>without a timestep input</b> for <u>image generation</u>.</span></td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <a id="2024-12-09-Flow Matching Guide and Code-item" class="date">2024-12-09</a>
-                        <br><a href="#2024-12-09-Flow Matching Guide and Code" class="model">Flow Matching Guide and Code<br></a>
-                    </td>
-                    <td>
-                        <a href="https://arxiv.org/pdf/2412.06264"><span class="paper">Flow Matching Guide and Code <b><i>(arXiv 2024)</i></b></span></a>
-                <a href="https://github.com/facebookresearch/flow_matching/"><img src="https://img.shields.io/github/stars/facebookresearch/flow_matching.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                        <a href="https://arxiv.org/pdf/2504.17761"><span class="paper">Step1X-Edit: A Practical Framework for General Image Editing <b><i>(arXiv 2025)</i></b></span></a>
+                <a href="https://github.com/stepfun-ai/Step1X-Edit/"><img src="https://img.shields.io/github/stars/stepfun-ai/Step1X-Edit.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
                 
                     </td>
-                    <td><span class="summary">Comprehensive and self-contained review of the <b>flow matching</b> algorithm, covering its mathmatical foundations, design choices, extensions, and code implementations.</span></td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <a id="2022-08-25-Unified Perspective-item" class="date">2022-08-25</a>
-                        <br><a href="#2022-08-25-Unified Perspective" class="model">Unified Perspective<br></a>
-                    </td>
-                    <td>
-                        <a href="https://arxiv.org/pdf/2412.03603"><span class="paper">Understanding Diffusion Models: A Unified Perspective <b><i>(arXiv 2022)</i></b></span></a>
-                    </td>
-                    <td><span class="summary">Introduction to <u>VAE</u>, <u>DDPM</u>, <u>score-based generative model</u>, <u>guidance</u> from a <b>unified generative perspective</b>.</span></td>
+                    <td><span class="summary">Use a <b>MLLM to generate condition embedding</b> of the reference image and user's editing instruction, trained on 20M instruction-image data for <u>image generation editing</u>.</span></td>
                 </tr>
                 </tbody>
             </table>
             <a href="#top">[back to top]</a><br><br><hr>
-            <h3 id="foundation-model-and-algorithm">Foundation Model & Algorithm</h3>
+            <h3 id="Foundation Model & Algorithm">Foundation Model & Algorithm</h3>
             <table>
                 <colgroup><col style="width: 16%;"><col style="width: 36%;"><col style="width: 48%;"></colgroup>
                 <thead><tr><th>Date & Model</th><th>Paper & Publication & Project</th><th>Summary</th></tr></thead>
@@ -387,196 +354,60 @@
                 </tbody>
             </table>
             <a href="#top">[back to top]</a><br><br><hr>
-            <h3 id="finetuning">Fine-Tuning</h3>
+            <h3 id="Survey & Insight">Survey & Insight</h3>
             <table>
                 <colgroup><col style="width: 16%;"><col style="width: 36%;"><col style="width: 48%;"></colgroup>
                 <thead><tr><th>Date & Model</th><th>Paper & Publication & Project</th><th>Summary</th></tr></thead>
                 <tbody>
                 <tr>
                     <td>
-                        <a id="2024-11-27-Reliable Seed-item" class="date">2024-11-27</a>
-                        <br><a href="#2024-11-27-Reliable Seed" class="model">Reliable Seed<br></a>
+                        <a id="2025-03-10-Inference Beat Pretraining-item" class="date">2025-03-10</a>
+                        <br><a href="#2025-03-10-Inference Beat Pretraining" class="model">Inference Beat Pretraining<br></a>
                     </td>
                     <td>
-                        <a href="https://arxiv.org/pdf/2411.18810"><span class="paper">Enhancing Compositional Text-to-Image Generation with Reliable Random Seeds <b><i>(ICLR 2025)</i></b></span></a>
-                <a href="https://github.com/doub7e/Reliable-Random-Seeds"><img src="https://img.shields.io/github/stars/doub7e/Reliable-Random-Seeds.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
-                
+                        <a href="https://arxiv.org/pdf/2503.07154"><span class="paper">Ideas in Inference-time Scaling can Benefit Generative Pre-training Algorithms <b><i>(arXiv 2025)</i></b></span></a>
                     </td>
-                    <td><span class="summary">The <b>noises initialized by reliable seeds</b> result in accurate <u>image generation</u> such as <u>numeracy</u> and <u>position</u>, and use these generated data for fine-tuning further improves performance.</span></td>
+                    <td><span class="summary">Analyze generative pre-training algorithm design from an <b>inference-first perspective</b>, and scaling inference from a unified perspective of scaling <u>sequence length & refinement steps</u>.</span></td>
                 </tr>
                 
                 <tr>
                     <td>
-                        <a id="2024-03-08-ELLA--DPG-Bench-item" class="date">2024-03-08</a>
-                        <br><a href="#2024-03-08-ELLA--DPG-Bench" class="model">ELLA<br>DPG-Bench<br></a>
+                        <a id="2025-02-18-noise-unconditional model-item" class="date">2025-02-18</a>
+                        <br><a href="#2025-02-18-noise-unconditional model" class="model">noise-unconditional model<br></a>
                     </td>
                     <td>
-                        <a href="https://arxiv.org/pdf/2403.05135"><span class="paper">ELLA: Equip Diffusion Models with LLM for Enhanced Semantic Alignment <b><i>(arXiv 2024)</i></b></span></a>
-                <a href="https://github.com/TencentQQGYLab/ELLA/"><img src="https://img.shields.io/github/stars/TencentQQGYLab/ELLA.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                        <a href="https://arxiv.org/pdf/2502.13129"><span class="paper">Is Noise Conditioning Necessary for Denoising Generative Models? <b><i>(ICML 2025)</i></b></span></a>
+                    </td>
+                    <td><span class="summary">Theoretical and empirical analysis on denoising <u>diffusion models</u> <b>without a timestep input</b> for <u>image generation</u>.</span></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <a id="2024-12-09-Flow Matching Guide and Code-item" class="date">2024-12-09</a>
+                        <br><a href="#2024-12-09-Flow Matching Guide and Code" class="model">Flow Matching Guide and Code<br></a>
+                    </td>
+                    <td>
+                        <a href="https://arxiv.org/pdf/2412.06264"><span class="paper">Flow Matching Guide and Code <b><i>(arXiv 2024)</i></b></span></a>
+                <a href="https://github.com/facebookresearch/flow_matching/"><img src="https://img.shields.io/github/stars/facebookresearch/flow_matching.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
                 
                     </td>
-                    <td><span class="summary">ELLA: Replace CLIP with <b>LLM</b> to understand dense prompts; DPG-Bench: evaluate <u>image generation</u> on <b>dense prompts</b>.</span></td>
+                    <td><span class="summary">Comprehensive and self-contained review of the <b>flow matching</b> algorithm, covering its mathmatical foundations, design choices, extensions, and code implementations.</span></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <a id="2022-08-25-Unified Perspective-item" class="date">2022-08-25</a>
+                        <br><a href="#2022-08-25-Unified Perspective" class="model">Unified Perspective<br></a>
+                    </td>
+                    <td>
+                        <a href="https://arxiv.org/pdf/2412.03603"><span class="paper">Understanding Diffusion Models: A Unified Perspective <b><i>(arXiv 2022)</i></b></span></a>
+                    </td>
+                    <td><span class="summary">Introduction to <u>VAE</u>, <u>DDPM</u>, <u>score-based generative model</u>, <u>guidance</u> from a <b>unified generative perspective</b>.</span></td>
                 </tr>
                 </tbody>
             </table>
             <a href="#top">[back to top]</a><br><br><hr>
-            <h3 id="reinforcement-learning">Reinforcement Learning</h3>
-            <table>
-                <colgroup><col style="width: 16%;"><col style="width: 36%;"><col style="width: 48%;"></colgroup>
-                <thead><tr><th>Date & Model</th><th>Paper & Publication & Project</th><th>Summary</th></tr></thead>
-                <tbody>
-                <tr>
-                    <td>
-                        <a id="2025-01-23-PARM-item" class="date">2025-01-23</a>
-                        <br><a href="#2025-01-23-PARM" class="model">PARM<br></a>
-                    </td>
-                    <td>
-                        <a href="https://arxiv.org/pdf/2501.13926"><span class="paper">Images with CoT? Let's Verify and Reinforce Image Generation Step by Step <b><i>(CVPR 2025)</i></b></span></a>
-                <a href="https://github.com/ZiyuGuo99/Image-Generation-CoT/"><img src="https://img.shields.io/github/stars/ZiyuGuo99/Image-Generation-CoT.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
-                
-                    </td>
-                    <td><span class="summary">Apply <b>Chain-of-Thought</b> into <u>image generation</u> and combine it with reinforcement learning to further improve performance.</span></td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <a id="2025-01-23-Flow-RWR--Flow-DPO-item" class="date">2025-01-23</a>
-                        <br><a href="#2025-01-23-Flow-RWR--Flow-DPO" class="model">Flow-RWR<br>Flow-DPO<br></a>
-                    </td>
-                    <td>
-                        <a href="https://arxiv.org/pdf/2501.13918"><span class="paper">Improving Video Generation with Human Feedback <b><i>(arXiv 2025)</i></b></span></a>
-                <a href="https://github.com/KwaiVGI/VideoAlign/"><img src="https://img.shields.io/github/stars/KwaiVGI/VideoAlign.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
-                
-                    </td>
-                    <td><span class="summary">A <u>human preference video dataset</u>; Adapt diffusion-based reinforcement learning to <u>flow-based</u> <u>video generation</u> models.</span></td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <a id="2023-12-19-InstructVideo-item" class="date">2023-12-19</a>
-                        <br><a href="#2023-12-19-InstructVideo" class="model">InstructVideo<br></a>
-                    </td>
-                    <td>
-                        <a href="https://arxiv.org/pdf/2312.12490"><span class="paper">InstructVideo: Instructing Video Diffusion Models with Human Feedback <b><i>(CVPR 2024)</i></b></span></a>
-                <a href="https://github.com/ali-vilab/VGen/"><img src="https://img.shields.io/github/stars/ali-vilab/VGen.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
-                
-                    </td>
-                    <td><span class="summary">Use HPS v2 to provide reward and train <u>video generation</u> models in an editing manner.</span></td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <a id="2023-11-21-Diffusion-DPO-item" class="date">2023-11-21</a>
-                        <br><a href="#2023-11-21-Diffusion-DPO" class="model">Diffusion-DPO<br> 
-                <br><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/reading_papers/jupyters/visual_generative_models-diffusion_dpo.ipynb" class="note">(notes in jupyter)</a>
-                </a>
-                    </td>
-                    <td>
-                        <a href="https://arxiv.org/pdf/2311.12908"><span class="paper">Diffusion Model Alignment Using Direct Preference Optimization <b><i>(CVPR 2024)</i></b></span></a>
-                <a href="https://github.com/SalesforceAIResearch/DiffusionDPO/"><img src="https://img.shields.io/github/stars/SalesforceAIResearch/DiffusionDPO.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
-                
-                    </td>
-                    <td><span class="summary">Adapt <b>Direct Preference Optimization (DPO)</b> from large language models to diffusion models for <u>image generation</u>.</span></td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <a id="2022-12-19-promptist-item" class="date">2022-12-19</a>
-                        <br><a href="#2022-12-19-promptist" class="model">promptist<br></a>
-                    </td>
-                    <td>
-                        <a href="https://arxiv.org/pdf/2212.09611"><span class="paper">Optimizing Prompts for Text-to-Image Generation <b><i>(NeurIPS 2023)</i></b></span></a>
-                <a href="https://github.com/microsoft/LMOps/"><img src="https://img.shields.io/github/stars/microsoft/LMOps.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
-                
-                    </td>
-                    <td><span class="summary">Use <b>LLM to refine prompts</b> for <u>preference-aligned image generation</u> by taking relevance and aesthetics as reward.</span></td>
-                </tr>
-                </tbody>
-            </table>
-            <a href="#top">[back to top]</a><br><br><hr>
-            <h3 id="acceleration">Acceleration</h3>
-            <table>
-                <colgroup><col style="width: 16%;"><col style="width: 36%;"><col style="width: 48%;"></colgroup>
-                <thead><tr><th>Date & Model</th><th>Paper & Publication & Project</th><th>Summary</th></tr></thead>
-                <tbody>
-                <tr>
-                    <td>
-                        <a id="2024-03-18-SD3-Turbo-item" class="date">2024-03-18</a>
-                        <br><a href="#2024-03-18-SD3-Turbo" class="model">SD3-Turbo<br></a>
-                    </td>
-                    <td>
-                        <a href="https://export.arxiv.org/pdf/2403.12015"><span class="paper">Fast High-Resolution Image Synthesis with Latent Adversarial Diffusion Distillation <b><i>(SIGGRAPH Asia 2024)</i></b></span></a>
-                    </td>
-                    <td><span class="summary">Perform distillation of diffusion models in <b>latent space</b> using <b>teacher-synthetic data</b> and optimizing only an adversarial loss with the <b>teacher as the discriminator</b>.</span></td>
-                </tr>
-                </tbody>
-            </table>
-            <a href="#top">[back to top]</a><br><br><hr>
-            <h3 id="inference-time-improvement">Inference-Time Improvement</h3>
-            <table>
-                <colgroup><col style="width: 16%;"><col style="width: 36%;"><col style="width: 48%;"></colgroup>
-                <thead><tr><th>Date & Model</th><th>Paper & Publication & Project</th><th>Summary</th></tr></thead>
-                <tbody>
-                <tr>
-                    <td>
-                        <a id="2025-01-23-PARM-item" class="date">2025-01-23</a>
-                        <br><a href="#2025-01-23-PARM" class="model">PARM<br></a>
-                    </td>
-                    <td>
-                        <a href="https://arxiv.org/pdf/2501.13926"><span class="paper">Images with CoT? Let's Verify and Reinforce Image Generation Step by Step <b><i>(CVPR 2025)</i></b></span></a>
-                <a href="https://github.com/ZiyuGuo99/Image-Generation-CoT/"><img src="https://img.shields.io/github/stars/ZiyuGuo99/Image-Generation-CoT.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
-                
-                    </td>
-                    <td><span class="summary">Apply <b>Chain-of-Thought</b> into <u>image generation</u> and combine it with reinforcement learning to further improve performance.</span></td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <a id="2025-01-16-Scaling Analysis-item" class="date">2025-01-16</a>
-                        <br><a href="#2025-01-16-Scaling Analysis" class="model">Scaling Analysis<br></a>
-                    </td>
-                    <td>
-                        <a href="https://arxiv.org/pdf/2501.09732"><span class="paper">Inference-Time Scaling for Diffusion Models beyond Scaling Denoising Steps <b><i>(CVPR 2025)</i></b></span></a>
-                    </td>
-                    <td><span class="summary">Analysis on <b>inference-time scaling</b> of diffusion models for <u>image generation</u> from the axes of <b>verifiers</b> and <b>algorithms</b>.</span></td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <a id="2024-12-14-Z-Sampling-item" class="date">2024-12-14</a>
-                        <br><a href="#2024-12-14-Z-Sampling" class="model">Z-Sampling<br></a>
-                    </td>
-                    <td>
-                        <a href="https://arxiv.org/pdf/2412.10891"><span class="paper">Zigzag Diffusion Sampling: Diffusion Models Can Self-Improve via Self-Reflection <b><i>(ICLR 2025)</i></b></span></a>
-                <a href="https://github.com/xie-lab-ml/Zigzag-Diffusion-Sampling/"><img src="https://img.shields.io/github/stars/xie-lab-ml/Zigzag-Diffusion-Sampling.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
-                
-                    </td>
-                    <td><span class="summary">Use <b>guidance gap between denosing and inversion</b> and iteratively perform them to improve <u>image generation</u> quality.</span></td>
-                </tr>
-                </tbody>
-            </table>
-            <a href="#top">[back to top]</a><br><br><hr>
-            <h3 id="downstream_task">Downstream Task</h3>
-            <table>
-                <colgroup><col style="width: 16%;"><col style="width: 36%;"><col style="width: 48%;"></colgroup>
-                <thead><tr><th>Date & Model</th><th>Paper & Publication & Project</th><th>Summary</th></tr></thead>
-                <tbody>
-                <tr>
-                    <td>
-                        <a id="2025-04-24-Step1X-Edit-item" class="date">2025-04-24</a>
-                        <br><a href="#2025-04-24-Step1X-Edit" class="model">Step1X-Edit<br></a>
-                    </td>
-                    <td>
-                        <a href="https://arxiv.org/pdf/2504.17761"><span class="paper">Step1X-Edit: A Practical Framework for General Image Editing <b><i>(arXiv 2025)</i></b></span></a>
-                <a href="https://github.com/stepfun-ai/Step1X-Edit/"><img src="https://img.shields.io/github/stars/stepfun-ai/Step1X-Edit.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
-                
-                    </td>
-                    <td><span class="summary">Use a <b>MLLM to generate condition embedding</b> of the reference image and user's editing instruction, trained on 20M instruction-image data for <u>image generation editing</u>.</span></td>
-                </tr>
-                </tbody>
-            </table>
-            <a href="#top">[back to top]</a><br><br><hr>
-            <h3 id="evaluation">Evaluation</h3>
+            <h3 id="Evaluation">Evaluation</h3>
             <table>
                 <colgroup><col style="width: 16%;"><col style="width: 36%;"><col style="width: 48%;"></colgroup>
                 <thead><tr><th>Date & Model</th><th>Paper & Publication & Project</th><th>Summary</th></tr></thead>
@@ -808,6 +639,215 @@
                 
                     </td>
                     <td><span class="summary">Calculate <b>KL divergence between p(y|x) and p(y)</b> that aims to minimize the entropy across samples and maximize the entropy across classes for <u>image generation</u> evaluation.</span></td>
+                </tr>
+                </tbody>
+            </table>
+            <a href="#top">[back to top]</a><br><br><hr>
+            <h3 id="Reinforcement Learning, Inference-Time Improvement">Reinforcement Learning, Inference-Time Improvement</h3>
+            <table>
+                <colgroup><col style="width: 16%;"><col style="width: 36%;"><col style="width: 48%;"></colgroup>
+                <thead><tr><th>Date & Model</th><th>Paper & Publication & Project</th><th>Summary</th></tr></thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <a id="2025-01-23-PARM-item" class="date">2025-01-23</a>
+                        <br><a href="#2025-01-23-PARM" class="model">PARM<br></a>
+                    </td>
+                    <td>
+                        <a href="https://arxiv.org/pdf/2501.13926"><span class="paper">Images with CoT? Let's Verify and Reinforce Image Generation Step by Step <b><i>(CVPR 2025)</i></b></span></a>
+                <a href="https://github.com/ZiyuGuo99/Image-Generation-CoT/"><img src="https://img.shields.io/github/stars/ZiyuGuo99/Image-Generation-CoT.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                
+                    </td>
+                    <td><span class="summary">Apply <b>Chain-of-Thought</b> into <u>image generation</u> and combine it with reinforcement learning to further improve performance.</span></td>
+                </tr>
+                </tbody>
+            </table>
+            <a href="#top">[back to top]</a><br><br><hr>
+            <h3 id="Reinforcement Learning">Reinforcement Learning</h3>
+            <table>
+                <colgroup><col style="width: 16%;"><col style="width: 36%;"><col style="width: 48%;"></colgroup>
+                <thead><tr><th>Date & Model</th><th>Paper & Publication & Project</th><th>Summary</th></tr></thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <a id="2025-01-23-PARM-item" class="date">2025-01-23</a>
+                        <br><a href="#2025-01-23-PARM" class="model">PARM<br></a>
+                    </td>
+                    <td>
+                        <a href="https://arxiv.org/pdf/2501.13926"><span class="paper">Images with CoT? Let's Verify and Reinforce Image Generation Step by Step <b><i>(CVPR 2025)</i></b></span></a>
+                <a href="https://github.com/ZiyuGuo99/Image-Generation-CoT/"><img src="https://img.shields.io/github/stars/ZiyuGuo99/Image-Generation-CoT.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                
+                    </td>
+                    <td><span class="summary">Apply <b>Chain-of-Thought</b> into <u>image generation</u> and combine it with reinforcement learning to further improve performance.</span></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <a id="2025-01-23-Flow-RWR--Flow-DPO-item" class="date">2025-01-23</a>
+                        <br><a href="#2025-01-23-Flow-RWR--Flow-DPO" class="model">Flow-RWR<br>Flow-DPO<br></a>
+                    </td>
+                    <td>
+                        <a href="https://arxiv.org/pdf/2501.13918"><span class="paper">Improving Video Generation with Human Feedback <b><i>(arXiv 2025)</i></b></span></a>
+                <a href="https://github.com/KwaiVGI/VideoAlign/"><img src="https://img.shields.io/github/stars/KwaiVGI/VideoAlign.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                
+                    </td>
+                    <td><span class="summary">A <u>human preference video dataset</u>; Adapt diffusion-based reinforcement learning to <u>flow-based</u> <u>video generation</u> models.</span></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <a id="2023-12-19-InstructVideo-item" class="date">2023-12-19</a>
+                        <br><a href="#2023-12-19-InstructVideo" class="model">InstructVideo<br></a>
+                    </td>
+                    <td>
+                        <a href="https://arxiv.org/pdf/2312.12490"><span class="paper">InstructVideo: Instructing Video Diffusion Models with Human Feedback <b><i>(CVPR 2024)</i></b></span></a>
+                <a href="https://github.com/ali-vilab/VGen/"><img src="https://img.shields.io/github/stars/ali-vilab/VGen.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                
+                    </td>
+                    <td><span class="summary">Use HPS v2 to provide reward and train <u>video generation</u> models in an editing manner.</span></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <a id="2023-11-21-Diffusion-DPO-item" class="date">2023-11-21</a>
+                        <br><a href="#2023-11-21-Diffusion-DPO" class="model">Diffusion-DPO<br> 
+                <br><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/reading_papers/jupyters/visual_generative_models-diffusion_dpo.ipynb" class="note">(notes in jupyter)</a>
+                </a>
+                    </td>
+                    <td>
+                        <a href="https://arxiv.org/pdf/2311.12908"><span class="paper">Diffusion Model Alignment Using Direct Preference Optimization <b><i>(CVPR 2024)</i></b></span></a>
+                <a href="https://github.com/SalesforceAIResearch/DiffusionDPO/"><img src="https://img.shields.io/github/stars/SalesforceAIResearch/DiffusionDPO.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                
+                    </td>
+                    <td><span class="summary">Adapt <b>Direct Preference Optimization (DPO)</b> from large language models to diffusion models for <u>image generation</u>.</span></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <a id="2022-12-19-promptist-item" class="date">2022-12-19</a>
+                        <br><a href="#2022-12-19-promptist" class="model">promptist<br></a>
+                    </td>
+                    <td>
+                        <a href="https://arxiv.org/pdf/2212.09611"><span class="paper">Optimizing Prompts for Text-to-Image Generation <b><i>(NeurIPS 2023)</i></b></span></a>
+                <a href="https://github.com/microsoft/LMOps/"><img src="https://img.shields.io/github/stars/microsoft/LMOps.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                
+                    </td>
+                    <td><span class="summary">Use <b>LLM to refine prompts</b> for <u>preference-aligned image generation</u> by taking relevance and aesthetics as reward.</span></td>
+                </tr>
+                </tbody>
+            </table>
+            <a href="#top">[back to top]</a><br><br><hr>
+            <h3 id="Inference-Time Improvement">Inference-Time Improvement</h3>
+            <table>
+                <colgroup><col style="width: 16%;"><col style="width: 36%;"><col style="width: 48%;"></colgroup>
+                <thead><tr><th>Date & Model</th><th>Paper & Publication & Project</th><th>Summary</th></tr></thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <a id="2025-01-23-PARM-item" class="date">2025-01-23</a>
+                        <br><a href="#2025-01-23-PARM" class="model">PARM<br></a>
+                    </td>
+                    <td>
+                        <a href="https://arxiv.org/pdf/2501.13926"><span class="paper">Images with CoT? Let's Verify and Reinforce Image Generation Step by Step <b><i>(CVPR 2025)</i></b></span></a>
+                <a href="https://github.com/ZiyuGuo99/Image-Generation-CoT/"><img src="https://img.shields.io/github/stars/ZiyuGuo99/Image-Generation-CoT.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                
+                    </td>
+                    <td><span class="summary">Apply <b>Chain-of-Thought</b> into <u>image generation</u> and combine it with reinforcement learning to further improve performance.</span></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <a id="2025-01-16-Scaling Analysis-item" class="date">2025-01-16</a>
+                        <br><a href="#2025-01-16-Scaling Analysis" class="model">Scaling Analysis<br></a>
+                    </td>
+                    <td>
+                        <a href="https://arxiv.org/pdf/2501.09732"><span class="paper">Inference-Time Scaling for Diffusion Models beyond Scaling Denoising Steps <b><i>(CVPR 2025)</i></b></span></a>
+                    </td>
+                    <td><span class="summary">Analysis on <b>inference-time scaling</b> of diffusion models for <u>image generation</u> from the axes of <b>verifiers</b> and <b>algorithms</b>.</span></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <a id="2024-12-14-Z-Sampling-item" class="date">2024-12-14</a>
+                        <br><a href="#2024-12-14-Z-Sampling" class="model">Z-Sampling<br></a>
+                    </td>
+                    <td>
+                        <a href="https://arxiv.org/pdf/2412.10891"><span class="paper">Zigzag Diffusion Sampling: Diffusion Models Can Self-Improve via Self-Reflection <b><i>(ICLR 2025)</i></b></span></a>
+                <a href="https://github.com/xie-lab-ml/Zigzag-Diffusion-Sampling/"><img src="https://img.shields.io/github/stars/xie-lab-ml/Zigzag-Diffusion-Sampling.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                
+                    </td>
+                    <td><span class="summary">Use <b>guidance gap between denosing and inversion</b> and iteratively perform them to improve <u>image generation</u> quality.</span></td>
+                </tr>
+                </tbody>
+            </table>
+            <a href="#top">[back to top]</a><br><br><hr>
+            <h3 id="Fine-Tuning">Fine-Tuning</h3>
+            <table>
+                <colgroup><col style="width: 16%;"><col style="width: 36%;"><col style="width: 48%;"></colgroup>
+                <thead><tr><th>Date & Model</th><th>Paper & Publication & Project</th><th>Summary</th></tr></thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <a id="2024-11-27-Reliable Seed-item" class="date">2024-11-27</a>
+                        <br><a href="#2024-11-27-Reliable Seed" class="model">Reliable Seed<br></a>
+                    </td>
+                    <td>
+                        <a href="https://arxiv.org/pdf/2411.18810"><span class="paper">Enhancing Compositional Text-to-Image Generation with Reliable Random Seeds <b><i>(ICLR 2025)</i></b></span></a>
+                <a href="https://github.com/doub7e/Reliable-Random-Seeds"><img src="https://img.shields.io/github/stars/doub7e/Reliable-Random-Seeds.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                
+                    </td>
+                    <td><span class="summary">The <b>noises initialized by reliable seeds</b> result in accurate <u>image generation</u> such as <u>numeracy</u> and <u>position</u>, and use these generated data for fine-tuning further improves performance.</span></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <a id="2024-03-08-ELLA--DPG-Bench-item" class="date">2024-03-08</a>
+                        <br><a href="#2024-03-08-ELLA--DPG-Bench" class="model">ELLA<br>DPG-Bench<br></a>
+                    </td>
+                    <td>
+                        <a href="https://arxiv.org/pdf/2403.05135"><span class="paper">ELLA: Equip Diffusion Models with LLM for Enhanced Semantic Alignment <b><i>(arXiv 2024)</i></b></span></a>
+                <a href="https://github.com/TencentQQGYLab/ELLA/"><img src="https://img.shields.io/github/stars/TencentQQGYLab/ELLA.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                
+                    </td>
+                    <td><span class="summary">ELLA: Replace CLIP with <b>LLM</b> to understand dense prompts; DPG-Bench: evaluate <u>image generation</u> on <b>dense prompts</b>.</span></td>
+                </tr>
+                </tbody>
+            </table>
+            <a href="#top">[back to top]</a><br><br><hr>
+            <h3 id="Acceleration">Acceleration</h3>
+            <table>
+                <colgroup><col style="width: 16%;"><col style="width: 36%;"><col style="width: 48%;"></colgroup>
+                <thead><tr><th>Date & Model</th><th>Paper & Publication & Project</th><th>Summary</th></tr></thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <a id="2024-03-18-SD3-Turbo-item" class="date">2024-03-18</a>
+                        <br><a href="#2024-03-18-SD3-Turbo" class="model">SD3-Turbo<br></a>
+                    </td>
+                    <td>
+                        <a href="https://export.arxiv.org/pdf/2403.12015"><span class="paper">Fast High-Resolution Image Synthesis with Latent Adversarial Diffusion Distillation <b><i>(SIGGRAPH Asia 2024)</i></b></span></a>
+                    </td>
+                    <td><span class="summary">Perform distillation of diffusion models in <b>latent space</b> using <b>teacher-synthetic data</b> and optimizing only an adversarial loss with the <b>teacher as the discriminator</b>.</span></td>
+                </tr>
+                </tbody>
+            </table>
+            <a href="#top">[back to top]</a><br><br><hr>
+            <h3 id="Fine-Tuning, Evaluation">Fine-Tuning, Evaluation</h3>
+            <table>
+                <colgroup><col style="width: 16%;"><col style="width: 36%;"><col style="width: 48%;"></colgroup>
+                <thead><tr><th>Date & Model</th><th>Paper & Publication & Project</th><th>Summary</th></tr></thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <a id="2024-03-08-ELLA--DPG-Bench-item" class="date">2024-03-08</a>
+                        <br><a href="#2024-03-08-ELLA--DPG-Bench" class="model">ELLA<br>DPG-Bench<br></a>
+                    </td>
+                    <td>
+                        <a href="https://arxiv.org/pdf/2403.05135"><span class="paper">ELLA: Equip Diffusion Models with LLM for Enhanced Semantic Alignment <b><i>(arXiv 2024)</i></b></span></a>
+                <a href="https://github.com/TencentQQGYLab/ELLA/"><img src="https://img.shields.io/github/stars/TencentQQGYLab/ELLA.svg?style=social&label=Star" alt="Star" style="vertical-align: middle;" /></a>
+                
+                    </td>
+                    <td><span class="summary">ELLA: Replace CLIP with <b>LLM</b> to understand dense prompts; DPG-Bench: evaluate <u>image generation</u> on <b>dense prompts</b>.</span></td>
                 </tr>
                 </tbody>
             </table>

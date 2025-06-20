@@ -36,16 +36,16 @@ visual_generative_models["title"] = \
     <a href="reading_papers.html">[back to main contents]</a><br><hr>
     """
 visual_generative_models["suffix"] = SUFFIX
-visual_generative_models["categories"] = {
-    "Survey & Insight": "survey-and-insight",
-    "Foundation Model & Algorithm": "foundation-model-and-algorithm",
-    "Fine-Tuning": "finetuning",
-    "Reinforcement Learning": "reinforcement-learning",
-    "Acceleration": "acceleration",
-    "Inference-Time Improvement": "inference-time-improvement",
-    "Downstream Task": "downstream_task",
-    "Evaluation": "evaluation"
-}
+# visual_generative_models["categories"] = {
+#     "Survey & Insight": "survey-and-insight",
+#     "Foundation Model & Algorithm": "foundation-model-and-algorithm",
+#     "Fine-Tuning": "finetuning",
+#     "Reinforcement Learning": "reinforcement-learning",
+#     "Acceleration": "acceleration",
+#     "Inference-Time Improvement": "inference-time-improvement",
+#     "Downstream Task": "downstream_task",
+#     "Evaluation": "evaluation"
+# }
 domains["visual_generative_models"] = visual_generative_models
 ## --------------------------------------------------------------------------------
 
@@ -55,7 +55,7 @@ domains["visual_generative_models"] = visual_generative_models
 large_native_multimodal_models = dict()
 large_native_multimodal_models["name"] = "Large Native Multimodal Models"
 large_native_multimodal_models["file"] = "large_native_multimodal_models.html"
-large_native_multimodal_models["description"] = "Learning to generate <b>mutlimodal signals</b>, e.g., text, images, audios, etc."
+large_native_multimodal_models["description"] = "Learning to jointly generate <b>mutlimodal signals</b>, e.g., text, images, audios, etc."
 large_native_multimodal_models["prefix"] = PREFIX
 large_native_multimodal_models["title"] = \
     f"""
@@ -65,16 +65,16 @@ large_native_multimodal_models["title"] = \
     <a href="reading_papers.html">[back to main contents]</a><br><hr>
     """
 large_native_multimodal_models["suffix"] = SUFFIX
-large_native_multimodal_models["categories"] = {
-    "Survey & Insight": "survey-and-insight",
-    "Foundation Model & Algorithm": "foundation-model-and-algorithm",
-    "Fine-Tuning": "finetuning",
-    "Reinforcement Learning": "reinforcement-learning",
-    "Acceleration": "acceleration",
-    "Inference-Time Improvement": "inference-time-improvement",
-    "Downstream Task": "downstream_task",
-    "Evaluation": "evaluation"
-}
+# large_native_multimodal_models["categories"] = {
+#     "Survey & Insight": "survey-and-insight",
+#     "Foundation Model & Algorithm": "foundation-model-and-algorithm",
+#     "Fine-Tuning": "finetuning",
+#     "Reinforcement Learning": "reinforcement-learning",
+#     "Acceleration": "acceleration",
+#     "Inference-Time Improvement": "inference-time-improvement",
+#     "Downstream Task": "downstream_task",
+#     "Evaluation": "evaluation"
+# }
 domains["large_native_multimodal_models"] = large_native_multimodal_models
 ## --------------------------------------------------------------------------------
 
@@ -115,13 +115,15 @@ def build_main_content_all_domains(domains, num_items):
     return main_content
     
 
-def build_main_content(df, categories):
-    table_of_content = [f"""<li><a href="#{c_id}">{c}</a></li>""" for c, c_id in categories.items()]
+def build_main_content(df):
+    categories = df["category"].drop_duplicates().tolist()
+
+    table_of_content = [f"""<li><a href="#{c}">{c}</a></li>""" for c in categories]
     table_of_content = "".join(table_of_content)
 
     cate_content = ""
-    for category, category_id in categories.items():
-        main_content_cate = f"""<h3 id="{category_id}">{category}</h3>"""
+    for category in categories:
+        main_content_cate = f"""<h3 id="{category}">{category}</h3>"""
         
         df_choose = df["category"].str.contains(category)
         if df_choose.sum() == 0:
@@ -262,7 +264,7 @@ if __name__ == "__main__":
         df['date'] = pd.to_datetime(df['date'], format='%Y/%m/%d').dt.strftime('%Y-%m-%d')
 
         ## Build main content and details of each paper
-        main_content = build_main_content(df, domain["categories"])
+        main_content = build_main_content(df)
         details = build_details(df)
 
         ## Write contents to html of each domain

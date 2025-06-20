@@ -1,1 +1,24 @@
 ﻿category,date,model,paper,author,organization,paper_url,publication,project,jupyter_note,summary,detail
+Survey & Insight,2025/4/8,GPT-4o Visual Generation Study,An Empirical Study of GPT-4o Image Generation Capabilities,"Sixiang Chen, Jinbin Bai, Zhuoran Zhao, Tian Ye, Qingyu Shi, Donghao Zhou, Wenhao Chai, Xin Lin, Jianzong Wu, Chao Tang, Shilin Xu, Tao Zhang, Haobo Yuan, Yikang Zhou, Wei Chow, Linfeng Li, Xiangtai Li, Lei Zhu, Lu Qi","The Hong Kong University of Science and Technology (GZ), National University of Singapore, Peking University, The Chinese University of Hong Kong, University of Washington, Wuhan University",https://arxiv.org/pdf/2504.05979,arXiv 2025,,,"Empirical study of GPT-4o's image generation capability on text-to-image, image-to-image, image-to-3D, and image-to-X.","<ul>
+    <li> <b>Exceptional text rendering capability:</b> correct spelling, alignment, formatting even in document-style.
+    <li> <b>Compositional generation and prompt following:</b> accrately assembling complex scene elements, styles, or attributes.
+    <li> <b>Geometric consistency and viewpoint realism:</b> 3D view synthesis, camera control, depth-conditioned rendering.
+    <li> <b>Comprehensive image transformation capability:</b> from low-level to high-level tasks.
+</ul>
+<table>
+    <tr>
+        <td>
+            <figure>
+                <img src='figs/2025-04-08-GPT-4o-Empirical-Study-fig1.png' width=900>
+                <figcaption>.</figcaption>
+            </figure>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <figure>
+            <img src='figs/2025-04-08-GPT-4o-Empirical-Study-fig2.png' width=900>
+            </figure>
+        </td>
+    </tr>
+</table>"
