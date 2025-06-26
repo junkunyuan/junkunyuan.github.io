@@ -1,0 +1,90 @@
+/* -------------------------------------------------------------------------------- */
+/* Define main body */
+/* -------------------------------------------------------------------------------- */
+/* HTML */
+html {
+  background-color: #eeeeee;
+}
+
+/* Body */
+body {
+    font-family: Georgia, serif;
+    color: #000;
+    background-color: #ffffff;
+    text-align:left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left:  30px;
+    padding-right: 30px;
+    padding-left:  50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    max-width: 960px;
+}
+/* -------------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------------- */
+/* Define titles */
+/* -------------------------------------------------------------------------------- */
+h1 {
+    color: #404040;
+    margin-top: 0.7em;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.2em;
+    line-height: 1.0;
+    font-family: Helvetica, sans-serif;
+    font-size: 150%;
+}
+
+h2 {
+    color: #404040;
+    margin-top: 0.7em;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.2em;
+    line-height: 1.0;
+    font-family: Helvetica, sans-serif;
+    font-size: 120%;
+}
+/* -------------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------------- */
+/* Define others */
+/* -------------------------------------------------------------------------------- */
+a {
+    color: #404040;
+    /* text-decoration: none; */
+}
+p {
+    color: #404040;
+    margin-top: 0.0em;
+    margin-bottom: 0.8em;
+    padding: 0;
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+.pub_title {
+    color: #202020;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 0.5em;
+    /* font-weight:bold; */
+}
+.pub_detail {
+    color: #404040;
+    font-size: 13px;
+    /* font-family: Arial, sans-serif; */
+    /* font-weight:bold; */
+}
+.little_split{
+    font-size: 25px;
+}
+.little_split{
+    font-size: 35px;
+}
+/* -------------------------------------------------------------------------------- */
