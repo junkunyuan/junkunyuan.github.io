@@ -60,7 +60,7 @@ PUB = [
     "venue_all": "",
     "pdf_url": "https://arxiv.org/pdf/2412.03603",
     "code_url": "https://github.com/Tencent-Hunyuan/HunyuanVideo",
-    "comment": "<font color=#FF000>The first open-sourced large-scale video generation model with 13B parameters."
+    "comment": "<font color=#FF000>It is the first open-sourced large-scale video generation model with 13B parameters. It has 200+ citations and 10K+ GitHub stars (as of June 2025)."
     },
     {
     "title": "Follow-Your-Canvas: Higher-Resolution Video Outpainting with Extensive Content Generation",
