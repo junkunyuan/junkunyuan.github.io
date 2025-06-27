@@ -216,11 +216,14 @@ def build_pub(pub_list):
         f"""
         <p class="little_split"></p>
         <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+        <div style="height: 0.3em;"></div>
         <p class="pub_title"><i>{pub["title"]}</i></p>
         <p class="pub_detail">{author}</p>
         <p class="pub_detail">{pub["date"]} {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <FONT color=#B0B0B0>{venue_all}</FONT></p>
         {comment}
+        <div style="height: 0.05em;"></div>
         </div>
+        <p class="little_split"></p>
         """
     content += item_content
     return content
