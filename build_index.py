@@ -2,6 +2,13 @@ from datetime import datetime
 
 time_now = datetime.now().strftime('%B %d, %Y at %H:%M')
 
+BORDER_COLOR_MAPPING = {
+    "2024": "#ADDEFF",
+    "2023": "#FFD6AD",
+    "2022": "#B2EEC8",
+    "2021": "#FFBBCC",
+}
+
 PREFIX = \
 f"""
 <!DOCTYPE html>
@@ -211,11 +218,15 @@ def build_pub(pub_list):
         author = pub["author"].replace("Junkun Yuan", "<b><FONT color=#202020>Junkun Yuan</FONT></b>")
         author = author.replace("**", "<sup>&#10035</sup>")
         author = author.replace("##", "<sup>&#9993</sup>")
+
+        for key, value in BORDER_COLOR_MAPPING.items():
+            if key in pub["date"]:
+                border_color = value
         
         item_content += \
         f"""
         <p class="little_split"></p>
-        <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+        <div style="border-left: 8px solid {border_color}; padding-left: 10px">
         <div style="height: 0.3em;"></div>
         <p class="pub_title"><i>{pub["title"]}</i></p>
         <p class="pub_detail">{author}</p>
