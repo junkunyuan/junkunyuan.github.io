@@ -1,0 +1,85 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="resource/html.css" type="text/css">
+    <link rel="shortcut icon" href="resource/my_photo.jpg">
+    <title>Paper Reading List</title>
+    <meta name="description" content="Paper Reading List">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div id="layout-content" style="margin-top:25px">
+<body>
+
+<h1 id="top">Visual Generative Models</h1>
+<p><b><font size=3><font color='#D93053'>2</font> papers on Visual Generative Models.</font></b></p>
+<p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
+<p><font color=#B0B0B0>Last updated on June 28, 2025 at 16:27 (UTC+8).</font></p>
+<h2>Foundation Algorithms & Models</h2>
+                <p class="little_split"></p>
+                <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+                <div style="height: 0.3em;"></div>
+                <p class="pub_title" onclick="toggleTable('DDPM-details')"><i>Denoising Diffusion Probabilistic Models</i></p>
+                <p class="pub_detail">Jonathan Ho, Ajay Jain, Pieter Abbeel</p>
+                <p class="pub_detail">UC Berkeley</p>
+                <p class="pub_detail"><b><font color=#202020>June 19, 2020 &nbsp; DDPM</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/hojonathanho/diffusion/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2006.11239">NeurIPS 2020</a> &nbsp; <font color=#B0B0B0>Advances in Neural Information Processing Systems</font></p>
+                <div id='DDPM-details' class="info_detail">
+                    <p class="summary">It proposes <b>denoising diffusion probabilistic models</b> that iteratively denoises data from random noise.</p>
+                     
+                    <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/jupyters/visual_generative_models-ddpm.ipynb" class="note">(notes in jupyter)</a></p>
+                    
+                    <p>
+<figure>
+    <img src='resource/figs/2020-06-19-ddpm-fig1.png' width=500>
+    <figcaption><b>Figure 1.</b> Diffusion (forward) and denoising (reverse) processes of DDPM.</figcaption>
+</figure>
+<br>
+<figure>
+    <img src='resource/figs/2020-06-19-ddpm-fig2.png' width=700>
+    <figcaption><b>Figure 2.</b> Training and sampling algorithms of DDPM.</figcaption>
+</figure>
+</p>
+                </div>
+                <div style="height: 0.05em;"></div>
+                </div>
+                <p class="little_split"></p>
+                <h2>Datasets & Evaluation</h2>
+                <p class="little_split"></p>
+                <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+                <div style="height: 0.3em;"></div>
+                <p class="pub_title" onclick="toggleTable('UnifiedReward-details')"><i>Unified Reward Model for Multimodal Understanding and Generation</i></p>
+                <p class="pub_detail">Yibin Wang, Yuhang Zang, Hao Li, Cheng Jin, Jiaqi Wang</p>
+                <p class="pub_detail">Fudan University, Shanghai Innovation Institute, Shanghai AI Lab, Shanghai Academy of Artificial Intelligence for Science</p>
+                <p class="pub_detail"><b><font color=#202020>March 07, 2025 &nbsp; UnifiedReward</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/CodeGoat24/UnifiedReward/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2503.05236">arXiv 2025</a> &nbsp; <font color=#B0B0B0></font></p>
+                <div id='UnifiedReward-details' class="info_detail">
+                    <p class="summary">It fine-tunes LLaVA-OneVision 7B for both <b>multimodal understanding & generation evaluation</b> by pairwise ranking & pointwise scoring.</p>
+                    
+                    <p></p>
+                </div>
+                <div style="height: 0.05em;"></div>
+                </div>
+                <p class="little_split"></p>
+                
+        <script>
+            function toggleTable(tableId) {
+                const container = document.getElementById(tableId);
+                const button = container.previousElementSibling;
+                const isVisible = window.getComputedStyle(container).display !== 'none';
+                if (!isVisible) {
+                    const images = container.querySelectorAll('.lazy-load');
+                    images.forEach(img => {
+                        if (!img.src && img.dataset.src) {
+                            img.src = img.dataset.src;
+                        }
+                    });
+                    container.style.display = 'block';
+                    
+                } else {
+                    container.style.display = 'none';
+                    
+                }
+            }
+        </script>
+        
+</body>
+</html>
