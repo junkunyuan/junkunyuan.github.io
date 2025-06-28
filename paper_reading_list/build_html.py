@@ -28,6 +28,7 @@ f"""
 <h1 id="top">title</h1>
 <p><b><font size=3><font color='#D93053'>total_paper_num</font> papers on domain_name.</font></b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
+<p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
 <p><font color=#B0B0B0>Last updated on time_now (UTC+8).</font></p>
 """
 SUFFIX  = \
@@ -73,12 +74,12 @@ def build_main_content_of_each_domain(domains):
 
                 venue = f"""<a href="{paper["pdf_url"]}">{paper["venue"]}</a>"""
                 venue_all = get_venue_all(paper["venue"])
-                date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%B %d, %Y")
+                date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%b %d, %Y")
                 jupyter_note = ""
                 if paper.get("jupyter_notes", ""):
                     jupyter_note = \
                     f""" 
-                    <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/jupyters/{paper["jupyter_notes"]}" class="note">(notes in jupyter)</a></p>
+                    <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/{paper["jupyter_notes"]}" class="note">(notes in jupyter)</a></p>
                     """
 
                 content_cate += \
@@ -145,6 +146,8 @@ if __name__ == "__main__":
     ## Build main content
     intro = intro_temp.replace("total_paper_num", str(sum(num_papers)))
     intro = intro.replace("title", MAIN_CONTENT["title"])
+    intro = intro.replace("domain_name", MAIN_CONTENT["title"])
+    intro = intro.replace("""<p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>""", "")
     content = build_main_content_all_domains(DOMAINS, num_papers)
     main_content = PREFIX + intro + content + SUFFIX
     with open(MAIN_CONTENT["file"], "w", encoding="utf-8-sig") as f:

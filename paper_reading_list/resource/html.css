@@ -59,7 +59,20 @@ a {
     color: #404040;
     /* text-decoration: none; */
 }
+a:hover {
+    text-decoration: underline;
+    color: #4169E1;
+}
 p {
+    color: #404040;
+    margin-top: 0.0em;
+    margin-bottom: 0.8em;
+    padding: 0;
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+li {
     color: #404040;
     margin-top: 0.0em;
     margin-bottom: 0.8em;
@@ -79,7 +92,7 @@ p {
 }
 .pub_title:hover {
     text-decoration: underline;
-    color: #3D4EFF;
+    color: #4169E1;
 }
 .pub_detail {
     color: #404040;

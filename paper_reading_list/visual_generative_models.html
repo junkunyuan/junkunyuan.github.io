@@ -12,9 +12,10 @@
 <body>
 
 <h1 id="top">Visual Generative Models</h1>
-<p><b><font size=3><font color='#D93053'>2</font> papers on Visual Generative Models.</font></b></p>
+<p><b><font size=3><font color='#D93053'>3</font> papers on Visual Generative Models.</font></b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
-<p><font color=#B0B0B0>Last updated on June 28, 2025 at 16:27 (UTC+8).</font></p>
+<p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
+<p><font color=#B0B0B0>Last updated on June 28, 2025 at 17:41 (UTC+8).</font></p>
 <h2>Foundation Algorithms & Models</h2>
                 <p class="little_split"></p>
                 <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
@@ -22,11 +23,11 @@
                 <p class="pub_title" onclick="toggleTable('DDPM-details')"><i>Denoising Diffusion Probabilistic Models</i></p>
                 <p class="pub_detail">Jonathan Ho, Ajay Jain, Pieter Abbeel</p>
                 <p class="pub_detail">UC Berkeley</p>
-                <p class="pub_detail"><b><font color=#202020>June 19, 2020 &nbsp; DDPM</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/hojonathanho/diffusion/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2006.11239">NeurIPS 2020</a> &nbsp; <font color=#B0B0B0>Advances in Neural Information Processing Systems</font></p>
+                <p class="pub_detail"><b><font color=#202020>Jun 19, 2020 &nbsp; DDPM</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/hojonathanho/diffusion/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2006.11239">NeurIPS 2020</a> &nbsp; <font color=#B0B0B0>Advances in Neural Information Processing Systems</font></p>
                 <div id='DDPM-details' class="info_detail">
                     <p class="summary">It proposes <b>denoising diffusion probabilistic models</b> that iteratively denoises data from random noise.</p>
                      
-                    <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/jupyters/visual_generative_models-ddpm.ipynb" class="note">(notes in jupyter)</a></p>
+                    <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/visual_generative_models-ddpm.ipynb" class="note">(notes in jupyter)</a></p>
                     
                     <p>
 <figure>
@@ -43,6 +44,32 @@
                 <div style="height: 0.05em;"></div>
                 </div>
                 <p class="little_split"></p>
+                
+                <p class="little_split"></p>
+                <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+                <div style="height: 0.3em;"></div>
+                <p class="pub_title" onclick="toggleTable('VQ-VAE-details')"><i>Neural Discrete Representation Learning</i></p>
+                <p class="pub_detail">Aaron van den Oord, Oriol Vinyals, Koray Kavukcuoglu</p>
+                <p class="pub_detail">DeepMind</p>
+                <p class="pub_detail"><b><font color=#202020>Nov 02, 2017 &nbsp; VQ-VAE</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/1711.00937">NeurIPS 2017</a> &nbsp; <font color=#B0B0B0>Advances in Neural Information Processing Systems</font></p>
+                <div id='VQ-VAE-details' class="info_detail">
+                    <p class="summary">It proposes <b>vector quantised variational autoencoder</b> to generate discrete codes while the prior is also learned.</p>
+                    
+                    <p>
+<ul>
+    <li><b>Posterior collapse problem:</b> a strong decoder and a strong KL constraint could make the learned posterior <i>q(z|x)</i> very close to prior <i>p(z)</i>, so that the conditional generation task collapses to an unconditional generation task.</li>
+    <li><b>How VQ-VAE avoids the collapse problem by employing discrete codes/latents?</b> (1) It learns <i>q(z|x)</i> by choosing one from some candidates rather than directly generating a simple prior; (2) The learned <i>q(z|x)</i> is continuous but <i>p(z)</i> is discrete, so the encoder can not be "lazy".</li>
+    <li><b>Optimization objectives:</b> (1) The decoder is optimized by a recontruction loss; (2) The encoder is optimized by a reconstruction loss and a matching loss; (3) The embedding is optimized by a matching loss.</li>
+    <li><b>How to back-propagate gradient with quantization exists? Straight-Through Estimator:</b> directly let the graident of loss to the quantized embedding equal to the gradient of loss to the embedding that before being quantized.</li>
+</ul>
+<figure>
+    <img src='resource/figs/2017-11-02-VQ-VAE-fig1.png' width=900>
+</figure>
+</p>
+                </div>
+                <div style="height: 0.05em;"></div>
+                </div>
+                <p class="little_split"></p>
                 <h2>Datasets & Evaluation</h2>
                 <p class="little_split"></p>
                 <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
@@ -50,7 +77,7 @@
                 <p class="pub_title" onclick="toggleTable('UnifiedReward-details')"><i>Unified Reward Model for Multimodal Understanding and Generation</i></p>
                 <p class="pub_detail">Yibin Wang, Yuhang Zang, Hao Li, Cheng Jin, Jiaqi Wang</p>
                 <p class="pub_detail">Fudan University, Shanghai Innovation Institute, Shanghai AI Lab, Shanghai Academy of Artificial Intelligence for Science</p>
-                <p class="pub_detail"><b><font color=#202020>March 07, 2025 &nbsp; UnifiedReward</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/CodeGoat24/UnifiedReward/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2503.05236">arXiv 2025</a> &nbsp; <font color=#B0B0B0></font></p>
+                <p class="pub_detail"><b><font color=#202020>Mar 07, 2025 &nbsp; UnifiedReward</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/CodeGoat24/UnifiedReward/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2503.05236">arXiv 2025</a> &nbsp; <font color=#B0B0B0></font></p>
                 <div id='UnifiedReward-details' class="info_detail">
                     <p class="summary">It fine-tunes LLaVA-OneVision 7B for both <b>multimodal understanding & generation evaluation</b> by pairwise ranking & pointwise scoring.</p>
                     
