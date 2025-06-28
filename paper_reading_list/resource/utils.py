@@ -16,3 +16,12 @@ def get_venue_all(venue_abbr_date):
     venue_all = venue_name_dict.get(venue_abbr, "")
     
     return venue_all
+
+
+def border_color_generator():
+    colors = ["#ADDEFF","#FFD6AD", "#B2EEC8", "#FFBBCC"]
+    num_color = len(colors)
+    num = 0
+    while True:
+        yield colors[num % num_color]
+        num += 1

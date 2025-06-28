@@ -68,7 +68,7 @@ p {
     font-family: Arial, sans-serif;
     font-size: 14px;
 }
-.pub_title {
+.paper_title {
     /* color: #202020; */
     color: #404040;
     font-size: 16px;
@@ -76,7 +76,7 @@ p {
     margin-bottom: 0.5em;
     /* font-weight:bold; */
 }
-.pub_detail {
+.paper_detail {
     color: #404040;
     font-size: 13px;
     /* font-family: Arial, sans-serif; */

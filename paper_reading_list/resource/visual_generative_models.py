@@ -13,6 +13,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "pdf_url": "https://arxiv.org/pdf/2503.05236",
 "code_url": "https://github.com/CodeGoat24/UnifiedReward/",
 "name": "UnifiedReward",
+"comment": "",
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
 "summary": "It fine-tunes LLaVA-OneVision 7B for both <b>multimodal understanding & generation evaluation</b> by pairwise ranking & pointwise scoring.",
@@ -27,6 +28,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "pdf_url": "https://arxiv.org/pdf/2006.11239",
 "code_url": "https://github.com/hojonathanho/diffusion/",
 "name": "DDPM",
+"comment": "It achieves high-quality image synthesis through iterative denoising diffusion processes. It has 20,000+ citations (as of Jun. 2025).",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "visual_generative_models-ddpm.ipynb",
 "summary": "It proposes <b>denoising diffusion probabilistic models</b> that iteratively denoises data from random noise.",
@@ -44,6 +46,38 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 """,
 },
 {
+"title": "Generating Diverse High-Fidelity Images with VQ-VAE-2",
+"author": "Ali Razavi, Aaron van den Oord, Oriol Vinyals",
+"organization": "DeepMind",
+"date": "20190602",
+"venue": "NeurIPS 2019",
+"pdf_url": "https://arxiv.org/pdf/1906.00446",
+"code_url": "",
+"name": "VQ-VAE-2",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": "In order to generate large scale images efficiently, it improves VQ-VAE by employing a <b>hierarchical organization</b>.",
+"details": 
+"""
+<ul>
+    <li><b>Structure:</b> (1) a top-level encoder to learn top-level priors from images; (2) a bottom-level encoder to learn bottom-level priors from images and top-level priors; (3) a decoder to generate images from both top-level and bottom-level priors.</li>
+    <li><b>Training stage 1:</b> training the top-level encoder and the bottom-level encoder to encode images onto the two levels of discrete latent space.</li>
+    <li><b>Training stage 2:</b> training PixelCNN to predict bottom-level priors from top-level priors, while fixing the two encoders.</li>
+    <li><b>Sampling:</b> (1) sampling a top-level prior; (2) predicting bottom-level prior from the top-level prior using the trained PixelCNN; (3) generating images from both the top-level and the bottom-level priors by the trained decoder.</li>
+</ul>
+<figure>
+    <img src='resource/figs/2019-06-02-VQ-VAE-2-fig1.png' width=900>
+    <figcaption><b>Figure 1.</b> Training and sampling frameworks.</figcaption>
+</figure>
+<br>
+<figure>
+    <img src='resource/figs/2019-06-02-VQ-VAE-2-fig2.png' width=600>
+    <figcaption><b>Figure 2.</b> Training and sampling algorithms.</figcaption>
+</figure>
+""",
+},
+{
 "title": "Neural Discrete Representation Learning",
 "author": "Aaron van den Oord, Oriol Vinyals, Koray Kavukcuoglu",
 "organization": "DeepMind",
@@ -52,6 +86,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "pdf_url": "https://arxiv.org/pdf/1711.00937",
 "code_url": "",
 "name": "VQ-VAE",
+"comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
 "summary": "It proposes <b>vector quantised variational autoencoder</b> to generate discrete codes while the prior is also learned.",

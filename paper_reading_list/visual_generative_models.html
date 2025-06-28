@@ -12,24 +12,25 @@
 <body>
 
 <h1 id="top">Visual Generative Models</h1>
-<p><b><font size=3><font color='#D93053'>3</font> papers on Visual Generative Models.</font></b></p>
+<p><b><font size=3><font color='#D93053'>4</font> papers on Visual Generative Models.</font></b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on June 28, 2025 at 17:41 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on June 28, 2025 at 23:16 (UTC+8).</font></p>
 <h2>Foundation Algorithms & Models</h2>
-                <p class="little_split"></p>
-                <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
-                <div style="height: 0.3em;"></div>
-                <p class="pub_title" onclick="toggleTable('DDPM-details')"><i>Denoising Diffusion Probabilistic Models</i></p>
-                <p class="pub_detail">Jonathan Ho, Ajay Jain, Pieter Abbeel</p>
-                <p class="pub_detail">UC Berkeley</p>
-                <p class="pub_detail"><b><font color=#202020>Jun 19, 2020 &nbsp; DDPM</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/hojonathanho/diffusion/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2006.11239">NeurIPS 2020</a> &nbsp; <font color=#B0B0B0>Advances in Neural Information Processing Systems</font></p>
-                <div id='DDPM-details' class="info_detail">
-                    <p class="summary">It proposes <b>denoising diffusion probabilistic models</b> that iteratively denoises data from random noise.</p>
-                     
-                    <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/visual_generative_models-ddpm.ipynb" class="note">(notes in jupyter)</a></p>
-                    
-                    <p>
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="pub_title" onclick="toggleTable('DDPM-details')"><i>Denoising Diffusion Probabilistic Models</i></p>
+            <p class="pub_detail">Jonathan Ho, Ajay Jain, Pieter Abbeel</p>
+            <p class="pub_detail">UC Berkeley</p>
+            <p class="pub_detail"><b><font color=#202020>Jun 19, 2020 &nbsp; DDPM</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/hojonathanho/diffusion/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2006.11239">NeurIPS 2020</a> &nbsp; <font color=#B0B0B0>Advances in Neural Information Processing Systems</font></p>
+            <p class="pub_detail"><font color=#FF000>It achieves high-quality image synthesis through iterative denoising diffusion processes. It has 20,000+ citations (as of Jun. 2025).</font></p>
+            <div id='DDPM-details' class="info_detail">
+                <p class="summary">It proposes <b>denoising diffusion probabilistic models</b> that iteratively denoises data from random noise.</p>
+                 
+                <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/visual_generative_models-ddpm.ipynb" class="note">(notes in jupyter)</a></p>
+                
+                <p>
 <figure>
     <img src='resource/figs/2020-06-19-ddpm-fig1.png' width=500>
     <figcaption><b>Figure 1.</b> Diffusion (forward) and denoising (reverse) processes of DDPM.</figcaption>
@@ -40,22 +41,56 @@
     <figcaption><b>Figure 2.</b> Training and sampling algorithms of DDPM.</figcaption>
 </figure>
 </p>
-                </div>
-                <div style="height: 0.05em;"></div>
-                </div>
-                <p class="little_split"></p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="pub_title" onclick="toggleTable('VQ-VAE-2-details')"><i>Generating Diverse High-Fidelity Images with VQ-VAE-2</i></p>
+            <p class="pub_detail">Ali Razavi, Aaron van den Oord, Oriol Vinyals</p>
+            <p class="pub_detail">DeepMind</p>
+            <p class="pub_detail"><b><font color=#202020>Jun 02, 2019 &nbsp; VQ-VAE-2</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/1906.00446">NeurIPS 2019</a> &nbsp; <font color=#B0B0B0>Advances in Neural Information Processing Systems</font></p>
+            
+            <div id='VQ-VAE-2-details' class="info_detail">
+                <p class="summary">In order to generate large scale images efficiently, it improves VQ-VAE by employing a <b>hierarchical organization</b>.</p>
                 
-                <p class="little_split"></p>
-                <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
-                <div style="height: 0.3em;"></div>
-                <p class="pub_title" onclick="toggleTable('VQ-VAE-details')"><i>Neural Discrete Representation Learning</i></p>
-                <p class="pub_detail">Aaron van den Oord, Oriol Vinyals, Koray Kavukcuoglu</p>
-                <p class="pub_detail">DeepMind</p>
-                <p class="pub_detail"><b><font color=#202020>Nov 02, 2017 &nbsp; VQ-VAE</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/1711.00937">NeurIPS 2017</a> &nbsp; <font color=#B0B0B0>Advances in Neural Information Processing Systems</font></p>
-                <div id='VQ-VAE-details' class="info_detail">
-                    <p class="summary">It proposes <b>vector quantised variational autoencoder</b> to generate discrete codes while the prior is also learned.</p>
-                    
-                    <p>
+                <p>
+<ul>
+    <li><b>Structure:</b> (1) a top-level encoder to learn top-level priors from images; (2) a bottom-level encoder to learn bottom-level priors from images and top-level priors; (3) a decoder to generate images from both top-level and bottom-level priors.</li>
+    <li><b>Training stage 1:</b> training the top-level encoder and the bottom-level encoder to encode images onto the two levels of discrete latent space.</li>
+    <li><b>Training stage 2:</b> training PixelCNN to predict bottom-level priors from top-level priors, while fixing the two encoders.</li>
+    <li><b>Sampling:</b> (1) sampling a top-level prior; (2) predicting bottom-level prior from the top-level prior using the trained PixelCNN; (3) generating images from both the top-level and the bottom-level priors by the trained decoder.</li>
+</ul>
+<figure>
+    <img src='resource/figs/2019-06-02-VQ-VAE-2-fig1.png' width=900>
+    <figcaption><b>Figure 1.</b> Training and sampling frameworks.</figcaption>
+</figure>
+<br>
+<figure>
+    <img src='resource/figs/2019-06-02-VQ-VAE-2-fig2.png' width=600>
+    <figcaption><b>Figure 2.</b> Training and sampling algorithms.</figcaption>
+</figure>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="pub_title" onclick="toggleTable('VQ-VAE-details')"><i>Neural Discrete Representation Learning</i></p>
+            <p class="pub_detail">Aaron van den Oord, Oriol Vinyals, Koray Kavukcuoglu</p>
+            <p class="pub_detail">DeepMind</p>
+            <p class="pub_detail"><b><font color=#202020>Nov 02, 2017 &nbsp; VQ-VAE</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/1711.00937">NeurIPS 2017</a> &nbsp; <font color=#B0B0B0>Advances in Neural Information Processing Systems</font></p>
+            
+            <div id='VQ-VAE-details' class="info_detail">
+                <p class="summary">It proposes <b>vector quantised variational autoencoder</b> to generate discrete codes while the prior is also learned.</p>
+                
+                <p>
 <ul>
     <li><b>Posterior collapse problem:</b> a strong decoder and a strong KL constraint could make the learned posterior <i>q(z|x)</i> very close to prior <i>p(z)</i>, so that the conditional generation task collapses to an unconditional generation task.</li>
     <li><b>How VQ-VAE avoids the collapse problem by employing discrete codes/latents?</b> (1) It learns <i>q(z|x)</i> by choosing one from some candidates rather than directly generating a simple prior; (2) The learned <i>q(z|x)</i> is continuous but <i>p(z)</i> is discrete, so the encoder can not be "lazy".</li>
@@ -66,47 +101,48 @@
     <img src='resource/figs/2017-11-02-VQ-VAE-fig1.png' width=900>
 </figure>
 </p>
-                </div>
-                <div style="height: 0.05em;"></div>
-                </div>
-                <p class="little_split"></p>
-                <h2>Datasets & Evaluation</h2>
-                <p class="little_split"></p>
-                <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
-                <div style="height: 0.3em;"></div>
-                <p class="pub_title" onclick="toggleTable('UnifiedReward-details')"><i>Unified Reward Model for Multimodal Understanding and Generation</i></p>
-                <p class="pub_detail">Yibin Wang, Yuhang Zang, Hao Li, Cheng Jin, Jiaqi Wang</p>
-                <p class="pub_detail">Fudan University, Shanghai Innovation Institute, Shanghai AI Lab, Shanghai Academy of Artificial Intelligence for Science</p>
-                <p class="pub_detail"><b><font color=#202020>Mar 07, 2025 &nbsp; UnifiedReward</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/CodeGoat24/UnifiedReward/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2503.05236">arXiv 2025</a> &nbsp; <font color=#B0B0B0></font></p>
-                <div id='UnifiedReward-details' class="info_detail">
-                    <p class="summary">It fine-tunes LLaVA-OneVision 7B for both <b>multimodal understanding & generation evaluation</b> by pairwise ranking & pointwise scoring.</p>
-                    
-                    <p></p>
-                </div>
-                <div style="height: 0.05em;"></div>
-                </div>
-                <p class="little_split"></p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            <h2>Datasets & Evaluation</h2>
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="pub_title" onclick="toggleTable('UnifiedReward-details')"><i>Unified Reward Model for Multimodal Understanding and Generation</i></p>
+            <p class="pub_detail">Yibin Wang, Yuhang Zang, Hao Li, Cheng Jin, Jiaqi Wang</p>
+            <p class="pub_detail">Fudan University, Shanghai Innovation Institute, Shanghai AI Lab, Shanghai Academy of Artificial Intelligence for Science</p>
+            <p class="pub_detail"><b><font color=#202020>Mar 07, 2025 &nbsp; UnifiedReward</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/CodeGoat24/UnifiedReward/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2503.05236">arXiv 2025</a> &nbsp; <font color=#B0B0B0></font></p>
+            
+            <div id='UnifiedReward-details' class="info_detail">
+                <p class="summary">It fine-tunes LLaVA-OneVision 7B for both <b>multimodal understanding & generation evaluation</b> by pairwise ranking & pointwise scoring.</p>
                 
-        <script>
-            function toggleTable(tableId) {
-                const container = document.getElementById(tableId);
-                const button = container.previousElementSibling;
-                const isVisible = window.getComputedStyle(container).display !== 'none';
-                if (!isVisible) {
-                    const images = container.querySelectorAll('.lazy-load');
-                    images.forEach(img => {
-                        if (!img.src && img.dataset.src) {
-                            img.src = img.dataset.src;
-                        }
-                    });
-                    container.style.display = 'block';
-                    
-                } else {
-                    container.style.display = 'none';
-                    
-                }
+                <p></p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
+    <script>
+        function toggleTable(tableId) {
+            const container = document.getElementById(tableId);
+            const button = container.previousElementSibling;
+            const isVisible = window.getComputedStyle(container).display !== 'none';
+            if (!isVisible) {
+                const images = container.querySelectorAll('.lazy-load');
+                images.forEach(img => {
+                    if (!img.src && img.dataset.src) {
+                        img.src = img.dataset.src;
+                    }
+                });
+                container.style.display = 'block';
+                
+            } else {
+                container.style.display = 'none';
+                
             }
-        </script>
-        
+        }
+    </script>
+    
 </body>
 </html>

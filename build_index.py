@@ -1,15 +1,8 @@
 from datetime import datetime
-from resource.pub_list import PUB
-from paper_reading_list.resource.venue_name import get_venue_all
+from resource.pub_list import PAPERS
+from paper_reading_list.resource.utils import get_venue_all, border_color_generator
 
 time_now = datetime.now().strftime('%B %d, %Y at %H:%M')
-
-BORDER_COLOR_MAPPING = {
-    "2024": "#ADDEFF",
-    "2023": "#FFD6AD",
-    "2022": "#B2EEC8",
-    "2021": "#FFBBCC",
-}
 
 PREFIX = \
 f"""
@@ -61,35 +54,38 @@ SUFFIX  = \
 """
 
 
-def build_pub(pub_list):
+def build_paper(papers):
     content = \
     """
     <h2>Publications</h2>
     <p><a href="https://scholar.google.com/citations?user=j3iFVPsAAAAJ">Google Scholar Profile</a></p>
     """
     item_content = ""
-    for pub in pub_list:
-        venue = f"""<b><a href="{pub["pdf_url"]}"><font color=#202020>{pub["venue"]}</font></a></b>"""
-        venue_all = get_venue_all(pub["venue"])
-        code = f"""&nbsp;&nbsp;|&nbsp;&nbsp; <a href="{pub['code_url']}">code</a>""" if len(pub['code_url']) > 0 else ""
-        comment = f"""<p class="pub_detail">{pub["comment"]}</p>""" if "comment" in pub else ""
+    color_year = ""
+    color_bar_generator = border_color_generator()
+    for paper in papers:
+        venue = f"""<b><a href="{paper["pdf_url"]}"><font color=#202020>{paper["venue"]}</font></a></b>"""
+        venue_all = get_venue_all(paper["venue"])
+        code = f"""&nbsp;&nbsp;|&nbsp;&nbsp; <a href="{paper['code_url']}">code</a>""" if len(paper['code_url']) > 0 else ""
+        comment = f"""<p class="paper_detail"><font color=#FF000>{paper["comment"]}</font></p>""" if "comment" in paper else ""
+        date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%b %d, %Y")
 
-        author = pub["author"].replace("Junkun Yuan", "<b><font color=#202020>Junkun Yuan</font></b>")
+        author = paper["author"].replace("Junkun Yuan", "<b><font color=#202020>Junkun Yuan</font></b>")
         author = author.replace("**", "<sup>&#10035</sup>")
         author = author.replace("##", "<sup>&#9993</sup>")
 
-        for key, value in BORDER_COLOR_MAPPING.items():
-            if key in pub["date"]:
-                border_color = value
+        if paper["date"][:4] != color_year:
+            color_bar = next(color_bar_generator)
+            color_year = paper["date"][:4]
         
         item_content += \
         f"""
         <p class="little_split"></p>
-        <div style="border-left: 8px solid {border_color}; padding-left: 10px">
+        <div style="border-left: 8px solid {color_bar}; padding-left: 10px">
         <div style="height: 0.3em;"></div>
-        <p class="pub_title"><i>{pub["title"]}</i></p>
-        <p class="pub_detail">{author}</p>
-        <p class="pub_detail">{pub["date"]} {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#B0B0B0>{venue_all}</font></p>
+        <p class="paper_title"><i>{paper["title"]}</i></p>
+        <p class="paper_detail">{author}</p>
+        <p class="paper_detail">{date} {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#B0B0B0>{venue_all}</font></p>
         {comment}
         <div style="height: 0.05em;"></div>
         </div>
@@ -100,11 +96,11 @@ def build_pub(pub_list):
 
 
 if __name__ == "__main__":
-    ## Build publication contents
-    pub_content = build_pub(PUB)
+    ## Build paper contents
+    paper_content = build_paper(PAPERS)
 
     ## Build html contents
-    html_content = PREFIX + BIOGRAPHY + pub_content + SUFFIX
+    html_content = PREFIX + BIOGRAPHY + paper_content + SUFFIX
 
     ## Write contents to html
     html_file = "index.html"
