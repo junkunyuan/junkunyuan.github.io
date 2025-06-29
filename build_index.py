@@ -26,8 +26,8 @@ f"""
                     <p>work and live in Shenzhen, China</p>
                     <p><font color=#B0B0B0>Last updated on {time_now} (UTC+8)</font></p>
                 </td>
-                <td style="padding-right: 120px;">
-                    <img src="resource/my_photo.jpg" width="150">
+                <td style="padding-right: 120px; padding-top: 10px;">
+                    <img src="resource/my_photo.jpg" width="160">
                 </td>
             </tr>
         </tbody>

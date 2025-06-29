@@ -20,6 +20,21 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "details": ""
 },
 {
+"title": "Classifier-Free Diffusion Guidance",
+"author": "Jonathan Ho, Tim Salimans",
+"organization": "Google Research, Brain team",
+"date": "20211208",
+"venue": "NeurIPS workshop 2021",
+"pdf_url": "https://arxiv.org/pdf/2207.12598",
+"code_url": "",
+"name": "CFG",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "visual_generative_models-cfg.ipynb",
+"summary": "It improves conditional image generation with <b>classifier-free condition guidance</b> by jointly training a conditional model and an unconditional model.",
+"details": "",
+},
+{
 "title": "Denoising Diffusion Probabilistic Models",
 "author": "Jonathan Ho, Ajay Jain, Pieter Abbeel",
 "organization": "UC Berkeley",

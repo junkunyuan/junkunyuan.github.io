@@ -80,7 +80,7 @@ def build_main_content_of_each_domain(domain):
             if paper.get("jupyter_notes", ""):
                 jupyter_note = \
                 f""" 
-                <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/{paper["jupyter_notes"]}" class="note">(notes in jupyter)</a></p>
+                <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/{paper["jupyter_notes"]}" class="note">(see notes in jupyter)</a></p>
                 """
 
             content_cate += \
