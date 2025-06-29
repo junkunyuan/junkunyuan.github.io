@@ -20,6 +20,31 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "details": ""
 },
 {
+"title": "Scaling Diffusion Transformers to 16 Billion Parameters",
+"author": "Zhengcong Fei, Mingyuan Fan, Changqian Yu, Debang Li, Junshi Huang",
+"organization": "Kunlun Inc.",
+"date": "20240716",
+"venue": "arXiv 2024",
+"pdf_url": "https://arxiv.org/pdf/2407.11633",
+"code_url": "https://github.com/feizc/DiT-MoE/",
+"name": "DiT-MoE",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """It proposes diffusion transformer (16B) with <b>Mixture-of-Experts</b> by inserting experts into DiT blocks for image generation.""",
+"details": 
+"""
+<ul>
+    <li> Incorporating <i>shared expert routing</i> improves convergence and performance, but the improvement is little when using more than one.
+    <li> Increasing experts reduces loss but introduces more loss spikes.
+</ul>
+<figure>
+    <img src='2024-07-16-DiT-MoE-fig1.png' width=700>
+    <figcaption><b>Figure 1.</b> It is built upon DiT and replaces MLP within Transformer blocks by sparsely activated mixture of MLPs as experts.</figcaption>
+</figure>
+""",
+},
+{
 "title": "Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation",
 "author": "Peize Sun, Yi Jiang, Shoufa Chen, Shilong Zhang, Bingyue Peng, Ping Luo, Zehuan Yuan",
 "organization": "The University of Hong Kong, ByteDance",

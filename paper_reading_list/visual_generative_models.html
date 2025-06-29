@@ -12,11 +12,37 @@
 <body>
 
 <h1 id="top">Visual Generative Models</h1>
-<p><b><font size=3><font color='#D93053'>11</font> papers on Visual Generative Models.</font></b></p>
+<p><b><font size=3><font color='#D93053'>12</font> papers on Visual Generative Models.</font></b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on June 29, 2025 at 16:49 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on June 29, 2025 at 17:06 (UTC+8).</font></p>
 <h2>Foundation Algorithms & Models</h2>
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('DiT-MoE-details')"><i>Scaling Diffusion Transformers to 16 Billion Parameters</i></p>
+            <p class="paper_detail">Zhengcong Fei, Mingyuan Fan, Changqian Yu, Debang Li, Junshi Huang</p>
+            <p class="paper_detail">Kunlun Inc.</p>
+            <p class="paper_detail"><b><font color=#202020>Jul 16, 2024 &nbsp; DiT-MoE</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/feizc/DiT-MoE/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2407.11633">arXiv 2024</a> &nbsp; <font color=#B0B0B0></font></p>
+            
+            <div id='DiT-MoE-details' class="info_detail">
+                <p class="summary">It proposes diffusion transformer (16B) with <b>Mixture-of-Experts</b> by inserting experts into DiT blocks for image generation.</p>
+                
+                <p>
+<ul>
+    <li> Incorporating <i>shared expert routing</i> improves convergence and performance, but the improvement is little when using more than one.
+    <li> Increasing experts reduces loss but introduces more loss spikes.
+</ul>
+<figure>
+    <img src='resource/figs/2024-07-16-DiT-MoE-fig1.png' width=700>
+    <figcaption><b>Figure 1.</b> It is built upon DiT and replaces MLP within Transformer blocks by sparsely activated mixture of MLPs as experts.</figcaption>
+</figure>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
