@@ -16,8 +16,30 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "comment": "",
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
-"summary": "It fine-tunes LLaVA-OneVision 7B for both <b>multimodal understanding & generation evaluation</b> by pairwise ranking & pointwise scoring.",
+"summary": """It fine-tunes LLaVA-OneVision 7B for both <b>multimodal understanding & generation evaluation</b> by pairwise ranking & pointwise scoring.""",
 "details": ""
+},
+{
+"title": "Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation",
+"author": "Peize Sun, Yi Jiang, Shoufa Chen, Shilong Zhang, Bingyue Peng, Ping Luo, Zehuan Yuan",
+"organization": "The University of Hong Kong, ByteDance",
+"date": "20240610",
+"venue": "arXiv 2024",
+"pdf_url": "https://arxiv.org/pdf/2406.06525",
+"code_url": "https://github.com/FoundationVision/LlamaGen/",
+"name": "LlamaGen",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """It shows that applying "next-token prediction" to <b>vanilla autoregressive language models</b> can achieve good  image generation performance.""",
+"details": 
+"""
+<ul>
+    <li> It trains a discrete visual tokenizer that is competitive to the continuous ones, e.g., SD VAE, SDXL VAE, and Consistency Decoder from OpenAI.
+    <li> Vanilla autoregressive models, e.g., LlaMA, without inductive biases on visual signals can serve as the basis of image generation system.
+    <li> It is trained on 50M subset of LAION-COCO and 10M internal high aesthetics quality images.
+</ul>
+""",
 },
 {
 "title": "Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction",
@@ -31,7 +53,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "comment": "NeurIPS 2024 best paper award.",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
-"summary": "It improves <u>auto-regressive</u> image generation on image quality, inference speed, data efficiency, and scalability, by proposing <b>next-scale prediction</b>.",
+"summary": """It improves <u>auto-regressive</u> image generation on image quality, inference speed, data efficiency, and scalability, by proposing <b>next-scale prediction</b>.""",
 "details": 
 """
 <figure>
@@ -64,7 +86,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
-"summary": "It improves older SD by employing <b>larger UNet backbone</b>, <b>resolution conditions</b>, <b>two text encoders</b>, and a <b>refinement model</b>.",
+"summary": """It improves older SD by employing <b>larger UNet backbone</b>, <b>resolution conditions</b>, <b>two text encoders</b>, and a <b>refinement model</b>.""",
 "details": 
 """
 <p><b>Architecture of SDXL:</b>.<br>
@@ -91,7 +113,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "visual_generative_models-dit.ipynb",
-"summary": "It replaces the conventional U-Net structure with <b>transformer</b> for scalable image generation, the timestep and condition are injected by adaLN-Zero.",
+"summary": """It replaces the conventional U-Net structure with <b>transformer</b> for scalable image generation, the timestep and condition are injected by adaLN-Zero""",
 "details": 
 """
 <figure>
@@ -112,7 +134,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
-"summary": "It proposes a transformer-based video generation model (9B) that performs <b>auto-regressive</b> frame  generation and recursive frame interpolatation.",
+"summary": """It proposes a transformer-based video generation model (9B) that performs <b>auto-regressive</b> frame  generation and recursive frame interpolatation""",
 "details": 
 """
 <figure>
@@ -133,7 +155,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "comment": "It makes high-resolution image synthesis efficiently by performing generation in a compressed VAE latent space. It has over 20,000 citations (as of Jun 29, 2025).",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
-"summary": "It achieves efficient high-resolution image generation by applying diffusion and denoising processes in the <b>compressed VAE latent space</b>.",
+"summary": """It achieves efficient high-resolution image generation by applying diffusion and denoising processes in the <b>compressed VAE latent space</b>.""",
 "details": 
 """
 <figure>
@@ -154,7 +176,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "visual_generative_models-cfg.ipynb",
-"summary": "It improves conditional image generation with <b>classifier-free condition guidance</b> by jointly training a conditional model and an unconditional model.",
+"summary": """It improves conditional image generation with <b>classifier-free condition guidance</b> by jointly training a conditional model and an unconditional model.""",
 "details": "",
 },
 {
@@ -169,7 +191,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "comment": "It achieves high-quality image synthesis through iterative denoising diffusion processes. It has over 20,000 citations (as of Jun 29 2025).",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "visual_generative_models-ddpm.ipynb",
-"summary": "It proposes <b>denoising diffusion probabilistic models</b> that iteratively denoises data from random noise.",
+"summary": """It proposes <b>denoising diffusion probabilistic models</b> that iteratively denoises data from random noise.""",
 "details": 
 """
 <figure>
@@ -194,7 +216,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
-"summary": "In order to generate large scale images efficiently, it improves VQ-VAE by employing a <b>hierarchical organization</b>.",
+"summary": """In order to generate large scale images efficiently, it improves VQ-VAE by employing a <b>hierarchical organization</b>.""",
 "details": 
 """
 <ul>
@@ -225,7 +247,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
-"summary": "It proposes <b>vector quantised variational autoencoder</b> to generate discrete codes while the prior is also learned.",
+"summary": """It proposes <b>vector quantised variational autoencoder</b> to generate discrete codes while the prior is also learned.""",
 "details": 
 """
 <ul>

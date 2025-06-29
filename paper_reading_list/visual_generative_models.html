@@ -12,11 +12,34 @@
 <body>
 
 <h1 id="top">Visual Generative Models</h1>
-<p><b><font size=3><font color='#D93053'>10</font> papers on Visual Generative Models.</font></b></p>
+<p><b><font size=3><font color='#D93053'>11</font> papers on Visual Generative Models.</font></b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on June 29, 2025 at 16:26 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on June 29, 2025 at 16:49 (UTC+8).</font></p>
 <h2>Foundation Algorithms & Models</h2>
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('LlamaGen-details')"><i>Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation</i></p>
+            <p class="paper_detail">Peize Sun, Yi Jiang, Shoufa Chen, Shilong Zhang, Bingyue Peng, Ping Luo, Zehuan Yuan</p>
+            <p class="paper_detail">The University of Hong Kong, ByteDance</p>
+            <p class="paper_detail"><b><font color=#202020>Jun 10, 2024 &nbsp; LlamaGen</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/FoundationVision/LlamaGen/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2406.06525">arXiv 2024</a> &nbsp; <font color=#B0B0B0></font></p>
+            
+            <div id='LlamaGen-details' class="info_detail">
+                <p class="summary">It shows that applying "next-token prediction" to <b>vanilla autoregressive language models</b> can achieve good  image generation performance.</p>
+                
+                <p>
+<ul>
+    <li> It trains a discrete visual tokenizer that is competitive to the continuous ones, e.g., SD VAE, SDXL VAE, and Consistency Decoder from OpenAI.
+    <li> Vanilla autoregressive models, e.g., LlaMA, without inductive biases on visual signals can serve as the basis of image generation system.
+    <li> It is trained on 50M subset of LAION-COCO and 10M internal high aesthetics quality images.
+</ul>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -88,7 +111,7 @@
             <p class="paper_detail"><b><font color=#202020>Dec 19, 2022 &nbsp; DiT</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/facebookresearch/DiT/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2212.09748">ICCV 2023</a> &nbsp; <font color=#B0B0B0>International Conference on Computer Vision</font></p>
             
             <div id='DiT-details' class="info_detail">
-                <p class="summary">It replaces the conventional U-Net structure with <b>transformer</b> for scalable image generation, the timestep and condition are injected by adaLN-Zero.</p>
+                <p class="summary">It replaces the conventional U-Net structure with <b>transformer</b> for scalable image generation, the timestep and condition are injected by adaLN-Zero</p>
                  
                 <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/visual_generative_models-dit.ipynb" class="note">(see notes in jupyter)</a></p>
                 
@@ -112,7 +135,7 @@
             <p class="paper_detail"><b><font color=#202020>May 29, 2022 &nbsp; CogVideo</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/THUDM/CogVideo/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2205.15868">ICLR 2023</a> &nbsp; <font color=#B0B0B0></font></p>
             
             <div id='CogVideo-details' class="info_detail">
-                <p class="summary">It proposes a transformer-based video generation model (9B) that performs <b>auto-regressive</b> frame  generation and recursive frame interpolatation.</p>
+                <p class="summary">It proposes a transformer-based video generation model (9B) that performs <b>auto-regressive</b> frame  generation and recursive frame interpolatation</p>
                 
                 <p>
 <figure>
