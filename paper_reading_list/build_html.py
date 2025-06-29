@@ -82,6 +82,7 @@ def build_main_content_of_each_domain(domain):
                 f""" 
                 <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/{paper["jupyter_notes"]}" class="note">(see notes in jupyter)</a></p>
                 """
+            details = paper["details"].replace("<img src='", "<img src='resource/figs/")
 
             content_cate += \
             f"""
@@ -96,7 +97,7 @@ def build_main_content_of_each_domain(domain):
             <div id='{paper["name"]}-details' class="info_detail">
                 <p class="summary">{paper["summary"]}</p>
                 {jupyter_note}
-                <p>{paper["details"]}</p>
+                <p>{details}</p>
             </div>
             <div style="height: 0.05em;"></div>
             </div>

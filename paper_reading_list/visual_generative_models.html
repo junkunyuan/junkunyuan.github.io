@@ -12,11 +12,45 @@
 <body>
 
 <h1 id="top">Visual Generative Models</h1>
-<p><b><font size=3><font color='#D93053'>9</font> papers on Visual Generative Models.</font></b></p>
+<p><b><font size=3><font color='#D93053'>10</font> papers on Visual Generative Models.</font></b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on June 29, 2025 at 15:43 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on June 29, 2025 at 16:26 (UTC+8).</font></p>
 <h2>Foundation Algorithms & Models</h2>
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('VAR-details')"><i>Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction</i></p>
+            <p class="paper_detail">Keyu Tian, Yi Jiang, Zehuan Yuan, Bingyue Peng, Liwei Wang</p>
+            <p class="paper_detail">Peking University, Bytedance</p>
+            <p class="paper_detail"><b><font color=#202020>Apr 03, 2024 &nbsp; VAR</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/FoundationVision/VAR/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2404.02905">NeurIPS 2024</a> &nbsp; <font color=#B0B0B0>Advances in Neural Information Processing Systems</font></p>
+            <p class="paper_detail"><font color=#FF000>NeurIPS 2024 best paper award.</font></p>
+            <div id='VAR-details' class="info_detail">
+                <p class="summary">It improves <u>auto-regressive</u> image generation on image quality, inference speed, data efficiency, and scalability, by proposing <b>next-scale prediction</b>.</p>
+                
+                <p>
+<figure>
+    <img src='resource/figs/2024-04-03-VAR-fig1.png' width=700>
+    <figcaption> <b>Figure 1.</b> <b>Next-scale prediction:</b> start from 1x1 token map; at each step, it predicts the next higher-resolution token map given all previous ones.</figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-04-03-VAR-fig3.png' width=900>
+    <figcaption><b>Figure 2.</b> <b>Training pipeline of tokenzier and VAR.</b>  Tokenzier (similar to VQ-VAE): the same architecture and training data (OpenImages), using codebook of 4096 and spatial downsample ratio of 16. VAR: the standard transformer with AdaLN; not use RoPE, SwiGLU MLP, RMS Norm. </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-04-03-VAR-fig4.png' width=700>
+    <figcaption><b>Figure 3.</b> <b>Algorithms of tokenizer:</b> encoding and reconstruction.</figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-04-03-VAR-fig2.png' width=400>
+    <figcaption><b>Figure 4.</b> VAR shows good <b>scaling behavior</b>, and significantly outperforms DiT.</figcaption>
+</figure>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>

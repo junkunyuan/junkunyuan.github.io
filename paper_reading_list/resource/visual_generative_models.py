@@ -20,6 +20,39 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "details": ""
 },
 {
+"title": "Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction",
+"author": "Keyu Tian, Yi Jiang, Zehuan Yuan, Bingyue Peng, Liwei Wang",
+"organization": "Peking University, Bytedance",
+"date": "20240403",
+"venue": "NeurIPS 2024",
+"pdf_url": "https://arxiv.org/pdf/2404.02905",
+"code_url": "https://github.com/FoundationVision/VAR/",
+"name": "VAR",
+"comment": "NeurIPS 2024 best paper award.",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": "It improves <u>auto-regressive</u> image generation on image quality, inference speed, data efficiency, and scalability, by proposing <b>next-scale prediction</b>.",
+"details": 
+"""
+<figure>
+    <img src='2024-04-03-VAR-fig1.png' width=700>
+    <figcaption> <b>Figure 1.</b> <b>Next-scale prediction:</b> start from 1x1 token map; at each step, it predicts the next higher-resolution token map given all previous ones.</figcaption>
+</figure>
+<figure>
+    <img src='2024-04-03-VAR-fig3.png' width=900>
+    <figcaption><b>Figure 2.</b> <b>Training pipeline of tokenzier and VAR.</b>  Tokenzier (similar to VQ-VAE): the same architecture and training data (OpenImages), using codebook of 4096 and spatial downsample ratio of 16. VAR: the standard transformer with AdaLN; not use RoPE, SwiGLU MLP, RMS Norm. </figcaption>
+</figure>
+<figure>
+    <img src='2024-04-03-VAR-fig4.png' width=700>
+    <figcaption><b>Figure 3.</b> <b>Algorithms of tokenizer:</b> encoding and reconstruction.</figcaption>
+</figure>
+<figure>
+    <img src='2024-04-03-VAR-fig2.png' width=400>
+    <figcaption><b>Figure 4.</b> VAR shows good <b>scaling behavior</b>, and significantly outperforms DiT.</figcaption>
+</figure>
+""",
+},
+{
 "title": "SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis",
 "author": "Dustin Podell, Zion English, Kyle Lacey, Andreas Blattmann, Tim Dockhorn, Jonas Müller, Joe Penna, Robin Rombach",
 "organization": "Stability AI",
@@ -42,7 +75,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 (5) It employs a refinement model of SDEdit to refine visual details.</p>
 <p><b>Training stages:</b> (1) reso=256x256, steps=600,000, batchsize=2048; (2) reso=512x512, steps=200,000; (3) mixed resolution and aspect ratio training.</p>
 <figure>
-    <img src='resource/figs/2023-07-04-SDXL-fig1.png' width=600>
+    <img src='2023-07-04-SDXL-fig1.png' width=600>
 </figure>
 """,
 },
@@ -62,7 +95,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "details": 
 """
 <figure>
-    <img src='resource/figs/2022-12-19-DiT-fig1.png' width=900>
+    <img src='2022-12-19-DiT-fig1.png' width=900>
     <figcaption><b>Figure 1.</b> Using adaLN-Zero structure to inject timestep and class condition performs better than using cross-attention or in-context.</figcaption>
 </figure>
 """,
@@ -83,7 +116,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "details": 
 """
 <figure>
-    <img src='resource/figs/2022-05-29-cogvideo-fig1.png' width=500>
+    <img src='2022-05-29-cogvideo-fig1.png' width=500>
     <figcaption><b>Figure 1.</b> CogVideo is trained upon CogView2. It generates frames auto-regressively and interpolates them recursively.</figcaption>
 </figure>
 """,
@@ -104,7 +137,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "details": 
 """
 <figure>
-    <img src='resource/figs/2021-12-20-ldm-fig1.png' width=400>
+    <img src='2021-12-20-ldm-fig1.png' width=400>
     <figcaption><b>Figure 1.</b> Diffusion and denoising processes are conducted in the compressed VAE latent space. The conditions are injected by cross-attention.</figcaption>
 </figure>
 """,
@@ -140,11 +173,11 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "details": 
 """
 <figure>
-    <img src='resource/figs/2020-06-19-ddpm-fig1.png' width=500>
+    <img src='2020-06-19-ddpm-fig1.png' width=500>
     <figcaption><b>Figure 1.</b> Diffusion (forward) and denoising (reverse) processes of DDPM.</figcaption>
 </figure>
 <figure>
-    <img src='resource/figs/2020-06-19-ddpm-fig2.png' width=700>
+    <img src='2020-06-19-ddpm-fig2.png' width=700>
     <figcaption><b>Figure 2.</b> Training and sampling algorithms of DDPM.</figcaption>
 </figure>
 """,
@@ -171,11 +204,11 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
     <li><b>Sampling:</b> (1) sampling a top-level prior; (2) predicting bottom-level prior from the top-level prior using the trained PixelCNN; (3) generating images from both the top-level and the bottom-level priors by the trained decoder.</li>
 </ul>
 <figure>
-    <img src='resource/figs/2019-06-02-VQ-VAE-2-fig1.png' width=900>
+    <img src='2019-06-02-VQ-VAE-2-fig1.png' width=900>
     <figcaption><b>Figure 1.</b> Training and sampling frameworks.</figcaption>
 </figure>
 <figure>
-    <img src='resource/figs/2019-06-02-VQ-VAE-2-fig2.png' width=600>
+    <img src='2019-06-02-VQ-VAE-2-fig2.png' width=600>
     <figcaption><b>Figure 2.</b> Training and sampling algorithms.</figcaption>
 </figure>
 """,
@@ -202,7 +235,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
     <li><b>How to back-propagate gradient with quantization exists? Straight-Through Estimator:</b> directly let the graident of loss to the quantized embedding equal to the gradient of loss to the embedding that before being quantized.</li>
 </ul>
 <figure>
-    <img src='resource/figs/2017-11-02-VQ-VAE-fig1.png' width=900>
+    <img src='2017-11-02-VQ-VAE-fig1.png' width=900>
 </figure>
 """,
 },
