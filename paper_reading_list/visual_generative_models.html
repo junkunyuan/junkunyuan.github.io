@@ -12,11 +12,35 @@
 <body>
 
 <h1 id="top">Visual Generative Models</h1>
-<p><b><font size=3><font color='#D93053'>5</font> papers on Visual Generative Models.</font></b></p>
+<p><b><font size=3><font color='#D93053'>6</font> papers on Visual Generative Models.</font></b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on June 29, 2025 at 10:02 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on June 29, 2025 at 11:14 (UTC+8).</font></p>
 <h2>Foundation Algorithms & Models</h2>
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="pub_title" onclick="toggleTable('DiT-details')"><i>Scalable Diffusion Models with Transformers</i></p>
+            <p class="pub_detail">William Peebles, Saining Xie</p>
+            <p class="pub_detail">UC Berkeley, New York University</p>
+            <p class="pub_detail"><b><font color=#202020>Dec 19, 2022 &nbsp; DiT</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/facebookresearch/DiT/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2212.09748">ICCV 2023</a> &nbsp; <font color=#B0B0B0>International Conference on Computer Vision</font></p>
+            
+            <div id='DiT-details' class="info_detail">
+                <p class="summary">It replaces the conventional U-Net structure with <b>transformer</b> for scalable image generation, the timestep and condition are injected by adaLN-Zero.</p>
+                 
+                <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/visual_generative_models-dit.ipynb" class="note">(see notes in jupyter)</a></p>
+                
+                <p>
+<figure>
+    <img src='resource/figs/2022-12-19-DiT-fig1.png' width=900>
+    <figcaption><b>Figure 1.</b> Using adaLN-Zero structure to inject timestep and class condition performs better than using cross-attention or in-context.</figcaption>
+</figure>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>

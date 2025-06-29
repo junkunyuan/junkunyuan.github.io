@@ -20,6 +20,27 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "details": ""
 },
 {
+"title": "Scalable Diffusion Models with Transformers",
+"author": "William Peebles, Saining Xie",
+"organization": "UC Berkeley, New York University",
+"date": "20221219",
+"venue": "ICCV 2023",
+"pdf_url": "https://arxiv.org/pdf/2212.09748",
+"code_url": "https://github.com/facebookresearch/DiT/",
+"name": "DiT",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "visual_generative_models-dit.ipynb",
+"summary": "It replaces the conventional U-Net structure with <b>transformer</b> for scalable image generation, the timestep and condition are injected by adaLN-Zero.",
+"details": 
+"""
+<figure>
+    <img src='resource/figs/2022-12-19-DiT-fig1.png' width=900>
+    <figcaption><b>Figure 1.</b> Using adaLN-Zero structure to inject timestep and class condition performs better than using cross-attention or in-context.</figcaption>
+</figure>
+""",
+},
+{
 "title": "Classifier-Free Diffusion Guidance",
 "author": "Jonathan Ho, Tim Salimans",
 "organization": "Google Research, Brain team",
