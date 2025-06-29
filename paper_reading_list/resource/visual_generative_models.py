@@ -22,6 +22,43 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 # """,
 # },
 {
+"title": "Seedream 2.0: A Native Chinese-English Bilingual Image Generation Foundation Model",
+"author": "ByteDance's Seed Vision Team",
+"organization": "ByteDance",
+"date": "20250310",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2503.07703",
+"code_url": "",
+"name": "Seedream2.0",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """<b>ByteDance Sead Vision Team</b> 's image generation model that employs MMDiT structure and has Chinese-English bilingual capability.""",
+"details": 
+"""
+<ul>
+    <li> It uses a <i>self-developed bilingual LLM</i> and Glyph-Aligned ByT5 as text encoders.
+    <li> It uses a <i>self-developed VAE</i>.
+    <li> It uses learned positional embeddings on text tokens and scaled 2D RoPE on image tokens.
+    <li> Training stages: pre-training => continue training => supervised fine-tuning => human feedback alignment.
+    <li> Inference stages: user prompt => prompt engineering => text encoding => generation => refinement => output.
+    <li> User experience platform: Doubao (豆包) and Dreamina (即梦).
+</ul>
+<figure>
+    <img src='2025-03-10-Seedream2.0-fig1.png' width=700>
+    <figcaption><b>Figure 1.</b> Performance with English and Chinese prompts.</figcaption>
+</figure>
+<figure>
+    <img src='2025-03-10-Seedream2.0-fig2.png' width=400>
+    <figcaption><b>Figure 2.</b> Pre-training data system.</figcaption>
+</figure>
+<figure>
+    <img src='2025-03-10-Seedream2.0-fig6.png' width=600>
+    <figcaption><b>Figure 3.</b> Model structure is similar to MMDiT (SD3).</figcaption>
+</figure>
+""",
+},
+{
 "title": "Unified Reward Model for Multimodal Understanding and Generation",
 "author": "Yibin Wang, Yuhang Zang, Hao Li, Cheng Jin, Jiaqi Wang",
 "organization": "Fudan University, Shanghai Innovation Institute, Shanghai AI Lab, Shanghai Academy of Artificial Intelligence for Science",
