@@ -68,6 +68,27 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 """,
 },
 {
+"title": "High-Resolution Image Synthesis with Latent Diffusion Models",
+"author": "Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, Björn Ommer",
+"organization": "Heidelberg University, Runway ML",
+"date": "20211220",
+"venue": "CVPR 2022",
+"pdf_url": "https://arxiv.org/pdf/2112.10752",
+"code_url": "https://github.com/CompVis/latent-diffusion/",
+"name": "LDM",
+"comment": "It makes high-resolution image synthesis efficiently by performing generation in a compressed VAE latent space. It has over 20,000 citations (as of Jun 29, 2025).",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": "It achieves efficient high-resolution image generation by applying diffusion and denoising processes in the <b>compressed VAE latent space</b>.",
+"details": 
+"""
+<figure>
+    <img src='resource/figs/2021-12-20-ldm-fig1.png' width=400>
+    <figcaption><b>Figure 1.</b> Diffusion and denoising processes are conducted in the compressed VAE latent space. The conditions are injected by cross-attention.</figcaption>
+</figure>
+""",
+},
+{
 "title": "Classifier-Free Diffusion Guidance",
 "author": "Jonathan Ho, Tim Salimans",
 "organization": "Google Research, Brain team",
@@ -91,7 +112,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "pdf_url": "https://arxiv.org/pdf/2006.11239",
 "code_url": "https://github.com/hojonathanho/diffusion/",
 "name": "DDPM",
-"comment": "It achieves high-quality image synthesis through iterative denoising diffusion processes. It has 20,000+ citations (as of Jun. 2025).",
+"comment": "It achieves high-quality image synthesis through iterative denoising diffusion processes. It has over 20,000 citations (as of Jun 29 2025).",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "visual_generative_models-ddpm.ipynb",
 "summary": "It proposes <b>denoising diffusion probabilistic models</b> that iteratively denoises data from random noise.",

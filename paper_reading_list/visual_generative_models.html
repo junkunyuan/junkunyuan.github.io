@@ -12,10 +12,10 @@
 <body>
 
 <h1 id="top">Visual Generative Models</h1>
-<p><b><font size=3><font color='#D93053'>7</font> papers on Visual Generative Models.</font></b></p>
+<p><b><font size=3><font color='#D93053'>8</font> papers on Visual Generative Models.</font></b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on June 29, 2025 at 13:25 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on June 29, 2025 at 14:22 (UTC+8).</font></p>
 <h2>Foundation Algorithms & Models</h2>
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
@@ -72,6 +72,28 @@
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
+            <p class="pub_title" onclick="toggleTable('LDM-details')"><i>High-Resolution Image Synthesis with Latent Diffusion Models</i></p>
+            <p class="pub_detail">Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, Björn Ommer</p>
+            <p class="pub_detail">Heidelberg University, Runway ML</p>
+            <p class="pub_detail"><b><font color=#202020>Dec 20, 2021 &nbsp; LDM</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/CompVis/latent-diffusion/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2112.10752">CVPR 2022</a> &nbsp; <font color=#B0B0B0></font></p>
+            <p class="pub_detail"><font color=#FF000>It makes high-resolution image synthesis efficiently by performing generation in a compressed VAE latent space. It has over 20,000 citations (as of Jun 29, 2025).</font></p>
+            <div id='LDM-details' class="info_detail">
+                <p class="summary">It achieves efficient high-resolution image generation by applying diffusion and denoising processes in the <b>compressed VAE latent space</b>.</p>
+                
+                <p>
+<figure>
+    <img src='resource/figs/2021-12-20-ldm-fig1.png' width=400>
+    <figcaption><b>Figure 1.</b> Diffusion and denoising processes are conducted in the compressed VAE latent space. The conditions are injected by cross-attention.</figcaption>
+</figure>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
             <p class="pub_title" onclick="toggleTable('CFG-details')"><i>Classifier-Free Diffusion Guidance</i></p>
             <p class="pub_detail">Jonathan Ho, Tim Salimans</p>
             <p class="pub_detail">Google Research, Brain team</p>
@@ -95,7 +117,7 @@
             <p class="pub_detail">Jonathan Ho, Ajay Jain, Pieter Abbeel</p>
             <p class="pub_detail">UC Berkeley</p>
             <p class="pub_detail"><b><font color=#202020>Jun 19, 2020 &nbsp; DDPM</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/hojonathanho/diffusion/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2006.11239">NeurIPS 2020</a> &nbsp; <font color=#B0B0B0>Advances in Neural Information Processing Systems</font></p>
-            <p class="pub_detail"><font color=#FF000>It achieves high-quality image synthesis through iterative denoising diffusion processes. It has 20,000+ citations (as of Jun. 2025).</font></p>
+            <p class="pub_detail"><font color=#FF000>It achieves high-quality image synthesis through iterative denoising diffusion processes. It has over 20,000 citations (as of Jun 29 2025).</font></p>
             <div id='DDPM-details' class="info_detail">
                 <p class="summary">It proposes <b>denoising diffusion probabilistic models</b> that iteratively denoises data from random noise.</p>
                  
