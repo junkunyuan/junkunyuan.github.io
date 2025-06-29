@@ -20,6 +20,33 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "details": ""
 },
 {
+"title": "SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis",
+"author": "Dustin Podell, Zion English, Kyle Lacey, Andreas Blattmann, Tim Dockhorn, Jonas Müller, Joe Penna, Robin Rombach",
+"organization": "Stability AI",
+"date": "20230704",
+"venue": "ICLR 2024",
+"pdf_url": "https://arxiv.org/pdf/2307.01952",
+"code_url": "https://github.com/Stability-AI/generative-models/",
+"name": "SDXL",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": "It improves older SD by employing <b>larger UNet backbone</b>, <b>resolution conditions</b>, <b>two text encoders</b>, and a <b>refinement model</b>.",
+"details": 
+"""
+<p><b>Architecture of SDXL:</b>.<br>
+(1) It has 2.6B parameters with different transformer blocks, SD 1.4/1.5/2.0/2.1 has about 860M parameters.<br>
+(2) It uses two text encoders: OpenCLIP ViT-bigG & CLIP ViT-L.<br>
+(3) The embeddings of height & width and cropping top & left and bucketing heigh & width are added to timestep embeddings as conditions.<br>
+(4) It improves VAE by employing EMA and a larger batchsize of 256.<br>
+(5) It employs a refinement model of SDEdit to refine visual details.</p>
+<p><b>Training stages:</b> (1) reso=256x256, steps=600,000, batchsize=2048; (2) reso=512x512, steps=200,000; (3) mixed resolution and aspect ratio training.</p>
+<figure>
+    <img src='resource/figs/2023-07-04-SDXL-fig1.png' width=600>
+</figure>
+""",
+},
+{
 "title": "Scalable Diffusion Models with Transformers",
 "author": "William Peebles, Saining Xie",
 "organization": "UC Berkeley, New York University",

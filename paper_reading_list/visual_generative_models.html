@@ -12,11 +12,39 @@
 <body>
 
 <h1 id="top">Visual Generative Models</h1>
-<p><b><font size=3><font color='#D93053'>6</font> papers on Visual Generative Models.</font></b></p>
+<p><b><font size=3><font color='#D93053'>7</font> papers on Visual Generative Models.</font></b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on June 29, 2025 at 11:14 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on June 29, 2025 at 13:25 (UTC+8).</font></p>
 <h2>Foundation Algorithms & Models</h2>
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="pub_title" onclick="toggleTable('SDXL-details')"><i>SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis</i></p>
+            <p class="pub_detail">Dustin Podell, Zion English, Kyle Lacey, Andreas Blattmann, Tim Dockhorn, Jonas Müller, Joe Penna, Robin Rombach</p>
+            <p class="pub_detail">Stability AI</p>
+            <p class="pub_detail"><b><font color=#202020>Jul 04, 2023 &nbsp; SDXL</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/Stability-AI/generative-models/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2307.01952">ICLR 2024</a> &nbsp; <font color=#B0B0B0></font></p>
+            
+            <div id='SDXL-details' class="info_detail">
+                <p class="summary">It improves older SD by employing <b>larger UNet backbone</b>, <b>resolution conditions</b>, <b>two text encoders</b>, and a <b>refinement model</b>.</p>
+                
+                <p>
+<p><b>Architecture of SDXL:</b>.<br>
+(1) It has 2.6B parameters with different transformer blocks, SD 1.4/1.5/2.0/2.1 has about 860M parameters.<br>
+(2) It uses two text encoders: OpenCLIP ViT-bigG & CLIP ViT-L.<br>
+(3) The embeddings of height & width and cropping top & left and bucketing heigh & width are added to timestep embeddings as conditions.<br>
+(4) It improves VAE by employing EMA and a larger batchsize of 256.<br>
+(5) It employs a refinement model of SDEdit to refine visual details.</p>
+<p><b>Training stages:</b> (1) reso=256x256, steps=600,000, batchsize=2048; (2) reso=512x512, steps=200,000; (3) mixed resolution and aspect ratio training.</p>
+<figure>
+    <img src='resource/figs/2023-07-04-SDXL-fig1.png' width=600>
+</figure>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
