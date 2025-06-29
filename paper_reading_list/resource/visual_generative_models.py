@@ -4,6 +4,23 @@ VISUAL_GENERATIVE_MODELS["title"] = "Visual Generative Models"
 VISUAL_GENERATIVE_MODELS["description"] = "Models that learn to generate visual signals, e.g., images, videos, 3D, etc."
 VISUAL_GENERATIVE_MODELS["categories"] = ["Foundation Algorithms & Models", "Datasets & Evaluation"]
 VISUAL_GENERATIVE_MODELS["papers"] = [
+# {
+# "title": "",
+# "author": "",
+# "organization": "",
+# "date": "",
+# "venue": "",
+# "pdf_url": "",
+# "code_url": "",
+# "name": "",
+# "comment": "",
+# "category": "",
+# "jupyter_notes": "",
+# "summary": """""",
+# "details": 
+# """
+# """,
+# },
 {
 "title": "Unified Reward Model for Multimodal Understanding and Generation",
 "author": "Yibin Wang, Yuhang Zang, Hao Li, Cheng Jin, Jiaqi Wang",
@@ -18,6 +35,89 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "jupyter_notes": "",
 "summary": """It fine-tunes LLaVA-OneVision 7B for both <b>multimodal understanding & generation evaluation</b> by pairwise ranking & pointwise scoring.""",
 "details": """"""
+},
+{
+"title": "Infinity: Scaling Bitwise AutoRegressive Modeling for High-Resolution Image Synthesis",
+"author": "Jian Han, Jinlai Liu, Yi Jiang, Bin Yan, Yuqi Zhang, Zehuan Yuan, Bingyue Peng, Xiaobing Liu",
+"organization": "ByteDance",
+"date": "20241205",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2412.04431",
+"code_url": "https://github.com/FoundationVision/Infinity/",
+"name": "Infinity",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """It improves VAR by applying <b>bitwise modeling</b> that makes vocabulary "infinity" to open up new posibilities of discrete text-to-image generation.""",
+"details": 
+"""
+<figure>
+    <img src='2024-12-05-Infinity-fig1.png' width=500>
+    <figcaption><b>Figure 1.</b> <b>Viusal tokenization and quantization:</b> instead of predicting <i>2**d</i> indices, infinite-vocabulary classifier predicts <i>d</i> bits instead.</figcaption>
+</figure>
+<figure>
+    <img src='2024-12-05-Infinity-fig3.png' width=400>
+    <figcaption><b>Figure 2.</b> <b>Infinity:</b> it is fast and better.</figcaption>
+</figure>
+<figure>
+    <img src='2024-12-05-Infinity-fig4.png' width=300>
+    <figcaption><b>Figure 3.</b> <b>Tokenizer:</b> it outperforms continuous SD VAE.</figcaption>
+</figure>
+<figure>
+    <img src='2024-12-05-Infinity-fig5.png' width=500>
+    <figcaption><b>Figure 4.</b> <b>Inifinite-Vocabulary Classifier:</b> it needs low memory but performs better.</figcaption>
+</figure>
+<figure>
+    <img src='2024-12-05-Infinity-fig8.png' width=400>
+    <figcaption><b>Figure 5.</b> <b>Self-correction</b> mitigates the train-test discrepancy.</figcaption>
+</figure>
+<figure>
+    <img src='2024-12-05-Infinity-fig6.png' width=700>
+    <figcaption><b>Figure 6.</b> <b>Scaling up vocabulary:</b> vocabulary size and model size scale well.</figcaption>
+</figure>
+<figure>
+    <img src='2024-12-05-Infinity-fig7.png' width=750>
+    <figcaption><b>Figure 7.</b> <b>Scaling up model size:</b> there is strong correlation between validation loss and evaluation metrics (as observed by Fluid).</figcaption>
+</figure>
+<figure>
+    <img src='2024-12-05-Infinity-fig9.png' width=900>
+    <figcaption><b>Figure 8.</b> Using <b>2D RoPE</b> outperforms using APE.</figcaption>
+</figure>
+""",
+},
+{
+"title": "HunyuanVideo: A Systematic Framework For Large Video Generative Models",
+"author": "Hunyuan Multimodal Generation Team",
+"organization": "Tencent",
+"date": "20241203",
+"venue": "arXiv 2024",
+"pdf_url": "https://arxiv.org/pdf/2412.03603",
+"code_url": "https://github.com/Tencent/HunyuanVideo/",
+"name": "HunyuanVideo",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """<b>Tencent Hunyuan Team</b>'s open-sourced text-to-video and image-to-video generation model (13B) with diffusion transformer (FLUX structure).""",
+"details": 
+"""
+""",
+},
+{
+"title": "Movie Gen: A Cast of Media Foundation Models",
+"author": "Movie Gen Team",
+"organization": "Meta",
+"date": "20241017",
+"venue": "arXiv 2024",
+"pdf_url": "https://arxiv.org/pdf/2410.13720",
+"code_url": "",
+"name": "Movie Gen",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """<b>Meta Movie Gen Team</b>'s diffusion transformer-based model (30B) for 16s / 1080p / 16fps video and synchronized audio generation.""",
+"details": 
+"""
+""",
 },
 {
 "title": "Fluid: Scaling Autoregressive Text-to-image Generative Models with Continuous Tokens",
@@ -127,7 +227,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
     <figcaption> <b>Figure 1.</b> <b>Next-scale prediction:</b> start from 1x1 token map; at each step, it predicts the next higher-resolution token map given all previous ones.</figcaption>
 </figure>
 <figure>
-    <img src='2024-04-03-VAR-fig3.png' width=900>
+    <img src='2024-04-03-VAR-fig3.png' width=800>
     <figcaption><b>Figure 2.</b> <b>Training pipeline of tokenzier and VAR.</b>  Tokenzier (similar to VQ-VAE): the same architecture and training data (OpenImages), using codebook of 4096 and spatial downsample ratio of 16. VAR: the standard transformer with AdaLN; not use RoPE, SwiGLU MLP, RMS Norm. </figcaption>
 </figure>
 <figure>
@@ -135,7 +235,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
     <figcaption><b>Figure 3.</b> <b>Algorithms of tokenizer:</b> encoding and reconstruction.</figcaption>
 </figure>
 <figure>
-    <img src='2024-04-03-VAR-fig2.png' width=400>
+    <img src='2024-04-03-VAR-fig2.png' width=350>
     <figcaption><b>Figure 4.</b> VAR shows good <b>scaling behavior</b>, and significantly outperforms DiT.</figcaption>
 </figure>
 """,
@@ -183,7 +283,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "details": 
 """
 <figure>
-    <img src='2022-12-19-DiT-fig1.png' width=900>
+    <img src='2022-12-19-DiT-fig1.png' width=800>
     <figcaption><b>Figure 1.</b> Using adaLN-Zero structure to inject timestep and class condition performs better than using cross-attention or in-context.</figcaption>
 </figure>
 """,
@@ -261,11 +361,11 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "details": 
 """
 <figure>
-    <img src='2020-06-19-ddpm-fig1.png' width=500>
+    <img src='2020-06-19-ddpm-fig1.png' width=400>
     <figcaption><b>Figure 1.</b> Diffusion (forward) and denoising (reverse) processes of DDPM.</figcaption>
 </figure>
 <figure>
-    <img src='2020-06-19-ddpm-fig2.png' width=700>
+    <img src='2020-06-19-ddpm-fig2.png' width=600>
     <figcaption><b>Figure 2.</b> Training and sampling algorithms of DDPM.</figcaption>
 </figure>
 """,
@@ -296,7 +396,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
     <figcaption><b>Figure 1.</b> Training and sampling frameworks.</figcaption>
 </figure>
 <figure>
-    <img src='2019-06-02-VQ-VAE-2-fig2.png' width=600>
+    <img src='2019-06-02-VQ-VAE-2-fig2.png' width=550>
     <figcaption><b>Figure 2.</b> Training and sampling algorithms.</figcaption>
 </figure>
 """,

@@ -12,11 +12,97 @@
 <body>
 
 <h1 id="top">Visual Generative Models</h1>
-<p><b><font size=3><font color='#D93053'>13</font> papers on Visual Generative Models.</font></b></p>
+<p><b><font size=3><font color='#D93053'>16</font> papers on Visual Generative Models.</font></b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on June 29, 2025 at 17:34 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on June 29, 2025 at 19:13 (UTC+8).</font></p>
 <h2>Foundation Algorithms & Models</h2>
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('Infinity-details')"><i>Infinity: Scaling Bitwise AutoRegressive Modeling for High-Resolution Image Synthesis</i></p>
+            <p class="paper_detail">Jian Han, Jinlai Liu, Yi Jiang, Bin Yan, Yuqi Zhang, Zehuan Yuan, Bingyue Peng, Xiaobing Liu</p>
+            <p class="paper_detail">ByteDance</p>
+            <p class="paper_detail"><b><font color=#202020>Dec 05, 2024 &nbsp; Infinity</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/FoundationVision/Infinity/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2412.04431">CVPR 2025</a> &nbsp; <font color=#B0B0B0></font></p>
+            
+            <div id='Infinity-details' class="info_detail">
+                <p class="summary">It improves VAR by applying <b>bitwise modeling</b> that makes vocabulary "infinity" to open up new posibilities of discrete text-to-image generation.</p>
+                
+                <p>
+<figure>
+    <img src='resource/figs/2024-12-05-Infinity-fig1.png' width=500>
+    <figcaption><b>Figure 1.</b> <b>Viusal tokenization and quantization:</b> instead of predicting <i>2**d</i> indices, infinite-vocabulary classifier predicts <i>d</i> bits instead.</figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-12-05-Infinity-fig3.png' width=400>
+    <figcaption><b>Figure 2.</b> <b>Infinity:</b> it is fast and better.</figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-12-05-Infinity-fig4.png' width=300>
+    <figcaption><b>Figure 3.</b> <b>Tokenizer:</b> it outperforms continuous SD VAE.</figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-12-05-Infinity-fig5.png' width=500>
+    <figcaption><b>Figure 4.</b> <b>Inifinite-Vocabulary Classifier:</b> it needs low memory but performs better.</figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-12-05-Infinity-fig8.png' width=400>
+    <figcaption><b>Figure 5.</b> <b>Self-correction</b> mitigates the train-test discrepancy.</figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-12-05-Infinity-fig6.png' width=700>
+    <figcaption><b>Figure 6.</b> <b>Scaling up vocabulary:</b> vocabulary size and model size scale well.</figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-12-05-Infinity-fig7.png' width=750>
+    <figcaption><b>Figure 7.</b> <b>Scaling up model size:</b> there is strong correlation between validation loss and evaluation metrics (as observed by Fluid).</figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-12-05-Infinity-fig9.png' width=900>
+    <figcaption><b>Figure 8.</b> Using <b>2D RoPE</b> outperforms using APE.</figcaption>
+</figure>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('HunyuanVideo-details')"><i>HunyuanVideo: A Systematic Framework For Large Video Generative Models</i></p>
+            <p class="paper_detail">Hunyuan Multimodal Generation Team</p>
+            <p class="paper_detail">Tencent</p>
+            <p class="paper_detail"><b><font color=#202020>Dec 03, 2024 &nbsp; HunyuanVideo</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/Tencent/HunyuanVideo/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2412.03603">arXiv 2024</a> &nbsp; <font color=#B0B0B0></font></p>
+            
+            <div id='HunyuanVideo-details' class="info_detail">
+                <p class="summary"><b>Tencent Hunyuan Team</b>'s open-sourced text-to-video and image-to-video generation model (13B) with diffusion transformer (FLUX structure).</p>
+                
+                <p>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('Movie Gen-details')"><i>Movie Gen: A Cast of Media Foundation Models</i></p>
+            <p class="paper_detail">Movie Gen Team</p>
+            <p class="paper_detail">Meta</p>
+            <p class="paper_detail"><b><font color=#202020>Oct 17, 2024 &nbsp; Movie Gen</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2410.13720">arXiv 2024</a> &nbsp; <font color=#B0B0B0></font></p>
+            
+            <div id='Movie Gen-details' class="info_detail">
+                <p class="summary"><b>Meta Movie Gen Team</b>'s diffusion transformer-based model (30B) for 16s / 1080p / 16fps video and synchronized audio generation.</p>
+                
+                <p>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -125,7 +211,7 @@
     <figcaption> <b>Figure 1.</b> <b>Next-scale prediction:</b> start from 1x1 token map; at each step, it predicts the next higher-resolution token map given all previous ones.</figcaption>
 </figure>
 <figure>
-    <img src='resource/figs/2024-04-03-VAR-fig3.png' width=900>
+    <img src='resource/figs/2024-04-03-VAR-fig3.png' width=800>
     <figcaption><b>Figure 2.</b> <b>Training pipeline of tokenzier and VAR.</b>  Tokenzier (similar to VQ-VAE): the same architecture and training data (OpenImages), using codebook of 4096 and spatial downsample ratio of 16. VAR: the standard transformer with AdaLN; not use RoPE, SwiGLU MLP, RMS Norm. </figcaption>
 </figure>
 <figure>
@@ -133,7 +219,7 @@
     <figcaption><b>Figure 3.</b> <b>Algorithms of tokenizer:</b> encoding and reconstruction.</figcaption>
 </figure>
 <figure>
-    <img src='resource/figs/2024-04-03-VAR-fig2.png' width=400>
+    <img src='resource/figs/2024-04-03-VAR-fig2.png' width=350>
     <figcaption><b>Figure 4.</b> VAR shows good <b>scaling behavior</b>, and significantly outperforms DiT.</figcaption>
 </figure>
 </p>
@@ -185,7 +271,7 @@
                 
                 <p>
 <figure>
-    <img src='resource/figs/2022-12-19-DiT-fig1.png' width=900>
+    <img src='resource/figs/2022-12-19-DiT-fig1.png' width=800>
     <figcaption><b>Figure 1.</b> Using adaLN-Zero structure to inject timestep and class condition performs better than using cross-attention or in-context.</figcaption>
 </figure>
 </p>
@@ -272,11 +358,11 @@
                 
                 <p>
 <figure>
-    <img src='resource/figs/2020-06-19-ddpm-fig1.png' width=500>
+    <img src='resource/figs/2020-06-19-ddpm-fig1.png' width=400>
     <figcaption><b>Figure 1.</b> Diffusion (forward) and denoising (reverse) processes of DDPM.</figcaption>
 </figure>
 <figure>
-    <img src='resource/figs/2020-06-19-ddpm-fig2.png' width=700>
+    <img src='resource/figs/2020-06-19-ddpm-fig2.png' width=600>
     <figcaption><b>Figure 2.</b> Training and sampling algorithms of DDPM.</figcaption>
 </figure>
 </p>
@@ -308,7 +394,7 @@
     <figcaption><b>Figure 1.</b> Training and sampling frameworks.</figcaption>
 </figure>
 <figure>
-    <img src='resource/figs/2019-06-02-VQ-VAE-2-fig2.png' width=600>
+    <img src='resource/figs/2019-06-02-VQ-VAE-2-fig2.png' width=550>
     <figcaption><b>Figure 2.</b> Training and sampling algorithms.</figcaption>
 </figure>
 </p>
