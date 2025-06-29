@@ -37,6 +37,43 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "details": """"""
 },
 {
+"title": "Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model",
+"author": "Step-Video Team",
+"organization": "StepFun",
+"date": "20250214",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2502.10248",
+"code_url": "https://github.com/stepfun-ai/Step-Video-T2V/",
+"name": "Step-Video-T2V",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """<b>StepFun</b>'s open-sourced model (30B) with DiT structure for text-to-video generation.""",
+"details": 
+"""
+<figure>
+    <img src='2025-02-14-Step-Video-T2V-fig1.png' width=500>
+    <figcaption><b>Figure 1.</b> <b>Main structure.</b> a VAE with a 8x8x4 compression ratio and 16 channels, bilingual text encoders (HunyuanCLIP and Step-LLM), DiT with RoPE-3D and QK-Norm, and a DPO pipeline. Text prompt conditions are incorporated into DiT by cross-attention modules.</figcaption>
+</figure>
+<figure>
+    <img src='2025-02-14-Step-Video-T2V-fig2.png' width=400>
+    <figcaption><b>Figure 2.</b> <b>VAE</b> compresses videos by 16x16x8 with 16 feature channels.</figcaption>
+</figure>
+<figure>
+    <img src='2025-02-14-Step-Video-T2V-fig4.png' width=500>
+    <figcaption><b>Figure 3.</b> <b>DPO framework.</b> use training data prompts and handcrafted prompts to generate samples, which are scored through human annotation or reward models. Diffusion-DPO method is adapted here by reducing beta and increasing learning rate for achieving faster convergence.</figcaption>
+</figure>
+<figure>
+    <img src='2025-02-14-Step-Video-T2V-fig5.png' width=900>
+    <figcaption><b>Figure 4.</b> Using <b>2B video-text pairs</b>, <b>3.8B image-text pairs</b>. <i>Filters:</i> video segmentation, video quality assessment, aesthetic score, NSFW score, watermark detection, subtitle detection, saturation score, blur score, black border detection, video motion assessment, K-means-based concept balancing, and CLIP score alignment. <i>Video captioning:</i> short caption, dense caption, and original title.</figcaption>
+</figure>
+<figure>
+    <img src='2025-02-14-Step-Video-T2V-fig7.png' width=600>
+    <figcaption><b>Figure 5.</b> Pre-training stages. </figcaption>
+</figure>
+""",
+},
+{
 "title": "Infinity: Scaling Bitwise AutoRegressive Modeling for High-Resolution Image Synthesis",
 "author": "Jian Han, Jinlai Liu, Yi Jiang, Bin Yan, Yuqi Zhang, Zehuan Yuan, Bingyue Peng, Xiaobing Liu",
 "organization": "ByteDance",
