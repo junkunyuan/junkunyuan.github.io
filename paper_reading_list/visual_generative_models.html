@@ -12,18 +12,18 @@
 <body>
 
 <h1 id="top">Visual Generative Models</h1>
-<p><b><font size=3><font color='#D93053'>8</font> papers on Visual Generative Models.</font></b></p>
+<p><b><font size=3><font color='#D93053'>9</font> papers on Visual Generative Models.</font></b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on June 29, 2025 at 14:22 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on June 29, 2025 at 15:43 (UTC+8).</font></p>
 <h2>Foundation Algorithms & Models</h2>
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="pub_title" onclick="toggleTable('SDXL-details')"><i>SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis</i></p>
-            <p class="pub_detail">Dustin Podell, Zion English, Kyle Lacey, Andreas Blattmann, Tim Dockhorn, Jonas Müller, Joe Penna, Robin Rombach</p>
-            <p class="pub_detail">Stability AI</p>
-            <p class="pub_detail"><b><font color=#202020>Jul 04, 2023 &nbsp; SDXL</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/Stability-AI/generative-models/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2307.01952">ICLR 2024</a> &nbsp; <font color=#B0B0B0></font></p>
+            <p class="paper_title" onclick="toggleTable('SDXL-details')"><i>SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis</i></p>
+            <p class="paper_detail">Dustin Podell, Zion English, Kyle Lacey, Andreas Blattmann, Tim Dockhorn, Jonas Müller, Joe Penna, Robin Rombach</p>
+            <p class="paper_detail">Stability AI</p>
+            <p class="paper_detail"><b><font color=#202020>Jul 04, 2023 &nbsp; SDXL</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/Stability-AI/generative-models/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2307.01952">ICLR 2024</a> &nbsp; <font color=#B0B0B0></font></p>
             
             <div id='SDXL-details' class="info_detail">
                 <p class="summary">It improves older SD by employing <b>larger UNet backbone</b>, <b>resolution conditions</b>, <b>two text encoders</b>, and a <b>refinement model</b>.</p>
@@ -48,10 +48,10 @@
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="pub_title" onclick="toggleTable('DiT-details')"><i>Scalable Diffusion Models with Transformers</i></p>
-            <p class="pub_detail">William Peebles, Saining Xie</p>
-            <p class="pub_detail">UC Berkeley, New York University</p>
-            <p class="pub_detail"><b><font color=#202020>Dec 19, 2022 &nbsp; DiT</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/facebookresearch/DiT/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2212.09748">ICCV 2023</a> &nbsp; <font color=#B0B0B0>International Conference on Computer Vision</font></p>
+            <p class="paper_title" onclick="toggleTable('DiT-details')"><i>Scalable Diffusion Models with Transformers</i></p>
+            <p class="paper_detail">William Peebles, Saining Xie</p>
+            <p class="paper_detail">UC Berkeley, New York University</p>
+            <p class="paper_detail"><b><font color=#202020>Dec 19, 2022 &nbsp; DiT</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/facebookresearch/DiT/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2212.09748">ICCV 2023</a> &nbsp; <font color=#B0B0B0>International Conference on Computer Vision</font></p>
             
             <div id='DiT-details' class="info_detail">
                 <p class="summary">It replaces the conventional U-Net structure with <b>transformer</b> for scalable image generation, the timestep and condition are injected by adaLN-Zero.</p>
@@ -72,11 +72,33 @@
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="pub_title" onclick="toggleTable('LDM-details')"><i>High-Resolution Image Synthesis with Latent Diffusion Models</i></p>
-            <p class="pub_detail">Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, Björn Ommer</p>
-            <p class="pub_detail">Heidelberg University, Runway ML</p>
-            <p class="pub_detail"><b><font color=#202020>Dec 20, 2021 &nbsp; LDM</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/CompVis/latent-diffusion/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2112.10752">CVPR 2022</a> &nbsp; <font color=#B0B0B0></font></p>
-            <p class="pub_detail"><font color=#FF000>It makes high-resolution image synthesis efficiently by performing generation in a compressed VAE latent space. It has over 20,000 citations (as of Jun 29, 2025).</font></p>
+            <p class="paper_title" onclick="toggleTable('CogVideo-details')"><i>CogVideo: Large-scale Pretraining for Text-to-Video Generation via Transformers</i></p>
+            <p class="paper_detail">Wenyi Hong, Ming Ding, Wendi Zheng, Xinghan Liu, Jie Tang</p>
+            <p class="paper_detail">Tsinghua University, BAAI</p>
+            <p class="paper_detail"><b><font color=#202020>May 29, 2022 &nbsp; CogVideo</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/THUDM/CogVideo/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2205.15868">ICLR 2023</a> &nbsp; <font color=#B0B0B0></font></p>
+            
+            <div id='CogVideo-details' class="info_detail">
+                <p class="summary">It proposes a transformer-based video generation model (9B) that performs <b>auto-regressive</b> frame  generation and recursive frame interpolatation.</p>
+                
+                <p>
+<figure>
+    <img src='resource/figs/2022-05-29-cogvideo-fig1.png' width=500>
+    <figcaption><b>Figure 1.</b> CogVideo is trained upon CogView2. It generates frames auto-regressively and interpolates them recursively.</figcaption>
+</figure>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('LDM-details')"><i>High-Resolution Image Synthesis with Latent Diffusion Models</i></p>
+            <p class="paper_detail">Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, Björn Ommer</p>
+            <p class="paper_detail">Heidelberg University, Runway ML</p>
+            <p class="paper_detail"><b><font color=#202020>Dec 20, 2021 &nbsp; LDM</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/CompVis/latent-diffusion/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2112.10752">CVPR 2022</a> &nbsp; <font color=#B0B0B0></font></p>
+            <p class="paper_detail"><font color=#FF000>It makes high-resolution image synthesis efficiently by performing generation in a compressed VAE latent space. It has over 20,000 citations (as of Jun 29, 2025).</font></p>
             <div id='LDM-details' class="info_detail">
                 <p class="summary">It achieves efficient high-resolution image generation by applying diffusion and denoising processes in the <b>compressed VAE latent space</b>.</p>
                 
@@ -94,10 +116,10 @@
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="pub_title" onclick="toggleTable('CFG-details')"><i>Classifier-Free Diffusion Guidance</i></p>
-            <p class="pub_detail">Jonathan Ho, Tim Salimans</p>
-            <p class="pub_detail">Google Research, Brain team</p>
-            <p class="pub_detail"><b><font color=#202020>Dec 08, 2021 &nbsp; CFG</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2207.12598">NeurIPS workshop 2021</a> &nbsp; <font color=#B0B0B0>Advances in Neural Information Processing Systems</font></p>
+            <p class="paper_title" onclick="toggleTable('CFG-details')"><i>Classifier-Free Diffusion Guidance</i></p>
+            <p class="paper_detail">Jonathan Ho, Tim Salimans</p>
+            <p class="paper_detail">Google Research, Brain team</p>
+            <p class="paper_detail"><b><font color=#202020>Dec 08, 2021 &nbsp; CFG</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2207.12598">NeurIPS workshop 2021</a> &nbsp; <font color=#B0B0B0>Advances in Neural Information Processing Systems</font></p>
             
             <div id='CFG-details' class="info_detail">
                 <p class="summary">It improves conditional image generation with <b>classifier-free condition guidance</b> by jointly training a conditional model and an unconditional model.</p>
@@ -113,11 +135,11 @@
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="pub_title" onclick="toggleTable('DDPM-details')"><i>Denoising Diffusion Probabilistic Models</i></p>
-            <p class="pub_detail">Jonathan Ho, Ajay Jain, Pieter Abbeel</p>
-            <p class="pub_detail">UC Berkeley</p>
-            <p class="pub_detail"><b><font color=#202020>Jun 19, 2020 &nbsp; DDPM</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/hojonathanho/diffusion/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2006.11239">NeurIPS 2020</a> &nbsp; <font color=#B0B0B0>Advances in Neural Information Processing Systems</font></p>
-            <p class="pub_detail"><font color=#FF000>It achieves high-quality image synthesis through iterative denoising diffusion processes. It has over 20,000 citations (as of Jun 29 2025).</font></p>
+            <p class="paper_title" onclick="toggleTable('DDPM-details')"><i>Denoising Diffusion Probabilistic Models</i></p>
+            <p class="paper_detail">Jonathan Ho, Ajay Jain, Pieter Abbeel</p>
+            <p class="paper_detail">UC Berkeley</p>
+            <p class="paper_detail"><b><font color=#202020>Jun 19, 2020 &nbsp; DDPM</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/hojonathanho/diffusion/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2006.11239">NeurIPS 2020</a> &nbsp; <font color=#B0B0B0>Advances in Neural Information Processing Systems</font></p>
+            <p class="paper_detail"><font color=#FF000>It achieves high-quality image synthesis through iterative denoising diffusion processes. It has over 20,000 citations (as of Jun 29 2025).</font></p>
             <div id='DDPM-details' class="info_detail">
                 <p class="summary">It proposes <b>denoising diffusion probabilistic models</b> that iteratively denoises data from random noise.</p>
                  
@@ -128,7 +150,6 @@
     <img src='resource/figs/2020-06-19-ddpm-fig1.png' width=500>
     <figcaption><b>Figure 1.</b> Diffusion (forward) and denoising (reverse) processes of DDPM.</figcaption>
 </figure>
-<br>
 <figure>
     <img src='resource/figs/2020-06-19-ddpm-fig2.png' width=700>
     <figcaption><b>Figure 2.</b> Training and sampling algorithms of DDPM.</figcaption>
@@ -142,10 +163,10 @@
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="pub_title" onclick="toggleTable('VQ-VAE-2-details')"><i>Generating Diverse High-Fidelity Images with VQ-VAE-2</i></p>
-            <p class="pub_detail">Ali Razavi, Aaron van den Oord, Oriol Vinyals</p>
-            <p class="pub_detail">DeepMind</p>
-            <p class="pub_detail"><b><font color=#202020>Jun 02, 2019 &nbsp; VQ-VAE-2</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/1906.00446">NeurIPS 2019</a> &nbsp; <font color=#B0B0B0>Advances in Neural Information Processing Systems</font></p>
+            <p class="paper_title" onclick="toggleTable('VQ-VAE-2-details')"><i>Generating Diverse High-Fidelity Images with VQ-VAE-2</i></p>
+            <p class="paper_detail">Ali Razavi, Aaron van den Oord, Oriol Vinyals</p>
+            <p class="paper_detail">DeepMind</p>
+            <p class="paper_detail"><b><font color=#202020>Jun 02, 2019 &nbsp; VQ-VAE-2</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/1906.00446">NeurIPS 2019</a> &nbsp; <font color=#B0B0B0>Advances in Neural Information Processing Systems</font></p>
             
             <div id='VQ-VAE-2-details' class="info_detail">
                 <p class="summary">In order to generate large scale images efficiently, it improves VQ-VAE by employing a <b>hierarchical organization</b>.</p>
@@ -161,7 +182,6 @@
     <img src='resource/figs/2019-06-02-VQ-VAE-2-fig1.png' width=900>
     <figcaption><b>Figure 1.</b> Training and sampling frameworks.</figcaption>
 </figure>
-<br>
 <figure>
     <img src='resource/figs/2019-06-02-VQ-VAE-2-fig2.png' width=600>
     <figcaption><b>Figure 2.</b> Training and sampling algorithms.</figcaption>
@@ -175,10 +195,10 @@
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="pub_title" onclick="toggleTable('VQ-VAE-details')"><i>Neural Discrete Representation Learning</i></p>
-            <p class="pub_detail">Aaron van den Oord, Oriol Vinyals, Koray Kavukcuoglu</p>
-            <p class="pub_detail">DeepMind</p>
-            <p class="pub_detail"><b><font color=#202020>Nov 02, 2017 &nbsp; VQ-VAE</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/1711.00937">NeurIPS 2017</a> &nbsp; <font color=#B0B0B0>Advances in Neural Information Processing Systems</font></p>
+            <p class="paper_title" onclick="toggleTable('VQ-VAE-details')"><i>Neural Discrete Representation Learning</i></p>
+            <p class="paper_detail">Aaron van den Oord, Oriol Vinyals, Koray Kavukcuoglu</p>
+            <p class="paper_detail">DeepMind</p>
+            <p class="paper_detail"><b><font color=#202020>Nov 02, 2017 &nbsp; VQ-VAE</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/1711.00937">NeurIPS 2017</a> &nbsp; <font color=#B0B0B0>Advances in Neural Information Processing Systems</font></p>
             
             <div id='VQ-VAE-details' class="info_detail">
                 <p class="summary">It proposes <b>vector quantised variational autoencoder</b> to generate discrete codes while the prior is also learned.</p>
@@ -202,10 +222,10 @@
             <p class="little_split"></p>
             <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="pub_title" onclick="toggleTable('UnifiedReward-details')"><i>Unified Reward Model for Multimodal Understanding and Generation</i></p>
-            <p class="pub_detail">Yibin Wang, Yuhang Zang, Hao Li, Cheng Jin, Jiaqi Wang</p>
-            <p class="pub_detail">Fudan University, Shanghai Innovation Institute, Shanghai AI Lab, Shanghai Academy of Artificial Intelligence for Science</p>
-            <p class="pub_detail"><b><font color=#202020>Mar 07, 2025 &nbsp; UnifiedReward</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/CodeGoat24/UnifiedReward/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2503.05236">arXiv 2025</a> &nbsp; <font color=#B0B0B0></font></p>
+            <p class="paper_title" onclick="toggleTable('UnifiedReward-details')"><i>Unified Reward Model for Multimodal Understanding and Generation</i></p>
+            <p class="paper_detail">Yibin Wang, Yuhang Zang, Hao Li, Cheng Jin, Jiaqi Wang</p>
+            <p class="paper_detail">Fudan University, Shanghai Innovation Institute, Shanghai AI Lab, Shanghai Academy of Artificial Intelligence for Science</p>
+            <p class="paper_detail"><b><font color=#202020>Mar 07, 2025 &nbsp; UnifiedReward</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/CodeGoat24/UnifiedReward/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2503.05236">arXiv 2025</a> &nbsp; <font color=#B0B0B0></font></p>
             
             <div id='UnifiedReward-details' class="info_detail">
                 <p class="summary">It fine-tunes LLaVA-OneVision 7B for both <b>multimodal understanding & generation evaluation</b> by pairwise ranking & pointwise scoring.</p>

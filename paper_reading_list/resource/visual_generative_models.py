@@ -68,6 +68,27 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 """,
 },
 {
+"title": "CogVideo: Large-scale Pretraining for Text-to-Video Generation via Transformers",
+"author": "Wenyi Hong, Ming Ding, Wendi Zheng, Xinghan Liu, Jie Tang",
+"organization": "Tsinghua University, BAAI",
+"date": "20220529",
+"venue": "ICLR 2023",
+"pdf_url": "https://arxiv.org/pdf/2205.15868",
+"code_url": "https://github.com/THUDM/CogVideo/",
+"name": "CogVideo",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": "It proposes a transformer-based video generation model (9B) that performs <b>auto-regressive</b> frame  generation and recursive frame interpolatation.",
+"details": 
+"""
+<figure>
+    <img src='resource/figs/2022-05-29-cogvideo-fig1.png' width=500>
+    <figcaption><b>Figure 1.</b> CogVideo is trained upon CogView2. It generates frames auto-regressively and interpolates them recursively.</figcaption>
+</figure>
+""",
+},
+{
 "title": "High-Resolution Image Synthesis with Latent Diffusion Models",
 "author": "Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, Björn Ommer",
 "organization": "Heidelberg University, Runway ML",
@@ -122,7 +143,6 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
     <img src='resource/figs/2020-06-19-ddpm-fig1.png' width=500>
     <figcaption><b>Figure 1.</b> Diffusion (forward) and denoising (reverse) processes of DDPM.</figcaption>
 </figure>
-<br>
 <figure>
     <img src='resource/figs/2020-06-19-ddpm-fig2.png' width=700>
     <figcaption><b>Figure 2.</b> Training and sampling algorithms of DDPM.</figcaption>
@@ -154,7 +174,6 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
     <img src='resource/figs/2019-06-02-VQ-VAE-2-fig1.png' width=900>
     <figcaption><b>Figure 1.</b> Training and sampling frameworks.</figcaption>
 </figure>
-<br>
 <figure>
     <img src='resource/figs/2019-06-02-VQ-VAE-2-fig2.png' width=600>
     <figcaption><b>Figure 2.</b> Training and sampling algorithms.</figcaption>

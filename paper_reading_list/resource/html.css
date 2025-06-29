@@ -81,7 +81,7 @@ li {
     font-family: Arial, sans-serif;
     font-size: 14px;
 }
-.pub_title {
+.paper_title {
     cursor: pointer;
     /* color: #202020; */
     color: #404040;
@@ -90,11 +90,11 @@ li {
     margin-bottom: 0.5em;
     /* font-weight:bold; */
 }
-.pub_title:hover {
+.paper_title:hover {
     text-decoration: underline;
     color: #4169E1;
 }
-.pub_detail {
+.paper_detail {
     color: #404040;
     font-size: 13px;
     /* font-family: Arial, sans-serif; */
@@ -118,5 +118,7 @@ figcaption {
     color: #202020;
     text-align: center;
     font-family: Arial, sans-serif;
+    margin-top: 0.5em;
+    margin-bottom: 1.2em;
 }
 /* -------------------------------------------------------------------------------- */

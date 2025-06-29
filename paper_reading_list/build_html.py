@@ -75,7 +75,7 @@ def build_main_content_of_each_domain(domain):
             venue = f"""<a href="{paper["pdf_url"]}">{paper["venue"]}</a>"""
             venue_all = get_venue_all(paper["venue"])
             date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%b %d, %Y")
-            comment = f"""<p class="pub_detail"><font color=#FF000>{paper["comment"]}</font></p>""" if paper["comment"] else ""
+            comment = f"""<p class="paper_detail"><font color=#FF000>{paper["comment"]}</font></p>""" if paper["comment"] else ""
             jupyter_note = ""
             if paper.get("jupyter_notes", ""):
                 jupyter_note = \
@@ -88,10 +88,10 @@ def build_main_content_of_each_domain(domain):
             <p class="little_split"></p>
             <div style="border-left: 8px solid {color_bar}; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="pub_title" onclick="toggleTable('{paper["name"]}-details')"><i>{paper["title"]}</i></p>
-            <p class="pub_detail">{paper["author"]}</p>
-            <p class="pub_detail">{paper["organization"]}</p>
-            <p class="pub_detail"><b><font color=#202020>{date} &nbsp; {paper["name"]}</font></b> {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#B0B0B0>{venue_all}</font></p>
+            <p class="paper_title" onclick="toggleTable('{paper["name"]}-details')"><i>{paper["title"]}</i></p>
+            <p class="paper_detail">{paper["author"]}</p>
+            <p class="paper_detail">{paper["organization"]}</p>
+            <p class="paper_detail"><b><font color=#202020>{date} &nbsp; {paper["name"]}</font></b> {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#B0B0B0>{venue_all}</font></p>
             {comment}
             <div id='{paper["name"]}-details' class="info_detail">
                 <p class="summary">{paper["summary"]}</p>
