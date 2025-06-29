@@ -12,11 +12,53 @@
 <body>
 
 <h1 id="top">Visual Generative Models</h1>
-<p><b><font size=3><font color='#D93053'>12</font> papers on Visual Generative Models.</font></b></p>
+<p><b><font size=3><font color='#D93053'>13</font> papers on Visual Generative Models.</font></b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on June 29, 2025 at 17:06 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on June 29, 2025 at 17:34 (UTC+8).</font></p>
 <h2>Foundation Algorithms & Models</h2>
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('Fluid-details')"><i>Fluid: Scaling Autoregressive Text-to-image Generative Models with Continuous Tokens</i></p>
+            <p class="paper_detail">Lijie Fan, Tianhong Li, Siyang Qin, Yuanzhen Li, Chen Sun, Michael Rubinstein, Deqing Sun, Kaiming He, Yonglong Tian</p>
+            <p class="paper_detail">Google DeepMind, MIT</p>
+            <p class="paper_detail"><b><font color=#202020>Oct 17, 2024 &nbsp; Fluid</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2410.13863">ICLR 2025</a> &nbsp; <font color=#B0B0B0></font></p>
+            
+            <div id='Fluid-details' class="info_detail">
+                <p class="summary">It shows auto-regressive models with <b>continuous tokens beat discrete tokens counterpart</b>, and finds some empirical observations during scaling.</p>
+                
+                <p>
+<figure>
+    <img src='resource/figs/2024-10-17-Fluid-fig1.png' width=500>
+    <figcaption>
+        <b>Figure 1.</b> <b>Image tokenizer:</b> discrete (VQGAN) or continuous (VAE). <b>Text tokenizer:</b> discrete (T5-XXL).
+        <b>Model structure:</b> transformer with cross-attention modules attending to text embeddings.
+        <b>Loss:</b> cross-entropy loss on text tokens and diffusion loss on image tokens.
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-10-17-Fluid-fig2.png' width=700>
+    <figcaption><b>Figure 2.</b> Scaling behavior of validation loss on <b>model size</b>.</figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-10-17-Fluid-fig3.png' width=700>
+    <figcaption><b>Figure 3.</b> <b>Random-order masks</b> on <b>continuous image tokens</b> perform the best. Continuous prefers random order, discrete prefers raster order. </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-10-17-Fluid-fig4.png' width=700>
+    <figcaption><b>Figure 4.</b> Random-order masks on continuous tokens scale with <b>training computes</b>.</figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-10-17-Fluid-fig5.png' width=700>
+    <figcaption><b>Figure 5.</b> Strong correlation between <b>validation loss</b> and <b>evaluation metrics</b>.</figcaption>
+</figure>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>

@@ -17,7 +17,48 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
 "summary": """It fine-tunes LLaVA-OneVision 7B for both <b>multimodal understanding & generation evaluation</b> by pairwise ranking & pointwise scoring.""",
-"details": ""
+"details": """"""
+},
+{
+"title": "Fluid: Scaling Autoregressive Text-to-image Generative Models with Continuous Tokens",
+"author": "Lijie Fan, Tianhong Li, Siyang Qin, Yuanzhen Li, Chen Sun, Michael Rubinstein, Deqing Sun, Kaiming He, Yonglong Tian",
+"organization": "Google DeepMind, MIT",
+"date": "20241017",
+"venue": "ICLR 2025",
+"pdf_url": "https://arxiv.org/pdf/2410.13863",
+"code_url": "",
+"name": "Fluid",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """It shows auto-regressive models with <b>continuous tokens beat discrete tokens counterpart</b>, and finds some empirical observations during scaling.""",
+"details": 
+"""
+<figure>
+    <img src='2024-10-17-Fluid-fig1.png' width=500>
+    <figcaption>
+        <b>Figure 1.</b> <b>Image tokenizer:</b> discrete (VQGAN) or continuous (VAE). <b>Text tokenizer:</b> discrete (T5-XXL).
+        <b>Model structure:</b> transformer with cross-attention modules attending to text embeddings.
+        <b>Loss:</b> cross-entropy loss on text tokens and diffusion loss on image tokens.
+    </figcaption>
+</figure>
+<figure>
+    <img src='2024-10-17-Fluid-fig2.png' width=700>
+    <figcaption><b>Figure 2.</b> Scaling behavior of validation loss on <b>model size</b>.</figcaption>
+</figure>
+<figure>
+    <img src='2024-10-17-Fluid-fig3.png' width=700>
+    <figcaption><b>Figure 3.</b> <b>Random-order masks</b> on <b>continuous image tokens</b> perform the best. Continuous prefers random order, discrete prefers raster order. </figcaption>
+</figure>
+<figure>
+    <img src='2024-10-17-Fluid-fig4.png' width=700>
+    <figcaption><b>Figure 4.</b> Random-order masks on continuous tokens scale with <b>training computes</b>.</figcaption>
+</figure>
+<figure>
+    <img src='2024-10-17-Fluid-fig5.png' width=700>
+    <figcaption><b>Figure 5.</b> Strong correlation between <b>validation loss</b> and <b>evaluation metrics</b>.</figcaption>
+</figure>
+"""
 },
 {
 "title": "Scaling Diffusion Transformers to 16 Billion Parameters",
