@@ -22,6 +22,36 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 # """,
 # },
 {
+"title": "Wan: Open and Advanced Large-Scale Video Generative Models",
+"author": "Tongyi Wanxiang",
+"organization": "Alibaba",
+"date": "20250326",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2503.20314",
+"code_url": "https://github.com/Wan-Video/Wan2.1/",
+"name": "Wan",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """<b>Alibaba Tongyi Wanxiang</b>'s text-to-video and image-to-video generation models (14B) with DiT structure.""",
+"details": 
+"""
+<p><b>Data procssing pipeline</b>. <i>Fundamental dimensions:</i> text, aesthetic, NSFW score, watermark and logo, black border, overexposure, synthetic image, blur, duration and resolution. <i>Visual quality:</i> clustering, scoring. <i>Motion quality:</i> optimal motion, medium-quality motion, static videos, camera-driven motion, low-quality motion, shaky camera footage. <i>Visual text data:</i> hundreds of millions of text-containing images by rendering Chinese characters on a pure white background and large amounts from real-world data. <i>Captions:</i> celebrities, landmarks, movie characters, object counting, OCR, camera angle and motion, categories, relational understanding, re-caption, editing instruction caption, group image description, human-annotated captions.</p>
+<figure>
+    <img src='2025-03-26-Wan-fig2.png' width=500>
+    <figcaption><b>Figure 1.</b> <b>VAE</b> with 8x8x4 compression ratio is trained by L1 reconstruction loss + KL loss + LPIPS perceptual loss. </figcaption>
+</figure>
+<figure>
+    <img src='2025-03-26-Wan-fig3.png' width=600>
+    <figcaption><b>Figure 2.</b> <b>Architecture</b>. Text prompt encoded by umT5 is injected by cross-attention; timestep is embedded by MLP; using flow-matching loss.</figcaption>
+</figure>
+<figure>
+    <img src='2025-03-26-Wan-fig5.png' width=600>
+    <figcaption><b>Figure 3.</b> <b>I2V framework.</b> Image condition is incorporated through channel-concat and <i>CLIP image encodings</i>.</figcaption>
+</figure>
+""",
+},
+{
 "title": "Step-Video-TI2V Technical Report: A State-of-the-Art Text-Driven Image-to-Video Generation Model",
 "author": "Step-Video Team",
 "organization": "StepFun",
