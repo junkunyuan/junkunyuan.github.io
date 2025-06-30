@@ -22,6 +22,29 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 # """,
 # },
 {
+"title": "Step-Video-TI2V Technical Report: A State-of-the-Art Text-Driven Image-to-Video Generation Model",
+"author": "Step-Video Team",
+"organization": "StepFun",
+"date": "20250314",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2503.11251",
+"code_url": "https://github.com/stepfun-ai/Step-Video-TI2V/",
+"name": "Step-Video-TI2V",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """<b>StepFun</b>'s image-to-video generation model (30B), trained upon Step-Video-T2V, by incorporating conditions of motion and channel-concat image.""",
+"details": 
+"""
+<figure>
+    <img src='2025-03-14-Step-Video-TI2V-fig1.png' width=600>
+    <figcaption>
+        <b>Figure 1.</b> <b>Image condition:</b> channel-concat of <i>noise-augmented</i> image condition.
+        <b>Motion condition:</b> optical flow-based motion + timestep. </figcaption>
+</figure>
+""",
+},
+{
 "title": "Seedream 2.0: A Native Chinese-English Bilingual Image Generation Foundation Model",
 "author": "ByteDance's Seed Vision Team",
 "organization": "ByteDance",
