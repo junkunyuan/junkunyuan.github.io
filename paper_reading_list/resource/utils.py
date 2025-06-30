@@ -2,6 +2,7 @@ venue_name_dict = {
     "AAAI": "AAAI Conference on Artificial Intelligence",
     "arXiv": "",
     "ICCV": "International Conference on Computer Vision",
+    "ICLR": "International Conference on Learning Representations",
     "IJCV": "International Journal of Computer Vision",
     "KDD": "ACM SIGKDD Conference on Knowledge Discovery and Data Mining",
     "MM": "International Conference on Multimedia",

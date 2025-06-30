@@ -22,6 +22,93 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 # """,
 # },
 {
+"title": "T2I-CompBench: A Comprehensive Benchmark for Open-world Compositional Text-to-image Generation",
+"author": "Kaiyi Huang, Kaiyue Sun, Enze Xie, Zhenguo Li, Xihui Liu",
+"organization": "The University of Hong Kong, Huawei Noah's Ark Lab",
+"date": "20230712",
+"venue": "NeurIPS 2023",
+"pdf_url": "https://arxiv.org/pdf/2307.06350",
+"code_url": "https://github.com/Karine-Huang/T2I-CompBench/",
+"name": "T2I-CompBench",
+"comment": "",
+"category": "Datasets & Evaluation",
+"jupyter_notes": "",
+"summary": """It uses 6000 prompts to evaluate model capability on compositional generation, including attribute binding, object relationship, complex compositions.""",
+"details": 
+"""
+<ul>
+    <li> Attribute binding prompts: at least two objects with two attributes from color, shape, texture.
+    <li> Object relationship prompts: at least two objects with spatial relationship or non-spatial relationship.
+    <li> Complex compositions prompts: more than two objects or more than two sub-categories.
+</ul>
+<figure>
+    <img src='2023-07-12-t2icompbench-fig1.png' width=700>
+    <figcaption><li> <b>Figure 1.</b> Use disentangled BLIP-VQA to evaluate attribute binding, UniDet-based metric to evaluate spatial relationship, CLIPScore to evaluate non-spatial relationship, and 3-in-1 metric (average score of the three metrics) to evaluate complex compositions.</figcaption>
+</figure>
+""",
+},
+{
+"title": "CLIPScore: A Reference-free Evaluation Metric for Image Captioning",
+"author": "Jack Hessel, Ari Holtzman, Maxwell Forbes, Ronan Le Bras, Yejin Choi",
+"organization": "Allen Institute for AI, University of Washington",
+"date": "20210418",
+"venue": "EMNLP 2021",
+"pdf_url": "https://arxiv.org/pdf/2104.08718",
+"code_url": "https://github.com/jmhessel/clipscore",
+"name": "CLIPScore",
+"comment": "",
+"category": "Datasets & Evaluation",
+"jupyter_notes": "",
+"summary": """It proposes a reference-free metric mainly focusing on semantic alignment for image generation evaluation.""",
+"details": 
+"""
+<ul>
+    <li> CLIPScore calculates the cosine similarity between a caption and an image, multiplying the result by 2.5 (some use 1.).
+    <li> CLIPScore is sensitive to adversarially constructed image captions.
+    <li> CLIPScore generalizes well on never-before-seen images.
+    <li> CLIPScore frees from the shortcomings of n-gram matching that disfavors good captions with new words and favors captions with familiar words.
+</ul>
+""",
+},
+{
+"title": "Pick-a-Pic: An Open Dataset of User Preferences for Text-to-Image Generation",
+"author": "Yuval Kirstain, Adam Polyak, Uriel Singer, Shahbuland Matiana, Joe Penna, Omer Levy",
+"organization": "Tel Aviv University, Stability AI",
+"date": "20230502",
+"venue": "NeurIPS 2023",
+"pdf_url": "https://arxiv.org/pdf/2305.01569",
+"code_url": "https://github.com/yuvalkirstain/PickScore/",
+"name": "PickScore",
+"comment": "",
+"category": "Datasets & Evaluation",
+"jupyter_notes": "",
+"summary": """Pick-a-Pic: use a web app to collect user preferences; PickScore: train a CLIP-based model on preference data for image generation evaluation.""",
+"details": 
+"""
+""",
+},
+{
+"title": "ImageReward: Learning and Evaluating Human Preferences for Text-to-Image Generation",
+"author": "Jiazheng Xu, Xiao Liu, Yuchen Wu, Yuxuan Tong, Qinkai Li, Ming Ding, Jie Tang, Yuxiao Dong",
+"organization": "Tsinghua University, Zhipu AI, Beijing University of Posts and Telecommunications",
+"date": "20230412",
+"venue": "NeurIPS 2023",
+"pdf_url": "https://arxiv.org/pdf/2304.05977",
+"code_url": "https://github.com/THUDM/ImageReward/",
+"name": "ImageReward",
+"comment": "",
+"category": "Datasets & Evaluation",
+"jupyter_notes": "",
+"summary": """It trains BLIP on 137K human preference image pairs for image generation and use it to tune diffusion models by Reward Feedback Learning (ReFL).""",
+"details": 
+"""
+<figure>
+    <img src='2023-04-12-imagereward-fig1.png' width=600>
+    <figcaption><b>Figure 1.</b> (1) use DiffusionDB prompts to generate images; (2) Rate and rank; (3) Train ImageReward using ranking data; (4) tune models via ReFL.</figcaption>
+</figure>
+""",
+},
+{
 "title": "SimpleAR: Pushing the Frontier of Autoregressive Visual Generation through Pretraining, SFT, and RL",
 "author": "Junke Wang, Zhi Tian, Xun Wang, Xinyu Zhang, Weilin Huang, Zuxuan Wu, Yu-Gang Jiang",
 "organization": "Fudan University, ByteDance Seed",
@@ -513,6 +600,27 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 """,
 },
 {
+"title": "Human Preference Score: Better Aligning Text-to-Image Models with Human Preference",
+"author": "Xiaoshi Wu, Keqiang Sun, Feng Zhu, Rui Zhao, Hongsheng Li",
+"organization": "CUHK, SenseTime Research, Shanghai Jiao Tong University, Centre for Perceptual and Interactive Intelligence, Shanghai AI Lab",
+"date": "20230325",
+"venue": "ICCV 2023",
+"pdf_url": "https://arxiv.org/pdf/2303.14420",
+"code_url": "https://github.com/tgxs002/align_sd/",
+"name": "HPS",
+"comment": "",
+"category": "Datasets & Evaluation",
+"jupyter_notes": "",
+"summary": """It fine-tunes CLIP on annotated 98K SD generated images from 25K prompts for image generation evaluation.""",
+"details": 
+"""
+<figure>
+    <img src='2023-03-25-hps-fig1.png' width=650>
+    <figcaption><b>Figure 1.</b> <b>Train score model:</b> the same as CLIP except for the sample with the highest preference is taken as the positive; <b>Finetune image generation model using the score model:</b> append a special token to the prompts of worse images for training; remove that token during inference.</figcaption>
+</figure>
+""",
+},
+{
 "title": "Scalable Diffusion Models with Transformers",
 "author": "William Peebles, Saining Xie",
 "organization": "UC Berkeley, New York University",
@@ -647,6 +755,23 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 """,
 },
 {
+"title": "FVD: A new Metric for Video Generation",
+"author": "Thomas Unterthiner, Sjoerd van Steenkiste, Karol Kurach, Raphaël Marinier, Marcin Michalski, Sylvain Gelly",
+"organization": "Johannes Kepler University, IDSIA, Google Brain",
+"date": "20190504",
+"venue": "ICLR workshop 2019",
+"pdf_url": "https://openreview.net/pdf?id=rylgEULtdN",
+"code_url": "",
+"name": "FVD",
+"comment": "",
+"category": "Datasets & Evaluation",
+"jupyter_notes": "",
+"summary": """Extend FID for <u>video generation</u> evaluation by replacing 2D InceptionNet with pre-trained Inflated 3D convnet.""",
+"details": 
+"""
+""",
+},
+{
 "title": "Neural Discrete Representation Learning",
 "author": "Aaron van den Oord, Oriol Vinyals, Koray Kavukcuoglu",
 "organization": "DeepMind",
@@ -670,6 +795,40 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 <figure>
     <img src='2017-11-02-VQ-VAE-fig1.png' width=900>
 </figure>
+""",
+},
+{
+"title": "GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium",
+"author": "Martin Heusel, Hubert Ramsauer, Thomas Unterthiner, Bernhard Nessler, Sepp Hochreiter",
+"organization": "Johannes Kepler University Linz",
+"date": "20170626",
+"venue": "NeurIPS 2017",
+"pdf_url": "https://arxiv.org/pdf/1706.08500",
+"code_url": "",
+"name": "FID",
+"comment": "",
+"category": "Datasets & Evaluation",
+"jupyter_notes": "",
+"summary": """Calculate <b>Fréchet distance</b> between Gaussian distributions of InceptionNet features of real-world and synthetic data for image generation evaluation.""",
+"details": 
+"""
+""",
+},
+{
+"title": "Improved Techniques for Training GANs",
+"author": "Tim Salimans, Ian Goodfellow, Wojciech Zaremba, Vicki Cheung, Alec Radford, Xi Chen",
+"organization": "OpenAI",
+"date": "20160610",
+"venue": "NeurIPS 2016",
+"pdf_url": "https://arxiv.org/pdf/1606.03498",
+"code_url": "https://github.com/openai/improved-gan/",
+"name": "Inception Score",
+"comment": "",
+"category": "Datasets & Evaluation",
+"jupyter_notes": "",
+"summary": """Calculate <b>KL divergence between p(y|x) and p(y)</b> that aims to minimize the entropy across predictions and maximize the entropy across predictions of classes for image generation evaluation.""",
+"details": 
+"""
 """,
 },
 ]

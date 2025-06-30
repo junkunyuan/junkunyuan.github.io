@@ -83,15 +83,16 @@ def build_main_content_of_each_domain(domain):
                 <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/{paper["jupyter_notes"]}" class="note">(see notes in jupyter)</a></p>
                 """
             details = paper["details"].replace("<img src='", "<img src='resource/figs/")
-
+            
             content_cate += \
             f"""
             <p class="little_split"></p>
             <div style="border-left: 8px solid {color_bar}; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('{paper["name"]}-details')"><i>{paper["title"]}</i></p>
-            <p class="paper_detail">{paper["author"]} &nbsp;&nbsp;|&nbsp;&nbsp; {paper["organization"]}</p>
-            <p class="paper_detail"><b><font color=#202020>{date} &nbsp; {paper["name"]}</font></b> {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#B0B0B0>{venue_all}</font></p>
+            <p class="paper_detail">{paper["author"]}</p>
+            <p class="paper_detail">{paper["organization"]}</p>
+            <p class="paper_detail"><b><font color=#202020>{date} &nbsp; {paper["name"]}</font></b> {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#D0D0D0>{venue_all}</font></p>
             {comment}
             <div id='{paper["name"]}-details' class="info_detail">
                 <p class="summary">{paper["summary"]}</p>
