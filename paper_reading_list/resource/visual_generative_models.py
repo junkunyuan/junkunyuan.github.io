@@ -22,6 +22,103 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 # """,
 # },
 {
+"title": "SimpleAR: Pushing the Frontier of Autoregressive Visual Generation through Pretraining, SFT, and RL",
+"author": "Junke Wang, Zhi Tian, Xun Wang, Xinyu Zhang, Weilin Huang, Zuxuan Wu, Yu-Gang Jiang",
+"organization": "Fudan University, ByteDance Seed",
+"date": "20250415",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2504.11455",
+"code_url": "https://github.com/wdrink/SimpleAR/",
+"name": "SimpleAR",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """A vanilla, open-sourced AR model (0.5B) for 1K text-to-image generation, trained by pre-training, SFT, RL (GRPO), and acceleration.""",
+"details": 
+"""
+<ul>
+    <li> Use <i>Qwen</i> structure and taking <i>Cosmos</i> as the visual tokenizer with 64K codebook and 16 ratio downsampling.
+    <li> Training stages: (1) pre-training on 512 resolution; (2) SFT on 1024 resolution; (3) RL on 1024 resolution.
+    <li> Use LLM initialization does not improve DPG-Bench performance.
+    <li> Use 2D RoPE will not improve performance, but is necessary for dynamic resolution generation.
+    <li> Use GRPO with CLIP as the reward model improves more than using HPS v2.
+    <li> Use some acceleration techniques: KV cache, vLLM serving, and speculative jacobi decoding.
+</ul>
+""",
+},
+{
+"title": "Seedream 3.0 Technical Report",
+"author": "ByteDance Seed Vision Team",
+"organization": "ByteDance",
+"date": "20250415",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2504.11346",
+"code_url": "",
+"name": "Seedream 3.0",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """<b>ByteDance Seed Vision Team</b>'s text-to-image generation model, improving Seedream 2.0 by representation alignment, larger reward models.""",
+"details": 
+"""
+<ul>
+    <li> Employ defect-aware training: stop gradient on watermarks, subtitles, overlaid text, mosaic pattern.
+    <li> Introduce a <i>representation alignment loss</i>: cosine distance between the feature of MMDiT and DINOv2-L.
+    <li> Find <i>scaling property of VLM-based reward model</i>.
+    <li> Other improvements: (1) mixed-resolution training; (2) <i>cross-modality RoPE</i>; (3) diverse aesthetic captions in SFT.
+</ul>
+<figure>
+    <img src='2025-04-15-Seedream 3.0-fig1.png' width=400>
+    <figcaption><b>Figure 1.</b> Seedream3.0 achieves the best ELO performance.</figcaption>
+</figure>
+""",
+},
+{
+"title": "Seaweed-7B: Cost-Effective Training of Video Generation Foundation Model",
+"author": "ByteDance Seaweed Team",
+"organization": "ByteDance",
+"date": "20250411",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2504.08685",
+"code_url": "",
+"name": "Seaweed-7B",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """<b>ByteDance Seaweed Team</b>'s text-to-video and image-to-video generation model (7B), trained on O(100M) videos using 665K H100 GPU hours.""",
+"details": 
+"""
+<figure>
+    <img src='2025-04-11-Seaweed-7B-fig2.png' width=450>
+    <figcaption><b>Figure 1.</b> <b>VAE</b> with compression ratio of 16x16x4 (48 channels) or 8x8x4 (16 channels). Using L1 + KL + LPIPS + adversarial losses. Using an <i>image discriminator and a video discriminator</i> is better than using either one. <i>Compressing using VAE outperforms patchification in DiT, and faster</i>.</figcaption>
+</figure>
+<figure>
+    <img src='2025-04-11-Seaweed-7B-fig3.png' width=200>
+    <figcaption><b>Figure 2.</b> <b>VAE training stages</b> for images and videos.</figcaption>
+</figure>
+<figure>
+    <img src='2025-04-11-Seaweed-7B-fig4.png' width=800>
+    <figcaption><b>Figure 3.</b> Use <b>mixed resolution & durations & frame rate</b> VAE training converges slower but performs better than training on a low resolution.</figcaption>
+</figure>
+<figure>
+    <img src='2025-04-11-Seaweed-7B-fig6.png' width=650>
+    <figcaption><b>Figure 4.</b> <b>Full attention</b> enjoys training scalability.</figcaption>
+</figure>
+<figure>
+    <img src='2025-04-11-Seaweed-7B-fig5.png' width=250>
+    <figcaption><b>Figure 5.</b> The proposed <b>hybrid-stream</b> is better than dual-stream (MMDiT).</figcaption>
+</figure>
+<figure>
+    <img src='2025-04-11-Seaweed-7B-fig7.png' width=500>
+    <figcaption><b>Figure 6.</b> <b>4-stage pre-training.</b> (1) <b>Multi-task pre-training:</b> text-to-video, image-to-video, video-to-video. Input features and conditions are channel-concatenated, with a binary mask indicating the condition. Ratio of image-to-video is 20% during pre-training, and increases to 50%-75% detached for fine-tuning. (2) <b>SFT:</b> use 700K good videos and 50K top videos; The semantic alignment ability drops a little. (3) <b>RLHF:</b> lr=1e-7, beta=100, select win-lose from 4 candidates. (4) <b>Distillation:</b> trajectory segmented consistency distillation + CFG distillation + adversarial training, distill to 8 steps.</figcaption>
+</figure>
+<figure>
+    <img src='2025-04-11-Seaweed-7B-fig8.png' width=300>
+    <figcaption><b>Figure 7.</b> <b>ELO performance</b> on image-to-video generation.</figcaption>
+</figure>
+""",
+},
+{
 "title": "Wan: Open and Advanced Large-Scale Video Generative Models",
 "author": "Tongyi Wanxiang",
 "organization": "Alibaba",
@@ -90,9 +187,9 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "details": 
 """
 <ul>
-    <li> It uses a <i>self-developed bilingual LLM</i> and Glyph-Aligned ByT5 as text encoders.
-    <li> It uses a <i>self-developed VAE</i>.
-    <li> It uses learned positional embeddings on text tokens and scaled 2D RoPE on image tokens.
+    <li> Use a <i>self-developed bilingual LLM</i> and Glyph-Aligned ByT5 as text encoders.
+    <li> Use a <i>self-developed VAE</i>.
+    <li> Use learned positional embeddings on text tokens and scaled 2D RoPE on image tokens.
     <li> Training stages: pre-training => continue training => supervised fine-tuning => human feedback alignment.
     <li> Inference stages: user prompt => prompt engineering => text encoding => generation => refinement => output.
     <li> User experience platform: Doubao (豆包) and Dreamina (即梦).
@@ -328,9 +425,9 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "details": 
 """
 <ul>
-    <li> It trains a discrete visual tokenizer that is competitive to the continuous ones, e.g., SD VAE, SDXL VAE, and Consistency Decoder from OpenAI.
+    <li> It trains a discrete visual tokenizer that is competitive to the continuous ones, e.g., SD VAE, SDXL VAE, Consistency Decoder from OpenAI.
     <li> Vanilla autoregressive models, e.g., LlaMA, without inductive biases on visual signals can serve as the basis of image generation system.
-    <li> It is trained on 50M subset of LAION-COCO and 10M internal high aesthetics quality images.
+    <li> The model is trained on 50M subset of LAION-COCO and 10M internal high aesthetics quality images.
 </ul>
 """,
 },
@@ -395,6 +492,27 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 """,
 },
 {
+"title": "Human Preference Score v2: A Solid Benchmark for Evaluating Human Preferences of Text-to-Image Synthesis",
+"author": "Xiaoshi Wu, Yiming Hao, Keqiang Sun, Yixiong Chen, Feng Zhu, Rui Zhao, Hongsheng Li",
+"organization": "CUHK, SenseTime Research, Shanghai Jiao Tong University, Centre for Perceptual and Interactive Intelligence",
+"date": "20230615",
+"venue": "arXiv 2023",
+"pdf_url": "https://arxiv.org/pdf/2306.09341",
+"code_url": "https://github.com/tgxs002/HPSv2/",
+"name": "HPS v2",
+"comment": "",
+"category": "Datasets & Evaluation",
+"jupyter_notes": "",
+"summary": """It proposes HPD v2: 798K human preferences on 433K pairs of images; HPS v2: fine-tuned CLIP on HPD v2 for image generation evaluation.""",
+"details": 
+"""
+<figure>
+    <img src='2023-06-15-hpsv2-fig1.png' width=800>
+    <figcaption><b>Figure 1.</b> (1) Clean prompts from COCO captions and DiffusionDB by ChatGPT; (2) Generate images using 9 text-to-image generation models; (3) Rank and annotate each pair of images by humans; (4) Finetune CLIP and obtain a preference model to provide HPS v2 evaluation score.</figcaption>
+</figure>
+""",
+},
+{
 "title": "Scalable Diffusion Models with Transformers",
 "author": "William Peebles, Saining Xie",
 "organization": "UC Berkeley, New York University",
@@ -406,7 +524,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "visual_generative_models-dit.ipynb",
-"summary": """It replaces the conventional U-Net structure with <b>transformer</b> for scalable image generation, the timestep and condition are injected by adaLN-Zero""",
+"summary": """It replaces the conventional U-Net structure with <b>transformer</b> for scalable image generation, the timestep and condition are injected by adaLN-Zero.""",
 "details": 
 """
 <figure>
