@@ -90,8 +90,7 @@ def build_main_content_of_each_domain(domain):
             <div style="border-left: 8px solid {color_bar}; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('{paper["name"]}-details')"><i>{paper["title"]}</i></p>
-            <p class="paper_detail">{paper["author"]}</p>
-            <p class="paper_detail">{paper["organization"]}</p>
+            <p class="paper_detail">{paper["author"]} &nbsp;&nbsp;|&nbsp;&nbsp; {paper["organization"]}</p>
             <p class="paper_detail"><b><font color=#202020>{date} &nbsp; {paper["name"]}</font></b> {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#B0B0B0>{venue_all}</font></p>
             {comment}
             <div id='{paper["name"]}-details' class="info_detail">
