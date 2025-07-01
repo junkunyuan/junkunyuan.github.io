@@ -59,6 +59,9 @@ a {
     color: #404040;
     /* text-decoration: none; */
 }
+.no_dec {
+    text-decoration: none;
+}
 a:hover {
     text-decoration: underline;
     color: #4169E1;

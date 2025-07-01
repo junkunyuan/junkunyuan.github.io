@@ -57,6 +57,12 @@ def build_main_content_of_each_domain(domain):
         for key in papers.keys():
             papers[key].append(paper[key])
     papers = pd.DataFrame(papers)
+
+    ## Build table of contents
+    catalog = "<hr><p id='table'><b>Table of contents:</b></p><ul>"
+    for category in domain["categories"]:
+        catalog += f"""<li><a class="no_dec" href="#{category}-table">{category}</a></li>"""
+    catalog += """</ul>"""
     
     ## Build contents
     content_all_domain = ""
@@ -68,7 +74,7 @@ def build_main_content_of_each_domain(domain):
             continue
         paper_choose = papers[paper_choose]
         paper_choose = paper_choose.sort_values(by="date", ascending=False)
-        content_cate = f"<h2>{category}</h2>"
+        content_cate = f"""<h2 id="{category}-table"><a class="no_dec" href="#table">{category}</a></h2>"""
         for _, paper in paper_choose.iterrows():
             code = f"""&nbsp;&nbsp;|&nbsp;&nbsp; <a href="{paper['code_url']}">code</a>""" if len(paper['code_url']) > 0 else ""
 
@@ -128,7 +134,7 @@ def build_main_content_of_each_domain(domain):
         }
     </script>
     """
-    return content_all_domain
+    return catalog + content_all_domain
 
 if __name__ == "__main__":
     intro_temp = INTRODUCTION.replace("time_now", time_now)

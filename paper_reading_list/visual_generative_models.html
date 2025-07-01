@@ -12,11 +12,11 @@
 <body>
 
 <h1 id="top">Visual Generative Models</h1>
-<p><b><font size=3><font color='#D93053'>34</font> papers on Visual Generative Models.</font></b></p>
+<p><b><font size=3><font color='#D93053'>36</font> papers on Visual Generative Models.</font></b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on July 01, 2025 at 10:49 (UTC+8).</font></p>
-<h2>Foundation Algorithms & Models</h2>
+<p><font color=#B0B0B0>Last updated on July 01, 2025 at 13:57 (UTC+8).</font></p>
+<hr><p id='table'><b>Table of contents:</b></p><ul><li><a class="no_dec" href="#Foundation Algorithms & Models-table">Foundation Algorithms & Models</a></li><li><a class="no_dec" href="#Reinforcement Learning-table">Reinforcement Learning</a></li><li><a class="no_dec" href="#Acceleration-table">Acceleration</a></li><li><a class="no_dec" href="#Datasets & Evaluation-table">Datasets & Evaluation</a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#table">Foundation Algorithms & Models</a></h2>
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -660,9 +660,69 @@
             <div style="height: 0.05em;"></div>
             </div>
             <p class="little_split"></p>
-            <h2>Datasets & Evaluation</h2>
+            <h2 id="Reinforcement Learning-table"><a class="no_dec" href="#table">Reinforcement Learning</a></h2>
             <p class="little_split"></p>
             <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('Diffusion-DPO-details')"><i>Diffusion Model Alignment Using Direct Preference Optimization</i></p>
+            <p class="paper_detail">Bram Wallace, Meihua Dang, Rafael Rafailov, Linqi Zhou, Aaron Lou, Senthil Purushwalkam, Stefano Ermon, Caiming Xiong, Shafiq Joty, Nikhil Naik</p>
+            <p class="paper_detail">Salesforce AI, Stanford University</p>
+            <p class="paper_detail"><b><font color=#202020>Nov 21, 2023 &nbsp; Diffusion-DPO</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/SalesforceAIResearch/DiffusionDPO/">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2311.12908">CVPR 2024</a> &nbsp; <font color=#D0D0D0>Conference on Computer Vision and Pattern Recognition</font></p>
+            
+            <div id='Diffusion-DPO-details' class="info_detail">
+                <p class="summary">It adapts <b>Direct Preference Optimization (DPO)</b> from large language models to diffusion models.</p>
+                
+                <p>
+<ul>
+    <li> Train SD1.5 and SDXL1.0 on <i>Pick-a-Pic</i> human preference data consisting of 850K pairs from 59K unique prompts.
+    <li> Evaluations are performed on Pick-a-Pic validation set, Partiprompt, and HPS v2.
+</ul>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            <h2 id="Acceleration-table"><a class="no_dec" href="#table">Acceleration</a></h2>
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #B2EEC8; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('SD3-Turbo-details')"><i>Fast High-Resolution Image Synthesis with Latent Adversarial Diffusion Distillation</i></p>
+            <p class="paper_detail">Axel Sauer, Frederic Boesel, Tim Dockhorn, Andreas Blattmann, Patrick Esser, Robin Rombach</p>
+            <p class="paper_detail">Stability AI</p>
+            <p class="paper_detail"><b><font color=#202020>Mar 18, 2024 &nbsp; SD3-Turbo</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://export.arxiv.org/pdf/2403.12015">SIGGRAPH Asia 2024</a> &nbsp; <font color=#D0D0D0></font></p>
+            
+            <div id='SD3-Turbo-details' class="info_detail">
+                <p class="summary">It performs distillation of diffusion models in <b>latent space</b> using <b>teacher-synthetic data</b> and optimizing adversarial loss with <b>teacher as discriminator</b>.</p>
+                
+                <p>
+<figure>
+    <img src='resource/figs/2024-03-18-SD3-Turbo-fig1.png' width=500>
+    <figcaption><b>Figure 1.</b> <b>ADD:</b> (1) An adversarial loss for deceiving a discriminator (DINO v2); (2) A distillation loss for matching denoised output to that of a teacher. <b>The proposed LADD:</b> (1) Use <i>teacher-generated images</i> as the student input; (2) Use <i>the teacher</i> as the discrinimator. <b>Advantages:</b> (1) It is <i>efficient</i> to distill model in latent space; (2) Diffusion model as the discriminator provides <i>noise-level feedback</i>, handles <i>multi-aspect ratio data</i>.</figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-03-18-SD3-Turbo-fig2.png' width=700>
+    <figcaption><b>Figure 2.</b> (1) Training on <b>synthetic data</b> works better than real data. (2) Training on synthetic data only needs the <b>adversarial loss</b>. CS: CLIPScore.</figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-03-18-SD3-Turbo-fig3.png' width=700>
+    <figcaption><b>Figure 3.</b> Training using <b>LADD performs better than LCM</b>.</figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-03-18-SD3-Turbo-fig4.png' width=700>
+    <figcaption><b>Figure 4.</b> <b>Student model size</b> significant impacts performance, while the benefits of teacher models and data quality plateau.</figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-03-18-SD3-Turbo-fig5.png' width=500>
+    <figcaption><b>Figure 5.</b> Use LoRA for DPO-traning, and apply <b>DPO-LoRA</b> after LADD training.</figcaption>
+</figure>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            <h2 id="Datasets & Evaluation-table"><a class="no_dec" href="#table">Datasets & Evaluation</a></h2>
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #FFBBCC; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('UnifiedReward-details')"><i>Unified Reward Model for Multimodal Understanding and Generation</i></p>
             <p class="paper_detail">Yibin Wang, Yuhang Zang, Hao Li, Cheng Jin, Jiaqi Wang</p>
@@ -679,7 +739,7 @@
             <p class="little_split"></p>
             
             <p class="little_split"></p>
-            <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
+            <div style="border-left: 8px solid #FFBBCC; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Vbench-details')"><i>VBench: Comprehensive Benchmark Suite for Video Generative Models</i></p>
             <p class="paper_detail">Ziqi Huang, Yinan He, Jiashuo Yu, Fan Zhang, Chenyang Si, Yuming Jiang, Yuanhan Zhang, Tianxing Wu, Qingyang Jin, Nattapol Chanpaisit, Yaohui Wang, Xinyuan Chen, Limin Wang, Dahua Lin, Yu Qiao, Ziwei Liu</p>
@@ -716,7 +776,7 @@
             <p class="little_split"></p>
             
             <p class="little_split"></p>
-            <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
+            <div style="border-left: 8px solid #FFBBCC; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('GenEval-details')"><i>GenEval: An Object-Focused Framework for Evaluating Text-to-Image Alignment</i></p>
             <p class="paper_detail">Dhruba Ghosh, Hanna Hajishirzi, Ludwig Schmidt</p>
@@ -742,7 +802,7 @@
             <p class="little_split"></p>
             
             <p class="little_split"></p>
-            <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
+            <div style="border-left: 8px solid #FFBBCC; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('T2I-CompBench-details')"><i>T2I-CompBench: A Comprehensive Benchmark for Open-world Compositional Text-to-image Generation</i></p>
             <p class="paper_detail">Kaiyi Huang, Kaiyue Sun, Enze Xie, Zhenguo Li, Xihui Liu</p>
@@ -769,7 +829,7 @@
             <p class="little_split"></p>
             
             <p class="little_split"></p>
-            <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
+            <div style="border-left: 8px solid #FFBBCC; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('HPS v2-details')"><i>Human Preference Score v2: A Solid Benchmark for Evaluating Human Preferences of Text-to-Image Synthesis</i></p>
             <p class="paper_detail">Xiaoshi Wu, Yiming Hao, Keqiang Sun, Yixiong Chen, Feng Zhu, Rui Zhao, Hongsheng Li</p>
@@ -791,7 +851,7 @@
             <p class="little_split"></p>
             
             <p class="little_split"></p>
-            <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
+            <div style="border-left: 8px solid #FFBBCC; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('PickScore-details')"><i>Pick-a-Pic: An Open Dataset of User Preferences for Text-to-Image Generation</i></p>
             <p class="paper_detail">Yuval Kirstain, Adam Polyak, Uriel Singer, Shahbuland Matiana, Joe Penna, Omer Levy</p>
@@ -809,7 +869,7 @@
             <p class="little_split"></p>
             
             <p class="little_split"></p>
-            <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
+            <div style="border-left: 8px solid #FFBBCC; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('ImageReward-details')"><i>ImageReward: Learning and Evaluating Human Preferences for Text-to-Image Generation</i></p>
             <p class="paper_detail">Jiazheng Xu, Xiao Liu, Yuchen Wu, Yuxuan Tong, Qinkai Li, Ming Ding, Jie Tang, Yuxiao Dong</p>
@@ -831,7 +891,7 @@
             <p class="little_split"></p>
             
             <p class="little_split"></p>
-            <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
+            <div style="border-left: 8px solid #FFBBCC; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('HPS-details')"><i>Human Preference Score: Better Aligning Text-to-Image Models with Human Preference</i></p>
             <p class="paper_detail">Xiaoshi Wu, Keqiang Sun, Feng Zhu, Rui Zhao, Hongsheng Li</p>
@@ -853,7 +913,7 @@
             <p class="little_split"></p>
             
             <p class="little_split"></p>
-            <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
+            <div style="border-left: 8px solid #FFBBCC; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('CLIPScore-details')"><i>CLIPScore: A Reference-free Evaluation Metric for Image Captioning</i></p>
             <p class="paper_detail">Jack Hessel, Ari Holtzman, Maxwell Forbes, Ronan Le Bras, Yejin Choi</p>
@@ -877,7 +937,7 @@
             <p class="little_split"></p>
             
             <p class="little_split"></p>
-            <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
+            <div style="border-left: 8px solid #FFBBCC; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('FVD-details')"><i>FVD: A new Metric for Video Generation</i></p>
             <p class="paper_detail">Thomas Unterthiner, Sjoerd van Steenkiste, Karol Kurach, Raphaël Marinier, Marcin Michalski, Sylvain Gelly</p>
@@ -895,7 +955,7 @@
             <p class="little_split"></p>
             
             <p class="little_split"></p>
-            <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
+            <div style="border-left: 8px solid #FFBBCC; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('FID-details')"><i>GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium</i></p>
             <p class="paper_detail">Martin Heusel, Hubert Ramsauer, Thomas Unterthiner, Bernhard Nessler, Sepp Hochreiter</p>
@@ -913,7 +973,7 @@
             <p class="little_split"></p>
             
             <p class="little_split"></p>
-            <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
+            <div style="border-left: 8px solid #FFBBCC; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Inception Score-details')"><i>Improved Techniques for Training GANs</i></p>
             <p class="paper_detail">Tim Salimans, Ian Goodfellow, Wojciech Zaremba, Vicki Cheung, Alec Radford, Xi Chen</p>

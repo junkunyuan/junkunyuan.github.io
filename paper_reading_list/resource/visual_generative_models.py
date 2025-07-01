@@ -2,7 +2,7 @@ VISUAL_GENERATIVE_MODELS = dict()
 VISUAL_GENERATIVE_MODELS["file"] = "visual_generative_models.html"
 VISUAL_GENERATIVE_MODELS["title"] = "Visual Generative Models"
 VISUAL_GENERATIVE_MODELS["description"] = "Models that learn to generate visual signals, e.g., images, videos, 3D, etc."
-VISUAL_GENERATIVE_MODELS["categories"] = ["Foundation Algorithms & Models", "Datasets & Evaluation"]
+VISUAL_GENERATIVE_MODELS["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Acceleration", "Datasets & Evaluation"]
 VISUAL_GENERATIVE_MODELS["papers"] = [
 # {
 # "title": "",
@@ -21,6 +21,64 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 # """
 # """,
 # },
+{
+"title": "Diffusion Model Alignment Using Direct Preference Optimization",
+"author": "Bram Wallace, Meihua Dang, Rafael Rafailov, Linqi Zhou, Aaron Lou, Senthil Purushwalkam, Stefano Ermon, Caiming Xiong, Shafiq Joty, Nikhil Naik",
+"organization": "Salesforce AI, Stanford University",
+"date": "20231121",
+"venue": "CVPR 2024",
+"pdf_url": "https://arxiv.org/pdf/2311.12908",
+"code_url": "https://github.com/SalesforceAIResearch/DiffusionDPO/",
+"name": "Diffusion-DPO",
+"comment": "",
+"category": "Reinforcement Learning",
+"jupyter_notes": "visual_generative_models-diffusion_dpo.ipynb",
+"summary": """It adapts <b>Direct Preference Optimization (DPO)</b> from large language models to diffusion models.""",
+"details": 
+"""
+<ul>
+    <li> Train SD1.5 and SDXL1.0 on <i>Pick-a-Pic</i> human preference data consisting of 850K pairs from 59K unique prompts.
+    <li> Evaluations are performed on Pick-a-Pic validation set, Partiprompt, and HPS v2.
+</ul>
+""",
+},
+{
+"title": "Fast High-Resolution Image Synthesis with Latent Adversarial Diffusion Distillation",
+"author": "Axel Sauer, Frederic Boesel, Tim Dockhorn, Andreas Blattmann, Patrick Esser, Robin Rombach",
+"organization": "Stability AI",
+"date": "20240318",
+"venue": "SIGGRAPH Asia 2024",
+"pdf_url": "https://export.arxiv.org/pdf/2403.12015",
+"code_url": "",
+"name": "SD3-Turbo",
+"comment": "",
+"category": "Acceleration",
+"jupyter_notes": "",
+"summary": """It performs distillation of diffusion models in <b>latent space</b> using <b>teacher-synthetic data</b> and optimizing adversarial loss with <b>teacher as discriminator</b>.""",
+"details": 
+"""
+<figure>
+    <img src='2024-03-18-SD3-Turbo-fig1.png' width=500>
+    <figcaption><b>Figure 1.</b> <b>ADD:</b> (1) An adversarial loss for deceiving a discriminator (DINO v2); (2) A distillation loss for matching denoised output to that of a teacher. <b>The proposed LADD:</b> (1) Use <i>teacher-generated images</i> as the student input; (2) Use <i>the teacher</i> as the discrinimator. <b>Advantages:</b> (1) It is <i>efficient</i> to distill model in latent space; (2) Diffusion model as the discriminator provides <i>noise-level feedback</i>, handles <i>multi-aspect ratio data</i>.</figcaption>
+</figure>
+<figure>
+    <img src='2024-03-18-SD3-Turbo-fig2.png' width=700>
+    <figcaption><b>Figure 2.</b> (1) Training on <b>synthetic data</b> works better than real data. (2) Training on synthetic data only needs the <b>adversarial loss</b>. CS: CLIPScore.</figcaption>
+</figure>
+<figure>
+    <img src='2024-03-18-SD3-Turbo-fig3.png' width=700>
+    <figcaption><b>Figure 3.</b> Training using <b>LADD performs better than LCM</b>.</figcaption>
+</figure>
+<figure>
+    <img src='2024-03-18-SD3-Turbo-fig4.png' width=700>
+    <figcaption><b>Figure 4.</b> <b>Student model size</b> significant impacts performance, while the benefits of teacher models and data quality plateau.</figcaption>
+</figure>
+<figure>
+    <img src='2024-03-18-SD3-Turbo-fig5.png' width=500>
+    <figcaption><b>Figure 5.</b> Use LoRA for DPO-traning, and apply <b>DPO-LoRA</b> after LADD training.</figcaption>
+</figure>
+""",
+},
 {
 "title": "GenEval: An Object-Focused Framework for Evaluating Text-to-Image Alignment",
 "author": "Dhruba Ghosh, Hanna Hajishirzi, Ludwig Schmidt",
