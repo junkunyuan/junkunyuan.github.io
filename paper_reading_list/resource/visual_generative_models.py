@@ -22,6 +22,67 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 # """,
 # },
 {
+"title": "GenEval: An Object-Focused Framework for Evaluating Text-to-Image Alignment",
+"author": "Dhruba Ghosh, Hanna Hajishirzi, Ludwig Schmidt",
+"organization": "University of Washington, Allen Institute for AI, LAION",
+"date": "20231017",
+"venue": "NeurIPS 2023",
+"pdf_url": "https://arxiv.org/pdf/2310.11513",
+"code_url": "https://github.com/djghosh13/geneval/",
+"name": "GenEval",
+"comment": "",
+"category": "Datasets & Evaluation",
+"jupyter_notes": "",
+"summary": """An <b>object-focused</b> framework for image generation evaluation.""",
+"details": 
+"""
+<figure>
+    <img src='2023-10-17-GenEval-fig1.png' width=600>
+    <figcaption><b>Figure 1.</b> GenEval detects objects using Mask2Former detector and evaluates attributes of them.</figcaption>
+</figure>
+<figure>
+    <img src='2023-10-17-GenEval-fig2.png' width=550>
+    <figcaption><b>Figure 2.</b> Specific evaluation perspectives of GenEval.</figcaption>
+</figure>
+""",
+},
+{
+"title": "VBench: Comprehensive Benchmark Suite for Video Generative Models",
+"author": "Ziqi Huang, Yinan He, Jiashuo Yu, Fan Zhang, Chenyang Si, Yuming Jiang, Yuanhan Zhang, Tianxing Wu, Qingyang Jin, Nattapol Chanpaisit, Yaohui Wang, Xinyuan Chen, Limin Wang, Dahua Lin, Yu Qiao, Ziwei Liu",
+"organization": "Nanyang Technological University, Shanghai Artificial Intelligence Laboratory, The Chinese University of Hong Kong, Nanjing University",
+"date": "20231129",
+"venue": "CVPR 2024",
+"pdf_url": "https://arxiv.org/pdf/2311.17982",
+"code_url": "https://github.com/Vchitect/VBench/",
+"name": "Vbench",
+"comment": "",
+"category": "Datasets & Evaluation",
+"jupyter_notes": "",
+"summary": """It evaluates video generation from 16 dimensions within the perspectives of video quality and video-prompt consistency.""",
+"details": 
+"""
+<ul>
+    <li> Content Categories: animal, architecture, food, human, lifestyle, plant, scenary, vehicles.
+    <li> Temporal quality-subject consistency: DINO feature similarity across frames.
+    <li> Temporal quality-background consistency: CLIP feature similarity across frames.
+    <li> Temporal quality-temporal flickering: mean absolute difference across frames.
+    <li> Temporal quality-motion smoothness: use video frame interpolation model to evaluate motion smoothness.
+    <li> Temporal quality-dynamic degree: use RAFT to estimate degree of dynamics.
+    <li> Frame-wise quality-aesthetic quality: use LAION aesthetic predictor.
+    <li> Frame-wise quality-imaging quality: use MUSIQ image quality predictor.
+    <li> Semantics-object class: use GRiT to detect classes.
+    <li> Semantics-multiple objects: detect success rate of generating all objects.
+    <li> Semantics-human action: use UMT to detect specific actions.
+    <li> Semantics-color: use GRiT for color captioning.
+    <li> Semantics-spatial relationship: use rule-based evaluation.
+    <li> Semantics-scene: use Tag2Text for scene captioning.
+    <li> Style-appearance style: use CLIP feature similarity.
+    <li> Style-temporal style: use ViCLIP to calculate video feature and temporal style description feature similarity.
+    <li> Overall consistency: use ViCLIP to evaluate overall semantics and style consistency.
+</ul>
+""",
+},
+{
 "title": "T2I-CompBench: A Comprehensive Benchmark for Open-world Compositional Text-to-image Generation",
 "author": "Kaiyi Huang, Kaiyue Sun, Enze Xie, Zhenguo Li, Xihui Liu",
 "organization": "The University of Hong Kong, Huawei Noah's Ark Lab",
@@ -43,7 +104,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 </ul>
 <figure>
     <img src='2023-07-12-t2icompbench-fig1.png' width=700>
-    <figcaption><li> <b>Figure 1.</b> Use disentangled BLIP-VQA to evaluate attribute binding, UniDet-based metric to evaluate spatial relationship, CLIPScore to evaluate non-spatial relationship, and 3-in-1 metric (average score of the three metrics) to evaluate complex compositions.</figcaption>
+    <figcaption><li><b>Figure 1.</b> Use disentangled BLIP-VQA to evaluate attribute binding, UniDet-based metric to evaluate spatial relationship, CLIPScore to evaluate non-spatial relationship, and 3-in-1 metric (average score of the three metrics) to evaluate complex compositions.</figcaption>
 </figure>
 """,
 },
@@ -530,7 +591,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "comment": "NeurIPS 2024 best paper award.",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
-"summary": """It improves <u>auto-regressive</u> image generation on image quality, inference speed, data efficiency, and scalability, by proposing <b>next-scale prediction</b>.""",
+"summary": """It improves auto-regressive image generation on image quality, inference speed, data efficiency, and scalability, by proposing <b>next-scale prediction</b>.""",
 "details": 
 """
 <figure>
@@ -766,7 +827,7 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 "comment": "",
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
-"summary": """Extend FID for <u>video generation</u> evaluation by replacing 2D InceptionNet with pre-trained Inflated 3D convnet.""",
+"summary": """Extend FID for video generation evaluation by replacing 2D InceptionNet with pre-trained Inflated 3D convnet.""",
 "details": 
 """
 """,
