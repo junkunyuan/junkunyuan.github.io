@@ -1,9 +1,9 @@
-VISUAL_GENERATIVE_MODELS = dict()
-VISUAL_GENERATIVE_MODELS["file"] = "visual_generative_models.html"
-VISUAL_GENERATIVE_MODELS["title"] = "Visual Generative Models"
-VISUAL_GENERATIVE_MODELS["description"] = "Models that learn to generate visual signals, e.g., images, videos, 3D, etc."
-VISUAL_GENERATIVE_MODELS["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Inference-Time Improvement", "Acceleration", "Datasets & Evaluation", "Downstream Tasks"]
-VISUAL_GENERATIVE_MODELS["papers"] = [
+VISUAL_GENERATION = dict()
+VISUAL_GENERATION["file"] = "visual_generation.html"
+VISUAL_GENERATION["title"] = "Visual Generation"
+VISUAL_GENERATION["description"] = "Learn to generate visual signals, e.g., images, videos, 3Ds, etc."
+VISUAL_GENERATION["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Inference-Time Improvement", "Acceleration", "Datasets & Evaluation", "Downstream Tasks"]
+VISUAL_GENERATION["papers"] = [
 # {
 # "title": "",
 # "author": "",

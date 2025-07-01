@@ -2,10 +2,11 @@ import pandas as pd
 from tqdm import tqdm
 from datetime import datetime
 from resource.main_content import MAIN_CONTENT
-from resource.visual_generative_models import VISUAL_GENERATIVE_MODELS
+from resource.visual_generation import VISUAL_GENERATION
+from resource.native_multimodal_generation import NATIVE_MULTIMODAL_GENERATION
 from resource.utils import get_venue_all, border_color_generator
 
-DOMAINS = [VISUAL_GENERATIVE_MODELS]
+DOMAINS = [VISUAL_GENERATION, NATIVE_MULTIMODAL_GENERATION]
 
 time_now = datetime.now().strftime('%B %d, %Y at %H:%M')
 
@@ -39,7 +40,7 @@ SUFFIX  = \
 
 
 def build_main_content_all_domains(domains, num_papers):
-    content = "<h2>Main Contents</h2>"
+    content = "<h2>Table of Contents</h2>"
     for domain, num_paper in zip(domains, num_papers):
         content += \
         f"""
