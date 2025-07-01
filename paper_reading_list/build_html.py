@@ -74,7 +74,7 @@ def build_main_content_of_each_domain(domain):
             continue
         paper_choose = papers[paper_choose]
         paper_choose = paper_choose.sort_values(by="date", ascending=False)
-        content_cate = f"""<h2 id="{category}-table"><a class="no_dec" href="#table">{category}</a></h2>"""
+        content_cate = f"""<h2 id="{category}-table"><a class="no_dec" href="#top">{category}</a></h2>"""
         for _, paper in paper_choose.iterrows():
             code = f"""&nbsp;&nbsp;|&nbsp;&nbsp; <a href="{paper['code_url']}">code</a>""" if len(paper['code_url']) > 0 else ""
 
@@ -95,12 +95,12 @@ def build_main_content_of_each_domain(domain):
             <p class="little_split"></p>
             <div style="border-left: 8px solid {color_bar}; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('{paper["name"]}-details')"><i>{paper["title"]}</i></p>
+            <p class="paper_title" onclick="toggleTable('{paper["name"]}-{category}-details')"><i>{paper["title"]}</i></p>
             <p class="paper_detail">{paper["author"]}</p>
             <p class="paper_detail">{paper["organization"]}</p>
             <p class="paper_detail"><b><font color=#202020>{date} &nbsp; {paper["name"]}</font></b> {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#D0D0D0>{venue_all}</font></p>
             {comment}
-            <div id='{paper["name"]}-details' class="info_detail">
+            <div id='{paper["name"]}-{category}-details' class="info_detail">
                 <p class="summary">{paper["summary"]}</p>
                 {jupyter_note}
                 <p>{details}</p>

@@ -2,7 +2,7 @@ VISUAL_GENERATIVE_MODELS = dict()
 VISUAL_GENERATIVE_MODELS["file"] = "visual_generative_models.html"
 VISUAL_GENERATIVE_MODELS["title"] = "Visual Generative Models"
 VISUAL_GENERATIVE_MODELS["description"] = "Models that learn to generate visual signals, e.g., images, videos, 3D, etc."
-VISUAL_GENERATIVE_MODELS["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Acceleration", "Datasets & Evaluation"]
+VISUAL_GENERATIVE_MODELS["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Inference-Time Improvement", "Acceleration", "Datasets & Evaluation", "Downstream Tasks"]
 VISUAL_GENERATIVE_MODELS["papers"] = [
 # {
 # "title": "",
@@ -19,8 +19,325 @@ VISUAL_GENERATIVE_MODELS["papers"] = [
 # "summary": """""",
 # "details": 
 # """
+# <b>Figure 1.</b> 
 # """,
 # },
+{
+"title": "Step1X-Edit: A Practical Framework for General Image Editing",
+"author": "Step1X-Image Team",
+"organization": "StepFun",
+"date": "20250424",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2504.17761",
+"code_url": "https://github.com/stepfun-ai/Step1X-Edit/",
+"name": "Step1X-Edit",
+"comment": "",
+"category": "Downstream Tasks",
+"jupyter_notes": "",
+"summary": """It uses a <b>MLLM to generate condition embedding</b> of the reference image and instructions for image generation editing.""",
+"details": 
+"""
+<ul>
+    <li> <b>Training date:</b> 1M images & 20M instruction-image data.
+    <li><b>Data construction.</b> (1) Subject addition and removal; (2) Subject replacement and background change; (3) Color Alteration and material modification; (4) Text modification; (5) Motion change; (6) Portrait editing; (7) Style transfer; (8) Tone transformation.
+    <li><b>Caption strategy.</b> Redundancy-enhanced annotation: multi-round annotation strategy. Stylized annotation via contextual examples: use style-aligned examples as contextual references. Use GPT-4o to annotate data for training in-house annotators. Bilingual: Chinese and English.
+</ul>
+<figure>
+    <img src='2025-04-24-Step1X-Edit-fig1.png' width=600>
+    <figcaption>
+        <b>Figure 1.</b> Multimodal large language model (Qwen-VL): generate embeddings of instruction and reference images.
+    </figcaption>
+</figure>
+""",
+},
+{
+"title": "Denoising Diffusion Implicit Models",
+"author": "Jiaming Song, Chenlin Meng, Stefano Ermon",
+"organization": "Stanford University",
+"date": "20201006",
+"venue": "ICLR 2021",
+"pdf_url": "https://arxiv.org/pdf/2010.02502",
+"code_url": "https://github.com/ermongroup/ddim/",
+"name": "DDIM",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """Accelerate sampling of diffusion models by introducing a <b>non-Markovian, deterministic process</b> that achieves high-quality results with fewer steps while preserving training consistency.""",
+"details": 
+"""
+<figure>
+    <img src='2020-10-06-ddim-fig1.png' width=500>
+    <figcaption><b>Figure 1.</b> Comparisons between Markovian DDPM (left) and non-Markovian DDIM (right).</figcaption>
+</figure>
+<figure>
+    <img src='2020-10-06-ddim-fig2.png' width=250>
+    <figcaption><b>Figure 2.</b> Accelerate sampling by skipping time steps.</figcaption>
+</figure>
+""",
+},
+{
+"title": "Improving Video Generation with Human Feedback",
+"author": "Jie Liu, Gongye Liu, Jiajun Liang, Ziyang Yuan, Xiaokun Liu, Mingwu Zheng, Xiele Wu, Qiulin Wang, Wenyu Qin, Menghan Xia, Xintao Wang, Xiaohong Liu, Fei Yang, Pengfei Wan, Di Zhang, Kun Gai, Yujiu Yang, Wanli Ouyang",
+"organization": "CUHK, Tsinghua University, Kuaishou Technology, Shanghai Jiao Tong University, Shanghai AI Lab",
+"date": "20250123",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2501.13918",
+"code_url": "https://github.com/KwaiVGI/VideoAlign/",
+"name": "Flow-RWR, Flow-DPO",
+"comment": "",
+"category": "Reinforcement Learning",
+"jupyter_notes": "",
+"summary": """It introduces a human preference video dataset, and adapts diffusion-based reinforcement learning to flow-based video generation models.""",
+"details": 
+"""
+""",
+},
+{
+"title": "Can We Generate Images with CoT? Let's Verify and Reinforce Image Generation Step by Step",
+"author": "Ziyu Guo, Renrui Zhang, Chengzhuo Tong, Zhizheng Zhao, Peng Gao, Hongsheng Li, Pheng-Ann Heng",
+"organization": "CUHK, Peking University, Shanghai AI Lab",
+"date": "20250123",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2501.13926",
+"code_url": "https://github.com/ZiyuGuo99/Image-Generation-CoT/",
+"name": "PARM",
+"comment": "",
+"category": "Reinforcement Learning, Inference-Time Improvement",
+"jupyter_notes": "",
+"summary": """It applies the idea of <b>Chain-of-Thought</b> into image generation and combines it with reinforcement learning to further improve performance.""",
+"details": 
+"""
+<ul>
+    <li>Propose Potential Assessment Reward Model (PARM) to combine the advantages of ORM and PRM.</li>
+    <li>Successfully apply self-correction to auto-regressive image generation models.</li>
+</ul>
+<figure>
+    <img src='2025-01-23-cot-fig1.png' width=600>
+    <figcaption><b>Figure 1.</b> ORM is coarse, PRM does not know when to make decision, PARM combines them.</figcaption>
+</figure>
+<figure>
+    <img src='2025-01-23-cot-fig2.png' width=250>
+    <figcaption><b>Figure 2.</b> It is observed that self-correction also works in image generation by fine-tuning Show-o.</figcaption>
+</figure>
+""",
+},
+{
+"title": "Is Noise Conditioning Necessary for Denoising Generative Models?",
+"author": "Qiao Sun, Zhicheng Jiang, Hanhong Zhao, Kaiming He",
+"organization": "MiT",
+"date": "20250218",
+"venue": "ICML 2025",
+"pdf_url": "https://arxiv.org/pdf/2502.13129",
+"code_url": "",
+"name": "noise-unconditional model",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """Theoretical and empirical analysis on denoising diffusion models <b>without a timestep input</b> for image generation.""",
+"details": 
+"""
+<ul>
+    <li> Many denoising generative models perform robustly even in the absence of noise conditioning.
+    <li> Flow-based ones can even produce improved results without noise conditioning.
+</ul>
+""",
+},
+{
+"title": "InstructVideo: Instructing Video Diffusion Models with Human Feedback",
+"author": "Hangjie Yuan, Shiwei Zhang, Xiang Wang, Yujie Wei, Tao Feng, Yining Pan, Yingya Zhang, Ziwei Liu, Samuel Albanie, Dong Ni",
+"organization": "Zhejiang University, Alibaba Group, Tsinghua University, Singapore University of Technology and Design, Nanyang Technological University, University of Cambridge",
+"date": "20231219",
+"venue": "CVPR 2024",
+"pdf_url": "https://arxiv.org/pdf/2312.12490",
+"code_url": "https://github.com/ali-vilab/VGen/",
+"name": "InstructVideo",
+"comment": "",
+"category": "Reinforcement Learning",
+"jupyter_notes": "",
+"summary": """It uses HPS v2 to provide reward feedback and train video generation models in an editing manner.""",
+"details": 
+"""
+""",
+},
+{
+"title": "Optimizing Prompts for Text-to-Image Generation",
+"author": "Yaru Hao, Zewen Chi, Li Dong, Furu Wei",
+"organization": "Microsoft Research",
+"date": "20221219",
+"venue": "NeurIPS 2023",
+"pdf_url": "https://arxiv.org/pdf/2212.09611",
+"code_url": "https://github.com/microsoft/LMOps/",
+"name": "promptist",
+"comment": "",
+"category": "Reinforcement Learning",
+"jupyter_notes": "",
+"summary": """It uses <b>LLM to refine prompts</b> for preference-aligned image generation by taking relevance and aesthetics as rewards.""",
+"details": 
+"""
+<figure>
+    <img src='2022-12-19-promptist-fig1.png' width=550>
+    <figcaption><b>Figure 1.</b> (1) Fine-tune a language model (LM) to learn to optimize prompts; (2) Further fine-tune LM with PPO (aesthetic & relevance are rewards).</figcaption>
+</figure>
+""",
+},
+{
+"title": "Ideas in Inference-time Scaling can Benefit Generative Pre-training Algorithms",
+"author": "Jiaming Song, Linqi Zhou",
+"organization": "Luma AI",
+"date": "20250310",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2503.07154",
+"code_url": "",
+"name": "Inference can Beat Pretraining",
+"comment": "",
+"category": "Inference-Time Improvement",
+"jupyter_notes": "",
+"summary": """Analyze generative pre-training from an <b>inference-first</b> idea, and scaling inference from a perspective of scaling sequence length & refinement steps.""",
+"details": 
+"""
+<ul>
+    <li> Pre-training algorithms should have inference-scalability in sequence length and refinement steps.
+    <li> Algorithms should scale training efficiently by reduing inference computation.
+    <li> One should verify whether the model has enough capacity to represent the target distribution during inference.
+    <li> Not scalable in either sequence length or refinement steps: VAE, GAN, Normalizing Flows.
+    <li> Scalable in sequence length but not refinement steps: GPT, PixelCNN, MaskGiT, VAR.
+    <li> Scalable in refinement steps but not in sequence length: diffusion models, energy-based models, consistency models.
+    <li> Scalable in both, with sequence length in the outer loop: AR-Diffusion, Rolling diffusion, MAR.
+    <li> Scalable in both, with refinement steps in the outer loop: autoregression distribution smoothing.
+</ul>
+""",
+},
+{
+"title": "Evaluating Text-to-Visual Generation with Image-to-Text Generation",
+"author": "Zhiqiu Lin, Deepak Pathak, Baiqi Li, Jiayao Li, Xide Xia, Graham Neubig, Pengchuan Zhang, Deva Ramanan",
+"organization": "Crnegie Mellon University, Meta",
+"date": "20240401",
+"venue": "ECCV 2024",
+"pdf_url": "https://arxiv.org/pdf/2404.01291",
+"code_url": "https://github.com/linzhiqiu/t2v_metrics/",
+"name": "VQAScore",
+"comment": "",
+"category": "Datasets & Evaluation",
+"jupyter_notes": "",
+"summary": """VQAScore: alignment probability of "yes" answer from a VQA model (CLIP-FlanT5); GenAI-Bench: 1600 prompts for image generation evaluation.""",
+"details": 
+"""
+""",
+},
+{
+"title": "T2V-CompBench: A Comprehensive Benchmark for Compositional Text-to-video Generation",
+"author": "Kaiyue Sun, Kaiyi Huang, Xian Liu, Yue Wu, Zihan Xu, Zhenguo Li, Xihui Liu",
+"organization": "The University of Hong Kong, The Chinese University of Hong Kong, Huawei Noah's Ark Lab",
+"date": "20240719",
+"venue": "T2V-CompBench",
+"pdf_url": "https://arxiv.org/pdf/2407.14505",
+"code_url": "https://github.com/KaiyueSun98/T2V-CompBench/",
+"name": "T2V-CompBench",
+"comment": "",
+"category": "Datasets & Evaluation",
+"jupyter_notes": "",
+"summary": """Evaluate video generation on <b>compositional generation</b>: consistent attribute, dynamic attribute, spatial relationships, motion, action, object interations, numeracy.""",
+"details": 
+"""
+<ul>
+    <li> Find nouns and verbs by identifying them using WordNet from Pika Discord channels, used to generate prompts by GPT-4.
+    <li> Consistent attribute binding: two objects, two attributes, and at least one active verb from color, shape, texture, and human-related attributes.
+    <li> Dynamic attribute binding: color and light change, shape and size change, texture change, combined change.
+    <li> Spatial relationships: two objects with spatial relationships like "on the left of".
+    <li> Motion binding: one or two objects with specified moving direction like "leftwards".
+    <li> Action binding: bind actions to corresponding objects.
+    <li> Object interactions: dynamic interactions like pysical interactions.
+    <li> Generative numeracy: a specific number of objects.
+    <li> Video LLM-based metrics (Grid-LLaVa) is used for evaluating consistent attribute binding, action binding, object interactions.
+    <li> Image LLM-based metrics (LLaVa) is used for evaluating dynamic attribute binding.
+    <li> Grounding DINO is used for evaluating spatial relationships and numeracy.
+    <li> Grounding SAM + DOT is used for evaluating motion binding.
+</ul>
+<figure>
+    <img src='2024-07-19-t2vcompbench-fig1.png' width=800>
+    <figcaption><b>Figure 1.</b> T2V-CompBench: categories (left), evaluation methods (middle), and benchmarking model performance (right).</figcaption>
+</figure>
+""",
+},
+{
+"title": "Zigzag Diffusion Sampling: Diffusion Models Can Self-Improve via Self-Reflection",
+"author": "Lichen Bai, Shitong Shao, Zikai Zhou, Zipeng Qi, Zhiqiang Xu, Haoyi Xiong, Zeke Xie",
+"organization": "The Hong Kong University of Science and Technology (Guangzhou), Mohamed bin Zayed University of Artificial Intelligence, Baidu Inc",
+"date": "20241214",
+"venue": "ICLR 2025",
+"pdf_url": "https://arxiv.org/pdf/2412.10891",
+"code_url": "https://github.com/xie-lab-ml/Zigzag-Diffusion-Sampling/",
+"name": "Z-Sampling",
+"comment": "",
+"category": "Inference-Time Improvement",
+"jupyter_notes": "",
+"summary": """It emploits <b>guidance gap between denosing and inversion</b> by iteratively performing them for improve image generation quality.""",
+"details": 
+"""
+<figure>
+    <img src='2024-12-14-Z-Sampling-fig2.png' width=300>
+    <figcaption><b>Figure 1.</b> Capture more <b>semantics</b> by denoising more times.</figcaption>
+</figure>
+<figure>
+    <img src='2024-12-14-Z-Sampling-fig3.png' width=300>
+    <figcaption><b>Figure 2.</b> More <b>efficient</b> and <b>effective</b> than common denoising.</figcaption>
+</figure>
+""",
+},
+{
+"title": "Understanding Diffusion Models: A Unified Perspective",
+"author": "Calvin Luo",
+"organization": "Google Brain",
+"date": "20220825",
+"venue": "arXiv 2022",
+"pdf_url": "https://arxiv.org/pdf/2208.11970",
+"code_url": "",
+"name": "Unified Perspective on Diffusion Models",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """Introduction to VAE, DDPM, score-based generative model, guidance from a <b>unified generative perspective</b>.""",
+"details": 
+"""
+""",
+},
+{
+"title": "Inference-Time Scaling for Diffusion Models beyond Scaling Denoising Steps",
+"author": "Nanye Ma, Shangyuan Tong, Haolin Jia, Hexiang Hu, Yu-Chuan Su, Mingda Zhang, Xuan Yang, Yandong Li, Tommi Jaakkola, Xuhui Jia, Saining Xie",
+"organization": "NYU, MIT, Google",
+"date": "20250116",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2501.09732",
+"code_url": "",
+"name": "Inference-Time Scaling Analysis",
+"comment": "",
+"category": "Inference-Time Improvement",
+"jupyter_notes": "",
+"summary": """Analysis on <b>inference-time scaling</b> of diffusion models for image generation from the axes of <b>verifiers</b> and <b>algorithms</b>.""",
+"details": 
+"""
+<ul>
+    <li>Use some <i>verifiers</i> to provide feedback: FID, IS, CLIP, DINO; Aesthetic Score Predictor, CLIPScore, ImageReward, Ensemble.</li>
+    <li>Use some <i>algorithms</i> to find better noise: Random Search, Zero-Order Search, Search Over Paths.</li>
+    <li><i>Random Search:</i> run using different initial random noise and select the best final result by the verifier.</li>
+    <li><i>Zero-Order Search:</i> run under different random noise around a pivot noise and select the best final result by the verifier, the best one is then served as a new pivot for next round search.</li>
+    <li><i>Search Over Paths:</i> run under different random noise to a specific step, sample noises for each noisy sample and simulate forward process, then perform denoising and select the best candiate using the verifier, continue this process until finish denoising.</li>
+    <li>Scaling through search leads to substantial improvement across model sizes.</li>
+    <li>No single verifier-algorithm configuration is universally optimal.</li>
+    <li>Inference-time search further improves performance of the model which has already been fine-tuned.</li>
+    <li>Fewer denoising steps but more searching iterations enables efficient convergence but lower final performance.</li>
+    <li>With a fixed inference compute budget, performing search on small models can outperform larger models without search.</li>
+</ul>
+<figure>
+    <img src='2025-01-16-scaling-analysis fig1.png' width=400>
+    <figcaption><b>Figure 1.</b> <b>Scale with search</b> is more effective than scale with denoising steps.</figcaption>
+</figure>
+<figure>
+    <img src='2025-01-16-scaling-analysis fig2.png' width=400>
+    <figcaption><b>Figure 2.</b> <b>Random Search performs the best</b> because it has larger space that converges the fastest.</figcaption>
+</figure>
+""",
+},
 {
 "title": "Diffusion Model Alignment Using Direct Preference Optimization",
 "author": "Bram Wallace, Meihua Dang, Rafael Rafailov, Linqi Zhou, Aaron Lou, Senthil Purushwalkam, Stefano Ermon, Caiming Xiong, Shafiq Joty, Nikhil Naik",
