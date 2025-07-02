@@ -27,7 +27,7 @@ f"""
 INTRODUCTION = \
 f"""
 <h1 id="top">title</h1>
-<p><b><font size=3><font color='#D93053'>total_paper_num</font> papers on domain_name.</font></b></p>
+<p class="larger"><b><font color='#D93053'>total_paper_num</font> papers on domain_name.</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
 <p><font color=#B0B0B0>Last updated on time_now (UTC+8).</font></p>
@@ -40,12 +40,10 @@ SUFFIX  = \
 
 
 def build_main_content_all_domains(domains, num_papers):
-    content = "<h2>Table of Contents</h2>"
+    content = """<hr><p id="table" class="larger"><b>Table of contents:</b></p><ul>"""
     for domain, num_paper in zip(domains, num_papers):
-        content += \
-        f"""
-        <p><a href={domain["file"]}>{domain["title"]}</a> ({num_paper} papers) &nbsp; <font color=#B0B0B0>{domain["description"]}</font></p>
-        """
+        content += f"""<li><a class="no_dec" href={domain["file"]}>{domain["title"]}</a> ({num_paper} papers) &nbsp; <font color=#B0B0B0>{domain["description"]}</font></li>"""
+    content += "</ul>"
     return content
 
 
@@ -60,7 +58,7 @@ def build_main_content_of_each_domain(domain):
     papers = pd.DataFrame(papers)
 
     ## Build table of contents
-    catalog = "<hr><p id='table'><b>Table of contents:</b></p><ul>"
+    catalog = """<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul>"""
     for category in domain["categories"]:
         catalog += f"""<li><a class="no_dec" href="#{category}-table">{category}</a></li>"""
     catalog += """</ul>"""
@@ -90,6 +88,8 @@ def build_main_content_of_each_domain(domain):
                 <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/{paper["jupyter_notes"]}" class="note">(see notes in jupyter)</a></p>
                 """
             details = paper["details"].replace("<img src='", "<img src='resource/figs/")
+            author = f"""<p class="paper_detail">{paper["author"]}</p>""" if paper["author"] else ""
+            organization = f"""<p class="paper_detail">{paper["organization"]}</p>""" if paper["organization"] else ""
             
             content_cate += \
             f"""
@@ -97,8 +97,8 @@ def build_main_content_of_each_domain(domain):
             <div style="border-left: 8px solid {color_bar}; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('{paper["name"]}-{category}-details')"><i>{paper["title"]}</i></p>
-            <p class="paper_detail">{paper["author"]}</p>
-            <p class="paper_detail">{paper["organization"]}</p>
+            {author}
+            {organization}
             <p class="paper_detail"><b><font color=#202020>{date} &nbsp; {paper["name"]}</font></b> {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#D0D0D0>{venue_all}</font></p>
             {comment}
             <div id='{paper["name"]}-{category}-details' class="info_detail">

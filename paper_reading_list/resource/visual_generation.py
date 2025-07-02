@@ -1,7 +1,7 @@
 VISUAL_GENERATION = dict()
 VISUAL_GENERATION["file"] = "visual_generation.html"
 VISUAL_GENERATION["title"] = "Visual Generation"
-VISUAL_GENERATION["description"] = "Learn to generate visual signals, e.g., images, videos, 3Ds, etc."
+VISUAL_GENERATION["description"] = "Learn to generate visual signals, e.g., images, video, 3D, etc."
 VISUAL_GENERATION["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Inference-Time Improvement", "Acceleration", "Datasets & Evaluation", "Downstream Tasks"]
 VISUAL_GENERATION["papers"] = [
 # {
@@ -19,7 +19,12 @@ VISUAL_GENERATION["papers"] = [
 # "summary": """""",
 # "details": 
 # """
-# <b>Figure 1.</b> 
+# <figure>
+#     <img src="" width=500>
+#     <figcaption>
+#     <b>Figure 1.</b> 
+#     </figcaption>
+# </figure>
 # """,
 # },
 {
