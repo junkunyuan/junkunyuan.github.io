@@ -19,14 +19,83 @@ NATIVE_MULTIMODAL_GENERATION["papers"] = [
 # "summary": """""",
 # "details": 
 # """
+# <ul>
+#     <li>
+# </ul>
 # <figure>
-#     <img src="" width=500>
+#     <img src='' width=500>
 #     <figcaption>
 #     <b>Figure 1.</b> 
 #     </figcaption>
 # </figure>
 # """,
 # },
+{
+"title": "Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Model",
+"author": "Chunting Zhou, Lili Yu, Arun Babu, Kushal Tirumala, Michihiro Yasunaga, Leonid Shamis, Jacob Kahn, Xuezhe Ma, Luke Zettlemoyer, Omer Levy",
+"organization": "Meta, Waymo, University of Southern California",
+"date": "20240820",
+"venue": "ICLR 2025",
+"pdf_url": "https://arxiv.org/pdf/2408.11039",
+"code_url": "",
+"name": "Transfusion",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """It trains a unified model (7B) on 2T multi-modal tokens by predicting discrete text tokens and diffusing continuous image tokens.""",
+"details": 
+"""
+<ul>
+    <li> Data: use total 2T tokens from: (1) Llama 2 tokenizer and corpus (2T tokens), (2) 380M Shutterstock images and captions (resized to 256x256).
+    <li> Training details: optimizer=AdamW, lr=3e-4, 250K steps, lambda=5, train_timesteps=1000, infer_timesteps=250, cfg=3.
+    <li> In text-to-image generation task, Transfusion exceeds Chameleon at less than a third of the compute.
+    <li> In image-to-text generation task, Transfusion exceeds Chameleon at 21.8% of the FLOPs.
+    <li> In text-to-text generation task, Transfusion exceeds Chameleon at 50% of FLOPs.
+</ul>
+<figure>
+    <img src='2024-08-20-Transfusion-fig1.png' width=500>
+    <figcaption>
+    <b>Figure 1.</b> <b>Transfusion structure.</b> It applies next-token prediction on discrete text tokens and diffusion loss on continuous image tokens: <i>L=L_LM+lambda*L_diffusion</i>. It uses <i>modality-specific</i> components with unshared parameters: embedding layer for text, and VAE (U-Net or linear structure, 8x8-8c) with linear or up/down blocks for images. It applies causal mask on text tokens and bidirectional mask on image tokens.
+    </figcaption>
+</figure>
+<figure>
+    <img src='2024-08-20-Transfusion-fig2.png' width=500>
+    <figcaption>
+    <b>Figure 2.</b> Transfusion outperforms Chameleon while scaling.
+    </figcaption>
+</figure>
+<figure>
+    <img src='2024-08-20-Transfusion-fig3.png' width=400>
+    <figcaption>
+    <b>Figure 3.</b> Transfusion outperforms Chameleon by using few FLOPs, both are 7B. 
+    </figcaption>
+</figure>
+<figure>
+    <img src='2024-08-20-Transfusion-fig4.png' width=500>
+    <figcaption>
+    <b>Figure 4.</b> Transfusion achieves competitive results compared with Llama2. 
+    </figcaption>
+</figure>
+<figure>
+    <img src='2024-08-20-Transfusion-fig5.png' width=400>
+    <figcaption>
+    <b>Figure 5.</b> <b>Encoder:</b> U-Net is better than linear (maybe bring more inductive bias). <b>Attention:</b> bidirectional is better than causal. 
+    </figcaption>
+</figure>
+<figure>
+    <img src='2024-08-20-Transfusion-fig6.png' width=500>
+    <figcaption>
+    <b>Figure 6.</b> Small patch size leads to better performance for providing more visual tokens.
+    </figcaption>
+</figure>
+<figure>
+    <img src='2024-08-20-Transfusion-fig7.png' width=500>
+    <figcaption>
+    <b>Figure 7.</b> Final performance.
+    </figcaption>
+</figure>
+""",
+},
 {
 "title": "GPT-4o System Card",
 "author": "",
@@ -39,7 +108,7 @@ NATIVE_MULTIMODAL_GENERATION["papers"] = [
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
-"summary": """A unified autoregressive model trained end-to-end across text, vision, and audio.""",
+"summary": """It proposes a unified autoregressive model trained end-to-end across text, vision, and audio.""",
 "details": 
 """
 <figure>

@@ -12,10 +12,10 @@
 <body>
 
 <h1 id="top">Native Multimodal Generation</h1>
-<p class="larger"><b><font color='#D93053'>2</font> papers on Native Multimodal Generation.</b></p>
+<p class="larger"><b><font color='#D93053'>3</font> papers on Native Multimodal Generation.</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on July 02, 2025 at 15:41 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on July 02, 2025 at 19:14 (UTC+8).</font></p>
 <hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" href="#Foundation Algorithms & Models-table">Foundation Algorithms & Models</a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#top">Foundation Algorithms & Models</a></h2>
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
@@ -61,7 +61,7 @@
             <p class="paper_detail"><b><font color=#202020>Oct 25, 2024 &nbsp; GPT-4o</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2410.21276?">arXiv 2024</a> &nbsp; <font color=#D0D0D0></font></p>
             
             <div id='GPT-4o-Foundation Algorithms & Models-details' class="info_detail">
-                <p class="summary">A unified autoregressive model trained end-to-end across text, vision, and audio.</p>
+                <p class="summary">It proposes a unified autoregressive model trained end-to-end across text, vision, and audio.</p>
                 
                 <p>
 <figure>
@@ -69,6 +69,73 @@
     <img src='resource/figs/2025-04-08-GPT-4o-Empirical-Study-fig2.png' width=500>
     <figcaption>
     <b>Figure 1.</b> <b>Visual generation capability evaluation.</b> <i>Text rendering:</i> correct spelling, alignment, formatting in document-style. <i>Compositional generation and prompt following:</i> accrately assembling complex scene elements, styles, attributes. <i>Geometric consistency and viewpoint realism:</i> 3D view synthesis, camera control, depth-conditioned rendering. <i>Comprehensive image transformation:</i> from low-level to high-level tasks.
+    </figcaption>
+</figure>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('Transfusion-Foundation Algorithms & Models-details')"><i>Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Model</i></p>
+            <p class="paper_detail">Chunting Zhou, Lili Yu, Arun Babu, Kushal Tirumala, Michihiro Yasunaga, Leonid Shamis, Jacob Kahn, Xuezhe Ma, Luke Zettlemoyer, Omer Levy</p>
+            <p class="paper_detail">Meta, Waymo, University of Southern California</p>
+            <p class="paper_detail"><b><font color=#202020>Aug 20, 2024 &nbsp; Transfusion</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2408.11039">ICLR 2025</a> &nbsp; <font color=#D0D0D0>International Conference on Learning Representations</font></p>
+            
+            <div id='Transfusion-Foundation Algorithms & Models-details' class="info_detail">
+                <p class="summary">It trains a unified model (7B) on 2T multi-modal tokens by predicting discrete text tokens and diffusing continuous image tokens.</p>
+                
+                <p>
+<ul>
+    <li> Data: use total 2T tokens from: (1) Llama 2 tokenizer and corpus (2T tokens), (2) 380M Shutterstock images and captions (resized to 256x256).
+    <li> Training details: optimizer=AdamW, lr=3e-4, 250K steps, lambda=5, train_timesteps=1000, infer_timesteps=250, cfg=3.
+    <li> In text-to-image generation task, Transfusion exceeds Chameleon at less than a third of the compute.
+    <li> In image-to-text generation task, Transfusion exceeds Chameleon at 21.8% of the FLOPs.
+    <li> In text-to-text generation task, Transfusion exceeds Chameleon at 50% of FLOPs.
+</ul>
+<figure>
+    <img src='resource/figs/2024-08-20-Transfusion-fig1.png' width=500>
+    <figcaption>
+    <b>Figure 1.</b> <b>Transfusion structure.</b> It applies next-token prediction on discrete text tokens and diffusion loss on continuous image tokens: <i>L=L_LM+lambda*L_diffusion</i>. It uses <i>modality-specific</i> components with unshared parameters: embedding layer for text, and VAE (U-Net or linear structure, 8x8-8c) with linear or up/down blocks for images. It applies causal mask on text tokens and bidirectional mask on image tokens.
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-08-20-Transfusion-fig2.png' width=500>
+    <figcaption>
+    <b>Figure 2.</b> Transfusion outperforms Chameleon while scaling.
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-08-20-Transfusion-fig3.png' width=400>
+    <figcaption>
+    <b>Figure 3.</b> Transfusion outperforms Chameleon by using few FLOPs, both are 7B. 
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-08-20-Transfusion-fig4.png' width=500>
+    <figcaption>
+    <b>Figure 4.</b> Transfusion achieves competitive results compared with Llama2. 
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-08-20-Transfusion-fig5.png' width=400>
+    <figcaption>
+    <b>Figure 5.</b> <b>Encoder:</b> U-Net is better than linear (maybe bring more inductive bias). <b>Attention:</b> bidirectional is better than causal. 
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-08-20-Transfusion-fig6.png' width=500>
+    <figcaption>
+    <b>Figure 6.</b> Small patch size leads to better performance for providing more visual tokens.
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/2024-08-20-Transfusion-fig7.png' width=500>
+    <figcaption>
+    <b>Figure 7.</b> Final performance.
     </figcaption>
 </figure>
 </p>
