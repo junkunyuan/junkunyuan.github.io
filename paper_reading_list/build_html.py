@@ -2,11 +2,8 @@ import pandas as pd
 from tqdm import tqdm
 from datetime import datetime
 from resource.main_content import MAIN_CONTENT
-from resource.visual_generation import VISUAL_GENERATION
-from resource.native_multimodal_generation import NATIVE_MULTIMODAL_GENERATION
+from resource import DOMAINS
 from resource.utils import get_venue_all, border_color_generator
-
-DOMAINS = [VISUAL_GENERATION, NATIVE_MULTIMODAL_GENERATION]
 
 time_now = datetime.now().strftime('%B %d, %Y at %H:%M')
 

@@ -1,0 +1,124 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="resource/html.css" type="text/css">
+    <link rel="shortcut icon" href="resource/my_photo.jpg">
+    <title>Paper Reading List</title>
+    <meta name="description" content="Paper Reading List">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div id="layout-content" style="margin-top:25px">
+<body>
+
+<h1 id="top">Multimodal Generation</h1>
+<p class="larger"><b><font color='#D93053'>1</font> papers on Multimodal Generation.</b></p>
+<p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
+<p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
+<p><font color=#B0B0B0>Last updated on July 03, 2025 at 15:32 (UTC+8).</font></p>
+<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" href="#Foundation Algorithms & Models-table">Foundation Algorithms & Models</a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#top">Foundation Algorithms & Models</a></h2>
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('Qwen-VL-Foundation Algorithms & Models-details')"><i>Qwen-VL: A Frontier Large Vision-Language Model with Versatile Abilities</i></p>
+            <p class="paper_detail">Jinze Bai, Shuai Bai, Shusheng Yang, Shijie Wang, Sinan Tan, Peng Wang, Junyang Lin, Chang Zhou, Jingren Zhou</p>
+            <p class="paper_detail">Alibaba Group</p>
+            <p class="paper_detail"><b><font color=#202020>Aug 24, 2023 &nbsp; Qwen-VL</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/QwenLM/Qwen-VL">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2308.12966">arXiv 2023</a> &nbsp; <font color=#D0D0D0></font></p>
+            
+            <div id='Qwen-VL-Foundation Algorithms & Models-details' class="info_detail">
+                <p class="summary">Built upon the language model Qwen-7B, it makes Qwen-VL to learn image description, QA, <b>grounding</b>, and <b>text-reading</b> by three-stage training.</p>
+                
+                <p>
+<ul>
+    <li> <b>Visual encoder (1.9B):</b> ViT (Openclip's ViT-bigG).
+    <li> <b>Vision-language adapter (0.08B):</b> Q-Former with 2D absolute positional encodings to produce 256 visual tokens.
+    <li> <b>LLM (7.7B):</b> Qwen-7B. 
+    <li> <b>Special tokens:</b> `&lt;img&gt; &lt;/img&gt;`: images; `&lt;box&gt; &lt;/box&gt;`: normalized bounding box; `&lt;ref&gt; &lt;/ref&gt;`: the content referred by bounding box.
+    <li> <b>Stage 1 (pre-training):</b> large-scale, weakly labeled, web-crawled image-text pairs. 5B data, 1.4B cleaned data (77% English and 23% Chinese). Freeze LLM and optimize the vision encoder and VL adapter. Train 50K steps with batchsize of 30720, consume 1.5B samples. Image: 224x224.
+    <li> <b>Stage 2 (multi-task pre-training).</b> Captioning, VQA, grounding, ref grounding, grounded captioning, OCR, pure-text autoregression. Image: 448x448. Train the whole model.
+    <li> <b>Stage 3 (instruction tuning).</b> Use 350K instruction tuning data. Freeze visual encoder and optimize the LLM and adapter.
+    <li> Qwen-VL can handle multi-lingual, multi-image, and multi-round conversation.
+</ul>
+<figure>
+    <img src='resource/figs/Qwen-VL-fig3.png' width=500>
+    <figcaption>
+    <b>Figure 1.</b> Three-stage Training.
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/Qwen-VL-fig4.png' width=400>
+    <figcaption>
+    <b>Figure 2.</b> Data for training stage 1.  
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/Qwen-VL-fig5.png' width=500>
+    <figcaption>
+    <b>Figure 3.</b> Data for training stage 2.  
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/Qwen-VL-fig6.png' width=500>
+    <figcaption>
+    <b>Figure 4.</b> Performance on image captioning and VQA.  
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/Qwen-VL-fig7.png' width=500>
+    <figcaption>
+    <b>Figure 5.</b> Performance on text-oriented VQA.  
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/Qwen-VL-fig8.png' width=500>
+    <figcaption>
+    <b>Figure 6.</b> Performance on referring expression comprehension.  
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/Qwen-VL-fig9.png' width=500>
+    <figcaption>
+    <b>Figure 7.</b> Performance on instruction-following benchmarks.  
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/Qwen-VL-fig1.png' width=400>
+    <figcaption>
+    <b>Figure 8.</b> Qwen-VL performance.
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/Qwen-VL-fig2.png' width=900>
+    <figcaption>
+    <b>Figure 9.</b> Qwen-VL capability.
+    </figcaption>
+</figure>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
+    <script>
+        function toggleTable(tableId) {
+            const container = document.getElementById(tableId);
+            const button = container.previousElementSibling;
+            const isVisible = window.getComputedStyle(container).display !== 'none';
+            if (!isVisible) {
+                const images = container.querySelectorAll('.lazy-load');
+                images.forEach(img => {
+                    if (!img.src && img.dataset.src) {
+                        img.src = img.dataset.src;
+                    }
+                });
+                container.style.display = 'block';
+                
+            } else {
+                container.style.display = 'none';
+                
+            }
+        }
+    </script>
+    
+</body>
+</html>

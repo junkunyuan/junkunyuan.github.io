@@ -1,7 +1,7 @@
 NATIVE_MULTIMODAL_GENERATION = dict()
 NATIVE_MULTIMODAL_GENERATION["file"] = "native_multimodal_generation.html"
 NATIVE_MULTIMODAL_GENERATION["title"] = "Native Multimodal Generation"
-NATIVE_MULTIMODAL_GENERATION["description"] = "Process and generate multiple modalities (e.g., text, images, video, audio) within a unified architecture."
+NATIVE_MULTIMODAL_GENERATION["description"] = "Integrate and generate multiple modalities (e.g., text, images, video, audio) within a unified model."
 NATIVE_MULTIMODAL_GENERATION["categories"] = ["Foundation Algorithms & Models"]
 NATIVE_MULTIMODAL_GENERATION["papers"] = [
 # {
