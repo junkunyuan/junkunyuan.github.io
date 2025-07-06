@@ -12,11 +12,46 @@
 <body>
 
 <h1 id="top">Multimodal Generation</h1>
-<p class="larger"><b><font color='#D93053'>1</font> papers on Multimodal Generation.</b></p>
+<p class="larger"><b><font color='#D93053'>2</font> papers on Multimodal Generation.</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on July 03, 2025 at 15:32 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on July 03, 2025 at 19:29 (UTC+8).</font></p>
 <hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" href="#Foundation Algorithms & Models-table">Foundation Algorithms & Models</a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#top">Foundation Algorithms & Models</a></h2>
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('Qwen2-VL-Foundation Algorithms & Models-details')"><i>Qwen2-VL: Enhancing Vision-Language Model's Perception of the World at Any Resolution</i></p>
+            <p class="paper_detail">Peng Wang, Shuai Bai, Sinan Tan, Shijie Wang, Zhihao Fan, Jinze Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin Ge, Yang Fan, Kai Dang, Mengfei Du, Xuancheng Ren, Rui Men, Dayiheng Liu, Chang Zhou, Jingren Zhou, Junyang Lin</p>
+            <p class="paper_detail">Alibaba Group</p>
+            <p class="paper_detail"><b><font color=#202020>Sep 18, 2024 &nbsp; Qwen2-VL</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/QwenLM/Qwen2.5-VL">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2409.12191">arXiv 2024</a> &nbsp; <font color=#D0D0D0></font></p>
+            
+            <div id='Qwen2-VL-Foundation Algorithms & Models-details' class="info_detail">
+                <p class="summary"></p>
+                
+                <p>
+<ul>
+    <li> <b>Visual encoder (675M).</b> Self-developed ViT. Use Naive Dynamic Resolution with 2D-RoPE to provide a variable number of visual tokens, with MLP to compress 2x2.
+    <li> <b>Language model (1.5B, 7.6B, 72B):</b>
+    <li> Qwen2-VL capabilities: general chat, multilingual image text understanding, formula recognition, function calling, UI interation, long document understanding, code/math reasoning, video understanding, grounding, live chat, agent potential.
+</ul>
+<figure>
+    <img src='resource/figs/Qwen2-VL-fig1.png' width=500>
+    <figcaption>
+    <b>Figure 1.</b> Qwen2-VL structure.
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/Qwen2-VL-fig2.png' width=500>
+    <figcaption>
+    <b>Figure 1.</b> Multimodal rotary position embedding (M-RoPE).
+    </figcaption>
+</figure>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>

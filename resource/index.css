@@ -59,6 +59,13 @@ a {
     color: #404040;
     /* text-decoration: none; */
 }
+.no_dec {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+    color: #4169E1;
+}
 p {
     color: #404040;
     margin-top: 0.0em;
@@ -68,7 +75,20 @@ p {
     font-family: Arial, sans-serif;
     font-size: 14px;
 }
+.larger {
+    font-size: 16px;
+}
+li {
+    color: #404040;
+    margin-top: 0.0em;
+    margin-bottom: 0.8em;
+    padding: 0;
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
 .paper_title {
+    /* cursor: pointer; */
     /* color: #202020; */
     color: #404040;
     font-size: 16px;
@@ -82,7 +102,25 @@ p {
     /* font-family: Arial, sans-serif; */
     /* font-weight:bold; */
 }
+.summary {
+    color: #202020;
+}
+.info_detail {
+    display: none;
+}
 .little_split{
     font-size: 5px;
+}
+figure {
+    margin: 0 10px;
+    text-align: center;
+}
+figcaption {
+    font-size: 14px;
+    color: #404040;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-top: 0.5em;
+    margin-bottom: 1.5em;
 }
 /* -------------------------------------------------------------------------------- */

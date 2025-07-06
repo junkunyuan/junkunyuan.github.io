@@ -24,7 +24,7 @@ f"""
                     <p>Research Scientist, &nbsp;<a href="https://hunyuan.tencent.com/">Hunyuan Multimodal Generation Team</a>&nbsp;&nbsp;@&nbsp;&nbsp;<a href="https://www.tencent.com/">Tencent</a></p>
                     <p>yuanjk0921@outlook.com</p>
                     <p>work and live in Shenzhen, China</p>
-                    <p><font color=#B0B0B0>Last updated on {time_now} (UTC+8)</font></p>
+                    <p><font color=#D0D0D0>Last updated on {time_now} (UTC+8)</font></p>
                 </td>
                 <td style="padding-right: 120px; padding-top: 10px;">
                     <img src="resource/my_photo.jpg" width="160">
@@ -38,10 +38,10 @@ BIOGRAPHY = \
 """
 <h2>Biography</h2>
 <p>
-  I am a research scientist in <a href="https://hunyuan.tencent.com/">Hunyuan Multimodal Generation Team</a> at <a href="https://www.tencent.com/">Tencent</a>, working on multimodal generative foundation models.
+  I am a research scientist in <a href="https://hunyuan.tencent.com/">Hunyuan Multimodal Generation Team</a> at <a href="https://www.tencent.com/">Tencent</a>, working on multimodal generative foundation models and their applications.
   <br><br>
 
-  I previously worked/interned in <a href="https://hunyuan.tencent.com/">Hunyuan Multimodal Generation Team</a> at <a href="https://www.tencent.com/">Tencent</a> from 2023 to 2025 (working with <a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ">Wei Liu</a>), and in <a href="http://vis.baidu.com/">Computer Vision Group</a> at <a href="https://home.baidu.com/">Baidu</a> from 2022 to 2023 (working with <a href="https://scholar.google.com/citations?user=PSzJxD8AAAAJ">Xinyu Zhang</a> and <a href="https://scholar.google.com/citations?user=z5SPCmgAAAAJ">Jingdong Wang</a>).<br><br>
+  I previously worked/interned in <a href="https://hunyuan.tencent.com/">Hunyuan Multimodal Generation Team</a> at <a href="https://www.tencent.com/">Tencent</a> during Sep 2023 — Jul 2025 (working with <a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ">Wei Liu</a>), and in <a href="http://vis.baidu.com/">Computer Vision Group</a> at <a href="https://home.baidu.com/">Baidu</a> during Jul 2022 — Aug 2023 (working with <a href="https://scholar.google.com/citations?user=PSzJxD8AAAAJ">Xinyu Zhang</a> and <a href="https://scholar.google.com/citations?user=z5SPCmgAAAAJ">Jingdong Wang</a>).<br><br>
 
   I received my PhD degree from <a href="http://www.zju.edu.cn/">Zhejiang University</a> in 2024, co-supervised by professors of <a href="https://scholar.google.com/citations?user=FOsNiMQAAAAJ">Kun Kuang</a>, <a href="https://person.zju.edu.cn/0096005">Lanfen Lin</a>, and 
   <a href="https://scholar.google.com/citations?user=XJLn4MYAAAAJ">Fei Wu</a>.<br><br>
@@ -58,7 +58,7 @@ def build_paper(papers):
     content = \
     """
     <h2>Publications</h2>
-    <p><a href="https://scholar.google.com/citations?user=j3iFVPsAAAAJ">Google Scholar Profile</a></p>
+    <p class="larger"><a href="https://scholar.google.com/citations?user=j3iFVPsAAAAJ">Google Scholar Profile</a></p>
     """
     item_content = ""
     color_year = ""
@@ -85,7 +85,7 @@ def build_paper(papers):
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>{paper["title"]}</i></p>
         <p class="paper_detail">{author}</p>
-        <p class="paper_detail">{date} {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#B0B0B0>{venue_all}</font></p>
+        <p class="paper_detail">{date} {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#D0D0D0>{venue_all}</font></p>
         {comment}
         <div style="height: 0.05em;"></div>
         </div>

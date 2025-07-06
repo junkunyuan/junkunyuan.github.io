@@ -1,0 +1,113 @@
+MULTIMODAL_UNDERSTANDING = dict()
+MULTIMODAL_UNDERSTANDING["file"] = "multimodal_understanding.html"
+MULTIMODAL_UNDERSTANDING["title"] = "Multimodal Understanding"
+MULTIMODAL_UNDERSTANDING["description"] = "Understand and reason by integrating multiple modalities (e.g., text, images, video, audio)."
+MULTIMODAL_UNDERSTANDING["categories"] = ["Foundation Algorithms & Models"]
+MULTIMODAL_UNDERSTANDING["papers"] = [
+# {
+# "title": "",
+# "author": "",
+# "organization": "",
+# "date": "",
+# "venue": "",
+# "pdf_url": "",
+# "code_url": "",
+# "name": "",
+# "comment": "",
+# "category": "",
+# "jupyter_notes": "",
+# "summary": """""",
+# "details": 
+# """
+# <ul>
+#     <li>
+# </ul>
+# """,
+# },
+{
+"title": "Qwen2-VL: Enhancing Vision-Language Model's Perception of the World at Any Resolution",
+"author": "Peng Wang, Shuai Bai, Sinan Tan, Shijie Wang, Zhihao Fan, Jinze Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin Ge, Yang Fan, Kai Dang, Mengfei Du, Xuancheng Ren, Rui Men, Dayiheng Liu, Chang Zhou, Jingren Zhou, Junyang Lin",
+"organization": "Alibaba Group",
+"date": "20240918",
+"venue": "arXiv 2024",
+"pdf_url": "https://arxiv.org/pdf/2409.12191",
+"code_url": "https://github.com/QwenLM/Qwen2.5-VL",
+"name": "Qwen2-VL",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """It improves Qwen-VL by using a <b>naive dynamic resolution</b> mechanism with <b>multimodal RoPE</b>, and a <b>unified image-video processing</b> paradigm.""",
+"details": 
+"""
+<ul>
+    <li> <b>Visual encoder (675M).</b> Use self-developed ViT. Employ Naive Dynamic Resolution with 2D-RoPE to provide a variable number of visual tokens for images or videos with different resolution and frame number. Compress visual tokens by 2x2 using MLP.
+    <li> <b>Language model (1.5B, 7.6B, 72B).</b> Qwen series.
+    <li> <b>Unified image and video processing:</b> (1) Sample each video at two frames per second; (2) Compress video inputs by 4x using 3D convs; (3) Each image is treated as two identical frames for consistency. (4) Limit tokens per video are set to 16384 by adjusting the resolution.
+    <li> <b>Three-stage training (same as Qwen-VL).</b> (1) Pre-training on 600B tokens by optimizing ViT; (2) Multi-task pre-raining on 600B + 800B tokens by optimizing all model parameters; (3) Instruction tuning on instructuion-following data (ChatML format) by optimizing LLM. 
+    <li> <b>Three model sizes:</b> Qwen2-VL-2B (on-device), Qwen2-VL-7B (performance-optimized), Qwen2-VL-72B (most capable).
+    <li> <b>Capabilities:</b> general chat, multilingual image text understanding, formula recognition, function calling, UI interation, long document understanding, code/math reasoning, video understanding, grounding, live chat, and agent potential.
+</ul>
+fig: fig1.png 600
+cap: <b>Qwen2-VL Structure.</b> It discards the multimodal connector module used in Qwen-VL.
+fig: fig2.png 600
+cap: <b>Unified Multimodal Rotary Position Embedding (M-RoPE)</b> for text, images, and videos.
+fig: fig3.png 500 fig4.png 500 fig5.png 500 
+cap: <b>Dataset format</b> example.
+fig: fig6.png 700 fig7.png 700 fig8.png 600
+cap: Comparisons with other state-of-the-art on <b>image-based</b> (top), <b>video-based</b> (middle), and <b>agent-based</b> (bottom) multimodal tasks.
+fig: fig9.png 550
+cap: <b>Dynamic resolution</b> achieves competitive results while consuming fewer tokens.
+fig: fig10.png 550
+cap: Some perceptual tasks enjoy a reasonable range of <b>min resolution size</b> which is used to scale small images.
+fig: fig11.png 550 fig12.png 550
+cap: <b>M-RoPE</b> improves performance and shows great extrapolation capability.
+fig: fig13.png 650
+cap: <b>Scaling performance</b> of model size and consuming tokens.
+""",
+},
+{
+"title": "Qwen-VL: A Frontier Large Vision-Language Model with Versatile Abilities",
+"author": "Jinze Bai, Shuai Bai, Shusheng Yang, Shijie Wang, Sinan Tan, Peng Wang, Junyang Lin, Chang Zhou, Jingren Zhou",
+"organization": "Alibaba Group",
+"date": "20230824",
+"venue": "arXiv 2023",
+"pdf_url": "https://arxiv.org/pdf/2308.12966",
+"code_url": "https://github.com/QwenLM/Qwen-VL",
+"name": "Qwen-VL",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """Built upon the language model Qwen-7B, it makes Qwen-VL to learn image description, QA, <b>grounding</b>, and <b>text-reading</b> by three-stage training.""",
+"details": 
+"""
+<ul>
+    <li> <b>Visual encoder (1.9B):</b> ViT (Openclip's ViT-bigG).
+    <li> <b>Vision-language adapter (0.08B):</b> Q-Former with 2D absolute positional encodings to produce 256 visual tokens.
+    <li> <b>LLM (7.7B):</b> Qwen-7B. 
+    <li> <b>Special tokens:</b> `&lt;img&gt; &lt;/img&gt;`: images; `&lt;box&gt; &lt;/box&gt;`: normalized bounding box; `&lt;ref&gt; &lt;/ref&gt;`: the content referred by bounding box.
+    <li> <b>Stage 1 (pre-training):</b> large-scale, weakly labeled, web-crawled image-text pairs. 5B data, 1.4B cleaned data (77% English and 23% Chinese). Freeze LLM and optimize the vision encoder and VL adapter. Train 50K steps with batchsize of 30720, consume 1.5B samples. Image: 224x224.
+    <li> <b>Stage 2 (multi-task pre-training).</b> Captioning, VQA, grounding, ref grounding, grounded captioning, OCR, pure-text autoregression. Image: 448x448. Train the whole model.
+    <li> <b>Stage 3 (instruction tuning).</b> Use 350K instruction tuning data. Freeze visual encoder and optimize the LLM and adapter.
+    <li> <b>Capabilities:</b> multi-lingual, multi-image, and multi-round conversation.
+</ul>
+fig: fig3.png 500
+cap: <b>Three-stage Training.</b>
+fig: fig4.png 350
+cap: Data for training <b>stage 1</b>.
+fig: fig5.png 500
+cap: Data for training <b>stage 2</b>.
+fig: fig6.png 600
+cap: Performance on <b>image captioning & VQA</b>.
+fig: fig7.png 500
+cap: Performance on <b>text-oriented VQA</b>.
+fig: fig8.png 500
+cap: Performance on <b>referring expression comprehension</b>.
+fig: fig9.png 400
+cap: Performance on <b>instruction-following</b> benchmarks.
+fig: fig1.png 400
+cap: <b>Overall performance.</b>
+fig: fig2.png 900
+cap: <b>Showcases</b> of Qwen-VL capability.
+""",
+},
+]

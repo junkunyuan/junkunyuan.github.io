@@ -3,7 +3,7 @@ from tqdm import tqdm
 from datetime import datetime
 from resource.main_content import MAIN_CONTENT
 from resource import DOMAINS
-from resource.utils import get_venue_all, border_color_generator
+from resource.utils import get_venue_all, border_color_generator, convert_fig_cap_to_figure
 
 time_now = datetime.now().strftime('%B %d, %Y at %H:%M')
 
@@ -84,10 +84,17 @@ def build_main_content_of_each_domain(domain):
                 f""" 
                 <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/{paper["jupyter_notes"]}" class="note">(see notes in jupyter)</a></p>
                 """
-            details = paper["details"].replace("<img src='", "<img src='resource/figs/")
+            details = paper["details"].replace("<img src='", f"<img src='resource/figs/{paper["name"]}/{paper["name"]}-")
+            
+            if "fig:" in details:
+                # import pdb; pdb.set_trace()
+                details = convert_fig_cap_to_figure(details, paper["name"])
+
             author = f"""<p class="paper_detail">{paper["author"]}</p>""" if paper["author"] else ""
             organization = f"""<p class="paper_detail">{paper["organization"]}</p>""" if paper["organization"] else ""
-            
+
+            debug = f"""<p>{paper["summary"]}</p><p>{details}</p>""" if "new paper" in paper["title"].lower() else ""
+
             content_cate += \
             f"""
             <p class="little_split"></p>
@@ -98,6 +105,7 @@ def build_main_content_of_each_domain(domain):
             {organization}
             <p class="paper_detail"><b><font color=#202020>{date} &nbsp; {paper["name"]}</font></b> {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#D0D0D0>{venue_all}</font></p>
             {comment}
+            {debug}
             <div id='{paper["name"]}-{category}-details' class="info_detail">
                 <p class="summary">{paper["summary"]}</p>
                 {jupyter_note}

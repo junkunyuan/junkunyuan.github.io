@@ -31,7 +31,7 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
-"title": "Step1X-Edit: A Practical Framework for General Image Editing",
+"title": "new paper Step1X-Edit: A Practical Framework for General Image Editing",
 "author": "Step1X-Image Team",
 "organization": "StepFun",
 "date": "20250424",
@@ -50,12 +50,8 @@ VISUAL_GENERATION["papers"] = [
     <li><b>Data construction.</b> (1) Subject addition and removal; (2) Subject replacement and background change; (3) Color Alteration and material modification; (4) Text modification; (5) Motion change; (6) Portrait editing; (7) Style transfer; (8) Tone transformation.
     <li><b>Caption strategy.</b> Redundancy-enhanced annotation: multi-round annotation strategy. Stylized annotation via contextual examples: use style-aligned examples as contextual references. Use GPT-4o to annotate data for training in-house annotators. Bilingual: Chinese and English.
 </ul>
-<figure>
-    <img src='2025-04-24-Step1X-Edit-fig1.png' width=600>
-    <figcaption>
-        <b>Figure 1.</b> Multimodal large language model (Qwen-VL): generate embeddings of instruction and reference images.
-    </figcaption>
-</figure>
+fig: fig1.png 600
+cap: <b>Structure.</b> <b>Multimodal large language model (Qwen-VL)</b> is used to generate embeddings of instruction and reference images.
 """,
 },
 {
@@ -73,14 +69,10 @@ VISUAL_GENERATION["papers"] = [
 "summary": """Accelerate sampling of diffusion models by introducing a <b>non-Markovian, deterministic process</b> that achieves high-quality results with fewer steps while preserving training consistency.""",
 "details": 
 """
-<figure>
-    <img src='2020-10-06-ddim-fig1.png' width=500>
-    <figcaption><b>Figure 1.</b> Comparisons between Markovian DDPM (left) and non-Markovian DDIM (right).</figcaption>
-</figure>
-<figure>
-    <img src='2020-10-06-ddim-fig2.png' width=250>
-    <figcaption><b>Figure 2.</b> Accelerate sampling by skipping time steps.</figcaption>
-</figure>
+fig: fig1.png 500
+cap: Comparisons between <b>Markovian DDPM</b> (left) and <b>non-Markovian DDIM</b> (right).
+fig: fig2.png 250
+cap: <b>Accelerate sampling</b> by skipping time steps.
 """,
 },
 {
@@ -110,23 +102,15 @@ VISUAL_GENERATION["papers"] = [
 "code_url": "https://github.com/ZiyuGuo99/Image-Generation-CoT/",
 "name": "PARM",
 "comment": "",
-"category": "Reinforcement Learning, Inference-Time Improvement",
+"category": "Inference-Time Improvement",
 "jupyter_notes": "",
 "summary": """It applies the idea of <b>Chain-of-Thought</b> into image generation and combines it with reinforcement learning to further improve performance.""",
 "details": 
 """
-<ul>
-    <li>Propose Potential Assessment Reward Model (PARM) to combine the advantages of ORM and PRM.</li>
-    <li>Successfully apply self-correction to auto-regressive image generation models.</li>
-</ul>
-<figure>
-    <img src='2025-01-23-cot-fig1.png' width=600>
-    <figcaption><b>Figure 1.</b> ORM is coarse, PRM does not know when to make decision, PARM combines them.</figcaption>
-</figure>
-<figure>
-    <img src='2025-01-23-cot-fig2.png' width=250>
-    <figcaption><b>Figure 2.</b> It is observed that self-correction also works in image generation by fine-tuning Show-o.</figcaption>
-</figure>
+fig: fig1.png 600
+cap: <b>Strategy comparisons.</b> ORM is coarse, PRM does not know when to make decision, PARM combines them.
+fig: fig2.png 250
+cap: It is observed that <b>self-correction</b> also works in image generation by fine-tuning Show-o.
 """,
 },
 {
@@ -145,8 +129,8 @@ VISUAL_GENERATION["papers"] = [
 "details": 
 """
 <ul>
-    <li> Many denoising generative models perform robustly even in the absence of noise conditioning.
-    <li> Flow-based ones can even produce improved results without noise conditioning.
+    <li> Many denoising generative models perform <b>robustly</b> even in the absence of noise conditioning.
+    <li> <b>Flow</b>-based ones can even produce <b>improved results</b> without noise conditioning.
 </ul>
 """,
 },
@@ -182,10 +166,8 @@ VISUAL_GENERATION["papers"] = [
 "summary": """It uses <b>LLM to refine prompts</b> for preference-aligned image generation by taking relevance and aesthetics as rewards.""",
 "details": 
 """
-<figure>
-    <img src='2022-12-19-promptist-fig1.png' width=550>
-    <figcaption><b>Figure 1.</b> (1) Fine-tune a language model (LM) to learn to optimize prompts; (2) Further fine-tune LM with PPO (aesthetic & relevance are rewards).</figcaption>
-</figure>
+fig: fig1.png 500
+cap: <b>Training pipeline.</b> (1) Fine-tune a language model (LM) to learn to optimize prompts; (2) Further fine-tune LM with PPO.
 """,
 },
 {
@@ -204,14 +186,14 @@ VISUAL_GENERATION["papers"] = [
 "details": 
 """
 <ul>
-    <li> Pre-training algorithms should have inference-scalability in sequence length and refinement steps.
-    <li> Algorithms should scale training efficiently by reduing inference computation.
-    <li> One should verify whether the model has enough capacity to represent the target distribution during inference.
-    <li> Not scalable in either sequence length or refinement steps: VAE, GAN, Normalizing Flows.
-    <li> Scalable in sequence length but not refinement steps: GPT, PixelCNN, MaskGiT, VAR.
-    <li> Scalable in refinement steps but not in sequence length: diffusion models, energy-based models, consistency models.
-    <li> Scalable in both, with sequence length in the outer loop: AR-Diffusion, Rolling diffusion, MAR.
-    <li> Scalable in both, with refinement steps in the outer loop: autoregression distribution smoothing.
+    <li> Pre-training algorithms should have <b>inference-scalability</b> in sequence length and refinement steps.
+    <li> Algorithms should scale training efficiently by <b>reduing inference computation</b>.
+    <li> One should verify whether the model has <b>enough capacity</b> to represent the target distribution during inference.
+    <li> <b>Not scalable in either sequence length or refinement steps:</b> VAE, GAN, Normalizing Flows.
+    <li> <b>Scalable in sequence length but not refinement steps:</b> GPT, PixelCNN, MaskGiT, VAR.
+    <li> <b>Scalable in refinement steps but not in sequence length:</b> diffusion models, energy-based models, consistency models.
+    <li> <b>Scalable in both, with sequence length in the outer loop:</b> AR-Diffusion, Rolling diffusion, MAR.
+    <li> <b>Scalable in both, with refinement steps in the outer loop:</b> autoregression distribution smoothing.
 </ul>
 """,
 },
@@ -244,27 +226,25 @@ VISUAL_GENERATION["papers"] = [
 "comment": "",
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
-"summary": """Evaluate video generation on <b>compositional generation</b>: consistent attribute, dynamic attribute, spatial relationships, motion, action, object interations, numeracy.""",
+"summary": """Evaluate compositional video generation capability: consistent attribute, dynamic attribute, spatial relationships, motion, action, object interations, numeracy.""",
 "details": 
 """
 <ul>
-    <li> Find nouns and verbs by identifying them using WordNet from Pika Discord channels, used to generate prompts by GPT-4.
-    <li> Consistent attribute binding: two objects, two attributes, and at least one active verb from color, shape, texture, and human-related attributes.
-    <li> Dynamic attribute binding: color and light change, shape and size change, texture change, combined change.
-    <li> Spatial relationships: two objects with spatial relationships like "on the left of".
-    <li> Motion binding: one or two objects with specified moving direction like "leftwards".
-    <li> Action binding: bind actions to corresponding objects.
-    <li> Object interactions: dynamic interactions like pysical interactions.
-    <li> Generative numeracy: a specific number of objects.
-    <li> Video LLM-based metrics (Grid-LLaVa) is used for evaluating consistent attribute binding, action binding, object interactions.
-    <li> Image LLM-based metrics (LLaVa) is used for evaluating dynamic attribute binding.
-    <li> Grounding DINO is used for evaluating spatial relationships and numeracy.
-    <li> Grounding SAM + DOT is used for evaluating motion binding.
+    <li> Find nouns and verbs by identifying them using WordNet from <b>Pika Discord channels</b>, used to generate prompts by GPT-4.
+    <li> <b>Consistent attribute binding:</b> two objects, two attributes, and at least one active verb from color, shape, texture, and human-related attributes.
+    <li> <b>Dynamic attribute binding:</b> color and light change, shape and size change, texture change, combined change.
+    <li> <b>Spatial relationships:</b> two objects with spatial relationships like "on the left of".
+    <li> <b>Motion binding:</b> one or two objects with specified moving direction like "leftwards".
+    <li> <b>Action binding:</b> bind actions to corresponding objects.
+    <li> <b>Object interactions:</b> dynamic interactions like pysical interactions.
+    <li> <b>Generative numeracy:</b> a specific number of objects.
+    <li> <b>Video LLM-based metrics (Grid-LLaVa)</b> is used for evaluating consistent attribute binding, action binding, object interactions.
+    <li> <b>Image LLM-based metrics (LLaVa)</b> is used for evaluating dynamic attribute binding.
+    <li> <b>Grounding DINO</b> is used for evaluating spatial relationships and numeracy.
+    <li> <b>Grounding SAM + DOT</b> is used for evaluating motion binding.
 </ul>
-<figure>
-    <img src='2024-07-19-t2vcompbench-fig1.png' width=800>
-    <figcaption><b>Figure 1.</b> T2V-CompBench: categories (left), evaluation methods (middle), and benchmarking model performance (right).</figcaption>
-</figure>
+fig: fig1.png 800
+cap: <b>Categories (left), evaluation methods (middle), and benchmarking model performance (right).</b>
 """,
 },
 {
@@ -282,14 +262,10 @@ VISUAL_GENERATION["papers"] = [
 "summary": """It emploits <b>guidance gap between denosing and inversion</b> by iteratively performing them for improve image generation quality.""",
 "details": 
 """
-<figure>
-    <img src='2024-12-14-Z-Sampling-fig2.png' width=300>
-    <figcaption><b>Figure 1.</b> Capture more <b>semantics</b> by denoising more times.</figcaption>
-</figure>
-<figure>
-    <img src='2024-12-14-Z-Sampling-fig3.png' width=300>
-    <figcaption><b>Figure 2.</b> More <b>efficient</b> and <b>effective</b> than common denoising.</figcaption>
-</figure>
+fig: fig2.png 300
+cap: It capture more <b>semantics</b> by denoising more times.
+fig: fig1.png 300
+cap: It is more <b>efficient & effective</b> than common denoising.
 """,
 },
 {
@@ -325,25 +301,21 @@ VISUAL_GENERATION["papers"] = [
 "details": 
 """
 <ul>
-    <li>Use some <i>verifiers</i> to provide feedback: FID, IS, CLIP, DINO; Aesthetic Score Predictor, CLIPScore, ImageReward, Ensemble.</li>
-    <li>Use some <i>algorithms</i> to find better noise: Random Search, Zero-Order Search, Search Over Paths.</li>
-    <li><i>Random Search:</i> run using different initial random noise and select the best final result by the verifier.</li>
-    <li><i>Zero-Order Search:</i> run under different random noise around a pivot noise and select the best final result by the verifier, the best one is then served as a new pivot for next round search.</li>
-    <li><i>Search Over Paths:</i> run under different random noise to a specific step, sample noises for each noisy sample and simulate forward process, then perform denoising and select the best candiate using the verifier, continue this process until finish denoising.</li>
-    <li>Scaling through search leads to substantial improvement across model sizes.</li>
-    <li>No single verifier-algorithm configuration is universally optimal.</li>
-    <li>Inference-time search further improves performance of the model which has already been fine-tuned.</li>
-    <li>Fewer denoising steps but more searching iterations enables efficient convergence but lower final performance.</li>
-    <li>With a fixed inference compute budget, performing search on small models can outperform larger models without search.</li>
+    <li>Use some <b>verifiers</b> to provide feedback: FID, IS, CLIP, DINO; Aesthetic Score Predictor, CLIPScore, ImageReward, Ensemble.</li>
+    <li>Use some <b>algorithms</b> to find better noise: Random Search, Zero-Order Search, Search Over Paths.</li>
+    <li><b>Random Search:</b> run using different initial random noise and select the best final result by the verifier.</li>
+    <li><b>Zero-Order Search:</b> run under different random noise around a pivot noise and select the best final result by the verifier, the best one is then served as a new pivot for next round search.</li>
+    <li><b>Search Over Paths:</b> run under different random noise to a specific step, sample noises for each noisy sample and simulate forward process, then perform denoising and select the best candiate using the verifier, continue this process until finish denoising.</li>
+    <li><b>Scaling through search</b> leads to substantial improvement across model sizes.</li>
+    <li>No single <b>verifier-algorithm configuration</b> is universally optimal.</li>
+    <li><b>Inference-time search</b> further improves performance of the model which has already been fine-tuned.</li>
+    <li><b>Fewer denoising steps but more searching iterations</b> enables efficient convergence but lower final performance.</li>
+    <li>With a fixed inference compute budget, performing <b>search on small models</b> can outperform larger models without search.</li>
 </ul>
-<figure>
-    <img src='2025-01-16-scaling-analysis fig1.png' width=400>
-    <figcaption><b>Figure 1.</b> <b>Scale with search</b> is more effective than scale with denoising steps.</figcaption>
-</figure>
-<figure>
-    <img src='2025-01-16-scaling-analysis fig2.png' width=400>
-    <figcaption><b>Figure 2.</b> <b>Random Search performs the best</b> because it has larger space that converges the fastest.</figcaption>
-</figure>
+fig: fig1.png 400
+cap: <b>Scale with search</b> is more effective than scale with denoising steps.
+fig: fig2.png 400
+cap: <b>Random Search performs the best</b> because it has larger space that converges the fastest.
 """,
 },
 {
@@ -362,8 +334,8 @@ VISUAL_GENERATION["papers"] = [
 "details": 
 """
 <ul>
-    <li> Train SD1.5 and SDXL1.0 on <i>Pick-a-Pic</i> human preference data consisting of 850K pairs from 59K unique prompts.
-    <li> Evaluations are performed on Pick-a-Pic validation set, Partiprompt, and HPS v2.
+    <li> <b>Model & dataset.</b> It trains SD1.5 and SDXL1.0 on <i>Pick-a-Pic</i> human preference data consisting of 850K pairs from 59K unique prompts.
+    <li> <b>Evaluations</b> are performed on Pick-a-Pic validation set, Partiprompt, and HPS v2.
 </ul>
 """,
 },
@@ -382,26 +354,16 @@ VISUAL_GENERATION["papers"] = [
 "summary": """It performs distillation of diffusion models in <b>latent space</b> using <b>teacher-synthetic data</b> and optimizing adversarial loss with <b>teacher as discriminator</b>.""",
 "details": 
 """
-<figure>
-    <img src='2024-03-18-SD3-Turbo-fig1.png' width=500>
-    <figcaption><b>Figure 1.</b> <b>ADD:</b> (1) An adversarial loss for deceiving a discriminator (DINO v2); (2) A distillation loss for matching denoised output to that of a teacher. <b>The proposed LADD:</b> (1) Use <i>teacher-generated images</i> as the student input; (2) Use <i>the teacher</i> as the discrinimator. <b>Advantages:</b> (1) It is <i>efficient</i> to distill model in latent space; (2) Diffusion model as the discriminator provides <i>noise-level feedback</i>, handles <i>multi-aspect ratio data</i>.</figcaption>
-</figure>
-<figure>
-    <img src='2024-03-18-SD3-Turbo-fig2.png' width=700>
-    <figcaption><b>Figure 2.</b> (1) Training on <b>synthetic data</b> works better than real data. (2) Training on synthetic data only needs the <b>adversarial loss</b>. CS: CLIPScore.</figcaption>
-</figure>
-<figure>
-    <img src='2024-03-18-SD3-Turbo-fig3.png' width=700>
-    <figcaption><b>Figure 3.</b> Training using <b>LADD performs better than LCM</b>.</figcaption>
-</figure>
-<figure>
-    <img src='2024-03-18-SD3-Turbo-fig4.png' width=700>
-    <figcaption><b>Figure 4.</b> <b>Student model size</b> significant impacts performance, while the benefits of teacher models and data quality plateau.</figcaption>
-</figure>
-<figure>
-    <img src='2024-03-18-SD3-Turbo-fig5.png' width=500>
-    <figcaption><b>Figure 5.</b> Use LoRA for DPO-traning, and apply <b>DPO-LoRA</b> after LADD training.</figcaption>
-</figure>
+fig: fig1.png 500
+cap: <b>ADD:</b> (1) An adversarial loss for deceiving a discriminator (DINO v2); (2) A distillation loss for matching denoised output to that of a teacher. <b>The proposed LADD:</b> (1) Use <i>teacher-generated images</i> as the student input; (2) Use <i>the teacher</i> as the discrinimator. <b>Advantages:</b> (1) It is <i>efficient</i> to distill model in latent space; (2) Diffusion model as the discriminator provides <i>noise-level feedback</i>, handles <i>multi-aspect ratio data</i>.
+fig: fig2.png 700
+cap: (1) Training on <b>synthetic data</b> works better than real data. (2) Training on synthetic data only needs the <b>adversarial loss</b>. CS: CLIPScore.
+fig: fig3.png 700
+cap: Training using <b>LADD performs better than LCM</b>.
+fig: fig4.png 700
+cap: <b>Student model size</b> significant impacts performance, while the benefits of teacher models and data quality plateau.
+fig: fig5.png 500
+cap: Use LoRA for DPO-traning, and apply <b>DPO-LoRA</b> after LADD training.
 """,
 },
 {
@@ -419,14 +381,10 @@ VISUAL_GENERATION["papers"] = [
 "summary": """An <b>object-focused</b> framework for image generation evaluation.""",
 "details": 
 """
-<figure>
-    <img src='2023-10-17-GenEval-fig1.png' width=600>
-    <figcaption><b>Figure 1.</b> GenEval detects objects using Mask2Former detector and evaluates attributes of them.</figcaption>
-</figure>
-<figure>
-    <img src='2023-10-17-GenEval-fig2.png' width=550>
-    <figcaption><b>Figure 2.</b> Specific evaluation perspectives of GenEval.</figcaption>
-</figure>
+fig: fig1.png 600
+cap: <b>GenEval pipeline.</b> Detect objects using Mask2Former detector and evaluate attributes of them.
+fig: fig2.png 550
+cap: <b>Evaluation perspectives.</b>
 """,
 },
 {
@@ -445,23 +403,23 @@ VISUAL_GENERATION["papers"] = [
 "details": 
 """
 <ul>
-    <li> Content Categories: animal, architecture, food, human, lifestyle, plant, scenary, vehicles.
-    <li> Temporal quality-subject consistency: DINO feature similarity across frames.
-    <li> Temporal quality-background consistency: CLIP feature similarity across frames.
-    <li> Temporal quality-temporal flickering: mean absolute difference across frames.
-    <li> Temporal quality-motion smoothness: use video frame interpolation model to evaluate motion smoothness.
-    <li> Temporal quality-dynamic degree: use RAFT to estimate degree of dynamics.
-    <li> Frame-wise quality-aesthetic quality: use LAION aesthetic predictor.
-    <li> Frame-wise quality-imaging quality: use MUSIQ image quality predictor.
-    <li> Semantics-object class: use GRiT to detect classes.
-    <li> Semantics-multiple objects: detect success rate of generating all objects.
-    <li> Semantics-human action: use UMT to detect specific actions.
-    <li> Semantics-color: use GRiT for color captioning.
-    <li> Semantics-spatial relationship: use rule-based evaluation.
-    <li> Semantics-scene: use Tag2Text for scene captioning.
-    <li> Style-appearance style: use CLIP feature similarity.
-    <li> Style-temporal style: use ViCLIP to calculate video feature and temporal style description feature similarity.
-    <li> Overall consistency: use ViCLIP to evaluate overall semantics and style consistency.
+    <li> <b>Content Categories:</b> animal, architecture, food, human, lifestyle, plant, scenary, vehicles.
+    <li> <b>Temporal quality-subject consistency:</b> DINO feature similarity across frames.
+    <li> <b>Temporal quality-background consistency:</b> CLIP feature similarity across frames.
+    <li> <b>Temporal quality-temporal flickering:</b> mean absolute difference across frames.
+    <li> <b>Temporal quality-motion smoothness:</b> use video frame interpolation model to evaluate motion smoothness.
+    <li> <b>Temporal quality-dynamic degree:</b> use RAFT to estimate degree of dynamics.
+    <li> <b>Frame-wise quality-aesthetic quality:</b> use LAION aesthetic predictor.
+    <li> <b>Frame-wise quality-imaging quality:</b> use MUSIQ image quality predictor.
+    <li> <b>Semantics-object class:</b> use GRiT to detect classes.
+    <li> <b>Semantics-multiple objects:</b> detect success rate of generating all objects.
+    <li> <b>Semantics-human action:</b> use UMT to detect specific actions.
+    <li> <b>Semantics-color:</b> use GRiT for color captioning.
+    <li> <b>Semantics-spatial relationship:</b> use rule-based evaluation.
+    <li> <b>Semantics-scene:</b> use Tag2Text for scene captioning.
+    <li> <b>Style-appearance style:</b> use CLIP feature similarity.
+    <li> <b>Style-temporal style:</b> use ViCLIP to calculate video feature and temporal style description feature similarity.
+    <li> <b>Overall consistency:</b> use ViCLIP to evaluate overall semantics and style consistency.
 </ul>
 """,
 },
@@ -481,14 +439,12 @@ VISUAL_GENERATION["papers"] = [
 "details": 
 """
 <ul>
-    <li> Attribute binding prompts: at least two objects with two attributes from color, shape, texture.
-    <li> Object relationship prompts: at least two objects with spatial relationship or non-spatial relationship.
-    <li> Complex compositions prompts: more than two objects or more than two sub-categories.
+    <li> <b>Attribute binding prompts:</b> at least two objects with two attributes from color, shape, texture.
+    <li> <b>Object relationship prompts:</b> at least two objects with spatial relationship or non-spatial relationship.
+    <li> <b>Complex compositions prompts:</b> more than two objects or more than two sub-categories.
 </ul>
-<figure>
-    <img src='2023-07-12-t2icompbench-fig1.png' width=700>
-    <figcaption><li><b>Figure 1.</b> Use disentangled BLIP-VQA to evaluate attribute binding, UniDet-based metric to evaluate spatial relationship, CLIPScore to evaluate non-spatial relationship, and 3-in-1 metric (average score of the three metrics) to evaluate complex compositions.</figcaption>
-</figure>
+fig: fig1.png 700
+cap: <b>Evaluation methods.</b> Use disentangled BLIP-VQA to evaluate attribute binding, UniDet-based metric to evaluate spatial relationship, CLIPScore to evaluate non-spatial relationship, and 3-in-1 metric (average score of the three metrics) to evaluate complex compositions.
 """,
 },
 {
@@ -507,10 +463,10 @@ VISUAL_GENERATION["papers"] = [
 "details": 
 """
 <ul>
-    <li> CLIPScore calculates the cosine similarity between a caption and an image, multiplying the result by 2.5 (some use 1.).
-    <li> CLIPScore is sensitive to adversarially constructed image captions.
-    <li> CLIPScore generalizes well on never-before-seen images.
-    <li> CLIPScore frees from the shortcomings of n-gram matching that disfavors good captions with new words and favors captions with familiar words.
+    <li> It calculates the <b>cosine similarity between a caption and an image</b>, multiplying the result by 2.5 (some use 1.).
+    <li> It is <b>sensitive</b> to adversarially constructed image captions.
+    <li> It <b>generalizes well</b> on never-before-seen images.
+    <li> It frees from the shortcomings of <b>n-gram matching</b> that disfavors good captions with new words and favors captions with familiar words.
 </ul>
 """,
 },
@@ -546,10 +502,8 @@ VISUAL_GENERATION["papers"] = [
 "summary": """It trains BLIP on 137K human preference image pairs for image generation and use it to tune diffusion models by Reward Feedback Learning (ReFL).""",
 "details": 
 """
-<figure>
-    <img src='2023-04-12-imagereward-fig1.png' width=600>
-    <figcaption><b>Figure 1.</b> (1) use DiffusionDB prompts to generate images; (2) Rate and rank; (3) Train ImageReward using ranking data; (4) tune models via ReFL.</figcaption>
-</figure>
+fig: fig1.png 600
+cap: <b>Training pipeline.</b> (1) Use DiffusionDB prompts to generate images; (2) Rank; (3) Train model on ranking data; (4) Tune model via ReFL.
 """,
 },
 {
@@ -568,12 +522,11 @@ VISUAL_GENERATION["papers"] = [
 "details": 
 """
 <ul>
-    <li> Use <i>Qwen</i> structure and taking <i>Cosmos</i> as the visual tokenizer with 64K codebook and 16 ratio downsampling.
-    <li> Training stages: (1) pre-training on 512 resolution; (2) SFT on 1024 resolution; (3) RL on 1024 resolution.
-    <li> Use LLM initialization does not improve DPG-Bench performance.
-    <li> Use 2D RoPE will not improve performance, but is necessary for dynamic resolution generation.
-    <li> Use GRPO with CLIP as the reward model improves more than using HPS v2.
-    <li> Use some acceleration techniques: KV cache, vLLM serving, and speculative jacobi decoding.
+    <li> <b>Structure.</b> Use <i>Qwen</i> structure and taking <i>Cosmos</i> as the visual tokenizer with 64K codebook and 16 ratio downsampling.
+    <li> <b>Training stages.</b> (1) Pre-training on 512 resolution; (2) SFT on 1024 resolution; (3) RL on 1024 resolution.
+    <li> Use <b>LLM initialization</b> does not improve DPG-Bench performance.
+    <li> Use <b>2D RoPE</b> will not improve performance, but is necessary for dynamic resolution generation.
+    <li> Use <b>GRPO</b> with CLIP as the reward model improves more than using HPS v2.
 </ul>
 """,
 },
@@ -593,15 +546,13 @@ VISUAL_GENERATION["papers"] = [
 "details": 
 """
 <ul>
-    <li> Employ defect-aware training: stop gradient on watermarks, subtitles, overlaid text, mosaic pattern.
-    <li> Introduce a <i>representation alignment loss</i>: cosine distance between the feature of MMDiT and DINOv2-L.
-    <li> Find <i>scaling property of VLM-based reward model</i>.
-    <li> Other improvements: (1) mixed-resolution training; (2) <i>cross-modality RoPE</i>; (3) diverse aesthetic captions in SFT.
+    <li> Propose <b>defect-aware training:</b> stop gradient on watermarks, subtitles, overlaid text, mosaic pattern.
+    <li> Introduce a <b>representation alignment loss</b>: cosine distance between the feature of MMDiT and DINOv2-L.
+    <li> Find <b>scaling property of VLM-based reward model</b>.
+    <li> Other improvements: (1) mixed-resolution training; (2) <b>cross-modality RoPE</b>; (3) diverse aesthetic captions in SFT.
 </ul>
-<figure>
-    <img src='2025-04-15-Seedream 3.0-fig1.png' width=400>
-    <figcaption><b>Figure 1.</b> Seedream3.0 achieves the best ELO performance.</figcaption>
-</figure>
+fig: fig1.png 400
+cap: Seedream3.0 achieves the <b>best ELO performance</b>.
 """,
 },
 {
@@ -619,34 +570,20 @@ VISUAL_GENERATION["papers"] = [
 "summary": """<b>ByteDance Seaweed Team</b>'s text-to-video and image-to-video generation model (7B), trained on O(100M) videos using 665K H100 GPU hours.""",
 "details": 
 """
-<figure>
-    <img src='2025-04-11-Seaweed-7B-fig2.png' width=450>
-    <figcaption><b>Figure 1.</b> <b>VAE</b> with compression ratio of 16x16x4 (48 channels) or 8x8x4 (16 channels). Using L1 + KL + LPIPS + adversarial losses. Using an <i>image discriminator and a video discriminator</i> is better than using either one. <i>Compressing using VAE outperforms patchification in DiT, and faster</i>.</figcaption>
-</figure>
-<figure>
-    <img src='2025-04-11-Seaweed-7B-fig3.png' width=200>
-    <figcaption><b>Figure 2.</b> <b>VAE training stages</b> for images and videos.</figcaption>
-</figure>
-<figure>
-    <img src='2025-04-11-Seaweed-7B-fig4.png' width=800>
-    <figcaption><b>Figure 3.</b> Use <b>mixed resolution & durations & frame rate</b> VAE training converges slower but performs better than training on a low resolution.</figcaption>
-</figure>
-<figure>
-    <img src='2025-04-11-Seaweed-7B-fig6.png' width=650>
-    <figcaption><b>Figure 4.</b> <b>Full attention</b> enjoys training scalability.</figcaption>
-</figure>
-<figure>
-    <img src='2025-04-11-Seaweed-7B-fig5.png' width=250>
-    <figcaption><b>Figure 5.</b> The proposed <b>hybrid-stream</b> is better than dual-stream (MMDiT).</figcaption>
-</figure>
-<figure>
-    <img src='2025-04-11-Seaweed-7B-fig7.png' width=500>
-    <figcaption><b>Figure 6.</b> <b>4-stage pre-training.</b> (1) <b>Multi-task pre-training:</b> text-to-video, image-to-video, video-to-video. Input features and conditions are channel-concatenated, with a binary mask indicating the condition. Ratio of image-to-video is 20% during pre-training, and increases to 50%-75% detached for fine-tuning. (2) <b>SFT:</b> use 700K good videos and 50K top videos; The semantic alignment ability drops a little. (3) <b>RLHF:</b> lr=1e-7, beta=100, select win-lose from 4 candidates. (4) <b>Distillation:</b> trajectory segmented consistency distillation + CFG distillation + adversarial training, distill to 8 steps.</figcaption>
-</figure>
-<figure>
-    <img src='2025-04-11-Seaweed-7B-fig8.png' width=300>
-    <figcaption><b>Figure 7.</b> <b>ELO performance</b> on image-to-video generation.</figcaption>
-</figure>
+fig: fig2.png 450
+cap: <b>VAE</b> with compression ratio of 16x16x4 (48 channels) or 8x8x4 (16 channels). Using L1 + KL + LPIPS + adversarial losses. Using an <i>image discriminator and a video discriminator</i> is better than using either one. <i>Compressing using VAE outperforms patchification in DiT, and faster</i>.
+fig: fig3.png 200
+cap: <b>VAE training stages</b> for images and videos.
+fig: fig4.png 800
+cap: Use <b>mixed resolution & durations & frame rate</b> VAE training converges slower but performs better than training on a low resolution.
+fig: fig6.png 650
+cap: <b>Full attention</b> enjoys training scalability.
+fig: fig5.png 250
+cap: <b>Figure 5.</b> The proposed <b>hybrid-stream</b> is better than dual-stream (MMDiT).
+fig: fig7.png 500
+cap: <b>4-stage pre-training.</b> (1) <b>Multi-task pre-training:</b> text-to-video, image-to-video, video-to-video. Input features and conditions are channel-concatenated, with a binary mask indicating the condition. Ratio of image-to-video is 20% during pre-training, and increases to 50%-75% detached for fine-tuning. (2) <b>SFT:</b> use 700K good videos and 50K top videos; The semantic alignment ability drops a little. (3) <b>RLHF:</b> lr=1e-7, beta=100, select win-lose from 4 candidates. (4) <b>Distillation:</b> trajectory segmented consistency distillation + CFG distillation + adversarial training, distill to 8 steps.
+fig: fig8.png 300
+cap: <b>ELO performance</b> on image-to-video generation.
 """,
 },
 {
@@ -665,18 +602,12 @@ VISUAL_GENERATION["papers"] = [
 "details": 
 """
 <p><b>Data procssing pipeline</b>. <i>Fundamental dimensions:</i> text, aesthetic, NSFW score, watermark and logo, black border, overexposure, synthetic image, blur, duration and resolution. <i>Visual quality:</i> clustering, scoring. <i>Motion quality:</i> optimal motion, medium-quality motion, static videos, camera-driven motion, low-quality motion, shaky camera footage. <i>Visual text data:</i> hundreds of millions of text-containing images by rendering Chinese characters on a pure white background and large amounts from real-world data. <i>Captions:</i> celebrities, landmarks, movie characters, object counting, OCR, camera angle and motion, categories, relational understanding, re-caption, editing instruction caption, group image description, human-annotated captions.</p>
-<figure>
-    <img src='2025-03-26-Wan-fig2.png' width=500>
-    <figcaption><b>Figure 1.</b> <b>VAE</b> with 8x8x4 compression ratio is trained by L1 reconstruction loss + KL loss + LPIPS perceptual loss. </figcaption>
-</figure>
-<figure>
-    <img src='2025-03-26-Wan-fig3.png' width=600>
-    <figcaption><b>Figure 2.</b> <b>Architecture</b>. Text prompt encoded by umT5 is injected by cross-attention; timestep is embedded by MLP; using flow-matching loss.</figcaption>
-</figure>
-<figure>
-    <img src='2025-03-26-Wan-fig5.png' width=600>
-    <figcaption><b>Figure 3.</b> <b>I2V framework.</b> Image condition is incorporated through channel-concat and <i>CLIP image encodings</i>.</figcaption>
-</figure>
+fig: fig1.png 450 fig2.png 450
+cap: <b>VAE</b> with 127M parameters and 8x8x4 compression ratio. Three-stage training: (1) Train 2D image VAE. (2) Train 3D causal VAE with 128x128x5. (3) Adversarial training with a 3D discriminator. It optimizes <i>L = L_1 loss + KL loss + L_LPIPS</i> loss. It replace all GroupNorm layers with RMSNorm layers to preserve temporal causality. It then applies <i>temporal cache</i> to save GPU memory by employing the causality.
+fig: fig3.png 500
+cap: <b>Architecture</b>. Text prompt encoded by umT5 is injected by cross-attention; timestep is embedded by MLP; using flow-matching loss.
+fig: fig4.png 550
+cap: <b>I2V framework.</b> Image condition is incorporated through channel-concat and <i>CLIP image encodings</i>.
 """,
 },
 {
@@ -694,12 +625,8 @@ VISUAL_GENERATION["papers"] = [
 "summary": """<b>StepFun</b>'s image-to-video generation model (30B), trained upon Step-Video-T2V, by incorporating conditions of motion and channel-concat image.""",
 "details": 
 """
-<figure>
-    <img src='2025-03-14-Step-Video-TI2V-fig1.png' width=600>
-    <figcaption>
-        <b>Figure 1.</b> <b>Image condition:</b> channel-concat of <i>noise-augmented</i> image condition.
-        <b>Motion condition:</b> optical flow-based motion + timestep. </figcaption>
-</figure>
+fig: fig1.png 600
+cap: <b>Image condition:</b> channel-concat of <i>noise-augmented</i> image condition. <b>Motion condition:</b> optical flow-based motion + timestep.
 """,
 },
 {
@@ -718,25 +645,17 @@ VISUAL_GENERATION["papers"] = [
 "details": 
 """
 <ul>
-    <li> Use a <i>self-developed bilingual LLM</i> and Glyph-Aligned ByT5 as text encoders.
-    <li> Use a <i>self-developed VAE</i>.
-    <li> Use learned positional embeddings on text tokens and scaled 2D RoPE on image tokens.
-    <li> Training stages: pre-training => continue training => supervised fine-tuning => human feedback alignment.
-    <li> Inference stages: user prompt => prompt engineering => text encoding => generation => refinement => output.
-    <li> User experience platform: Doubao (豆包) and Dreamina (即梦).
+    <li> <b>Structure innovation:</b> <i>self-developed bilingual LLM</i> and ByT5 as text encoders; <i>self-developed VAE</i>; learned positional embeddings on text tokens and scaled 2D RoPE on image tokens.
+    <li> <b>Training stages:</b> pre-training => continue training => supervised fine-tuning => human feedback alignment.
+    <li> <b>Inference stages:</b> user prompt => prompt engineering => text encoding => generation => refinement => output.
+    <li> <b>User experience platform:</b> Doubao (豆包) & Dreamina (即梦).
 </ul>
-<figure>
-    <img src='2025-03-10-Seedream2.0-fig1.png' width=700>
-    <figcaption><b>Figure 1.</b> Performance with English and Chinese prompts.</figcaption>
-</figure>
-<figure>
-    <img src='2025-03-10-Seedream2.0-fig2.png' width=400>
-    <figcaption><b>Figure 2.</b> Pre-training data system.</figcaption>
-</figure>
-<figure>
-    <img src='2025-03-10-Seedream2.0-fig6.png' width=600>
-    <figcaption><b>Figure 3.</b> Model structure is similar to MMDiT (SD3).</figcaption>
-</figure>
+fig: fig1.png 700
+cap: <b>Overall performance</b> with English and Chinese prompts.
+fig: fig2.png 400
+cap: <b>Pre-training data system.</b>
+fig: fig3.png 600
+cap: <b>Model structure</b> is similar to MMDiT (SD3).
 """,
 },
 {
@@ -769,26 +688,16 @@ VISUAL_GENERATION["papers"] = [
 "summary": """<b>StepFun</b>'s open-sourced model (30B) with DiT structure for text-to-video generation.""",
 "details": 
 """
-<figure>
-    <img src='2025-02-14-Step-Video-T2V-fig1.png' width=500>
-    <figcaption><b>Figure 1.</b> <b>Main structure.</b> a VAE with a 8x8x4 compression ratio and 16 channels, bilingual text encoders (HunyuanCLIP and Step-LLM), DiT with RoPE-3D and QK-Norm, and a DPO pipeline. Text prompt conditions are incorporated into DiT by cross-attention modules.</figcaption>
-</figure>
-<figure>
-    <img src='2025-02-14-Step-Video-T2V-fig2.png' width=400>
-    <figcaption><b>Figure 2.</b> <b>VAE</b> compresses videos by 16x16x8 with 16 feature channels.</figcaption>
-</figure>
-<figure>
-    <img src='2025-02-14-Step-Video-T2V-fig4.png' width=500>
-    <figcaption><b>Figure 3.</b> <b>DPO framework.</b> use training data prompts and handcrafted prompts to generate samples, which are scored through human annotation or reward models. Diffusion-DPO method is adapted here by reducing beta and increasing learning rate for achieving faster convergence.</figcaption>
-</figure>
-<figure>
-    <img src='2025-02-14-Step-Video-T2V-fig5.png' width=900>
-    <figcaption><b>Figure 4.</b> Using <b>2B video-text pairs</b>, <b>3.8B image-text pairs</b>. <i>Filters:</i> video segmentation, video quality assessment, aesthetic score, NSFW score, watermark detection, subtitle detection, saturation score, blur score, black border detection, video motion assessment, K-means-based concept balancing, and CLIP score alignment. <i>Video captioning:</i> short caption, dense caption, and original title.</figcaption>
-</figure>
-<figure>
-    <img src='2025-02-14-Step-Video-T2V-fig7.png' width=600>
-    <figcaption><b>Figure 5.</b> Pre-training stages. </figcaption>
-</figure>
+fig: fig1.png 500
+cap: <b>Structure.</b> A VAE with a 8x8x4 compression ratio and 16 feature channels, bilingual text encoders (HunyuanCLIP and Step-LLM), DiT with RoPE-3D and QK-Norm, and a DPO pipeline. Text prompt conditions are incorporated into DiT by cross-attention modules.
+fig: fig2.png 400
+cap: <b>VAE</b> compresses videos by 16x16x8 with 16 feature channels.
+fig: fig4.png 500
+cap: <b>DPO framework.</b> Use training data prompts and handcrafted prompts to generate samples, which are scored through human annotation or reward models. Diffusion-DPO method is adapted here by reducing beta and increasing learning rate for achieving faster convergence.
+fig: fig5.png 900
+cap: <b>Data pool with 2B video-text pairs & 3.8B image-text pairs.</b> <i>Filters:</i> video segmentation, video quality assessment, aesthetic score, NSFW score, watermark detection, subtitle detection, saturation score, blur score, black border detection, video motion assessment, K-means-based concept balancing, and CLIP score alignment. <i>Video captioning:</i> short caption, dense caption, and original title.
+fig: fig3.png 550
+cap: <b>Pre-training stages.</b>
 """,
 },
 {
@@ -806,38 +715,22 @@ VISUAL_GENERATION["papers"] = [
 "summary": """It improves VAR by applying <b>bitwise modeling</b> that makes vocabulary "infinity" to open up new posibilities of discrete text-to-image generation.""",
 "details": 
 """
-<figure>
-    <img src='2024-12-05-Infinity-fig1.png' width=500>
-    <figcaption><b>Figure 1.</b> <b>Viusal tokenization and quantization:</b> instead of predicting <i>2**d</i> indices, infinite-vocabulary classifier predicts <i>d</i> bits instead.</figcaption>
-</figure>
-<figure>
-    <img src='2024-12-05-Infinity-fig3.png' width=400>
-    <figcaption><b>Figure 2.</b> <b>Infinity:</b> it is fast and better.</figcaption>
-</figure>
-<figure>
-    <img src='2024-12-05-Infinity-fig4.png' width=300>
-    <figcaption><b>Figure 3.</b> <b>Tokenizer:</b> it outperforms continuous SD VAE.</figcaption>
-</figure>
-<figure>
-    <img src='2024-12-05-Infinity-fig5.png' width=500>
-    <figcaption><b>Figure 4.</b> <b>Inifinite-Vocabulary Classifier:</b> it needs low memory but performs better.</figcaption>
-</figure>
-<figure>
-    <img src='2024-12-05-Infinity-fig8.png' width=400>
-    <figcaption><b>Figure 5.</b> <b>Self-correction</b> mitigates the train-test discrepancy.</figcaption>
-</figure>
-<figure>
-    <img src='2024-12-05-Infinity-fig6.png' width=700>
-    <figcaption><b>Figure 6.</b> <b>Scaling up vocabulary:</b> vocabulary size and model size scale well.</figcaption>
-</figure>
-<figure>
-    <img src='2024-12-05-Infinity-fig7.png' width=750>
-    <figcaption><b>Figure 7.</b> <b>Scaling up model size:</b> there is strong correlation between validation loss and evaluation metrics (as observed by Fluid).</figcaption>
-</figure>
-<figure>
-    <img src='2024-12-05-Infinity-fig9.png' width=900>
-    <figcaption><b>Figure 8.</b> Using <b>2D RoPE</b> outperforms using APE.</figcaption>
-</figure>
+fig: fig1.png 450
+cap: <b>Viusal tokenization and quantization.</b> Instead of predicting <i>2**d</i> indices, infinite-vocabulary classifier predicts <i>d</i> bits instead.
+fig: fig3.png 350
+cap: <b>Infinity</b> is fast and better.
+fig: fig4.png 300
+cap: <b>Tokenizer</b> outperforms continuous SD VAE.
+fig: fig5.png 450
+cap: <b>Inifinite-Vocabulary Classifier</b> needs low memory but performs better.
+fig: fig8.png 400
+cap: <b>Self-correction</b> mitigates the train-test discrepancy.
+fig: fig6.png 700
+cap: <b>Vocabulary scales well.</b>
+fig: fig7.png 650
+cap: <b>Scaling up model size.</b> There is strong correlation between validation loss and evaluation metrics (as observed by Fluid).
+fig: fig2.png 700
+cap: Using <b>2D RoPE</b> outperforms using APE.
 """,
 },
 {
@@ -889,30 +782,16 @@ VISUAL_GENERATION["papers"] = [
 "summary": """It shows auto-regressive models with <b>continuous tokens beat discrete tokens counterpart</b>, and finds some empirical observations during scaling.""",
 "details": 
 """
-<figure>
-    <img src='2024-10-17-Fluid-fig1.png' width=500>
-    <figcaption>
-        <b>Figure 1.</b> <b>Image tokenizer:</b> discrete (VQGAN) or continuous (VAE). <b>Text tokenizer:</b> discrete (T5-XXL).
-        <b>Model structure:</b> transformer with cross-attention modules attending to text embeddings.
-        <b>Loss:</b> cross-entropy loss on text tokens and diffusion loss on image tokens.
-    </figcaption>
-</figure>
-<figure>
-    <img src='2024-10-17-Fluid-fig2.png' width=700>
-    <figcaption><b>Figure 2.</b> Scaling behavior of validation loss on <b>model size</b>.</figcaption>
-</figure>
-<figure>
-    <img src='2024-10-17-Fluid-fig3.png' width=700>
-    <figcaption><b>Figure 3.</b> <b>Random-order masks</b> on <b>continuous image tokens</b> perform the best. Continuous prefers random order, discrete prefers raster order. </figcaption>
-</figure>
-<figure>
-    <img src='2024-10-17-Fluid-fig4.png' width=700>
-    <figcaption><b>Figure 4.</b> Random-order masks on continuous tokens scale with <b>training computes</b>.</figcaption>
-</figure>
-<figure>
-    <img src='2024-10-17-Fluid-fig5.png' width=700>
-    <figcaption><b>Figure 5.</b> Strong correlation between <b>validation loss</b> and <b>evaluation metrics</b>.</figcaption>
-</figure>
+fig: fig1.png 450
+cap: <b>Image tokenizer:</b> discrete (VQGAN) or continuous (VAE). <b>Text tokenizer:</b> discrete (T5-XXL). <b>Model structure:</b> transformer with cross-attention modules attending to text embeddings. <b>Loss:</b> cross-entropy loss on text tokens and diffusion loss on image tokens.
+fig: fig2.png 600
+cap: <b>Scaling</b> behavior of validation loss on <b>model size</b>.
+fig: fig3.png 600
+cap: <b>Random-order masks</b> on <b>continuous image tokens</b> perform the best. Continuous prefers random order, discrete prefers raster order.
+fig: fig4.png 550
+cap: Random-order masks on continuous tokens <b>scale with training computes</b>.
+fig: fig5.png 550
+cap: Strong correlation between <b>validation loss</b> and <b>evaluation metrics</b>.
 """
 },
 {
@@ -931,13 +810,11 @@ VISUAL_GENERATION["papers"] = [
 "details": 
 """
 <ul>
-    <li> Incorporating <i>shared expert routing</i> improves convergence and performance, but the improvement is little when using more than one.
-    <li> Increasing experts reduces loss but introduces more loss spikes.
+    <li> Incorporating <b>shared expert routing</b> improves convergence and performance, but the improvement is little when using more than one.
+    <li> <b>Increasing experts</b> reduces loss but introduces more loss spikes.
 </ul>
-<figure>
-    <img src='2024-07-16-DiT-MoE-fig1.png' width=700>
-    <figcaption><b>Figure 1.</b> It is built upon DiT and replaces MLP within Transformer blocks by sparsely activated mixture of MLPs as experts.</figcaption>
-</figure>
+fig: fig1.png 550
+cap: <b>Structure.</b> It is built upon DiT and replaces MLP within Transformer blocks by sparsely activated mixture of MLPs as experts.
 """,
 },
 {
@@ -956,9 +833,9 @@ VISUAL_GENERATION["papers"] = [
 "details": 
 """
 <ul>
-    <li> It trains a discrete visual tokenizer that is competitive to the continuous ones, e.g., SD VAE, SDXL VAE, Consistency Decoder from OpenAI.
-    <li> Vanilla autoregressive models, e.g., LlaMA, without inductive biases on visual signals can serve as the basis of image generation system.
-    <li> The model is trained on 50M subset of LAION-COCO and 10M internal high aesthetics quality images.
+    <li> It trains a <b>discrete visual tokenizer</b> that is competitive to the continuous ones, e.g., SD VAE, SDXL VAE, Consistency Decoder from OpenAI.
+    <li> It shows that <b>vanilla autoregressive models</b>, e.g., LlaMA, without visual inductive biases can serve as the basis of image generation system.
+    <li> <b>Training data.</b> 50M subset of LAION-COCO and 10M internal high aesthetics quality images.
 </ul>
 """,
 },
@@ -977,22 +854,14 @@ VISUAL_GENERATION["papers"] = [
 "summary": """It improves auto-regressive image generation on image quality, inference speed, data efficiency, and scalability, by proposing <b>next-scale prediction</b>.""",
 "details": 
 """
-<figure>
-    <img src='2024-04-03-VAR-fig1.png' width=700>
-    <figcaption> <b>Figure 1.</b> <b>Next-scale prediction:</b> start from 1x1 token map; at each step, it predicts the next higher-resolution token map given all previous ones.</figcaption>
-</figure>
-<figure>
-    <img src='2024-04-03-VAR-fig3.png' width=800>
-    <figcaption><b>Figure 2.</b> <b>Training pipeline of tokenzier and VAR.</b>  Tokenzier (similar to VQ-VAE): the same architecture and training data (OpenImages), using codebook of 4096 and spatial downsample ratio of 16. VAR: the standard transformer with AdaLN; not use RoPE, SwiGLU MLP, RMS Norm. </figcaption>
-</figure>
-<figure>
-    <img src='2024-04-03-VAR-fig4.png' width=700>
-    <figcaption><b>Figure 3.</b> <b>Algorithms of tokenizer:</b> encoding and reconstruction.</figcaption>
-</figure>
-<figure>
-    <img src='2024-04-03-VAR-fig2.png' width=350>
-    <figcaption><b>Figure 4.</b> VAR shows good <b>scaling behavior</b>, and significantly outperforms DiT.</figcaption>
-</figure>
+fig: fig1.png 650
+cap: <b>Next-scale prediction.</b> Start from 1x1 token map; at each step, it predicts the next higher-resolution token map given all previous ones.
+fig: fig3.png 750
+cap: <b>Training pipeline of tokenzier and VAR.</b>  Tokenzier (similar to VQ-VAE): the same architecture and training data (OpenImages), using codebook of 4096 and spatial downsample ratio of 16. VAR: the standard transformer with AdaLN; not use RoPE, SwiGLU MLP, RMS Norm.
+fig: fig4.png 650
+cap: <b>Encoding & decoding of tokenizer.</b>
+fig: fig2.png 350
+cap: VAR shows good <b>scaling behavior</b>, and significantly outperforms DiT.
 """,
 },
 {
@@ -1017,9 +886,8 @@ VISUAL_GENERATION["papers"] = [
 (4) It improves VAE by employing EMA and a larger batchsize of 256.<br>
 (5) It employs a refinement model of SDEdit to refine visual details.</p>
 <p><b>Training stages:</b> (1) reso=256x256, steps=600,000, batchsize=2048; (2) reso=512x512, steps=200,000; (3) mixed resolution and aspect ratio training.</p>
-<figure>
-    <img src='2023-07-04-SDXL-fig1.png' width=600>
-</figure>
+fig: fig1.png 500
+cap: <b>SDXL Structure.</b>
 """,
 },
 {
@@ -1037,10 +905,8 @@ VISUAL_GENERATION["papers"] = [
 "summary": """It proposes HPD v2: 798K human preferences on 433K pairs of images; HPS v2: fine-tuned CLIP on HPD v2 for image generation evaluation.""",
 "details": 
 """
-<figure>
-    <img src='2023-06-15-hpsv2-fig1.png' width=800>
-    <figcaption><b>Figure 1.</b> (1) Clean prompts from COCO captions and DiffusionDB by ChatGPT; (2) Generate images using 9 text-to-image generation models; (3) Rank and annotate each pair of images by humans; (4) Finetune CLIP and obtain a preference model to provide HPS v2 evaluation score.</figcaption>
-</figure>
+fig: fig1.png 750
+cap: <b>Training pipeline.</b> (1) Clean prompts from COCO captions and DiffusionDB by ChatGPT; (2) Generate images using 9 image generation models; (3) Rank and annotate each pair of images by humans; (4) Finetune CLIP and obtain a preference model to give HPS v2 evaluation score.
 """,
 },
 {
@@ -1058,10 +924,8 @@ VISUAL_GENERATION["papers"] = [
 "summary": """It fine-tunes CLIP on annotated 98K SD generated images from 25K prompts for image generation evaluation.""",
 "details": 
 """
-<figure>
-    <img src='2023-03-25-hps-fig1.png' width=650>
-    <figcaption><b>Figure 1.</b> <b>Train score model:</b> the same as CLIP except for the sample with the highest preference is taken as the positive; <b>Finetune image generation model using the score model:</b> append a special token to the prompts of worse images for training; remove that token during inference.</figcaption>
-</figure>
+fig: fig1.png 650
+cap: <b>Train score model:</b> the same as CLIP except for the sample with the highest preference is taken as the positive; <b>Finetune image generation model using the score model:</b> append a special token to the prompts of worse images for training; remove that token during inference.
 """,
 },
 {
@@ -1079,10 +943,8 @@ VISUAL_GENERATION["papers"] = [
 "summary": """It replaces the conventional U-Net structure with <b>transformer</b> for scalable image generation, the timestep and condition are injected by adaLN-Zero.""",
 "details": 
 """
-<figure>
-    <img src='2022-12-19-DiT-fig1.png' width=800>
-    <figcaption><b>Figure 1.</b> Using adaLN-Zero structure to inject timestep and class condition performs better than using cross-attention or in-context.</figcaption>
-</figure>
+fig: fig1.png 700
+cap: <b>Model structure.</b> Use <i>adaLN-Zero</i> structure to inject timestep and class condition performs better than using cross-attention or in-context.
 """,
 },
 {
@@ -1100,10 +962,8 @@ VISUAL_GENERATION["papers"] = [
 "summary": """It proposes a transformer-based video generation model (9B) that performs <b>auto-regressive</b> frame  generation and recursive frame interpolatation""",
 "details": 
 """
-<figure>
-    <img src='2022-05-29-cogvideo-fig1.png' width=500>
-    <figcaption><b>Figure 1.</b> CogVideo is trained upon CogView2. It generates frames auto-regressively and interpolates them recursively.</figcaption>
-</figure>
+fig: fig1.png 450
+cap: <b>Model structure & training.</b> CogVideo is trained upon CogView2. It generates frames autoregressively and interpolates them recursively.
 """,
 },
 {
@@ -1121,10 +981,8 @@ VISUAL_GENERATION["papers"] = [
 "summary": """It achieves efficient high-resolution image generation by applying diffusion and denoising processes in the <b>compressed VAE latent space</b>.""",
 "details": 
 """
-<figure>
-    <img src='2021-12-20-ldm-fig1.png' width=400>
-    <figcaption><b>Figure 1.</b> Diffusion and denoising processes are conducted in the compressed VAE latent space. The conditions are injected by cross-attention.</figcaption>
-</figure>
+fig: fig1.png 350
+cap: <b>Strucuture.</b> The conditions are injected by cross-attention.
 """,
 },
 {
@@ -1157,14 +1015,10 @@ VISUAL_GENERATION["papers"] = [
 "summary": """It proposes <b>denoising diffusion probabilistic models</b> that iteratively denoises data from random noise.""",
 "details": 
 """
-<figure>
-    <img src='2020-06-19-ddpm-fig1.png' width=400>
-    <figcaption><b>Figure 1.</b> Diffusion (forward) and denoising (reverse) processes of DDPM.</figcaption>
-</figure>
-<figure>
-    <img src='2020-06-19-ddpm-fig2.png' width=600>
-    <figcaption><b>Figure 2.</b> Training and sampling algorithms of DDPM.</figcaption>
-</figure>
+fig: fig1.png 400
+cap: <b>Diffusion (forward) & denoising (reverse) processes.</b>
+fig: fig2.png 550
+cap: <b>Training & sampling algorithms.</b>
 """,
 },
 {
@@ -1188,14 +1042,10 @@ VISUAL_GENERATION["papers"] = [
     <li><b>Training stage 2:</b> training PixelCNN to predict bottom-level priors from top-level priors, while fixing the two encoders.</li>
     <li><b>Sampling:</b> (1) sampling a top-level prior; (2) predicting bottom-level prior from the top-level prior using the trained PixelCNN; (3) generating images from both the top-level and the bottom-level priors by the trained decoder.</li>
 </ul>
-<figure>
-    <img src='2019-06-02-VQ-VAE-2-fig1.png' width=900>
-    <figcaption><b>Figure 1.</b> Training and sampling frameworks.</figcaption>
-</figure>
-<figure>
-    <img src='2019-06-02-VQ-VAE-2-fig2.png' width=550>
-    <figcaption><b>Figure 2.</b> Training and sampling algorithms.</figcaption>
-</figure>
+fig: fig1.png 850
+cap: <b>Training (left) & sampling (right) frameworks.</b>
+fig: fig2.png 500
+cap: <b>Training & sampling algorithms.</b>
 """,
 },
 {
@@ -1236,9 +1086,8 @@ VISUAL_GENERATION["papers"] = [
     <li><b>Optimization objectives:</b> (1) The decoder is optimized by a recontruction loss; (2) The encoder is optimized by a reconstruction loss and a matching loss; (3) The embedding is optimized by a matching loss.</li>
     <li><b>How to back-propagate gradient with quantization exists? Straight-Through Estimator:</b> directly let the graident of loss to the quantized embedding equal to the gradient of loss to the embedding that before being quantized.</li>
 </ul>
-<figure>
-    <img src='2017-11-02-VQ-VAE-fig1.png' width=900>
-</figure>
+fig: fig1.png 900
+cap: <b>Model structure.</b>
 """,
 },
 {

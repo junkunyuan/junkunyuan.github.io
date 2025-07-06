@@ -1,6 +1,8 @@
+import re
+
 venue_name_dict = {
     "AAAI": "AAAI Conference on Artificial Intelligence",
-    "arXiv": "",
+    "arXiv": "arXiv preprint",
     "CVPR": "Conference on Computer Vision and Pattern Recognition",
     "ICCV": "International Conference on Computer Vision",
     "ICLR": "International Conference on Learning Representations",
@@ -27,3 +29,36 @@ def border_color_generator():
     while True:
         yield colors[num % num_color]
         num += 1
+
+def convert_fig_cap_to_figure(text, name):
+    lines = text.strip().splitlines()
+    result = []
+    fig_count = 0
+    i = 0
+    path_prefix = f"resource/figs/{name}/{name}-"
+
+    while i < len(lines):
+        line = lines[i].strip()
+        if line.startswith("fig:"):
+            fig_count += 1
+            # Extract image info
+            image_info = re.findall(r"(\S+)\s+(\d+)", line[len("fig:"):])
+            
+            # Next line should be caption
+            i += 1
+            cap_line = lines[i].strip()
+            caption = cap_line[len("cap:"):].strip()
+            
+            # Build figure block
+            result.append("<figure>")
+            for img, width in image_info:
+                result.append(f"    <img src='{path_prefix + img}' width={width}>")
+            result.append("    <figcaption>")
+            result.append(f"    <b>Figure {fig_count}.</b> {caption}")
+            result.append("    </figcaption>")
+            result.append("</figure>")
+        else:
+            result.append(line)
+        i += 1
+        
+    return "\n".join(result)
