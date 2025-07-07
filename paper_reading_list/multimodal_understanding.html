@@ -12,10 +12,10 @@
 <body>
 
 <h1 id="top">Multimodal Understanding</h1>
-<p class="larger"><b><font color='#D93053'>3</font> papers on Multimodal Understanding.</b></p>
+<p class="larger"><b><font color='#D93053'>4</font> papers on Multimodal Understanding.</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on July 07, 2025 at 14:08 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on July 07, 2025 at 17:03 (UTC+8).</font></p>
 <hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" href="#Foundation Algorithms & Models-table">Foundation Algorithms & Models</a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#top">Foundation Algorithms & Models</a></h2>
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
@@ -254,6 +254,53 @@
     <img src='resource/figs/Qwen-VL/Qwen-VL-fig2.png' width=900>
     <figcaption>
     <b>Figure 9.</b> <b>Showcases</b> of Qwen-VL capability.
+    </figcaption>
+</figure></p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('CLIP-Foundation Algorithms & Models-details')"><i>Learning Transferable Visual Models From Natural Language Supervision</i></p>
+            <p class="paper_detail">Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever</p>
+            <p class="paper_detail">OpenAI</p>
+            <p class="paper_detail"><b><font color=#202020>Feb 26, 2021 &nbsp; CLIP</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/OpenAI/CLIP">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2103.00020">ICML 2021</a> &nbsp; <font color=#D0D0D0></font></p>
+            <p class="paper_detail"><font color=#FF000>It shifts computer vision research from high-quality, crowd-labeled data with pre-defined labels like ImageNet to web-scale data with natural language supervision. It shows great generalization capability on visual benchmarks, and spurs research on multimodal foundation models. It has over 30K citations (as of Jul 2025).</font></p>
+            
+            <div id='CLIP-Foundation Algorithms & Models-details' class="info_detail">
+                <p class="summary">By training on 400M internet text-image pairs through contrastive learning, it shows great generalization on visual benchmarks.</p>
+                
+                <p><figure>
+    <img src='resource/figs/CLIP/CLIP-fig1.png' width=650>
+    <figcaption>
+    <b>Figure 1.</b> <b>Training and inference pipelines.</b>
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/CLIP/CLIP-fig2.png' width=300>
+    <figcaption>
+    <b>Figure 2.</b> <b>Pseudocode for training CLIP.</b>
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/CLIP/CLIP-fig3.png' width=400>
+    <figcaption>
+    <b>Figure 3.</b> <b>Zero-shot CLIP</b> outperforms few-shot probes of SoTA visual models.
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/CLIP/CLIP-fig4.png' width=500>
+    <figcaption>
+    <b>Figure 4.</b> <b>Linear probe CLIP</b> outperforms SoTA visual models.
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/CLIP/CLIP-fig5.png' width=700>
+    <figcaption>
+    <b>Figure 5.</b> CLIP is much more robust to <b>distribution shift</b>.
     </figcaption>
 </figure></p>
             </div>

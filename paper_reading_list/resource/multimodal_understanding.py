@@ -25,6 +25,33 @@ MULTIMODAL_UNDERSTANDING["papers"] = [
 # """,
 # },
 {
+"title": "Learning Transferable Visual Models From Natural Language Supervision",
+"author": "Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever",
+"organization": "OpenAI",
+"date": "20210226",
+"venue": "ICML 2021",
+"pdf_url": "https://arxiv.org/pdf/2103.00020",
+"code_url": "https://github.com/OpenAI/CLIP",
+"name": "CLIP",
+"comment": "It shifts computer vision research from high-quality, crowd-labeled data with pre-defined labels like ImageNet to web-scale data with natural language supervision. It shows great generalization capability on visual benchmarks, and spurs research on multimodal foundation models. It has over 30K citations (as of Jul 2025).",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """By training on 400M internet text-image pairs through contrastive learning, it shows great generalization on visual benchmarks.""",
+"details": 
+"""
+fig: fig1.png 650
+cap: <b>Training and inference pipelines.</b>
+fig: fig2.png 300
+cap: <b>Pseudocode for training CLIP.</b>
+fig: fig3.png 400
+cap: <b>Zero-shot CLIP</b> outperforms few-shot probes of SoTA visual models.
+fig: fig4.png 500
+cap: <b>Linear probe CLIP</b> outperforms SoTA visual models.
+fig: fig5.png 700
+cap: CLIP is much more robust to <b>distribution shift</b>.
+""",
+},
+{
 "title": "Qwen2.5-VL Technical Report",
 "author": "Shuai Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin Ge, Sibo Song, Kai Dang, Peng Wang, Shijie Wang, Jun Tang, Humen Zhong, Yuanzhi Zhu, Mingkun Yang, Zhaohai Li, Jianqiang Wan, Pengfei Wang, Wei Ding, Zheren Fu, Yiheng Xu, Jiabo Ye, Xi Zhang, Tianbao Xie, Zesen Cheng, Hang Zhang, Zhibo Yang, Haiyang Xu, Junyang Lin",
 "organization": "Alibaba Group",
