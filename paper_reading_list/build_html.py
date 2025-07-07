@@ -57,7 +57,16 @@ def build_main_content_of_each_domain(domain):
     ## Build table of contents
     catalog = """<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul>"""
     for category in domain["categories"]:
-        catalog += f"""<li><a class="no_dec" href="#{category}-table">{category}</a></li>"""
+        paper_choose = papers[papers["category"].str.contains(category)]
+        paper_choose = paper_choose.sort_values(by="date", ascending=True)
+        paper_names = paper_choose["name"].to_list()
+        names = ""
+        for i, name in enumerate(paper_names):
+            if i == len(paper_names) - 1:
+                names += f"""<font color=#B0B0B0>{name}</font>"""
+            else:
+                names += f"""<font color=#B0B0B0>{name} &nbsp;|&nbsp; </font>"""
+        catalog += f"""<li><a class="no_dec" href="#{category}-table"><b>{category}:</b></a> {names}</li>"""
     catalog += """</ul>"""
     
     ## Build contents
@@ -87,7 +96,6 @@ def build_main_content_of_each_domain(domain):
             details = paper["details"].replace("<img src='", f"<img src='resource/figs/{paper["name"]}/{paper["name"]}-")
             
             if "fig:" in details:
-                # import pdb; pdb.set_trace()
                 details = convert_fig_cap_to_figure(details, paper["name"])
 
             author = f"""<p class="paper_detail">{paper["author"]}</p>""" if paper["author"] else ""
