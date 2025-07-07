@@ -25,6 +25,51 @@ MULTIMODAL_UNDERSTANDING["papers"] = [
 # """,
 # },
 {
+"title": "Qwen2.5-VL Technical Report",
+"author": "Shuai Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin Ge, Sibo Song, Kai Dang, Peng Wang, Shijie Wang, Jun Tang, Humen Zhong, Yuanzhi Zhu, Mingkun Yang, Zhaohai Li, Jianqiang Wan, Pengfei Wang, Wei Ding, Zheren Fu, Yiheng Xu, Jiabo Ye, Xi Zhang, Tianbao Xie, Zesen Cheng, Hang Zhang, Zhibo Yang, Haiyang Xu, Junyang Lin",
+"organization": "Alibaba Group",
+"date": "20250219",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2502.13923",
+"code_url": "https://github.com/QwenLM/Qwen2.5-VL",
+"name": "Qwen2.5-VL",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """It makes improvement to Qwen2-VL by employing window attention, native dynamic resolution, absoute time encoding, more and high-quality data.""",
+"details": 
+"""
+<ul>
+    <li> <b>Visual encoder.</b> The used ViT is trained from scratch. It employs self-attention + window attention to improve efficiency. It employs MRoPE as position embedding. Images and videos are sampled at native resolutions and dynamic frame rates.
+    <li> <b>Vision-Language Merger.</b> Group adjacent four visual patches, concat them along feature dimensions, and project them using a two-layer MLP.
+    <li> <b>Language model.</b> Qwen2.5 LLM.
+    <li> <b>Pre-training stages.</b> (1) Stage 1: ViT is trained to learn visual knowledge; (2) Stage 2: all model parameters are optimized to learn diverse knowledge and tasks; (3) Stage 3: all model parameters are optimized to learn long sequences by incorpoating video and agent-based data.
+    <li> <b>Post-training stages.</b> SFT and DPO are employed to optimize the language model.
+    <li> <b>Sparkling capabilities.</b> Omni-document parsing, precise object grounding (based on real resolution), ultra-long video understanding and grounding, and enhanced agent functionality.
+</ul>
+fig: fig1.png 700
+cap: <b>Model structure.</b>
+fig: fig2.png 450
+cap: <b>Model structure details.</b>
+fig: fig3.png 500
+cap: <b>Pre-training data.</b>
+fig: fig4.png 700
+cap: <b>Performance on multimodal benchmarks.</b>
+fig: fig5.png 450
+cap: <b>Performance on pure text benchmarks.</b>
+fig: fig6.png 550
+cap: <b>Performance on OCR, chart, document understanding benchmarks.</b>
+fig: fig7.png 500
+cap: <b>Performance on grounding benchmarks.</b>
+fig: fig8.png 500
+cap: <b>Performance on counting benchmarks.</b>
+fig: fig9.png 500
+cap: <b>Performance on video benchmarks.</b>
+fig: fig10.png 550
+cap: <b>Performance on GUI agent benchmarks.</b>
+""",
+},
+{
 "title": "Qwen2-VL: Enhancing Vision-Language Model's Perception of the World at Any Resolution",
 "author": "Peng Wang, Shuai Bai, Sinan Tan, Shijie Wang, Zhihao Fan, Jinze Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin Ge, Yang Fan, Kai Dang, Mengfei Du, Xuancheng Ren, Rui Men, Dayiheng Liu, Chang Zhou, Jingren Zhou, Junyang Lin",
 "organization": "Alibaba Group",

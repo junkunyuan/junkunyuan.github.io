@@ -12,11 +12,96 @@
 <body>
 
 <h1 id="top">Multimodal Understanding</h1>
-<p class="larger"><b><font color='#D93053'>2</font> papers on Multimodal Understanding.</b></p>
+<p class="larger"><b><font color='#D93053'>3</font> papers on Multimodal Understanding.</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on July 06, 2025 at 23:02 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on July 07, 2025 at 14:08 (UTC+8).</font></p>
 <hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" href="#Foundation Algorithms & Models-table">Foundation Algorithms & Models</a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#top">Foundation Algorithms & Models</a></h2>
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('Qwen2.5-VL-Foundation Algorithms & Models-details')"><i>Qwen2.5-VL Technical Report</i></p>
+            <p class="paper_detail">Shuai Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin Ge, Sibo Song, Kai Dang, Peng Wang, Shijie Wang, Jun Tang, Humen Zhong, Yuanzhi Zhu, Mingkun Yang, Zhaohai Li, Jianqiang Wan, Pengfei Wang, Wei Ding, Zheren Fu, Yiheng Xu, Jiabo Ye, Xi Zhang, Tianbao Xie, Zesen Cheng, Hang Zhang, Zhibo Yang, Haiyang Xu, Junyang Lin</p>
+            <p class="paper_detail">Alibaba Group</p>
+            <p class="paper_detail"><b><font color=#202020>Feb 19, 2025 &nbsp; Qwen2.5-VL</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/QwenLM/Qwen2.5-VL">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2502.13923">arXiv 2025</a> &nbsp; <font color=#D0D0D0>arXiv preprint</font></p>
+            
+            
+            <div id='Qwen2.5-VL-Foundation Algorithms & Models-details' class="info_detail">
+                <p class="summary">It makes improvement to Qwen2-VL by employing window attention, native dynamic resolution, absoute time encoding, more and high-quality data.</p>
+                
+                <p><ul>
+<li> <b>Visual encoder.</b> The used ViT is trained from scratch. It employs self-attention + window attention to improve efficiency. It employs MRoPE as position embedding. Images and videos are sampled at native resolutions and dynamic frame rates.
+<li> <b>Vision-Language Merger.</b> Group adjacent four visual patches, concat them along feature dimensions, and project them using a two-layer MLP.
+<li> <b>Language model.</b> Qwen2.5 LLM.
+<li> <b>Pre-training stages.</b> (1) Stage 1: ViT is trained to learn visual knowledge; (2) Stage 2: all model parameters are optimized to learn diverse knowledge and tasks; (3) Stage 3: all model parameters are optimized to learn long sequences by incorpoating video and agent-based data.
+<li> <b>Post-training stages.</b> SFT and DPO are employed to optimize the language model.
+<li> <b>Sparkling capabilities.</b> Omni-document parsing, precise object grounding (based on real resolution), ultra-long video understanding and grounding, and enhanced agent functionality.
+</ul>
+<figure>
+    <img src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig1.png' width=700>
+    <figcaption>
+    <b>Figure 1.</b> <b>Model structure.</b>
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig2.png' width=450>
+    <figcaption>
+    <b>Figure 2.</b> <b>Model structure details.</b>
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig3.png' width=500>
+    <figcaption>
+    <b>Figure 3.</b> <b>Pre-training data.</b>
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig4.png' width=700>
+    <figcaption>
+    <b>Figure 4.</b> <b>Performance on multimodal benchmarks.</b>
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig5.png' width=450>
+    <figcaption>
+    <b>Figure 5.</b> <b>Performance on pure text benchmarks.</b>
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig6.png' width=550>
+    <figcaption>
+    <b>Figure 6.</b> <b>Performance on OCR, chart, document understanding benchmarks.</b>
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig7.png' width=500>
+    <figcaption>
+    <b>Figure 7.</b> <b>Performance on grounding benchmarks.</b>
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig8.png' width=500>
+    <figcaption>
+    <b>Figure 8.</b> <b>Performance on counting benchmarks.</b>
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig9.png' width=500>
+    <figcaption>
+    <b>Figure 9.</b> <b>Performance on video benchmarks.</b>
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig10.png' width=550>
+    <figcaption>
+    <b>Figure 10.</b> <b>Performance on GUI agent benchmarks.</b>
+    </figcaption>
+</figure></p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
