@@ -6,6 +6,7 @@ venue_name_dict = {
     "CVPR": "Conference on Computer Vision and Pattern Recognition",
     "ICCV": "International Conference on Computer Vision",
     "ICLR": "International Conference on Learning Representations",
+    "ICML": "International Conference on Machine Learning",
     "IJCV": "International Journal of Computer Vision",
     "KDD": "ACM SIGKDD Conference on Knowledge Discovery and Data Mining",
     "MM": "International Conference on Multimedia",

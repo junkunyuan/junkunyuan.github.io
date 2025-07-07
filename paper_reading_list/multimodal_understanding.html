@@ -12,11 +12,11 @@
 <body>
 
 <h1 id="top">Multimodal Understanding</h1>
-<p class="larger"><b><font color='#D93053'>4</font> papers on Multimodal Understanding.</b></p>
+<p class="larger"><b><font color='#D93053'>5</font> papers on Multimodal Understanding.</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on July 07, 2025 at 17:03 (UTC+8).</font></p>
-<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" href="#Foundation Algorithms & Models-table">Foundation Algorithms & Models</a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#top">Foundation Algorithms & Models</a></h2>
+<p><font color=#B0B0B0>Last updated on July 07, 2025 at 18:57 (UTC+8).</font></p>
+<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" href="#Foundation Algorithms & Models-table">Foundation Algorithms & Models</a></li><li><a class="no_dec" href="#Fine-tuning-table">Fine-tuning</a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#top">Foundation Algorithms & Models</a></h2>
             <p class="little_split"></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -267,7 +267,7 @@
             <p class="paper_title" onclick="toggleTable('CLIP-Foundation Algorithms & Models-details')"><i>Learning Transferable Visual Models From Natural Language Supervision</i></p>
             <p class="paper_detail">Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever</p>
             <p class="paper_detail">OpenAI</p>
-            <p class="paper_detail"><b><font color=#202020>Feb 26, 2021 &nbsp; CLIP</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/OpenAI/CLIP">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2103.00020">ICML 2021</a> &nbsp; <font color=#D0D0D0></font></p>
+            <p class="paper_detail"><b><font color=#202020>Feb 26, 2021 &nbsp; CLIP</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/OpenAI/CLIP">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2103.00020">ICML 2021</a> &nbsp; <font color=#D0D0D0>International Conference on Machine Learning</font></p>
             <p class="paper_detail"><font color=#FF000>It shifts computer vision research from high-quality, crowd-labeled data with pre-defined labels like ImageNet to web-scale data with natural language supervision. It shows great generalization capability on visual benchmarks, and spurs research on multimodal foundation models. It has over 30K citations (as of Jul 2025).</font></p>
             
             <div id='CLIP-Foundation Algorithms & Models-details' class="info_detail">
@@ -301,6 +301,43 @@
     <img src='resource/figs/CLIP/CLIP-fig5.png' width=700>
     <figcaption>
     <b>Figure 5.</b> CLIP is much more robust to <b>distribution shift</b>.
+    </figcaption>
+</figure></p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            <h2 id="Fine-tuning-table"><a class="no_dec" href="#top">Fine-tuning</a></h2>
+            <p class="little_split"></p>
+            <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('MiniGPT-4-Fine-tuning-details')"><i>MiniGPT-4: Enhancing Vision-Language Understanding with Advanced Large Language Models</i></p>
+            <p class="paper_detail">Deyao Zhu, Jun Chen, Xiaoqian Shen, Xiang Li, Mohamed Elhoseiny</p>
+            <p class="paper_detail">King Abdullah University of Science and Technology</p>
+            <p class="paper_detail"><b><font color=#202020>Apr 20, 2023 &nbsp; MiniGPT-4</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/Vision-CAIR/MiniGPT-4">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2304.10592">ICLR 2024</a> &nbsp; <font color=#D0D0D0>International Conference on Learning Representations</font></p>
+            
+            
+            <div id='MiniGPT-4-Fine-tuning-details' class="info_detail">
+                <p class="summary">It aligns a frozen visual encoder with a frozen LLM (Vicuna) using <b>one projection layer</b>.</p>
+                
+                <p><ul>
+<li> <b>Structure.</b> The same pretrained vision module as BLIP-2: ViT-G/14 from EVA-CLIP with a Q-Former. Language model: Vicuna. Connector: a single projection layer.
+<li> <b>Training.</b> Pre-training + instruction-tuning. It only fine-tunes the projection layer.
+<li> <b>Training data.</b> Pre-training: LAION, Conceptual Captions, SBU. Instruction-tuning: 3500 images from Conceptual Caption with captions generated by the pre-trained model (cleaned by ChatGPT).
+</ul>
+<figure>
+    <img src='resource/figs/MiniGPT-4/MiniGPT-4-fig1.png' width=350>
+    <img src='resource/figs/MiniGPT-4/MiniGPT-4-fig2.png' width=240>
+    <img src='resource/figs/MiniGPT-4/MiniGPT-4-fig3.png' width=250>
+    <figcaption>
+    <b>Figure 1.</b> Performance on <b>advanced vision-language tasks</b> (left), <b>COCO captioning</b> (middle), <b>detailed captioning & poem generation</b> (right).
+    </figcaption>
+</figure>
+<figure>
+    <img src='resource/figs/MiniGPT-4/MiniGPT-4-fig4.png' width=300>
+    <img src='resource/figs/MiniGPT-4/MiniGPT-4-fig5.png' width=280>
+    <figcaption>
+    <b>Figure 2.</b> <b>Ablation</b> studies (left), <b>hallucination</b> evaluation (right).
     </figcaption>
 </figure></p>
             </div>
