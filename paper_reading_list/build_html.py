@@ -130,16 +130,23 @@ def build_main_content_of_each_domain(domain):
     <script>
     function toggleTable(tableId) {
         const container = document.getElementById(tableId);
+        const button = container.previousElementSibling;
         const isVisible = window.getComputedStyle(container).display !== 'none';
+
         if (!isVisible) {
-        container.querySelectorAll('.lazy-load').forEach(img => {
-            if (!img.src && img.dataset.src) {
-            img.src = img.dataset.src;
-            }
-        });
-        container.style.display = 'block';
+            // 显示容器时，加载图片
+            const images = container.querySelectorAll('.lazy-load');
+            images.forEach(img => {
+                // 仅当img没有src，但有data-src时，才加载
+                if (!img.src && img.dataset.src) {
+                    img.src = img.dataset.src; // 关键：此时才设置src，触发加载
+                    // 可选：加载完成后移除data-src（避免重复加载）
+                    img.onload = () => img.removeAttribute('data-src');
+                }
+            });
+            container.style.display = 'block';
         } else {
-        container.style.display = 'none';
+            container.style.display = 'none';
         }
     }
     </script>

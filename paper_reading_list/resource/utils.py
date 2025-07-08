@@ -54,7 +54,7 @@ def convert_fig_cap_to_figure(text, name):
             result.append("<figure>")
             for img, width in image_info:
                 # result.append(f"<img src='{path_prefix + img}' width={width}>")
-                result.append(f"<img class='lazy-load' src='' data-src='{path_prefix + img}' width={width}>")
+                result.append(f"<img src='' data-src='{path_prefix + img}' width={width}>")
             result.append("    <figcaption>")
             result.append(f"    <b>Figure {fig_count}.</b> {caption}")
             result.append("    </figcaption>")
