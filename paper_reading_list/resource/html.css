@@ -106,6 +106,9 @@ li {
     /* font-family: Arial, sans-serif; */
     /* font-weight:bold; */
 }
+.lazy_load {
+    display: none;
+}
 .summary {
     color: #202020;
 }
