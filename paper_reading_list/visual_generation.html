@@ -15,9 +15,9 @@
 <p class="larger"><b><font color='#D93053'>49</font> papers on Visual Generation.</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on July 08, 2025 at 12:46 (UTC+8).</font></p>
-<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models:</b></a> <font color=#B0B0B0>VQ-VAE &nbsp;|&nbsp; </font><font color=#B0B0B0>VQ-VAE-2 &nbsp;|&nbsp; </font><font color=#B0B0B0>DDPM &nbsp;|&nbsp; </font><font color=#B0B0B0>DDIM &nbsp;|&nbsp; </font><font color=#B0B0B0>CFG &nbsp;|&nbsp; </font><font color=#B0B0B0>LDM &nbsp;|&nbsp; </font><font color=#B0B0B0>CogVideo &nbsp;|&nbsp; </font><font color=#B0B0B0>Unified Perspective on Diffusion Models &nbsp;|&nbsp; </font><font color=#B0B0B0>DiT &nbsp;|&nbsp; </font><font color=#B0B0B0>SDXL &nbsp;|&nbsp; </font><font color=#B0B0B0>VAR &nbsp;|&nbsp; </font><font color=#B0B0B0>LlamaGen &nbsp;|&nbsp; </font><font color=#B0B0B0>DiT-MoE &nbsp;|&nbsp; </font><font color=#B0B0B0>Movie Gen &nbsp;|&nbsp; </font><font color=#B0B0B0>Fluid &nbsp;|&nbsp; </font><font color=#B0B0B0>HunyuanVideo &nbsp;|&nbsp; </font><font color=#B0B0B0>Infinity &nbsp;|&nbsp; </font><font color=#B0B0B0>Step-Video-T2V &nbsp;|&nbsp; </font><font color=#B0B0B0>noise-unconditional model &nbsp;|&nbsp; </font><font color=#B0B0B0>Seedream2.0 &nbsp;|&nbsp; </font><font color=#B0B0B0>Step-Video-TI2V &nbsp;|&nbsp; </font><font color=#B0B0B0>Wan &nbsp;|&nbsp; </font><font color=#B0B0B0>Seaweed-7B &nbsp;|&nbsp; </font><font color=#B0B0B0>SimpleAR &nbsp;|&nbsp; </font><font color=#B0B0B0>Seedream 3.0</font></li><li><a class="no_dec" href="#Reinforcement Learning-table"><b>Reinforcement Learning:</b></a> <font color=#B0B0B0>promptist &nbsp;|&nbsp; </font><font color=#B0B0B0>Diffusion-DPO &nbsp;|&nbsp; </font><font color=#B0B0B0>InstructVideo &nbsp;|&nbsp; </font><font color=#B0B0B0>Flow-RWR, Flow-DPO</font></li><li><a class="no_dec" href="#Inference-Time Improvement-table"><b>Inference-Time Improvement:</b></a> <font color=#B0B0B0>Z-Sampling &nbsp;|&nbsp; </font><font color=#B0B0B0>Inference-Time Scaling Analysis &nbsp;|&nbsp; </font><font color=#B0B0B0>PARM &nbsp;|&nbsp; </font><font color=#B0B0B0>Inference can Beat Pretraining</font></li><li><a class="no_dec" href="#Acceleration-table"><b>Acceleration:</b></a> <font color=#B0B0B0>SD3-Turbo</font></li><li><a class="no_dec" href="#Datasets & Evaluation-table"><b>Datasets & Evaluation:</b></a> <font color=#B0B0B0>Inception Score &nbsp;|&nbsp; </font><font color=#B0B0B0>FID &nbsp;|&nbsp; </font><font color=#B0B0B0>FVD &nbsp;|&nbsp; </font><font color=#B0B0B0>CLIPScore &nbsp;|&nbsp; </font><font color=#B0B0B0>HPS &nbsp;|&nbsp; </font><font color=#B0B0B0>ImageReward &nbsp;|&nbsp; </font><font color=#B0B0B0>PickScore &nbsp;|&nbsp; </font><font color=#B0B0B0>HPS v2 &nbsp;|&nbsp; </font><font color=#B0B0B0>T2I-CompBench &nbsp;|&nbsp; </font><font color=#B0B0B0>GenEval &nbsp;|&nbsp; </font><font color=#B0B0B0>Vbench &nbsp;|&nbsp; </font><font color=#B0B0B0>VQAScore &nbsp;|&nbsp; </font><font color=#B0B0B0>T2V-CompBench &nbsp;|&nbsp; </font><font color=#B0B0B0>UnifiedReward</font></li><li><a class="no_dec" href="#Downstream Tasks-table"><b>Downstream Tasks:</b></a> <font color=#B0B0B0>Step1X-Edit</font></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#top">Foundation Algorithms & Models</a></h2>
-            <p class="little_split"></p>
+<p><font color=#B0B0B0>Last updated on July 08, 2025 at 13:43 (UTC+8).</font></p>
+<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models:</b></a> <a class="no_dec" href="#VQ-VAE"><font color=#B0B0B0>VQ-VAE</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#VQ-VAE-2"><font color=#B0B0B0>VQ-VAE-2</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#DDPM"><font color=#B0B0B0>DDPM</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#DDIM"><font color=#B0B0B0>DDIM</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#CFG"><font color=#B0B0B0>CFG</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#LDM"><font color=#B0B0B0>LDM</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#CogVideo"><font color=#B0B0B0>CogVideo</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Unified Perspective on Diffusion Models"><font color=#B0B0B0>Unified Perspective on Diffusion Models</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#DiT"><font color=#B0B0B0>DiT</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#SDXL"><font color=#B0B0B0>SDXL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#VAR"><font color=#B0B0B0>VAR</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#LlamaGen"><font color=#B0B0B0>LlamaGen</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#DiT-MoE"><font color=#B0B0B0>DiT-MoE</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Movie Gen"><font color=#B0B0B0>Movie Gen</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Fluid"><font color=#B0B0B0>Fluid</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#HunyuanVideo"><font color=#B0B0B0>HunyuanVideo</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Infinity"><font color=#B0B0B0>Infinity</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Step-Video-T2V"><font color=#B0B0B0>Step-Video-T2V</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#noise-unconditional model"><font color=#B0B0B0>noise-unconditional model</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Seedream2.0"><font color=#B0B0B0>Seedream2.0</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Step-Video-TI2V"><font color=#B0B0B0>Step-Video-TI2V</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Wan"><font color=#B0B0B0>Wan</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Seaweed-7B"><font color=#B0B0B0>Seaweed-7B</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#SimpleAR"><font color=#B0B0B0>SimpleAR</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Seedream 3.0"><font color=#B0B0B0>Seedream 3.0</font></a></li><li><a class="no_dec" id="Reinforcement Learning" href="#Reinforcement Learning-table"><b>Reinforcement Learning:</b></a> <a class="no_dec" href="#promptist"><font color=#B0B0B0>promptist</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Diffusion-DPO"><font color=#B0B0B0>Diffusion-DPO</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#InstructVideo"><font color=#B0B0B0>InstructVideo</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Flow-RWR, Flow-DPO"><font color=#B0B0B0>Flow-RWR, Flow-DPO</font></a></li><li><a class="no_dec" id="Inference-Time Improvement" href="#Inference-Time Improvement-table"><b>Inference-Time Improvement:</b></a> <a class="no_dec" href="#Z-Sampling"><font color=#B0B0B0>Z-Sampling</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Inference-Time Scaling Analysis"><font color=#B0B0B0>Inference-Time Scaling Analysis</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#PARM"><font color=#B0B0B0>PARM</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Inference can Beat Pretraining"><font color=#B0B0B0>Inference can Beat Pretraining</font></a></li><li><a class="no_dec" id="Acceleration" href="#Acceleration-table"><b>Acceleration:</b></a> <a class="no_dec" href="#SD3-Turbo"><font color=#B0B0B0>SD3-Turbo</font></a></li><li><a class="no_dec" id="Datasets & Evaluation" href="#Datasets & Evaluation-table"><b>Datasets & Evaluation:</b></a> <a class="no_dec" href="#Inception Score"><font color=#B0B0B0>Inception Score</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#FID"><font color=#B0B0B0>FID</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#FVD"><font color=#B0B0B0>FVD</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#CLIPScore"><font color=#B0B0B0>CLIPScore</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#HPS"><font color=#B0B0B0>HPS</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#ImageReward"><font color=#B0B0B0>ImageReward</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#PickScore"><font color=#B0B0B0>PickScore</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#HPS v2"><font color=#B0B0B0>HPS v2</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#T2I-CompBench"><font color=#B0B0B0>T2I-CompBench</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#GenEval"><font color=#B0B0B0>GenEval</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Vbench"><font color=#B0B0B0>Vbench</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#VQAScore"><font color=#B0B0B0>VQAScore</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#T2V-CompBench"><font color=#B0B0B0>T2V-CompBench</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#UnifiedReward"><font color=#B0B0B0>UnifiedReward</font></a></li><li><a class="no_dec" id="Downstream Tasks" href="#Downstream Tasks-table"><b>Downstream Tasks:</b></a> <a class="no_dec" href="#Step1X-Edit"><font color=#B0B0B0>Step1X-Edit</font></a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
+            <p class="little_split" id='SimpleAR'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('SimpleAR-Foundation Algorithms & Models-details')"><i>SimpleAR: Pushing the Frontier of Autoregressive Visual Generation through Pretraining, SFT, and RL</i></p>
@@ -43,7 +43,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='Seedream 3.0'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Seedream 3.0-Foundation Algorithms & Models-details')"><i>Seedream 3.0 Technical Report</i></p>
@@ -72,7 +72,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='Seaweed-7B'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Seaweed-7B-Foundation Algorithms & Models-details')"><i>Seaweed-7B: Cost-Effective Training of Video Generation Foundation Model</i></p>
@@ -131,7 +131,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='Wan'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Wan-Foundation Algorithms & Models-details')"><i>Wan: Open and Advanced Large-Scale Video Generative Models</i></p>
@@ -168,7 +168,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='Step-Video-TI2V'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Step-Video-TI2V-Foundation Algorithms & Models-details')"><i>Step-Video-TI2V Technical Report: A State-of-the-Art Text-Driven Image-to-Video Generation Model</i></p>
@@ -191,7 +191,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='Seedream2.0'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Seedream2.0-Foundation Algorithms & Models-details')"><i>Seedream 2.0: A Native Chinese-English Bilingual Image Generation Foundation Model</i></p>
@@ -232,7 +232,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='noise-unconditional model'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('noise-unconditional model-Foundation Algorithms & Models-details')"><i>Is Noise Conditioning Necessary for Denoising Generative Models?</i></p>
@@ -255,7 +255,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='Step-Video-T2V'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Step-Video-T2V-Foundation Algorithms & Models-details')"><i>Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model</i></p>
@@ -302,7 +302,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='Infinity'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Infinity-Foundation Algorithms & Models-details')"><i>Infinity: Scaling Bitwise AutoRegressive Modeling for High-Resolution Image Synthesis</i></p>
@@ -367,7 +367,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='HunyuanVideo'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('HunyuanVideo-Foundation Algorithms & Models-details')"><i>HunyuanVideo: A Systematic Framework For Large Video Generative Models</i></p>
@@ -386,7 +386,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='Fluid'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Fluid-Foundation Algorithms & Models-details')"><i>Fluid: Scaling Autoregressive Text-to-image Generative Models with Continuous Tokens</i></p>
@@ -433,7 +433,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='Movie Gen'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Movie Gen-Foundation Algorithms & Models-details')"><i>Movie Gen: A Cast of Media Foundation Models</i></p>
@@ -452,7 +452,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='DiT-MoE'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('DiT-MoE-Foundation Algorithms & Models-details')"><i>Scaling Diffusion Transformers to 16 Billion Parameters</i></p>
@@ -479,7 +479,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='LlamaGen'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('LlamaGen-Foundation Algorithms & Models-details')"><i>Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation</i></p>
@@ -503,7 +503,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='VAR'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('VAR-Foundation Algorithms & Models-details')"><i>Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction</i></p>
@@ -544,7 +544,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='SDXL'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('SDXL-Foundation Algorithms & Models-details')"><i>SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis</i></p>
@@ -574,7 +574,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='DiT'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('DiT-Foundation Algorithms & Models-details')"><i>Scalable Diffusion Models with Transformers</i></p>
@@ -599,7 +599,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='Unified Perspective on Diffusion Models'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Unified Perspective on Diffusion Models-Foundation Algorithms & Models-details')"><i>Understanding Diffusion Models: A Unified Perspective</i></p>
@@ -618,7 +618,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='CogVideo'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('CogVideo-Foundation Algorithms & Models-details')"><i>CogVideo: Large-scale Pretraining for Text-to-Video Generation via Transformers</i></p>
@@ -641,7 +641,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='LDM'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('LDM-Foundation Algorithms & Models-details')"><i>High-Resolution Image Synthesis with Latent Diffusion Models</i></p>
@@ -664,7 +664,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='CFG'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('CFG-Foundation Algorithms & Models-details')"><i>Classifier-Free Diffusion Guidance</i></p>
@@ -684,7 +684,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='DDIM'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('DDIM-Foundation Algorithms & Models-details')"><i>Denoising Diffusion Implicit Models</i></p>
@@ -713,7 +713,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='DDPM'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('DDPM-Foundation Algorithms & Models-details')"><i>Denoising Diffusion Probabilistic Models</i></p>
@@ -744,7 +744,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='VQ-VAE-2'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('VQ-VAE-2-Foundation Algorithms & Models-details')"><i>Generating Diverse High-Fidelity Images with VQ-VAE-2</i></p>
@@ -779,7 +779,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='VQ-VAE'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('VQ-VAE-Foundation Algorithms & Models-details')"><i>Neural Discrete Representation Learning</i></p>
@@ -807,8 +807,8 @@
             <div style="height: 0.05em;"></div>
             </div>
             <p class="little_split"></p>
-            <h2 id="Reinforcement Learning-table"><a class="no_dec" href="#top">Reinforcement Learning</a></h2>
-            <p class="little_split"></p>
+            <h2 id="Reinforcement Learning-table"><a class="no_dec" href="#Reinforcement Learning">Reinforcement Learning</a></h2>
+            <p class="little_split" id='Flow-RWR, Flow-DPO'></p>
             <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Flow-RWR, Flow-DPO-Reinforcement Learning-details')"><i>Improving Video Generation with Human Feedback</i></p>
@@ -827,7 +827,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='InstructVideo'></p>
             <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('InstructVideo-Reinforcement Learning-details')"><i>InstructVideo: Instructing Video Diffusion Models with Human Feedback</i></p>
@@ -846,7 +846,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='Diffusion-DPO'></p>
             <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Diffusion-DPO-Reinforcement Learning-details')"><i>Diffusion Model Alignment Using Direct Preference Optimization</i></p>
@@ -871,7 +871,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='promptist'></p>
             <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('promptist-Reinforcement Learning-details')"><i>Optimizing Prompts for Text-to-Image Generation</i></p>
@@ -893,8 +893,8 @@
             <div style="height: 0.05em;"></div>
             </div>
             <p class="little_split"></p>
-            <h2 id="Inference-Time Improvement-table"><a class="no_dec" href="#top">Inference-Time Improvement</a></h2>
-            <p class="little_split"></p>
+            <h2 id="Inference-Time Improvement-table"><a class="no_dec" href="#Inference-Time Improvement">Inference-Time Improvement</a></h2>
+            <p class="little_split" id='Inference can Beat Pretraining'></p>
             <div style="border-left: 8px solid #B2EEC8; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Inference can Beat Pretraining-Inference-Time Improvement-details')"><i>Ideas in Inference-time Scaling can Benefit Generative Pre-training Algorithms</i></p>
@@ -923,7 +923,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='PARM'></p>
             <div style="border-left: 8px solid #B2EEC8; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('PARM-Inference-Time Improvement-details')"><i>Can We Generate Images with CoT? Let's Verify and Reinforce Image Generation Step by Step</i></p>
@@ -952,7 +952,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='Inference-Time Scaling Analysis'></p>
             <div style="border-left: 8px solid #B2EEC8; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Inference-Time Scaling Analysis-Inference-Time Improvement-details')"><i>Inference-Time Scaling for Diffusion Models beyond Scaling Denoising Steps</i></p>
@@ -993,7 +993,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='Z-Sampling'></p>
             <div style="border-left: 8px solid #B2EEC8; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Z-Sampling-Inference-Time Improvement-details')"><i>Zigzag Diffusion Sampling: Diffusion Models Can Self-Improve via Self-Reflection</i></p>
@@ -1021,8 +1021,8 @@
             <div style="height: 0.05em;"></div>
             </div>
             <p class="little_split"></p>
-            <h2 id="Acceleration-table"><a class="no_dec" href="#top">Acceleration</a></h2>
-            <p class="little_split"></p>
+            <h2 id="Acceleration-table"><a class="no_dec" href="#Acceleration">Acceleration</a></h2>
+            <p class="little_split" id='SD3-Turbo'></p>
             <div style="border-left: 8px solid #FFBBCC; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('SD3-Turbo-Acceleration-details')"><i>Fast High-Resolution Image Synthesis with Latent Adversarial Diffusion Distillation</i></p>
@@ -1068,8 +1068,8 @@
             <div style="height: 0.05em;"></div>
             </div>
             <p class="little_split"></p>
-            <h2 id="Datasets & Evaluation-table"><a class="no_dec" href="#top">Datasets & Evaluation</a></h2>
-            <p class="little_split"></p>
+            <h2 id="Datasets & Evaluation-table"><a class="no_dec" href="#Datasets & Evaluation">Datasets & Evaluation</a></h2>
+            <p class="little_split" id='UnifiedReward'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('UnifiedReward-Datasets & Evaluation-details')"><i>Unified Reward Model for Multimodal Understanding and Generation</i></p>
@@ -1087,7 +1087,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='T2V-CompBench'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('T2V-CompBench-Datasets & Evaluation-details')"><i>T2V-CompBench: A Comprehensive Benchmark for Compositional Text-to-video Generation</i></p>
@@ -1124,7 +1124,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='VQAScore'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('VQAScore-Datasets & Evaluation-details')"><i>Evaluating Text-to-Visual Generation with Image-to-Text Generation</i></p>
@@ -1143,7 +1143,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='Vbench'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Vbench-Datasets & Evaluation-details')"><i>VBench: Comprehensive Benchmark Suite for Video Generative Models</i></p>
@@ -1181,7 +1181,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='GenEval'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('GenEval-Datasets & Evaluation-details')"><i>GenEval: An Object-Focused Framework for Evaluating Text-to-Image Alignment</i></p>
@@ -1210,7 +1210,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='T2I-CompBench'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('T2I-CompBench-Datasets & Evaluation-details')"><i>T2I-CompBench: A Comprehensive Benchmark for Open-world Compositional Text-to-image Generation</i></p>
@@ -1238,7 +1238,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='HPS v2'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('HPS v2-Datasets & Evaluation-details')"><i>Human Preference Score v2: A Solid Benchmark for Evaluating Human Preferences of Text-to-Image Synthesis</i></p>
@@ -1261,7 +1261,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='PickScore'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('PickScore-Datasets & Evaluation-details')"><i>Pick-a-Pic: An Open Dataset of User Preferences for Text-to-Image Generation</i></p>
@@ -1280,7 +1280,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='ImageReward'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('ImageReward-Datasets & Evaluation-details')"><i>ImageReward: Learning and Evaluating Human Preferences for Text-to-Image Generation</i></p>
@@ -1303,7 +1303,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='HPS'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('HPS-Datasets & Evaluation-details')"><i>Human Preference Score: Better Aligning Text-to-Image Models with Human Preference</i></p>
@@ -1326,7 +1326,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='CLIPScore'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('CLIPScore-Datasets & Evaluation-details')"><i>CLIPScore: A Reference-free Evaluation Metric for Image Captioning</i></p>
@@ -1351,7 +1351,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='FVD'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('FVD-Datasets & Evaluation-details')"><i>FVD: A new Metric for Video Generation</i></p>
@@ -1370,7 +1370,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='FID'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('FID-Datasets & Evaluation-details')"><i>GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium</i></p>
@@ -1389,7 +1389,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='Inception Score'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Inception Score-Datasets & Evaluation-details')"><i>Improved Techniques for Training GANs</i></p>
@@ -1407,8 +1407,8 @@
             <div style="height: 0.05em;"></div>
             </div>
             <p class="little_split"></p>
-            <h2 id="Downstream Tasks-table"><a class="no_dec" href="#top">Downstream Tasks</a></h2>
-            <p class="little_split"></p>
+            <h2 id="Downstream Tasks-table"><a class="no_dec" href="#Downstream Tasks">Downstream Tasks</a></h2>
+            <p class="little_split" id='Step1X-Edit'></p>
             <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Step1X-Edit-Downstream Tasks-details')"><i>Step1X-Edit: A Practical Framework for General Image Editing</i></p>
@@ -1454,6 +1454,24 @@
                 
             }
         }
+    </script>
+
+    <button id="backToTop" title="back to top">↑</button>
+    <script>
+        const backToTopButton = document.getElementById('backToTop');
+        window.addEventListener('scroll', function () {
+        if (window.scrollY > 200) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+        });
+        backToTopButton.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        });
     </script>
     
 </body>

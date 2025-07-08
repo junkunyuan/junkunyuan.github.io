@@ -63,10 +63,10 @@ def build_main_content_of_each_domain(domain):
         names = ""
         for i, name in enumerate(paper_names):
             if i == len(paper_names) - 1:
-                names += f"""<font color=#B0B0B0>{name}</font>"""
+                names += f"""<a class="no_dec" href="#{name}"><font color=#B0B0B0>{name}</font></a>"""
             else:
-                names += f"""<font color=#B0B0B0>{name} &nbsp;|&nbsp; </font>"""
-        catalog += f"""<li><a class="no_dec" href="#{category}-table"><b>{category}:</b></a> {names}</li>"""
+                names += f"""<a class="no_dec" href="#{name}"><font color=#B0B0B0>{name}</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> """
+        catalog += f"""<li><a class="no_dec" id="{category}" href="#{category}-table"><b>{category}:</b></a> {names}</li>"""
     catalog += """</ul>"""
     
     ## Build contents
@@ -79,7 +79,7 @@ def build_main_content_of_each_domain(domain):
             continue
         paper_choose = papers[paper_choose]
         paper_choose = paper_choose.sort_values(by="date", ascending=False)
-        content_cate = f"""<h2 id="{category}-table"><a class="no_dec" href="#top">{category}</a></h2>"""
+        content_cate = f"""<h2 id="{category}-table"><a class="no_dec" href="#{category}">{category}</a></h2>"""
         for _, paper in paper_choose.iterrows():
             code = f"""&nbsp;&nbsp;|&nbsp;&nbsp; <a href="{paper['code_url']}">code</a>""" if len(paper['code_url']) > 0 else ""
 
@@ -105,7 +105,7 @@ def build_main_content_of_each_domain(domain):
 
             content_cate += \
             f"""
-            <p class="little_split"></p>
+            <p class="little_split" id='{paper["name"]}'></p>
             <div style="border-left: 8px solid {color_bar}; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('{paper["name"]}-{category}-details')"><i>{paper["title"]}</i></p>
@@ -145,6 +145,24 @@ def build_main_content_of_each_domain(domain):
                 
             }
         }
+    </script>
+
+    <button id="backToTop" title="back to top">↑</button>
+    <script>
+        const backToTopButton = document.getElementById('backToTop');
+        window.addEventListener('scroll', function () {
+        if (window.scrollY > 200) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+        });
+        backToTopButton.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        });
     </script>
     """
     return catalog + content_all_domain

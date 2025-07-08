@@ -15,9 +15,9 @@
 <p class="larger"><b><font color='#D93053'>3</font> papers on Native Multimodal Generation.</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on July 08, 2025 at 12:46 (UTC+8).</font></p>
-<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models:</b></a> <font color=#B0B0B0>Transfusion &nbsp;|&nbsp; </font><font color=#B0B0B0>GPT-4o &nbsp;|&nbsp; </font><font color=#B0B0B0>UniFluid</font></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#top">Foundation Algorithms & Models</a></h2>
-            <p class="little_split"></p>
+<p><font color=#B0B0B0>Last updated on July 08, 2025 at 13:43 (UTC+8).</font></p>
+<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models:</b></a> <a class="no_dec" href="#Transfusion"><font color=#B0B0B0>Transfusion</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#GPT-4o"><font color=#B0B0B0>GPT-4o</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#UniFluid"><font color=#B0B0B0>UniFluid</font></a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
+            <p class="little_split" id='UniFluid'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('UniFluid-Foundation Algorithms & Models-details')"><i>Unified Autoregressive Visual Generation and Understanding with Continuous Tokens</i></p>
@@ -58,7 +58,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='GPT-4o'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('GPT-4o-Foundation Algorithms & Models-details')"><i>GPT-4o System Card</i></p>
@@ -82,7 +82,7 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split"></p>
+            <p class="little_split" id='Transfusion'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('Transfusion-Foundation Algorithms & Models-details')"><i>Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Model</i></p>
@@ -165,6 +165,24 @@
                 
             }
         }
+    </script>
+
+    <button id="backToTop" title="back to top">↑</button>
+    <script>
+        const backToTopButton = document.getElementById('backToTop');
+        window.addEventListener('scroll', function () {
+        if (window.scrollY > 200) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+        });
+        backToTopButton.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        });
     </script>
     
 </body>
