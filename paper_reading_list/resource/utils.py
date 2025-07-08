@@ -1,4 +1,5 @@
 import re
+import os
 
 venue_name_dict = {
     "AAAI": "AAAI Conference on Artificial Intelligence",
@@ -37,6 +38,7 @@ def convert_fig_cap_to_figure(text, name):
     fig_count = 0
     i = 0
     path_prefix = f"resource/figs/{name}/{name}-"
+    path_prefix = os.path.join("resource", "figs", name)
 
     while i < len(lines):
         line = lines[i].strip()
@@ -53,7 +55,8 @@ def convert_fig_cap_to_figure(text, name):
             # Build figure block
             result.append("<figure>")
             for img, width in image_info:
-                result.append(f"<img src='' data-src='{path_prefix + img}' width={width}>")
+                img_path = os.path.join(path_prefix, f"{name}-{img}")
+                result.append(f"<img data-src='{img_path}' width={width}>")
             result.append("<figcaption>")
             result.append(f"<b>Figure {fig_count}.</b> {caption}")
             result.append("</figcaption>")
@@ -61,5 +64,9 @@ def convert_fig_cap_to_figure(text, name):
         else:
             result.append(line)
         i += 1
-        
-    return "\n".join(result)
+    result_content = "\n".join(result)
+
+    # if "MiniGPT-v2" in result_content:
+    #     import pdb; pdb.set_trace()
+
+    return result_content

@@ -25,6 +25,39 @@ MULTIMODAL_UNDERSTANDING["papers"] = [
 # """,
 # },
 {
+"title": "MiniGPT-v2: Large Language Model as a Unified Interface for Vision-Language Multi-Task Learning",
+"author": "Jun Chen, Deyao Zhu, Xiaoqian Shen, Xiang Li, Zechun Liu, Pengchuan Zhang, Raghuraman Krishnamoorthi, Vikas Chandra, Yunyang Xiong, Mohamed Elhoseiny",
+"organization": "King Abdullah University of Science and Technology (KAUST), Meta AI Research",
+"date": "20231014",
+"venue": "arXiv 2024",
+"pdf_url": "https://arxiv.org/pdf/2310.09478v1",
+"code_url": "https://github.com/Vision-CAIR/MiniGPT-4",
+"name": "MiniGPT-v2",
+"comment": "",
+"category": "Fine-tuning",
+"jupyter_notes": "",
+"summary": """It makes the model learn to tackle 6 tasks with different <b>task identifiers</b> through three-stage training (maybe inspired by Qwen-VL).""",
+"details": 
+"""
+<ul>
+    <li> <b>Visual structure.</b> Use ViT-G/14 from EVA-CLIP with a Q-Former (same as MiniGPT-4). Image resolution is increased from 224x224 to 448x448, and every four neighboring visual tokens are concatenated into a single token to save compute by reducing tokens.
+    <li> <b>Language structure.</b> Language model is upgraded from Vicuna to LLaMA2-chat (7B).
+    <li> <b>Task identifiers</b> are used by the model to identify tasks. VQA: [vqa]; captioning: [caption]; grounded captioning: [grounding]; referring expression comprehension: [refer]; referring expression generation: [identify]; object parsing and grounding: [detection].
+    <li> The <b>grounding task</b> is introduced to improve MiniGPT (maybe inspired by Qwen-VL).
+</ul>
+fig: fig1.png 500
+cap: <b>Training data.</b>
+fig: fig2.png 500
+cap: Performance on <b>VQA tasks.</b>
+fig: fig3.png 500
+cap: Performance on <b>referring expression comprehension tasks.</b>
+fig: fig4.png 500
+cap: Ablation studies on <b>task identifiers.</b>
+fig: fig5.png 300
+cap: Performance on <b>hallucination problem.</b>
+""",
+},
+{
 "title": "MiniGPT-4: Enhancing Vision-Language Understanding with Advanced Large Language Models",
 "author": "Deyao Zhu, Jun Chen, Xiaoqian Shen, Xiang Li, Mohamed Elhoseiny",
 "organization": "King Abdullah University of Science and Technology",

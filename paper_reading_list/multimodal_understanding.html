@@ -12,11 +12,11 @@
 <body>
 
 <h1 id="top">Multimodal Understanding</h1>
-<p class="larger"><b><font color='#D93053'>5</font> papers on Multimodal Understanding.</b></p>
+<p class="larger"><b><font color='#D93053'>6</font> papers on Multimodal Understanding.</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on July 08, 2025 at 14:00 (UTC+8).</font></p>
-<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models:</b></a> <a class="no_dec" href="#CLIP"><font color=#B0B0B0>CLIP</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen-VL"><font color=#B0B0B0>Qwen-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2-VL"><font color=#B0B0B0>Qwen2-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2.5-VL"><font color=#B0B0B0>Qwen2.5-VL</font></a></li><li><a class="no_dec" id="Fine-tuning" href="#Fine-tuning-table"><b>Fine-tuning:</b></a> <a class="no_dec" href="#MiniGPT-4"><font color=#B0B0B0>MiniGPT-4</font></a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
+<p><font color=#B0B0B0>Last updated on July 08, 2025 at 15:30 (UTC+8).</font></p>
+<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models:</b></a> <a class="no_dec" href="#CLIP"><font color=#B0B0B0>CLIP</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen-VL"><font color=#B0B0B0>Qwen-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2-VL"><font color=#B0B0B0>Qwen2-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2.5-VL"><font color=#B0B0B0>Qwen2.5-VL</font></a></li><li><a class="no_dec" id="Fine-tuning" href="#Fine-tuning-table"><b>Fine-tuning:</b></a> <a class="no_dec" href="#MiniGPT-4"><font color=#B0B0B0>MiniGPT-4</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#MiniGPT-v2"><font color=#B0B0B0>MiniGPT-v2</font></a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
             <p class="little_split" id='Qwen2.5-VL'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -27,7 +27,8 @@
             
             
             <div id='Qwen2.5-VL-Foundation Algorithms & Models-details' class="info_detail">
-                <p class="summary">It makes improvement to Qwen2-VL by employing window attention, native dynamic resolution, absoute time encoding, more and high-quality data.</p>
+                <hr class="dashed">
+                <p><font color=#202020>It makes improvement to Qwen2-VL by employing window attention, native dynamic resolution, absoute time encoding, more and high-quality data.</font></p>
                 
                 <p><ul>
 <li> <b>Visual encoder.</b> The used ViT is trained from scratch. It employs self-attention + window attention to improve efficiency. It employs MRoPE as position embedding. Images and videos are sampled at native resolutions and dynamic frame rates.
@@ -38,61 +39,61 @@
 <li> <b>Sparkling capabilities.</b> Omni-document parsing, precise object grounding (based on real resolution), ultra-long video understanding and grounding, and enhanced agent functionality.
 </ul>
 <figure>
-<img src='' data-src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig1.png' width=700>
+<img data-src='resource\figs\Qwen2.5-VL\Qwen2.5-VL-fig1.png' width=700>
 <figcaption>
 <b>Figure 1.</b> <b>Model structure.</b>
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig2.png' width=450>
+<img data-src='resource\figs\Qwen2.5-VL\Qwen2.5-VL-fig2.png' width=450>
 <figcaption>
 <b>Figure 2.</b> <b>Model structure details.</b>
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig3.png' width=500>
+<img data-src='resource\figs\Qwen2.5-VL\Qwen2.5-VL-fig3.png' width=500>
 <figcaption>
 <b>Figure 3.</b> <b>Pre-training data.</b>
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig4.png' width=700>
+<img data-src='resource\figs\Qwen2.5-VL\Qwen2.5-VL-fig4.png' width=700>
 <figcaption>
 <b>Figure 4.</b> <b>Performance on multimodal benchmarks.</b>
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig5.png' width=450>
+<img data-src='resource\figs\Qwen2.5-VL\Qwen2.5-VL-fig5.png' width=450>
 <figcaption>
 <b>Figure 5.</b> <b>Performance on pure text benchmarks.</b>
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig6.png' width=550>
+<img data-src='resource\figs\Qwen2.5-VL\Qwen2.5-VL-fig6.png' width=550>
 <figcaption>
 <b>Figure 6.</b> <b>Performance on OCR, chart, document understanding benchmarks.</b>
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig7.png' width=500>
+<img data-src='resource\figs\Qwen2.5-VL\Qwen2.5-VL-fig7.png' width=500>
 <figcaption>
 <b>Figure 7.</b> <b>Performance on grounding benchmarks.</b>
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig8.png' width=500>
+<img data-src='resource\figs\Qwen2.5-VL\Qwen2.5-VL-fig8.png' width=500>
 <figcaption>
 <b>Figure 8.</b> <b>Performance on counting benchmarks.</b>
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig9.png' width=500>
+<img data-src='resource\figs\Qwen2.5-VL\Qwen2.5-VL-fig9.png' width=500>
 <figcaption>
 <b>Figure 9.</b> <b>Performance on video benchmarks.</b>
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig10.png' width=550>
+<img data-src='resource\figs\Qwen2.5-VL\Qwen2.5-VL-fig10.png' width=550>
 <figcaption>
 <b>Figure 10.</b> <b>Performance on GUI agent benchmarks.</b>
 </figcaption>
@@ -112,7 +113,8 @@
             
             
             <div id='Qwen2-VL-Foundation Algorithms & Models-details' class="info_detail">
-                <p class="summary">It improves Qwen-VL by using a <b>naive dynamic resolution</b> mechanism with <b>multimodal RoPE</b>, and a <b>unified image-video processing</b> paradigm.</p>
+                <hr class="dashed">
+                <p><font color=#202020>It improves Qwen-VL by using a <b>naive dynamic resolution</b> mechanism with <b>multimodal RoPE</b>, and a <b>unified image-video processing</b> paradigm.</font></p>
                 
                 <p><ul>
 <li> <b>Visual encoder (675M).</b> Use self-developed ViT. Employ Naive Dynamic Resolution with 2D-RoPE to provide a variable number of visual tokens for images or videos with different resolution and frame number. Compress visual tokens by 2x2 using MLP.
@@ -123,54 +125,54 @@
 <li> <b>Capabilities:</b> general chat, multilingual image text understanding, formula recognition, function calling, UI interation, long document understanding, code/math reasoning, video understanding, grounding, live chat, and agent potential.
 </ul>
 <figure>
-<img src='' data-src='resource/figs/Qwen2-VL/Qwen2-VL-fig1.png' width=600>
+<img data-src='resource\figs\Qwen2-VL\Qwen2-VL-fig1.png' width=600>
 <figcaption>
 <b>Figure 1.</b> <b>Qwen2-VL Structure.</b> It discards the multimodal connector module used in Qwen-VL.
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen2-VL/Qwen2-VL-fig2.png' width=600>
+<img data-src='resource\figs\Qwen2-VL\Qwen2-VL-fig2.png' width=600>
 <figcaption>
 <b>Figure 2.</b> <b>Unified Multimodal Rotary Position Embedding (M-RoPE)</b> for text, images, and videos.
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen2-VL/Qwen2-VL-fig3.png' width=500>
-<img src='' data-src='resource/figs/Qwen2-VL/Qwen2-VL-fig4.png' width=500>
-<img src='' data-src='resource/figs/Qwen2-VL/Qwen2-VL-fig5.png' width=500>
+<img data-src='resource\figs\Qwen2-VL\Qwen2-VL-fig3.png' width=500>
+<img data-src='resource\figs\Qwen2-VL\Qwen2-VL-fig4.png' width=500>
+<img data-src='resource\figs\Qwen2-VL\Qwen2-VL-fig5.png' width=500>
 <figcaption>
 <b>Figure 3.</b> <b>Dataset format</b> example.
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen2-VL/Qwen2-VL-fig6.png' width=700>
-<img src='' data-src='resource/figs/Qwen2-VL/Qwen2-VL-fig7.png' width=700>
-<img src='' data-src='resource/figs/Qwen2-VL/Qwen2-VL-fig8.png' width=600>
+<img data-src='resource\figs\Qwen2-VL\Qwen2-VL-fig6.png' width=700>
+<img data-src='resource\figs\Qwen2-VL\Qwen2-VL-fig7.png' width=700>
+<img data-src='resource\figs\Qwen2-VL\Qwen2-VL-fig8.png' width=600>
 <figcaption>
 <b>Figure 4.</b> Comparisons with other state-of-the-art on <b>image-based</b> (top), <b>video-based</b> (middle), and <b>agent-based</b> (bottom) multimodal tasks.
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen2-VL/Qwen2-VL-fig9.png' width=550>
+<img data-src='resource\figs\Qwen2-VL\Qwen2-VL-fig9.png' width=550>
 <figcaption>
 <b>Figure 5.</b> <b>Dynamic resolution</b> achieves competitive results while consuming fewer tokens.
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen2-VL/Qwen2-VL-fig10.png' width=550>
+<img data-src='resource\figs\Qwen2-VL\Qwen2-VL-fig10.png' width=550>
 <figcaption>
 <b>Figure 6.</b> Some perceptual tasks enjoy a reasonable range of <b>min resolution size</b> which is used to scale small images.
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen2-VL/Qwen2-VL-fig11.png' width=550>
-<img src='' data-src='resource/figs/Qwen2-VL/Qwen2-VL-fig12.png' width=550>
+<img data-src='resource\figs\Qwen2-VL\Qwen2-VL-fig11.png' width=550>
+<img data-src='resource\figs\Qwen2-VL\Qwen2-VL-fig12.png' width=550>
 <figcaption>
 <b>Figure 7.</b> <b>M-RoPE</b> improves performance and shows great extrapolation capability.
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen2-VL/Qwen2-VL-fig13.png' width=650>
+<img data-src='resource\figs\Qwen2-VL\Qwen2-VL-fig13.png' width=650>
 <figcaption>
 <b>Figure 8.</b> <b>Scaling performance</b> of model size and consuming tokens.
 </figcaption>
@@ -190,7 +192,8 @@
             
             
             <div id='Qwen-VL-Foundation Algorithms & Models-details' class="info_detail">
-                <p class="summary">Built upon the language model Qwen-7B, it makes Qwen-VL to learn image description, QA, <b>grounding</b>, and <b>text-reading</b> by three-stage training.</p>
+                <hr class="dashed">
+                <p><font color=#202020>Built upon the language model Qwen-7B, it makes Qwen-VL to learn image description, QA, <b>grounding</b>, and <b>text-reading</b> by three-stage training.</font></p>
                 
                 <p><ul>
 <li> <b>Visual encoder (1.9B):</b> ViT (Openclip's ViT-bigG).
@@ -203,55 +206,55 @@
 <li> <b>Capabilities:</b> multi-lingual, multi-image, and multi-round conversation.
 </ul>
 <figure>
-<img src='' data-src='resource/figs/Qwen-VL/Qwen-VL-fig3.png' width=500>
+<img data-src='resource\figs\Qwen-VL\Qwen-VL-fig3.png' width=500>
 <figcaption>
 <b>Figure 1.</b> <b>Three-stage Training.</b>
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen-VL/Qwen-VL-fig4.png' width=350>
+<img data-src='resource\figs\Qwen-VL\Qwen-VL-fig4.png' width=350>
 <figcaption>
 <b>Figure 2.</b> Data for training <b>stage 1</b>.
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen-VL/Qwen-VL-fig5.png' width=500>
+<img data-src='resource\figs\Qwen-VL\Qwen-VL-fig5.png' width=500>
 <figcaption>
 <b>Figure 3.</b> Data for training <b>stage 2</b>.
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen-VL/Qwen-VL-fig6.png' width=600>
+<img data-src='resource\figs\Qwen-VL\Qwen-VL-fig6.png' width=600>
 <figcaption>
 <b>Figure 4.</b> Performance on <b>image captioning & VQA</b>.
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen-VL/Qwen-VL-fig7.png' width=500>
+<img data-src='resource\figs\Qwen-VL\Qwen-VL-fig7.png' width=500>
 <figcaption>
 <b>Figure 5.</b> Performance on <b>text-oriented VQA</b>.
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen-VL/Qwen-VL-fig8.png' width=500>
+<img data-src='resource\figs\Qwen-VL\Qwen-VL-fig8.png' width=500>
 <figcaption>
 <b>Figure 6.</b> Performance on <b>referring expression comprehension</b>.
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen-VL/Qwen-VL-fig9.png' width=400>
+<img data-src='resource\figs\Qwen-VL\Qwen-VL-fig9.png' width=400>
 <figcaption>
 <b>Figure 7.</b> Performance on <b>instruction-following</b> benchmarks.
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen-VL/Qwen-VL-fig1.png' width=400>
+<img data-src='resource\figs\Qwen-VL\Qwen-VL-fig1.png' width=400>
 <figcaption>
 <b>Figure 8.</b> <b>Overall performance.</b>
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/Qwen-VL/Qwen-VL-fig2.png' width=900>
+<img data-src='resource\figs\Qwen-VL\Qwen-VL-fig2.png' width=900>
 <figcaption>
 <b>Figure 9.</b> <b>Showcases</b> of Qwen-VL capability.
 </figcaption>
@@ -271,34 +274,35 @@
             <p class="paper_detail"><font color=#FF000>It shifts computer vision research from high-quality, crowd-labeled data with pre-defined labels like ImageNet to web-scale data with natural language supervision. It shows great generalization capability on visual benchmarks, and spurs research on multimodal foundation models. It has over 30K citations (as of Jul 2025).</font></p>
             
             <div id='CLIP-Foundation Algorithms & Models-details' class="info_detail">
-                <p class="summary">By training on 400M internet text-image pairs through contrastive learning, it shows great generalization on visual benchmarks.</p>
+                <hr class="dashed">
+                <p><font color=#202020>By training on 400M internet text-image pairs through contrastive learning, it shows great generalization on visual benchmarks.</font></p>
                 
                 <p><figure>
-<img src='' data-src='resource/figs/CLIP/CLIP-fig1.png' width=650>
+<img data-src='resource\figs\CLIP\CLIP-fig1.png' width=650>
 <figcaption>
 <b>Figure 1.</b> <b>Training and inference pipelines.</b>
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/CLIP/CLIP-fig2.png' width=300>
+<img data-src='resource\figs\CLIP\CLIP-fig2.png' width=300>
 <figcaption>
 <b>Figure 2.</b> <b>Pseudocode for training CLIP.</b>
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/CLIP/CLIP-fig3.png' width=400>
+<img data-src='resource\figs\CLIP\CLIP-fig3.png' width=400>
 <figcaption>
 <b>Figure 3.</b> <b>Zero-shot CLIP</b> outperforms few-shot probes of SoTA visual models.
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/CLIP/CLIP-fig4.png' width=500>
+<img data-src='resource\figs\CLIP\CLIP-fig4.png' width=500>
 <figcaption>
 <b>Figure 4.</b> <b>Linear probe CLIP</b> outperforms SoTA visual models.
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/CLIP/CLIP-fig5.png' width=700>
+<img data-src='resource\figs\CLIP\CLIP-fig5.png' width=700>
 <figcaption>
 <b>Figure 5.</b> CLIP is much more robust to <b>distribution shift</b>.
 </figcaption>
@@ -308,6 +312,60 @@
             </div>
             <p class="little_split"></p>
             <h2 id="Fine-tuning-table"><a class="no_dec" href="#Fine-tuning">Fine-tuning</a></h2>
+            <p class="little_split" id='MiniGPT-v2'></p>
+            <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('MiniGPT-v2-Fine-tuning-details')"><i>MiniGPT-v2: Large Language Model as a Unified Interface for Vision-Language Multi-Task Learning</i></p>
+            <p class="paper_detail">Jun Chen, Deyao Zhu, Xiaoqian Shen, Xiang Li, Zechun Liu, Pengchuan Zhang, Raghuraman Krishnamoorthi, Vikas Chandra, Yunyang Xiong, Mohamed Elhoseiny</p>
+            <p class="paper_detail">King Abdullah University of Science and Technology (KAUST), Meta AI Research</p>
+            <p class="paper_detail"><b><font color=#202020>Oct 14, 2023 &nbsp; MiniGPT-v2</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/Vision-CAIR/MiniGPT-4">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2310.09478v1">arXiv 2024</a> &nbsp; <font color=#D0D0D0>arXiv preprint</font></p>
+            
+            
+            <div id='MiniGPT-v2-Fine-tuning-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>It makes the model learn to tackle 6 tasks with different <b>task identifiers</b> through three-stage training (maybe inspired by Qwen-VL).</font></p>
+                
+                <p><ul>
+<li> <b>Visual structure.</b> Use ViT-G/14 from EVA-CLIP with a Q-Former (same as MiniGPT-4). Image resolution is increased from 224x224 to 448x448, and every four neighboring visual tokens are concatenated into a single token to save compute by reducing tokens.
+<li> <b>Language structure.</b> Language model is upgraded from Vicuna to LLaMA2-chat (7B).
+<li> <b>Task identifiers</b> are used by the model to identify tasks. VQA: [vqa]; captioning: [caption]; grounded captioning: [grounding]; referring expression comprehension: [refer]; referring expression generation: [identify]; object parsing and grounding: [detection].
+<li> The <b>grounding task</b> is introduced to improve MiniGPT (maybe inspired by Qwen-VL).
+</ul>
+<figure>
+<img data-src='resource\figs\MiniGPT-v2\MiniGPT-v2-fig1.png' width=500>
+<figcaption>
+<b>Figure 1.</b> <b>Training data.</b>
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\MiniGPT-v2\MiniGPT-v2-fig2.png' width=500>
+<figcaption>
+<b>Figure 2.</b> Performance on <b>VQA tasks.</b>
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\MiniGPT-v2\MiniGPT-v2-fig3.png' width=500>
+<figcaption>
+<b>Figure 3.</b> Performance on <b>referring expression comprehension tasks.</b>
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\MiniGPT-v2\MiniGPT-v2-fig4.png' width=500>
+<figcaption>
+<b>Figure 4.</b> Ablation studies on <b>task identifiers.</b>
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\MiniGPT-v2\MiniGPT-v2-fig5.png' width=300>
+<figcaption>
+<b>Figure 5.</b> Performance on <b>hallucination problem.</b>
+</figcaption>
+</figure></p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split" id='MiniGPT-4'></p>
             <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -318,7 +376,8 @@
             
             
             <div id='MiniGPT-4-Fine-tuning-details' class="info_detail">
-                <p class="summary">It aligns a frozen visual encoder with a frozen LLM (Vicuna) using <b>one projection layer</b>.</p>
+                <hr class="dashed">
+                <p><font color=#202020>It aligns a frozen visual encoder with a frozen LLM (Vicuna) using <b>one projection layer</b>.</font></p>
                 
                 <p><ul>
 <li> <b>Structure.</b> The same pretrained vision module as BLIP-2: ViT-G/14 from EVA-CLIP with a Q-Former. Language model: Vicuna. Connector: a single projection layer.
@@ -326,16 +385,16 @@
 <li> <b>Training data.</b> Pre-training: LAION, Conceptual Captions, SBU. Instruction-tuning: 3500 images from Conceptual Caption with captions generated by the pre-trained model (cleaned by ChatGPT).
 </ul>
 <figure>
-<img src='' data-src='resource/figs/MiniGPT-4/MiniGPT-4-fig1.png' width=350>
-<img src='' data-src='resource/figs/MiniGPT-4/MiniGPT-4-fig2.png' width=240>
-<img src='' data-src='resource/figs/MiniGPT-4/MiniGPT-4-fig3.png' width=250>
+<img data-src='resource\figs\MiniGPT-4\MiniGPT-4-fig1.png' width=350>
+<img data-src='resource\figs\MiniGPT-4\MiniGPT-4-fig2.png' width=240>
+<img data-src='resource\figs\MiniGPT-4\MiniGPT-4-fig3.png' width=250>
 <figcaption>
 <b>Figure 1.</b> Performance on <b>advanced vision-language tasks</b> (left), <b>COCO captioning</b> (middle), <b>detailed captioning & poem generation</b> (right).
 </figcaption>
 </figure>
 <figure>
-<img src='' data-src='resource/figs/MiniGPT-4/MiniGPT-4-fig4.png' width=300>
-<img src='' data-src='resource/figs/MiniGPT-4/MiniGPT-4-fig5.png' width=280>
+<img data-src='resource\figs\MiniGPT-4\MiniGPT-4-fig4.png' width=300>
+<img data-src='resource\figs\MiniGPT-4\MiniGPT-4-fig5.png' width=280>
 <figcaption>
 <b>Figure 2.</b> <b>Ablation</b> studies (left), <b>hallucination</b> evaluation (right).
 </figcaption>

@@ -106,9 +106,6 @@ li {
     /* font-family: Arial, sans-serif; */
     /* font-weight:bold; */
 }
-.summary {
-    color: #202020;
-}
 .info_detail {
     display: none;
 }
@@ -126,6 +123,13 @@ figcaption {
     font-family: Arial, sans-serif;
     margin-top: 0.5em;
     margin-bottom: 1.5em;
+}
+
+hr.dashed {
+border: none;
+height: 1px;
+border-top: 1px dashed #000000;
+margin: 15px 0;
 }
 
 #backToTop {

@@ -101,7 +101,10 @@ def build_main_content_of_each_domain(domain):
             author = f"""<p class="paper_detail">{paper["author"]}</p>""" if paper["author"] else ""
             organization = f"""<p class="paper_detail">{paper["organization"]}</p>""" if paper["organization"] else ""
 
-            debug = f"""<p>{paper["summary"]}</p><p>{details}</p>""" if "new paper" in paper["title"].lower() else ""
+            debug = ""
+            if "new paper" in paper["title"].lower():
+                debug = f"""<p>{paper["summary"]}</p><p>{details}</p>"""
+                debug = debug.replace("data-src", "src")
 
             content_cate += \
             f"""
@@ -115,7 +118,8 @@ def build_main_content_of_each_domain(domain):
             {comment}
             {debug}
             <div id='{paper["name"]}-{category}-details' class="info_detail">
-                <p class="summary">{paper["summary"]}</p>
+                <hr class="dashed">
+                <p><font color=#202020>{paper["summary"]}</font></p>
                 {jupyter_note}
                 <p>{details}</p>
             </div>
