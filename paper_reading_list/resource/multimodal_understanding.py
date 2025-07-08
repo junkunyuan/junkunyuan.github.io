@@ -25,6 +25,31 @@ MULTIMODAL_UNDERSTANDING["papers"] = [
 # """,
 # },
 {
+"title": "BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation",
+"author": "Junnan Li, Dongxu Li, Caiming Xiong, Steven Hoi",
+"organization": "Salesforce Research",
+"date": "20220128",
+"venue": "ICML 2022",
+"pdf_url": "https://arxiv.org/pdf/2201.12086",
+"code_url": "https://github.com/salesforce/BLIP",
+"name": "BLIP",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """It enables both vision-language <b>understanding & generation</b> by multi-task learning with a unified framework, as well as a data bootstrapping strategy.""",
+"details": 
+"""
+fig: fig1.png 650
+cap: <b>Structure.</b> (1) Unimodal encoder is trained with an image-text contrastive (ITC) loss; (2) Image-grounded text encoder uses cross-attention layers, trained with an image-text matching (ITM) loss; (3) Image-grounded text decoder is trained with a language modeling (LM) loss.
+fig: fig2.png 550 fig3.png 300
+cap: Performance comparisons on <b>image-text retrival</b> by fine-tuning (left) or zero-shot (right).
+fig: fig4.png 550 fig5.png 290
+cap: Performance comparisons on <b>image captioning</b> (left) and <b>VQA & NLVR</b> (right).
+fig: fig6.png 300 fig7.png 290
+cap: Performance comparisons on <b>text-to-video retrival</b> (left) and <b>video question answering</b> (right).
+""",
+},
+{
 "title": "MiniGPT-v2: Large Language Model as a Unified Interface for Vision-Language Multi-Task Learning",
 "author": "Jun Chen, Deyao Zhu, Xiaoqian Shen, Xiang Li, Zechun Liu, Pengchuan Zhang, Raghuraman Krishnamoorthi, Vikas Chandra, Yunyang Xiong, Mohamed Elhoseiny",
 "organization": "King Abdullah University of Science and Technology (KAUST), Meta AI Research",
@@ -92,7 +117,7 @@ cap: <b>Ablation</b> studies (left), <b>hallucination</b> evaluation (right).
 "pdf_url": "https://arxiv.org/pdf/2103.00020",
 "code_url": "https://github.com/OpenAI/CLIP",
 "name": "CLIP",
-"comment": "It shifts computer vision research from high-quality, crowd-labeled data with pre-defined labels like ImageNet to web-scale data with natural language supervision. It shows great generalization capability on visual benchmarks, and spurs research on multimodal foundation models. It has over 30K citations (as of Jul 2025).",
+"comment": "CLIP shifts computer vision research from high-quality, crowd-labeled data with pre-defined labels, e.g., ImageNet, to web-scale data with natural language supervision. CLIP generalizes well on visual benchmarks, and spurs research on multimodal foundation models. It has over 30,000 citations (as of Jul 2025).",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
 "summary": """By training on 400M internet text-image pairs through contrastive learning, it shows great generalization on visual benchmarks.""",

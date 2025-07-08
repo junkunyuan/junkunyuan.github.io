@@ -116,6 +116,9 @@ figure {
     margin: 0 10px;
     text-align: center;
 }
+img {
+    vertical-align: middle;
+}
 figcaption {
     font-size: 14px;
     color: #404040;

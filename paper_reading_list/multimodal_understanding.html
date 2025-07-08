@@ -12,11 +12,11 @@
 <body>
 
 <h1 id="top">Multimodal Understanding</h1>
-<p class="larger"><b><font color='#D93053'>6</font> papers on Multimodal Understanding.</b></p>
+<p class="larger"><b><font color='#D93053'>7</font> papers on Multimodal Understanding.</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on July 08, 2025 at 15:30 (UTC+8).</font></p>
-<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models:</b></a> <a class="no_dec" href="#CLIP"><font color=#B0B0B0>CLIP</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen-VL"><font color=#B0B0B0>Qwen-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2-VL"><font color=#B0B0B0>Qwen2-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2.5-VL"><font color=#B0B0B0>Qwen2.5-VL</font></a></li><li><a class="no_dec" id="Fine-tuning" href="#Fine-tuning-table"><b>Fine-tuning:</b></a> <a class="no_dec" href="#MiniGPT-4"><font color=#B0B0B0>MiniGPT-4</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#MiniGPT-v2"><font color=#B0B0B0>MiniGPT-v2</font></a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
+<p><font color=#B0B0B0>Last updated on July 08, 2025 at 17:15 (UTC+8).</font></p>
+<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models:</b></a> <a class="no_dec" href="#CLIP"><font color=#B0B0B0>CLIP</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#BLIP"><font color=#B0B0B0>BLIP</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen-VL"><font color=#B0B0B0>Qwen-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2-VL"><font color=#B0B0B0>Qwen2-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2.5-VL"><font color=#B0B0B0>Qwen2.5-VL</font></a></li><li><a class="no_dec" id="Fine-tuning" href="#Fine-tuning-table"><b>Fine-tuning:</b></a> <a class="no_dec" href="#MiniGPT-4"><font color=#B0B0B0>MiniGPT-4</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#MiniGPT-v2"><font color=#B0B0B0>MiniGPT-v2</font></a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
             <p class="little_split" id='Qwen2.5-VL'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -264,6 +264,51 @@
             </div>
             <p class="little_split"></p>
             
+            <p class="little_split" id='BLIP'></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('BLIP-Foundation Algorithms & Models-details')"><i>BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation</i></p>
+            <p class="paper_detail">Junnan Li, Dongxu Li, Caiming Xiong, Steven Hoi</p>
+            <p class="paper_detail">Salesforce Research</p>
+            <p class="paper_detail"><b><font color=#202020>Jan 28, 2022 &nbsp; BLIP</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/salesforce/BLIP">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2201.12086">ICML 2022</a> &nbsp; <font color=#D0D0D0>International Conference on Machine Learning</font></p>
+            
+            
+            <div id='BLIP-Foundation Algorithms & Models-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>It enables both vision-language <b>understanding & generation</b> by multi-task learning with a unified framework, as well as a data bootstrapping strategy.</font></p>
+                
+                <p><figure>
+<img data-src='resource\figs\BLIP\BLIP-fig1.png' width=650>
+<figcaption>
+<b>Figure 1.</b> <b>Structure.</b> (1) Unimodal encoder is trained with an image-text contrastive (ITC) loss; (2) Image-grounded text encoder uses cross-attention layers, trained with an image-text matching (ITM) loss; (3) Image-grounded text decoder is trained with a language modeling (LM) loss.
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\BLIP\BLIP-fig2.png' width=550>
+<img data-src='resource\figs\BLIP\BLIP-fig3.png' width=300>
+<figcaption>
+<b>Figure 2.</b> Performance comparisons on <b>image-text retrival</b> by fine-tuning (left) or zero-shot (right).
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\BLIP\BLIP-fig4.png' width=550>
+<img data-src='resource\figs\BLIP\BLIP-fig5.png' width=290>
+<figcaption>
+<b>Figure 3.</b> Performance comparisons on <b>image captioning</b> (left) and <b>VQA & NLVR</b> (right).
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\BLIP\BLIP-fig6.png' width=300>
+<img data-src='resource\figs\BLIP\BLIP-fig7.png' width=290>
+<figcaption>
+<b>Figure 4.</b> Performance comparisons on <b>text-to-video retrival</b> (left) and <b>video question answering</b> (right).
+</figcaption>
+</figure></p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split" id='CLIP'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -271,7 +316,7 @@
             <p class="paper_detail">Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever</p>
             <p class="paper_detail">OpenAI</p>
             <p class="paper_detail"><b><font color=#202020>Feb 26, 2021 &nbsp; CLIP</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/OpenAI/CLIP">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2103.00020">ICML 2021</a> &nbsp; <font color=#D0D0D0>International Conference on Machine Learning</font></p>
-            <p class="paper_detail"><font color=#FF000>It shifts computer vision research from high-quality, crowd-labeled data with pre-defined labels like ImageNet to web-scale data with natural language supervision. It shows great generalization capability on visual benchmarks, and spurs research on multimodal foundation models. It has over 30K citations (as of Jul 2025).</font></p>
+            <p class="paper_detail"><font color=#FF000>CLIP shifts computer vision research from high-quality, crowd-labeled data with pre-defined labels, e.g., ImageNet, to web-scale data with natural language supervision. CLIP generalizes well on visual benchmarks, and spurs research on multimodal foundation models. It has over 30,000 citations (as of Jul 2025).</font></p>
             
             <div id='CLIP-Foundation Algorithms & Models-details' class="info_detail">
                 <hr class="dashed">
