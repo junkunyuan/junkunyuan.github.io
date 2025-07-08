@@ -149,20 +149,17 @@ def build_main_content_of_each_domain(domain):
 
     <button id="backToTop" title="back to top">↑</button>
     <script>
-        const backToTopButton = document.getElementById('backToTop');
-        window.addEventListener('scroll', function () {
-        if (window.scrollY > 200) {
-            backToTopButton.classList.add('show');
+        const backToTopButton = document.getElementById("backToTop");
+        window.onscroll = function () {
+        if (document.documentElement.scrollTop > 200) {
+            backToTopButton.style.display = "block";
         } else {
-            backToTopButton.classList.remove('show');
+            backToTopButton.style.display = "none";
         }
-        });
-        backToTopButton.addEventListener('click', function () {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-        });
+        };
+        backToTopButton.onclick = function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
     </script>
     """
     return catalog + content_all_domain
