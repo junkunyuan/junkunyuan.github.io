@@ -25,6 +25,37 @@ MULTIMODAL_UNDERSTANDING["papers"] = [
 # """,
 # },
 {
+"title": "Flamingo: a Visual Language Model for Few-Shot Learning",
+"author": "Jean-Baptiste Alayrac, Jeff Donahue, Pauline Luc, Antoine Miech, Iain Barr, Yana Hasson, Karel Lenc, Arthur Mensch, Katie Millican, Malcolm Reynolds, Roman Ring, Eliza Rutherford, Serkan Cabi, Tengda Han, Zhitao Gong, Sina Samangooei, Marianne Monteiro, Jacob Menick, Sebastian Borgeaud, Andrew Brock, Aida Nematzadeh, Sahand Sharifzadeh, Mikolaj Binkowski, Ricardo Barreira, Oriol Vinyals, Andrew Zisserman, Karen Simonyan",
+"organization": "DeepMind",
+"date": "20220429",
+"venue": "NeurIPS 2022",
+"pdf_url": "https://arxiv.org/pdf/2204.14198",
+"code_url": "",
+"name": "Flamingo",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """It achieves <b>few-shot in-context learning</b> ability by brideging vision and language models and trains on inter-leaved visual and textual data.""",
+"details": 
+"""
+<ul>
+    <li> <b>Visual encoder.</b> Use pre-trained and frozen Normalizer-Free ResNet, and pre-train it using contrastive loss. Images and videos (sample_fps=1) are compressed to spatio-temporal grid of features.
+    <li> <b>Perceiver resampler (Q-Former).</b> It processes a variable number of image or video tokens and produces a fixed number of visual tokens (64).
+    <li> <b>Gated xattn-dense layers.</b> They are inserted to the pre-trained, frozen language model (Chinchilla) and are trained from scratch.
+    <li> <b>Model size.</b> Flamingo-3B, Flamingo-9B, and Flamingo-80B.
+</ul>
+fig: fig2.png 500 fig3.png 600
+cap: <b>Overall structure</b> (top) and <b>gated xattn-dense layers</b> (bottom).
+fig: fig1.png 600
+cap: <b>Few-shot (no fine-tuning)</b> performance. More shots and larger model size lead to better performance.
+fig: fig4.png 700
+cap: Performance on image and video understanding tasks with <b>few-shot learning</b>.
+fig: fig5.png 700
+cap: Performance on image and video understanding tasks with <b>fine-tuning</b>.
+""",
+},
+{
 "title": "BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation",
 "author": "Junnan Li, Dongxu Li, Caiming Xiong, Steven Hoi",
 "organization": "Salesforce Research",

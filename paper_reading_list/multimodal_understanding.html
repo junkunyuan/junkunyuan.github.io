@@ -12,11 +12,12 @@
 <body>
 
 <h1 id="top">Multimodal Understanding</h1>
-<p class="larger"><b><font color='#D93053'>7</font> papers on Multimodal Understanding.</b></p>
+<p class="larger"><b><font color='#D93053'>8</font> papers on Multimodal Understanding.</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on July 08, 2025 at 17:15 (UTC+8).</font></p>
 <hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models:</b></a> <a class="no_dec" href="#CLIP"><font color=#B0B0B0>CLIP</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#BLIP"><font color=#B0B0B0>BLIP</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen-VL"><font color=#B0B0B0>Qwen-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2-VL"><font color=#B0B0B0>Qwen2-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2.5-VL"><font color=#B0B0B0>Qwen2.5-VL</font></a></li><li><a class="no_dec" id="Fine-tuning" href="#Fine-tuning-table"><b>Fine-tuning:</b></a> <a class="no_dec" href="#MiniGPT-4"><font color=#B0B0B0>MiniGPT-4</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#MiniGPT-v2"><font color=#B0B0B0>MiniGPT-v2</font></a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
+<p><font color=#B0B0B0>Last updated on July 08, 2025 at 19:46 (UTC+8).</font></p>
+<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models:</b></a> <a class="no_dec" href="#CLIP"><font color=#B0B0B0>CLIP</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#BLIP"><font color=#B0B0B0>BLIP</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Flamingo"><font color=#B0B0B0>Flamingo</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen-VL"><font color=#B0B0B0>Qwen-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2-VL"><font color=#B0B0B0>Qwen2-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2.5-VL"><font color=#B0B0B0>Qwen2.5-VL</font></a></li><li><a class="no_dec" id="Fine-tuning" href="#Fine-tuning-table"><b>Fine-tuning:</b></a> <a class="no_dec" href="#MiniGPT-4"><font color=#B0B0B0>MiniGPT-4</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#MiniGPT-v2"><font color=#B0B0B0>MiniGPT-v2</font></a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
             <p class="little_split" id='Qwen2.5-VL'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -257,6 +258,55 @@
 <img data-src='resource\figs\Qwen-VL\Qwen-VL-fig2.png' width=900>
 <figcaption>
 <b>Figure 9.</b> <b>Showcases</b> of Qwen-VL capability.
+</figcaption>
+</figure></p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
+            <p class="little_split" id='Flamingo'></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('Flamingo-Foundation Algorithms & Models-details')"><i>Flamingo: a Visual Language Model for Few-Shot Learning</i></p>
+            <p class="paper_detail">Jean-Baptiste Alayrac, Jeff Donahue, Pauline Luc, Antoine Miech, Iain Barr, Yana Hasson, Karel Lenc, Arthur Mensch, Katie Millican, Malcolm Reynolds, Roman Ring, Eliza Rutherford, Serkan Cabi, Tengda Han, Zhitao Gong, Sina Samangooei, Marianne Monteiro, Jacob Menick, Sebastian Borgeaud, Andrew Brock, Aida Nematzadeh, Sahand Sharifzadeh, Mikolaj Binkowski, Ricardo Barreira, Oriol Vinyals, Andrew Zisserman, Karen Simonyan</p>
+            <p class="paper_detail">DeepMind</p>
+            <p class="paper_detail"><b><font color=#202020>Apr 29, 2022 &nbsp; Flamingo</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2204.14198">NeurIPS 2022</a> &nbsp; <font color=#D0D0D0>Advances in Neural Information Processing Systems</font></p>
+            
+            
+            <div id='Flamingo-Foundation Algorithms & Models-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>It achieves <b>few-shot in-context learning</b> ability by brideging vision and language models and trains on inter-leaved visual and textual data.</font></p>
+                
+                <p><ul>
+<li> <b>Visual encoder.</b> Use pre-trained and frozen Normalizer-Free ResNet, and pre-train it using contrastive loss. Images and videos (sample_fps=1) are compressed to spatio-temporal grid of features.
+<li> <b>Perceiver resampler (Q-Former).</b> It processes a variable number of image or video tokens and produces a fixed number of visual tokens (64).
+<li> <b>Gated xattn-dense layers.</b> They are inserted to the pre-trained, frozen language model (Chinchilla) and are trained from scratch.
+<li> <b>Model size.</b> Flamingo-3B, Flamingo-9B, and Flamingo-80B.
+</ul>
+<figure>
+<img data-src='resource\figs\Flamingo\Flamingo-fig2.png' width=500>
+<img data-src='resource\figs\Flamingo\Flamingo-fig3.png' width=600>
+<figcaption>
+<b>Figure 1.</b> <b>Overall structure</b> (top) and <b>gated xattn-dense layers</b> (bottom).
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\Flamingo\Flamingo-fig1.png' width=600>
+<figcaption>
+<b>Figure 2.</b> <b>Few-shot (no fine-tuning)</b> performance. More shots and larger model size lead to better performance.
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\Flamingo\Flamingo-fig4.png' width=700>
+<figcaption>
+<b>Figure 3.</b> Performance on image and video understanding tasks with <b>few-shot learning</b>.
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\Flamingo\Flamingo-fig5.png' width=700>
+<figcaption>
+<b>Figure 4.</b> Performance on image and video understanding tasks with <b>fine-tuning</b>.
 </figcaption>
 </figure></p>
             </div>
