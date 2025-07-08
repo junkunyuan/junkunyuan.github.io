@@ -128,24 +128,20 @@ def build_main_content_of_each_domain(domain):
     content_all_domain += \
     """
     <script>
-        function toggleTable(tableId) {
-            const container = document.getElementById(tableId);
-            const button = container.previousElementSibling;
-            const isVisible = window.getComputedStyle(container).display !== 'none';
-            if (!isVisible) {
-                const images = container.querySelectorAll('.lazy-load');
-                images.forEach(img => {
-                    if (!img.src && img.dataset.src) {
-                        img.src = img.dataset.src;
-                    }
-                });
-                container.style.display = 'block';
-                
-            } else {
-                container.style.display = 'none';
-                
+    function toggleTable(tableId) {
+        const container = document.getElementById(tableId);
+        const isVisible = window.getComputedStyle(container).display !== 'none';
+        if (!isVisible) {
+        container.querySelectorAll('.lazy-load').forEach(img => {
+            if (!img.src && img.dataset.src) {
+            img.src = img.dataset.src;
             }
+        });
+        container.style.display = 'block';
+        } else {
+        container.style.display = 'none';
         }
+    }
     </script>
     """
     return catalog + content_all_domain
