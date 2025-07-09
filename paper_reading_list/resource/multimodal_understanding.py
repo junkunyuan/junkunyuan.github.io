@@ -2,7 +2,7 @@ MULTIMODAL_UNDERSTANDING = dict()
 MULTIMODAL_UNDERSTANDING["file"] = "multimodal_understanding.html"
 MULTIMODAL_UNDERSTANDING["title"] = "Multimodal Understanding"
 MULTIMODAL_UNDERSTANDING["description"] = "Understand and reason by integrating multiple modalities (e.g., text, images, video, audio)."
-MULTIMODAL_UNDERSTANDING["categories"] = ["Foundation Algorithms & Models", "Fine-tuning"]
+MULTIMODAL_UNDERSTANDING["categories"] = ["Foundation Algorithms & Models"]
 MULTIMODAL_UNDERSTANDING["papers"] = [
 # {
 # "title": "",
@@ -24,6 +24,42 @@ MULTIMODAL_UNDERSTANDING["papers"] = [
 # </ul>
 # """,
 # },
+{
+"title": "BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models",
+"author": "Junnan Li, Dongxu Li, Silvio Savarese, Steven Hoi",
+"organization": "",
+"date": "20230130",
+"venue": "ICML 2023",
+"pdf_url": "https://arxiv.org/pdf/2301.12597",
+"code_url": "https://github.com/salesforce/LAVIS/tree/main/projects/blip2",
+"name": "BLIP-2",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """""",
+"details": 
+"""
+<ul>
+    <li> <b>Vision encoder.</b> ViT-L/14 from CLIP or ViT-G/14 from EVA-CLIP.
+    <li> <b>Language model.</b> OPT model or FlanT5.
+    <li> <b>Querying Transformer (Q-Former).</b> An image transformer & a text transformer, they are initialized from BERT and share the self-attention layer.
+    <li> <b>Training.</b> (1) Stage 1 (250K steps): learn vision-langauge representations from a frozen image encoder by optimizing the three losses used in BLIP; (2) Stage 2 (80K steps): learn vision-to-language generation from a frozen LLM.
+    <li> <b>Data.</b> Basically same as BLIP. Only the Q-Former is trained.
+</ul>
+fig: fig1.png 400
+cap: <b>Overall structure</b>. Visual query embeddings are projected and prepended to the input text embeddings as Q-Former output & LLM input. 
+fig: fig2.png 700
+cap: <b>Q-Former</b> (left) with 32 query tokens, and <b>self-attention masking strategy</b> (right) for different training tasks.
+fig: fig3.png 650
+cap: <b>Zero-shot</b> performance on vision-language tasks.
+fig: fig4.png 500
+cap: <b>Zero-shot VQA</b> performance.
+fig: fig5.png 640 fig6.png 260
+cap: <b>Fine-tuning captioning (left) & VQA (right)</b> performance.
+fig: fig7.png 700
+cap: <b>Fine-tuning image-text retrieval</b> performance.
+""",
+},
 {
 "title": "Flamingo: a Visual Language Model for Few-Shot Learning",
 "author": "Jean-Baptiste Alayrac, Jeff Donahue, Pauline Luc, Antoine Miech, Iain Barr, Yana Hasson, Karel Lenc, Arthur Mensch, Katie Millican, Malcolm Reynolds, Roman Ring, Eliza Rutherford, Serkan Cabi, Tengda Han, Zhitao Gong, Sina Samangooei, Marianne Monteiro, Jacob Menick, Sebastian Borgeaud, Andrew Brock, Aida Nematzadeh, Sahand Sharifzadeh, Mikolaj Binkowski, Ricardo Barreira, Oriol Vinyals, Andrew Zisserman, Karen Simonyan",
@@ -90,7 +126,7 @@ cap: Performance comparisons on <b>text-to-video retrival</b> (left) and <b>vide
 "code_url": "https://github.com/Vision-CAIR/MiniGPT-4",
 "name": "MiniGPT-v2",
 "comment": "",
-"category": "Fine-tuning",
+"category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
 "summary": """It makes the model learn to tackle 6 tasks with different <b>task identifiers</b> through three-stage training (maybe inspired by Qwen-VL).""",
 "details": 
@@ -123,7 +159,7 @@ cap: Performance on <b>hallucination problem.</b>
 "code_url": "https://github.com/Vision-CAIR/MiniGPT-4",
 "name": "MiniGPT-4",
 "comment": "",
-"category": "Fine-tuning",
+"category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
 "summary": """It aligns a frozen visual encoder with a frozen LLM (Vicuna) using <b>one projection layer</b>.""",
 "details": 

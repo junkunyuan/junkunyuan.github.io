@@ -12,11 +12,11 @@
 <body>
 
 <h1 id="top">Multimodal Understanding</h1>
-<p class="larger"><b><font color='#D93053'>8</font> papers on Multimodal Understanding.</b></p>
+<p class="larger"><b><font color='#D93053'>9</font> papers on Multimodal Understanding.</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on July 08, 2025 at 19:46 (UTC+8).</font></p>
-<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models:</b></a> <a class="no_dec" href="#CLIP"><font color=#B0B0B0>CLIP</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#BLIP"><font color=#B0B0B0>BLIP</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Flamingo"><font color=#B0B0B0>Flamingo</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen-VL"><font color=#B0B0B0>Qwen-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2-VL"><font color=#B0B0B0>Qwen2-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2.5-VL"><font color=#B0B0B0>Qwen2.5-VL</font></a></li><li><a class="no_dec" id="Fine-tuning" href="#Fine-tuning-table"><b>Fine-tuning:</b></a> <a class="no_dec" href="#MiniGPT-4"><font color=#B0B0B0>MiniGPT-4</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#MiniGPT-v2"><font color=#B0B0B0>MiniGPT-v2</font></a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
+<p><font color=#B0B0B0>Last updated on July 09, 2025 at 14:25 (UTC+8).</font></p>
+<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models:</b></a> <a class="no_dec" href="#CLIP"><font color=#B0B0B0>CLIP</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#BLIP"><font color=#B0B0B0>BLIP</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Flamingo"><font color=#B0B0B0>Flamingo</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#BLIP-2"><font color=#B0B0B0>BLIP-2</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#MiniGPT-4"><font color=#B0B0B0>MiniGPT-4</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen-VL"><font color=#B0B0B0>Qwen-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#MiniGPT-v2"><font color=#B0B0B0>MiniGPT-v2</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2-VL"><font color=#B0B0B0>Qwen2-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2.5-VL"><font color=#B0B0B0>Qwen2.5-VL</font></a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
             <p class="little_split" id='Qwen2.5-VL'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -182,6 +182,60 @@
             </div>
             <p class="little_split"></p>
             
+            <p class="little_split" id='MiniGPT-v2'></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('MiniGPT-v2-Foundation Algorithms & Models-details')"><i>MiniGPT-v2: Large Language Model as a Unified Interface for Vision-Language Multi-Task Learning</i></p>
+            <p class="paper_detail">Jun Chen, Deyao Zhu, Xiaoqian Shen, Xiang Li, Zechun Liu, Pengchuan Zhang, Raghuraman Krishnamoorthi, Vikas Chandra, Yunyang Xiong, Mohamed Elhoseiny</p>
+            <p class="paper_detail">King Abdullah University of Science and Technology (KAUST), Meta AI Research</p>
+            <p class="paper_detail"><b><font color=#202020>Oct 14, 2023 &nbsp; MiniGPT-v2</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/Vision-CAIR/MiniGPT-4">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2310.09478v1">arXiv 2024</a> &nbsp; <font color=#D0D0D0>arXiv preprint</font></p>
+            
+            
+            <div id='MiniGPT-v2-Foundation Algorithms & Models-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>It makes the model learn to tackle 6 tasks with different <b>task identifiers</b> through three-stage training (maybe inspired by Qwen-VL).</font></p>
+                
+                <p><ul>
+<li> <b>Visual structure.</b> Use ViT-G/14 from EVA-CLIP with a Q-Former (same as MiniGPT-4). Image resolution is increased from 224x224 to 448x448, and every four neighboring visual tokens are concatenated into a single token to save compute by reducing tokens.
+<li> <b>Language structure.</b> Language model is upgraded from Vicuna to LLaMA2-chat (7B).
+<li> <b>Task identifiers</b> are used by the model to identify tasks. VQA: [vqa]; captioning: [caption]; grounded captioning: [grounding]; referring expression comprehension: [refer]; referring expression generation: [identify]; object parsing and grounding: [detection].
+<li> The <b>grounding task</b> is introduced to improve MiniGPT (maybe inspired by Qwen-VL).
+</ul>
+<figure>
+<img data-src='resource\figs\MiniGPT-v2\MiniGPT-v2-fig1.png' width=500>
+<figcaption>
+<b>Figure 1.</b> <b>Training data.</b>
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\MiniGPT-v2\MiniGPT-v2-fig2.png' width=500>
+<figcaption>
+<b>Figure 2.</b> Performance on <b>VQA tasks.</b>
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\MiniGPT-v2\MiniGPT-v2-fig3.png' width=500>
+<figcaption>
+<b>Figure 3.</b> Performance on <b>referring expression comprehension tasks.</b>
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\MiniGPT-v2\MiniGPT-v2-fig4.png' width=500>
+<figcaption>
+<b>Figure 4.</b> Ablation studies on <b>task identifiers.</b>
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\MiniGPT-v2\MiniGPT-v2-fig5.png' width=300>
+<figcaption>
+<b>Figure 5.</b> Performance on <b>hallucination problem.</b>
+</figcaption>
+</figure></p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split" id='Qwen-VL'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -257,6 +311,106 @@
 <img data-src='resource\figs\Qwen-VL\Qwen-VL-fig2.png' width=900>
 <figcaption>
 <b>Figure 9.</b> <b>Showcases</b> of Qwen-VL capability.
+</figcaption>
+</figure></p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
+            <p class="little_split" id='MiniGPT-4'></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('MiniGPT-4-Foundation Algorithms & Models-details')"><i>MiniGPT-4: Enhancing Vision-Language Understanding with Advanced Large Language Models</i></p>
+            <p class="paper_detail">Deyao Zhu, Jun Chen, Xiaoqian Shen, Xiang Li, Mohamed Elhoseiny</p>
+            <p class="paper_detail">King Abdullah University of Science and Technology</p>
+            <p class="paper_detail"><b><font color=#202020>Apr 20, 2023 &nbsp; MiniGPT-4</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/Vision-CAIR/MiniGPT-4">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2304.10592">ICLR 2024</a> &nbsp; <font color=#D0D0D0>International Conference on Learning Representations</font></p>
+            
+            
+            <div id='MiniGPT-4-Foundation Algorithms & Models-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>It aligns a frozen visual encoder with a frozen LLM (Vicuna) using <b>one projection layer</b>.</font></p>
+                
+                <p><ul>
+<li> <b>Structure.</b> The same pretrained vision module as BLIP-2: ViT-G/14 from EVA-CLIP with a Q-Former. Language model: Vicuna. Connector: a single projection layer.
+<li> <b>Training.</b> Pre-training + instruction-tuning. It only fine-tunes the projection layer.
+<li> <b>Training data.</b> Pre-training: LAION, Conceptual Captions, SBU. Instruction-tuning: 3500 images from Conceptual Caption with captions generated by the pre-trained model (cleaned by ChatGPT).
+</ul>
+<figure>
+<img data-src='resource\figs\MiniGPT-4\MiniGPT-4-fig1.png' width=350>
+<img data-src='resource\figs\MiniGPT-4\MiniGPT-4-fig2.png' width=240>
+<img data-src='resource\figs\MiniGPT-4\MiniGPT-4-fig3.png' width=250>
+<figcaption>
+<b>Figure 1.</b> Performance on <b>advanced vision-language tasks</b> (left), <b>COCO captioning</b> (middle), <b>detailed captioning & poem generation</b> (right).
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\MiniGPT-4\MiniGPT-4-fig4.png' width=300>
+<img data-src='resource\figs\MiniGPT-4\MiniGPT-4-fig5.png' width=280>
+<figcaption>
+<b>Figure 2.</b> <b>Ablation</b> studies (left), <b>hallucination</b> evaluation (right).
+</figcaption>
+</figure></p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
+            <p class="little_split" id='BLIP-2'></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('BLIP-2-Foundation Algorithms & Models-details')"><i>BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models</i></p>
+            <p class="paper_detail">Junnan Li, Dongxu Li, Silvio Savarese, Steven Hoi</p>
+            
+            <p class="paper_detail"><b><font color=#202020>Jan 30, 2023 &nbsp; BLIP-2</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/salesforce/LAVIS/tree/main/projects/blip2">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2301.12597">ICML 2023</a> &nbsp; <font color=#D0D0D0>International Conference on Machine Learning</font></p>
+            
+            
+            <div id='BLIP-2-Foundation Algorithms & Models-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020></font></p>
+                
+                <p><ul>
+<li> <b>Vision encoder.</b> ViT-L/14 from CLIP or ViT-G/14 from EVA-CLIP.
+<li> <b>Language model.</b> OPT model or FlanT5.
+<li> <b>Querying Transformer (Q-Former).</b> An image transformer & a text transformer, they are initialized from BERT and share the self-attention layer.
+<li> <b>Training.</b> (1) Stage 1 (250K steps): learn vision-langauge representations from a frozen image encoder by optimizing the three losses used in BLIP; (2) Stage 2 (80K steps): learn vision-to-language generation from a frozen LLM.
+<li> <b>Data.</b> Basically same as BLIP. Only the Q-Former is trained.
+</ul>
+<figure>
+<img data-src='resource\figs\BLIP-2\BLIP-2-fig1.png' width=400>
+<figcaption>
+<b>Figure 1.</b> <b>Overall structure</b>. Visual query embeddings are projected and prepended to the input text embeddings as Q-Former output & LLM input.
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\BLIP-2\BLIP-2-fig2.png' width=700>
+<figcaption>
+<b>Figure 2.</b> <b>Q-Former</b> (left) with 32 query tokens, and <b>self-attention masking strategy</b> (right) for different training tasks.
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\BLIP-2\BLIP-2-fig3.png' width=650>
+<figcaption>
+<b>Figure 3.</b> <b>Zero-shot</b> performance on vision-language tasks.
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\BLIP-2\BLIP-2-fig4.png' width=500>
+<figcaption>
+<b>Figure 4.</b> <b>Zero-shot VQA</b> performance.
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\BLIP-2\BLIP-2-fig5.png' width=640>
+<img data-src='resource\figs\BLIP-2\BLIP-2-fig6.png' width=260>
+<figcaption>
+<b>Figure 5.</b> <b>Fine-tuning captioning (left) & VQA (right)</b> performance.
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\BLIP-2\BLIP-2-fig7.png' width=700>
+<figcaption>
+<b>Figure 6.</b> <b>Fine-tuning image-text retrieval</b> performance.
 </figcaption>
 </figure></p>
             </div>
@@ -399,98 +553,6 @@
 <img data-src='resource\figs\CLIP\CLIP-fig5.png' width=700>
 <figcaption>
 <b>Figure 5.</b> CLIP is much more robust to <b>distribution shift</b>.
-</figcaption>
-</figure></p>
-            </div>
-            <div style="height: 0.05em;"></div>
-            </div>
-            <p class="little_split"></p>
-            <h2 id="Fine-tuning-table"><a class="no_dec" href="#Fine-tuning">Fine-tuning</a></h2>
-            <p class="little_split" id='MiniGPT-v2'></p>
-            <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
-            <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('MiniGPT-v2-Fine-tuning-details')"><i>MiniGPT-v2: Large Language Model as a Unified Interface for Vision-Language Multi-Task Learning</i></p>
-            <p class="paper_detail">Jun Chen, Deyao Zhu, Xiaoqian Shen, Xiang Li, Zechun Liu, Pengchuan Zhang, Raghuraman Krishnamoorthi, Vikas Chandra, Yunyang Xiong, Mohamed Elhoseiny</p>
-            <p class="paper_detail">King Abdullah University of Science and Technology (KAUST), Meta AI Research</p>
-            <p class="paper_detail"><b><font color=#202020>Oct 14, 2023 &nbsp; MiniGPT-v2</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/Vision-CAIR/MiniGPT-4">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2310.09478v1">arXiv 2024</a> &nbsp; <font color=#D0D0D0>arXiv preprint</font></p>
-            
-            
-            <div id='MiniGPT-v2-Fine-tuning-details' class="info_detail">
-                <hr class="dashed">
-                <p><font color=#202020>It makes the model learn to tackle 6 tasks with different <b>task identifiers</b> through three-stage training (maybe inspired by Qwen-VL).</font></p>
-                
-                <p><ul>
-<li> <b>Visual structure.</b> Use ViT-G/14 from EVA-CLIP with a Q-Former (same as MiniGPT-4). Image resolution is increased from 224x224 to 448x448, and every four neighboring visual tokens are concatenated into a single token to save compute by reducing tokens.
-<li> <b>Language structure.</b> Language model is upgraded from Vicuna to LLaMA2-chat (7B).
-<li> <b>Task identifiers</b> are used by the model to identify tasks. VQA: [vqa]; captioning: [caption]; grounded captioning: [grounding]; referring expression comprehension: [refer]; referring expression generation: [identify]; object parsing and grounding: [detection].
-<li> The <b>grounding task</b> is introduced to improve MiniGPT (maybe inspired by Qwen-VL).
-</ul>
-<figure>
-<img data-src='resource\figs\MiniGPT-v2\MiniGPT-v2-fig1.png' width=500>
-<figcaption>
-<b>Figure 1.</b> <b>Training data.</b>
-</figcaption>
-</figure>
-<figure>
-<img data-src='resource\figs\MiniGPT-v2\MiniGPT-v2-fig2.png' width=500>
-<figcaption>
-<b>Figure 2.</b> Performance on <b>VQA tasks.</b>
-</figcaption>
-</figure>
-<figure>
-<img data-src='resource\figs\MiniGPT-v2\MiniGPT-v2-fig3.png' width=500>
-<figcaption>
-<b>Figure 3.</b> Performance on <b>referring expression comprehension tasks.</b>
-</figcaption>
-</figure>
-<figure>
-<img data-src='resource\figs\MiniGPT-v2\MiniGPT-v2-fig4.png' width=500>
-<figcaption>
-<b>Figure 4.</b> Ablation studies on <b>task identifiers.</b>
-</figcaption>
-</figure>
-<figure>
-<img data-src='resource\figs\MiniGPT-v2\MiniGPT-v2-fig5.png' width=300>
-<figcaption>
-<b>Figure 5.</b> Performance on <b>hallucination problem.</b>
-</figcaption>
-</figure></p>
-            </div>
-            <div style="height: 0.05em;"></div>
-            </div>
-            <p class="little_split"></p>
-            
-            <p class="little_split" id='MiniGPT-4'></p>
-            <div style="border-left: 8px solid #FFD6AD; padding-left: 10px">
-            <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('MiniGPT-4-Fine-tuning-details')"><i>MiniGPT-4: Enhancing Vision-Language Understanding with Advanced Large Language Models</i></p>
-            <p class="paper_detail">Deyao Zhu, Jun Chen, Xiaoqian Shen, Xiang Li, Mohamed Elhoseiny</p>
-            <p class="paper_detail">King Abdullah University of Science and Technology</p>
-            <p class="paper_detail"><b><font color=#202020>Apr 20, 2023 &nbsp; MiniGPT-4</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/Vision-CAIR/MiniGPT-4">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2304.10592">ICLR 2024</a> &nbsp; <font color=#D0D0D0>International Conference on Learning Representations</font></p>
-            
-            
-            <div id='MiniGPT-4-Fine-tuning-details' class="info_detail">
-                <hr class="dashed">
-                <p><font color=#202020>It aligns a frozen visual encoder with a frozen LLM (Vicuna) using <b>one projection layer</b>.</font></p>
-                
-                <p><ul>
-<li> <b>Structure.</b> The same pretrained vision module as BLIP-2: ViT-G/14 from EVA-CLIP with a Q-Former. Language model: Vicuna. Connector: a single projection layer.
-<li> <b>Training.</b> Pre-training + instruction-tuning. It only fine-tunes the projection layer.
-<li> <b>Training data.</b> Pre-training: LAION, Conceptual Captions, SBU. Instruction-tuning: 3500 images from Conceptual Caption with captions generated by the pre-trained model (cleaned by ChatGPT).
-</ul>
-<figure>
-<img data-src='resource\figs\MiniGPT-4\MiniGPT-4-fig1.png' width=350>
-<img data-src='resource\figs\MiniGPT-4\MiniGPT-4-fig2.png' width=240>
-<img data-src='resource\figs\MiniGPT-4\MiniGPT-4-fig3.png' width=250>
-<figcaption>
-<b>Figure 1.</b> Performance on <b>advanced vision-language tasks</b> (left), <b>COCO captioning</b> (middle), <b>detailed captioning & poem generation</b> (right).
-</figcaption>
-</figure>
-<figure>
-<img data-src='resource\figs\MiniGPT-4\MiniGPT-4-fig4.png' width=300>
-<img data-src='resource\figs\MiniGPT-4\MiniGPT-4-fig5.png' width=280>
-<figcaption>
-<b>Figure 2.</b> <b>Ablation</b> studies (left), <b>hallucination</b> evaluation (right).
 </figcaption>
 </figure></p>
             </div>
