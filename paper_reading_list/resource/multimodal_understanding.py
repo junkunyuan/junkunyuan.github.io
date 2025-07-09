@@ -25,9 +25,39 @@ MULTIMODAL_UNDERSTANDING["papers"] = [
 # """,
 # },
 {
+"title": "Visual Instruction Tuning",
+"author": "Haotian Liu, Chunyuan Li, Qingyang Wu, Yong Jae Lee",
+"organization": "University of Wisconsin-Madison, Microsoft Research, Columbia University",
+"date": "20230417",
+"venue": "NeurIPS 2023",
+"pdf_url": "https://arxiv.org/pdf/2304.08485",
+"code_url": "https://github.com/haotian-liu/LLaVA",
+"name": "LLaVA",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """It makes the first attempt to use GPT-4 to generate multimodal instruction-following data and performs multimodal <b>instruction fine-tuning</b>.""",
+"details": 
+"""
+<ul>
+    <li> <b>Structure.</b> (1) Vision encoder: pre-trained CLIP; (2) Connector: a linear layer; (3) Lanauge mode: Vicuna.
+    <li> <b>Instruction-following data.</b> 158K: 25K conversations + 23K detailed description + 77K complex reasoning.
+    <li> <b>Training.</b> (1) Stage 1: train connector on CC3M instruction-following data; (2) Stage 2: train connector & LLM on 158K instruction-following data.
+</ul>
+fig: fig2.png 350
+cap: <b>Structure.</b>
+fig: fig1.png 500
+cap: Use the context to build <b>instruction-following data</b> by promting GPT.
+fig: fig3.png 400
+cap: <b>Instruction-following</b> performance.
+fig: fig4.png 500
+cap: <b>Science QA</b> performance.
+""",
+},
+{
 "title": "BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models",
 "author": "Junnan Li, Dongxu Li, Silvio Savarese, Steven Hoi",
-"organization": "",
+"organization": "Salesforce Research",
 "date": "20230130",
 "venue": "ICML 2023",
 "pdf_url": "https://arxiv.org/pdf/2301.12597",

@@ -12,11 +12,11 @@
 <body>
 
 <h1 id="top">Multimodal Understanding</h1>
-<p class="larger"><b><font color='#D93053'>9</font> papers on Multimodal Understanding.</b></p>
+<p class="larger"><b><font color='#D93053'>10</font> papers on Multimodal Understanding.</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on July 09, 2025 at 14:25 (UTC+8).</font></p>
-<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models:</b></a> <a class="no_dec" href="#CLIP"><font color=#B0B0B0>CLIP</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#BLIP"><font color=#B0B0B0>BLIP</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Flamingo"><font color=#B0B0B0>Flamingo</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#BLIP-2"><font color=#B0B0B0>BLIP-2</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#MiniGPT-4"><font color=#B0B0B0>MiniGPT-4</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen-VL"><font color=#B0B0B0>Qwen-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#MiniGPT-v2"><font color=#B0B0B0>MiniGPT-v2</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2-VL"><font color=#B0B0B0>Qwen2-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2.5-VL"><font color=#B0B0B0>Qwen2.5-VL</font></a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
+<p><font color=#B0B0B0>Last updated on July 09, 2025 at 20:29 (UTC+8).</font></p>
+<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models:</b></a> <a class="no_dec" href="#CLIP"><font color=#B0B0B0>CLIP</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#BLIP"><font color=#B0B0B0>BLIP</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Flamingo"><font color=#B0B0B0>Flamingo</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#BLIP-2"><font color=#B0B0B0>BLIP-2</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#LLaVA"><font color=#B0B0B0>LLaVA</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#MiniGPT-4"><font color=#B0B0B0>MiniGPT-4</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen-VL"><font color=#B0B0B0>Qwen-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#MiniGPT-v2"><font color=#B0B0B0>MiniGPT-v2</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2-VL"><font color=#B0B0B0>Qwen2-VL</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Qwen2.5-VL"><font color=#B0B0B0>Qwen2.5-VL</font></a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
             <p class="little_split" id='Qwen2.5-VL'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -356,12 +356,59 @@
             </div>
             <p class="little_split"></p>
             
+            <p class="little_split" id='LLaVA'></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('LLaVA-Foundation Algorithms & Models-details')"><i>Visual Instruction Tuning</i></p>
+            <p class="paper_detail">Haotian Liu, Chunyuan Li, Qingyang Wu, Yong Jae Lee</p>
+            <p class="paper_detail">University of Wisconsin-Madison, Microsoft Research, Columbia University</p>
+            <p class="paper_detail"><b><font color=#202020>Apr 17, 2023 &nbsp; LLaVA</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/haotian-liu/LLaVA">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2304.08485">NeurIPS 2023</a> &nbsp; <font color=#D0D0D0>Advances in Neural Information Processing Systems</font></p>
+            
+            
+            <div id='LLaVA-Foundation Algorithms & Models-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>It makes the first attempt to use GPT-4 to generate multimodal instruction-following data and performs multimodal <b>instruction fine-tuning</b>.</font></p>
+                
+                <p><ul>
+<li> <b>Structure.</b> (1) Vision encoder: pre-trained CLIP; (2) Connector: a linear layer; (3) Lanauge mode: Vicuna.
+<li> <b>Instruction-following data.</b> 158K: 25K conversations + 23K detailed description + 77K complex reasoning.
+<li> <b>Training.</b> (1) Stage 1: train connector on CC3M instruction-following data; (2) Stage 2: train connector & LLM on 158K instruction-following data.
+</ul>
+<figure>
+<img data-src='resource\figs\LLaVA\LLaVA-fig2.png' width=350>
+<figcaption>
+<b>Figure 1.</b> <b>Structure.</b>
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\LLaVA\LLaVA-fig1.png' width=500>
+<figcaption>
+<b>Figure 2.</b> Use the context to build <b>instruction-following data</b> by promting GPT.
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\LLaVA\LLaVA-fig3.png' width=400>
+<figcaption>
+<b>Figure 3.</b> <b>Instruction-following</b> performance.
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\LLaVA\LLaVA-fig4.png' width=500>
+<figcaption>
+<b>Figure 4.</b> <b>Science QA</b> performance.
+</figcaption>
+</figure></p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split" id='BLIP-2'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('BLIP-2-Foundation Algorithms & Models-details')"><i>BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models</i></p>
             <p class="paper_detail">Junnan Li, Dongxu Li, Silvio Savarese, Steven Hoi</p>
-            
+            <p class="paper_detail">Salesforce Research</p>
             <p class="paper_detail"><b><font color=#202020>Jan 30, 2023 &nbsp; BLIP-2</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/salesforce/LAVIS/tree/main/projects/blip2">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2301.12597">ICML 2023</a> &nbsp; <font color=#D0D0D0>International Conference on Machine Learning</font></p>
             
             
