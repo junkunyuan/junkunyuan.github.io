@@ -25,6 +25,34 @@ MULTIMODAL_UNDERSTANDING["papers"] = [
 # """,
 # },
 {
+"title": "xGen-MM (BLIP-3): A Family of Open Large Multimodal Models",
+"author": "Le Xue, Manli Shu, Anas Awadalla, Jun Wang, An Yan, Senthil Purushwalkam, Honglu Zhou, Viraj Prabhu, Yutong Dai, Michael S Ryoo, Shrikant Kendre, Jieyu Zhang, Shaoyen Tseng, Gustavo A Lujan-Moreno, Matthew L Olson, Musashi Hinck, David Cobbley, Vasudev Lal, Can Qin, Shu Zhang, Chia-Chih Chen, Ning Yu, Juntao Tan, Tulika Manoj Awalgaonkar, Shelby Heinecke, Huan Wang, Yejin Choi, Ludwig Schmidt, Zeyuan Chen, Silvio Savarese, Juan Carlos Niebles, Caiming Xiong, Ran Xu",
+"organization": "Salesforce AI Research, Intel Labs, University of Washington",
+"date": "20240816",
+"venue": "arXiv 2024",
+"pdf_url": "https://arxiv.org/pdf/2408.08872",
+"code_url": "https://github.com/salesforce/LAVIS/tree/xgen-mm",
+"name": "BLIP-3",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """It improves BLIP-2 by introducing interleaved multimodal data, unified training objective, and visual resampler.""",
+"details": 
+"""
+<ul>
+    <li> <b>Training.</b> (1) Stage 1: base resolution pre-training on 100B tokens with 384x384 visual resolution; (2) Stage 2: high resolution pre-training on high-quality data; (3) Stage 3: SFT on single-image instruction-following data; (4) Stage 4: SFT on multi-image interleaved data.
+</ul>
+fig: fig1.png 700
+cap: BLIP-3 improves BLIP-2 by introducing <b>interleaved data</b>, using <b>unified training objective</b>, and <b>fine-grained training stages</b>.
+fig: fig2.png 400
+cap: <b>Structure.</b> It replaces Q-Former in BLIP-2 by a <b>sampler</b> (inspired by Flamingo). Only the sampler and the LLM (Phi-3) are trained.
+fig: fig4.png 650
+cap: Performance on <b>single-image</b> benchmarks.
+fig: fig3.png 300
+cap: Performance on <b>multi-image</b> benchmarks.
+""",
+},
+{
 "title": "Visual Instruction Tuning",
 "author": "Haotian Liu, Chunyuan Li, Qingyang Wu, Yong Jae Lee",
 "organization": "University of Wisconsin-Madison, Microsoft Research, Columbia University",
