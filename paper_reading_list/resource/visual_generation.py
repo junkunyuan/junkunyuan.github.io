@@ -25,6 +25,48 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "MAGI-1: Autoregressive Video Generation at Scale",
+"author": "Hansi Teng, Hongyu Jia, Lei Sun, Lingzhi Li, Maolin Li, Mingqiu Tang, Shuai Han, Tianning Zhang, W.Q. Zhang, Weifeng Luo, Xiaoyang Kang, Yuchen Sun, Yue Cao, Yunpeng Huang, Yutong Lin, Yuxin Fang, Zewei Tao, Zheng Zhang, Zhongshu Wang, Zixun Liu, Dai Shi, Guoli Su, Hanwen Sun, Hong Pan, Jie Wang, Jiexin Sheng, Min Cui, Min Hu, Ming Yan, Shucheng Yin, Siran Zhang, Tingting Liu, Xianping Yin, Xiaoyu Yang, Xin Song, Xuan Hu, Yankai Zhang, Yuqiao Li",
+"organization": "Sand AI",
+"date": "20250519",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2505.13211",
+"code_url": "https://github.com/SandAI-org/Magi-1",
+"name": "Magi-1",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"summary": """It achieves <b>chunk-wise</b> auto-regressive video generation by employing transformer-based VAE, progressive-noise causal modeling with flow matching, advanced attention/distillation techniques to enable streaming-capable video generation with fixed peak inference costs regardless of video length.""",
+"details": 
+"""
+<ul>
+    <li> <b>VAE training.</b> (1) Stage 1: use training data of fixed-size videos with 256x256 resolution and 16 frames; (2) Stage 2: use mixed training data of images and 16-frame videos, and use variable resolution and aspect ratio. Training loss: <i>L = L_1 + L_KL + L_LPIPS + L_GAN</i>.
+    <li> <b>VAE inference.</b> Use sliding window with size of 256x256 with a stride of 192 (25% overlap). Sliding windows are not applied to temporal frames.
+    <li> <b>Model structure.</b> It is based on DiT with some modifications: (1) Use T5 as the text encoder; (2) Use learnable 3D RoPE to encode temporal positional information; (3) Use new kernel called Flexible-Flash-Attention; (4) Replace multi-head attention by grouped-query attention; (5) Apply LayerNorm before and after FFN and use SwiGLU to stablize training; (6) Constrain scaling value of AdaLN to [-1, 1] to stablize training.
+    <li> <b>Guidance.</b> <i>output = (1 - w_prev) * output_current + (w_prev - w_text) * output_prev + w_text * output_prev</i> (see the paper for details).
+    <li> <b>Prompt enhancement</b> for inference. Use distilled MLLM to enhance prompts. (1) Stage 1: analyze and describe the image content; (2) Stage 2: predict the temporal evolution of the scene or objects in the first frame, such as actions, motion trajectories, and transitions.
+</ul>
+fig: fig2.png 350
+cap: <b>VAE structure.</b> Videos are compressed by 8x8 spatially and 4 temporally, generating 16-channel features.
+fig: fig3.png 450
+cap: <b>VAE performance.</b> Despite having the largest model size, its encoding and decoding is efficient. 
+fig: fig1.png 800
+cap: <b>Model design.</b> It generates videos chunk-by-chunk, where a chunk (usually 24 frames) is denoised to a certain extent and the next chunk begins generation (conditioned on all preceding chunks). The earlier chunks are cleaner than later ones. It allows multiple chunks (often 4) to be precessed concurrently. It unifies text-to-video, video continuation, and image-to-video generation.
+fig: fig4.png 400 fig5.png 400
+cap: <b>Model structure.</b>
+fig: fig6.png 400
+cap: <b>Data processing pipeline.</b> (1) Video quality: DOVER technical score; (2) Aesthetics: LAION aesthetic; (3) Overexposed & underexposed: average brightness on HSI color space; (4) Motion: RAFT optical flow model with saliency detection model; (5) Camera movement stability: evaluate consistency of optical flow between adjacent frames; (6) Slides movement: if divergence of optical flow remains consistently low; (7) Border: edge detection & Hough transform; (8) Text; (9) Logo: Florence-2; (10) Corner face: face detection model; (11) Transition: use CLIP to compute similarity between adjacent keyframes; (12) Deduplication: use pairwise similarity scores from CLIP & DINOv2; (13) Complex filtering: MLLM.
+fig: fig7.png 400
+cap: <b>Attributes for caption instruction.</b> Captioning by two stages: answer predefined attributes & final caption based on observed attributes. Based on the advantages of auto-regressive video generation, it applies fine-grained second-by-second descrptions for each video clip.
+fig: fig8.png 300
+cap: <b>Data configuration.</b>
+fig: fig9.png 450 fig10.png 450
+cap: <b>Win-rate</b> (left) and <b>VBench</b> (right) performance on image-to-video generation.
+fig: fig11.png 450
+cap: Performance on <b>Physics-IQ-Benchmark</b>.
+""",
+},
+{
 "title": "Step1X-Edit: A Practical Framework for General Image Editing",
 "author": "Step1X-Image Team",
 "organization": "StepFun",
