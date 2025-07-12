@@ -101,7 +101,7 @@ cap: <b>Structure.</b> <b>Multimodal large language model (Qwen-VL)</b> is used 
 "name": "DDIM",
 "comment": "",
 "category": "Foundation Algorithms & Models",
-"jupyter_notes": "",
+"jupyter_notes": "DDIM.ipynb",
 "summary": """Accelerate sampling of diffusion models by introducing a <b>non-Markovian, deterministic process</b> that achieves high-quality results with fewer steps while preserving training consistency.""",
 "details": 
 """
