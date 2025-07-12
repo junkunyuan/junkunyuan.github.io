@@ -975,7 +975,7 @@ cap: <b>Train score model:</b> the same as CLIP except for the sample with the h
 "name": "DiT",
 "comment": "",
 "category": "Foundation Algorithms & Models",
-"jupyter_notes": "visual_generative_models-dit.ipynb",
+"jupyter_notes": "DiT.ipynb",
 "summary": """It replaces the conventional U-Net structure with <b>transformer</b> for scalable image generation, the timestep and condition are injected by adaLN-Zero.""",
 "details": 
 """
