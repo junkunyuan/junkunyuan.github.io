@@ -365,7 +365,7 @@ cap: <b>Random Search performs the best</b> because it has larger space that con
 "name": "Diffusion-DPO",
 "comment": "",
 "category": "Reinforcement Learning",
-"jupyter_notes": "visual_generative_models-diffusion_dpo.ipynb",
+"jupyter_notes": "Diffusion-DPO.ipynb",
 "summary": """It adapts <b>Direct Preference Optimization (DPO)</b> from large language models to diffusion models.""",
 "details": 
 """
