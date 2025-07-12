@@ -1032,7 +1032,7 @@ cap: <b>Strucuture.</b> The conditions are injected by cross-attention.
 "name": "CFG",
 "comment": "",
 "category": "Foundation Algorithms & Models",
-"jupyter_notes": "visual_generative_models-cfg.ipynb",
+"jupyter_notes": "CFG.ipynb",
 "summary": """It improves conditional image generation with <b>classifier-free condition guidance</b> by jointly training a conditional model and an unconditional model.""",
 "details": "",
 },
@@ -1047,7 +1047,7 @@ cap: <b>Strucuture.</b> The conditions are injected by cross-attention.
 "name": "DDPM",
 "comment": "It shows that a simple, theoretically grounded denoising process can rival and even surpass GANs in sample quality, sparking an explosion of diffusion-based research and aplications across images, videos, audio, and beyond. It has over 20,000 citations (as of Jul 2025).",
 "category": "Foundation Algorithms & Models",
-"jupyter_notes": "visual_generative_models-ddpm.ipynb",
+"jupyter_notes": "DDPM.ipynb",
 "summary": """It proposes <b>denoising diffusion probabilistic models</b> that iteratively denoises data from random noise.""",
 "details": 
 """
