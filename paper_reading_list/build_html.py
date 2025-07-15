@@ -24,7 +24,7 @@ f"""
 INTRODUCTION = \
 f"""
 <h1 id="top">title</h1>
-<p class="larger"><b><font color='#D93053'>total_paper_num</font> papers on domain_name.</b></p>
+<p class="larger"><b>total_paper_num domain_name.</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
 <p><font color=#B0B0B0>Last updated on time_now (UTC+8).</font></p>
@@ -39,7 +39,8 @@ SUFFIX  = \
 def build_main_content_all_domains(domains, num_papers):
     content = """<hr><p id="table" class="larger"><b>Table of contents:</b></p><ul>"""
     for domain, num_paper in zip(domains, num_papers):
-        content += f"""<li><a class="no_dec" href={domain["file"]}>{domain["title"]}</a> ({num_paper} papers) &nbsp; <font color=#B0B0B0>{domain["description"]}</font></li>"""
+        paper_num_display = "" if num_paper == 0 else f"({num_paper} papers)"
+        content += f"""<li><a class="no_dec" href={domain["file"]}>{domain["title"]}</a>{paper_num_display} &nbsp; <font color=#B0B0B0>{domain["description"]}</font></li>"""
     content += "</ul>"
     return content
 
@@ -114,7 +115,7 @@ def build_main_content_of_each_domain(domain):
             <p class="paper_title" onclick="toggleTable('{paper["name"]}-{category}-details')"><i>{paper["title"]}</i></p>
             {author}
             {organization}
-            <p class="paper_detail"><b><font color=#202020>{date} &nbsp; {paper["name"]}</font></b> {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#D0D0D0>{venue_all}</font></p>
+            <p class="paper_detail"><b>{date} &nbsp; {paper["name"]}</b> {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#D0D0D0>{venue_all}</font></p>
             {comment}
             {debug}
             <div id='{paper["name"]}-{category}-details' class="info_detail">
@@ -185,9 +186,10 @@ if __name__ == "__main__":
     ## Build html of all domains
     num_papers = list()
     for domain in DOMAINS:
-        num_paper = len(domain["papers"])
+        num_paper = 0 if domain["title"] == "Coding and Engineering" else len(domain["papers"]) 
         num_papers.append(num_paper)
-        intro = intro_temp.replace("total_paper_num", str(num_paper))
+        paper_num_display = "" if num_paper == 0 else f"<font color='#D93053'>{num_paper}</font> papers on "
+        intro = intro_temp.replace("total_paper_num", paper_num_display)
         intro = intro.replace("title", domain["title"])
         intro = intro.replace("domain_name", domain["title"])
         papers_content = build_main_content_of_each_domain(domain)
@@ -196,7 +198,7 @@ if __name__ == "__main__":
             f.write(content_domain)
     
     ## Build main content
-    intro = intro_temp.replace("total_paper_num", str(sum(num_papers)))
+    intro = intro_temp.replace("total_paper_num", f"<font color='#D93053'>{sum(num_papers)}</font> papers on ")
     intro = intro.replace("title", MAIN_CONTENT["title"])
     intro = intro.replace("domain_name", MAIN_CONTENT["title"])
     intro = intro.replace("""<p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>""", "")

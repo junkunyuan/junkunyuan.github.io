@@ -1,0 +1,158 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="resource/html.css" type="text/css">
+    <link rel="shortcut icon" href="resource/my_photo.jpg">
+    <title>Paper Reading List</title>
+    <meta name="description" content="Paper Reading List">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div id="layout-content" style="margin-top:25px">
+<body>
+
+<h1 id="top">Coding and Engineering</h1>
+<p class="larger"><b> Coding and Engineering.</b></p>
+<p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
+<p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
+<p><font color=#B0B0B0>Last updated on July 15, 2025 at 20:13 (UTC+8).</font></p>
+<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="torch & torchvision" href="#torch & torchvision-table"><b>torch & torchvision:</b></a> <a class="no_dec" href="#data transforms"><font color=#B0B0B0>data transforms</font></a></li></ul><h2 id="torch & torchvision-table"><a class="no_dec" href="#torch & torchvision">torch & torchvision</a></h2>
+            <p class="little_split" id='data transforms'></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('data transforms-torch & torchvision-details')"><i>new paper Data Transforms</i></p>
+            
+            
+            <p class="paper_detail"><b>Aug 16, 2024 &nbsp; data transforms</b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/vision/stable/transforms.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
+            
+            <p>Resize</p><p>
+<pre>
+from torchvision import transforms
+from torchvision.transforms.InterpolationMode import BILINEAR, NEAREST, NEAREST_EXACT, BILINEAR, BICUBIC 
+
+## --------------------------------------------------------------------------------
+## <a class="no_dec" href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Resize.html?highlight=transforms+resize#torchvision.transforms.Resize">Resize</a>
+## --------------------------------------------------------------------------------
+size = /  # sequence or int. For example (512, 768)
+interpolation = BILINEAR  # InterpolationMode
+max_size = /  # int optional. Maximum allowed for the longer edge of the resized image, only supported if `size` is an int
+antialias = /  # bool optional. Apply antialiasing, only affects tensors with bilinear or bicubic modes
+
+resize_trans = <b>transforms.Resize</b>(size, interpolation=interpolation, max_size=max_size, antialias=antialias)
+image_transformed = resize_trans(image)  # PIL Image => PIL Image or Tensor => Tensor
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## <a class="no_dec" href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.RandomHorizontalFlip.html#torchvision.transforms.RandomHorizontalFlip">RandomHorizontalFlip</a>
+## --------------------------------------------------------------------------------
+p = 0.5  # float. Probability to flip image
+
+resize_trans = <b>transforms.RandomHorizontalFlip</b>(p=p)
+image_transformed = resize_trans(image)  # PIL Image => PIL Image or Tensor => Tensor
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## <a class="no_dec" href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.ToTensor.html?highlight=totensor#torchvision.transforms.ToTensor">ToTensor</a>
+## --------------------------------------------------------------------------------
+## Input: PIL Image / numpy.ndarray (np.uint8) of shape (HxWxC) in the range [0, 255]
+## Output: torch.FloatTensor of shape (CxHxW) in the range (0.0, 1.0)
+## Other inputs: only apply type transform
+resize_trans = <b>transforms.ToTensor</b>()
+image_transformed = resize_trans(image)  # PIL Image / ndarray => Tensor
+## --------------------------------------------------------------------------------
+</pre>
+</p>
+            <div id='data transforms-torch & torchvision-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>Resize</font></p>
+                
+                <p>
+<pre>
+from torchvision import transforms
+from torchvision.transforms.InterpolationMode import BILINEAR, NEAREST, NEAREST_EXACT, BILINEAR, BICUBIC 
+
+## --------------------------------------------------------------------------------
+## <a class="no_dec" href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Resize.html?highlight=transforms+resize#torchvision.transforms.Resize">Resize</a>
+## --------------------------------------------------------------------------------
+size = /  # sequence or int. For example (512, 768)
+interpolation = BILINEAR  # InterpolationMode
+max_size = /  # int optional. Maximum allowed for the longer edge of the resized image, only supported if `size` is an int
+antialias = /  # bool optional. Apply antialiasing, only affects tensors with bilinear or bicubic modes
+
+resize_trans = <b>transforms.Resize</b>(size, interpolation=interpolation, max_size=max_size, antialias=antialias)
+image_transformed = resize_trans(image)  # PIL Image => PIL Image or Tensor => Tensor
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## <a class="no_dec" href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.RandomHorizontalFlip.html#torchvision.transforms.RandomHorizontalFlip">RandomHorizontalFlip</a>
+## --------------------------------------------------------------------------------
+p = 0.5  # float. Probability to flip image
+
+resize_trans = <b>transforms.RandomHorizontalFlip</b>(p=p)
+image_transformed = resize_trans(image)  # PIL Image => PIL Image or Tensor => Tensor
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## <a class="no_dec" href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.ToTensor.html?highlight=totensor#torchvision.transforms.ToTensor">ToTensor</a>
+## --------------------------------------------------------------------------------
+## Input: PIL Image / numpy.ndarray (np.uint8) of shape (HxWxC) in the range [0, 255]
+## Output: torch.FloatTensor of shape (CxHxW) in the range (0.0, 1.0)
+## Other inputs: only apply type transform
+resize_trans = <b>transforms.ToTensor</b>()
+image_transformed = resize_trans(image)  # PIL Image / ndarray => Tensor
+## --------------------------------------------------------------------------------
+</pre>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
+    <script>
+        function toggleTable(tableId) {
+            const container = document.getElementById(tableId);
+            const button = container.previousElementSibling;
+            const isVisible = window.getComputedStyle(container).display !== 'none';
+            if (!isVisible) {
+                const images = container.querySelectorAll('img');
+                images.forEach(img => {
+                    if (img.dataset.src !== '') {
+                        img.src = img.dataset.src;
+                    }
+                });
+                container.style.display = 'block';
+            } else {
+                container.style.display = 'none';
+                
+            }
+        }
+    </script>
+
+    <button id="backToTop" title="back to top">↑</button>
+    <script>
+        const button = document.getElementById("backToTop");
+        window.addEventListener("scroll", () => {
+        if (document.documentElement.scrollTop > 300) {
+            button.style.display = "block";
+        } else {
+            button.style.display = "none";
+        }
+        });
+
+        function updateButtonPosition() {
+        const bodyRect = document.body.getBoundingClientRect();
+        const windowWidth = window.innerWidth;
+        const rightOffset = Math.max((windowWidth - bodyRect.width) / 2, 10);
+        button.style.right = rightOffset + "px";
+        }
+
+        window.addEventListener("resize", updateButtonPosition);
+        window.addEventListener("load", updateButtonPosition);
+
+        button.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    
+</body>
+</html>

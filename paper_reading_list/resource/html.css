@@ -89,13 +89,13 @@ li {
 }
 .paper_title {
     cursor: pointer;
-    /* color: #202020; */
-    color: #000000;
+    color: #202020;
+    /* color: #000000; */
     /* color: #404040; */
     font-size: 16px;
     font-family: Arial, sans-serif;
     margin-bottom: 0.5em;
-    /* font-weight:bold; */
+    font-weight:bold;
 }
 .paper_title:hover {
     text-decoration: underline;
