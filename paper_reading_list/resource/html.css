@@ -62,6 +62,9 @@ a {
 .no_dec {
     text-decoration: none;
 }
+.a_black {
+    color: #000000;
+}
 a:hover {
     text-decoration: underline;
     color: #4169E1;
@@ -127,6 +130,11 @@ figcaption {
     font-family: Arial, sans-serif;
     margin-top: 0.5em;
     margin-bottom: 1.5em;
+}
+
+pre {
+    font-size: 14px;
+    color: #404040;
 }
 
 hr.dashed {

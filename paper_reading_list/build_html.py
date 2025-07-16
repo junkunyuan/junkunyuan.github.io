@@ -86,7 +86,7 @@ def build_main_content_of_each_domain(domain):
 
             venue = f"""<a href="{paper["pdf_url"]}">{paper["venue"]}</a>"""
             venue_all = get_venue_all(paper["venue"])
-            date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%b %d, %Y")
+            date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%b %d, %Y") + " &nbsp;" if domain["title"] != "Coding and Engineering" else ""
             comment = f"""<p class="paper_detail"><font color=#FF000>{paper["comment"]}</font></p>""" if paper["comment"] else ""
             jupyter_note = ""
             if paper.get("jupyter_notes", ""):
@@ -115,7 +115,7 @@ def build_main_content_of_each_domain(domain):
             <p class="paper_title" onclick="toggleTable('{paper["name"]}-{category}-details')"><i>{paper["title"]}</i></p>
             {author}
             {organization}
-            <p class="paper_detail"><b>{date} &nbsp; {paper["name"]}</b> {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#D0D0D0>{venue_all}</font></p>
+            <p class="paper_detail"><b>{date} {paper["name"]}</b> {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#D0D0D0>{venue_all}</font></p>
             {comment}
             {debug}
             <div id='{paper["name"]}-{category}-details' class="info_detail">
