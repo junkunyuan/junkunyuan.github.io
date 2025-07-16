@@ -9,14 +9,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div id="layout-content" style="margin-top:25px">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js"></script>
 <body>
 
 <h1 id="top">Coding and Engineering</h1>
 <p class="larger"><b> Coding and Engineering.</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on July 16, 2025 at 16:12 (UTC+8).</font></p>
-<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="torch & torchvision" href="#torch & torchvision-table"><b>torch & torchvision:</b></a> <a class="no_dec" href="#data transforms"><font color=#B0B0B0>data transforms</font></a></li></ul><h2 id="torch & torchvision-table"><a class="no_dec" href="#torch & torchvision">torch & torchvision</a></h2>
+<p><font color=#B0B0B0>Last updated on July 16, 2025 at 17:14 (UTC+8).</font></p>
+<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="torch & torchvision" href="#torch & torchvision-table"><b>torch & torchvision:</b></a> <a class="no_dec" href="#data transforms"><font color=#B0B0B0>data transforms</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#data loader"><font color=#B0B0B0>data loader</font></a></li></ul><h2 id="torch & torchvision-table"><a class="no_dec" href="#torch & torchvision">torch & torchvision</a></h2>
             <p class="little_split" id='data transforms'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -32,6 +35,7 @@
                 
                 <p>
 <pre>
+<code class="language-python">
 from torchvision import transforms
 from torchvision.transforms.InterpolationMode import BILINEAR, NEAREST, NEAREST_EXACT, BILINEAR, BICUBIC 
 
@@ -40,8 +44,8 @@ from torchvision.transforms.InterpolationMode import BILINEAR, NEAREST, NEAREST_
 ## --------------------------------------------------------------------------------
 size = /  # sequence or int. For example (512, 768)
 interpolation = BILINEAR  # InterpolationMode
-max_size = /  # int, optional. Maximum allowed for the longer edge of the resized image, only supported if `size` is an int
-antialias = /  # bool, optional. Apply antialiasing, only affects tensors with bilinear or bicubic modes
+max_size = /  # int. Maximum allowed for the longer image edge, only supported if `size` is an int
+antialias = /  # bool. Apply antialiasing, only under bilinear or bicubic modes
 
 trans = <b>transforms.Resize</b>(size, interpolation=interpolation, max_size=max_size, antialias=antialias)
 image_trans = trans(image)  # PIL Image => PIL Image or Tensor => Tensor
@@ -80,11 +84,83 @@ image_trans = trans(image)  # PIL Image / ndarray / Tensor => Tensor
 ## --------------------------------------------------------------------------------
 mean = /  # sequence. Means for each channel.
 std = /  # sequence. Standard deviations for each channel.
-inplace = False  # bool, optional. Bool to make this operation in-place.
+inplace = False  # bool. Bool to make this operation in-place.
 
 trans = <b>transforms.Normalize</b>(mean, std, inplace=inplace)
 image_trans = trans(image)  # Tensor => Tensor
 ## --------------------------------------------------------------------------------
+</code>
+</pre>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
+            <p class="little_split" id='data loader'></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('data loader-torch & torchvision-details')"><i>new paper Data Loader</i></p>
+            
+            
+            <p class="paper_detail"><b> data loader</b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader">docs</a> &nbsp; <font color=#D0D0D0></font></p>
+            
+            <p></p><p>
+<pre>
+<code class="language-python">
+from torch.utils.data import DataLoader, Dataset, Sampler
+
+dataset = /  # Dataset
+batch_size = 1  # int. Number of samples per batch.
+shuffle = False  # bool. If True, have the data shuffled at every epoch
+sampler = None  # Sampler or Iterable. Define how to draw samples
+batch_sampler = None  # Sampler or Iterable. customize sampling by giving indices
+num_workers = 0  # int. Number of subprocesses to use for data loading
+collate_fn = None  # Callable. Merge a list of samples to form a batch of tensors.
+pin_memory = False  # bool. If True, copy Tensors into device/CUDA pinned memory before ruturning.
+drop_last = False  # bool. If True, drop the last incomplete batch
+timeout = 0  # numeric. If positive, set the timeout value for collecting a batch from workers.
+worker_init_fn = None  # Callable. If not None, this will be called with the worker id as input
+multiprocessing_context = None  # str or multiprocessing.context.BaseContext. If None, use the default multiprocessing context  If None, use the default multiprocessing context
+
+
+data_loader = DataLoader(
+    dataset, batch_size=batch_size, shuffle=shuffle, sampler=sampler, batch_sampler=batch_sampler, 
+    num_workers=num_workers, collate_fn=collate_fn, pin_memory=pin_memory, drop_last=drop_last, 
+    timeout=timeout, worker_init_fn=worker_init_fn, multiprocessing_context=multiprocessing_context, 
+    generator=None, *, prefetch_factor=None, persistent_workers=False, pin_memory_device='', in_order=True)
+</code>
+</pre>
+</p>
+            <div id='data loader-torch & torchvision-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020></font></p>
+                
+                <p>
+<pre>
+<code class="language-python">
+from torch.utils.data import DataLoader, Dataset, Sampler
+
+dataset = /  # Dataset
+batch_size = 1  # int. Number of samples per batch.
+shuffle = False  # bool. If True, have the data shuffled at every epoch
+sampler = None  # Sampler or Iterable. Define how to draw samples
+batch_sampler = None  # Sampler or Iterable. customize sampling by giving indices
+num_workers = 0  # int. Number of subprocesses to use for data loading
+collate_fn = None  # Callable. Merge a list of samples to form a batch of tensors.
+pin_memory = False  # bool. If True, copy Tensors into device/CUDA pinned memory before ruturning.
+drop_last = False  # bool. If True, drop the last incomplete batch
+timeout = 0  # numeric. If positive, set the timeout value for collecting a batch from workers.
+worker_init_fn = None  # Callable. If not None, this will be called with the worker id as input
+multiprocessing_context = None  # str or multiprocessing.context.BaseContext. If None, use the default multiprocessing context  If None, use the default multiprocessing context
+
+
+data_loader = DataLoader(
+    dataset, batch_size=batch_size, shuffle=shuffle, sampler=sampler, batch_sampler=batch_sampler, 
+    num_workers=num_workers, collate_fn=collate_fn, pin_memory=pin_memory, drop_last=drop_last, 
+    timeout=timeout, worker_init_fn=worker_init_fn, multiprocessing_context=multiprocessing_context, 
+    generator=None, *, prefetch_factor=None, persistent_workers=False, pin_memory_device='', in_order=True)
+</code>
 </pre>
 </p>
             </div>

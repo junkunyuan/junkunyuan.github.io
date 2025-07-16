@@ -19,6 +19,10 @@ f"""
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div id="layout-content" style="margin-top:25px">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js"></script>
 <body>
 """
 INTRODUCTION = \
@@ -59,7 +63,8 @@ def build_main_content_of_each_domain(domain):
     catalog = """<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul>"""
     for category in domain["categories"]:
         paper_choose = papers[papers["category"].str.contains(category)]
-        paper_choose = paper_choose.sort_values(by="date", ascending=True)
+        ascending = True if domain["title"] != "Coding and Engineering" else False
+        paper_choose = paper_choose.sort_values(by="date", ascending=ascending)
         paper_names = paper_choose["name"].to_list()
         names = ""
         for i, name in enumerate(paper_names):

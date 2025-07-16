@@ -133,9 +133,16 @@ figcaption {
 }
 
 pre {
-    font-size: 14px;
-    color: #404040;
+    font-size: 10px;
+    /* color: #404040;
+    background-color: #f4f4f4;
+    overflow-x: auto;
+    font-family: "Courier New", monospace;
+    border-radius: 5px; */
 }
+/* code {
+    font-family: "Fira Code", monospace;
+} */
 
 hr.dashed {
 border: none;
