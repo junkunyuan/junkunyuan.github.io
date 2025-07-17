@@ -12,17 +12,13 @@ f"""
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="resource/html.css" type="text/css">
-    <link rel="shortcut icon" href="resource/my_photo.jpg">
-    <title>Paper Reading List</title>
-    <meta name="description" content="Paper Reading List">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <div id="layout-content" style="margin-top:25px">
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-bash.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js"></script>
+<link rel="stylesheet" href="resource/html.css" type="text/css">
+<link rel="shortcut icon" href="resource/my_photo.jpg">
+<title>Paper Reading List</title>
+<meta name="description" content="Paper Reading List">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div id="layout-content" style="margin-top:25px">
 <body>
 """
 INTRODUCTION = \
@@ -198,7 +194,16 @@ if __name__ == "__main__":
         intro = intro.replace("title", domain["title"])
         intro = intro.replace("domain_name", domain["title"])
         papers_content = build_main_content_of_each_domain(domain)
-        content_domain = PREFIX + intro + papers_content + SUFFIX
+        if domain["title"] == "Coding and Engineering":
+            prefix = PREFIX.replace("<body>", 
+                """<script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
+                <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css" rel="stylesheet">
+                <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-bash.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js"></script>
+                <body>""")
+        else:
+            prefix = PREFIX
+        content_domain = prefix + intro + papers_content + SUFFIX
         with open(domain["file"], "w", encoding="utf-8-sig") as f:
             f.write(content_domain)
     

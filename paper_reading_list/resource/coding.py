@@ -19,13 +19,57 @@ CODING["papers"] = [
 # "summary": """""",
 # "details": 
 # """
-# <ul>
-#     <li>
-# </ul>
+# <pre>
+# <code class="language-python">
+# </code>
+# </pre>
 # """,
 # },
 {
-"title": "new paper Data Loader",
+"title": "Optimizer",
+"author": "",
+"organization": "",
+"date": "20240629",
+"venue": "docs",
+"pdf_url": "https://docs.pytorch.org/docs/stable/optim.html",
+"code_url": "",
+"name": "optimizer",
+"comment": "",
+"category": "torch & torchvision",
+"jupyter_notes": "",
+"summary": """It includes tools for building optimization algorithms: <a href="https://docs.pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW.step">AdamW</a>.""",
+"details": 
+"""
+<pre>
+<code class="language-python">
+from torch.optim import AdamW
+
+## --------------------------------------------------------------------------------
+## AdamW
+## --------------------------------------------------------------------------------
+params = /  # *** iterable. Parameters / named_parameters / parameter groups to optimize
+lr = 0.001  # *** float, Tensor. Learning rate
+betas = (0.9, 0.999)  # tuple. For computing running averages of gradients & squares
+eps = 1e-08  # float. Added to denominator to improve numerical stability
+weight_decay = 0.01  # float. Weight decay coefficient
+amsgrad = False # bool. Whether to use AMSGrad 
+maximize = False  # bool. Maximize the objective with respect to params, not minimize
+foreach = None  # bool. Whether foreach implementation of optimizer is used.
+capturable = False  # bool. Pass True can impair ungraphed performance
+differentiable = False  # bool. Whether has gradient
+fused = None  # bool. Whether use the fused implementation
+
+AdamW(
+    params, lr, betas, eps, weight_decay, amsgrad, maximize, 
+    foreach, capturable, differentiable, fused
+)
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+""",
+},
+{
+"title": "Data Loader",
 "author": "",
 "organization": "",
 "date": "20240630",
@@ -36,32 +80,41 @@ CODING["papers"] = [
 "comment": "",
 "category": "torch & torchvision",
 "jupyter_notes": "",
-"summary": """""",
+"summary": """It includes tools for data loading: <a href="https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader">DataLoader</a>.""",
 "details": 
 """
 <pre>
 <code class="language-python">
+import torch
 from torch.utils.data import DataLoader, Dataset, Sampler
 
-dataset = /  # Dataset
-batch_size = 1  # int. Number of samples per batch.
-shuffle = False  # bool. If True, have the data shuffled at every epoch
+## --------------------------------------------------------------------------------
+## DataLoader
+## --------------------------------------------------------------------------------
+dataset = /  # *** Dataset
+batch_size = 1  # *** int. Number of samples per batch.
+shuffle = False  # *** bool. If True, have the data shuffled at every epoch
 sampler = None  # Sampler or Iterable. Define how to draw samples
 batch_sampler = None  # Sampler or Iterable. customize sampling by giving indices
-num_workers = 0  # int. Number of subprocesses to use for data loading
+num_workers = 0  # *** int. Number of subprocesses to use for data loading
 collate_fn = None  # Callable. Merge a list of samples to form a batch of tensors.
-pin_memory = False  # bool. If True, copy Tensors into device/CUDA pinned memory before ruturning.
-drop_last = False  # bool. If True, drop the last incomplete batch
-timeout = 0  # numeric. If positive, set the timeout value for collecting a batch from workers.
-worker_init_fn = None  # Callable. If not None, this will be called with the worker id as input
-multiprocessing_context = None  # str or multiprocessing.context.BaseContext. If None, use the default multiprocessing context  If None, use the default multiprocessing context
-
+pin_memory = False  # *** bool. If True, copy Tensors into CUDA pinned memory.
+drop_last = False  # *** bool. If True, drop the last incomplete batch
+timeout = 0  # numeric. If positive, set timeout for collecting a batch from workers.
+worker_init_fn = None  # Callable. If not None, it will be called (worker id as input) 
+multiprocessing_context = None  # str or multiprocessing.context.BaseContext.
+generator = None  # torch.Generator. If not None, it will be used by sampler & workers
+prefetch_factor = None  # int. Default = None if num_workers == 0 else 2
+persistent_workers = False  # bool. If True, workers will not shut down after an epoch.
+pin_memory_device = ""  # str. The device to pin memory
+in_order = True  # bool. If False, it will not enforce batches to return in order
 
 data_loader = DataLoader(
-    dataset, batch_size=batch_size, shuffle=shuffle, sampler=sampler, batch_sampler=batch_sampler, 
-    num_workers=num_workers, collate_fn=collate_fn, pin_memory=pin_memory, drop_last=drop_last, 
-    timeout=timeout, worker_init_fn=worker_init_fn, multiprocessing_context=multiprocessing_context, 
-    generator=None, *, prefetch_factor=None, persistent_workers=False, pin_memory_device='', in_order=True)
+    dataset, batch_size, shuffle, sampler, batch_sampler, num_workers, collate_fn, 
+    pin_memory, drop_last, timeout, worker_init_fn, multiprocessing_context, 
+    generator, prefetch_factor, persistent_workers, pin_memory_device, in_order
+)
+## --------------------------------------------------------------------------------
 </code>
 </pre>
 """,
@@ -78,37 +131,37 @@ data_loader = DataLoader(
 "comment": "",
 "category": "torch & torchvision",
 "jupyter_notes": "",
-"summary": """It includes tools to transform and augment data.""",
+"summary": """It includes tools to transform and augment data: <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Resize.html?highlight=transforms+resize#torchvision.transforms.Resize">Resize</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.RandomHorizontalFlip.html#torchvision.transforms.RandomHorizontalFlip">RandomHorizontalFlip</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.ToTensor.html?highlight=totensor#torchvision.transforms.ToTensor">ToTensor</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Compose.html#torchvision.transforms.Compose">Compose</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Normalize.html#torchvision.transforms.Normalize">Normalize</a>.""",
 "details": 
 """
 <pre>
 <code class="language-python">
 from torchvision import transforms
-from torchvision.transforms.InterpolationMode import BILINEAR, NEAREST, NEAREST_EXACT, BILINEAR, BICUBIC 
+from torchvision.transforms.InterpolationMode import BILINEAR, NEAREST, BICUBIC 
 
 ## --------------------------------------------------------------------------------
-## <a class="no_dec a_black" href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Resize.html?highlight=transforms+resize#torchvision.transforms.Resize"><b>Geometry: Resize</b></a>
+## Geometry: Resize
 ## --------------------------------------------------------------------------------
-size = /  # sequence or int. For example (512, 768)
+size = /  # *** sequence or int. For example (512, 768)
 interpolation = BILINEAR  # InterpolationMode
-max_size = /  # int. Maximum allowed for the longer image edge, only supported if `size` is an int
-antialias = /  # bool. Apply antialiasing, only under bilinear or bicubic modes
+max_size = None  # int. Maximum allowed for the longer edge, supported if `size` is int
+antialias = True  # bool. Apply antialiasing, only under bilinear or bicubic modes
 
-trans = <b>transforms.Resize</b>(size, interpolation=interpolation, max_size=max_size, antialias=antialias)
+trans = transforms.Resize(size, interpolation, max_size, antialias)
 image_trans = trans(image)  # PIL Image => PIL Image or Tensor => Tensor
 ## --------------------------------------------------------------------------------
 
 ## --------------------------------------------------------------------------------
-## <a class="no_dec a_black" href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.RandomHorizontalFlip.html#torchvision.transforms.RandomHorizontalFlip"><b>Geometry: RandomHorizontalFlip</b></a>
+## Geometry: RandomHorizontalFlip
 ## --------------------------------------------------------------------------------
-p = 0.5  # float. Probability to flip image
+p = 0.5  # *** float. Probability to flip image
 
-trans = <b>transforms.RandomHorizontalFlip</b>(p=p)
+trans = <b>transforms.RandomHorizontalFlip</b>(p)
 image_trans = trans(image)  # PIL Image => PIL Image or Tensor => Tensor
 ## --------------------------------------------------------------------------------
 
 ## --------------------------------------------------------------------------------
-## <a class="no_dec a_black" href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.ToTensor.html?highlight=totensor#torchvision.transforms.ToTensor"><b>Conversion: ToTensor</b></a>
+## Conversion: ToTensor
 ## --------------------------------------------------------------------------------
 ## Input: PIL Image / numpy.ndarray (np.uint8) of shape (HxWxC) in the range [0, 255]
 ## Output: torch.FloatTensor of shape (CxHxW) in the range (0.0, 1.0)
@@ -118,22 +171,22 @@ image_trans = trans(image)  # PIL Image / ndarray => Tensor
 ## --------------------------------------------------------------------------------
 
 ## --------------------------------------------------------------------------------
-## <a class="no_dec a_black" href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Compose.html#torchvision.transforms.Compose"><b>Composition: Compose</b></a>
+## Composition: Compose
 ## --------------------------------------------------------------------------------
-transforms = /  # list of Transform objects
+transforms = /  # *** list of Transform objects
 
 trans = <b>transforms.Compose</b>(transforms)
 image_trans = trans(image)  # PIL Image / ndarray / Tensor => Tensor
 ## --------------------------------------------------------------------------------
 
 ## --------------------------------------------------------------------------------
-## <a class="no_dec a_black" href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Normalize.html#torchvision.transforms.Normalize"><b>Miscellaneous: Normalize</b></a>
+## Miscellaneous: Normalize
 ## --------------------------------------------------------------------------------
-mean = /  # sequence. Means for each channel.
-std = /  # sequence. Standard deviations for each channel.
+mean = /  # *** sequence. Means for each channel.
+std = /  # *** sequence. Standard deviations for each channel.
 inplace = False  # bool. Bool to make this operation in-place.
 
-trans = <b>transforms.Normalize</b>(mean, std, inplace=inplace)
+trans = <b>transforms.Normalize</b>(mean, std, inplace)
 image_trans = trans(image)  # Tensor => Tensor
 ## --------------------------------------------------------------------------------
 </code>

@@ -2,24 +2,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="resource/html.css" type="text/css">
-    <link rel="shortcut icon" href="resource/my_photo.jpg">
-    <title>Paper Reading List</title>
-    <meta name="description" content="Paper Reading List">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <div id="layout-content" style="margin-top:25px">
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js"></script>
-<body>
+<link rel="stylesheet" href="resource/html.css" type="text/css">
+<link rel="shortcut icon" href="resource/my_photo.jpg">
+<title>Paper Reading List</title>
+<meta name="description" content="Paper Reading List">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div id="layout-content" style="margin-top:25px">
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
+                <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css" rel="stylesheet">
+                <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-bash.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js"></script>
+                <body>
 
 <h1 id="top">Coding and Engineering</h1>
 <p class="larger"><b> Coding and Engineering.</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on July 16, 2025 at 17:14 (UTC+8).</font></p>
-<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="torch & torchvision" href="#torch & torchvision-table"><b>torch & torchvision:</b></a> <a class="no_dec" href="#data transforms"><font color=#B0B0B0>data transforms</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#data loader"><font color=#B0B0B0>data loader</font></a></li></ul><h2 id="torch & torchvision-table"><a class="no_dec" href="#torch & torchvision">torch & torchvision</a></h2>
+<p><font color=#B0B0B0>Last updated on July 17, 2025 at 13:29 (UTC+8).</font></p>
+<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="torch & torchvision" href="#torch & torchvision-table"><b>torch & torchvision:</b></a> <a class="no_dec" href="#data transforms"><font color=#B0B0B0>data transforms</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#data loader"><font color=#B0B0B0>data loader</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#optimizer"><font color=#B0B0B0>optimizer</font></a></li></ul><h2 id="torch & torchvision-table"><a class="no_dec" href="#torch & torchvision">torch & torchvision</a></h2>
             <p class="little_split" id='data transforms'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -31,37 +32,37 @@
             
             <div id='data transforms-torch & torchvision-details' class="info_detail">
                 <hr class="dashed">
-                <p><font color=#202020>It includes tools to transform and augment data.</font></p>
+                <p><font color=#202020>It includes tools to transform and augment data: <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Resize.html?highlight=transforms+resize#torchvision.transforms.Resize">Resize</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.RandomHorizontalFlip.html#torchvision.transforms.RandomHorizontalFlip">RandomHorizontalFlip</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.ToTensor.html?highlight=totensor#torchvision.transforms.ToTensor">ToTensor</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Compose.html#torchvision.transforms.Compose">Compose</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Normalize.html#torchvision.transforms.Normalize">Normalize</a>.</font></p>
                 
                 <p>
 <pre>
 <code class="language-python">
 from torchvision import transforms
-from torchvision.transforms.InterpolationMode import BILINEAR, NEAREST, NEAREST_EXACT, BILINEAR, BICUBIC 
+from torchvision.transforms.InterpolationMode import BILINEAR, NEAREST, BICUBIC 
 
 ## --------------------------------------------------------------------------------
-## <a class="no_dec a_black" href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Resize.html?highlight=transforms+resize#torchvision.transforms.Resize"><b>Geometry: Resize</b></a>
+## Geometry: Resize
 ## --------------------------------------------------------------------------------
-size = /  # sequence or int. For example (512, 768)
+size = /  # *** sequence or int. For example (512, 768)
 interpolation = BILINEAR  # InterpolationMode
-max_size = /  # int. Maximum allowed for the longer image edge, only supported if `size` is an int
-antialias = /  # bool. Apply antialiasing, only under bilinear or bicubic modes
+max_size = None  # int. Maximum allowed for the longer edge, supported if `size` is int
+antialias = True  # bool. Apply antialiasing, only under bilinear or bicubic modes
 
-trans = <b>transforms.Resize</b>(size, interpolation=interpolation, max_size=max_size, antialias=antialias)
+trans = transforms.Resize(size, interpolation, max_size, antialias)
 image_trans = trans(image)  # PIL Image => PIL Image or Tensor => Tensor
 ## --------------------------------------------------------------------------------
 
 ## --------------------------------------------------------------------------------
-## <a class="no_dec a_black" href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.RandomHorizontalFlip.html#torchvision.transforms.RandomHorizontalFlip"><b>Geometry: RandomHorizontalFlip</b></a>
+## Geometry: RandomHorizontalFlip
 ## --------------------------------------------------------------------------------
-p = 0.5  # float. Probability to flip image
+p = 0.5  # *** float. Probability to flip image
 
-trans = <b>transforms.RandomHorizontalFlip</b>(p=p)
+trans = <b>transforms.RandomHorizontalFlip</b>(p)
 image_trans = trans(image)  # PIL Image => PIL Image or Tensor => Tensor
 ## --------------------------------------------------------------------------------
 
 ## --------------------------------------------------------------------------------
-## <a class="no_dec a_black" href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.ToTensor.html?highlight=totensor#torchvision.transforms.ToTensor"><b>Conversion: ToTensor</b></a>
+## Conversion: ToTensor
 ## --------------------------------------------------------------------------------
 ## Input: PIL Image / numpy.ndarray (np.uint8) of shape (HxWxC) in the range [0, 255]
 ## Output: torch.FloatTensor of shape (CxHxW) in the range (0.0, 1.0)
@@ -71,22 +72,22 @@ image_trans = trans(image)  # PIL Image / ndarray => Tensor
 ## --------------------------------------------------------------------------------
 
 ## --------------------------------------------------------------------------------
-## <a class="no_dec a_black" href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Compose.html#torchvision.transforms.Compose"><b>Composition: Compose</b></a>
+## Composition: Compose
 ## --------------------------------------------------------------------------------
-transforms = /  # list of Transform objects
+transforms = /  # *** list of Transform objects
 
 trans = <b>transforms.Compose</b>(transforms)
 image_trans = trans(image)  # PIL Image / ndarray / Tensor => Tensor
 ## --------------------------------------------------------------------------------
 
 ## --------------------------------------------------------------------------------
-## <a class="no_dec a_black" href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Normalize.html#torchvision.transforms.Normalize"><b>Miscellaneous: Normalize</b></a>
+## Miscellaneous: Normalize
 ## --------------------------------------------------------------------------------
-mean = /  # sequence. Means for each channel.
-std = /  # sequence. Standard deviations for each channel.
+mean = /  # *** sequence. Means for each channel.
+std = /  # *** sequence. Standard deviations for each channel.
 inplace = False  # bool. Bool to make this operation in-place.
 
-trans = <b>transforms.Normalize</b>(mean, std, inplace=inplace)
+trans = <b>transforms.Normalize</b>(mean, std, inplace)
 image_trans = trans(image)  # Tensor => Tensor
 ## --------------------------------------------------------------------------------
 </code>
@@ -100,66 +101,95 @@ image_trans = trans(image)  # Tensor => Tensor
             <p class="little_split" id='data loader'></p>
             <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('data loader-torch & torchvision-details')"><i>new paper Data Loader</i></p>
+            <p class="paper_title" onclick="toggleTable('data loader-torch & torchvision-details')"><i>Data Loader</i></p>
             
             
             <p class="paper_detail"><b> data loader</b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader">docs</a> &nbsp; <font color=#D0D0D0></font></p>
             
-            <p></p><p>
-<pre>
-<code class="language-python">
-from torch.utils.data import DataLoader, Dataset, Sampler
-
-dataset = /  # Dataset
-batch_size = 1  # int. Number of samples per batch.
-shuffle = False  # bool. If True, have the data shuffled at every epoch
-sampler = None  # Sampler or Iterable. Define how to draw samples
-batch_sampler = None  # Sampler or Iterable. customize sampling by giving indices
-num_workers = 0  # int. Number of subprocesses to use for data loading
-collate_fn = None  # Callable. Merge a list of samples to form a batch of tensors.
-pin_memory = False  # bool. If True, copy Tensors into device/CUDA pinned memory before ruturning.
-drop_last = False  # bool. If True, drop the last incomplete batch
-timeout = 0  # numeric. If positive, set the timeout value for collecting a batch from workers.
-worker_init_fn = None  # Callable. If not None, this will be called with the worker id as input
-multiprocessing_context = None  # str or multiprocessing.context.BaseContext. If None, use the default multiprocessing context  If None, use the default multiprocessing context
-
-
-data_loader = DataLoader(
-    dataset, batch_size=batch_size, shuffle=shuffle, sampler=sampler, batch_sampler=batch_sampler, 
-    num_workers=num_workers, collate_fn=collate_fn, pin_memory=pin_memory, drop_last=drop_last, 
-    timeout=timeout, worker_init_fn=worker_init_fn, multiprocessing_context=multiprocessing_context, 
-    generator=None, *, prefetch_factor=None, persistent_workers=False, pin_memory_device='', in_order=True)
-</code>
-</pre>
-</p>
+            
             <div id='data loader-torch & torchvision-details' class="info_detail">
                 <hr class="dashed">
-                <p><font color=#202020></font></p>
+                <p><font color=#202020>It includes tools for data loading: <a href="https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader">DataLoader</a>.</font></p>
                 
                 <p>
 <pre>
 <code class="language-python">
+import torch
 from torch.utils.data import DataLoader, Dataset, Sampler
 
-dataset = /  # Dataset
-batch_size = 1  # int. Number of samples per batch.
-shuffle = False  # bool. If True, have the data shuffled at every epoch
+## --------------------------------------------------------------------------------
+## DataLoader
+## --------------------------------------------------------------------------------
+dataset = /  # *** Dataset
+batch_size = 1  # *** int. Number of samples per batch.
+shuffle = False  # *** bool. If True, have the data shuffled at every epoch
 sampler = None  # Sampler or Iterable. Define how to draw samples
 batch_sampler = None  # Sampler or Iterable. customize sampling by giving indices
-num_workers = 0  # int. Number of subprocesses to use for data loading
+num_workers = 0  # *** int. Number of subprocesses to use for data loading
 collate_fn = None  # Callable. Merge a list of samples to form a batch of tensors.
-pin_memory = False  # bool. If True, copy Tensors into device/CUDA pinned memory before ruturning.
-drop_last = False  # bool. If True, drop the last incomplete batch
-timeout = 0  # numeric. If positive, set the timeout value for collecting a batch from workers.
-worker_init_fn = None  # Callable. If not None, this will be called with the worker id as input
-multiprocessing_context = None  # str or multiprocessing.context.BaseContext. If None, use the default multiprocessing context  If None, use the default multiprocessing context
-
+pin_memory = False  # *** bool. If True, copy Tensors into CUDA pinned memory.
+drop_last = False  # *** bool. If True, drop the last incomplete batch
+timeout = 0  # numeric. If positive, set timeout for collecting a batch from workers.
+worker_init_fn = None  # Callable. If not None, it will be called (worker id as input) 
+multiprocessing_context = None  # str or multiprocessing.context.BaseContext.
+generator = None  # torch.Generator. If not None, it will be used by sampler & workers
+prefetch_factor = None  # int. Default = None if num_workers == 0 else 2
+persistent_workers = False  # bool. If True, workers will not shut down after an epoch.
+pin_memory_device = ""  # str. The device to pin memory
+in_order = True  # bool. If False, it will not enforce batches to return in order
 
 data_loader = DataLoader(
-    dataset, batch_size=batch_size, shuffle=shuffle, sampler=sampler, batch_sampler=batch_sampler, 
-    num_workers=num_workers, collate_fn=collate_fn, pin_memory=pin_memory, drop_last=drop_last, 
-    timeout=timeout, worker_init_fn=worker_init_fn, multiprocessing_context=multiprocessing_context, 
-    generator=None, *, prefetch_factor=None, persistent_workers=False, pin_memory_device='', in_order=True)
+    dataset, batch_size, shuffle, sampler, batch_sampler, num_workers, collate_fn, 
+    pin_memory, drop_last, timeout, worker_init_fn, multiprocessing_context, 
+    generator, prefetch_factor, persistent_workers, pin_memory_device, in_order
+)
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
+            <p class="little_split" id='optimizer'></p>
+            <div style="border-left: 8px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('optimizer-torch & torchvision-details')"><i>Optimizer</i></p>
+            
+            
+            <p class="paper_detail"><b> optimizer</b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/optim.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
+            
+            
+            <div id='optimizer-torch & torchvision-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>It includes tools for building optimization algorithms: <a href="https://docs.pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW.step">AdamW</a>.</font></p>
+                
+                <p>
+<pre>
+<code class="language-python">
+from torch.optim import AdamW
+
+## --------------------------------------------------------------------------------
+## AdamW
+## --------------------------------------------------------------------------------
+params = /  # *** iterable. Parameters / named_parameters / parameter groups to optimize
+lr = 0.001  # *** float, Tensor. Learning rate
+betas = (0.9, 0.999)  # tuple. For computing running averages of gradients & squares
+eps = 1e-08  # float. Added to denominator to improve numerical stability
+weight_decay = 0.01  # float. Weight decay coefficient
+amsgrad = False # bool. Whether to use AMSGrad 
+maximize = False  # bool. Maximize the objective with respect to params, not minimize
+foreach = None  # bool. Whether foreach implementation of optimizer is used.
+capturable = False  # bool. Pass True can impair ungraphed performance
+differentiable = False  # bool. Whether has gradient
+fused = None  # bool. Whether use the fused implementation
+
+AdamW(
+    params, lr, betas, eps, weight_decay, amsgrad, maximize, 
+    foreach, capturable, differentiable, fused
+)
+## --------------------------------------------------------------------------------
 </code>
 </pre>
 </p>
