@@ -81,7 +81,7 @@ def build_paper(papers):
         item_content += \
         f"""
         <p class="little_split"></p>
-        <div style="border-left: 8px solid {color_bar}; padding-left: 10px">
+        <div style="border-left: 14px solid {color_bar}; padding-left: 10px">
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>{paper["title"]}</i></p>
         <p class="paper_detail">{author}</p>

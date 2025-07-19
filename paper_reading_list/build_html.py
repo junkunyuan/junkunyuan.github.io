@@ -111,7 +111,7 @@ def build_main_content_of_each_domain(domain):
             content_cate += \
             f"""
             <p class="little_split" id='{paper["name"]}'></p>
-            <div style="border-left: 8px solid {color_bar}; padding-left: 10px">
+            <div style="border-left: 14px solid {color_bar}; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('{paper["name"]}-{category}-details')"><i>{paper["title"]}</i></p>
             {author}
