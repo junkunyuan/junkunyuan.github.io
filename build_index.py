@@ -21,7 +21,7 @@ f"""
             <tr>
                 <td width="870">
                     <h1>Junkun Yuan &nbsp; 袁俊坤</h1>
-                    <p>Research Scientist, &nbsp;<a href="https://hunyuan.tencent.com/">Hunyuan Multimodal Generation Team</a>&nbsp;&nbsp;@&nbsp;&nbsp;<a href="https://www.tencent.com/">Tencent</a></p>
+                    <p>Research Scientist, &nbsp;<a href="https://hunyuan.tencent.com/">Hunyuan Multimodal Generation Group</a>&nbsp;&nbsp;@&nbsp;&nbsp;<a href="https://www.tencent.com/">Tencent</a></p>
                     <p>yuanjk0921@outlook.com</p>
                     <p>work and live in Shenzhen, China</p>
                     <p><font color=#D0D0D0>Last updated on {time_now} (UTC+8)</font></p>
@@ -38,10 +38,10 @@ BIOGRAPHY = \
 """
 <h2>Biography</h2>
 <p>
-  I am a research scientist in <a href="https://hunyuan.tencent.com/">Hunyuan Multimodal Generation Team</a> at <a href="https://www.tencent.com/">Tencent</a>, working on multimodal generative foundation models and their applications.
+  I am a research scientist in <a href="https://hunyuan.tencent.com/">Hunyuan Multimodal Generation Group</a> at <a href="https://www.tencent.com/">Tencent</a>, working on multimodal generative foundation models and their applications.
   <br><br>
 
-  I previously worked/interned in <a href="https://hunyuan.tencent.com/">Hunyuan Multimodal Generation Team</a> at <a href="https://www.tencent.com/">Tencent</a> (working with <a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ">Wei Liu</a>) during Sep 2023 — Jul 2025, and in <a href="http://vis.baidu.com/">Computer Vision Group</a> at <a href="https://home.baidu.com/">Baidu</a> (working with <a href="https://scholar.google.com/citations?user=PSzJxD8AAAAJ">Xinyu Zhang</a> and <a href="https://scholar.google.com/citations?user=z5SPCmgAAAAJ">Jingdong Wang</a>) during Jul 2022 — Aug 2023.<br><br>
+  I previously worked/interned in <a href="https://hunyuan.tencent.com/">Hunyuan Multimodal Generation Group</a> at <a href="https://www.tencent.com/">Tencent</a> (working with <a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ">Wei Liu</a>) during Sep 2023 — Jul 2025, and in <a href="http://vis.baidu.com/">Computer Vision Group</a> at <a href="https://home.baidu.com/">Baidu</a> (working with <a href="https://scholar.google.com/citations?user=PSzJxD8AAAAJ">Xinyu Zhang</a> and <a href="https://scholar.google.com/citations?user=z5SPCmgAAAAJ">Jingdong Wang</a>) during Jul 2022 — Aug 2023.<br><br>
 
   I received my PhD degree from <a href="http://www.zju.edu.cn/">Zhejiang University</a> in 2024, co-supervised by professors of <a href="https://scholar.google.com/citations?user=FOsNiMQAAAAJ">Kun Kuang</a>, <a href="https://person.zju.edu.cn/0096005">Lanfen Lin</a>, and 
   <a href="https://scholar.google.com/citations?user=XJLn4MYAAAAJ">Fei Wu</a>.<br><br>
