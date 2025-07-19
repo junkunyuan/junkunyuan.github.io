@@ -1,7 +1,7 @@
 PAPERS = [
 {
 "title": "Hunyuan-Game: Industrial-grade Intelligent Game Creation Model",
-"author": "Hunyuan Multimodal Generation Team at Tencent (<b><font color=#202020>as a team member</font></b>)",
+"author": "Hunyuan Multimodal Generation Group at Tencent (<b><font color=#202020>as a group member</font></b>)",
 "date": "20250520",
 "venue": "arXiv 2025",
 "pdf_url": "https://arxiv.org/pdf/2505.14135",
@@ -10,7 +10,7 @@ PAPERS = [
 },
 {
 "title": "HunyuanVideo: A Systematic Framework For Large Video Generative Models",
-"author": "Hunyuan Multimodal Generation Team at Tencent (<b><font color=#202020>as a team member</font></b>)",
+"author": "Hunyuan Multimodal Generation Group at Tencent (<b><font color=#202020>as a group member</font></b>)",
 "date": "20241203",
 "venue": "arXiv 2024",
 "pdf_url": "https://arxiv.org/pdf/2412.03603",
@@ -35,7 +35,7 @@ PAPERS = [
 },
 {
 "title": "Hunyuan-DiT: A Powerful Multi-Resolution Diffusion Transformer with Fine-Grained Chinese Understanding",
-"author": "Hunyuan Multimodal Generation Team at Tencent (<b><font color=#202020>as an intern</font></b>)",
+"author": "Hunyuan Multimodal Generation Group at Tencent (<b><font color=#202020>as an intern</font></b>)",
 "date": "20240514",
 "venue": "arXiv 2024",
 "pdf_url": "https://arxiv.org/pdf/2405.08748",
@@ -82,7 +82,7 @@ PAPERS = [
 "code_url": ""
 },
 {
-"title": "Mutual Prompt Leaning for Vision Language Models",
+"title": "Mutual Prompt Learning for Vision Language Models",
 "author": "Sifan Long<sup>&#10035</sup>, Zhen Zhao<sup>&#10035</sup>, Junkun Yuan<sup>&#10035</sup>, Zichang Tan<sup>&#10035</sup>, Jiangjiang Liu, Jingyuan Feng, Shengsheng Wang<sup>&#9993</sup>, and Jingdong Wang",
 "date": "20230330",
 "venue": "IJCV 2024",
