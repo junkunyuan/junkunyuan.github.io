@@ -19,8 +19,8 @@
 <p class="larger"><b> Coding and Engineering.</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on July 19, 2025 at 10:52 (UTC+8).</font></p>
-<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="torch & torchvision" href="#torch & torchvision-table"><b>torch & torchvision:</b></a> <a class="no_dec" href="#data transforms"><font color=#B0B0B0>data transforms</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#data loader"><font color=#B0B0B0>data loader</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#optimizer"><font color=#B0B0B0>optimizer</font></a></li></ul><h2 id="torch & torchvision-table"><a class="no_dec" href="#torch & torchvision">torch & torchvision</a></h2>
+<p><font color=#B0B0B0>Last updated on July 20, 2025 at 23:11 (UTC+8).</font></p>
+<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="torch & torchvision" href="#torch & torchvision-table"><b>torch & torchvision:</b></a> <a class="no_dec" href="#data transforms"><font color=#B0B0B0>data transforms</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#data loader"><font color=#B0B0B0>data loader</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#module"><font color=#B0B0B0>module</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#optimizer"><font color=#B0B0B0>optimizer</font></a></li></ul><h2 id="torch & torchvision-table"><a class="no_dec" href="#torch & torchvision">torch & torchvision</a></h2>
             <p class="little_split" id='data transforms'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -152,6 +152,87 @@ data_loader = DataLoader(
             </div>
             <p class="little_split"></p>
             
+            <p class="little_split" id='module'></p>
+            <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('module-torch & torchvision-details')"><i>Module</i></p>
+            
+            
+            <p class="paper_detail"><b> module</b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/nn.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
+            
+            
+            <div id='module-torch & torchvision-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>It includes tools to build neural networks: <a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html#conv2d">Conv2d</a>, <a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv3d.html#conv3d">Conv3d</a>.</font></p>
+                
+                <p>
+<pre>
+<code class="language-python">
+import torch
+from torch.nn import Conv2d, Conv3d
+
+## --------------------------------------------------------------------------------
+## Conv2d
+## --------------------------------------------------------------------------------
+in_channels = /  # *** int. Number of channels in the input
+out_channels = /  # *** int. Number of channels in the output
+kernel_size = /  # *** int, tuple. Size of convolving kernel
+stride = 1  # *** int, tuple. Stride of convolution
+padding = 0  # int, tuple, str. Padding added to all four sides of the input
+dilation = 1  # int, tuple. Spacing between kernel elements
+groups = 1  # int. Number of blocked connections from input channels to output
+bias = True  # bool. If True, add a learnable bias to the output
+padding_mode = "zeros"  # str. "zeros", "reflect", "replicate", or "circular"
+device = None # str, torch.device. 
+dtype = None # torch.dtype.
+
+## Weight. Shape: [out_channels, in_channels/groups, k_size[0], k_size[1]]
+## Bias. Shape: [out_channels,]
+conv2d = Conv2d(
+    in_channels, out_channels, kernel_size, stride, padding, dilation, groups, 
+    bias, padding_mode, device, dtype
+)
+## [B, C, H_in, W_in] => [B, C, H_out, W_out]
+## H_out = [(H_in + 2*padding[0] - dilation[0]*(kernel[0]-1)-1) / stride[0] + 1]
+## W_out = [(W_in + 2*padding[1] - dilation[1]*(kernel[1]-1)-1) / stride[1] + 1]
+y = conv2d(x)  # Tensor => Tensor
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## Conv3d
+## --------------------------------------------------------------------------------
+in_channels = /  # *** int. Number of channels in the input
+out_channels = /  # *** int. Number of channels in the output
+kernel_size = /  # *** int, tuple. Size of convolving kernel
+stride = 1  # *** int, tuple. Stride of convolution
+padding = 0  # int, tuple, str. Padding added to all six sides of the input
+dilation = 1  # int, tuple. Spacing between kernel elements
+groups = 1  # int. Number of blocked connections from input channels to output
+bias = True  # bool. If True, add a learnable bias to the output
+padding_mode = "zeros"  # str. "zeros", "reflect", "replicate", or "circular"
+device = None # str, torch.device. 
+dtype = None # torch.dtype.
+
+## Weight. Shape: [out_channels, in_channels/groups, k_size[0], k_size[1], k_size[2]]
+## Bias. Shape: [out_channels,]
+conv2d = Conv2d(
+    in_channels, out_channels, kernel_size, stride, padding, dilation, groups, 
+    bias, padding_mode, device, dtype
+)
+## [B, C, D_in, H_in, W_in] => [B, C, D_out, H_out, W_out]
+## D_out = [(D_in + 2*padding[0] - dilation[0]*(kernel[0]-1)-1) / stride[0] + 1]
+## H_out = [(H_in + 2*padding[1] - dilation[1]*(kernel[1]-1)-1) / stride[1] + 1]
+## W_out = [(W_in + 2*padding[2] - dilation[2]*(kernel[2]-1)-2) / stride[2] + 1]
+y = conv2d(x)  # Tensor => Tensor
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split" id='optimizer'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -185,7 +266,7 @@ capturable = False  # bool. Pass True can impair ungraphed performance
 differentiable = False  # bool. Whether has gradient
 fused = None  # bool. Whether use the fused implementation
 
-AdamW(
+adam_optim = AdamW(
     params, lr, betas, eps, weight_decay, amsgrad, maximize, 
     foreach, capturable, differentiable, fused
 )

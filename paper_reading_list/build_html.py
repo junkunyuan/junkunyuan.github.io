@@ -39,7 +39,7 @@ SUFFIX  = \
 def build_main_content_all_domains(domains, num_papers):
     content = """<hr><p id="table" class="larger"><b>Table of contents:</b></p><ul>"""
     for domain, num_paper in zip(domains, num_papers):
-        paper_num_display = "" if num_paper == 0 else f"({num_paper} papers)"
+        paper_num_display = "" if num_paper == 0 else f" ({num_paper} papers)"
         content += f"""<li><a class="no_dec" href={domain["file"]}>{domain["title"]}</a>{paper_num_display} &nbsp; <font color=#B0B0B0>{domain["description"]}</font></li>"""
     content += "</ul>"
     return content

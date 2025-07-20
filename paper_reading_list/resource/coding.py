@@ -26,10 +26,90 @@ CODING["papers"] = [
 # """,
 # },
 {
+"title": "Module",
+"author": "",
+"organization": "",
+"date": "20240629"
+""
+"",
+"venue": "docs",
+"pdf_url": "https://docs.pytorch.org/docs/stable/nn.html",
+"code_url": "",
+"name": "module",
+"comment": "",
+"category": "torch & torchvision",
+"jupyter_notes": "",
+"summary": """It includes tools to build neural networks: <a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html#conv2d">Conv2d</a>, <a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv3d.html#conv3d">Conv3d</a>.""",
+"details": 
+"""
+<pre>
+<code class="language-python">
+import torch
+from torch.nn import Conv2d, Conv3d
+
+## --------------------------------------------------------------------------------
+## Conv2d
+## --------------------------------------------------------------------------------
+in_channels = /  # *** int. Number of channels in the input
+out_channels = /  # *** int. Number of channels in the output
+kernel_size = /  # *** int, tuple. Size of convolving kernel
+stride = 1  # *** int, tuple. Stride of convolution
+padding = 0  # int, tuple, str. Padding added to all four sides of the input
+dilation = 1  # int, tuple. Spacing between kernel elements
+groups = 1  # int. Number of blocked connections from input channels to output
+bias = True  # bool. If True, add a learnable bias to the output
+padding_mode = "zeros"  # str. "zeros", "reflect", "replicate", or "circular"
+device = None # str, torch.device. 
+dtype = None # torch.dtype.
+
+## Weight. Shape: [out_channels, in_channels/groups, k_size[0], k_size[1]]
+## Bias. Shape: [out_channels,]
+conv2d = Conv2d(
+    in_channels, out_channels, kernel_size, stride, padding, dilation, groups, 
+    bias, padding_mode, device, dtype
+)
+## [B, C, H_in, W_in] => [B, C, H_out, W_out]
+## H_out = [(H_in + 2*padding[0] - dilation[0]*(kernel[0]-1)-1) / stride[0] + 1]
+## W_out = [(W_in + 2*padding[1] - dilation[1]*(kernel[1]-1)-1) / stride[1] + 1]
+y = conv2d(x)  # Tensor => Tensor
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## Conv3d
+## --------------------------------------------------------------------------------
+in_channels = /  # *** int. Number of channels in the input
+out_channels = /  # *** int. Number of channels in the output
+kernel_size = /  # *** int, tuple. Size of convolving kernel
+stride = 1  # *** int, tuple. Stride of convolution
+padding = 0  # int, tuple, str. Padding added to all six sides of the input
+dilation = 1  # int, tuple. Spacing between kernel elements
+groups = 1  # int. Number of blocked connections from input channels to output
+bias = True  # bool. If True, add a learnable bias to the output
+padding_mode = "zeros"  # str. "zeros", "reflect", "replicate", or "circular"
+device = None # str, torch.device. 
+dtype = None # torch.dtype.
+
+## Weight. Shape: [out_channels, in_channels/groups, k_size[0], k_size[1], k_size[2]]
+## Bias. Shape: [out_channels,]
+conv2d = Conv2d(
+    in_channels, out_channels, kernel_size, stride, padding, dilation, groups, 
+    bias, padding_mode, device, dtype
+)
+## [B, C, D_in, H_in, W_in] => [B, C, D_out, H_out, W_out]
+## D_out = [(D_in + 2*padding[0] - dilation[0]*(kernel[0]-1)-1) / stride[0] + 1]
+## H_out = [(H_in + 2*padding[1] - dilation[1]*(kernel[1]-1)-1) / stride[1] + 1]
+## W_out = [(W_in + 2*padding[2] - dilation[2]*(kernel[2]-1)-2) / stride[2] + 1]
+y = conv2d(x)  # Tensor => Tensor
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+""",
+},
+{
 "title": "Optimizer",
 "author": "",
 "organization": "",
-"date": "20240629",
+"date": "20240628",
 "venue": "docs",
 "pdf_url": "https://docs.pytorch.org/docs/stable/optim.html",
 "code_url": "",
@@ -59,7 +139,7 @@ capturable = False  # bool. Pass True can impair ungraphed performance
 differentiable = False  # bool. Whether has gradient
 fused = None  # bool. Whether use the fused implementation
 
-AdamW(
+adam_optim = AdamW(
     params, lr, betas, eps, weight_decay, amsgrad, maximize, 
     foreach, capturable, differentiable, fused
 )

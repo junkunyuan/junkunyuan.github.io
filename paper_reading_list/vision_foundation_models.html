@@ -1,0 +1,108 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="resource/html.css" type="text/css">
+<link rel="shortcut icon" href="resource/my_photo.jpg">
+<title>Paper Reading List</title>
+<meta name="description" content="Paper Reading List">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div id="layout-content" style="margin-top:25px">
+<body>
+
+<h1 id="top">Vision Foundation Models</h1>
+<p class="larger"><b><font color='#D93053'>1</font> papers on  Vision Foundation Models.</b></p>
+<p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
+<p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
+<p><font color=#B0B0B0>Last updated on July 19, 2025 at 23:46 (UTC+8).</font></p>
+<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul><li><a class="no_dec" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models:</b></a> <a class="no_dec" href="#Lumos-1"><font color=#B0B0B0>Lumos-1</font></a></li></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
+            <p class="little_split" id='Lumos-1'></p>
+            <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('Lumos-1-Foundation Algorithms & Models-details')"><i>Lumos-1: On Autoregressive Video Generation from a Unified Model Perspective</i></p>
+            <p class="paper_detail">Hangjie Yuan, Weihua Chen, Jun Cen, Hu Yu, Jingyun Liang, Shuning Chang, Zhihui Lin, Tao Feng, Pengwei Liu, Jiazheng Xing, Hao Luo, Jiasheng Tang, Fan Wang, Yi Yang</p>
+            <p class="paper_detail">DAMO Academy, Alibaba Group, Hupan Lab, Zhejiang University, Tsinghua University</p>
+            <p class="paper_detail"><b>Jul 11, 2025 &nbsp; Lumos-1</b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/alibaba-damo-academy/Lumos">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2507.08801">arXiv 2025</a> &nbsp; <font color=#D0D0D0>arXiv preprint</font></p>
+            
+            
+            <div id='Lumos-1-Foundation Algorithms & Models-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>It employs LLM architecture to achieve auto-regressive video generation with some improvement on RoPE and masking strategy.</font></p>
+                
+                <p><ul>
+<li><b>Structure:</b> Llama with a new RoPE strategy to model multimodal spatiotemporal dependency.
+<li><b>Tokenizer:</b> Cosmos's visual tokenizer with spatiotemporal compression rates of 8x8x4; Chameleon's text encoder.
+<li> <b>Model size:</b> 0.5B, 1B, and 3B.
+</ul>
+<figure>
+<img data-src='resource\figs\Lumos-1\Lumos-1-fig1.png' width=550>
+<figcaption>
+<b>Figure 1.</b> <b>Text-to-image</b> generation performance on <b>GenEval</b>.
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\Lumos-1\Lumos-1-fig2.png' width=650>
+<figcaption>
+<b>Figure 2.</b> <b>Image-to-video</b> generation performance on <b>VBench-I2V</b>.
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\Lumos-1\Lumos-1-fig3.png' width=650>
+<figcaption>
+<b>Figure 3.</b> <b>Text-to-video</b> generation performance on <b>VBench-T2V</b>.
+</figcaption>
+</figure></p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
+    <script>
+        function toggleTable(tableId) {
+            const container = document.getElementById(tableId);
+            const button = container.previousElementSibling;
+            const isVisible = window.getComputedStyle(container).display !== 'none';
+            if (!isVisible) {
+                const images = container.querySelectorAll('img');
+                images.forEach(img => {
+                    if (img.dataset.src !== '') {
+                        img.src = img.dataset.src;
+                    }
+                });
+                container.style.display = 'block';
+            } else {
+                container.style.display = 'none';
+                
+            }
+        }
+    </script>
+
+    <button id="backToTop" title="back to top">↑</button>
+    <script>
+        const button = document.getElementById("backToTop");
+        window.addEventListener("scroll", () => {
+        if (document.documentElement.scrollTop > 300) {
+            button.style.display = "block";
+        } else {
+            button.style.display = "none";
+        }
+        });
+
+        function updateButtonPosition() {
+        const bodyRect = document.body.getBoundingClientRect();
+        const windowWidth = window.innerWidth;
+        const rightOffset = Math.max((windowWidth - bodyRect.width) / 2, 10);
+        button.style.right = rightOffset + "px";
+        }
+
+        window.addEventListener("resize", updateButtonPosition);
+        window.addEventListener("load", updateButtonPosition);
+
+        button.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    
+</body>
+</html>
