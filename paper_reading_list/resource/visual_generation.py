@@ -25,6 +25,40 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "RDPO: Real Data Preference Optimization for Physics Consistency Video Generation",
+"author": "Wenxu Qian, Chaoyue Wang, Hou Peng, Zhiyu Tan, Hao Li, Anxiang Zeng",
+"organization": "Fudan University, Shopee Inc",
+"date": "20250623",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2506.18655",
+"code_url": "",
+"name": "RDPO",
+"comment": "",
+"category": "Reinforcement Learning",
+"jupyter_notes": "",
+"summary": """It constructs positive DPO data by <b>reversing-then-denoising real data</b> to overcome the large domain gap between synthetic data and real data.""",
+"details": 
+"""
+<ul>
+    <li> <b>DPO data construction.</b> Positive samples: reversing-then-denoising real data. Negative samples: denoising from noise.
+    <li> <b>Rejection sampling.</b> select the instance that is closest (L2 distance) to model's own sample at the same timestep.
+    <li> <b>Progressive training.</b> Apply reversing-then-denoising sequentially from heavy to light. 8K preference pairs.
+</ul>
+fig: fig1.png 500
+cap: <b>Construct DPO samples</b> (left) & <b>progressive training</b> (right).
+fig: fig2.png 650
+cap: Apply <b>SFT loss</b> to DPO loss improves performance. 
+fig: fig3.png 700
+cap: Mix <b>human-annotation data</b> improves performance.
+fig: fig4.png 350
+cap: <b>Progressive training.</b> Stage 1 requres larger reversing/sampling steps, e.g., 42. Stage 2 requries smaller, e.g., 40.
+fig: fig5.png 700
+cap: <b>Progressive training</b> is effective.
+fig: fig6.png 600
+cap: <b>Human evaluation.</b>
+""",
+},
+{
 "title": "Lumos-1: On Autoregressive Video Generation from a Unified Model Perspective",
 "author": "Hangjie Yuan, Weihua Chen, Jun Cen, Hu Yu, Jingyun Liang, Shuning Chang, Zhihui Lin, Tao Feng, Pengwei Liu, Jiazheng Xing, Hao Luo, Jiasheng Tang, Fan Wang, Yi Yang",
 "organization": "DAMO Academy, Alibaba Group, Hupan Lab, Zhejiang University, Tsinghua University",
