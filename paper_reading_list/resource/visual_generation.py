@@ -25,6 +25,31 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "Personalized Preference Fine-tuning of Diffusion Models",
+"author": "Meihua Dang, Anikait Singh, Linqi Zhou, Stefano Ermon, Jiaming Song",
+"organization": "Stanford University, Luma AI",
+"date": "20250111",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2501.06655",
+"code_url": "",
+"name": "PPD",
+"comment": "",
+"category": "Reinforcement Learning",
+"jupyter_notes": "",
+"summary": """It introduces <b>personalized preference alignment</b> by injecting VLM embeddings into diffusion models through cross-attention.""",
+"details": 
+"""
+<ul>
+    <li> <b>VLM.</b> Use LLaVA-OneVision to extract user preference embeddings from few-shot pairwise preference examples for each user.
+    <li> <b>Cross-attention.</b> Similar to IP-Adapter, it injects VLM-based user embeddin via cross-attention, and adds the embeddings to text embeddings.
+</ul>
+fig: fig1.png 450
+cap: <b>Structure.</b> Only the cross-attention module is optimized.
+fig: fig2.png 250
+cap: <b>Result.</b> Below is the upper bound.
+""",
+},
+{
 "title": "VideoDPO: Omni-Preference Alignment for Video Diffusion Generation",
 "author": "Runtao Liu, Haoyu Wu, Zheng Ziqiang, Chen Wei, Yingqing He, Renjie Pi, Qifeng Chen",
 "organization": "HKUST, Renmin University of China, Johns Hopkins University",
