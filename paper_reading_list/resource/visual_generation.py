@@ -25,6 +25,26 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "Aesthetic Post-Training Diffusion Models from Generic Preferences with Step-by-step Preference Optimization",
+"author": "Zhanhao Liang, Yuhui Yuan, Shuyang Gu, Bohan Chen, Tiankai Hang, Mingxi Cheng, Ji Li, Liang Zheng",
+"organization": "The Australian National University, University of Liverpool, Southeast University, Microsoft, Microsoft Research Asia",
+"date": "20240606",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2406.04314",
+"code_url": "https://github.com/RockeyCoss/SPO",
+"name": "SPO",
+"comment": "",
+"category": "Reinforcement Learning",
+"jupyter_notes": "",
+"summary": """It trains a noise-aware reward model, and contructs DPO data from noisy samples.""",
+"details": 
+"""
+<ul>
+    <li> <b>DPO data construcion.</b> Start from a initial noise, denoise to some steps and build DPO samples from a noise-aware reward model.
+</ul>
+""",
+},
+{
 "title": "InPO: Inversion Preference Optimization with Reparametrized DDIM for Efficient Diffusion Model Alignment",
 "author": "Yunhong Lu, Qichao Wang, Hengyuan Cao, Xierui Wang, Xiaoyin Xu, Min Zhang",
 "organization": "Zhejiang University, Shanghai Institute for Advanced Study-Zhejiang University",
