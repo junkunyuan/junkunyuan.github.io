@@ -25,6 +25,25 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "InPO: Inversion Preference Optimization with Reparametrized DDIM for Efficient Diffusion Model Alignment",
+"author": "Yunhong Lu, Qichao Wang, Hengyuan Cao, Xierui Wang, Xiaoyin Xu, Min Zhang",
+"organization": "Zhejiang University, Shanghai Institute for Advanced Study-Zhejiang University",
+"date": "20250324",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2503.18454",
+"code_url": "https://github.com/JaydenLyh/InPO",
+"name": "InPO",
+"comment": "",
+"category": "Reinforcement Learning",
+"jupyter_notes": "",
+"summary": """Instead of maximizing accumulative rewards, it only maximizes the reward of the latent variable that have a strong correlation with the data.""",
+"details": 
+"""
+fig: fig1.png 600 fig2.png 300
+cap: It performs better on <b>win-rate comparisons</b> (left) and is more <b>trainig efficient</b> (right).
+""",
+},
+{
 "title": "Personalized Preference Fine-tuning of Diffusion Models",
 "author": "Meihua Dang, Anikait Singh, Linqi Zhou, Stefano Ermon, Jiaming Song",
 "organization": "Stanford University, Luma AI",
