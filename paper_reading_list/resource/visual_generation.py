@@ -25,6 +25,25 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "VideoDPO: Omni-Preference Alignment for Video Diffusion Generation",
+"author": "Runtao Liu, Haoyu Wu, Zheng Ziqiang, Chen Wei, Yingqing He, Renjie Pi, Qifeng Chen",
+"organization": "HKUST, Renmin University of China, Johns Hopkins University",
+"date": "20241218",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2412.14167",
+"code_url": "https://github.com/CIntellifusion/VideoDPO",
+"name": "VideoDPO",
+"comment": "",
+"category": "Reinforcement Learning",
+"jupyter_notes": "",
+"summary": """It builds a metric for quality and semantic alignment evaluation, then uses the metric to build DPO data for preference alignment of video generation.""",
+"details": 
+"""
+fig: fig1.png 300 fig2.png 600
+cap: DPO improves performance.
+""",
+},
+{
 "title": "RDPO: Real Data Preference Optimization for Physics Consistency Video Generation",
 "author": "Wenxu Qian, Chaoyue Wang, Hou Peng, Zhiyu Tan, Hao Li, Anxiang Zeng",
 "organization": "Fudan University, Shopee Inc",
