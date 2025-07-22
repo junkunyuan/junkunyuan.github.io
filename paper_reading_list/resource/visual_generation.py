@@ -25,6 +25,23 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "Curriculum Direct Preference Optimization for Diffusion and Consistency Models",
+"author": "Florinel-Alin Croitoru, Vlad Hondru, Radu Tudor Ionescu, Nicu Sebe, Mubarak Shah",
+"organization": "University of Bucharest, Romania, University of Trento, Italy, University of Central Florida, US",
+"date": "20240522",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2405.13637",
+"code_url": "https://github.com/CroitoruAlin/Curriculum-DPO",
+"name": "Curriculum DPO",
+"comment": "",
+"category": "Reinforcement Learning",
+"jupyter_notes": "",
+"summary": """It applies <b>curriculum learning</b> to DPO by learning from win samples and lose samples with their differences from small to large.""",
+"details": 
+"""
+""",
+},
+{
 "title": "Aesthetic Post-Training Diffusion Models from Generic Preferences with Step-by-step Preference Optimization",
 "author": "Zhanhao Liang, Yuhui Yuan, Shuyang Gu, Bohan Chen, Tiankai Hang, Mingxi Cheng, Ji Li, Liang Zheng",
 "organization": "The Australian National University, University of Liverpool, Southeast University, Microsoft, Microsoft Research Asia",
