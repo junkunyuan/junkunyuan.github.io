@@ -47,6 +47,14 @@ BIOGRAPHY = \
   <a href="https://scholar.google.com/citations?user=XJLn4MYAAAAJ">Fei Wu</a>.<br><br>
 </p>
 """
+SERVICE = \
+"""
+<h2>Professional Service</h2>
+<ul>
+    <li> <b>Conference Reviewer.</b>&nbsp; CVPR 2021 &nbsp;|&nbsp; ICCV 2023 &nbsp;|&nbsp; AAAI 2023, 2026 &nbsp;|&nbsp; MM 2023
+    <li> <b>Journal Reviewer.</b>&nbsp; TNNLS 2022&nbsp;|&nbsp; NN 2023 &nbsp;|&nbsp; TCSVT 2023 &nbsp;|&nbsp; TKDD 2023
+</ul>
+"""
 SUFFIX  = \
 """
 </body>
@@ -100,7 +108,7 @@ if __name__ == "__main__":
     paper_content = build_paper(PAPERS)
 
     ## Build html contents
-    html_content = PREFIX + BIOGRAPHY + paper_content + SUFFIX
+    html_content = PREFIX + BIOGRAPHY + paper_content + SERVICE + SUFFIX
 
     ## Write contents to html
     html_file = "index.html"
