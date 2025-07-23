@@ -25,6 +25,25 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "Calibrated Multi-Preference Optimization for Aligning Diffusion Models",
+"author": "Kyungmin Lee, Xiahong Li, Qifei Wang, Junfeng He, Junjie Ke, Ming-Hsuan Yang, Irfan Essa, Jinwoo Shin, Feng Yang, Yinxiao Li1",
+"organization": "Google DeepMind, KAIST, Google, Google Research, Georgia Institute of Technology",
+"date": "20250204",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2502.02588",
+"code_url": "",
+"name": "CaPO",
+"comment": "",
+"category": "Reinforcement Learning",
+"jupyter_notes": "",
+"summary": """It proposes calibrated preference optimization by calculating average win-rate of each sample to other samples as the reward.""",
+"details": 
+"""
+fig: fig1.png 550
+cap: <b>Result.</b> The improvement over DPO is not significant.
+""",
+},
+{
 "title": "Curriculum Direct Preference Optimization for Diffusion and Consistency Models",
 "author": "Florinel-Alin Croitoru, Vlad Hondru, Radu Tudor Ionescu, Nicu Sebe, Mubarak Shah",
 "organization": "University of Bucharest, Romania, University of Trento, Italy, University of Central Florida, US",
