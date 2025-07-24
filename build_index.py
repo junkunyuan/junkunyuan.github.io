@@ -49,10 +49,11 @@ BIOGRAPHY = \
 """
 SERVICE = \
 """
+<br>
 <h2>Professional Service</h2>
 <ul>
-    <li> <b>Conference Reviewer.</b>&nbsp; CVPR 2021 &nbsp;|&nbsp; ICCV 2023 &nbsp;|&nbsp; AAAI 2023, 2026 &nbsp;|&nbsp; MM 2023
-    <li> <b>Journal Reviewer.</b>&nbsp; TNNLS 2022&nbsp;|&nbsp; NN 2023 &nbsp;|&nbsp; TCSVT 2023 &nbsp;|&nbsp; TKDD 2023
+    <li> <b>Conference Reviewer.</b>&nbsp;&nbsp; CVPR 2021 &nbsp;&nbsp;|&nbsp;&nbsp; ICCV 2023 &nbsp;&nbsp;|&nbsp;&nbsp; AAAI 2023, 2026 &nbsp;&nbsp;|&nbsp;&nbsp; MM 2023
+    <li> <b>Journal Reviewer.</b>&nbsp;&nbsp; TNNLS 2022&nbsp;&nbsp;|&nbsp;&nbsp; NN 2023 &nbsp;&nbsp;|&nbsp;&nbsp; TCSVT 2023 &nbsp;&nbsp;|&nbsp;&nbsp; TKDD 2023
 </ul>
 """
 SUFFIX  = \

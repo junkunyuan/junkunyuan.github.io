@@ -25,6 +25,23 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "PrefPaint: Aligning Image Inpainting Diffusion Model with Human Preference",
+"author": "Kendong Liu, Zhiyu Zhu, Chuanhao Li, Hui Liu, Huanqiang Zeng, Junhui Hou",
+"organization": "City University of Hong Kong, Yale University, Saint Francis University, Huaqiao University",
+"date": "20241029",
+"venue": "NeurIPS 2024",
+"pdf_url": "https://arxiv.org/pdf/2410.21966",
+"code_url": "https://github.com/Kenkenzaii/PrefPaint",
+"name": "PrefPaint",
+"comment": "",
+"category": "Reinforcement Learning, Downstream Tasks",
+"jupyter_notes": "",
+"summary": """It trains a reward model on 51K images with human preferences, and uses it to perform reinforcement learning of diffusion models.""",
+"details": 
+"""
+""",
+},
+{
 "title": "Calibrated Multi-Preference Optimization for Aligning Diffusion Models",
 "author": "Kyungmin Lee, Xiahong Li, Qifei Wang, Junfeng He, Junjie Ke, Ming-Hsuan Yang, Irfan Essa, Jinwoo Shin, Feng Yang, Yinxiao Li1",
 "organization": "Google DeepMind, KAIST, Google, Google Research, Georgia Institute of Technology",
