@@ -25,6 +25,23 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "Training Diffusion Models with Reinforcement Learning",
+"author": "Kevin Black, Michael Janner, Yilun Du, Ilya Kostrikov, Sergey Levine",
+"organization": "University of California, Berkeley, Massachusetts Institute of Technology",
+"date": "20230522",
+"venue": "ICLR 2024",
+"pdf_url": "https://arxiv.org/pdf/2305.13301",
+"code_url": "https://github.com/jannerm/ddpo",
+"name": "DDPO",
+"comment": "",
+"category": "Reinforcement Learning",
+"jupyter_notes": "",
+"summary": """It applies policy gradient to diffusion models, the reward is estimated from a VLM, to improve its aesthetics.""",
+"details": 
+"""
+""",
+},
+{
 "title": "Preference Alignment on Diffusion Model: A Comprehensive Survey for Image Generation and Editing",
 "author": "Sihao Wu, Xiaonan Si, Chi Xing, Jianhong Wang, Gaojie Jin, Guangliang Cheng, Lijun Zhang, Xiaowei Huang",
 "organization": "University of Liverpool, Institute of Software Chinese Academy of Sciences, University of Edinburgh, University of Bristol, University of Exeter",
