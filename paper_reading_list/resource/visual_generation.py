@@ -25,6 +25,25 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "Preference Alignment on Diffusion Model: A Comprehensive Survey for Image Generation and Editing",
+"author": "Sihao Wu, Xiaonan Si, Chi Xing, Jianhong Wang, Gaojie Jin, Guangliang Cheng, Lijun Zhang, Xiaowei Huang",
+"organization": "University of Liverpool, Institute of Software Chinese Academy of Sciences, University of Edinburgh, University of Bristol, University of Exeter",
+"date": "20250210",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2502.07829",
+"code_url": "",
+"name": "Survey on Preference Alignment of Image Generation",
+"comment": "",
+"category": "Reinforcement Learning",
+"jupyter_notes": "",
+"summary": """A survey on preference alignment of image generation and editing.""",
+"details": 
+"""
+fig: fig1.png 700
+cap: <b>Preference Alignment methods for Image Generation.</b>
+""",
+},
+{
 "title": "PrefPaint: Aligning Image Inpainting Diffusion Model with Human Preference",
 "author": "Kendong Liu, Zhiyu Zhu, Chuanhao Li, Hui Liu, Huanqiang Zeng, Junhui Hou",
 "organization": "City University of Hong Kong, Yale University, Saint Francis University, Huaqiao University",

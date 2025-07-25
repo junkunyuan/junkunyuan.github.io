@@ -68,7 +68,7 @@ def build_main_content_of_each_domain(domain):
                 names += f"""<a class="no_dec" href="#{name}"><font color=#B0B0B0>{name}</font></a>"""
             else:
                 names += f"""<a class="no_dec" href="#{name}"><font color=#B0B0B0>{name}</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> """
-        catalog += f"""<li><a class="no_dec" id="{category}" href="#{category}-table"><b>{category}:</b></a> {names}</li>"""
+        catalog += f"""<li><a class="no_dec" id="{category}" href="#{category}-table"><b>{category}. &nbsp; </b></a> {names}</li>"""
     catalog += """</ul>"""
     
     ## Build contents
