@@ -65,9 +65,9 @@ def build_main_content_of_each_domain(domain):
         names = ""
         for i, name in enumerate(paper_names):
             if i == len(paper_names) - 1:
-                names += f"""<a class="no_dec" href="#{name}"><font color=#B0B0B0>{name}</font></a>"""
+                names += f"""<a class="no_dec" href="#{name + category.lower()}"><font color=#B0B0B0>{name}</font></a>"""
             else:
-                names += f"""<a class="no_dec" href="#{name}"><font color=#B0B0B0>{name}</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> """
+                names += f"""<a class="no_dec" href="#{name + category.lower()}"><font color=#B0B0B0>{name}</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> """
         catalog += f"""<li><a class="no_dec" id="{category}" href="#{category}-table"><b>{category}. &nbsp; </b></a> {names}</li>"""
     catalog += """</ul>"""
     
@@ -110,7 +110,7 @@ def build_main_content_of_each_domain(domain):
 
             content_cate += \
             f"""
-            <p class="little_split" id='{paper["name"]}'></p>
+            <p class="little_split" id='{paper["name"] + category.lower()}'></p>
             <div style="border-left: 14px solid {color_bar}; padding-left: 10px">
             <div style="height: 0.3em;"></div>
             <p class="paper_title" onclick="toggleTable('{paper["name"]}-{category}-details')"><i>{paper["title"]}</i></p>

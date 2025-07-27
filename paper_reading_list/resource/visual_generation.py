@@ -2,7 +2,7 @@ VISUAL_GENERATION = dict()
 VISUAL_GENERATION["file"] = "visual_generation.html"
 VISUAL_GENERATION["title"] = "Visual Generation"
 VISUAL_GENERATION["description"] = "Generate visual signals (e.g., images, video, and 3D)."
-VISUAL_GENERATION["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Inference-Time Improvement", "Acceleration", "Datasets & Evaluation", "Downstream Tasks"]
+VISUAL_GENERATION["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Inference-Time Improvement", "Acceleration", "Datasets & Evaluation", "Editing & Inpainting & Outpainting"]
 VISUAL_GENERATION["papers"] = [
 # {
 # "title": "",
@@ -70,7 +70,7 @@ cap: <b>Preference Alignment methods for Image Generation.</b>
 "code_url": "https://github.com/Kenkenzaii/PrefPaint",
 "name": "PrefPaint",
 "comment": "",
-"category": "Reinforcement Learning, Downstream Tasks",
+"category": "Reinforcement Learning, Editing & Inpainting & Outpainting",
 "jupyter_notes": "",
 "summary": """It trains a reward model on 51K images with human preferences, and uses it to perform reinforcement learning of diffusion models.""",
 "details": 
@@ -310,7 +310,7 @@ cap: Performance on <b>Physics-IQ-Benchmark</b>.
 "code_url": "https://github.com/stepfun-ai/Step1X-Edit/",
 "name": "Step1X-Edit",
 "comment": "",
-"category": "Downstream Tasks",
+"category": "Editing & Inpainting & Outpainting",
 "jupyter_notes": "",
 "summary": """It uses a <b>MLLM to generate condition embedding</b> of the reference image and instructions for image generation editing.""",
 "details": 
