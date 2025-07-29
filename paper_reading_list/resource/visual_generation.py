@@ -25,6 +25,31 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "BrushNet: A Plug-and-Play Image Inpainting Model with Decomposed Dual-Branch Diffusion",
+"author": "Xuan Ju, Xian Liu, Xintao Wang, Yuxuan Bian, Ying Shan, Qiang Xu ",
+"organization": "Tencent PCG ARC Lab, The Chinese University of Hong Kong",
+"date": "20240311",
+"venue": "ECCV 2024",
+"pdf_url": "https://arxiv.org/pdf/2403.06976",
+"code_url": "https://github.com/TencentARC/BrushNet",
+"name": "BrushNet",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"summary": """It introduces a <b>plug-and-play</b> dual-branch model and a segmentation-based inpainting training dataset <b>BrushData</b> and a benchmark <b>BrushBench</b>.""",
+"details": 
+"""
+fig: fig1.png 550
+cap: <b>Comparisons.</b> (a) lacks knowledge of mask boundaries. (b) struggles to obtain pure masked image features due to the text's influence. 
+fig: fig2.png 550
+cap: <b>Structure.</b> (1) Use VAE to process masked image to preserve original details. (2) Masked image, mask, noisy masked image are concatenated as the input. (3) Adopt hierarchical approach to incorporate UNet features. (4) Remove text cross-attention. (5) Use blurred blending.
+fig: fig3.png 500
+cap: <b>BrushBench results.</b>
+fig: fig4.png 500
+cap: <b>EditBench results.</b>
+""",
+},
+{
 "title": "Training Diffusion Models with Reinforcement Learning",
 "author": "Kevin Black, Michael Janner, Yilun Du, Ilya Kostrikov, Sergey Levine",
 "organization": "University of California, Berkeley, Massachusetts Institute of Technology",
