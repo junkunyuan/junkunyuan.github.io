@@ -19,7 +19,7 @@ PAPERS = [
 },
 {
 "title": "Follow-Your-Canvas: Higher-Resolution Video Outpainting with Extensive Content Generation",
-"author": "Qihua Chen<sup>&#10035</sup>, Yue Ma<sup>&#10035</sup>, Hongfa Wang<sup>&#10035</sup>, Junkun Yuan<sup>&#10035</sup><sup>&#9993</sup>, Wenzhe Zhao, Qi Tian, Hongmei Wang, Shaobo Min, Qifeng Chen<sup>&#9993</sup>, and Wei Liu",
+"author": "Qihua Chen**, Yue Ma**, Hongfa Wang**, Junkun Yuan**##, Wenzhe Zhao, Qi Tian, Hongmei Wang, Shaobo Min, Qifeng Chen##, and Wei Liu",
 "date": "20240902",
 "venue": "AAAI 2025",
 "pdf_url": "https://arxiv.org/pdf/2409.01055",
@@ -27,7 +27,7 @@ PAPERS = [
 },
 {
 "title": "Follow-Your-Emoji: Fine-Controllable and Expressive Freestyle Portrait Animation",
-"author": "Yue Ma<sup>&#10035</sup>, Hongyu Liu<sup>&#10035</sup>, Hongfa Wang<sup>&#10035</sup>, Heng Pan<sup>&#10035</sup>, Yingqing He, Junkun Yuan, Ailing Zeng, Chengfei Cai, Heung-Yeung Shum, Wei Liu<sup>&#9993</sup>, and Qifeng Chen<sup>&#9993</sup>",
+"author": "Yue Ma**, Hongyu Liu**, Hongfa Wang**, Heng Pan**, Yingqing He, Junkun Yuan, Ailing Zeng, Chengfei Cai, Heung-Yeung Shum, Wei Liu##, and Qifeng Chen##",
 "date": "20240604",
 "venue": "SIGGRAPH-Asia 2024",
 "pdf_url": "https://arxiv.org/pdf/2406.01900",
@@ -43,7 +43,7 @@ PAPERS = [
 },
 {
 "title": "Domaindiff: Boost Out-of-Distribution Generalization with Synthetic Data",
-"author": "Qiaowei Miao, Junkun Yuan, Shengyu Zhang, Fei Wu, Kun Kuang<sup>&#9993</sup>",
+"author": "Qiaowei Miao, Junkun Yuan, Shengyu Zhang, Fei Wu, and Kun Kuang##",
 "date": "20240414",
 "venue": "ICASSP 2024",
 "pdf_url": "https://ieeexplore.ieee.org/iel7/10445798/10445803/10446788.pdf",
@@ -52,7 +52,7 @@ PAPERS = [
 },
 {
 "title": "Knowledge Distillation-Based Domain-Invariant Representation Learning for Domain Generalization",
-"author": "Ziwei Niu, Junkun Yuan, Xu Ma, Yingying Xu, Jing Liu, Yen-Wei Chen, Ruofeng Tong, Lanfen Lin##",
+"author": "Ziwei Niu, Junkun Yuan, Xu Ma, Yingying Xu, Jing Liu, Yen-Wei Chen, Ruofeng Tong, and Lanfen Lin##",
 "date": "20240101",
 "venue": "TMM 2023",
 "pdf_url": "https://dl.acm.org/doi/10.1109/TMM.2023.3263549",
@@ -61,7 +61,7 @@ PAPERS = [
 },
 {
 "title": "HAP: Structure-Aware Masked Image Modeling for Human-Centric Perception",
-"author": "Junkun Yuan**, Xinyu Zhang**##, Hao Zhou, Jian Wang, Zhongwei Qiu, Zhiyin Shao, Shaofeng Zhang, Sifan Long, Kun Kuang##, Kun Yao, Junyu Han, Errui Ding, Lanfen Lin, Fei Wu, and Jingdong Wang##",
+"author": "Junkun Yuan**, Xinyu Zhang**##, Hao Zhou, Jian Wang, Zhongwei Qiu, Zhiyin Shao, Shaofeng Zhang, Sifan Long, and Kun Kuang##, Kun Yao, Junyu Han, Errui Ding, Lanfen Lin, Fei Wu, and Jingdong Wang##",
 "date": "20231031",
 "venue": "NeurIPS 2023",
 "pdf_url": "https://arxiv.org/pdf/2310.20695",
@@ -133,7 +133,7 @@ PAPERS = [
 },
 {
 "title": "Attention-based Cross-Layer Domain Alignment for Unsupervised Domain Adaptation",
-"author": "Xu Ma, Junkun Yuan, Yen-Wei Chen, Ruofeng Tong, Lanfen Lin##",
+"author": "Xu Ma, Junkun Yuan, Yen-Wei Chen, Ruofeng Tong, and Lanfen Lin##",
 "date": "20220227",
 "venue": "Neurocomputing 2022",
 "pdf_url": "https://arxiv.org/pdf/2202.13310",
@@ -158,7 +158,7 @@ PAPERS = [
 },
 {
 "title": "Instrumental Variable-Driven Domain Generalization with Unobserved Confounders",
-"author": "Junkun Yuan, Xu Ma, Kun Kuang##, Ruoxuan Xiong, Mingming Gong, Lanfen Lin",
+"author": "Junkun Yuan, Xu Ma, Kun Kuang##, Ruoxuan Xiong, Mingming Gong, and Lanfen Lin",
 "date": "20211004",
 "venue": "TKDD 2023",
 "pdf_url": "https://arxiv.org/pdf/2110.01438",
@@ -167,7 +167,7 @@ PAPERS = [
 },
 {
 "title": "Auto IV: Counterfactual Prediction via Automatic Instrumental Variable Decomposition",
-"author": "Junkun Yuan**, Anpeng Wu**, Kun Kuang##, Bo Li, Runze Wu, Fei Wu, Lanfen Lin",
+"author": "Junkun Yuan**, Anpeng Wu**, Kun Kuang##, Bo Li, Runze Wu, Fei Wu, and Lanfen Lin",
 "date": "20210713",
 "venue": "TKDD 2022",
 "pdf_url": "https://arxiv.org/pdf/2107.05884",
@@ -176,7 +176,7 @@ PAPERS = [
 },
 {
 "title": "Black-Box Adversarial Attacks Against Deep Learning Based Malware Binaries Detection with GAN",
-"author": "Junkun Yuan, Shaofang Zhou, Lanfen Lin##, Feng Wang, Jia Cui",
+"author": "Junkun Yuan, Shaofang Zhou, Lanfen Lin##, Feng Wang, and Jia Cui",
 "date": "20200829",
 "venue": "ECAI 2020",
 "pdf_url": "https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA200388",
@@ -185,7 +185,7 @@ PAPERS = [
 },
 {
 "title": "Learning Decomposed Representation for Counterfactual Inference",
-"author": "Anpeng Wu**, Junkun Yuan**, Kun Kuang##, Bo Li##, Runze Wu, Qiang Zhu, Yueting Zhuang, Fei Wu",
+"author": "Anpeng Wu**, Junkun Yuan**, Kun Kuang##, Bo Li##, Runze Wu, Qiang Zhu, Yueting Zhuang, and Fei Wu",
 "date": "20200612",
 "venue": "TKDE 2023",
 "pdf_url": "https://arxiv.org/pdf/2006.07040",
