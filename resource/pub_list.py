@@ -42,6 +42,24 @@ PAPERS = [
 "code_url": "https://github.com/Tencent/HunyuanDiT"
 },
 {
+"title": "Domaindiff: Boost Out-of-Distribution Generalization with Synthetic Data",
+"author": "Qiaowei Miao, Junkun Yuan, Shengyu Zhang, Fei Wu, Kun Kuang<sup>&#9993</sup>",
+"date": "20240414",
+"venue": "ICASSP 2024",
+"pdf_url": "https://ieeexplore.ieee.org/iel7/10445798/10445803/10446788.pdf",
+"code_url": "",
+"comment": ""
+},
+{
+"title": "Knowledge Distillation-Based Domain-Invariant Representation Learning for Domain Generalization",
+"author": "Ziwei Niu, Junkun Yuan, Xu Ma, Yingying Xu, Jing Liu, Yen-Wei Chen, Ruofeng Tong, Lanfen Lin##",
+"date": "20240101",
+"venue": "TMM 2023",
+"pdf_url": "https://dl.acm.org/doi/10.1109/TMM.2023.3263549",
+"code_url": "",
+"comment": ""
+},
+{
 "title": "HAP: Structure-Aware Masked Image Modeling for Human-Centric Perception",
 "author": "Junkun Yuan**, Xinyu Zhang**##, Hao Zhou, Jian Wang, Zhongwei Qiu, Zhiyin Shao, Shaofeng Zhang, Sifan Long, Kun Kuang##, Kun Yao, Junyu Han, Errui Ding, Lanfen Lin, Fei Wu, and Jingdong Wang##",
 "date": "20231031",
@@ -114,6 +132,15 @@ PAPERS = [
 "code_url": "https://github.com/junkunyuan/CEG"
 },
 {
+"title": "Attention-based Cross-Layer Domain Alignment for Unsupervised Domain Adaptation",
+"author": "Xu Ma, Junkun Yuan, Yen-Wei Chen, Ruofeng Tong, Lanfen Lin##",
+"date": "20220227",
+"venue": "Neurocomputing 2022",
+"pdf_url": "https://arxiv.org/pdf/2202.13310",
+"code_url": "",
+"comment": ""
+},
+{
 "title": "Domain-Specific Bias Filtering for Single Labeled Domain Generalization",
 "author": "Junkun Yuan**, Xu Ma**, Defang Chen, Kun Kuang##, Fei Wu, and Lanfen Lin",
 "date": "20211002",
@@ -128,5 +155,41 @@ PAPERS = [
 "venue": "TKDE 2023",
 "pdf_url": "https://arxiv.org/pdf/2110.06736",
 "code_url": "https://github.com/junkunyuan/CSAC"
+},
+{
+"title": "Instrumental Variable-Driven Domain Generalization with Unobserved Confounders",
+"author": "Junkun Yuan, Xu Ma, Kun Kuang##, Ruoxuan Xiong, Mingming Gong, Lanfen Lin",
+"date": "20211004",
+"venue": "TKDD 2023",
+"pdf_url": "https://arxiv.org/pdf/2110.01438",
+"code_url": "",
+"comment": ""
+},
+{
+"title": "Auto IV: Counterfactual Prediction via Automatic Instrumental Variable Decomposition",
+"author": "Junkun Yuan**, Anpeng Wu**, Kun Kuang##, Bo Li, Runze Wu, Fei Wu, Lanfen Lin",
+"date": "20210713",
+"venue": "TKDD 2022",
+"pdf_url": "https://arxiv.org/pdf/2107.05884",
+"code_url": "https://github.com/junkunyuan/AutoIV",
+"comment": ""
+},
+{
+"title": "Black-Box Adversarial Attacks Against Deep Learning Based Malware Binaries Detection with GAN",
+"author": "Junkun Yuan, Shaofang Zhou, Lanfen Lin##, Feng Wang, Jia Cui",
+"date": "20200829",
+"venue": "ECAI 2020",
+"pdf_url": "https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA200388",
+"code_url": "",
+"comment": ""
+},
+{
+"title": "Learning Decomposed Representation for Counterfactual Inference",
+"author": "Anpeng Wu**, Junkun Yuan**, Kun Kuang##, Bo Li##, Runze Wu, Qiang Zhu, Yueting Zhuang, Fei Wu",
+"date": "20200612",
+"venue": "TKDE 2023",
+"pdf_url": "https://arxiv.org/pdf/2006.07040",
+"code_url": "https://github.com/anpwu/DeR-CFR",
+"comment": ""
 },
 ]

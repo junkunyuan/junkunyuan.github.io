@@ -46,7 +46,7 @@ BIOGRAPHY = \
   I received my Ph.D. degree in Computer Science from Zhejiang University (2019 — 2024), co-supervised by professors of <a href="https://scholar.google.com/citations?user=FOsNiMQAAAAJ">Kun Kuang</a>, <a href="https://person.zju.edu.cn/0096005">Lanfen Lin</a>, and 
   <a href="https://scholar.google.com/citations?user=XJLn4MYAAAAJ">Fei Wu</a>. I received my B.S. degree in Automation from Zhejiang University of Technology (2015 — 2019), co-supervised by professors of <a href="https://scholar.google.com.hk/citations?user=smi7bpoAAAAJ&hl=zh-CN&oi=ao">Qi Xuan</a> and <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=CnBn6FwAAAAJ">Li Yu</a>.<br><br>
 
-  I have been fortunate to collaborate closely with <a href="https://scholar.google.com.hk/citations?user=F5P_8NkAAAAJ&hl=zh-CN&oi=ao">Defang Chen</a>, <a href="https://scholar.google.com.hk/citations?user=kwBR1ygAAAAJ&hl=zh-CN&oi=ao">Yue Ma</a>, <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=7mpuhO8AAAAJ">Zhen Zhao</a>, their insights have profoundly shaped my approach to research.
+  I have been fortunate to work closely with some friends such as <a href="https://scholar.google.com.hk/citations?user=F5P_8NkAAAAJ&hl=zh-CN&oi=ao">Defang Chen</a>, <a href="https://scholar.google.com.hk/citations?user=kwBR1ygAAAAJ&hl=zh-CN&oi=ao">Yue Ma</a>, their insights have profoundly shaped my approach to research.
 </p>
 """
 SERVICE = \
@@ -58,10 +58,38 @@ SERVICE = \
     <li> <b>Journal Reviewer.</b>&nbsp;&nbsp; TNNLS 2022&nbsp;&nbsp;|&nbsp;&nbsp; NN 2023 &nbsp;&nbsp;|&nbsp;&nbsp; TCSVT 2023 &nbsp;&nbsp;|&nbsp;&nbsp; TKDD 2023
 </ul>
 """
-SUFFIX  = \
+SUFFIX = \
 """
 </body>
 </html>
+"""
+TOP = \
+"""
+<button id="backToTop" title="back to top">↑</button>
+<script>
+    const button = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+    if (document.documentElement.scrollTop > 300) {
+        button.style.display = "block";
+    } else {
+        button.style.display = "none";
+    }
+    });
+
+    function updateButtonPosition() {
+    const bodyRect = document.body.getBoundingClientRect();
+    const windowWidth = window.innerWidth;
+    const rightOffset = Math.max((windowWidth - bodyRect.width) / 2, 10);
+    button.style.right = rightOffset + "px";
+    }
+
+    window.addEventListener("resize", updateButtonPosition);
+    window.addEventListener("load", updateButtonPosition);
+
+    button.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
 """
 
 
@@ -111,7 +139,7 @@ if __name__ == "__main__":
     paper_content = build_paper(PAPERS)
 
     ## Build html contents
-    html_content = PREFIX + BIOGRAPHY + paper_content + SERVICE + SUFFIX
+    html_content = PREFIX + BIOGRAPHY + paper_content + SERVICE + TOP + SUFFIX
 
     ## Write contents to html
     html_file = "index.html"

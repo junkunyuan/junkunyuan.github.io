@@ -5,7 +5,9 @@ venue_name_dict = {
     "AAAI": "AAAI Conference on Artificial Intelligence",
     "arXiv": "arXiv preprint",
     "CVPR": "Conference on Computer Vision and Pattern Recognition",
+    "ECAI": "European Conference on Artificial Intelligence",
     "ICCV": "International Conference on Computer Vision",
+    "ICASSP": "International Conference on Acoustics, Speech and Signal Processing",
     "ICLR": "International Conference on Learning Representations",
     "ICML": "International Conference on Machine Learning",
     "IJCV": "International Journal of Computer Vision",
@@ -13,8 +15,10 @@ venue_name_dict = {
     "MM": "International Conference on Multimedia",
     "NeurIPS": "Advances in Neural Information Processing Systems",
     "SIGGRAPH-Asia": "ACM SIGGRAPH Annual Conference in Asia",
+    "TKDD": "ACM Transactions on Knowledge Discovery from Data",
     "TKDE": "IEEE Transactions on Knowledge and Data Engineering",
     "TMLR": "Transactions on Machine Learning Research",
+    "TMM": "IEEE Transactions on Multimedia",
 }
 
 def get_venue_all(venue_abbr_date):
