@@ -24,7 +24,7 @@ f"""
 INTRODUCTION = \
 f"""
 <h1 id="top">title</h1>
-<p class="larger"><b>total_paper_num domain_name.</b></p>
+<p class="huger"><b>total_paper_num domain_name.</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
 <p><font color=#B0B0B0>Last updated on time_now (UTC+8).</font></p>
@@ -37,7 +37,7 @@ SUFFIX  = \
 
 
 def build_main_content_all_domains(domains, num_papers):
-    content = """<hr><p id="table" class="larger"><b>Table of contents:</b></p><ul>"""
+    content = """<hr><p id="table" class="huger"><b>Table of contents:</b></p><ul>"""
     for domain, num_paper in zip(domains, num_papers):
         paper_num_display = "" if num_paper == 0 else f" ({num_paper} papers)"
         content += f"""<li><a class="no_dec" href={domain["file"]}>{domain["title"]}</a>{paper_num_display} &nbsp; <font color=#B0B0B0>{domain["description"]}</font></li>"""
@@ -49,26 +49,28 @@ def build_main_content_of_each_domain(domain):
     ## Load papers
     papers = {"title": list(), "author": list(), "organization": list(), "date": list(), 
                 "venue": list(), "pdf_url": list(), "code_url": list(), "name": list(), "comment": list(), 
-                "category": list(), "jupyter_notes": list(), "summary": list(), "details": list()}
+                "category": list(), "jupyter_notes": list(), "info": list(), "summary": list(), "details": list()}
     for paper in tqdm(domain["papers"], desc=f"Read {domain['title']}"):
         for key in papers.keys():
             papers[key].append(paper[key])
     papers = pd.DataFrame(papers)
 
     ## Build table of contents
-    catalog = """<hr><p id='table' class="larger"><b>Table of contents:</b></p><ul>"""
+    catalog = """<hr><p id='table' class="huger"><b>Table of contents:</b></p><ul>"""
     for category in domain["categories"]:
         paper_choose = papers[papers["category"].str.contains(category)]
         ascending = True if domain["title"] != "Coding and Engineering" else False
         paper_choose = paper_choose.sort_values(by="date", ascending=ascending)
         paper_names = paper_choose["name"].to_list()
+        paper_info = paper_choose["info"].to_list()
         names = ""
         for i, name in enumerate(paper_names):
+            color = "#202020" if "**" in paper_info[i] else "#B0B0B0"
             if i == len(paper_names) - 1:
-                names += f"""<a class="no_dec" href="#{name + category.lower()}"><font color=#B0B0B0>{name}</font></a>"""
+                names += f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name}</font></a>"""
             else:
-                names += f"""<a class="no_dec" href="#{name + category.lower()}"><font color=#B0B0B0>{name}</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> """
-        catalog += f"""<li><a class="no_dec" id="{category}" href="#{category}-table"><b>{category}. &nbsp; </b></a> {names}</li>"""
+                names += f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name}</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> """
+        catalog += f"""<li><a class="no_dec larger" id="{category}" href="#{category}-table"><b>{category}</b></a></li><p>{names}</p>"""
     catalog += """</ul>"""
     
     ## Build contents

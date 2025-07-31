@@ -16,6 +16,7 @@ NATIVE_MULTIMODAL_GENERATION["papers"] = [
 # "comment": "",
 # "category": "",
 # "jupyter_notes": "",
+# "info": "",
 # "summary": """""",
 # "details": 
 # """
@@ -42,6 +43,7 @@ NATIVE_MULTIMODAL_GENERATION["papers"] = [
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """It finds it is beneficial to generate CLIP features by employing flow matching loss, and use sequential training of understanding and generation.""",
 "details": 
 """
@@ -73,6 +75,7 @@ cap: It performs the best on <b>image understanding</b> (left) & <b>image genera
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """It trains a unified model (7B) on 2T multi-modal tokens by predicting discrete text tokens and diffusing continuous image tokens.""",
 "details": 
 """
@@ -110,6 +113,7 @@ cap: <b>Overall performance.</b>
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """It proposes a unified autoregressive model trained end-to-end across text, vision, and audio.""",
 "details": 
 """
@@ -129,6 +133,7 @@ cap: <b>Visual generation capability of GPT-4o evaluated by <a href="https://arx
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """It achieves visual generation and understanding by applying diffusion loss on continuous visual tokens and cross-entropy loss on discrete text tokens.""",
 "details": 
 """

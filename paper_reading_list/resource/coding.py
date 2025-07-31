@@ -16,6 +16,7 @@ CODING["papers"] = [
 # "comment": "",
 # "category": "",
 # "jupyter_notes": "",
+# "info": "",
 # "summary": """""",
 # "details": 
 # """
@@ -39,6 +40,7 @@ CODING["papers"] = [
 "comment": "",
 "category": "torch & torchvision",
 "jupyter_notes": "",
+"info": "",
 "summary": """It includes tools to build neural networks: <a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html#conv2d">Conv2d</a>, <a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv3d.html#conv3d">Conv3d</a>.""",
 "details": 
 """
@@ -117,6 +119,7 @@ y = conv2d(x)  # Tensor => Tensor
 "comment": "",
 "category": "torch & torchvision",
 "jupyter_notes": "",
+"info": "",
 "summary": """It includes tools for building optimization algorithms: <a href="https://docs.pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW.step">AdamW</a>.""",
 "details": 
 """
@@ -160,6 +163,7 @@ adam_optim = AdamW(
 "comment": "",
 "category": "torch & torchvision",
 "jupyter_notes": "",
+"info": "",
 "summary": """It includes tools for data loading: <a href="https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader">DataLoader</a>.""",
 "details": 
 """
@@ -211,6 +215,7 @@ data_loader = DataLoader(
 "comment": "",
 "category": "torch & torchvision",
 "jupyter_notes": "",
+"info": "",
 "summary": """It includes tools to transform and augment data: <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Resize.html?highlight=transforms+resize#torchvision.transforms.Resize">Resize</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.RandomHorizontalFlip.html#torchvision.transforms.RandomHorizontalFlip">RandomHorizontalFlip</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.ToTensor.html?highlight=totensor#torchvision.transforms.ToTensor">ToTensor</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Compose.html#torchvision.transforms.Compose">Compose</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Normalize.html#torchvision.transforms.Normalize">Normalize</a>.""",
 "details": 
 """

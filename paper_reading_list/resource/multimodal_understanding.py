@@ -16,6 +16,7 @@ MULTIMODAL_UNDERSTANDING["papers"] = [
 # "comment": "",
 # "category": "",
 # "jupyter_notes": "",
+# "info": "",
 # "summary": """""",
 # "details": 
 # """
@@ -36,6 +37,7 @@ MULTIMODAL_UNDERSTANDING["papers"] = [
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """It improves BLIP-2 by introducing interleaved multimodal data, unified training objective, and visual resampler.""",
 "details": 
 """
@@ -64,6 +66,7 @@ cap: Performance on <b>multi-image</b> benchmarks.
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "**",
 "summary": """It makes the first attempt to use GPT-4 to generate multimodal instruction-following data and performs multimodal <b>instruction fine-tuning</b>.""",
 "details": 
 """
@@ -94,6 +97,7 @@ cap: <b>Science QA</b> performance.
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "**",
 "summary": """""",
 "details": 
 """
@@ -130,6 +134,7 @@ cap: <b>Fine-tuning image-text retrieval</b> performance.
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "**",
 "summary": """It achieves <b>few-shot in-context learning</b> ability by brideging vision and language models and trains on inter-leaved visual and textual data.""",
 "details": 
 """
@@ -161,6 +166,7 @@ cap: Performance on image and video understanding tasks with <b>fine-tuning</b>.
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "**",
 "summary": """It enables both vision-language <b>understanding & generation</b> by multi-task learning with a unified framework, as well as a data bootstrapping strategy.""",
 "details": 
 """
@@ -186,6 +192,7 @@ cap: Performance comparisons on <b>text-to-video retrival</b> (left) and <b>vide
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """It makes the model learn to tackle 6 tasks with different <b>task identifiers</b> through three-stage training (maybe inspired by Qwen-VL).""",
 "details": 
 """
@@ -219,6 +226,7 @@ cap: Performance on <b>hallucination problem.</b>
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "**",
 "summary": """It aligns a frozen visual encoder with a frozen LLM (Vicuna) using <b>one projection layer</b>.""",
 "details": 
 """
@@ -245,6 +253,7 @@ cap: <b>Ablation</b> studies (left), <b>hallucination</b> evaluation (right).
 "comment": "CLIP shifts computer vision research from high-quality, crowd-labeled data with pre-defined labels, e.g., ImageNet, to web-scale data with natural language supervision. CLIP generalizes well on visual benchmarks, and spurs research on multimodal foundation models. It has over 30,000 citations (as of Jul 2025).",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "**",
 "summary": """By training on 400M internet text-image pairs through contrastive learning, it shows great generalization on visual benchmarks.""",
 "details": 
 """
@@ -272,6 +281,7 @@ cap: CLIP is much more robust to <b>distribution shift</b>.
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "**",
 "summary": """It makes improvement to Qwen2-VL by employing window attention, native dynamic resolution, absoute time encoding, more and high-quality data.""",
 "details": 
 """
@@ -317,6 +327,7 @@ cap: <b>Performance on GUI agent benchmarks.</b>
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "**",
 "summary": """It improves Qwen-VL by using a <b>naive dynamic resolution</b> mechanism with <b>multimodal RoPE</b>, and a <b>unified image-video processing</b> paradigm.""",
 "details": 
 """
@@ -358,6 +369,7 @@ cap: <b>Scaling performance</b> of model size and consuming tokens.
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "**",
 "summary": """Built upon the language model Qwen-7B, it makes Qwen-VL to learn image description, QA, <b>grounding</b>, and <b>text-reading</b> by three-stage training.""",
 "details": 
 """

@@ -16,6 +16,7 @@ VISUAL_GENERATION["papers"] = [
 # "comment": "",
 # "category": "",
 # "jupyter_notes": "",
+# "info": "",
 # "summary": """""",
 # "details": 
 # """
@@ -36,6 +37,7 @@ VISUAL_GENERATION["papers"] = [
 "comment": "",
 "category": "Editing & Inpainting & Outpainting",
 "jupyter_notes": "",
+"info": "**",
 "summary": """It introduces a <b>plug-and-play</b> dual-branch model and a segmentation-based inpainting training dataset <b>BrushData</b> and a benchmark <b>BrushBench</b>.""",
 "details": 
 """
@@ -61,6 +63,7 @@ cap: <b>EditBench results.</b>
 "comment": "",
 "category": "Reinforcement Learning",
 "jupyter_notes": "",
+"info": "**",
 "summary": """It applies policy gradient to diffusion models, the reward is estimated from a VLM, to improve its aesthetics.""",
 "details": 
 """
@@ -78,6 +81,7 @@ cap: <b>EditBench results.</b>
 "comment": "",
 "category": "Reinforcement Learning",
 "jupyter_notes": "",
+"info": "",
 "summary": """A survey on preference alignment of image generation and editing.""",
 "details": 
 """
@@ -97,6 +101,7 @@ cap: <b>Preference Alignment methods for Image Generation.</b>
 "comment": "",
 "category": "Reinforcement Learning, Editing & Inpainting & Outpainting",
 "jupyter_notes": "",
+"info": "",
 "summary": """It trains a reward model on 51K images with human preferences, and uses it to perform reinforcement learning of diffusion models.""",
 "details": 
 """
@@ -114,6 +119,7 @@ cap: <b>Preference Alignment methods for Image Generation.</b>
 "comment": "",
 "category": "Reinforcement Learning",
 "jupyter_notes": "",
+"info": "",
 "summary": """It proposes calibrated preference optimization by calculating average win-rate of each sample to other samples as the reward.""",
 "details": 
 """
@@ -133,6 +139,7 @@ cap: <b>Result.</b> The improvement over DPO is not significant.
 "comment": "",
 "category": "Reinforcement Learning",
 "jupyter_notes": "",
+"info": "",
 "summary": """It applies <b>curriculum learning</b> to DPO by learning from win samples and lose samples with their differences from small to large.""",
 "details": 
 """
@@ -150,6 +157,7 @@ cap: <b>Result.</b> The improvement over DPO is not significant.
 "comment": "",
 "category": "Reinforcement Learning",
 "jupyter_notes": "",
+"info": "",
 "summary": """It trains a noise-aware reward model, and contructs DPO data from noisy samples.""",
 "details": 
 """
@@ -170,6 +178,7 @@ cap: <b>Result.</b> The improvement over DPO is not significant.
 "comment": "",
 "category": "Reinforcement Learning",
 "jupyter_notes": "",
+"info": "",
 "summary": """Instead of maximizing accumulative rewards, it only maximizes the reward of the latent variable that have a strong correlation with the data.""",
 "details": 
 """
@@ -189,6 +198,7 @@ cap: It performs better on <b>win-rate comparisons</b> (left) and is more <b>tra
 "comment": "",
 "category": "Reinforcement Learning",
 "jupyter_notes": "",
+"info": "",
 "summary": """It introduces <b>personalized preference alignment</b> by injecting VLM embeddings into diffusion models through cross-attention.""",
 "details": 
 """
@@ -214,6 +224,7 @@ cap: <b>Result.</b> Below is the upper bound.
 "comment": "",
 "category": "Reinforcement Learning",
 "jupyter_notes": "",
+"info": "",
 "summary": """It builds a metric for quality and semantic alignment evaluation, then uses the metric to build DPO data for preference alignment of video generation.""",
 "details": 
 """
@@ -233,6 +244,7 @@ cap: DPO improves performance.
 "comment": "",
 "category": "Reinforcement Learning",
 "jupyter_notes": "",
+"info": "",
 "summary": """It constructs positive DPO data by <b>reversing-then-denoising real data</b> to overcome the large domain gap between synthetic data and real data.""",
 "details": 
 """
@@ -267,6 +279,7 @@ cap: <b>Human evaluation.</b>
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """It employs LLM architecture to achieve auto-regressive video generation with some improvement on RoPE and masking strategy.""",
 "details": 
 """
@@ -295,6 +308,7 @@ cap: <b>Text-to-video</b> generation performance on <b>VBench-T2V</b>.
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """It achieves <b>chunk-wise</b> auto-regressive video generation by employing transformer-based VAE, progressive-noise causal modeling with flow matching, advanced attention/distillation techniques to enable streaming-capable video generation with fixed peak inference costs regardless of video length.""",
 "details": 
 """
@@ -337,6 +351,7 @@ cap: Performance on <b>Physics-IQ-Benchmark</b>.
 "comment": "",
 "category": "Editing & Inpainting & Outpainting",
 "jupyter_notes": "",
+"info": "",
 "summary": """It uses a <b>MLLM to generate condition embedding</b> of the reference image and instructions for image generation editing.""",
 "details": 
 """
@@ -361,6 +376,7 @@ cap: <b>Structure.</b> <b>Multimodal large language model (Qwen-VL)</b> is used 
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "DDIM.ipynb",
+"info": "**",
 "summary": """Accelerate sampling of diffusion models by introducing a <b>non-Markovian, deterministic process</b> that achieves high-quality results with fewer steps while preserving training consistency.""",
 "details": 
 """
@@ -382,6 +398,7 @@ cap: <b>Accelerate sampling</b> by skipping time steps.
 "comment": "",
 "category": "Reinforcement Learning",
 "jupyter_notes": "",
+"info": "",
 "summary": """It introduces a human preference video dataset, and adapts diffusion-based reinforcement learning to flow-based video generation models.""",
 "details": 
 """
@@ -399,6 +416,7 @@ cap: <b>Accelerate sampling</b> by skipping time steps.
 "comment": "",
 "category": "Inference-Time Improvement",
 "jupyter_notes": "",
+"info": "",
 "summary": """It applies the idea of <b>Chain-of-Thought</b> into image generation and combines it with reinforcement learning to further improve performance.""",
 "details": 
 """
@@ -420,6 +438,7 @@ cap: It is observed that <b>self-correction</b> also works in image generation b
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """Theoretical and empirical analysis on denoising diffusion models <b>without a timestep input</b> for image generation.""",
 "details": 
 """
@@ -441,6 +460,7 @@ cap: It is observed that <b>self-correction</b> also works in image generation b
 "comment": "",
 "category": "Reinforcement Learning",
 "jupyter_notes": "",
+"info": "",
 "summary": """It uses HPS v2 to provide reward feedback and train video generation models in an editing manner.""",
 "details": 
 """
@@ -458,6 +478,7 @@ cap: It is observed that <b>self-correction</b> also works in image generation b
 "comment": "",
 "category": "Reinforcement Learning",
 "jupyter_notes": "",
+"info": "",
 "summary": """It uses <b>LLM to refine prompts</b> for preference-aligned image generation by taking relevance and aesthetics as rewards.""",
 "details": 
 """
@@ -477,6 +498,7 @@ cap: <b>Training pipeline.</b> (1) Fine-tune a language model (LM) to learn to o
 "comment": "",
 "category": "Inference-Time Improvement",
 "jupyter_notes": "",
+"info": "",
 "summary": """Analyze generative pre-training from an <b>inference-first</b> idea, and scaling inference from a perspective of scaling sequence length & refinement steps.""",
 "details": 
 """
@@ -504,6 +526,7 @@ cap: <b>Training pipeline.</b> (1) Fine-tune a language model (LM) to learn to o
 "comment": "",
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
+"info": "",
 "summary": """VQAScore: alignment probability of "yes" answer from a VQA model (CLIP-FlanT5); GenAI-Bench: 1600 prompts for image generation evaluation.""",
 "details": 
 """
@@ -521,6 +544,7 @@ cap: <b>Training pipeline.</b> (1) Fine-tune a language model (LM) to learn to o
 "comment": "",
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
+"info": "",
 "summary": """Evaluate compositional video generation capability: consistent attribute, dynamic attribute, spatial relationships, motion, action, object interations, numeracy.""",
 "details": 
 """
@@ -554,6 +578,7 @@ cap: <b>Categories (left), evaluation methods (middle), and benchmarking model p
 "comment": "",
 "category": "Inference-Time Improvement",
 "jupyter_notes": "",
+"info": "",
 "summary": """It emploits <b>guidance gap between denosing and inversion</b> by iteratively performing them for improve image generation quality.""",
 "details": 
 """
@@ -575,6 +600,7 @@ cap: It is more <b>efficient & effective</b> than common denoising.
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """Introduction to VAE, DDPM, score-based generative model, guidance from a <b>unified generative perspective</b>.""",
 "details": 
 """
@@ -592,6 +618,7 @@ cap: It is more <b>efficient & effective</b> than common denoising.
 "comment": "",
 "category": "Inference-Time Improvement",
 "jupyter_notes": "",
+"info": "**",
 "summary": """Analysis on <b>inference-time scaling</b> of diffusion models for image generation from the axes of <b>verifiers</b> and <b>algorithms</b>.""",
 "details": 
 """
@@ -625,6 +652,7 @@ cap: <b>Random Search performs the best</b> because it has larger space that con
 "comment": "",
 "category": "Reinforcement Learning",
 "jupyter_notes": "Diffusion-DPO.ipynb",
+"info": "**",
 "summary": """It adapts <b>Direct Preference Optimization (DPO)</b> from large language models to diffusion models.""",
 "details": 
 """
@@ -646,6 +674,7 @@ cap: <b>Random Search performs the best</b> because it has larger space that con
 "comment": "",
 "category": "Acceleration",
 "jupyter_notes": "",
+"info": "**",
 "summary": """It performs distillation of diffusion models in <b>latent space</b> using <b>teacher-synthetic data</b> and optimizing adversarial loss with <b>teacher as discriminator</b>.""",
 "details": 
 """
@@ -673,6 +702,7 @@ cap: Use LoRA for DPO-traning, and apply <b>DPO-LoRA</b> after LADD training.
 "comment": "",
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
+"info": "",
 "summary": """An <b>object-focused</b> framework for image generation evaluation.""",
 "details": 
 """
@@ -694,6 +724,7 @@ cap: <b>Evaluation perspectives.</b>
 "comment": "",
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
+"info": "**",
 "summary": """It evaluates video generation from 16 dimensions within the perspectives of video quality and video-prompt consistency.""",
 "details": 
 """
@@ -730,6 +761,7 @@ cap: <b>Evaluation perspectives.</b>
 "comment": "",
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
+"info": "",
 "summary": """It uses 6000 prompts to evaluate model capability on compositional generation, including attribute binding, object relationship, complex compositions.""",
 "details": 
 """
@@ -754,6 +786,7 @@ cap: <b>Evaluation methods.</b> Use disentangled BLIP-VQA to evaluate attribute 
 "comment": "",
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
+"info": "**",
 "summary": """It proposes a reference-free metric mainly focusing on semantic alignment for image generation evaluation.""",
 "details": 
 """
@@ -777,6 +810,7 @@ cap: <b>Evaluation methods.</b> Use disentangled BLIP-VQA to evaluate attribute 
 "comment": "",
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
+"info": "**",
 "summary": """Pick-a-Pic: use a web app to collect user preferences; PickScore: train a CLIP-based model on preference data for image generation evaluation.""",
 "details": 
 """
@@ -794,6 +828,7 @@ cap: <b>Evaluation methods.</b> Use disentangled BLIP-VQA to evaluate attribute 
 "comment": "",
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
+"info": "**",
 "summary": """It trains BLIP on 137K human preference image pairs for image generation and use it to tune diffusion models by Reward Feedback Learning (ReFL).""",
 "details": 
 """
@@ -813,6 +848,7 @@ cap: <b>Training pipeline.</b> (1) Use DiffusionDB prompts to generate images; (
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """A vanilla, open-sourced AR model (0.5B) for 1K text-to-image generation, trained by pre-training, SFT, RL (GRPO), and acceleration.""",
 "details": 
 """
@@ -837,6 +873,7 @@ cap: <b>Training pipeline.</b> (1) Use DiffusionDB prompts to generate images; (
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """<b>ByteDance Seed Vision Team</b>'s text-to-image generation model, improving Seedream 2.0 by representation alignment, larger reward models.""",
 "details": 
 """
@@ -862,6 +899,7 @@ cap: Seedream3.0 achieves the <b>best ELO performance</b>.
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """<b>ByteDance Seaweed Team</b>'s text-to-video and image-to-video generation model (7B), trained on O(100M) videos using 665K H100 GPU hours.""",
 "details": 
 """
@@ -893,6 +931,7 @@ cap: <b>ELO performance</b> on image-to-video generation.
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """<b>Alibaba Tongyi Wanxiang</b>'s text-to-video and image-to-video generation models (14B) with DiT structure.""",
 "details": 
 """
@@ -917,6 +956,7 @@ cap: <b>I2V framework.</b> Image condition is incorporated through channel-conca
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """<b>StepFun</b>'s image-to-video generation model (30B), trained upon Step-Video-T2V, by incorporating conditions of motion and channel-concat image.""",
 "details": 
 """
@@ -936,6 +976,7 @@ cap: <b>Image condition:</b> channel-concat of <i>noise-augmented</i> image cond
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """<b>ByteDance Sead Vision Team</b> 's image generation model that employs MMDiT structure and has Chinese-English bilingual capability.""",
 "details": 
 """
@@ -965,6 +1006,7 @@ cap: <b>Model structure</b> is similar to MMDiT (SD3).
 "comment": "",
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
+"info": "",
 "summary": """It fine-tunes LLaVA-OneVision 7B for both <b>multimodal understanding & generation evaluation</b> by pairwise ranking & pointwise scoring.""",
 "details": """"""
 },
@@ -980,6 +1022,7 @@ cap: <b>Model structure</b> is similar to MMDiT (SD3).
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """<b>StepFun</b>'s open-sourced model (30B) with DiT structure for text-to-video generation.""",
 "details": 
 """
@@ -1007,6 +1050,7 @@ cap: <b>Pre-training stages.</b>
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """It improves VAR by applying <b>bitwise modeling</b> that makes vocabulary "infinity" to open up new posibilities of discrete text-to-image generation.""",
 "details": 
 """
@@ -1040,6 +1084,7 @@ cap: Using <b>2D RoPE</b> outperforms using APE.
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """<b>Tencent Hunyuan Team</b>'s open-sourced text-to-video and image-to-video generation model (13B) with diffusion transformer (FLUX structure).""",
 "details": 
 """
@@ -1057,6 +1102,7 @@ cap: Using <b>2D RoPE</b> outperforms using APE.
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """<b>Meta Movie Gen Team</b>'s diffusion transformer-based model (30B) for 16s / 1080p / 16fps video and synchronized audio generation.""",
 "details": 
 """
@@ -1074,6 +1120,7 @@ cap: Using <b>2D RoPE</b> outperforms using APE.
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """It shows auto-regressive models with <b>continuous tokens beat discrete tokens counterpart</b>, and finds some empirical observations during scaling.""",
 "details": 
 """
@@ -1101,6 +1148,7 @@ cap: Strong correlation between <b>validation loss</b> and <b>evaluation metrics
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """It proposes diffusion transformer (16B) with <b>Mixture-of-Experts</b> by inserting experts into DiT blocks for image generation.""",
 "details": 
 """
@@ -1124,6 +1172,7 @@ cap: <b>Structure.</b> It is built upon DiT and replaces MLP within Transformer 
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "**",
 "summary": """It shows that applying "next-token prediction" to <b>vanilla autoregressive language models</b> can achieve good  image generation performance.""",
 "details": 
 """
@@ -1146,6 +1195,7 @@ cap: <b>Structure.</b> It is built upon DiT and replaces MLP within Transformer 
 "comment": "NeurIPS 2024 best paper award.",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "**",
 "summary": """It improves auto-regressive image generation on image quality, inference speed, data efficiency, and scalability, by proposing <b>next-scale prediction</b>.""",
 "details": 
 """
@@ -1171,6 +1221,7 @@ cap: VAR shows good <b>scaling behavior</b>, and significantly outperforms DiT.
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "**",
 "summary": """It improves older SD by employing <b>larger UNet backbone</b>, <b>resolution conditions</b>, <b>two text encoders</b>, and a <b>refinement model</b>.""",
 "details": 
 """
@@ -1197,6 +1248,7 @@ cap: <b>SDXL Structure.</b>
 "comment": "",
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
+"info": "**",
 "summary": """It proposes HPD v2: 798K human preferences on 433K pairs of images; HPS v2: fine-tuned CLIP on HPD v2 for image generation evaluation.""",
 "details": 
 """
@@ -1216,6 +1268,7 @@ cap: <b>Training pipeline.</b> (1) Clean prompts from COCO captions and Diffusio
 "comment": "",
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
+"info": "",
 "summary": """It fine-tunes CLIP on annotated 98K SD generated images from 25K prompts for image generation evaluation.""",
 "details": 
 """
@@ -1235,6 +1288,7 @@ cap: <b>Train score model:</b> the same as CLIP except for the sample with the h
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "DiT.ipynb",
+"info": "**",
 "summary": """It replaces the conventional U-Net structure with <b>transformer</b> for scalable image generation, the timestep and condition are injected by adaLN-Zero.""",
 "details": 
 """
@@ -1254,6 +1308,7 @@ cap: <b>Model structure.</b> Use <i>adaLN-Zero</i> structure to inject timestep 
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "",
 "summary": """It proposes a transformer-based video generation model (9B) that performs <b>auto-regressive</b> frame  generation and recursive frame interpolatation""",
 "details": 
 """
@@ -1273,6 +1328,7 @@ cap: <b>Model structure & training.</b> CogVideo is trained upon CogView2. It ge
 "comment": "It significantly advances visual generation field by enabling efficient, high-quality synthesis via latent-space diffusion. It has over 20,000 citations (as of Jul 2025).",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "**",
 "summary": """It achieves efficient high-resolution image generation by applying diffusion and denoising processes in the <b>compressed VAE latent space</b>.""",
 "details": 
 """
@@ -1292,6 +1348,7 @@ cap: <b>Strucuture.</b> The conditions are injected by cross-attention.
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "CFG.ipynb",
+"info": "**",
 "summary": """It improves conditional image generation with <b>classifier-free condition guidance</b> by jointly training a conditional model and an unconditional model.""",
 "details": "",
 },
@@ -1307,6 +1364,7 @@ cap: <b>Strucuture.</b> The conditions are injected by cross-attention.
 "comment": "It shows that a simple, theoretically grounded denoising process can rival and even surpass GANs in sample quality, sparking an explosion of diffusion-based research and aplications across images, videos, audio, and beyond. It has over 20,000 citations (as of Jul 2025).",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "DDPM.ipynb",
+"info": "**",
 "summary": """It proposes <b>denoising diffusion probabilistic models</b> that iteratively denoises data from random noise.""",
 "details": 
 """
@@ -1328,6 +1386,7 @@ cap: <b>Training & sampling algorithms.</b>
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "**",
 "summary": """In order to generate large scale images efficiently, it improves VQ-VAE by employing a <b>hierarchical organization</b>.""",
 "details": 
 """
@@ -1355,6 +1414,7 @@ cap: <b>Training & sampling algorithms.</b>
 "comment": "",
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
+"info": "",
 "summary": """Extend FID for video generation evaluation by replacing 2D InceptionNet with pre-trained Inflated 3D convnet.""",
 "details": 
 """
@@ -1372,6 +1432,7 @@ cap: <b>Training & sampling algorithms.</b>
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
+"info": "**",
 "summary": """It proposes <b>vector quantised variational autoencoder</b> to generate discrete codes while the prior is also learned.""",
 "details": 
 """
@@ -1397,6 +1458,7 @@ cap: <b>Model structure.</b>
 "comment": "",
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
+"info": "**",
 "summary": """Calculate <b>Fréchet distance</b> between Gaussian distributions of InceptionNet features of real-world and synthetic data for image generation evaluation.""",
 "details": 
 """
@@ -1414,6 +1476,7 @@ cap: <b>Model structure.</b>
 "comment": "",
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
+"info": "**",
 "summary": """Calculate <b>KL divergence between p(y|x) and p(y)</b> that aims to minimize the entropy across predictions and maximize the entropy across predictions of classes for image generation evaluation.""",
 "details": 
 """
