@@ -56,7 +56,8 @@ def build_main_content_of_each_domain(domain):
     papers = pd.DataFrame(papers)
 
     ## Build table of contents
-    catalog = """<hr><p id='table' class="huger"><b>Table of contents:</b></p><ul>"""
+    catalog = """<hr><p id='table' class="huger"><b>Table of contents:</b></p>"""
+    catalog += """<p>(Papers are displayed chronologically, some important works are highlighted in <font color="#B04040">red</font>.)</p><ul>""" if domain["title"] != "Coding and Engineering" else "<ul>"
     for category in domain["categories"]:
         paper_choose = papers[papers["category"].str.contains(category)]
         ascending = True if domain["title"] != "Coding and Engineering" else False
@@ -65,7 +66,7 @@ def build_main_content_of_each_domain(domain):
         paper_info = paper_choose["info"].to_list()
         names = ""
         for i, name in enumerate(paper_names):
-            color = "#202020" if "**" in paper_info[i] else "#B0B0B0"
+            color = "#B04040" if "**" in paper_info[i] else "#404040"
             if i == len(paper_names) - 1:
                 names += f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name}</font></a>"""
             else:

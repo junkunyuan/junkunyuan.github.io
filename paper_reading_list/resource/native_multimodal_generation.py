@@ -73,7 +73,7 @@ cap: <b>Joint training vs. sequential training.</b>
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
-"info": "",
+"info": "**",
 "summary": """It trains a unified model (7B) on 2T multi-modal tokens by predicting discrete text tokens and diffusing continuous image tokens.""",
 "details": 
 """
@@ -111,7 +111,7 @@ cap: <b>Overall performance.</b>
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
-"info": "",
+"info": "**",
 "summary": """It proposes a unified autoregressive model trained end-to-end across text, vision, and audio.""",
 "details": 
 """
