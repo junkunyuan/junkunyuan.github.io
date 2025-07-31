@@ -26,6 +26,32 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "DanceGRPO: Unleashing GRPO on Visual Generation",
+"author": "Zeyue Xue, Jie Wu, Yu Gao, Fangyuan Kong, Lingting Zhu, Mengzhao Chen, Zhiheng Liu, Wei Liu, Qiushan Guo, Weilin Huang, Ping Luo",
+"organization": "ByteDance Seed, The University of Hong Kong",
+"date": "20250512",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2505.07818",
+"code_url": "https://github.com/XueZeyue/DanceGRPO",
+"name": "DanceGRPO",
+"comment": "",
+"category": "Reinforcement Learning",
+"jupyter_notes": "",
+"info": "",
+"summary": """It reformulates ODE sampling to <b>SDE</b>, and adapts <b>GRPO</b> to visual generation, validating on different models, tasks, and reward models.""",
+"details": 
+"""
+<ul>
+    <li> It <b>omits the KL regularization</b> of GRPO because it brings little benefits.
+    <li> It <b>assigns shared initialization noise</b> to samples from the same prompt to solve reward hacking and training instability.
+</ul>
+fig: fig1.png 550
+cap: <b>Algorithm.</b>
+fig: fig2.png 600
+cap: Left: Sampling top k and bottom k with <b>best-of-N</b> improves results. Right: Training with some <b>timestep subsets</b> is potential.
+""",
+},
+{
 "title": "BrushNet: A Plug-and-Play Image Inpainting Model with Decomposed Dual-Branch Diffusion",
 "author": "Xuan Ju, Xian Liu, Xintao Wang, Yuxuan Bian, Ying Shan, Qiang Xu ",
 "organization": "Tencent PCG ARC Lab, The Chinese University of Hong Kong",
@@ -45,10 +71,6 @@ fig: fig1.png 550
 cap: <b>Comparisons.</b> (a) lacks knowledge of mask boundaries. (b) struggles to obtain pure masked image features due to the text's influence. 
 fig: fig2.png 550
 cap: <b>Structure.</b> (1) Use VAE to process masked image to preserve original details. (2) Masked image, mask, noisy masked image are concatenated as the input. (3) Adopt hierarchical approach to incorporate UNet features. (4) Remove text cross-attention. (5) Use blurred blending.
-fig: fig3.png 500
-cap: <b>BrushBench results.</b>
-fig: fig4.png 500
-cap: <b>EditBench results.</b>
 """,
 },
 {
@@ -123,8 +145,6 @@ cap: <b>Preference Alignment methods for Image Generation.</b>
 "summary": """It proposes calibrated preference optimization by calculating average win-rate of each sample to other samples as the reward.""",
 "details": 
 """
-fig: fig1.png 550
-cap: <b>Result.</b> The improvement over DPO is not significant.
 """,
 },
 {
@@ -182,8 +202,8 @@ cap: <b>Result.</b> The improvement over DPO is not significant.
 "summary": """Instead of maximizing accumulative rewards, it only maximizes the reward of the latent variable that have a strong correlation with the data.""",
 "details": 
 """
-fig: fig1.png 600 fig2.png 300
-cap: It performs better on <b>win-rate comparisons</b> (left) and is more <b>trainig efficient</b> (right).
+fig: fig2.png 300
+cap: It is more <b>trainig efficient</b>.
 """,
 },
 {
@@ -208,8 +228,6 @@ cap: It performs better on <b>win-rate comparisons</b> (left) and is more <b>tra
 </ul>
 fig: fig1.png 450
 cap: <b>Structure.</b> Only the cross-attention module is optimized.
-fig: fig2.png 250
-cap: <b>Result.</b> Below is the upper bound.
 """,
 },
 {
@@ -228,8 +246,6 @@ cap: <b>Result.</b> Below is the upper bound.
 "summary": """It builds a metric for quality and semantic alignment evaluation, then uses the metric to build DPO data for preference alignment of video generation.""",
 "details": 
 """
-fig: fig1.png 300 fig2.png 600
-cap: DPO improves performance.
 """,
 },
 {
@@ -263,8 +279,6 @@ fig: fig4.png 350
 cap: <b>Progressive training.</b> Stage 1 requres larger reversing/sampling steps, e.g., 42. Stage 2 requries smaller, e.g., 40.
 fig: fig5.png 700
 cap: <b>Progressive training</b> is effective.
-fig: fig6.png 600
-cap: <b>Human evaluation.</b>
 """,
 },
 {
@@ -288,12 +302,6 @@ cap: <b>Human evaluation.</b>
     <li><b>Tokenizer:</b> Cosmos's visual tokenizer with spatiotemporal compression rates of 8x8x4; Chameleon's text encoder.
     <li> <b>Model size:</b> 0.5B, 1B, and 3B.
 </ul>
-fig: fig1.png 550
-cap: <b>Text-to-image</b> generation performance on <b>GenEval</b>.
-fig: fig2.png 650
-cap: <b>Image-to-video</b> generation performance on <b>VBench-I2V</b>.
-fig: fig3.png 650
-cap: <b>Text-to-video</b> generation performance on <b>VBench-T2V</b>.
 """,
 },
 {
@@ -333,10 +341,6 @@ fig: fig7.png 400
 cap: <b>Attributes for caption instruction.</b> Captioning by two stages: answer predefined attributes & final caption based on observed attributes. Based on the advantages of auto-regressive video generation, it applies fine-grained second-by-second descrptions for each video clip.
 fig: fig8.png 300
 cap: <b>Data configuration.</b>
-fig: fig9.png 450 fig10.png 450
-cap: <b>Win-rate</b> (left) and <b>VBench</b> (right) performance on image-to-video generation.
-fig: fig11.png 450
-cap: Performance on <b>Physics-IQ-Benchmark</b>.
 """,
 },
 {
@@ -883,8 +887,6 @@ cap: <b>Training pipeline.</b> (1) Use DiffusionDB prompts to generate images; (
     <li> Find <b>scaling property of VLM-based reward model</b>.
     <li> Other improvements: (1) mixed-resolution training; (2) <b>cross-modality RoPE</b>; (3) diverse aesthetic captions in SFT.
 </ul>
-fig: fig1.png 400
-cap: Seedream3.0 achieves the <b>best ELO performance</b>.
 """,
 },
 {
@@ -915,8 +917,6 @@ fig: fig5.png 250
 cap: <b>Figure 5.</b> The proposed <b>hybrid-stream</b> is better than dual-stream (MMDiT).
 fig: fig7.png 500
 cap: <b>4-stage pre-training.</b> (1) <b>Multi-task pre-training:</b> text-to-video, image-to-video, video-to-video. Input features and conditions are channel-concatenated, with a binary mask indicating the condition. Ratio of image-to-video is 20% during pre-training, and increases to 50%-75% detached for fine-tuning. (2) <b>SFT:</b> use 700K good videos and 50K top videos; The semantic alignment ability drops a little. (3) <b>RLHF:</b> lr=1e-7, beta=100, select win-lose from 4 candidates. (4) <b>Distillation:</b> trajectory segmented consistency distillation + CFG distillation + adversarial training, distill to 8 steps.
-fig: fig8.png 300
-cap: <b>ELO performance</b> on image-to-video generation.
 """,
 },
 {
@@ -986,10 +986,6 @@ cap: <b>Image condition:</b> channel-concat of <i>noise-augmented</i> image cond
     <li> <b>Inference stages:</b> user prompt => prompt engineering => text encoding => generation => refinement => output.
     <li> <b>User experience platform:</b> Doubao (豆包) & Dreamina (即梦).
 </ul>
-fig: fig1.png 700
-cap: <b>Overall performance</b> with English and Chinese prompts.
-fig: fig2.png 400
-cap: <b>Pre-training data system.</b>
 fig: fig3.png 600
 cap: <b>Model structure</b> is similar to MMDiT (SD3).
 """,

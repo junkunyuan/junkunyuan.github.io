@@ -59,8 +59,6 @@ fig: fig3.png 600
 cap: Performance on different <b>design choices</b>. CLIP + Flow Matching is a better choice.
 fig: fig4.png 600
 cap: <b>Joint training vs. sequential training.</b>
-fig: fig5.png 600 fig6.png 300
-cap: It performs the best on <b>image understanding</b> (left) & <b>image generation</b> (right) benchmarks.
 """,
 },
 {
