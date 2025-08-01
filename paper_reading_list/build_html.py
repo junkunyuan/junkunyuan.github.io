@@ -57,7 +57,7 @@ def build_main_content_of_each_domain(domain):
 
     ## Build table of contents
     catalog = """<hr><p id='table' class="huger"><b>Table of contents:</b></p>"""
-    catalog += """<p>(Papers are displayed chronologically, some important works are highlighted in <font color="#B04040">red</font>.)</p><ul>""" if domain["title"] != "Coding and Engineering" else "<ul>"
+    catalog += """<p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#B04040">red</font>.</p><ul>""" if domain["title"] != "Coding and Engineering" else "<ul>"
     for category in domain["categories"]:
         paper_choose = papers[papers["category"].str.contains(category)]
         ascending = True if domain["title"] != "Coding and Engineering" else False

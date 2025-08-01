@@ -26,6 +26,28 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "Follow-Your-Canvas: Higher-Resolution Video Outpainting with Extensive Content Generation",
+"author": "Qihua Chen, Yue Ma, Hongfa Wang, Junkun Yuan, Wenzhe Zhao, Qi Tian, Hongmei Wang, Shaobo Min, Qifeng Chen, Wei Liu",
+"organization": "Tencent, HKUST, USTC, Tsinghua University",
+"date": "20240902",
+"venue": "AAAI 2025",
+"pdf_url": "https://arxiv.org/pdf/2409.01055",
+"code_url": "https://github.com/mayuelala/FollowYourCanvas",
+"name": "Follow-Your-Canvas",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": """It enables <b>higher-resolution</b> video outpainting with <b>extensive content</b> generation through sliding window and source video layout injection.""",
+"details": 
+"""
+fig: fig1.png 600
+cap: <b>Training framework.</b> An anchor window and a target window are randomly sampled, mimicking the "source video" and "region to perform outpaint" for inference. The anchor window is injected into the model through a layout encoder, as well as a relative region embedding calculated by the positional relation between the anchor window and the target window, aligning generated layout of the target window with the anchor window.
+fig: fig2.png 600
+cap: <b>Inference framework.</b> The given source video is covered by N spatial windows. During each denoising step t, outpainting is performed within each window in parallel on separate GPUs to accelerate inference. The windows are then merged through Gaussian weights to get outcome at step t-1. These windows may cover layer upon layer, allowing outpainting any videos to a higher resolution without being limited by GPU memory.
+""",
+},
+{
 "title": "DanceGRPO: Unleashing GRPO on Visual Generation",
 "author": "Zeyue Xue, Jie Wu, Yu Gao, Fangyuan Kong, Lingting Zhu, Mengzhao Chen, Zhiheng Liu, Wei Liu, Qiushan Guo, Weilin Huang, Ping Luo",
 "organization": "ByteDance Seed, The University of Hong Kong",
@@ -833,11 +855,35 @@ cap: <b>Evaluation methods.</b> Use disentangled BLIP-VQA to evaluate attribute 
 "category": "Datasets & Evaluation",
 "jupyter_notes": "",
 "info": "**",
-"summary": """It trains BLIP on 137K human preference image pairs for image generation and use it to tune diffusion models by Reward Feedback Learning (ReFL).""",
+"summary": """It trains BLIP on 137K human preference image pairs for preference evaluation and use it to tune models by Reward Feedback Learning (ReFL).""",
 "details": 
 """
 fig: fig1.png 600
 cap: <b>Training pipeline.</b> (1) Use DiffusionDB prompts to generate images; (2) Rank; (3) Train model on ranking data; (4) Tune model via ReFL.
+fig: fig2.png 300
+cap: <b>ReFL algorithm.</b>
+""",
+},
+{
+"title": "ImageReward: Learning and Evaluating Human Preferences for Text-to-Image Generation",
+"author": "Jiazheng Xu, Xiao Liu, Yuchen Wu, Yuxuan Tong, Qinkai Li, Ming Ding, Jie Tang, Yuxiao Dong",
+"organization": "Tsinghua University, Zhipu AI, Beijing University of Posts and Telecommunications",
+"date": "20230412",
+"venue": "NeurIPS 2023",
+"pdf_url": "https://arxiv.org/pdf/2304.05977",
+"code_url": "https://github.com/THUDM/ImageReward/",
+"name": "ReFL",
+"comment": "",
+"category": "Reinforcement Learning",
+"jupyter_notes": "",
+"info": "**",
+"summary": """It trains BLIP on 137K human preference image pairs for preference evaluation and use it to tune models by Reward Feedback Learning (ReFL).""",
+"details": 
+"""
+fig: fig1.png 600
+cap: <b>Training pipeline.</b> (1) Use DiffusionDB prompts to generate images; (2) Rank; (3) Train model on ranking data; (4) Tune model via ReFL.
+fig: fig2.png 300
+cap: <b>ReFL algorithm.</b>
 """,
 },
 {
