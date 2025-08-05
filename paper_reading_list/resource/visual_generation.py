@@ -26,6 +26,36 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "Qwen-Image Technical Report",
+"author": "Chenfei Wu, Jiahao Li, Jingren Zhou, Junyang Lin, Kaiyuan Gao, Kun Yan, Sheng-ming Yin, Shuai Bai, Xiao Xu, Yilei Chen, Yuxiang Chen, Zecheng Tang, Zekai Zhang, Zhengyi Wang, An Yang, Bowen Yu, Chen Cheng, Dayiheng Liu, Deqing Li, Hang Zhang, Hao Meng, Hu Wei, Jingyuan Ni, Kai Chen, Kuan Cao, Liang Peng, Lin Qu, Minggang Wu, Peng Wang, Shuting Yu, Tingkun Wen, Wensen Feng, Xiaoxiao Xu, Yi Wang, Yichang Zhang, Yongqiang Zhu, Yujia Wu, Yuxuan Cai, Zenan Liu",
+"organization": "Qwen Team",
+"date": "20250804",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2508.02324",
+"code_url": "https://github.com/QwenLM/Qwen-Image",
+"name": "Qwen-Image",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"info": "",
+"summary": """<b>Alibaba Qwen Team</b>'s image generation foundation model, excelling in <b>complex text rendering</b> and <b>precise image editing</b>.""",
+"details": 
+"""
+<ul>
+    <li> <b>Structure.</b> It employs the standard <b>MMDiT</b> structure with <b>Qwen2.5 VL</b> as the text encoder.
+    <li> <b>VAE.</b> It finetunes an <b>image decoder</b> and a <b>video decoder</b> upon <b>Wan-2.1-VAE</b> by optimizing only a reconstruction loss and a perceptual loss.
+    <li> <b>Positional embedding.</b> It introduces Multimodal Scalable RoPE (MSRoPE), a <b>diagonal</b> position encoding.
+    <li> <b>Data balance.</b> Nature: 55%. Design: 27%. People: 13%. Synthetic: 5%.
+    <li> <b>Data filtering.</b> <b>Stage 1.</b> Initial pre-training. 256p. Broken files + resolution + deduplication + NSFW. <b>Stage 2.</b> Quality improvement. Rotation + brightness + saturation + entropy + texture. <b>Stage 3.</b> Alignment improvement. Chinese CLIP + SigLIP 2 + token length. <b>Stage 4.</b> Text-rendering enhancement. Intense filter + small character filter. <b>Stage 5.</b> High-resolution refinement. 640p. Image quality + resolution + aesthetic + abnormal element. <b>Stage 6.</b> Category balance and portrait augmentation. <b>Stage 7.</b> Balanced multi-scale training. 640p and 1328p.
+    <li> <b>Data synthesis.</b> (1) Pure rendering in simple background. (2) Compositional rendering in contextual scenes. (3) Complex rendering in structured frames.
+    <li> <b>RL.</b> DPO + GRPO.
+    <li> <b>Editing.</b> Channel concatenation of the original image and the edited image. 
+</ul>
+fig: fig1.png 350
+cap: <b>Structure configuration.</b>
+""",
+},
+{
 "title": "D-Fusion: Direct Preference Optimization for Aligning Diffusion Models with Visually Consistent Samples",
 "author": "Zijing Hu, Fengda Zhang, Kun Kuang",
 "organization": "Zhejiang University, Nanyang Technological University",
@@ -918,7 +948,7 @@ cap: <b>ReFL algorithm.</b>
 "comment": "",
 "category": "Reinforcement Learning",
 "jupyter_notes": "",
-"info": "**",
+"info": "",
 "summary": """It trains BLIP on 137K human preference image pairs for preference evaluation and use it to tune models by Reward Feedback Learning (ReFL).""",
 "details": 
 """
@@ -1256,7 +1286,7 @@ cap: <b>Structure.</b> It is built upon DiT and replaces MLP within Transformer 
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
-"info": "**",
+"info": "",
 "summary": """It shows that applying "next-token prediction" to <b>vanilla autoregressive language models</b> can achieve good  image generation performance.""",
 "details": 
 """
