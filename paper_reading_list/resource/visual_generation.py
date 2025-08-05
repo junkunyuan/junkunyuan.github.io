@@ -2,7 +2,7 @@ VISUAL_GENERATION = dict()
 VISUAL_GENERATION["file"] = "visual_generation.html"
 VISUAL_GENERATION["title"] = "Visual Generation"
 VISUAL_GENERATION["description"] = "Generate visual signals (e.g., images, video, and 3D)."
-VISUAL_GENERATION["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Inference-Time Improvement", "Acceleration", "Datasets & Evaluation", "Editing & Inpainting & Outpainting"]
+VISUAL_GENERATION["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Inference-Time Improvement", "Acceleration", "Datasets & Evaluation", "Editing & Inpainting & Outpainting", "Personalization"]
 VISUAL_GENERATION["papers"] = [
 # {
 # "title": "",
@@ -25,6 +25,48 @@ VISUAL_GENERATION["papers"] = [
 # </ul>
 # """,
 # },
+{
+"title": "D-Fusion: Direct Preference Optimization for Aligning Diffusion Models with Visually Consistent Samples",
+"author": "Zijing Hu, Fengda Zhang, Kun Kuang",
+"organization": "Zhejiang University, Nanyang Technological University",
+"date": "20250528",
+"venue": "ICML 2025",
+"pdf_url": "https://arxiv.org/pdf/2505.22002",
+"code_url": "https://github.com/hu-zijing/D-Fusion",
+"name": "D-Fusion",
+"comment": "",
+"category": "Reinforcement Learning",
+"jupyter_notes": "",
+"info": "",
+"summary": """It constructs new winning samples that are <b>visually consistent</b> with losing samples while aligning with winning samples in <b>prompt-following</b>.""",
+"details": 
+"""
+<ul>
+    <li> <b>Method details.</b> (1) It extracts a mask by <b>averaging cross-attention maps</b> across all heads and blocks in the first up-sampling layer. (2) It <b>binarizes the mask</b> by applying a fixed threshold, generating segmentation of attention, i.e., the importance map for the prompt. (3) It <b>fuses the self-attention key and value</b> by applying the segmentation mask to winning samples and losing samples.
+</ul>
+""",
+},
+{
+"title": "Follow-Your-Emoji: Fine-Controllable and Expressive Freestyle Portrait Animation",
+"author": "Yue Ma, Hongyu Liu, Hongfa Wang, Heng Pan, Yingqing He, Junkun Yuan, Ailing Zeng, Chengfei Cai, Heung-Yeung Shum, Wei Liu, Qifeng Chen",
+"organization": "",
+"date": "20240604",
+"venue": "SIGGRAPH-Asia 2024",
+"pdf_url": "https://arxiv.org/pdf/2406.01900",
+"code_url": "https://github.com/mayuelala/FollowYourEmoji",
+"name": "Follow-Your-Emoji",
+"comment": "",
+"category": "Personalization",
+"jupyter_notes": "",
+"info": "",
+"summary": """""",
+"details": 
+"""
+<ul>
+    <li>
+</ul>
+""",
+},
 {
 "title": "Follow-Your-Canvas: Higher-Resolution Video Outpainting with Extensive Content Generation",
 "author": "Qihua Chen, Yue Ma, Hongfa Wang, Junkun Yuan, Wenzhe Zhao, Qi Tian, Hongmei Wang, Shaobo Min, Qifeng Chen, Wei Liu",
