@@ -19,7 +19,7 @@
 <p class="huger"><b> Coding and Engineering.</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on August 06, 2025 at 16:32 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on August 06, 2025 at 17:03 (UTC+8).</font></p>
 <hr><p id='table' class="huger"><b>Table of contents:</b></p><ul><li><a class="no_dec larger" id="torch & torchvision" href="#torch & torchvision-table"><b>torch & torchvision</b></a></li><p><a class="no_dec" href="#data transformstorch & torchvision"><font color=#404040>data transforms</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#data loadertorch & torchvision"><font color=#404040>data loader</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#moduletorch & torchvision"><font color=#404040>module</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#optimizertorch & torchvision"><font color=#404040>optimizer</font></a></p></ul><h2 id="torch & torchvision-table"><a class="no_dec" href="#torch & torchvision">torch & torchvision</a></h2>
             <p class="little_split" id='data transformstorch & torchvision'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
@@ -27,7 +27,7 @@
             <p class="paper_title" onclick="toggleTable('data transforms-torch & torchvision-details')"><i>Data Transforms</i></p>
             
             
-            <p class="paper_detail"><b> data transforms</b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/vision/stable/transforms.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
+            <p class="paper_detail"><b> <font color=#404040>data transforms</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/vision/stable/transforms.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
             
             
             <div id='data transforms-torch & torchvision-details' class="info_detail">
@@ -104,7 +104,7 @@ image_trans = trans(image)  # Tensor => Tensor
             <p class="paper_title" onclick="toggleTable('data loader-torch & torchvision-details')"><i>Data Loader</i></p>
             
             
-            <p class="paper_detail"><b> data loader</b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader">docs</a> &nbsp; <font color=#D0D0D0></font></p>
+            <p class="paper_detail"><b> <font color=#404040>data loader</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader">docs</a> &nbsp; <font color=#D0D0D0></font></p>
             
             
             <div id='data loader-torch & torchvision-details' class="info_detail">
@@ -158,7 +158,7 @@ data_loader = DataLoader(
             <p class="paper_title" onclick="toggleTable('module-torch & torchvision-details')"><i>Module</i></p>
             
             
-            <p class="paper_detail"><b> module</b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/nn.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
+            <p class="paper_detail"><b> <font color=#404040>module</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/nn.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
             
             
             <div id='module-torch & torchvision-details' class="info_detail">
@@ -239,7 +239,7 @@ y = conv2d(x)  # Tensor => Tensor
             <p class="paper_title" onclick="toggleTable('optimizer-torch & torchvision-details')"><i>Optimizer</i></p>
             
             
-            <p class="paper_detail"><b> optimizer</b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/optim.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
+            <p class="paper_detail"><b> <font color=#404040>optimizer</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/optim.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
             
             
             <div id='optimizer-torch & torchvision-details' class="info_detail">
@@ -298,32 +298,32 @@ adam_optim = AdamW(
             }
         }
     </script>
-
-    <button id="backToTop" title="back to top">↑</button>
-    <script>
-        const button = document.getElementById("backToTop");
-        window.addEventListener("scroll", () => {
-        if (document.documentElement.scrollTop > 300) {
-            button.style.display = "block";
-        } else {
-            button.style.display = "none";
-        }
-        });
-
-        function updateButtonPosition() {
-        const bodyRect = document.body.getBoundingClientRect();
-        const windowWidth = window.innerWidth;
-        const rightOffset = Math.max((windowWidth - bodyRect.width) / 2, 10);
-        button.style.right = rightOffset + "px";
-        }
-
-        window.addEventListener("resize", updateButtonPosition);
-        window.addEventListener("load", updateButtonPosition);
-
-        button.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
     
+<button id="backToTop" title="back to top">↑</button>
+<script>
+    const button = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+    if (document.documentElement.scrollTop > 300) {
+        button.style.display = "block";
+    } else {
+        button.style.display = "none";
+    }
+    });
+
+    function updateButtonPosition() {
+    const bodyRect = document.body.getBoundingClientRect();
+    const windowWidth = window.innerWidth;
+    const rightOffset = Math.max((windowWidth - bodyRect.width) / 2, 10);
+    button.style.right = rightOffset + "px";
+    }
+
+    window.addEventListener("resize", updateButtonPosition);
+    window.addEventListener("load", updateButtonPosition);
+
+    button.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+
 </body>
 </html>

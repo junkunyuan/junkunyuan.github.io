@@ -70,7 +70,34 @@ def convert_fig_cap_to_figure(text, name):
         i += 1
     result_content = "\n".join(result)
 
-    # if "MiniGPT-v2" in result_content:
-    #     import pdb; pdb.set_trace()
-
     return result_content
+
+
+TOP_BUTTON = \
+"""
+<button id="backToTop" title="back to top">↑</button>
+<script>
+    const button = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+    if (document.documentElement.scrollTop > 300) {
+        button.style.display = "block";
+    } else {
+        button.style.display = "none";
+    }
+    });
+
+    function updateButtonPosition() {
+    const bodyRect = document.body.getBoundingClientRect();
+    const windowWidth = window.innerWidth;
+    const rightOffset = Math.max((windowWidth - bodyRect.width) / 2, 10);
+    button.style.right = rightOffset + "px";
+    }
+
+    window.addEventListener("resize", updateButtonPosition);
+    window.addEventListener("load", updateButtonPosition);
+
+    button.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+"""

@@ -1,9 +1,22 @@
 import pandas as pd
 from tqdm import tqdm
 from datetime import datetime
+from resource.utils import get_venue_all, border_color_generator, convert_fig_cap_to_figure, TOP_BUTTON
+
 from resource.main_content import MAIN_CONTENT
-from resource import DOMAINS
-from resource.utils import get_venue_all, border_color_generator, convert_fig_cap_to_figure
+from resource.visual_understanding import VISUAL_UNDERSTANDING
+from resource.visual_generation import VISUAL_GENERATION
+from resource.multimodal_understanding import MULTIMODAL_UNDERSTANDING
+from resource.native_multimodal_generation import NATIVE_MULTIMODAL_GENERATION
+from resource.coding import CODING
+
+DOMAINS = [
+    CODING,
+    # VISUAL_UNDERSTANDING,
+    VISUAL_GENERATION,
+    MULTIMODAL_UNDERSTANDING,
+    NATIVE_MULTIMODAL_GENERATION
+]
 
 time_now = datetime.now().strftime('%B %d, %Y at %H:%M')
 
@@ -86,6 +99,8 @@ def build_main_content_of_each_domain(domain):
         paper_choose = paper_choose.sort_values(by="date", ascending=False)
         content_cate = f"""<h2 id="{category}-table"><a class="no_dec" href="#{category}">{category}</a></h2>"""
         for _, paper in paper_choose.iterrows():
+            color = "#B04040" if "**" in paper["info"] else "#404040"
+
             code = f"""&nbsp;&nbsp;|&nbsp;&nbsp; <a href="{paper['code_url']}">code</a>""" if len(paper['code_url']) > 0 else ""
 
             venue = f"""<a href="{paper["pdf_url"]}">{paper["venue"]}</a>"""
@@ -119,7 +134,7 @@ def build_main_content_of_each_domain(domain):
             <p class="paper_title" onclick="toggleTable('{paper["name"]}-{category}-details')"><i>{paper["title"]}</i></p>
             {author}
             {organization}
-            <p class="paper_detail"><b>{date} {paper["name"]}</b> {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#D0D0D0>{venue_all}</font></p>
+            <p class="paper_detail"><b>{date} <font color={color}>{paper["name"]}</font></b> {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#D0D0D0>{venue_all}</font></p>
             {comment}
             {debug}
             <div id='{paper["name"]}-{category}-details' class="info_detail">
@@ -155,33 +170,8 @@ def build_main_content_of_each_domain(domain):
             }
         }
     </script>
-
-    <button id="backToTop" title="back to top">↑</button>
-    <script>
-        const button = document.getElementById("backToTop");
-        window.addEventListener("scroll", () => {
-        if (document.documentElement.scrollTop > 300) {
-            button.style.display = "block";
-        } else {
-            button.style.display = "none";
-        }
-        });
-
-        function updateButtonPosition() {
-        const bodyRect = document.body.getBoundingClientRect();
-        const windowWidth = window.innerWidth;
-        const rightOffset = Math.max((windowWidth - bodyRect.width) / 2, 10);
-        button.style.right = rightOffset + "px";
-        }
-
-        window.addEventListener("resize", updateButtonPosition);
-        window.addEventListener("load", updateButtonPosition);
-
-        button.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
     """
+    content_all_domain += TOP_BUTTON
     return catalog + content_all_domain
 
 if __name__ == "__main__":
