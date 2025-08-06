@@ -27,6 +27,41 @@ CODING["papers"] = [
 # """,
 # },
 {
+"title": "huggingface",
+"author": "",
+"organization": "",
+"date": "20230530",
+"venue": "docs",
+"pdf_url": "https://huggingface.co/docs",
+"code_url": "",
+"name": "huggingface",
+"comment": "",
+"category": "torch & torchvision",
+"jupyter_notes": "",
+"info": "",
+"summary": """It includes tools from huggingface: <a href="https://huggingface.co/docs/huggingface_hub/main/en/package_reference/file_download#huggingface_hub.snapshot_download">snapshot_download</a>""",
+"details": 
+"""
+<pre>
+<code class="language-python">
+from huggingface_hub import snapshot_download
+
+## --------------------------------------------------------------------------------
+## Download checkpoints from huggingface
+## --------------------------------------------------------------------------------
+repo_id = /  # *** str. A user name and a repo name, e.g., "Qwen/Qwen-VL-Chat"
+repo_type = None  # *** str. "dataset", "space", or "model"
+local_dir = None  # str or Path. If provided, directory to place the downloaded files
+token = None  # str, bool. User token, e.g., "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"
+max_workers = 8  # int. Number of concurrent threads to download files
+# ...
+
+snapshot_download(repo_id, repo_type, local_dir, token, max_workers)
+</code>
+</pre>
+""",
+},
+{
 "title": "Module",
 "author": "",
 "organization": "",
