@@ -51,7 +51,7 @@ from huggingface_hub import snapshot_download
 ## --------------------------------------------------------------------------------
 repo_id = /  # *** str. A user name and a repo name, e.g., "Qwen/Qwen-VL-Chat"
 repo_type = None  # *** str. "dataset", "space", or "model"
-local_dir = None  # str or Path. If provided, directory to place the downloaded files
+local_dir = None  # *** str or Path. If provided, directory to place the downloaded files
 token = None  # str, bool. User token, e.g., "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"
 max_workers = 8  # int. Number of concurrent threads to download files
 # ...
@@ -98,7 +98,6 @@ bias = True  # bool. If True, add a learnable bias to the output
 padding_mode = "zeros"  # str. "zeros", "reflect", "replicate", or "circular"
 device = None # str, torch.device. 
 dtype = None # torch.dtype.
-
 ## Weight. Shape: [out_channels, in_channels/groups, k_size[0], k_size[1]]
 ## Bias. Shape: [out_channels,]
 conv2d = Conv2d(
@@ -125,7 +124,6 @@ bias = True  # bool. If True, add a learnable bias to the output
 padding_mode = "zeros"  # str. "zeros", "reflect", "replicate", or "circular"
 device = None # str, torch.device. 
 dtype = None # torch.dtype.
-
 ## Weight. Shape: [out_channels, in_channels/groups, k_size[0], k_size[1], k_size[2]]
 ## Bias. Shape: [out_channels,]
 conv2d = Conv2d(
@@ -168,19 +166,9 @@ from torch.optim import AdamW
 params = /  # *** iterable. Parameters / named_parameters / parameter groups to optimize
 lr = 0.001  # *** float, Tensor. Learning rate
 betas = (0.9, 0.999)  # tuple. For computing running averages of gradients & squares
-eps = 1e-08  # float. Added to denominator to improve numerical stability
 weight_decay = 0.01  # float. Weight decay coefficient
-amsgrad = False # bool. Whether to use AMSGrad 
-maximize = False  # bool. Maximize the objective with respect to params, not minimize
-foreach = None  # bool. Whether foreach implementation of optimizer is used.
-capturable = False  # bool. Pass True can impair ungraphed performance
-differentiable = False  # bool. Whether has gradient
-fused = None  # bool. Whether use the fused implementation
-
-adam_optim = AdamW(
-    params, lr, betas, eps, weight_decay, amsgrad, maximize, 
-    foreach, capturable, differentiable, fused
-)
+# ...
+adam_optim = AdamW(params, lr, betas, weight_decay)
 ## --------------------------------------------------------------------------------
 </code>
 </pre>
@@ -214,24 +202,16 @@ dataset = /  # *** Dataset
 batch_size = 1  # *** int. Number of samples per batch.
 shuffle = False  # *** bool. If True, have the data shuffled at every epoch
 sampler = None  # Sampler or Iterable. Define how to draw samples
-batch_sampler = None  # Sampler or Iterable. customize sampling by giving indices
 num_workers = 0  # *** int. Number of subprocesses to use for data loading
-collate_fn = None  # Callable. Merge a list of samples to form a batch of tensors.
-pin_memory = False  # *** bool. If True, copy Tensors into CUDA pinned memory.
+collate_fn = None  # Callable. Merge a list of samples to form a batch of tensors
+pin_memory = False  # *** bool. If True, copy Tensors into CUDA pinned memory
 drop_last = False  # *** bool. If True, drop the last incomplete batch
-timeout = 0  # numeric. If positive, set timeout for collecting a batch from workers.
-worker_init_fn = None  # Callable. If not None, it will be called (worker id as input) 
-multiprocessing_context = None  # str or multiprocessing.context.BaseContext.
-generator = None  # torch.Generator. If not None, it will be used by sampler & workers
+timeout = 0  # numeric. If positive, set timeout for collecting a batch from workers
 prefetch_factor = None  # int. Default = None if num_workers == 0 else 2
-persistent_workers = False  # bool. If True, workers will not shut down after an epoch.
-pin_memory_device = ""  # str. The device to pin memory
-in_order = True  # bool. If False, it will not enforce batches to return in order
-
+# ...
 data_loader = DataLoader(
-    dataset, batch_size, shuffle, sampler, batch_sampler, num_workers, collate_fn, 
-    pin_memory, drop_last, timeout, worker_init_fn, multiprocessing_context, 
-    generator, prefetch_factor, persistent_workers, pin_memory_device, in_order
+    dataset, batch_size, shuffle, sampler, num_workers, collate_fn, 
+    pin_memory, drop_last, timeout, prefetch_factor
 )
 ## --------------------------------------------------------------------------------
 </code>
@@ -266,7 +246,6 @@ size = /  # *** sequence or int. For example (512, 768)
 interpolation = BILINEAR  # InterpolationMode
 max_size = None  # int. Maximum allowed for the longer edge, supported if `size` is int
 antialias = True  # bool. Apply antialiasing, only under bilinear or bicubic modes
-
 trans = transforms.Resize(size, interpolation, max_size, antialias)
 image_trans = trans(image)  # PIL Image => PIL Image or Tensor => Tensor
 ## --------------------------------------------------------------------------------
@@ -275,7 +254,6 @@ image_trans = trans(image)  # PIL Image => PIL Image or Tensor => Tensor
 ## Geometry: RandomHorizontalFlip
 ## --------------------------------------------------------------------------------
 p = 0.5  # *** float. Probability to flip image
-
 trans = <b>transforms.RandomHorizontalFlip</b>(p)
 image_trans = trans(image)  # PIL Image => PIL Image or Tensor => Tensor
 ## --------------------------------------------------------------------------------
@@ -294,7 +272,6 @@ image_trans = trans(image)  # PIL Image / ndarray => Tensor
 ## Composition: Compose
 ## --------------------------------------------------------------------------------
 transforms = /  # *** list of Transform objects
-
 trans = <b>transforms.Compose</b>(transforms)
 image_trans = trans(image)  # PIL Image / ndarray / Tensor => Tensor
 ## --------------------------------------------------------------------------------
@@ -305,7 +282,6 @@ image_trans = trans(image)  # PIL Image / ndarray / Tensor => Tensor
 mean = /  # *** sequence. Means for each channel.
 std = /  # *** sequence. Standard deviations for each channel.
 inplace = False  # bool. Bool to make this operation in-place.
-
 trans = <b>transforms.Normalize</b>(mean, std, inplace)
 image_trans = trans(image)  # Tensor => Tensor
 ## --------------------------------------------------------------------------------
