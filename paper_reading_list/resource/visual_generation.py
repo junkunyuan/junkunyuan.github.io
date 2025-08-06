@@ -17,7 +17,9 @@ VISUAL_GENERATION["papers"] = [
 # "category": "",
 # "jupyter_notes": "",
 # "info": "",
-# "summary": """""",
+# "summary": 
+# """
+# """,
 # "details": 
 # """
 # <ul>
@@ -25,6 +27,39 @@ VISUAL_GENERATION["papers"] = [
 # </ul>
 # """,
 # },
+{
+"title": "Genie: Generative Interactive Environments",
+"author": "Jake Bruce, Michael Dennis, Ashley Edwards, Jack Parker-Holder, Yuge Shi, Edward Hughes, Matthew Lai, Aditi Mavalankar, Richie Steigerwald, Chris Apps, Yusuf Aytar, Sarah Bechtle, Feryal Behbahani, Stephanie Chan, Nicolas Heess, Lucy Gonzalez, Simon Osindero, Sherjil Ozair, Scott Reed, Jingwei Zhang, Konrad Zolna, Jeff Clune, Nando de Freitas, Satinder Singh, Tim Rocktäschel",
+"organization": "Google DeepMind, University of British Columbia",
+"date": "20240223",
+"venue": "",
+"pdf_url": "ICML 2024",
+"code_url": "",
+"name": "Genie",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"info": "**",
+"summary": 
+"""
+It proposes a foundation world model (11B), comprising of a <b>video tokenizer</b>, an <b>autoregressive dynamics world</b>, and a <b>latent action model</b>. It is trained on 200K hours of Internet <b>gaming videos</b> without action or text labels, is controllable on frame-by-frame via a learned latent action space.
+""",
+"details": 
+"""
+<ul>
+    <li> <b>Data.</b> It is trained on 200K hours of Internet gaming videos without action or text annotations.
+    <li> <b>Training pipeline.</b> (1) Train the video tokenizer. (2) Co-train the latent action model and the dynamics model.
+</ul>
+fig: fig1.png 550
+cap: <b>Structure.</b>
+fig: fig2.png 350
+cap: <b>Latent action model</b> infers the latent action between each pair of frames. It is a VQ-VAE with discrete set of codes equal the possible actions. The <b>encoder</b> takes an previous frames and the next frame and outputs latent actions. The <b>decoder</b> takes all previous frames and latent actions and predicts the next frame. <b>Inference:</b> the entire LAM is discarded apart from the VQ codebook, and is replaced with user actions.
+fig: fig3.png 350
+cap: <b>Video tokenizer</b> converts each frame of raw video into discrete tokens.
+fig: fig4.png 200
+cap: <b>Dynamics model</b> takes latent action and past frame tokens and predicts the next frame. It is a decoder-only MaskGIT transformer.
+""",
+},
 {
 "title": "Qwen-Image Technical Report",
 "author": "Chenfei Wu, Jiahao Li, Jingren Zhou, Junyang Lin, Kaiyuan Gao, Kun Yan, Sheng-ming Yin, Shuai Bai, Xiao Xu, Yilei Chen, Yuxiang Chen, Zecheng Tang, Zekai Zhang, Zhengyi Wang, An Yang, Bowen Yu, Chen Cheng, Dayiheng Liu, Deqing Li, Hang Zhang, Hao Meng, Hu Wei, Jingyuan Ni, Kai Chen, Kuan Cao, Liang Peng, Lin Qu, Minggang Wu, Peng Wang, Shuting Yu, Tingkun Wen, Wensen Feng, Xiaoxiao Xu, Yi Wang, Yichang Zhang, Yongqiang Zhu, Yujia Wu, Yuxuan Cai, Zenan Liu",
