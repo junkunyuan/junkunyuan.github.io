@@ -179,7 +179,7 @@ bias = True  # *** bool. If set to False, the layer will not learn an additive b
 device = None  # torch.device or int 
 dtype = None  # torch.dtype
 ## [..., H_in] => [..., H_out]
-linear = Linear(in_features, out_features, bias, device, dtype)  # Tensor => Tensor
+linear = Linear(in_features, out_features, bias, device, dtype)
 ## --------------------------------------------------------------------------------
 
 ## --------------------------------------------------------------------------------
@@ -205,7 +205,7 @@ conv2d = nn.Conv2d(
 ## [B, C, H_in, W_in] => [B, C, H_out, W_out]
 ## H_out = [(H_in + 2*padding[0] - dilation[0]*(kernel[0]-1)-1) / stride[0] + 1]
 ## W_out = [(W_in + 2*padding[1] - dilation[1]*(kernel[1]-1)-1) / stride[1] + 1]
-y = conv2d(x)  # Tensor => Tensor
+y = conv2d(x)
 ## --------------------------------------------------------------------------------
 
 ## --------------------------------------------------------------------------------
@@ -224,7 +224,7 @@ device = None  # torch.device or int
 dtype = None  # torch.dtype
 ## Weight. Shape: [out_channels, in_channels/groups, k_size[0], k_size[1], k_size[2]]
 ## Bias. Shape: [out_channels,]
-conv2d = nn.Conv2d(
+conv3d = nn.Conv3d(
     in_channels, out_channels, kernel_size, stride, padding, dilation, groups, 
     bias, padding_mode, device, dtype
 )
@@ -232,7 +232,7 @@ conv2d = nn.Conv2d(
 ## D_out = [(D_in + 2*padding[0] - dilation[0]*(kernel[0]-1)-1) / stride[0] + 1]
 ## H_out = [(H_in + 2*padding[1] - dilation[1]*(kernel[1]-1)-1) / stride[1] + 1]
 ## W_out = [(W_in + 2*padding[2] - dilation[2]*(kernel[2]-1)-2) / stride[2] + 1]
-y = conv2d(x)  # Tensor => Tensor
+y = conv3d(x)
 ## --------------------------------------------------------------------------------
 
 ## --------------------------------------------------------------------------------
@@ -367,7 +367,7 @@ arange = torch.arange(start, end, step)
 ## --------------------------------------------------------------------------------
 size = /  # *** tuple of int. The shape of output
 ## Generate random numbers from a uniform distribution [0, 1)
-y = torch.rand(*size)  # => Tensor
+y = torch.rand(*size)
 ## --------------------------------------------------------------------------------
 
 ## --------------------------------------------------------------------------------
@@ -383,7 +383,7 @@ size = x.shape  #  => torch.Size
 ## --------------------------------------------------------------------------------
 shape = /  # tuple of int. The new shape. Note: a single dimension could be -1
 ## Note: it could be either copying or viewing
-y = x.reshape(shape)  # Tensor => Tensor
+y = x.reshape(shape)
 ## --------------------------------------------------------------------------------
 
 ## --------------------------------------------------------------------------------
@@ -392,7 +392,7 @@ y = x.reshape(shape)  # Tensor => Tensor
 start_dim = 0  # *** int. The first dimension to flatten
 end_dim = -1  # *** int. The last dimension to flatten
 ## Note: it could be either copying or viewing
-y = x.flatten(start_dim, end_dim)  #  => tensor
+y = x.flatten(start_dim, end_dim)
 ## --------------------------------------------------------------------------------
 
 ## --------------------------------------------------------------------------------
@@ -400,7 +400,7 @@ y = x.flatten(start_dim, end_dim)  #  => tensor
 ## --------------------------------------------------------------------------------
 tensors = /  # *** tuple of tensors. Tensors with the same shape except in the cat dim
 dim = 0  # *** int. The concatenation dim
-y = torch.cat(tensors, dim)  # tuple of tensor => tensor
+y = torch.cat(tensors, dim)
 ## --------------------------------------------------------------------------------
 
 ## --------------------------------------------------------------------------------
@@ -409,7 +409,7 @@ y = torch.cat(tensors, dim)  # tuple of tensor => tensor
 dim0 = /  # *** int. The first dimension to be tranposed
 dim1 = /  # *** int. The second dimension to be tranposed
 ## Note: the result tensor shares the strorage
-y = x.flatten(dim0, dim1)  #  => tensor
+y = x.flatten(dim0, dim1)
 ## --------------------------------------------------------------------------------
 
 ## --------------------------------------------------------------------------------
