@@ -5,6 +5,7 @@ from resource.utils import get_venue_all, border_color_generator, convert_fig_ca
 
 from resource.main_content import MAIN_CONTENT
 from resource.visual_understanding import VISUAL_UNDERSTANDING
+from resource.language_generation import LANGUAGE_GENERATION
 from resource.visual_generation import VISUAL_GENERATION
 from resource.multimodal_understanding import MULTIMODAL_UNDERSTANDING
 from resource.native_multimodal_generation import NATIVE_MULTIMODAL_GENERATION
@@ -13,10 +14,13 @@ from resource.coding import CODING
 DOMAINS = [
     CODING,
     # VISUAL_UNDERSTANDING,
+    LANGUAGE_GENERATION,
     VISUAL_GENERATION,
     MULTIMODAL_UNDERSTANDING,
     NATIVE_MULTIMODAL_GENERATION
 ]
+
+EXCLUDE_TITLE = ["Coding and Engineering"]
 
 time_now = datetime.now().strftime('%B %d, %Y at %H:%M')
 
@@ -70,11 +74,11 @@ def build_main_content_of_each_domain(domain):
 
     ## Build table of contents
     catalog = """<hr><p id='table' class="huger"><b>Table of contents:</b></p>"""
-    catalog += """<p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#B04040">red</font>.</p><ul>""" if domain["title"] != "Coding and Engineering" else "<ul>"
+    catalog += """<p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#B04040">red</font>.</p><ul>""" if domain["title"] not in EXCLUDE_TITLE else "<ul>"
     for category in domain["categories"]:
         paper_choose = papers[papers["category"].str.contains(category)]
-        ascending = True if domain["title"] != "Coding and Engineering" else False
-        paper_choose = paper_choose.sort_values(by="date", ascending=ascending)
+        if domain["title"] not in EXCLUDE_TITLE:
+            paper_choose = paper_choose.sort_values(by="date", ascending=True)
         paper_names = paper_choose["name"].to_list()
         paper_info = paper_choose["info"].to_list()
         names = ""
@@ -96,7 +100,8 @@ def build_main_content_of_each_domain(domain):
         if paper_choose.sum() == 0:
             continue
         paper_choose = papers[paper_choose]
-        paper_choose = paper_choose.sort_values(by="date", ascending=False)
+        if domain["title"] not in EXCLUDE_TITLE:
+            paper_choose = paper_choose.sort_values(by="date", ascending=False)
         content_cate = f"""<h2 id="{category}-table"><a class="no_dec" href="#{category}">{category}</a></h2>"""
         for _, paper in paper_choose.iterrows():
             color = "#B04040" if "**" in paper["info"] else "#404040"
@@ -105,7 +110,7 @@ def build_main_content_of_each_domain(domain):
 
             venue = f"""<a href="{paper["pdf_url"]}">{paper["venue"]}</a>"""
             venue_all = get_venue_all(paper["venue"])
-            date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%b %d, %Y") + " &nbsp;" if domain["title"] != "Coding and Engineering" else ""
+            date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%b %d, %Y") + " &nbsp;" if domain["title"] not in EXCLUDE_TITLE else ""
             comment = f"""<p class="paper_detail"><font color=#FF000>{paper["comment"]}</font></p>""" if paper["comment"] else ""
             jupyter_note = ""
             if paper.get("jupyter_notes", ""):
@@ -159,15 +164,10 @@ def build_main_content_of_each_domain(domain):
             if (!isVisible) {
                 const images = container.querySelectorAll('img');
                 images.forEach(img => {
-                    if (img.dataset.src !== '') {
-                        img.src = img.dataset.src;
-                    }
+                    if (img.dataset.src !== '') {img.src = img.dataset.src;}
                 });
                 container.style.display = 'block';
-            } else {
-                container.style.display = 'none';
-                
-            }
+            } else {container.style.display = 'none';}
         }
     </script>
     """
@@ -180,14 +180,14 @@ if __name__ == "__main__":
     ## Build html of all domains
     num_papers = list()
     for domain in DOMAINS:
-        num_paper = 0 if domain["title"] == "Coding and Engineering" else len(domain["papers"]) 
+        num_paper = 0 if domain["title"] in EXCLUDE_TITLE else len(domain["papers"]) 
         num_papers.append(num_paper)
         paper_num_display = "" if num_paper == 0 else f"<font color='#D93053'>{num_paper}</font> papers on "
         intro = intro_temp.replace("total_paper_num", paper_num_display)
         intro = intro.replace("title", domain["title"])
         intro = intro.replace("domain_name", domain["title"])
         papers_content = build_main_content_of_each_domain(domain)
-        if domain["title"] == "Coding and Engineering":
+        if domain["title"] in EXCLUDE_TITLE:
             prefix = PREFIX.replace("<body>", 
                 """<script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
                 <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css" rel="stylesheet">

@@ -1,0 +1,88 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="resource/html.css" type="text/css">
+<link rel="shortcut icon" href="resource/my_photo.jpg">
+<title>Paper Reading List</title>
+<meta name="description" content="Paper Reading List">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div id="layout-content" style="margin-top:25px">
+<body>
+
+<h1 id="top">Language Generation</h1>
+<p class="huger"><b><font color='#D93053'>1</font> papers on  Language Generation.</b></p>
+<p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
+<p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
+<p><font color=#B0B0B0>Last updated on August 07, 2025 at 19:13 (UTC+8).</font></p>
+<hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#B04040">red</font>.</p><ul><li><a class="no_dec larger" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models</b></a></li><p><a class="no_dec" href="#Transformerfoundation algorithms & models"><font color=#404040>Transformer</font></a></p></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
+            <p class="little_split" id='Transformerfoundation algorithms & models'></p>
+            <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('Transformer-Foundation Algorithms & Models-details')"><i>Attention Is All You Need</i></p>
+            <p class="paper_detail">Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin</p>
+            <p class="paper_detail">Google Brain, Google Research, University of Toronto</p>
+            <p class="paper_detail"><b>Jun 12, 2017 &nbsp; <font color=#404040>Transformer</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/1706.03762">NeurIPS 2017</a> &nbsp; <font color=#D0D0D0>Advances in Neural Information Processing Systems</font></p>
+            
+            
+            <div id='Transformer-Foundation Algorithms & Models-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>
+</font></p>
+                 
+                <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/transformer.ipynb" class="note">(see notes in jupyter)</a></p>
+                
+                <p>
+<ul>
+    <li>
+</ul>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
+    <script>
+        function toggleTable(tableId) {
+            const container = document.getElementById(tableId);
+            const button = container.previousElementSibling;
+            const isVisible = window.getComputedStyle(container).display !== 'none';
+            if (!isVisible) {
+                const images = container.querySelectorAll('img');
+                images.forEach(img => {
+                    if (img.dataset.src !== '') {img.src = img.dataset.src;}
+                });
+                container.style.display = 'block';
+            } else {container.style.display = 'none';}
+        }
+    </script>
+    
+<button id="backToTop" title="back to top">↑</button>
+<script>
+    const button = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+    if (document.documentElement.scrollTop > 300) {
+        button.style.display = "block";
+    } else {
+        button.style.display = "none";
+    }
+    });
+
+    function updateButtonPosition() {
+    const bodyRect = document.body.getBoundingClientRect();
+    const windowWidth = window.innerWidth;
+    const rightOffset = Math.max((windowWidth - bodyRect.width) / 2, 10);
+    button.style.right = rightOffset + "px";
+    }
+
+    window.addEventListener("resize", updateButtonPosition);
+    window.addEventListener("load", updateButtonPosition);
+
+    button.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+
+</body>
+</html>
