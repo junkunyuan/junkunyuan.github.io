@@ -533,7 +533,7 @@ from huggingface_hub import snapshot_download
 repo_id = /  # *** str. A user name and a repo name, e.g., "Qwen/Qwen-VL-Chat"
 repo_type = None  # *** str. "dataset", "space", or "model"
 local_dir = None  # *** str or Path. If provided, directory to place the downloaded files
-token = None  # str, bool. User token, e.g., "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"
+token = None  # str, bool. User token
 max_workers = 8  # int. Number of concurrent threads to download files
 # ...
 
