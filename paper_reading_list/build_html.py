@@ -191,15 +191,12 @@ if __name__ == "__main__":
         intro = intro.replace("description", domain["description"])
         # intro = intro.replace("domain_name", domain["title"])
         papers_content = build_main_content_of_each_domain(domain)
-        if domain["title"] in EXCLUDE_TITLE:
-            prefix = PREFIX.replace("<body>", 
-                """<script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
-                <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css" rel="stylesheet">
-                <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-bash.min.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js"></script>
-                <body>""")
-        else:
-            prefix = PREFIX
+        prefix = PREFIX.replace("<body>", 
+            """<script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
+            <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css" rel="stylesheet">
+            <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-bash.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js"></script>
+            <body>""")
         content_domain = prefix + intro + papers_content + SUFFIX
         with open(domain["file"], "w", encoding="utf-8-sig") as f:
             f.write(content_domain)

@@ -9,47 +9,83 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div id="layout-content" style="margin-top:25px">
-<body>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
+            <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css" rel="stylesheet">
+            <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-bash.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js"></script>
+            <body>
 
 <h1 id="top">Deep Learning Fundamental Components</h1>
 <p class="larger"><b>Fundamental components to build deep learning systems.</b></p>
 <p class="larger"><b><font color='#D93053'>1</font> papers</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on August 08, 2025 at 10:58 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on August 08, 2025 at 15:19 (UTC+8).</font></p>
 <hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#B04040">red</font>.</p><ul><li><a class="no_dec larger" id="Normalization" href="#Normalization-table"><b>Normalization</b></a></li><p><a class="no_dec" href="#Batch Normalizationnormalization"><font color=#B04040>Batch Normalization</font></a></p></ul><h2 id="Normalization-table"><a class="no_dec" href="#Normalization">Normalization</a></h2>
             <p class="little_split" id='Batch Normalizationnormalization'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('Batch Normalization-Normalization-details')"><i>new paper Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</i></p>
+            <p class="paper_title" onclick="toggleTable('Batch Normalization-Normalization-details')"><i>Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</i></p>
             <p class="paper_detail">Sergey Ioffe, Christian Szegedy</p>
             <p class="paper_detail">Google</p>
             <p class="paper_detail"><b>Feb 11, 2015 &nbsp; <font color=#B04040>Batch Normalization</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/1502.03167">ICML 2015</a> &nbsp; <font color=#D0D0D0>International Conference on Machine Learning</font></p>
+            <p class="paper_detail"><font color=#FF000>It normalizes the activations of each layer within a batch, improving training speed, stability, and generalization. It has over 60,000 citations (as of Aug 2025).</font></p>
             
-            <p>
-It <b>normalizes layer inputs along channels</b> such that higher lr and saturating nonlinearities can be applied, careful param intialization is not needed.
-</p><p>
-<ul>
-    <li> <b>Reason of instability.</b> The inputs to each layer are affected by the parameters of all preceding layers, so that small changes to the network amplify as the network becomes deeper. Besides, the input and output distributions of each layer changes hinder the training of the layer.
-    <li> <b>Previous solutions to instability.</b> non-saturating nonlinearities like ReLU, careful parameter intialization, small learning rate, dropout.
-    <li> <b>Batch normalization.</b> It normalizes each channel by the mean and standard error to stablize the input distribution of each layer.
-    <li> <b>Performance.</b> It applies to the best performing ImageNet classification network and matches its performance using only 7% of the training steps.
-</ul>
-</p>
             <div id='Batch Normalization-Normalization-details' class="info_detail">
                 <hr class="dashed">
                 <p><font color=#202020>
 It <b>normalizes layer inputs along channels</b> such that higher lr and saturating nonlinearities can be applied, careful param intialization is not needed.
 </font></p>
                 
-                <p>
-<ul>
-    <li> <b>Reason of instability.</b> The inputs to each layer are affected by the parameters of all preceding layers, so that small changes to the network amplify as the network becomes deeper. Besides, the input and output distributions of each layer changes hinder the training of the layer.
-    <li> <b>Previous solutions to instability.</b> non-saturating nonlinearities like ReLU, careful parameter intialization, small learning rate, dropout.
-    <li> <b>Batch normalization.</b> It normalizes each channel by the mean and standard error to stablize the input distribution of each layer.
-    <li> <b>Performance.</b> It applies to the best performing ImageNet classification network and matches its performance using only 7% of the training steps.
+                <p><ul>
+<li> <b>Reason of instability.</b> The inputs to each layer are affected by the parameters of all preceding layers, so that small changes to the network amplify as the network becomes deeper. Besides, the input and output distributions of each layer changes hinder the training of the layer.
+<li> <b>Previous solutions to instability.</b> non-saturating nonlinearities like ReLU, careful parameter intialization, small learning rate, dropout.
+<li> <b>Batch normalization.</b> It normalizes each channel by the mean and standard error to stablize the input distribution of each layer.
+<li> <b>Performance.</b> It applies to the best performing ImageNet classification network and matches its performance using only 7% of the training steps.
 </ul>
-</p>
+<figure>
+<img data-src='resource\figs\Batch Normalization\Batch Normalization-fig1.png' width=300>
+<img data-src='resource\figs\Batch Normalization\Batch Normalization-fig2.png' width=300>
+<figcaption>
+<b>Figure 1.</b> <b>(left) Algorithm of Batch Normalization.</b> The gamma and beta is employed to make it can represent identity transformation. <b> (right) Algorithm of training and inference with Batch Normalization.</b>
+</figcaption>
+</figure>
+<pre>
+<code class="language-python">
+import torch
+from torch import nn
+
+## --------------------------------------------------------------------------------
+## Build customized Batch Normalization (2D)
+## --------------------------------------------------------------------------------
+class MyBatchNorm2d(nn.Module):
+def __init__(self, num_features, eps=1e-5, momentum=0.1):
+super().__init__()
+self.eps = eps
+self.momentum = momentum
+self.weight = torch.nn.Parameter(torch.ones(num_features))
+self.bias = torch.nn.Parameter(torch.zeros(num_features))
+self.register_buffer('running_mean', torch.zeros(num_features))
+self.register_buffer('running_var', torch.ones(num_features))
+
+def forward(self, x):
+if self.training:
+mean = x.mean(dim=(0, 2, 3), keepdim=True)
+var = x.var(dim=(0, 2, 3), keepdim=True, unbiased=False)
+x_hat = (x - mean) / torch.sqrt(var + self.eps)
+
+# Update running stats
+self.running_mean = (1 - self.momentum) * self.running_mean + self.momentum * mean.view(-1)
+self.running_var = (1 - self.momentum) * self.running_var + self.momentum * var.view(-1)
+else:
+mean = self.running_mean.view(1, -1, 1, 1)
+var = self.running_var.view(1, -1, 1, 1)
+x_hat = (x - mean) / torch.sqrt(var + self.eps)
+
+return self.weight.view(1, -1, 1, 1) * x_hat + self.bias.view(1, -1, 1, 1)
+## --------------------------------------------------------------------------------
+</code>
+</pre></p>
             </div>
             <div style="height: 0.05em;"></div>
             </div>
