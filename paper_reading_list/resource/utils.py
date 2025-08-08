@@ -37,6 +37,14 @@ def border_color_generator():
         num += 1
 
 def convert_fig_cap_to_figure(text, name):
+    res = text.split("<pre>", 1)
+    text = res[0]
+
+    ## Avoid code indent being processed
+    code = ""
+    if len(res) == 2:
+        code = "<pre>" + res[1]
+    
     lines = text.strip().splitlines()
     result = []
     fig_count = 0
@@ -70,7 +78,7 @@ def convert_fig_cap_to_figure(text, name):
         i += 1
     result_content = "\n".join(result)
 
-    return result_content
+    return result_content + code
 
 
 TOP_BUTTON = \

@@ -185,17 +185,17 @@ if __name__ == "__main__":
     for domain in DOMAINS:
         num_paper = 0 if domain["title"] in EXCLUDE_TITLE else len(domain["papers"]) 
         num_papers.append(num_paper)
-        paper_num_display = "" if num_paper == 0 else f"<font color='#D93053'>{num_paper}</font> papers"
+        paper_num_display = "" if domain["title"] in EXCLUDE_TITLE else f"<font color='#D93053'>{num_paper}</font> papers"
         intro = intro_temp.replace("total_paper_num", paper_num_display)
         intro = intro.replace("title", domain["title"])
         intro = intro.replace("description", domain["description"])
-        # intro = intro.replace("domain_name", domain["title"])
         papers_content = build_main_content_of_each_domain(domain)
         prefix = PREFIX.replace("<body>", 
             """<script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
             <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css" rel="stylesheet">
             <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-bash.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             <body>""")
         content_domain = prefix + intro + papers_content + SUFFIX
         with open(domain["file"], "w", encoding="utf-8-sig") as f:

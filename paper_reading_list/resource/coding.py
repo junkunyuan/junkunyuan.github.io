@@ -98,7 +98,7 @@ image_trans = trans(image)  # Tensor => Tensor
 """,
 },
 {
-"title": "Data Loader",
+"title": "new paper Data Loader",
 "author": "",
 "organization": "",
 "date": "20240630",

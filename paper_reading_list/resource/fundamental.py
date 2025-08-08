@@ -88,6 +88,37 @@ class MyBatchNorm2d(nn.Module):
 
         return self.weight.view(1, -1, 1, 1) * x_hat + self.bias.view(1, -1, 1, 1)
 ## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## Test the customized Batch Normalization
+## --------------------------------------------------------------------------------
+# Input
+x = torch.randn(8, 3, 32, 32)  # BCHW
+
+# Instantiate both modules
+bn_ref = torch.nn.BatchNorm2d(3)
+bn_custom = MyBatchNorm2d(3)
+
+# Sync initial parameters
+bn_custom.weight.data.copy_(bn_ref.weight.data)
+bn_custom.bias.data.copy_(bn_ref.bias.data)
+bn_custom.running_mean.copy_(bn_ref.running_mean)
+bn_custom.running_var.copy_(bn_ref.running_var)
+
+# --- Training mode ---
+bn_ref.train()
+bn_custom.train()
+y_ref_train = bn_ref(x)
+y_custom_train = bn_custom(x)
+print("Train diff:", torch.norm(y_ref_train - y_custom_train).item())
+
+# --- Inference mode ---
+bn_ref.eval()
+bn_custom.eval()
+y_ref_eval = bn_ref(x)
+y_custom_eval = bn_custom(x)
+print("Eval diff:", torch.norm(y_ref_eval - y_custom_eval).item())
+## --------------------------------------------------------------------------------
 </code>
 </pre>
 """,

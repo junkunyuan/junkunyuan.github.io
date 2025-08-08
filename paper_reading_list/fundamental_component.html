@@ -13,6 +13,7 @@
             <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css" rel="stylesheet">
             <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-bash.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             <body>
 
 <h1 id="top">Deep Learning Fundamental Components</h1>
@@ -20,7 +21,7 @@
 <p class="larger"><b><font color='#D93053'>1</font> papers</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on August 08, 2025 at 15:19 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on August 08, 2025 at 16:21 (UTC+8).</font></p>
 <hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#B04040">red</font>.</p><ul><li><a class="no_dec larger" id="Normalization" href="#Normalization-table"><b>Normalization</b></a></li><p><a class="no_dec" href="#Batch Normalizationnormalization"><font color=#B04040>Batch Normalization</font></a></p></ul><h2 id="Normalization-table"><a class="no_dec" href="#Normalization">Normalization</a></h2>
             <p class="little_split" id='Batch Normalizationnormalization'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
@@ -49,8 +50,7 @@ It <b>normalizes layer inputs along channels</b> such that higher lr and saturat
 <figcaption>
 <b>Figure 1.</b> <b>(left) Algorithm of Batch Normalization.</b> The gamma and beta is employed to make it can represent identity transformation. <b> (right) Algorithm of training and inference with Batch Normalization.</b>
 </figcaption>
-</figure>
-<pre>
+</figure><pre>
 <code class="language-python">
 import torch
 from torch import nn
@@ -59,33 +59,65 @@ from torch import nn
 ## Build customized Batch Normalization (2D)
 ## --------------------------------------------------------------------------------
 class MyBatchNorm2d(nn.Module):
-def __init__(self, num_features, eps=1e-5, momentum=0.1):
-super().__init__()
-self.eps = eps
-self.momentum = momentum
-self.weight = torch.nn.Parameter(torch.ones(num_features))
-self.bias = torch.nn.Parameter(torch.zeros(num_features))
-self.register_buffer('running_mean', torch.zeros(num_features))
-self.register_buffer('running_var', torch.ones(num_features))
+    def __init__(self, num_features, eps=1e-5, momentum=0.1):
+        super().__init__()
+        self.eps = eps
+        self.momentum = momentum
+        self.weight = torch.nn.Parameter(torch.ones(num_features))
+        self.bias = torch.nn.Parameter(torch.zeros(num_features))
+        self.register_buffer('running_mean', torch.zeros(num_features))
+        self.register_buffer('running_var', torch.ones(num_features))
 
-def forward(self, x):
-if self.training:
-mean = x.mean(dim=(0, 2, 3), keepdim=True)
-var = x.var(dim=(0, 2, 3), keepdim=True, unbiased=False)
-x_hat = (x - mean) / torch.sqrt(var + self.eps)
+    def forward(self, x):
+        if self.training:
+            mean = x.mean(dim=(0, 2, 3), keepdim=True)
+            var = x.var(dim=(0, 2, 3), keepdim=True, unbiased=False)
+            x_hat = (x - mean) / torch.sqrt(var + self.eps)
 
-# Update running stats
-self.running_mean = (1 - self.momentum) * self.running_mean + self.momentum * mean.view(-1)
-self.running_var = (1 - self.momentum) * self.running_var + self.momentum * var.view(-1)
-else:
-mean = self.running_mean.view(1, -1, 1, 1)
-var = self.running_var.view(1, -1, 1, 1)
-x_hat = (x - mean) / torch.sqrt(var + self.eps)
+            # Update running stats
+            self.running_mean = (1 - self.momentum) * self.running_mean + self.momentum * mean.view(-1)
+            self.running_var = (1 - self.momentum) * self.running_var + self.momentum * var.view(-1)
+        else:
+            mean = self.running_mean.view(1, -1, 1, 1)
+            var = self.running_var.view(1, -1, 1, 1)
+            x_hat = (x - mean) / torch.sqrt(var + self.eps)
 
-return self.weight.view(1, -1, 1, 1) * x_hat + self.bias.view(1, -1, 1, 1)
+        return self.weight.view(1, -1, 1, 1) * x_hat + self.bias.view(1, -1, 1, 1)
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## Test the customized Batch Normalization
+## --------------------------------------------------------------------------------
+# Input
+x = torch.randn(8, 3, 32, 32)  # BCHW
+
+# Instantiate both modules
+bn_ref = torch.nn.BatchNorm2d(3)
+bn_custom = MyBatchNorm2d(3)
+
+# Sync initial parameters
+bn_custom.weight.data.copy_(bn_ref.weight.data)
+bn_custom.bias.data.copy_(bn_ref.bias.data)
+bn_custom.running_mean.copy_(bn_ref.running_mean)
+bn_custom.running_var.copy_(bn_ref.running_var)
+
+# --- Training mode ---
+bn_ref.train()
+bn_custom.train()
+y_ref_train = bn_ref(x)
+y_custom_train = bn_custom(x)
+print("Train diff:", torch.norm(y_ref_train - y_custom_train).item())
+
+# --- Inference mode ---
+bn_ref.eval()
+bn_custom.eval()
+y_ref_eval = bn_ref(x)
+y_custom_eval = bn_custom(x)
+print("Eval diff:", torch.norm(y_ref_eval - y_custom_eval).item())
 ## --------------------------------------------------------------------------------
 </code>
-</pre></p>
+</pre>
+</p>
             </div>
             <div style="height: 0.05em;"></div>
             </div>
