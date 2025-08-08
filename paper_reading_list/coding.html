@@ -21,8 +21,8 @@
 <p class="larger"><b></b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on August 08, 2025 at 16:22 (UTC+8).</font></p>
-<hr><p id='table' class="huger"><b>Table of contents:</b></p><ul><li><a class="no_dec larger" id="torch & torchvision" href="#torch & torchvision-table"><b>torch & torchvision</b></a></li><p><a class="no_dec" href="#data transformstorch & torchvision"><font color=#404040>data transforms</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#data loadertorch & torchvision"><font color=#404040>data loader</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#moduletorch & torchvision"><font color=#404040>module</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#activation functiontorch & torchvision"><font color=#404040>activation function</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#operationtorch & torchvision"><font color=#404040>operation</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#optimizertorch & torchvision"><font color=#404040>optimizer</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#huggingfacetorch & torchvision"><font color=#404040>huggingface</font></a></p></ul><h2 id="torch & torchvision-table"><a class="no_dec" href="#torch & torchvision">torch & torchvision</a></h2>
+<p><font color=#B0B0B0>Last updated on August 08, 2025 at 19:08 (UTC+8).</font></p>
+<hr><p id='table' class="huger"><b>Table of contents:</b></p><ul><li><a class="no_dec larger" id="torch & torchvision" href="#torch & torchvision-table"><b>torch & torchvision</b></a></li><p><a class="no_dec" href="#data transformstorch & torchvision"><font color=#404040>data transforms</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#data loadertorch & torchvision"><font color=#404040>data loader</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#operationtorch & torchvision"><font color=#404040>operation</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#moduletorch & torchvision"><font color=#404040>module</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#activation functiontorch & torchvision"><font color=#404040>activation function</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#optimizertorch & torchvision"><font color=#404040>optimizer</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#huggingfacetorch & torchvision"><font color=#404040>huggingface</font></a></p></ul><h2 id="torch & torchvision-table"><a class="no_dec" href="#torch & torchvision">torch & torchvision</a></h2>
             <p class="little_split" id='data transformstorch & torchvision'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -99,39 +99,12 @@ image_trans = trans(image)  # Tensor => Tensor
             <p class="little_split" id='data loadertorch & torchvision'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('data loader-torch & torchvision-details')"><i>new paper Data Loader</i></p>
+            <p class="paper_title" onclick="toggleTable('data loader-torch & torchvision-details')"><i>Data Loader</i></p>
             
             
             <p class="paper_detail"><b> <font color=#404040>data loader</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader">docs</a> &nbsp; <font color=#D0D0D0></font></p>
             
-            <p>It includes tools for data loading: <a href="https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader">DataLoader</a>.</p><p>
-<pre>
-<code class="language-python">
-import torch
-from torch.utils.data import DataLoader, Dataset, Sampler
-
-## --------------------------------------------------------------------------------
-## DataLoader
-## --------------------------------------------------------------------------------
-dataset = /  # *** Dataset
-batch_size = 1  # *** int. Number of samples per batch.
-shuffle = False  # *** bool. If True, have the data shuffled at every epoch
-sampler = None  # Sampler or Iterable. Define how to draw samples
-num_workers = 0  # *** int. Number of subprocesses to use for data loading
-collate_fn = None  # Callable. Merge a list of samples to form a batch of tensors
-pin_memory = False  # *** bool. If True, copy Tensors into CUDA pinned memory
-drop_last = False  # *** bool. If True, drop the last incomplete batch
-timeout = 0  # numeric. If positive, set timeout for collecting a batch from workers
-prefetch_factor = None  # int. Default = None if num_workers == 0 else 2
-# ...
-data_loader = DataLoader(
-    dataset, batch_size, shuffle, sampler, num_workers, collate_fn, 
-    pin_memory, drop_last, timeout, prefetch_factor
-)
-## --------------------------------------------------------------------------------
-</code>
-</pre>
-</p>
+            
             <div id='data loader-torch & torchvision-details' class="info_detail">
                 <hr class="dashed">
                 <p><font color=#202020>It includes tools for data loading: <a href="https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader">DataLoader</a>.</font></p>
@@ -169,6 +142,190 @@ data_loader = DataLoader(
             </div>
             <p class="little_split"></p>
             
+            <p class="little_split" id='operationtorch & torchvision'></p>
+            <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('operation-torch & torchvision-details')"><i>Operation</i></p>
+            
+            
+            <p class="paper_detail"><b> <font color=#404040>operation</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/index.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
+            
+            
+            <div id='operation-torch & torchvision-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>It includes operations: 
+<a href="#operations">operations</a>,
+<a href="#data generation">data generation</a>, 
+<a href="#size & reshape">size & reshape</a>.</font></p>
+                
+                <p>
+<p class="larger" id="operations"><b>Operations:</b> 
+<a href="https://docs.pytorch.org/docs/stable/torch.html">basic operations</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.mean.html">mean</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.var.html">var</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.softmax.html">softmax</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.matmul.html">matmul</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.einsum.html">einsum</a>.</p>
+<pre>
+<code class="language-python">
+## --------------------------------------------------------------------------------
+## Operations
+## --------------------------------------------------------------------------------
+import torch
+
+## Basic operations
+## function: exp, sin, cos, sqrt
+y = torch.function(x)
+
+## Mean and var
+dim = /  # *** int or tuple of ints. The dims to reduce
+keepdim = False # *** bool. If True, return tensor with the same dims
+mean = x.mean(dim, keepdim)
+## In version>=2.0, correction=1 == unbiased=True, correction=0 == unbiased=False 
+correction = 1  # *** int. 
+var = x.var(dim, keepdim, correction)
+
+## Softmax
+dim = None  # *** input
+y = x.softmax(dim)
+
+## Matrix multiplication
+other = /  # *** tensor
+y = x.matmul(other)
+
+## Einsum
+equation = /  # *** str. The subscript for the Einstein summation
+operands = /  # *** list of tensor. The tensor to be computed
+## torch.einsum("ii", tensor)  # trace
+## torch.einsum("ii->i", tensor)  # diagonal
+## torch.einsum("i,j->ij", tensor1, tensor2)  # outer product
+## torch.einsum("bij,bjk->bik", tensor1, tensor2)  # batch matrix multiplication
+## torch.einsum("...ij->...jk", tensor)  # batch permute
+y = torch.einsum(equation, operands)
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+
+<p class="larger" id="data generation"><b>Data generation:</b> 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.zeros.html">zeros</a>, 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.ones.html">ones</a>, 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.rand.html">uniform distribution</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.arange.html">arange</a>.</p>
+<pre>
+<code class="language-python">
+## --------------------------------------------------------------------------------
+## Data generation
+## --------------------------------------------------------------------------------
+## Zeros, Ones
+size = /  # *** sequence of int. The shape of output
+y = torch.ones(size)
+y = torch.zeros(size)
+
+## Random number from a uniform distribution [0, 1)
+size = /  # *** sequence of int. The shape of output
+y = torch.rand(size)
+
+## Arange
+start = 0  # *** number. The starting value
+end = /  # *** number. The ending value
+step = 1  # *** number. The gap between adjacent points
+arange = torch.arange(start, end, step)
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+
+<p class="larger" id="size & reshape"><b>Resize & reshape:</b> 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.Tensor.size.html">size</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.reshape.html">reshape & view</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.flatten.html">flatten</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.tranpose.html">tranpose</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.permute.html">permute</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.permute.html">permute</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.unsqueeze.html">unsqueeze</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.cat.html">cat</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.squeeze.html">squeeze</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.unbind.html">unbind</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.chunk.html">chunk</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.split.html">split</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.where.html">where</a>.</p>
+
+<pre>
+<code class="language-python">
+## --------------------------------------------------------------------------------
+## Size & reshape
+## --------------------------------------------------------------------------------
+## Get size
+dim = None  # int. The dimension to retrieve the size
+size = x.size(dim)  # => torch.Size or int
+size = x.shape  #  => torch.Size
+
+## Reshape & View
+shape = /  # sequence of int. The new shape. Note: a single dimension could be -1
+y = x.reshape(shape)  # recommend since it could call .contiguous() if needed
+y = x.view(shape)
+
+## Flatten: flatten along the given dimensions
+start_dim = 0  # *** int. The first dimension to flatten
+end_dim = -1  # *** int. The last dimension to flatten
+## Note: it could be either copying or viewing
+y = x.flatten(start_dim, end_dim)
+
+## Transpose: swap two dimensions
+dim0 = /  # *** int. The first dimension to be tranposed
+dim1 = /  # *** int. The second dimension to be tranposed
+## Note: the result tensor shares the strorage
+y = x.tranpose(dim0, dim1)
+
+## Permute
+dims = /  # *** sequence of int. The desired ordering of dims
+y = x.permute(dims)
+
+## Unsqueeze: insert one dimension
+dim = /  # *** int. The index at which to insert the singleton dim
+y = x.unsqueeze(dim)
+
+## Concat: concatenate some tensors along a dimension
+tensors = /  # *** tuple of tensors. Tensors with the same shape except in the cat dim
+dim = 0  # *** int. The concatenation dim
+y = torch.cat(tensors, dim)
+
+## Squeeze: remove all dim with size 1
+dim = None  # *** int or tuple of ints. If given, only the dim will be squeezed
+y = x.squeeze(dim)
+
+## Unbind
+dim = 0  # *** int. Dim to remove
+y = x.unbind(0)
+
+## Chunk: split a tensor into the spicific number of chunks
+chunks = /  # *** int
+dim = 0  # *** int
+## If the given dim is divisible by chunks, all returned chunks will be the same size
+## If the given dim is not divisible by chunks, the last one will not be the same size
+## If such division is not possible, it returns fewer than the specified number of chunks
+y = x.chunk(chunks, dim)
+
+## Split
+indices_or_sections = /  # *** tensor, int, list, tuple of ints
+dim = 0  # *** int. Dimension along which to split the tensor
+## If split_size_or_sections is an integer type, split into equally sized chunks
+## If split_size_or_sections is a list, split into len(split_size_or_sections) chunks
+y = x.split(indices_or_sections, dim)
+
+## Where: select elements
+condition = /  # *** bool. When True, yield input, otherwise yield other
+input = /  # *** tensor or scalar
+other = /  # *** tensor or scalar
+y = torch.where(condition, input, output)
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split" id='moduletorch & torchvision'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -182,6 +339,9 @@ data_loader = DataLoader(
                 <hr class="dashed">
                 <p><font color=#202020>
 It includes tools to build neural networks: 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.parameter.Parameter.html">Parameter</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.parameter.Buffer.html">Buffer</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Linear.html">Linear</a>,
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html#conv2d">Conv2d</a>, 
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv3d.html#conv3d">Conv3d</a>,
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Dropout.html">Dropout</a>.
@@ -192,6 +352,23 @@ It includes tools to build neural networks:
 <code class="language-python">
 import torch
 from torch import nn 
+
+## --------------------------------------------------------------------------------
+## Parameter
+## --------------------------------------------------------------------------------
+data = /  # *** tensor. Parameter tensor
+requires_grad = True
+gamma = torch.Parameter(data, requires_grad)
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## Buffer
+## --------------------------------------------------------------------------------
+data = /  # *** tensor. Buffer tensor
+persistent = True  # whether the buffer is part of the module's state_dict
+gamma = self.register_buffer(data, persistent)  # used in the module class
+gamma = nn.paramter.Buffer(data, persistent)  # not usually used
+## --------------------------------------------------------------------------------
 
 ## --------------------------------------------------------------------------------
 ## Linear
@@ -311,188 +488,6 @@ inplace = False
 ## silu(x) = x * sigmoid(x)
 silu = nn.SiLU(inplace)
 y = silu(x)
-## --------------------------------------------------------------------------------
-</code>
-</pre>
-</p>
-            </div>
-            <div style="height: 0.05em;"></div>
-            </div>
-            <p class="little_split"></p>
-            
-            <p class="little_split" id='operationtorch & torchvision'></p>
-            <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
-            <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('operation-torch & torchvision-details')"><i>Operation</i></p>
-            
-            
-            <p class="paper_detail"><b> <font color=#404040>operation</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/index.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
-            
-            
-            <div id='operation-torch & torchvision-details' class="info_detail">
-                <hr class="dashed">
-                <p><font color=#202020>It includes operations: 
-<a href="https://docs.pytorch.org/docs/stable/nn.functional.html">operations</a>, 
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.arange.html">arange</a>, 
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.rand.html">random</a>, 
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.Tensor.size.html">size</a>, 
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.reshape.html">reshape</a>, 
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.flatten.html">flatten</a>, 
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.transpose.html">tranpose</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.permute.html#torch.permute">permute</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.unsqueeze.html">unsqueeze</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.squeeze.html">squeeze</a>, 
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.chunk.html">chunk</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.split.html">split</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.where.html">where</a>.</font></p>
-                
-                <p>
-<pre>
-<code class="language-python">
-import torch
-
-## --------------------------------------------------------------------------------
-## Operations
-## --------------------------------------------------------------------------------
-y = torch.exp(x)
-y = torch.sin(x)
-y = torch.cos(x)
-
-## Matrix multiplication
-other = /  # *** tensor
-y = x.matmul(other)
-
-## Softmax
-dim = None  # *** input
-y = x.softmax(dim)
-
-## Einsum
-equation = /  # *** str. The subscript for the Einstein summation
-operands = /  # *** list of tensor. The tensor to be computed
-## torch.einsum("ii", tensor)  # trace
-## torch.einsum("ii->i", tensor)  # diagonal
-## torch.einsum("i,j->ij", tensor1, tensor2)  # outer product
-## torch.einsum("bij,bjk->bik", tensor1, tensor2)  # batch matrix multiplication
-## torch.einsum("...ij->...jk", tensor)  # batch permute
-
-y = torch.einsum(equation, operands)
-## --------------------------------------------------------------------------------
-
-## --------------------------------------------------------------------------------
-## Arange
-## --------------------------------------------------------------------------------
-start = 0  # *** number. The starting value
-end = /  # *** number. The ending value
-step = 1  # *** number. The gap between adjacent points
-arange = torch.arange(start, end, step)
-## --------------------------------------------------------------------------------
-
-## --------------------------------------------------------------------------------
-## Random
-## --------------------------------------------------------------------------------
-size = /  # *** tuple of int. The shape of output
-## Generate random numbers from a uniform distribution [0, 1)
-y = torch.rand(*size)
-## --------------------------------------------------------------------------------
-
-## --------------------------------------------------------------------------------
-## Get size
-## --------------------------------------------------------------------------------
-dim = None  # int. The dimension to retrieve the size
-size = x.size(dim)  # => torch.Size or int
-size = x.shape  #  => torch.Size
-## --------------------------------------------------------------------------------
-
-## --------------------------------------------------------------------------------
-## Reshape
-## --------------------------------------------------------------------------------
-shape = /  # tuple of int. The new shape. Note: a single dimension could be -1
-## Note: it could be either copying or viewing
-y = x.reshape(shape)
-## --------------------------------------------------------------------------------
-
-## --------------------------------------------------------------------------------
-## Flatten: flatten along the given dimensions
-## --------------------------------------------------------------------------------
-start_dim = 0  # *** int. The first dimension to flatten
-end_dim = -1  # *** int. The last dimension to flatten
-## Note: it could be either copying or viewing
-y = x.flatten(start_dim, end_dim)
-## --------------------------------------------------------------------------------
-
-## --------------------------------------------------------------------------------
-## Concat: concatenate some tensors along a dimension
-## --------------------------------------------------------------------------------
-tensors = /  # *** tuple of tensors. Tensors with the same shape except in the cat dim
-dim = 0  # *** int. The concatenation dim
-y = torch.cat(tensors, dim)
-## --------------------------------------------------------------------------------
-
-## --------------------------------------------------------------------------------
-## Transpose: swap two dimensions
-## --------------------------------------------------------------------------------
-dim0 = /  # *** int. The first dimension to be tranposed
-dim1 = /  # *** int. The second dimension to be tranposed
-## Note: the result tensor shares the strorage
-y = x.flatten(dim0, dim1)
-## --------------------------------------------------------------------------------
-
-## --------------------------------------------------------------------------------
-## Permute
-## --------------------------------------------------------------------------------
-dims = /  # *** tuple of int. The desired ordering of dims
-y = x.permute(dims)
-## --------------------------------------------------------------------------------
-
-## --------------------------------------------------------------------------------
-## Unbind
-## --------------------------------------------------------------------------------
-dim = 0  # *** int. Dim to remove
-y = x.unbind(0)
-## --------------------------------------------------------------------------------
-
-## --------------------------------------------------------------------------------
-## Unsqueeze: insert one dimension
-## --------------------------------------------------------------------------------
-dim = /  # *** int. The index at which to insert the singleton dim
-y = x.unsqueeze(dim)
-## --------------------------------------------------------------------------------
-
-## --------------------------------------------------------------------------------
-## Squeeze: remove all dim with size 1
-## --------------------------------------------------------------------------------
-dim = None  # *** int or tuple of ints. If given, only the dim will be squeezed
-y = x.squeeze(dim)
-## --------------------------------------------------------------------------------
-
-## --------------------------------------------------------------------------------
-## Chunk: split a tensor into the spicific number of chunks
-## --------------------------------------------------------------------------------
-chunks = /  # *** int
-dim = 0  # *** int
-## If the given dim is divisible by chunks, all returned chunks will be the same size
-## If the given dim is not divisible by chunks, the last one will not be the same size
-## If such division is not possible, it returns fewer than the specified number of chunks
-y = x.chunk(chunks, dim)
-## --------------------------------------------------------------------------------
-
-## --------------------------------------------------------------------------------
-## Split
-## --------------------------------------------------------------------------------
-indices_or_sections = /  # *** tensor, int, list, tuple of ints
-dim = 0  # *** int. Dimension along which to split the tensor
-## If split_size_or_sections is an integer type, split into equally sized chunks
-## If split_size_or_sections is a list, split into len(split_size_or_sections) chunks
-y = x.split(indices_or_sections, dim)
-## --------------------------------------------------------------------------------
-
-## --------------------------------------------------------------------------------
-## Where: select elements
-## --------------------------------------------------------------------------------
-condition = /  # *** bool. When True, yield input, otherwise yield other
-input = /  # *** tensor or scalar
-other = /  # *** tensor or scalar
-y = torch.where(condition, input, output)
 ## --------------------------------------------------------------------------------
 </code>
 </pre>
