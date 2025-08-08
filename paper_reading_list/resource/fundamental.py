@@ -79,8 +79,10 @@ class MyBatchNorm2d(nn.Module):
             x_hat = (x - mean) / torch.sqrt(var + self.eps)
 
             # Update running stats
-            self.running_mean = (1 - self.momentum) * self.running_mean + self.momentum * mean.view(-1)
-            self.running_var = (1 - self.momentum) * self.running_var + self.momentum * var.view(-1)
+            self.running_mean = (1 - self.momentum) * self.running_mean + \\
+                self.momentum * mean.view(-1)
+            self.running_var = (1 - self.momentum) * self.running_var + \\
+                self.momentum * var.view(-1)
         else:
             mean = self.running_mean.view(1, -1, 1, 1)
             var = self.running_var.view(1, -1, 1, 1)

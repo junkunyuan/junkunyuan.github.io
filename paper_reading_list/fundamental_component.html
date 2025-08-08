@@ -21,7 +21,7 @@
 <p class="larger"><b><font color='#D93053'>1</font> papers</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on August 08, 2025 at 16:21 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on August 08, 2025 at 16:22 (UTC+8).</font></p>
 <hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#B04040">red</font>.</p><ul><li><a class="no_dec larger" id="Normalization" href="#Normalization-table"><b>Normalization</b></a></li><p><a class="no_dec" href="#Batch Normalizationnormalization"><font color=#B04040>Batch Normalization</font></a></p></ul><h2 id="Normalization-table"><a class="no_dec" href="#Normalization">Normalization</a></h2>
             <p class="little_split" id='Batch Normalizationnormalization'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
@@ -75,8 +75,10 @@ class MyBatchNorm2d(nn.Module):
             x_hat = (x - mean) / torch.sqrt(var + self.eps)
 
             # Update running stats
-            self.running_mean = (1 - self.momentum) * self.running_mean + self.momentum * mean.view(-1)
-            self.running_var = (1 - self.momentum) * self.running_var + self.momentum * var.view(-1)
+            self.running_mean = (1 - self.momentum) * self.running_mean + \
+                self.momentum * mean.view(-1)
+            self.running_var = (1 - self.momentum) * self.running_var + \
+                self.momentum * var.view(-1)
         else:
             mean = self.running_mean.view(1, -1, 1, 1)
             var = self.running_var.view(1, -1, 1, 1)
