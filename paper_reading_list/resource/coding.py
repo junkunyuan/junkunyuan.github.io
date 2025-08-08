@@ -21,7 +21,7 @@ CODING["papers"] = [
 # "details": 
 # """
 # <pre>
-# <code class="language-python">
+# <code class="language-python" style="font-size: 14px;">
 # </code>
 # </pre>
 # """,
@@ -43,7 +43,7 @@ CODING["papers"] = [
 "details": 
 """
 <pre>
-<code class="language-python">
+<code class="language-python" style="font-size: 14px;">
 from torchvision import transforms
 from torchvision.transforms.InterpolationMode import BILINEAR, NEAREST, BICUBIC 
 
@@ -114,7 +114,7 @@ image_trans = trans(image)  # Tensor => Tensor
 "details": 
 """
 <pre>
-<code class="language-python">
+<code class="language-python" style="font-size: 14px;">
 import torch
 from torch.utils.data import DataLoader, Dataset, Sampler
 
@@ -142,7 +142,7 @@ data_loader = DataLoader(
 """,
 },
 {
-"title": "new paper Operation",
+"title": "Operation",
 "author": "",
 "organization": "",
 "date": "20230630",
@@ -170,7 +170,7 @@ data_loader = DataLoader(
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.einsum.html">einsum</a>,
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.isclose.html">isclose & allclose.</a></p>
 <pre>
-<code class="language-python">
+<code class="language-python" style="font-size: 14px;">
 ## --------------------------------------------------------------------------------
 ## Operations
 ## --------------------------------------------------------------------------------
@@ -224,7 +224,7 @@ x.allclose(other, rtol, atol, equal_nan)  # return True or False
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.rand.html">uniform distribution</a>,
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.arange.html">arange</a>.</p>
 <pre>
-<code class="language-python">
+<code class="language-python" style="font-size: 14px;">
 ## --------------------------------------------------------------------------------
 ## Data generation
 ## --------------------------------------------------------------------------------
@@ -262,7 +262,7 @@ arange = torch.arange(start, end, step)
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.where.html">where</a>.</p>
 
 <pre>
-<code class="language-python">
+<code class="language-python" style="font-size: 14px;">
 ## --------------------------------------------------------------------------------
 ## Size & reshape
 ## --------------------------------------------------------------------------------
@@ -362,7 +362,7 @@ It includes tools to build neural networks:
 "details": 
 """
 <pre>
-<code class="language-python">
+<code class="language-python" style="font-size: 14px;">
 import torch
 from torch import nn 
 
@@ -482,7 +482,7 @@ It includes activation functions:
 "details": 
 """
 <pre>
-<code class="language-python">
+<code class="language-python" style="font-size: 14px;">
 from torch import nn
 
 ## --------------------------------------------------------------------------------
@@ -522,7 +522,7 @@ y = silu(x)
 "details": 
 """
 <pre>
-<code class="language-python">
+<code class="language-python" style="font-size: 14px;">
 from torch.optim import AdamW
 
 ## --------------------------------------------------------------------------------
@@ -556,7 +556,7 @@ adam_optim = AdamW(params, lr, betas, weight_decay)
 "details": 
 """
 <pre>
-<code class="language-python">
+<code class="language-python" style="font-size: 14px;">
 from huggingface_hub import snapshot_download
 
 ## --------------------------------------------------------------------------------

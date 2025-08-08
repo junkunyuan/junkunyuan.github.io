@@ -47,7 +47,7 @@ It normalizes samples along the <b>batch dimension</b> to adapt to cases with sm
 "details": 
 """
 <pre>
-<code class="language-python">
+<code class="language-python" style="font-size: 14px;">
 ## --------------------------------------------------------------------------------
 ## Build customized Layer Normalization
 ## --------------------------------------------------------------------------------
@@ -109,7 +109,7 @@ It <b>normalizes layer inputs along channels</b> such that higher lr and saturat
 fig: fig1.png 300 fig2.png 300
 cap: <b>(left) Batch Normalization.</b> The \(\gamma\) and \( \\beta \) are employed to make it can represent identity transformation. <b> (right) Training and inference.</b>
 <pre>
-<code class="language-python">
+<code class="language-python" style="font-size: 14px;">
 import torch
 from torch import nn
 
