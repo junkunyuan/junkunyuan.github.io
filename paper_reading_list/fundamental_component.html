@@ -16,13 +16,68 @@
             <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             <body>
 
-<h1 id="top">Deep Learning Fundamental Components</h1>
+<h1 id="top">Fundamental Components of Deep Learning</h1>
 <p class="larger"><b>Fundamental components to build deep learning systems.</b></p>
-<p class="larger"><b><font color='#D93053'>1</font> papers</b></p>
+<p class="larger"><b><font color='#D93053'>2</font> papers</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on August 08, 2025 at 19:08 (UTC+8).</font></p>
-<hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#B04040">red</font>.</p><ul><li><a class="no_dec larger" id="Normalization" href="#Normalization-table"><b>Normalization</b></a></li><p><a class="no_dec" href="#Batch Normalizationnormalization"><font color=#B04040>Batch Normalization</font></a></p></ul><h2 id="Normalization-table"><a class="no_dec" href="#Normalization">Normalization</a></h2>
+<p><font color=#B0B0B0>Last updated on August 08, 2025 at 20:50 (UTC+8).</font></p>
+<hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#B04040">red</font>.</p><ul><li><a class="no_dec larger" id="Normalization" href="#Normalization-table"><b>Normalization</b></a></li><p><a class="no_dec" href="#Batch Normalizationnormalization"><font color=#B04040>Batch Normalization</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Layer Normalizationnormalization"><font color=#B04040>Layer Normalization</font></a></p></ul><h2 id="Normalization-table"><a class="no_dec" href="#Normalization">Normalization</a></h2>
+            <p class="little_split" id='Layer Normalizationnormalization'></p>
+            <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('Layer Normalization-Normalization-details')"><i>Layer Normalization</i></p>
+            <p class="paper_detail">Jimmy Lei Ba, Jamie Ryan Kiros, Geoffrey E. Hinton</p>
+            <p class="paper_detail">University of Toronto, Google</p>
+            <p class="paper_detail"><b>Jul 21, 2016 &nbsp; <font color=#B04040>Layer Normalization</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/1607.06450">arXiv 2016</a> &nbsp; <font color=#D0D0D0>arXiv preprint</font></p>
+            <p class="paper_detail"><font color=#FF000>It normalizes across features of each sample, making it suitable for RNNs and cases with small / variable batch sizes. It has over 16,000 citaions (as of Aug 2025).</font></p>
+            
+            <div id='Layer Normalization-Normalization-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>
+It normalizes samples along the <b>batch dimension</b> to adapt to cases with small / variable batch sizes.
+</font></p>
+                
+                <p>
+<pre>
+<code class="language-python">
+## --------------------------------------------------------------------------------
+## Build customized Layer Normalization
+## --------------------------------------------------------------------------------
+import torch
+from torch import nn 
+
+class CustomLayerNorm(nn.Module):
+    def __init__(self, shape, eps=1e-5):
+        super().__init__()
+        self.gamma = nn.Parameter(torch.ones(shape))
+        self.beta = nn.Parameter(torch.zeros(shape))
+        self.eps = eps
+
+    def forward(self, x):
+        mean = x.mean(dim=(1, 2, 3), keepdim=True)
+        var = x.var(dim=(1, 2, 3), unbiased=False, keepdim=True)
+        x_norm = (x - mean) / torch.sqrt(var + self.eps)
+        return self.gamma * x_norm + self.beta
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## Test the customized Layer Normalization
+## --------------------------------------------------------------------------------
+C, H, W = 3, 224, 224
+x = torch.randn(4, C, H, W)
+torch_ln = torch.nn.LayerNorm(normalized_shape=(C, H, W))
+custom_ln = CustomLayerNorm((C, H, W))
+print(torch.allclose(custom_ln(x), torch_ln(x), atol=1e-5))  # it prints True
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split" id='Batch Normalizationnormalization'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -48,7 +103,7 @@ It <b>normalizes layer inputs along channels</b> such that higher lr and saturat
 <img data-src='resource\figs\Batch Normalization\Batch Normalization-fig1.png' width=300>
 <img data-src='resource\figs\Batch Normalization\Batch Normalization-fig2.png' width=300>
 <figcaption>
-<b>Figure 1.</b> <b>(left) Algorithm of Batch Normalization.</b> The gamma and beta is employed to make it can represent identity transformation. <b> (right) Algorithm of training and inference with Batch Normalization.</b>
+<b>Figure 1.</b> <b>(left) Batch Normalization.</b> The \(\gamma\) and \( \beta \) are employed to make it can represent identity transformation. <b> (right) Training and inference.</b>
 </figcaption>
 </figure><pre>
 <code class="language-python">
@@ -90,32 +145,28 @@ class MyBatchNorm2d(nn.Module):
 ## --------------------------------------------------------------------------------
 ## Test the customized Batch Normalization
 ## --------------------------------------------------------------------------------
-# Input
+## Input
 x = torch.randn(8, 3, 32, 32)  # BCHW
 
-# Instantiate both modules
-bn_ref = torch.nn.BatchNorm2d(3)
-bn_custom = MyBatchNorm2d(3)
+## Instantiate both modules
+torch_bn = torch.nn.BatchNorm2d(3)
+custom_bn = MyBatchNorm2d(3)
 
-# Sync initial parameters
-bn_custom.weight.data.copy_(bn_ref.weight.data)
-bn_custom.bias.data.copy_(bn_ref.bias.data)
-bn_custom.running_mean.copy_(bn_ref.running_mean)
-bn_custom.running_var.copy_(bn_ref.running_var)
+## Sync initial parameters
+custom_bn.weight.data.copy_(torch_bn.weight.data)
+custom_bn.bias.data.copy_(torch_bn.bias.data)
+custom_bn.running_mean.copy_(torch_bn.running_mean)
+custom_bn.running_var.copy_(torch_bn.running_var)
 
-# --- Training mode ---
-bn_ref.train()
-bn_custom.train()
-y_ref_train = bn_ref(x)
-y_custom_train = bn_custom(x)
-print("Train diff:", torch.norm(y_ref_train - y_custom_train).item())
+## Training
+torch_bn.train()
+custom_bn.train()
+print(torch.allclose(torch_bn(x), custom_bn(x)))
 
-# --- Inference mode ---
-bn_ref.eval()
-bn_custom.eval()
-y_ref_eval = bn_ref(x)
-y_custom_eval = bn_custom(x)
-print("Eval diff:", torch.norm(y_ref_eval - y_custom_eval).item())
+## Inference
+torch_bn.eval()
+custom_bn.eval()
+print(torch.allclose(torch_bn(x), custom_bn(x)))
 ## --------------------------------------------------------------------------------
 </code>
 </pre>

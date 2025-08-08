@@ -202,9 +202,9 @@ if __name__ == "__main__":
             f.write(content_domain)
     
     ## Build main content
-    intro = intro_temp.replace("total_paper_num", f"<font color='#D93053'>{sum(num_papers)}</font> papers on ")
+    intro = intro_temp.replace("total_paper_num", f"<font color='#D93053'>{sum(num_papers)}</font> papers")
     intro = intro.replace("title", MAIN_CONTENT["title"])
-    intro = intro.replace("domain_name", MAIN_CONTENT["title"])
+    intro = intro.replace("description", "Build AI systems.")
     intro = intro.replace("""<p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>""", "")
     content = build_main_content_all_domains(DOMAINS, num_papers)
     main_content = PREFIX + intro + content + SUFFIX

@@ -1,6 +1,6 @@
 FUNDAMENTAL_COMPONENT = dict()
 FUNDAMENTAL_COMPONENT["file"] = "fundamental_component.html"
-FUNDAMENTAL_COMPONENT["title"] = "Deep Learning Fundamental Components"
+FUNDAMENTAL_COMPONENT["title"] = "Fundamental Components of Deep Learning"
 FUNDAMENTAL_COMPONENT["description"] = "Fundamental components to build deep learning systems."
 FUNDAMENTAL_COMPONENT["categories"] = ["Normalization"]
 FUNDAMENTAL_COMPONENT["papers"] = [
@@ -28,6 +28,60 @@ FUNDAMENTAL_COMPONENT["papers"] = [
 # """,
 # },
 {
+"title": "Layer Normalization",
+"author": "Jimmy Lei Ba, Jamie Ryan Kiros, Geoffrey E. Hinton",
+"organization": "University of Toronto, Google",
+"date": "20160721",
+"venue": "arXiv 2016",
+"pdf_url": "https://arxiv.org/pdf/1607.06450",
+"code_url": "",
+"name": "Layer Normalization",
+"comment": "It normalizes across features of each sample, making it suitable for RNNs and cases with small / variable batch sizes. It has over 16,000 citaions (as of Aug 2025).",
+"category": "Normalization",
+"jupyter_notes": "",
+"info": "**",
+"summary":
+"""
+It normalizes samples along the <b>batch dimension</b> to adapt to cases with small / variable batch sizes.
+""",
+"details": 
+"""
+<pre>
+<code class="language-python">
+## --------------------------------------------------------------------------------
+## Build customized Layer Normalization
+## --------------------------------------------------------------------------------
+import torch
+from torch import nn 
+
+class CustomLayerNorm(nn.Module):
+    def __init__(self, shape, eps=1e-5):
+        super().__init__()
+        self.gamma = nn.Parameter(torch.ones(shape))
+        self.beta = nn.Parameter(torch.zeros(shape))
+        self.eps = eps
+
+    def forward(self, x):
+        mean = x.mean(dim=(1, 2, 3), keepdim=True)
+        var = x.var(dim=(1, 2, 3), unbiased=False, keepdim=True)
+        x_norm = (x - mean) / torch.sqrt(var + self.eps)
+        return self.gamma * x_norm + self.beta
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## Test the customized Layer Normalization
+## --------------------------------------------------------------------------------
+C, H, W = 3, 224, 224
+x = torch.randn(4, C, H, W)
+torch_ln = torch.nn.LayerNorm(normalized_shape=(C, H, W))
+custom_ln = CustomLayerNorm((C, H, W))
+print(torch.allclose(custom_ln(x), torch_ln(x), atol=1e-5))  # it prints True
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+""",
+},
+{
 "title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
 "author": "Sergey Ioffe, Christian Szegedy",
 "organization": "Google",
@@ -53,7 +107,7 @@ It <b>normalizes layer inputs along channels</b> such that higher lr and saturat
     <li> <b>Performance.</b> It applies to the best performing ImageNet classification network and matches its performance using only 7% of the training steps.
 </ul>
 fig: fig1.png 300 fig2.png 300
-cap: <b>(left) Algorithm of Batch Normalization.</b> The gamma and beta is employed to make it can represent identity transformation. <b> (right) Algorithm of training and inference with Batch Normalization.</b>
+cap: <b>(left) Batch Normalization.</b> The \(\gamma\) and \( \\beta \) are employed to make it can represent identity transformation. <b> (right) Training and inference.</b>
 <pre>
 <code class="language-python">
 import torch
@@ -94,32 +148,28 @@ class MyBatchNorm2d(nn.Module):
 ## --------------------------------------------------------------------------------
 ## Test the customized Batch Normalization
 ## --------------------------------------------------------------------------------
-# Input
+## Input
 x = torch.randn(8, 3, 32, 32)  # BCHW
 
-# Instantiate both modules
-bn_ref = torch.nn.BatchNorm2d(3)
-bn_custom = MyBatchNorm2d(3)
+## Instantiate both modules
+torch_bn = torch.nn.BatchNorm2d(3)
+custom_bn = MyBatchNorm2d(3)
 
-# Sync initial parameters
-bn_custom.weight.data.copy_(bn_ref.weight.data)
-bn_custom.bias.data.copy_(bn_ref.bias.data)
-bn_custom.running_mean.copy_(bn_ref.running_mean)
-bn_custom.running_var.copy_(bn_ref.running_var)
+## Sync initial parameters
+custom_bn.weight.data.copy_(torch_bn.weight.data)
+custom_bn.bias.data.copy_(torch_bn.bias.data)
+custom_bn.running_mean.copy_(torch_bn.running_mean)
+custom_bn.running_var.copy_(torch_bn.running_var)
 
-# --- Training mode ---
-bn_ref.train()
-bn_custom.train()
-y_ref_train = bn_ref(x)
-y_custom_train = bn_custom(x)
-print("Train diff:", torch.norm(y_ref_train - y_custom_train).item())
+## Training
+torch_bn.train()
+custom_bn.train()
+print(torch.allclose(torch_bn(x), custom_bn(x)))
 
-# --- Inference mode ---
-bn_ref.eval()
-bn_custom.eval()
-y_ref_eval = bn_ref(x)
-y_custom_eval = bn_custom(x)
-print("Eval diff:", torch.norm(y_ref_eval - y_custom_eval).item())
+## Inference
+torch_bn.eval()
+custom_bn.eval()
+print(torch.allclose(torch_bn(x), custom_bn(x)))
 ## --------------------------------------------------------------------------------
 </code>
 </pre>

@@ -142,7 +142,7 @@ data_loader = DataLoader(
 """,
 },
 {
-"title": "Operation",
+"title": "new paper Operation",
 "author": "",
 "organization": "",
 "date": "20230630",
@@ -167,7 +167,8 @@ data_loader = DataLoader(
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.var.html">var</a>,
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.softmax.html">softmax</a>,
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.matmul.html">matmul</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.einsum.html">einsum</a>.</p>
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.einsum.html">einsum</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.isclose.html">isclose & allclose.</a></p>
 <pre>
 <code class="language-python">
 ## --------------------------------------------------------------------------------
@@ -204,6 +205,15 @@ operands = /  # *** list of tensor. The tensor to be computed
 ## torch.einsum("bij,bjk->bik", tensor1, tensor2)  # batch matrix multiplication
 ## torch.einsum("...ij->...jk", tensor)  # batch permute
 y = torch.einsum(equation, operands)
+
+## Close: checks whether two tensors are close
+other = /  # *** tensor. The second tensor to compare
+rtol = 1e-5  # float. Relative tolerance
+atol = 1e-8  # float. Absolute tolerance
+equal_nan = False  # bool. If True, then two NaN will be considered equal
+## Check if elements satisfy: |input - other| <= atol + rtol * other
+x.isclose(other, rtol, atol, equal_nan)  # return a tensor of bool
+x.allclose(other, rtol, atol, equal_nan)  # return True or False
 ## --------------------------------------------------------------------------------
 </code>
 </pre>
