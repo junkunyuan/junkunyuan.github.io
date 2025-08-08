@@ -1,7 +1,7 @@
 MULTIMODAL_UNDERSTANDING = dict()
 MULTIMODAL_UNDERSTANDING["file"] = "multimodal_understanding.html"
 MULTIMODAL_UNDERSTANDING["title"] = "Multimodal Understanding"
-MULTIMODAL_UNDERSTANDING["description"] = "Understand and reason by integrating multiple modalities (e.g., text, images, video, audio)."
+MULTIMODAL_UNDERSTANDING["description"] = "Understand and reason by integrating multiple modalities (e.g., text, images, and videos)."
 MULTIMODAL_UNDERSTANDING["categories"] = ["Foundation Algorithms & Models"]
 MULTIMODAL_UNDERSTANDING["papers"] = [
 # {

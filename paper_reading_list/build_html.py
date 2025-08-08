@@ -4,15 +4,17 @@ from datetime import datetime
 from resource.utils import get_venue_all, border_color_generator, convert_fig_cap_to_figure, TOP_BUTTON
 
 from resource.main_content import MAIN_CONTENT
+from resource.coding import CODING
+from resource.fundamental import FUNDAMENTAL_COMPONENT
 from resource.visual_understanding import VISUAL_UNDERSTANDING
 from resource.language_generation import LANGUAGE_GENERATION
 from resource.visual_generation import VISUAL_GENERATION
 from resource.multimodal_understanding import MULTIMODAL_UNDERSTANDING
 from resource.native_multimodal_generation import NATIVE_MULTIMODAL_GENERATION
-from resource.coding import CODING
 
 DOMAINS = [
     CODING,
+    FUNDAMENTAL_COMPONENT,
     # VISUAL_UNDERSTANDING,
     LANGUAGE_GENERATION,
     VISUAL_GENERATION,
@@ -41,7 +43,8 @@ f"""
 INTRODUCTION = \
 f"""
 <h1 id="top">title</h1>
-<p class="huger"><b>total_paper_num domain_name.</b></p>
+<p class="larger"><b>description</b></p>
+<p class="larger"><b>total_paper_num</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
 <p><font color=#B0B0B0>Last updated on time_now (UTC+8).</font></p>
@@ -57,7 +60,7 @@ def build_main_content_all_domains(domains, num_papers):
     content = """<hr><p id="table" class="huger"><b>Table of contents:</b></p><ul>"""
     for domain, num_paper in zip(domains, num_papers):
         paper_num_display = "" if num_paper == 0 else f" ({num_paper} papers)"
-        content += f"""<li><a class="no_dec" href={domain["file"]}>{domain["title"]}</a>{paper_num_display} &nbsp; <font color=#B0B0B0>{domain["description"]}</font></li>"""
+        content += f"""<li class="larger"><a class="no_dec" href={domain["file"]}><b>{domain["title"]}</b></a>{paper_num_display}"""
     content += "</ul>"
     return content
 
@@ -182,10 +185,11 @@ if __name__ == "__main__":
     for domain in DOMAINS:
         num_paper = 0 if domain["title"] in EXCLUDE_TITLE else len(domain["papers"]) 
         num_papers.append(num_paper)
-        paper_num_display = "" if num_paper == 0 else f"<font color='#D93053'>{num_paper}</font> papers on "
+        paper_num_display = "" if num_paper == 0 else f"<font color='#D93053'>{num_paper}</font> papers"
         intro = intro_temp.replace("total_paper_num", paper_num_display)
         intro = intro.replace("title", domain["title"])
-        intro = intro.replace("domain_name", domain["title"])
+        intro = intro.replace("description", domain["description"])
+        # intro = intro.replace("domain_name", domain["title"])
         papers_content = build_main_content_of_each_domain(domain)
         if domain["title"] in EXCLUDE_TITLE:
             prefix = PREFIX.replace("<body>", 
