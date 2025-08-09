@@ -222,20 +222,26 @@ x.allclose(other, rtol, atol, equal_nan)  # return True or False
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.zeros.html">zeros</a>, 
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.ones.html">ones</a>, 
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.rand.html">uniform distribution</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.randn.html">normal distribution</a>,
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.arange.html">arange</a>.</p>
 <pre>
 <code class="language-python" style="font-size: 14px;">
 ## --------------------------------------------------------------------------------
 ## Data generation
 ## --------------------------------------------------------------------------------
-## Zeros, Ones
+## Zeros & Ones
 size = /  # *** sequence of int. The shape of output
 y = torch.ones(size)
 y = torch.zeros(size)
 
-## Random number from a uniform distribution [0, 1)
+## Uniform & normal distribution
 size = /  # *** sequence of int. The shape of output
-y = torch.rand(size)
+generator = None  # torch.Generator. A pseudorandom number generator for sampling
+requires_grad = False  # bool. If use autograd
+dtype = None  # torch.dtype. The desired data type
+device = None  # torch.device. The desired device 
+y = torch.rand(size, generator, requires_grad, dytpe, device)  # uniform distribution U(0, 1)
+y = torch.randn(size, generator, requires_grad, dytpe, device)  # standard normal distribution N(0, 1)
 
 ## Arange
 start = 0  # *** number. The starting value
