@@ -28,6 +28,27 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "Flow Matching for Generative Modeling",
+"author": "Yaron Lipman, Ricky T. Q. Chen, Heli Ben-Hamu, Maximilian Nickel, Matt Le",
+"organization": "Meta AI (FAIR), Weizmann Institute of Science",
+"date": "20221006",
+"venue": "ICLR 2023",
+"pdf_url": "https://arxiv.org/pdf/2210.02747",
+"code_url": "",
+"name": "Flow Matching",
+"comment": "It proposes a simple yet powerful framework for training continuous-time generative models by directly learning the vector field of an optimal transport path between data and noise, enabling fast training, stable optimization, and high sample quality. It has over 1,800 citations (as of Aug 2025).",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "FlowMatching.ipynb",
+"info": "**",
+"summary": 
+"""
+It trains <b>continuous normalizing flows</b> using conditional probability paths, resulting in fast training, high sample quality, and efficient sampling.
+""",
+"details": 
+"""
+""",
+},
+{
 "title": "Genie: Generative Interactive Environments",
 "author": "Jake Bruce, Michael Dennis, Ashley Edwards, Jack Parker-Holder, Yuge Shi, Edward Hughes, Matthew Lai, Aditi Mavalankar, Richie Steigerwald, Chris Apps, Yusuf Aytar, Sarah Bechtle, Feryal Behbahani, Stephanie Chan, Nicolas Heess, Lucy Gonzalez, Simon Osindero, Sherjil Ozair, Scott Reed, Jingwei Zhang, Konrad Zolna, Jeff Clune, Nando de Freitas, Satinder Singh, Tim Rocktäschel",
 "organization": "Google DeepMind, University of British Columbia",
