@@ -161,4 +161,24 @@ margin: 15px 0;
 #backToTop.show {
     display: block;
 }
+
+/* Define table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #adadad;
+    vertical-align: middle;
+    color: #404040;
+    line-height: 2;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+th {
+    background-color: #e2e2e2;
+}
+.center {
+text-align: center; /* 父容器文本居中 */
+}
 /* -------------------------------------------------------------------------------- */

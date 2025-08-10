@@ -21,18 +21,18 @@
 <p class="larger"><b></b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on August 10, 2025 at 15:22 (UTC+8).</font></p>
-<hr><p id='table' class="huger"><b>Table of contents:</b></p><ul><li><a class="no_dec larger" id="torch & torchvision" href="#torch & torchvision-table"><b>torch & torchvision</b></a></li><p><a class="no_dec" href="#data transformstorch & torchvision"><font color=#404040>data transforms</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#data loadertorch & torchvision"><font color=#404040>data loader</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#operationtorch & torchvision"><font color=#404040>operation</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#moduletorch & torchvision"><font color=#404040>module</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#activation functiontorch & torchvision"><font color=#404040>activation function</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#optimizertorch & torchvision"><font color=#404040>optimizer</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#huggingfacetorch & torchvision"><font color=#404040>huggingface</font></a></p></ul><h2 id="torch & torchvision-table"><a class="no_dec" href="#torch & torchvision">torch & torchvision</a></h2>
-            <p class="little_split" id='data transformstorch & torchvision'></p>
+<p><font color=#B0B0B0>Last updated on August 10, 2025 at 22:46 (UTC+8).</font></p>
+<hr><p id='table' class="huger"><b>Table of contents:</b></p><ul><li><a class="no_dec larger" id="PyTorch" href="#PyTorch-table"><b>PyTorch</b></a></li><p><a class="no_dec" href="#data transformspytorch"><font color=#404040>data transforms</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#data loaderpytorch"><font color=#404040>data loader</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#operationpytorch"><font color=#404040>operation</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#modulepytorch"><font color=#404040>module</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#activation functionpytorch"><font color=#404040>activation function</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#optimizerpytorch"><font color=#404040>optimizer</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#huggingfacepytorch"><font color=#404040>huggingface</font></a></p><li><a class="no_dec larger" id="Distributed Training" href="#Distributed Training-table"><b>Distributed Training</b></a></li><p><a class="no_dec" href="#deepspeeddistributed training"><font color=#404040>deepspeed</font></a></p></ul><h2 id="PyTorch-table"><a class="no_dec" href="#PyTorch">PyTorch</a></h2>
+            <p class="little_split" id='data transformspytorch'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('data transforms-torch & torchvision-details')"><i>Data Transforms</i></p>
+            <p class="paper_title" onclick="toggleTable('data transforms-PyTorch-details')"><i>Data Transforms</i></p>
             
             
             <p class="paper_detail"><b> <font color=#404040>data transforms</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/vision/stable/transforms.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
             
             
-            <div id='data transforms-torch & torchvision-details' class="info_detail">
+            <div id='data transforms-PyTorch-details' class="info_detail">
                 <hr class="dashed">
                 <p><font color=#202020>It includes tools to transform and augment data: <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Resize.html?highlight=transforms+resize#torchvision.transforms.Resize">Resize</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.RandomHorizontalFlip.html#torchvision.transforms.RandomHorizontalFlip">RandomHorizontalFlip</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.ToTensor.html?highlight=totensor#torchvision.transforms.ToTensor">ToTensor</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Compose.html#torchvision.transforms.Compose">Compose</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Normalize.html#torchvision.transforms.Normalize">Normalize</a>.</font></p>
                 
@@ -96,16 +96,16 @@ image_trans = trans(image)  # Tensor => Tensor
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split" id='data loadertorch & torchvision'></p>
+            <p class="little_split" id='data loaderpytorch'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('data loader-torch & torchvision-details')"><i>Data Loader</i></p>
+            <p class="paper_title" onclick="toggleTable('data loader-PyTorch-details')"><i>Data Loader</i></p>
             
             
             <p class="paper_detail"><b> <font color=#404040>data loader</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader">docs</a> &nbsp; <font color=#D0D0D0></font></p>
             
             
-            <div id='data loader-torch & torchvision-details' class="info_detail">
+            <div id='data loader-PyTorch-details' class="info_detail">
                 <hr class="dashed">
                 <p><font color=#202020>It includes tools for data loading: <a href="https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader">DataLoader</a>.</font></p>
                 
@@ -142,16 +142,16 @@ data_loader = DataLoader(
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split" id='operationtorch & torchvision'></p>
+            <p class="little_split" id='operationpytorch'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('operation-torch & torchvision-details')"><i>Operation</i></p>
+            <p class="paper_title" onclick="toggleTable('operation-PyTorch-details')"><i>Operation</i></p>
             
             
             <p class="paper_detail"><b> <font color=#404040>operation</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/index.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
             
             
-            <div id='operation-torch & torchvision-details' class="info_detail">
+            <div id='operation-PyTorch-details' class="info_detail">
                 <hr class="dashed">
                 <p><font color=#202020>It includes operations: 
 <a href="#operations">operations</a>,
@@ -342,16 +342,16 @@ y = torch.where(condition, input, output)
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split" id='moduletorch & torchvision'></p>
+            <p class="little_split" id='modulepytorch'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('module-torch & torchvision-details')"><i>Module</i></p>
+            <p class="paper_title" onclick="toggleTable('module-PyTorch-details')"><i>Module</i></p>
             
             
             <p class="paper_detail"><b> <font color=#404040>module</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/nn.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
             
             
-            <div id='module-torch & torchvision-details' class="info_detail">
+            <div id='module-PyTorch-details' class="info_detail">
                 <hr class="dashed">
                 <p><font color=#202020>
 It includes tools to build neural networks: 
@@ -467,16 +467,16 @@ y = dropout(x)
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split" id='activation functiontorch & torchvision'></p>
+            <p class="little_split" id='activation functionpytorch'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('activation function-torch & torchvision-details')"><i>Activation Function</i></p>
+            <p class="paper_title" onclick="toggleTable('activation function-PyTorch-details')"><i>Activation Function</i></p>
             
             
             <p class="paper_detail"><b> <font color=#404040>activation function</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/nn.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
             
             
-            <div id='activation function-torch & torchvision-details' class="info_detail">
+            <div id='activation function-PyTorch-details' class="info_detail">
                 <hr class="dashed">
                 <p><font color=#202020>
 It includes activation functions: 
@@ -513,16 +513,16 @@ y = silu(x)
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split" id='optimizertorch & torchvision'></p>
+            <p class="little_split" id='optimizerpytorch'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('optimizer-torch & torchvision-details')"><i>Optimizer</i></p>
+            <p class="paper_title" onclick="toggleTable('optimizer-PyTorch-details')"><i>Optimizer</i></p>
             
             
             <p class="paper_detail"><b> <font color=#404040>optimizer</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/optim.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
             
             
-            <div id='optimizer-torch & torchvision-details' class="info_detail">
+            <div id='optimizer-PyTorch-details' class="info_detail">
                 <hr class="dashed">
                 <p><font color=#202020>It includes tools for building optimization algorithms: <a href="https://docs.pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW.step">AdamW</a>.</font></p>
                 
@@ -549,16 +549,16 @@ adam_optim = AdamW(params, lr, betas, weight_decay)
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split" id='huggingfacetorch & torchvision'></p>
+            <p class="little_split" id='huggingfacepytorch'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('huggingface-torch & torchvision-details')"><i>huggingface</i></p>
+            <p class="paper_title" onclick="toggleTable('huggingface-PyTorch-details')"><i>huggingface</i></p>
             
             
             <p class="paper_detail"><b> <font color=#404040>huggingface</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://huggingface.co/docs">docs</a> &nbsp; <font color=#D0D0D0></font></p>
             
             
-            <div id='huggingface-torch & torchvision-details' class="info_detail">
+            <div id='huggingface-PyTorch-details' class="info_detail">
                 <hr class="dashed">
                 <p><font color=#202020>It includes tools from huggingface: <a href="https://huggingface.co/docs/huggingface_hub/main/en/package_reference/file_download#huggingface_hub.snapshot_download">snapshot_download</a></font></p>
                 
@@ -578,6 +578,56 @@ max_workers = 8  # int. Number of concurrent threads to download files
 # ...
 
 snapshot_download(repo_id, repo_type, local_dir, token, max_workers)
+</code>
+</pre>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            <h2 id="Distributed Training-table"><a class="no_dec" href="#Distributed Training">Distributed Training</a></h2>
+            <p class="little_split" id='deepspeeddistributed training'></p>
+            <div style="border-left: 14px solid #FFD6AD; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('deepspeed-Distributed Training-details')"><i>DeepSpeed</i></p>
+            
+            
+            <p class="paper_detail"><b> <font color=#404040>deepspeed</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://deepspeed.readthedocs.io/en/latest/">docs</a> &nbsp; <font color=#D0D0D0></font></p>
+            
+            
+            <div id='deepspeed-Distributed Training-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>DeepSpeed is an open-sourced deep learning optimization library developed by <b>Microsoft Research</b>, designed to simplify and accelerate the training and deployment of <b>large-scale</b> deep learning models.</font></p>
+                
+                <p>
+<table class="center">
+    <tr>
+        <th>stage</th>
+        <th>partition</th>
+        <th>memory saving</th>
+        <th>complexity</th>
+    </tr>
+    <tr>
+        <td>stage 1</td>
+        <td>optimizer states</td>
+        <td>~40% - 60% (for Adam)</td>
+        <td>low</td>
+    </tr>
+    <tr>
+        <td>stage 2</td>
+        <td>optimizer states & gradients</td>
+        <td> additional ~15% - 25%</td>
+        <td>medium</td>
+    </tr>
+    <tr>
+        <td>stage 3</td>
+        <td>optimizer states & gradients & model parameters</td>
+        <td> up to 80% - 90%</td>
+        <td>high</td>
+    </tr>
+</table>
+<pre>
+<code class="language-python" style="font-size: 14px;">
 </code>
 </pre>
 </p>

@@ -2,7 +2,7 @@ CODING = dict()
 CODING["file"] = "coding.html"
 CODING["title"] = "Coding and Engineering"
 CODING["description"] = "Tools used to build AI systems."
-CODING["categories"] = ["torch & torchvision"]
+CODING["categories"] = ["PyTorch", "Distributed Training"]
 CODING["papers"] = [
 # {
 # "title": "",
@@ -27,6 +27,54 @@ CODING["papers"] = [
 # """,
 # },
 {
+"title": "DeepSpeed",
+"author": "",
+"organization": "",
+"date": "",
+"venue": "docs",
+"pdf_url": "https://deepspeed.readthedocs.io/en/latest/",
+"code_url": "",
+"name": "deepspeed",
+"comment": "",
+"category": "Distributed Training",
+"jupyter_notes": "",
+"info": "",
+"summary": """DeepSpeed is an open-sourced deep learning optimization library developed by <b>Microsoft Research</b>, designed to simplify and accelerate the training and deployment of <b>large-scale</b> deep learning models.""",
+"details": 
+"""
+<table class="center">
+    <tr>
+        <th>stage</th>
+        <th>partition</th>
+        <th>memory saving</th>
+        <th>complexity</th>
+    </tr>
+    <tr>
+        <td>stage 1</td>
+        <td>optimizer states</td>
+        <td>~40% - 60% (for Adam)</td>
+        <td>low</td>
+    </tr>
+    <tr>
+        <td>stage 2</td>
+        <td>optimizer states & gradients</td>
+        <td> additional ~15% - 25%</td>
+        <td>medium</td>
+    </tr>
+    <tr>
+        <td>stage 3</td>
+        <td>optimizer states & gradients & model parameters</td>
+        <td> up to 80% - 90%</td>
+        <td>high</td>
+    </tr>
+</table>
+<pre>
+<code class="language-python" style="font-size: 14px;">
+</code>
+</pre>
+""",
+},
+{
 "title": "Data Transforms",
 "author": "",
 "organization": "",
@@ -36,7 +84,7 @@ CODING["papers"] = [
 "code_url": "",
 "name": "data transforms",
 "comment": "",
-"category": "torch & torchvision",
+"category": "PyTorch",
 "jupyter_notes": "",
 "info": "",
 "summary": """It includes tools to transform and augment data: <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Resize.html?highlight=transforms+resize#torchvision.transforms.Resize">Resize</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.RandomHorizontalFlip.html#torchvision.transforms.RandomHorizontalFlip">RandomHorizontalFlip</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.ToTensor.html?highlight=totensor#torchvision.transforms.ToTensor">ToTensor</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Compose.html#torchvision.transforms.Compose">Compose</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Normalize.html#torchvision.transforms.Normalize">Normalize</a>.""",
@@ -107,7 +155,7 @@ image_trans = trans(image)  # Tensor => Tensor
 "code_url": "",
 "name": "data loader",
 "comment": "",
-"category": "torch & torchvision",
+"category": "PyTorch",
 "jupyter_notes": "",
 "info": "",
 "summary": """It includes tools for data loading: <a href="https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader">DataLoader</a>.""",
@@ -151,7 +199,7 @@ data_loader = DataLoader(
 "code_url": "",
 "name": "operation",
 "comment": "",
-"category": "torch & torchvision",
+"category": "PyTorch",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -352,7 +400,7 @@ y = torch.where(condition, input, output)
 "code_url": "",
 "name": "module",
 "comment": "",
-"category": "torch & torchvision",
+"category": "PyTorch",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -476,7 +524,7 @@ y = dropout(x)
 "code_url": "",
 "name": "activation function",
 "comment": "",
-"category": "torch & torchvision",
+"category": "PyTorch",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -521,7 +569,7 @@ y = silu(x)
 "code_url": "",
 "name": "optimizer",
 "comment": "",
-"category": "torch & torchvision",
+"category": "PyTorch",
 "jupyter_notes": "",
 "info": "",
 "summary": """It includes tools for building optimization algorithms: <a href="https://docs.pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW.step">AdamW</a>.""",
@@ -555,7 +603,7 @@ adam_optim = AdamW(params, lr, betas, weight_decay)
 "code_url": "",
 "name": "huggingface",
 "comment": "",
-"category": "torch & torchvision",
+"category": "PyTorch",
 "jupyter_notes": "",
 "info": "",
 "summary": """It includes tools from huggingface: <a href="https://huggingface.co/docs/huggingface_hub/main/en/package_reference/file_download#huggingface_hub.snapshot_download">snapshot_download</a>""",
