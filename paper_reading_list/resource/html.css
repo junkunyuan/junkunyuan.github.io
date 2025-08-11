@@ -179,6 +179,15 @@ th {
     background-color: #e2e2e2;
 }
 .center {
-text-align: center; /* 父容器文本居中 */
+text-align: center;
+}
+
+pre {
+    margin: 0;
+    padding: 0;
+}
+code {
+    margin: 0;
+    padding: 0;
 }
 /* -------------------------------------------------------------------------------- */

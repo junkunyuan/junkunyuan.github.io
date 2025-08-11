@@ -68,10 +68,6 @@ CODING["papers"] = [
         <td>high</td>
     </tr>
 </table>
-<pre>
-<code class="language-python" style="font-size: 14px;">
-</code>
-</pre>
 """,
 },
 {
@@ -87,60 +83,99 @@ CODING["papers"] = [
 "category": "PyTorch",
 "jupyter_notes": "",
 "info": "",
-"summary": """It includes tools to transform and augment data: <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Resize.html?highlight=transforms+resize#torchvision.transforms.Resize">Resize</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.RandomHorizontalFlip.html#torchvision.transforms.RandomHorizontalFlip">RandomHorizontalFlip</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.ToTensor.html?highlight=totensor#torchvision.transforms.ToTensor">ToTensor</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Compose.html#torchvision.transforms.Compose">Compose</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Normalize.html#torchvision.transforms.Normalize">Normalize</a>.""",
+"summary": """It includes tools to transform and augment data.""",
 "details": 
 """
+<table class="center">
+<tr>
+<th>category</th>
+<th>class</th>
+</tr>
+
+<tr>
+<td>geometry</td>
+<td><a href="#RandomHorizontalFlip">RandomHorizontalFlip</a></td>
+</tr>
+
+<tr>
+<td>resizing</td>
+<td><a href="#Resize">Resize</a></td>
+</tr>
+
+<tr>
+<td>conversion</td>
+<td>
+<a href="#ToTensor">ToTensor</a> | <a href="#Compose">Compose</a> | <a href="#Normalize">Normalize</a>
+</td>
+</tr>
+
+</table>
 <pre>
 <code class="language-python" style="font-size: 14px;">
 from torchvision import transforms
 from torchvision.transforms.InterpolationMode import BILINEAR, NEAREST, BICUBIC 
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## Resize
-## --------------------------------------------------------------------------------
+<p class="larger" id="RandomHorizontalFlip">
+<b><a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Resize.html">RandomHorizontalFlip</a>: </b>
+horizontally flip the image randomly with a given probability. 
+<pre>
+<code class="language-python" style="font-size: 14px;">
+p = 0.5  # *** float. Probability to flip image
+trans = <b>transforms.RandomHorizontalFlip</b>(p)
+image_trans = trans(image)  # PIL Image => PIL Image or Tensor => Tensor
+</code>
+</pre>
+
+<p class="larger" id="Resize">
+<b><a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Resize.html">Resize</a>: </b>
+resize the image to the given size.
+<pre>
+<code class="language-python" style="font-size: 14px;">
 size = /  # *** sequence or int. For example (512, 768)
 interpolation = BILINEAR  # InterpolationMode
 max_size = None  # int. Maximum allowed for the longer edge, supported if `size` is int
 antialias = True  # bool. Apply antialiasing, only under bilinear or bicubic modes
 trans = transforms.Resize(size, interpolation, max_size, antialias)
 image_trans = trans(image)  # PIL Image => PIL Image or Tensor => Tensor
-## --------------------------------------------------------------------------------
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## RandomHorizontalFlip
-## --------------------------------------------------------------------------------
-p = 0.5  # *** float. Probability to flip image
-trans = <b>transforms.RandomHorizontalFlip</b>(p)
-image_trans = trans(image)  # PIL Image => PIL Image or Tensor => Tensor
-## --------------------------------------------------------------------------------
-
-## --------------------------------------------------------------------------------
-## ToTensor
-## --------------------------------------------------------------------------------
+<p class="larger" id="ToTensor">
+<b><a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.ToTensor.html">ToTensor</a>: </b>
+convert a PIL Image or ndarray to tensor and scale the values accordingly.
+<pre>
+<code class="language-python" style="font-size: 14px;">
 ## Input: PIL Image / numpy.ndarray (np.uint8) of shape (HxWxC) in the range [0, 255]
 ## Output: torch.FloatTensor of shape (CxHxW) in the range (0.0, 1.0)
 ## Other inputs: only apply type transform
 trans = <b>transforms.ToTensor</b>()
 image_trans = trans(image)  # PIL Image / ndarray => Tensor
-## --------------------------------------------------------------------------------
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## Compose
-## --------------------------------------------------------------------------------
+<p class="larger" id="Compose">
+<b><a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Compose.html">Compose</a>: </b>
+compose several transforms.
+<pre>
+<code class="language-python" style="font-size: 14px;">
 transforms = /  # *** list of Transform objects
 trans = <b>transforms.Compose</b>(transforms)
 image_trans = trans(image)  # PIL Image / ndarray / Tensor => Tensor
-## --------------------------------------------------------------------------------
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## Normalize
-## --------------------------------------------------------------------------------
-mean = /  # *** sequence. Means for each channel.
-std = /  # *** sequence. Standard deviations for each channel.
-inplace = False  # bool. Bool to make this operation in-place.
+<p class="larger" id="Normalize">
+<b><a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Normalize.html">Normalize</a>: </b>
+normalize a tensor image with mean and standard deviation.
+<pre>
+<code class="language-python" style="font-size: 14px;">
+mean = /  # *** sequence. Means for each channel
+std = /  # *** sequence. Standard deviations for each channel
+inplace = False  # bool. Bool to make this operation in-place
 trans = <b>transforms.Normalize</b>(mean, std, inplace)
 image_trans = trans(image)  # Tensor => Tensor
-## --------------------------------------------------------------------------------
 </code>
 </pre>
 """,
@@ -190,7 +225,7 @@ data_loader = DataLoader(
 """,
 },
 {
-"title": "Operation",
+"title": "new paper Operation",
 "author": "",
 "organization": "",
 "date": "20230630",
@@ -209,41 +244,83 @@ data_loader = DataLoader(
 <a href="#size & reshape">size & reshape</a>.""",
 "details": 
 """
+<table class="center">
+<tr>
+<th>category</th>
+<th>class</th>
+</tr>
+
+<tr>
+<td>operations</td>
+<td>
+<a href="#Basic operations">Basic operations</a> |
+<a href="#Mean & Var">Mean & Var</a> |
+<a href="#Softmax">Softmax</a> |
+<a href="#Matrix multiplication">Matrix multiplication</a>
+</td>
+</tr>
+
+</table>
+
 <p class="larger" id="operations"><b>Operations:</b> 
-<a href="https://docs.pytorch.org/docs/stable/torch.html">basic operations</a>,
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.mean.html">mean</a>,
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.var.html">var</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.softmax.html">softmax</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.matmul.html">matmul</a>,
+<a href="">softmax</a>,
+<a href="">matmul</a>,
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.einsum.html">einsum</a>,
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.isclose.html">isclose & allclose.</a></p>
 <pre>
 <code class="language-python" style="font-size: 14px;">
-## --------------------------------------------------------------------------------
-## Operations
-## --------------------------------------------------------------------------------
 import torch
+</code>
+</pre>
 
-## Basic operations
+<p class="larger" id="Basic operations">
+<b><a href="https://docs.pytorch.org/docs/stable/torch.html">Basic operations</a>:</b> 
+exp, sin, cos, sqrt, etc.
+<pre>
+<code class="language-python" style="font-size: 14px;">
 ## function: exp, sin, cos, sqrt
 y = torch.function(x)
+</code>
+</pre>
 
-## Mean and var
+<p class="larger" id="Mean & Var">
+<b><a href="https://docs.pytorch.org/docs/stable/mean.html">Mean & Var</a>.</b> 
+<pre>
+<code class="language-python" style="font-size: 14px;">
 dim = /  # *** int or tuple of ints. The dims to reduce
 keepdim = False # *** bool. If True, return tensor with the same dims
 mean = x.mean(dim, keepdim)
+
 ## In version>=2.0, correction=1 == unbiased=True, correction=0 == unbiased=False 
 correction = 1  # *** int. 
 var = x.var(dim, keepdim, correction)
+</code>
+</pre>
 
-## Softmax
-dim = None  # *** input
+<p class="larger" id="Softmax">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.softmax.html">Softmax</a>.</b> 
+<pre>
+<code class="language-python" style="font-size: 14px;">
+dim = None  # *** int. The dimension to apply softmax
 y = x.softmax(dim)
+</code>
+</pre>
 
-## Matrix multiplication
+<p class="larger" id="Matrix multiplication">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.matmul.html">Matrix multiplication</a>.</b> 
+<pre>
+<code class="language-python" style="font-size: 14px;">
 other = /  # *** tensor
 y = x.matmul(other)
+</code>
+</pre>
 
+<p class="larger" id="Matrix multiplication">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.matmul.html">Matrix multiplication</a>.</b> 
+<pre>
+<code class="language-python" style="font-size: 14px;">
 ## Einsum
 equation = /  # *** str. The subscript for the Einstein summation
 operands = /  # *** list of tensor. The tensor to be computed
@@ -333,13 +410,11 @@ y = x.view(shape)
 ## Flatten: flatten along the given dimensions
 start_dim = 0  # *** int. The first dimension to flatten
 end_dim = -1  # *** int. The last dimension to flatten
-## Note: it could be either copying or viewing
 y = x.flatten(start_dim, end_dim)
 
 ## Transpose: swap two dimensions
 dim0 = /  # *** int. The first dimension to be tranposed
 dim1 = /  # *** int. The second dimension to be tranposed
-## Note: the result tensor shares the strorage
 y = x.tranpose(dim0, dim1)
 
 ## Permute
@@ -348,7 +423,7 @@ y = x.permute(dims)
 
 ## Unsqueeze: insert one dimension
 dim = /  # *** int. The index at which to insert the singleton dim
-y = x.unsqueeze(dim)
+y = x.unsqueeze(dim)  # Eqaul to y = x[:, :, None, :] when dim = 3
 
 ## Concat: concatenate some tensors along a dimension
 tensors = /  # *** tuple of tensors. Tensors with the same shape except in the cat dim
@@ -389,7 +464,7 @@ y = torch.where(condition, input, output)
 """,
 },
 {
-"title": "Module",
+"title": "new paper Module",
 "author": "",
 "organization": "",
 "date": "20240629"
@@ -515,7 +590,7 @@ y = dropout(x)
 """,
 },
 {
-"title": "Activation Function",
+"title": "new paper Activation Function",
 "author": "",
 "organization": "",
 "date": "20240628",
@@ -560,7 +635,7 @@ y = silu(x)
 """,
 },
 {
-"title": "Optimizer",
+"title": "new paper Optimizer",
 "author": "",
 "organization": "",
 "date": "20240628",

@@ -49,7 +49,7 @@ BIOGRAPHY = \
     I received my Ph.D. degree in Computer Science from Zhejiang University (2019 — 2024), co-supervised by professors of <a href="https://scholar.google.com/citations?user=FOsNiMQAAAAJ">Kun Kuang</a>, <a href="https://person.zju.edu.cn/0096005">Lanfen Lin</a>, and 
   <a href="https://scholar.google.com/citations?user=XJLn4MYAAAAJ">Fei Wu</a>. I received my B.S. degree in Automation from Zhejiang University of Technology (2015 — 2019), co-supervised by professors of <a href="https://scholar.google.com.hk/citations?user=smi7bpoAAAAJ&hl=zh-CN&oi=ao">Qi Xuan</a> and <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=CnBn6FwAAAAJ">Li Yu</a>.<br><br>
 
-  I have been fortunate to work closely with some friends such as <a href="https://scholar.google.com.hk/citations?user=F5P_8NkAAAAJ&hl=zh-CN&oi=ao">Defang Chen</a>, <a href="https://scholar.google.com.hk/citations?user=kwBR1ygAAAAJ&hl=zh-CN&oi=ao">Yue Ma</a>, their insights have profoundly shaped my approach to research.
+  I have been fortunate to work closely with some friends such as <a href="https://scholar.google.com.hk/citations?user=F5P_8NkAAAAJ&hl=zh-CN&oi=ao">Defang Chen</a>, <a href="https://scholar.google.com.hk/citations?user=kwBR1ygAAAAJ&hl=zh-CN&oi=ao">Yue Ma</a>, their insights also profoundly shape my approach to research.
 </p>
 """
 SERVICE = \
@@ -57,8 +57,18 @@ SERVICE = \
 <br>
 <h2>Professional Service</h2>
 <ul>
-    <li> <b>Conference Reviewer.</b>&nbsp;&nbsp; CVPR 2021 &nbsp;&nbsp;|&nbsp;&nbsp; ICCV 2023 &nbsp;&nbsp;|&nbsp;&nbsp; AAAI 2023, 2026 &nbsp;&nbsp;|&nbsp;&nbsp; MM 2023
-    <li> <b>Journal Reviewer.</b>&nbsp;&nbsp; TNNLS 2022&nbsp;&nbsp;|&nbsp;&nbsp; NN 2023 &nbsp;&nbsp;|&nbsp;&nbsp; TCSVT 2023 &nbsp;&nbsp;|&nbsp;&nbsp; TKDD 2023
+<li> <b>Conference Reviewer.</b>&nbsp;&nbsp; 
+CVPR 2021 &nbsp;&nbsp;<font color=#A0A0A0>|</font>&nbsp;&nbsp;
+ICCV 2023 &nbsp;&nbsp;<font color=#A0A0A0>|</font>&nbsp;&nbsp;
+AAAI 2023, 2026 &nbsp;&nbsp;<font color=#A0A0A0>|</font>&nbsp;&nbsp;
+MM 2023
+
+<li> <b>Journal Reviewer.</b>&nbsp;&nbsp; 
+TNNLS 2022 &nbsp;&nbsp;<font color=#A0A0A0>|</font>&nbsp;&nbsp;
+TCSVT 2023 &nbsp;&nbsp;<font color=#A0A0A0>|</font>&nbsp;&nbsp;
+PR 2026 &nbsp;&nbsp;<font color=#A0A0A0>|</font>&nbsp;&nbsp;
+NN 2023 &nbsp;&nbsp;<font color=#A0A0A0>|</font>&nbsp;&nbsp;
+TKDD 2023
 </ul>
 """
 SUFFIX = \
@@ -78,13 +88,13 @@ def build_paper(papers):
     color_year = ""
     color_bar_generator = border_color_generator()
     for paper in papers:
-        venue = f"""<b><a href="{paper["pdf_url"]}"><font color=#202020>{paper["venue"]}</font></a></b>"""
+        venue = f"""<b><a href="{paper["pdf_url"]}"><font color=#404040>{paper["venue"]}</font></a></b>"""
         venue_all = get_venue_all(paper["venue"])
         code = f"""&nbsp;&nbsp;|&nbsp;&nbsp; <a href="{paper['code_url']}">code</a>""" if len(paper['code_url']) > 0 else ""
         comment = f"""<p class="paper_detail"><font color=#FF000>{paper["comment"]}</font></p>""" if "comment" in paper else ""
         date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%b %d, %Y")
 
-        author = paper["author"].replace("Junkun Yuan", "<b><font color=#202020>Junkun Yuan</font></b>")
+        author = paper["author"].replace("Junkun Yuan", "<b><font color=#404040>Junkun Yuan</font></b>")
         author = author.replace("**", "<sup>&#10035</sup>")
         author = author.replace("##", "<sup>&#9993</sup>")
 

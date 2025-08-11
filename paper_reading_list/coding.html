@@ -21,7 +21,7 @@
 <p class="larger"><b></b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on August 10, 2025 at 22:46 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on August 11, 2025 at 19:52 (UTC+8).</font></p>
 <hr><p id='table' class="huger"><b>Table of contents:</b></p><ul><li><a class="no_dec larger" id="PyTorch" href="#PyTorch-table"><b>PyTorch</b></a></li><p><a class="no_dec" href="#data transformspytorch"><font color=#404040>data transforms</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#data loaderpytorch"><font color=#404040>data loader</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#operationpytorch"><font color=#404040>operation</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#modulepytorch"><font color=#404040>module</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#activation functionpytorch"><font color=#404040>activation function</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#optimizerpytorch"><font color=#404040>optimizer</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#huggingfacepytorch"><font color=#404040>huggingface</font></a></p><li><a class="no_dec larger" id="Distributed Training" href="#Distributed Training-table"><b>Distributed Training</b></a></li><p><a class="no_dec" href="#deepspeeddistributed training"><font color=#404040>deepspeed</font></a></p></ul><h2 id="PyTorch-table"><a class="no_dec" href="#PyTorch">PyTorch</a></h2>
             <p class="little_split" id='data transformspytorch'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
@@ -34,60 +34,99 @@
             
             <div id='data transforms-PyTorch-details' class="info_detail">
                 <hr class="dashed">
-                <p><font color=#202020>It includes tools to transform and augment data: <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Resize.html?highlight=transforms+resize#torchvision.transforms.Resize">Resize</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.RandomHorizontalFlip.html#torchvision.transforms.RandomHorizontalFlip">RandomHorizontalFlip</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.ToTensor.html?highlight=totensor#torchvision.transforms.ToTensor">ToTensor</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Compose.html#torchvision.transforms.Compose">Compose</a>, <a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Normalize.html#torchvision.transforms.Normalize">Normalize</a>.</font></p>
+                <p><font color=#202020>It includes tools to transform and augment data.</font></p>
                 
                 <p>
+<table class="center">
+<tr>
+<th>category</th>
+<th>class</th>
+</tr>
+
+<tr>
+<td>geometry</td>
+<td><a href="#RandomHorizontalFlip">RandomHorizontalFlip</a></td>
+</tr>
+
+<tr>
+<td>resizing</td>
+<td><a href="#Resize">Resize</a></td>
+</tr>
+
+<tr>
+<td>conversion</td>
+<td>
+<a href="#ToTensor">ToTensor</a> | <a href="#Compose">Compose</a> | <a href="#Normalize">Normalize</a>
+</td>
+</tr>
+
+</table>
 <pre>
 <code class="language-python" style="font-size: 14px;">
 from torchvision import transforms
 from torchvision.transforms.InterpolationMode import BILINEAR, NEAREST, BICUBIC 
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## Resize
-## --------------------------------------------------------------------------------
+<p class="larger" id="RandomHorizontalFlip">
+<b><a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Resize.html">RandomHorizontalFlip</a>: </b>
+horizontally flip the image randomly with a given probability. 
+<pre>
+<code class="language-python" style="font-size: 14px;">
+p = 0.5  # *** float. Probability to flip image
+trans = <b>transforms.RandomHorizontalFlip</b>(p)
+image_trans = trans(image)  # PIL Image => PIL Image or Tensor => Tensor
+</code>
+</pre>
+
+<p class="larger" id="Resize">
+<b><a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Resize.html">Resize</a>: </b>
+resize the image to the given size.
+<pre>
+<code class="language-python" style="font-size: 14px;">
 size = /  # *** sequence or int. For example (512, 768)
 interpolation = BILINEAR  # InterpolationMode
 max_size = None  # int. Maximum allowed for the longer edge, supported if `size` is int
 antialias = True  # bool. Apply antialiasing, only under bilinear or bicubic modes
 trans = transforms.Resize(size, interpolation, max_size, antialias)
 image_trans = trans(image)  # PIL Image => PIL Image or Tensor => Tensor
-## --------------------------------------------------------------------------------
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## RandomHorizontalFlip
-## --------------------------------------------------------------------------------
-p = 0.5  # *** float. Probability to flip image
-trans = <b>transforms.RandomHorizontalFlip</b>(p)
-image_trans = trans(image)  # PIL Image => PIL Image or Tensor => Tensor
-## --------------------------------------------------------------------------------
-
-## --------------------------------------------------------------------------------
-## ToTensor
-## --------------------------------------------------------------------------------
+<p class="larger" id="ToTensor">
+<b><a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.ToTensor.html">ToTensor</a>: </b>
+convert a PIL Image or ndarray to tensor and scale the values accordingly.
+<pre>
+<code class="language-python" style="font-size: 14px;">
 ## Input: PIL Image / numpy.ndarray (np.uint8) of shape (HxWxC) in the range [0, 255]
 ## Output: torch.FloatTensor of shape (CxHxW) in the range (0.0, 1.0)
 ## Other inputs: only apply type transform
 trans = <b>transforms.ToTensor</b>()
 image_trans = trans(image)  # PIL Image / ndarray => Tensor
-## --------------------------------------------------------------------------------
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## Compose
-## --------------------------------------------------------------------------------
+<p class="larger" id="Compose">
+<b><a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Compose.html">Compose</a>: </b>
+compose several transforms.
+<pre>
+<code class="language-python" style="font-size: 14px;">
 transforms = /  # *** list of Transform objects
 trans = <b>transforms.Compose</b>(transforms)
 image_trans = trans(image)  # PIL Image / ndarray / Tensor => Tensor
-## --------------------------------------------------------------------------------
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## Normalize
-## --------------------------------------------------------------------------------
-mean = /  # *** sequence. Means for each channel.
-std = /  # *** sequence. Standard deviations for each channel.
-inplace = False  # bool. Bool to make this operation in-place.
+<p class="larger" id="Normalize">
+<b><a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Normalize.html">Normalize</a>: </b>
+normalize a tensor image with mean and standard deviation.
+<pre>
+<code class="language-python" style="font-size: 14px;">
+mean = /  # *** sequence. Means for each channel
+std = /  # *** sequence. Standard deviations for each channel
+inplace = False  # bool. Bool to make this operation in-place
 trans = <b>transforms.Normalize</b>(mean, std, inplace)
 image_trans = trans(image)  # Tensor => Tensor
-## --------------------------------------------------------------------------------
 </code>
 </pre>
 </p>
@@ -145,55 +184,92 @@ data_loader = DataLoader(
             <p class="little_split" id='operationpytorch'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('operation-PyTorch-details')"><i>Operation</i></p>
+            <p class="paper_title" onclick="toggleTable('operation-PyTorch-details')"><i>new paper Operation</i></p>
             
             
             <p class="paper_detail"><b> <font color=#404040>operation</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/index.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
             
-            
-            <div id='operation-PyTorch-details' class="info_detail">
-                <hr class="dashed">
-                <p><font color=#202020>It includes operations: 
+            <p>It includes operations: 
 <a href="#operations">operations</a>,
 <a href="#data generation">data generation</a>, 
-<a href="#size & reshape">size & reshape</a>.</font></p>
-                
-                <p>
+<a href="#size & reshape">size & reshape</a>.</p><p>
+<table class="center">
+<tr>
+<th>category</th>
+<th>class</th>
+</tr>
+
+<tr>
+<td>operations</td>
+<td>
+<a href="#Basic operations">Basic operations</a> |
+<a href="#Mean & Var">Mean & Var</a> |
+<a href="#Softmax">Softmax</a> |
+<a href="#Matrix multiplication">Matrix multiplication</a>
+</td>
+</tr>
+
+</table>
+
 <p class="larger" id="operations"><b>Operations:</b> 
-<a href="https://docs.pytorch.org/docs/stable/torch.html">basic operations</a>,
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.mean.html">mean</a>,
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.var.html">var</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.softmax.html">softmax</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.matmul.html">matmul</a>,
+<a href="">softmax</a>,
+<a href="">matmul</a>,
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.einsum.html">einsum</a>,
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.isclose.html">isclose & allclose.</a></p>
 <pre>
 <code class="language-python" style="font-size: 14px;">
-## --------------------------------------------------------------------------------
-## Operations
-## --------------------------------------------------------------------------------
 import torch
+</code>
+</pre>
 
-## Basic operations
+<p class="larger" id="Basic operations">
+<b><a href="https://docs.pytorch.org/docs/stable/torch.html">Basic operations</a>:</b> 
+exp, sin, cos, sqrt, etc.
+<pre>
+<code class="language-python" style="font-size: 14px;">
 ## function: exp, sin, cos, sqrt
 y = torch.function(x)
+</code>
+</pre>
 
-## Mean and var
+<p class="larger" id="Mean & Var">
+<b><a href="https://docs.pytorch.org/docs/stable/mean.html">Mean & Var</a>.</b> 
+<pre>
+<code class="language-python" style="font-size: 14px;">
 dim = /  # *** int or tuple of ints. The dims to reduce
 keepdim = False # *** bool. If True, return tensor with the same dims
 mean = x.mean(dim, keepdim)
+
 ## In version>=2.0, correction=1 == unbiased=True, correction=0 == unbiased=False 
 correction = 1  # *** int. 
 var = x.var(dim, keepdim, correction)
+</code>
+</pre>
 
-## Softmax
-dim = None  # *** input
+<p class="larger" id="Softmax">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.softmax.html">Softmax</a>.</b> 
+<pre>
+<code class="language-python" style="font-size: 14px;">
+dim = None  # *** int. The dimension to apply softmax
 y = x.softmax(dim)
+</code>
+</pre>
 
-## Matrix multiplication
+<p class="larger" id="Matrix multiplication">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.matmul.html">Matrix multiplication</a>.</b> 
+<pre>
+<code class="language-python" style="font-size: 14px;">
 other = /  # *** tensor
 y = x.matmul(other)
+</code>
+</pre>
 
+<p class="larger" id="Matrix multiplication">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.matmul.html">Matrix multiplication</a>.</b> 
+<pre>
+<code class="language-python" style="font-size: 14px;">
 ## Einsum
 equation = /  # *** str. The subscript for the Einstein summation
 operands = /  # *** list of tensor. The tensor to be computed
@@ -283,13 +359,11 @@ y = x.view(shape)
 ## Flatten: flatten along the given dimensions
 start_dim = 0  # *** int. The first dimension to flatten
 end_dim = -1  # *** int. The last dimension to flatten
-## Note: it could be either copying or viewing
 y = x.flatten(start_dim, end_dim)
 
 ## Transpose: swap two dimensions
 dim0 = /  # *** int. The first dimension to be tranposed
 dim1 = /  # *** int. The second dimension to be tranposed
-## Note: the result tensor shares the strorage
 y = x.tranpose(dim0, dim1)
 
 ## Permute
@@ -298,7 +372,233 @@ y = x.permute(dims)
 
 ## Unsqueeze: insert one dimension
 dim = /  # *** int. The index at which to insert the singleton dim
-y = x.unsqueeze(dim)
+y = x.unsqueeze(dim)  # Eqaul to y = x[:, :, None, :] when dim = 3
+
+## Concat: concatenate some tensors along a dimension
+tensors = /  # *** tuple of tensors. Tensors with the same shape except in the cat dim
+dim = 0  # *** int. The concatenation dim
+y = torch.cat(tensors, dim)
+
+## Squeeze: remove all dim with size 1
+dim = None  # *** int or tuple of ints. If given, only the dim will be squeezed
+y = x.squeeze(dim)
+
+## Unbind
+dim = 0  # *** int. Dim to remove
+y = x.unbind(0)
+
+## Chunk: split a tensor into the spicific number of chunks
+chunks = /  # *** int
+dim = 0  # *** int
+## If the given dim is divisible by chunks, all returned chunks will be the same size
+## If the given dim is not divisible by chunks, the last one will not be the same size
+## If such division is not possible, it returns fewer than the specified number of chunks
+y = x.chunk(chunks, dim)
+
+## Split
+indices_or_sections = /  # *** tensor, int, list, tuple of ints
+dim = 0  # *** int. Dimension along which to split the tensor
+## If split_size_or_sections is an integer type, split into equally sized chunks
+## If split_size_or_sections is a list, split into len(split_size_or_sections) chunks
+y = x.split(indices_or_sections, dim)
+
+## Where: select elements
+condition = /  # *** bool. When True, yield input, otherwise yield other
+input = /  # *** tensor or scalar
+other = /  # *** tensor or scalar
+y = torch.where(condition, input, output)
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+</p>
+            <div id='operation-PyTorch-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>It includes operations: 
+<a href="#operations">operations</a>,
+<a href="#data generation">data generation</a>, 
+<a href="#size & reshape">size & reshape</a>.</font></p>
+                
+                <p>
+<table class="center">
+<tr>
+<th>category</th>
+<th>class</th>
+</tr>
+
+<tr>
+<td>operations</td>
+<td>
+<a href="#Basic operations">Basic operations</a> |
+<a href="#Mean & Var">Mean & Var</a> |
+<a href="#Softmax">Softmax</a> |
+<a href="#Matrix multiplication">Matrix multiplication</a>
+</td>
+</tr>
+
+</table>
+
+<p class="larger" id="operations"><b>Operations:</b> 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.mean.html">mean</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.var.html">var</a>,
+<a href="">softmax</a>,
+<a href="">matmul</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.einsum.html">einsum</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.isclose.html">isclose & allclose.</a></p>
+<pre>
+<code class="language-python" style="font-size: 14px;">
+import torch
+</code>
+</pre>
+
+<p class="larger" id="Basic operations">
+<b><a href="https://docs.pytorch.org/docs/stable/torch.html">Basic operations</a>:</b> 
+exp, sin, cos, sqrt, etc.
+<pre>
+<code class="language-python" style="font-size: 14px;">
+## function: exp, sin, cos, sqrt
+y = torch.function(x)
+</code>
+</pre>
+
+<p class="larger" id="Mean & Var">
+<b><a href="https://docs.pytorch.org/docs/stable/mean.html">Mean & Var</a>.</b> 
+<pre>
+<code class="language-python" style="font-size: 14px;">
+dim = /  # *** int or tuple of ints. The dims to reduce
+keepdim = False # *** bool. If True, return tensor with the same dims
+mean = x.mean(dim, keepdim)
+
+## In version>=2.0, correction=1 == unbiased=True, correction=0 == unbiased=False 
+correction = 1  # *** int. 
+var = x.var(dim, keepdim, correction)
+</code>
+</pre>
+
+<p class="larger" id="Softmax">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.softmax.html">Softmax</a>.</b> 
+<pre>
+<code class="language-python" style="font-size: 14px;">
+dim = None  # *** int. The dimension to apply softmax
+y = x.softmax(dim)
+</code>
+</pre>
+
+<p class="larger" id="Matrix multiplication">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.matmul.html">Matrix multiplication</a>.</b> 
+<pre>
+<code class="language-python" style="font-size: 14px;">
+other = /  # *** tensor
+y = x.matmul(other)
+</code>
+</pre>
+
+<p class="larger" id="Matrix multiplication">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.matmul.html">Matrix multiplication</a>.</b> 
+<pre>
+<code class="language-python" style="font-size: 14px;">
+## Einsum
+equation = /  # *** str. The subscript for the Einstein summation
+operands = /  # *** list of tensor. The tensor to be computed
+## torch.einsum("ii", tensor)  # trace
+## torch.einsum("ii->i", tensor)  # diagonal
+## torch.einsum("i,j->ij", tensor1, tensor2)  # outer product
+## torch.einsum("bij,bjk->bik", tensor1, tensor2)  # batch matrix multiplication
+## torch.einsum("...ij->...jk", tensor)  # batch permute
+y = torch.einsum(equation, operands)
+
+## Close: checks whether two tensors are close
+other = /  # *** tensor. The second tensor to compare
+rtol = 1e-5  # float. Relative tolerance
+atol = 1e-8  # float. Absolute tolerance
+equal_nan = False  # bool. If True, then two NaN will be considered equal
+## Check if elements satisfy: |input - other| <= atol + rtol * other
+x.isclose(other, rtol, atol, equal_nan)  # return a tensor of bool
+x.allclose(other, rtol, atol, equal_nan)  # return True or False
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+
+<p class="larger" id="data generation"><b>Data generation:</b> 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.zeros.html">zeros</a>, 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.ones.html">ones</a>, 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.rand.html">uniform distribution</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.randn.html">normal distribution</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.arange.html">arange</a>.</p>
+<pre>
+<code class="language-python" style="font-size: 14px;">
+## --------------------------------------------------------------------------------
+## Data generation
+## --------------------------------------------------------------------------------
+## Zeros & Ones
+size = /  # *** sequence of int. The shape of output
+y = torch.ones(size)
+y = torch.zeros(size)
+
+## Uniform & normal distribution
+size = /  # *** sequence of int. The shape of output
+generator = None  # torch.Generator. A pseudorandom number generator for sampling
+requires_grad = False  # bool. If use autograd
+dtype = None  # torch.dtype. The desired data type
+device = None  # torch.device. The desired device 
+y = torch.rand(size, generator, requires_grad, dytpe, device)  # uniform distribution U(0, 1)
+y = torch.randn(size, generator, requires_grad, dytpe, device)  # standard normal distribution N(0, 1)
+
+## Arange
+start = 0  # *** number. The starting value
+end = /  # *** number. The ending value
+step = 1  # *** number. The gap between adjacent points
+arange = torch.arange(start, end, step)
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+
+<p class="larger" id="size & reshape"><b>Resize & reshape:</b> 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.Tensor.size.html">size</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.reshape.html">reshape & view</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.flatten.html">flatten</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.tranpose.html">tranpose</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.permute.html">permute</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.permute.html">permute</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.unsqueeze.html">unsqueeze</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.cat.html">cat</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.squeeze.html">squeeze</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.unbind.html">unbind</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.chunk.html">chunk</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.split.html">split</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.where.html">where</a>.</p>
+
+<pre>
+<code class="language-python" style="font-size: 14px;">
+## --------------------------------------------------------------------------------
+## Size & reshape
+## --------------------------------------------------------------------------------
+## Get size
+dim = None  # int. The dimension to retrieve the size
+size = x.size(dim)  # => torch.Size or int
+size = x.shape  #  => torch.Size
+
+## Reshape & View
+shape = /  # sequence of int. The new shape. Note: a single dimension could be -1
+y = x.reshape(shape)  # recommend since it could call .contiguous() if needed
+y = x.view(shape)
+
+## Flatten: flatten along the given dimensions
+start_dim = 0  # *** int. The first dimension to flatten
+end_dim = -1  # *** int. The last dimension to flatten
+y = x.flatten(start_dim, end_dim)
+
+## Transpose: swap two dimensions
+dim0 = /  # *** int. The first dimension to be tranposed
+dim1 = /  # *** int. The second dimension to be tranposed
+y = x.tranpose(dim0, dim1)
+
+## Permute
+dims = /  # *** sequence of int. The desired ordering of dims
+y = x.permute(dims)
+
+## Unsqueeze: insert one dimension
+dim = /  # *** int. The index at which to insert the singleton dim
+y = x.unsqueeze(dim)  # Eqaul to y = x[:, :, None, :] when dim = 3
 
 ## Concat: concatenate some tensors along a dimension
 tensors = /  # *** tuple of tensors. Tensors with the same shape except in the cat dim
@@ -345,12 +645,118 @@ y = torch.where(condition, input, output)
             <p class="little_split" id='modulepytorch'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('module-PyTorch-details')"><i>Module</i></p>
+            <p class="paper_title" onclick="toggleTable('module-PyTorch-details')"><i>new paper Module</i></p>
             
             
             <p class="paper_detail"><b> <font color=#404040>module</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/nn.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
             
-            
+            <p>
+It includes tools to build neural networks: 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.parameter.Parameter.html">Parameter</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.parameter.Buffer.html">Buffer</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Linear.html">Linear</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html#conv2d">Conv2d</a>, 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv3d.html#conv3d">Conv3d</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Dropout.html">Dropout</a>.
+</p><p>
+<pre>
+<code class="language-python" style="font-size: 14px;">
+import torch
+from torch import nn 
+
+## --------------------------------------------------------------------------------
+## Parameter
+## --------------------------------------------------------------------------------
+data = /  # *** tensor. Parameter tensor
+requires_grad = True
+gamma = torch.Parameter(data, requires_grad)
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## Buffer
+## --------------------------------------------------------------------------------
+data = /  # *** tensor. Buffer tensor
+persistent = True  # whether the buffer is part of the module's state_dict
+gamma = self.register_buffer(data, persistent)  # used in the module class
+gamma = nn.paramter.Buffer(data, persistent)  # not usually used
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## Linear
+## --------------------------------------------------------------------------------
+in_features = /  # *** int. Size of each input sample
+out_features = /  # *** int. Size of each output sample
+bias = True  # *** bool. If set to False, the layer will not learn an additive bias
+device = None  # torch.device or int 
+dtype = None  # torch.dtype
+## [..., H_in] => [..., H_out]
+linear = Linear(in_features, out_features, bias, device, dtype)
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## Conv2d
+## --------------------------------------------------------------------------------
+in_channels = /  # *** int. Number of channels in the input
+out_channels = /  # *** int. Number of channels in the output
+kernel_size = /  # *** int, tuple. Size of convolving kernel
+stride = 1  # *** int, tuple. Stride of convolution
+padding = 0  # int, tuple, str. Padding added to all four sides of the input
+dilation = 1  # int, tuple. Spacing between kernel elements
+groups = 1  # int. Number of blocked connections from input channels to output
+bias = True  # bool. If True, add a learnable bias to the output
+padding_mode = "zeros"  # str. "zeros", "reflect", "replicate", or "circular"
+device = None  # torch.device or int
+dtype = None  # torch.dtype
+## Weight. Shape: [out_channels, in_channels/groups, k_size[0], k_size[1]]
+## Bias. Shape: [out_channels,]
+conv2d = nn.Conv2d(
+    in_channels, out_channels, kernel_size, stride, padding, dilation, groups, 
+    bias, padding_mode, device, dtype
+)
+## [B, C, H_in, W_in] => [B, C, H_out, W_out]
+## H_out = [(H_in + 2*padding[0] - dilation[0]*(kernel[0]-1)-1) / stride[0] + 1]
+## W_out = [(W_in + 2*padding[1] - dilation[1]*(kernel[1]-1)-1) / stride[1] + 1]
+y = conv2d(x)
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## Conv3d
+## --------------------------------------------------------------------------------
+in_channels = /  # *** int. Number of channels in the input
+out_channels = /  # *** int. Number of channels in the output
+kernel_size = /  # *** int, tuple. Size of convolving kernel
+stride = 1  # *** int, tuple. Stride of convolution
+padding = 0  # int, tuple, str. Padding added to all six sides of the input
+dilation = 1  # int, tuple. Spacing between kernel elements
+groups = 1  # int. Number of blocked connections from input channels to output
+bias = True  # bool. If True, add a learnable bias to the output
+padding_mode = "zeros"  # str. "zeros", "reflect", "replicate", or "circular"
+device = None  # torch.device or int
+dtype = None  # torch.dtype
+## Weight. Shape: [out_channels, in_channels/groups, k_size[0], k_size[1], k_size[2]]
+## Bias. Shape: [out_channels,]
+conv3d = nn.Conv3d(
+    in_channels, out_channels, kernel_size, stride, padding, dilation, groups, 
+    bias, padding_mode, device, dtype
+)
+## [B, C, D_in, H_in, W_in] => [B, C, D_out, H_out, W_out]
+## D_out = [(D_in + 2*padding[0] - dilation[0]*(kernel[0]-1)-1) / stride[0] + 1]
+## H_out = [(H_in + 2*padding[1] - dilation[1]*(kernel[1]-1)-1) / stride[1] + 1]
+## W_out = [(W_in + 2*padding[2] - dilation[2]*(kernel[2]-1)-2) / stride[2] + 1]
+y = conv3d(x)
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## Dropout
+## --------------------------------------------------------------------------------
+p = 0.5  # *** float. Probability of an element to be zeroed
+inplace = False  # bool
+dropout = nn.Dropout(p, inplace)
+y = dropout(x)
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+</p>
             <div id='module-PyTorch-details' class="info_detail">
                 <hr class="dashed">
                 <p><font color=#202020>
@@ -470,12 +876,39 @@ y = dropout(x)
             <p class="little_split" id='activation functionpytorch'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('activation function-PyTorch-details')"><i>Activation Function</i></p>
+            <p class="paper_title" onclick="toggleTable('activation function-PyTorch-details')"><i>new paper Activation Function</i></p>
             
             
             <p class="paper_detail"><b> <font color=#404040>activation function</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/nn.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
             
-            
+            <p>
+It includes activation functions: 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.GELU.html">GeLU</a>,
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.SiLU.html">SiLU / swish</a>.
+</p><p>
+<pre>
+<code class="language-python" style="font-size: 14px;">
+from torch import nn
+
+## --------------------------------------------------------------------------------
+## GeLU (Gaussian Error Linear Units)
+## --------------------------------------------------------------------------------
+## GeLU(x) = x * phi(x)
+gelu = nn.GeLU()
+y = gelu(x)
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## SiLU / swish (Sigmoid Linear Unit)
+## --------------------------------------------------------------------------------
+inplace = False
+## silu(x) = x * sigmoid(x)
+silu = nn.SiLU(inplace)
+y = silu(x)
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+</p>
             <div id='activation function-PyTorch-details' class="info_detail">
                 <hr class="dashed">
                 <p><font color=#202020>
@@ -516,12 +949,29 @@ y = silu(x)
             <p class="little_split" id='optimizerpytorch'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('optimizer-PyTorch-details')"><i>Optimizer</i></p>
+            <p class="paper_title" onclick="toggleTable('optimizer-PyTorch-details')"><i>new paper Optimizer</i></p>
             
             
             <p class="paper_detail"><b> <font color=#404040>optimizer</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/optim.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
             
-            
+            <p>It includes tools for building optimization algorithms: <a href="https://docs.pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW.step">AdamW</a>.</p><p>
+<pre>
+<code class="language-python" style="font-size: 14px;">
+from torch.optim import AdamW
+
+## --------------------------------------------------------------------------------
+## AdamW
+## --------------------------------------------------------------------------------
+params = /  # *** iterable. Parameters / named_parameters / parameter groups to optimize
+lr = 0.001  # *** float, Tensor. Learning rate
+betas = (0.9, 0.999)  # tuple. For computing running averages of gradients & squares
+weight_decay = 0.01  # float. Weight decay coefficient
+# ...
+adam_optim = AdamW(params, lr, betas, weight_decay)
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+</p>
             <div id='optimizer-PyTorch-details' class="info_detail">
                 <hr class="dashed">
                 <p><font color=#202020>It includes tools for building optimization algorithms: <a href="https://docs.pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW.step">AdamW</a>.</font></p>
@@ -626,10 +1076,6 @@ snapshot_download(repo_id, repo_type, local_dir, token, max_workers)
         <td>high</td>
     </tr>
 </table>
-<pre>
-<code class="language-python" style="font-size: 14px;">
-</code>
-</pre>
 </p>
             </div>
             <div style="height: 0.05em;"></div>

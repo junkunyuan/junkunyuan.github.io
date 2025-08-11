@@ -107,8 +107,8 @@ cap: <b>Dynamics model</b> takes latent action and past frame tokens and predict
     <li> <b>RL.</b> DPO + GRPO.
     <li> <b>Editing.</b> Channel concatenation of the original image and the edited image. 
 </ul>
-fig: fig1.png 350
-cap: <b>Structure configuration.</b>
+fig: fig2.png 550 fig1.png 350
+cap: <b>Structure and configuration.</b>
 """,
 },
 {

@@ -1,7 +1,7 @@
 PAPERS = [
 {
 "title": "Hunyuan-Game: Industrial-grade Intelligent Game Creation Model",
-"author": "Hunyuan Multimodal Generation Group at Tencent (<b><font color=#202020>as a group member</font></b>)",
+"author": "Hunyuan Multimodal Generation Group at Tencent (<b><font color=#404040>as a group member</font></b>)",
 "date": "20250520",
 "venue": "arXiv 2025",
 "pdf_url": "https://arxiv.org/pdf/2505.14135",
@@ -10,7 +10,7 @@ PAPERS = [
 },
 {
 "title": "HunyuanVideo: A Systematic Framework For Large Video Generative Models",
-"author": "Hunyuan Multimodal Generation Group at Tencent (<b><font color=#202020>as a group member</font></b>)",
+"author": "Hunyuan Multimodal Generation Group at Tencent (<b><font color=#404040>as a group member</font></b>)",
 "date": "20241203",
 "venue": "arXiv 2024",
 "pdf_url": "https://arxiv.org/pdf/2412.03603",
@@ -190,6 +190,15 @@ PAPERS = [
 "venue": "TKDE 2023",
 "pdf_url": "https://arxiv.org/pdf/2006.07040",
 "code_url": "https://github.com/anpwu/DeR-CFR",
+"comment": ""
+},
+{
+"title": "Subgraph Networks with Application to Structural Feature Space Expansion",
+"author": "Qi Xuan##, Jinhuan Wang, Minghao Zhao, Junkun Yuan, Chenbo Fu, Zhongyuan Ruan##, Guanrong Chen",
+"date": "20190321",
+"venue": "TKDE 2021",
+"pdf_url": "https://arxiv.org/pdf/1903.09022",
+"code_url": "https://github.com/GalateaWang/SGNs-master",
 "comment": ""
 },
 ]
