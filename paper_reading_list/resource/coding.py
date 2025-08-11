@@ -89,25 +89,22 @@ CODING["papers"] = [
 <table class="center">
 <tr>
 <th>category</th>
-<th>class</th>
+<th>class / function (alphabetical)</th>
 </tr>
 
-<tr>
-<td>geometry</td>
-<td><a href="#RandomHorizontalFlip">RandomHorizontalFlip</a></td>
-</tr>
+<tr><td>geometry</td><td>
+<a href="#RandomHorizontalFlip">RandomHorizontalFlip</a>
+</td></tr>
 
-<tr>
-<td>resizing</td>
-<td><a href="#Resize">Resize</a></td>
-</tr>
+<tr><td>resizing</td><td>
+<a href="#Resize">Resize</a>
+</td></tr>
 
-<tr>
-<td>conversion</td>
-<td>
-<a href="#ToTensor">ToTensor</a> | <a href="#Compose">Compose</a> | <a href="#Normalize">Normalize</a>
-</td>
-</tr>
+<tr><td>conversion</td><td>
+<a href="#ToTensor">ToTensor</a> &nbsp;&nbsp;
+<a href="#Compose">Compose</a> &nbsp;&nbsp;
+<a href="#Normalize">Normalize</a>
+</td></tr>
 
 </table>
 <pre>
@@ -225,7 +222,7 @@ data_loader = DataLoader(
 """,
 },
 {
-"title": "new paper Operation",
+"title": "Operation",
 "author": "",
 "organization": "",
 "date": "20230630",
@@ -247,60 +244,54 @@ data_loader = DataLoader(
 <table class="center">
 <tr>
 <th>category</th>
-<th>class</th>
+<th>class / function (alphabetical)</th>
 </tr>
 
 <tr>
 <td>operations</td>
 <td>
-<a href="#Basic operations">Basic operations</a> |
-<a href="#Mean & Var">Mean & Var</a> |
-<a href="#Softmax">Softmax</a> |
-<a href="#Matrix multiplication">Matrix multiplication</a>
+<a href="#basic operations">basic operations</a> &nbsp;&nbsp;
+<a href="#einsum">einsum</a> &nbsp;&nbsp;
+<a href="#isclose & allclose">isclose & allclose</a> &nbsp;&nbsp;
+<a href="#matmul">matmul</a> &nbsp;&nbsp;
+<a href="#mean & var">mean & var</a> &nbsp;&nbsp;
+<a href="#softmax">softmax</a> &nbsp;&nbsp;
 </td>
 </tr>
 
 </table>
 
-<p class="larger" id="operations"><b>Operations:</b> 
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.mean.html">mean</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.var.html">var</a>,
-<a href="">softmax</a>,
-<a href="">matmul</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.einsum.html">einsum</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.isclose.html">isclose & allclose.</a></p>
 <pre>
 <code class="language-python" style="font-size: 14px;">
 import torch
 </code>
 </pre>
 
-<p class="larger" id="Basic operations">
-<b><a href="https://docs.pytorch.org/docs/stable/torch.html">Basic operations</a>:</b> 
-exp, sin, cos, sqrt, etc.
+<p class="larger" id="basic operations">
+<b><a href="https://docs.pytorch.org/docs/stable/torch.html">basic operations</a>:</b> 
+exp, sin, cos, sqrt.
 <pre>
 <code class="language-python" style="font-size: 14px;">
-## function: exp, sin, cos, sqrt
-y = torch.function(x)
+y = torch.function(x)  # function: exp, sin, cos, sqrt
 </code>
 </pre>
 
-<p class="larger" id="Mean & Var">
-<b><a href="https://docs.pytorch.org/docs/stable/mean.html">Mean & Var</a>.</b> 
+<p class="larger" id="mean & var">
+<b><a href="https://docs.pytorch.org/docs/stable/mean.html">mean & var</a></b>. 
 <pre>
 <code class="language-python" style="font-size: 14px;">
 dim = /  # *** int or tuple of ints. The dims to reduce
 keepdim = False # *** bool. If True, return tensor with the same dims
 mean = x.mean(dim, keepdim)
 
-## In version>=2.0, correction=1 == unbiased=True, correction=0 == unbiased=False 
+## In version>=2.0, `correction=1` equals to `unbiased=True`, `correction=0` equals to `unbiased=False` 
 correction = 1  # *** int. 
 var = x.var(dim, keepdim, correction)
 </code>
 </pre>
 
-<p class="larger" id="Softmax">
-<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.softmax.html">Softmax</a>.</b> 
+<p class="larger" id="softmax">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.softmax.html">softmax</a></b>. 
 <pre>
 <code class="language-python" style="font-size: 14px;">
 dim = None  # *** int. The dimension to apply softmax
@@ -308,8 +299,9 @@ y = x.softmax(dim)
 </code>
 </pre>
 
-<p class="larger" id="Matrix multiplication">
-<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.matmul.html">Matrix multiplication</a>.</b> 
+<p class="larger" id="matmul">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.matmul.html">matmul</a>:</b> 
+matrix multiplication.
 <pre>
 <code class="language-python" style="font-size: 14px;">
 other = /  # *** tensor
@@ -317,11 +309,11 @@ y = x.matmul(other)
 </code>
 </pre>
 
-<p class="larger" id="Matrix multiplication">
-<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.matmul.html">Matrix multiplication</a>.</b> 
+<p class="larger" id="einsum">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.einsum.html">einsum</a>:</b> 
+Einstein summation convention. 
 <pre>
 <code class="language-python" style="font-size: 14px;">
-## Einsum
 equation = /  # *** str. The subscript for the Einstein summation
 operands = /  # *** list of tensor. The tensor to be computed
 ## torch.einsum("ii", tensor)  # trace
@@ -330,8 +322,14 @@ operands = /  # *** list of tensor. The tensor to be computed
 ## torch.einsum("bij,bjk->bik", tensor1, tensor2)  # batch matrix multiplication
 ## torch.einsum("...ij->...jk", tensor)  # batch permute
 y = torch.einsum(equation, operands)
+</code>
+</pre>
 
-## Close: checks whether two tensors are close
+<p class="larger" id="isclose & allclose">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.isclose.html">isclose & allclose</a>:</b> 
+check whether two tensors are close. 
+<pre>
+<code class="language-python" style="font-size: 14px;">
 other = /  # *** tensor. The second tensor to compare
 rtol = 1e-5  # float. Relative tolerance
 atol = 1e-8  # float. Absolute tolerance
@@ -464,7 +462,7 @@ y = torch.where(condition, input, output)
 """,
 },
 {
-"title": "new paper Module",
+"title": "Module",
 "author": "",
 "organization": "",
 "date": "20240629"
@@ -590,7 +588,7 @@ y = dropout(x)
 """,
 },
 {
-"title": "new paper Activation Function",
+"title": "Activation Function",
 "author": "",
 "organization": "",
 "date": "20240628",
@@ -635,7 +633,7 @@ y = silu(x)
 """,
 },
 {
-"title": "new paper Optimizer",
+"title": "Optimizer",
 "author": "",
 "organization": "",
 "date": "20240628",
