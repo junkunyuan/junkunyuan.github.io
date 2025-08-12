@@ -28,7 +28,7 @@ FUNDAMENTAL_COMPONENT["papers"] = [
 # """,
 # },
 {
-"title": "new paper Instance Normalization: The Missing Ingredient for Fast Stylization",
+"title": "Instance Normalization: The Missing Ingredient for Fast Stylization",
 "author": "Dmitry Ulyanov, Andrea Vedaldi, Victor Lempitsky",
 "organization": "Skoltech & Yandex, University of Oxford",
 "date": "20160727",
