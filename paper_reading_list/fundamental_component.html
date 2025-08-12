@@ -18,11 +18,102 @@
 
 <h1 id="top">Fundamental Components of Deep Learning</h1>
 <p class="larger"><b>Fundamental components to build deep learning systems.</b></p>
-<p class="larger"><b><font color='#D93053'>2</font> papers</b></p>
+<p class="larger"><b><font color='#D93053'>3</font> papers</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on August 12, 2025 at 16:01 (UTC+8).</font></p>
-<hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#B04040">red</font>.</p><ul><li><a class="no_dec larger" id="Normalization" href="#Normalization-table"><b>Normalization</b></a></li><p><a class="no_dec" href="#Batch Normalizationnormalization"><font color=#B04040>Batch Normalization</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Layer Normalizationnormalization"><font color=#B04040>Layer Normalization</font></a></p></ul><h2 id="Normalization-table"><a class="no_dec" href="#Normalization">Normalization</a></h2>
+<p><font color=#B0B0B0>Last updated on August 12, 2025 at 16:26 (UTC+8).</font></p>
+<hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#B04040">red</font>.</p><ul><li><a class="no_dec larger" id="Normalization" href="#Normalization-table"><b>Normalization</b></a></li><p><a class="no_dec" href="#Batch Normalizationnormalization"><font color=#B04040>Batch Normalization</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Layer Normalizationnormalization"><font color=#B04040>Layer Normalization</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Instance Normalizationnormalization"><font color=#B04040>Instance Normalization</font></a></p></ul><h2 id="Normalization-table"><a class="no_dec" href="#Normalization">Normalization</a></h2>
+            <p class="little_split" id='Instance Normalizationnormalization'></p>
+            <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('Instance Normalization-Normalization-details')"><i>new paper Instance Normalization: The Missing Ingredient for Fast Stylization</i></p>
+            <p class="paper_detail">Dmitry Ulyanov, Andrea Vedaldi, Victor Lempitsky</p>
+            <p class="paper_detail">Skoltech & Yandex, University of Oxford</p>
+            <p class="paper_detail"><b>Jul 27, 2016 &nbsp; <font color=#B04040>Instance Normalization</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/DmitryUlyanov/texture_nets">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/1607.08022">arXiv 2016</a> &nbsp; <font color=#D0D0D0>arXiv preprint</font></p>
+            
+            <p>
+It normalizes samples along the <b>batch dimension and channel dimension</b> to improve visual generation quality.
+</p><p>
+<pre>
+<code class="language-python" style="font-size: 14px;">
+## --------------------------------------------------------------------------------
+## Build customized Instance Normalization
+## --------------------------------------------------------------------------------
+import torch
+from torch import nn 
+
+class CustomInstanceNorm(nn.Module):
+    def __init__(self, num_features, eps=1e-5):
+        super().__init__()
+        self.gamma = nn.Parameter(torch.ones(num_features))
+        self.beta = nn.Parameter(torch.zeros(num_features))
+        self.eps = eps
+
+    def forward(self, x):
+        mean = x.mean(dim=(2, 3), keepdim=True)
+        var = x.var(dim=(2, 3), unbiased=False, keepdim=True)
+        x_norm = (x - mean) / torch.sqrt(var + self.eps)
+        return self.gamma.view(1, -1, 1, 1) * x_norm + self.beta.view(1, -1, 1, 1)
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## Test the customized Instance Normalization
+## --------------------------------------------------------------------------------
+C = 3
+x = torch.randn(4, C, 224, 224)
+torch_in = torch.nn.InstanceNorm2d(C)
+custom_in = CustomInstanceNorm(C)
+print(torch.allclose(torch_in(x), custom_in(x), atol=1e-5))  # it prints True
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+</p>
+            <div id='Instance Normalization-Normalization-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>
+It normalizes samples along the <b>batch dimension and channel dimension</b> to improve visual generation quality.
+</font></p>
+                
+                <p>
+<pre>
+<code class="language-python" style="font-size: 14px;">
+## --------------------------------------------------------------------------------
+## Build customized Instance Normalization
+## --------------------------------------------------------------------------------
+import torch
+from torch import nn 
+
+class CustomInstanceNorm(nn.Module):
+    def __init__(self, num_features, eps=1e-5):
+        super().__init__()
+        self.gamma = nn.Parameter(torch.ones(num_features))
+        self.beta = nn.Parameter(torch.zeros(num_features))
+        self.eps = eps
+
+    def forward(self, x):
+        mean = x.mean(dim=(2, 3), keepdim=True)
+        var = x.var(dim=(2, 3), unbiased=False, keepdim=True)
+        x_norm = (x - mean) / torch.sqrt(var + self.eps)
+        return self.gamma.view(1, -1, 1, 1) * x_norm + self.beta.view(1, -1, 1, 1)
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## Test the customized Instance Normalization
+## --------------------------------------------------------------------------------
+C = 3
+x = torch.randn(4, C, 224, 224)
+torch_in = torch.nn.InstanceNorm2d(C)
+custom_in = CustomInstanceNorm(C)
+print(torch.allclose(torch_in(x), custom_in(x), atol=1e-5))  # it prints True
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split" id='Layer Normalizationnormalization'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>

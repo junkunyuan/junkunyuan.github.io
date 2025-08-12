@@ -28,6 +28,60 @@ FUNDAMENTAL_COMPONENT["papers"] = [
 # """,
 # },
 {
+"title": "new paper Instance Normalization: The Missing Ingredient for Fast Stylization",
+"author": "Dmitry Ulyanov, Andrea Vedaldi, Victor Lempitsky",
+"organization": "Skoltech & Yandex, University of Oxford",
+"date": "20160727",
+"venue": "arXiv 2016",
+"pdf_url": "https://arxiv.org/pdf/1607.08022",
+"code_url": "https://github.com/DmitryUlyanov/texture_nets",
+"name": "Instance Normalization",
+"comment": "",
+"category": "Instance Normalization",
+"jupyter_notes": "",
+"info": "**",
+"summary": 
+"""
+It normalizes samples along the <b>batch dimension and channel dimension</b> to improve visual generation quality.
+""",
+"details": 
+"""
+<pre>
+<code class="language-python" style="font-size: 14px;">
+## --------------------------------------------------------------------------------
+## Build customized Instance Normalization
+## --------------------------------------------------------------------------------
+import torch
+from torch import nn 
+
+class CustomInstanceNorm(nn.Module):
+    def __init__(self, num_features, eps=1e-5):
+        super().__init__()
+        self.gamma = nn.Parameter(torch.ones(num_features))
+        self.beta = nn.Parameter(torch.zeros(num_features))
+        self.eps = eps
+
+    def forward(self, x):
+        mean = x.mean(dim=(2, 3), keepdim=True)
+        var = x.var(dim=(2, 3), unbiased=False, keepdim=True)
+        x_norm = (x - mean) / torch.sqrt(var + self.eps)
+        return self.gamma.view(1, -1, 1, 1) * x_norm + self.beta.view(1, -1, 1, 1)
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## Test the customized Instance Normalization
+## --------------------------------------------------------------------------------
+C = 3
+x = torch.randn(4, C, 224, 224)
+torch_in = torch.nn.InstanceNorm2d(C)
+custom_in = CustomInstanceNorm(C)
+print(torch.allclose(torch_in(x), custom_in(x), atol=1e-5))  # it prints True
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+""",
+},
+{
 "title": "Layer Normalization",
 "author": "Jimmy Lei Ba, Jamie Ryan Kiros, Geoffrey E. Hinton",
 "organization": "University of Toronto, Google",
