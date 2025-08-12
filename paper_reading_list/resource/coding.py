@@ -31,7 +31,7 @@ CODING["papers"] = [
 "author": "",
 "organization": "",
 "date": "",
-"venue": "docs",
+"venue": "deepspeed framework.",
 "pdf_url": "https://deepspeed.readthedocs.io/en/latest/",
 "code_url": "",
 "name": "deepspeed",
@@ -75,7 +75,7 @@ CODING["papers"] = [
 "author": "",
 "organization": "",
 "date": "20240701",
-"venue": "docs",
+"venue": "Transform and augment data.",
 "pdf_url": "https://docs.pytorch.org/vision/stable/transforms.html",
 "code_url": "",
 "name": "data transforms",
@@ -83,7 +83,7 @@ CODING["papers"] = [
 "category": "PyTorch",
 "jupyter_notes": "",
 "info": "",
-"summary": """It includes tools to transform and augment data.""",
+"summary": """""",
 "details": 
 """
 <table class="center">
@@ -107,6 +107,7 @@ CODING["papers"] = [
 </td></tr>
 
 </table>
+
 <pre>
 <code class="language-python" style="font-size: 14px;">
 from torchvision import transforms
@@ -182,7 +183,7 @@ image_trans = trans(image)  # Tensor => Tensor
 "author": "",
 "organization": "",
 "date": "20240630",
-"venue": "docs",
+"venue": "Data loading.",
 "pdf_url": "https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader",
 "code_url": "",
 "name": "data loader",
@@ -190,7 +191,7 @@ image_trans = trans(image)  # Tensor => Tensor
 "category": "PyTorch",
 "jupyter_notes": "",
 "info": "",
-"summary": """It includes tools for data loading: <a href="https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader">DataLoader</a>.""",
+"summary": """""",
 "details": 
 """
 <pre>
@@ -226,7 +227,7 @@ data_loader = DataLoader(
 "author": "",
 "organization": "",
 "date": "20230630",
-"venue": "docs",
+"venue": "Tensor operations.",
 "pdf_url": "https://docs.pytorch.org/docs/stable/index.html",
 "code_url": "",
 "name": "operation",
@@ -235,9 +236,7 @@ data_loader = DataLoader(
 "jupyter_notes": "",
 "info": "",
 "summary": 
-"""It includes operations: 
-<a href="#data generation">data generation</a>, 
-<a href="#size & reshape">size & reshape</a>.""",
+"""""",
 "details": 
 """
 <table class="center">
@@ -410,17 +409,6 @@ arange = torch.arange(start, end, step)
 </code>
 </pre>
 
-<p class="larger" id="size & reshape"><b>Resize & reshape:</b> 
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.permute.html">permute</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.permute.html">permute</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.unsqueeze.html">unsqueeze</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.cat.html">cat</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.squeeze.html">squeeze</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.unbind.html">unbind</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.chunk.html">chunk</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.split.html">split</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.where.html">where</a>.</p>
-
 <p class="larger" id="size & shape">
 <b><a href="https://docs.pytorch.org/docs/stable/generated/torch.Tensor.size.html">size</a> & 
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.Tensor.shape.html">shape</a>:</b> 
@@ -553,7 +541,7 @@ y = torch.where(condition, input, output)
 "date": "20240629"
 ""
 "",
-"venue": "docs",
+"venue": "Modules to build models.",
 "pdf_url": "https://docs.pytorch.org/docs/stable/nn.html",
 "code_url": "",
 "name": "module",
@@ -563,53 +551,90 @@ y = torch.where(condition, input, output)
 "info": "",
 "summary": 
 """
-It includes tools to build neural networks: 
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.parameter.Parameter.html">Parameter</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.parameter.Buffer.html">Buffer</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Linear.html">Linear</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html#conv2d">Conv2d</a>, 
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv3d.html#conv3d">Conv3d</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Dropout.html">Dropout</a>.
 """,
 "details": 
 """
+<table class="center">
+<tr>
+<th>category</th>
+<th>tool (alphabetical)</th>
+</tr>
+
+<tr>
+<td>parameter</td>
+<td>
+<a href="#Parameter & Buffer">Parameter & Buffer</a> &nbsp;&nbsp;
+</td>
+</tr>
+
+<tr>
+<td>convolution</td>
+<td>
+<a href="#Conv2d">Conv2d</a> &nbsp;&nbsp;
+<a href="#Conv3d">Conv3d</a> &nbsp;&nbsp;
+</td>
+</tr>
+
+<tr>
+<td>other module</td>
+<td>
+<a href="#Linear">Linear</a> &nbsp;&nbsp;
+</td>
+</tr>
+
+<tr>
+<td>else</td>
+<td>
+<a href="#Dropout">Dropout</a> &nbsp;&nbsp;
+</td>
+</tr>
+
+</td>
+</tr>
+
+</table>
+
 <pre>
 <code class="language-python" style="font-size: 14px;">
 import torch
 from torch import nn 
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## Parameter
-## --------------------------------------------------------------------------------
+<p class="larger" id="Parameter & Buffer">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.parameter.Parameter.html">Parameter</a> & 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.parameter.Buffer.html">Buffer</a></b>.
+
+<pre>
+<code class="language-python" style="font-size: 14px;">
 data = /  # *** tensor. Parameter tensor
 requires_grad = True
 gamma = torch.Parameter(data, requires_grad)
-## --------------------------------------------------------------------------------
 
-## --------------------------------------------------------------------------------
-## Buffer
-## --------------------------------------------------------------------------------
-data = /  # *** tensor. Buffer tensor
 persistent = True  # whether the buffer is part of the module's state_dict
-gamma = self.register_buffer(data, persistent)  # used in the module class
+gamma = self.register_buffer(data, persistent)  # usually used in __init__
 gamma = nn.paramter.Buffer(data, persistent)  # not usually used
-## --------------------------------------------------------------------------------
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## Linear
-## --------------------------------------------------------------------------------
-in_features = /  # *** int. Size of each input sample
-out_features = /  # *** int. Size of each output sample
-bias = True  # *** bool. If set to False, the layer will not learn an additive bias
+<p class="larger" id="Linear">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Linear.html">Linear</a>:</b> affine linear transformation.
+<pre>
+<code class="language-python" style="font-size: 14px;">
+in_features = /  # *** int. Input features
+out_features = /  # *** int. Output features
+bias = True  # *** bool. If True, learn an additive bias
 device = None  # torch.device or int 
 dtype = None  # torch.dtype
-## [..., H_in] => [..., H_out]
-linear = Linear(in_features, out_features, bias, device, dtype)
-## --------------------------------------------------------------------------------
+linear = Linear(in_features, out_features, bias, device, dtype)  
+y = linear(x)  # [..., H_in] => [..., H_out]
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## Conv2d
-## --------------------------------------------------------------------------------
+<p class="larger" id="Conv2d">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html">Conv2d</a>:</b> 2D convolution.
+<pre>
+<code class="language-python" style="font-size: 14px;">
 in_channels = /  # *** int. Number of channels in the input
 out_channels = /  # *** int. Number of channels in the output
 kernel_size = /  # *** int, tuple. Size of convolving kernel
@@ -623,19 +648,18 @@ device = None  # torch.device or int
 dtype = None  # torch.dtype
 ## Weight. Shape: [out_channels, in_channels/groups, k_size[0], k_size[1]]
 ## Bias. Shape: [out_channels,]
-conv2d = nn.Conv2d(
-    in_channels, out_channels, kernel_size, stride, padding, dilation, groups, 
-    bias, padding_mode, device, dtype
-)
-## [B, C, H_in, W_in] => [B, C, H_out, W_out]
+conv2d = nn.Conv2d(in_channels, out_channels, kernel_size, stride, 
+    padding, dilation, groups, bias, padding_mode, device, dtype)
 ## H_out = [(H_in + 2*padding[0] - dilation[0]*(kernel[0]-1)-1) / stride[0] + 1]
 ## W_out = [(W_in + 2*padding[1] - dilation[1]*(kernel[1]-1)-1) / stride[1] + 1]
-y = conv2d(x)
-## --------------------------------------------------------------------------------
+y = conv2d(x)  # [B, C, H_in, W_in] => [B, C, H_out, W_out]
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## Conv3d
-## --------------------------------------------------------------------------------
+<p class="larger" id="Conv3d">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv3d.html">Conv3d</a>:</b> 3D convolution.
+<pre>
+<code class="language-python" style="font-size: 14px;">
 in_channels = /  # *** int. Number of channels in the input
 out_channels = /  # *** int. Number of channels in the output
 kernel_size = /  # *** int, tuple. Size of convolving kernel
@@ -649,25 +673,23 @@ device = None  # torch.device or int
 dtype = None  # torch.dtype
 ## Weight. Shape: [out_channels, in_channels/groups, k_size[0], k_size[1], k_size[2]]
 ## Bias. Shape: [out_channels,]
-conv3d = nn.Conv3d(
-    in_channels, out_channels, kernel_size, stride, padding, dilation, groups, 
-    bias, padding_mode, device, dtype
-)
-## [B, C, D_in, H_in, W_in] => [B, C, D_out, H_out, W_out]
+conv3d = nn.Conv3d(in_channels, out_channels, kernel_size, stride, 
+    padding, dilation, groups, bias, padding_mode, device, dtype)
 ## D_out = [(D_in + 2*padding[0] - dilation[0]*(kernel[0]-1)-1) / stride[0] + 1]
 ## H_out = [(H_in + 2*padding[1] - dilation[1]*(kernel[1]-1)-1) / stride[1] + 1]
 ## W_out = [(W_in + 2*padding[2] - dilation[2]*(kernel[2]-1)-2) / stride[2] + 1]
-y = conv3d(x)
-## --------------------------------------------------------------------------------
+y = conv3d(x)  # [B, C, D_in, H_in, W_in] => [B, C, D_out, H_out, W_out]
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## Dropout
-## --------------------------------------------------------------------------------
+<p class="larger" id="Dropout">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Dropout.html">Dropout</a></b>.
+<pre>
+<code class="language-python" style="font-size: 14px;">
 p = 0.5  # *** float. Probability of an element to be zeroed
 inplace = False  # bool
 dropout = nn.Dropout(p, inplace)
 y = dropout(x)
-## --------------------------------------------------------------------------------
 </code>
 </pre>
 """,
@@ -677,7 +699,7 @@ y = dropout(x)
 "author": "",
 "organization": "",
 "date": "20240628",
-"venue": "docs",
+"venue": "activation functions.",
 "pdf_url": "https://docs.pytorch.org/docs/stable/nn.html",
 "code_url": "",
 "name": "activation function",
@@ -687,32 +709,58 @@ y = dropout(x)
 "info": "",
 "summary": 
 """
-It includes activation functions: 
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.GELU.html">GeLU</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.SiLU.html">SiLU / swish</a>.
 """,
 "details": 
 """
+<table class="center">
+<tr>
+<th>tool (alphabetical)</th>
+<th>popular applications</th>
+</tr>
+
+<tr>
+<td>
+<a href="#GeLU">GeLU</a> &nbsp;&nbsp;
+</td>
+<td>
+/
+</td>
+</tr>
+
+<tr>
+<td>
+<a href="#SiLU/swish">SiLU/swish</a> &nbsp;&nbsp;
+</td>
+<td>
+/
+</td>
+</tr>
+
+</table>
+
 <pre>
 <code class="language-python" style="font-size: 14px;">
 from torch import nn
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## GeLU (Gaussian Error Linear Units)
-## --------------------------------------------------------------------------------
-## GeLU(x) = x * phi(x)
+<p class="larger" id="GeLU">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.GELU.html">GeLU</a>:</b> Gaussian Error Linear Units function, \(\mathrm{GeLU}(x)=x*\phi(x)\), where \(\phi\) is cumulative distribution function.
+<pre>
+<code class="language-python" style="font-size: 14px;">
 gelu = nn.GeLU()
 y = gelu(x)
-## --------------------------------------------------------------------------------
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## SiLU / swish (Sigmoid Linear Unit)
-## --------------------------------------------------------------------------------
+<p class="larger" id="SiLU/swish">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.SiLU.html">SiLU/swish</a>:</b>  Sigmoid Linear Unit function, \(\mathrm{SiLU}(x)=x*\sigma(x)\), where \(\sigma\) is logistic function.
+
+<pre>
+<code class="language-python" style="font-size: 14px;">
 inplace = False
-## silu(x) = x * sigmoid(x)
 silu = nn.SiLU(inplace)
 y = silu(x)
-## --------------------------------------------------------------------------------
 </code>
 </pre>
 """,
@@ -722,7 +770,7 @@ y = silu(x)
 "author": "",
 "organization": "",
 "date": "20240628",
-"venue": "docs",
+"venue": "optimizers.",
 "pdf_url": "https://docs.pytorch.org/docs/stable/optim.html",
 "code_url": "",
 "name": "optimizer",
@@ -756,7 +804,7 @@ adam_optim = AdamW(params, lr, betas, weight_decay)
 "author": "",
 "organization": "",
 "date": "20230530",
-"venue": "docs",
+"venue": "huggingface tools.",
 "pdf_url": "https://huggingface.co/docs",
 "code_url": "",
 "name": "huggingface",

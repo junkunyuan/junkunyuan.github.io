@@ -69,6 +69,9 @@ a:hover {
     text-decoration: underline;
     color: #4169E1;
 }
+.red_color{
+    color: #B04040;
+}
 p {
     color: #404040;
     margin-top: 0.0em;
@@ -77,6 +80,19 @@ p {
     line-height: 1.5;
     font-family: Arial, sans-serif;
     font-size: 14px;
+}
+.coder {
+    color: #202020;
+    white-space: pre-wrap;
+    font-family: 'Consolas';
+    background-color: #F0F0F0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 1.5;
 }
 .huger {
     font-size: 17px;
@@ -182,12 +198,4 @@ th {
 text-align: center;
 }
 
-pre {
-    margin: 0;
-    padding: 0;
-}
-code {
-    margin: 0;
-    padding: 0;
-}
 /* -------------------------------------------------------------------------------- */

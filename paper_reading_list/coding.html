@@ -21,7 +21,7 @@
 <p class="larger"><b></b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on August 12, 2025 at 10:40 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on August 12, 2025 at 16:01 (UTC+8).</font></p>
 <hr><p id='table' class="huger"><b>Table of contents:</b></p><ul><li><a class="no_dec larger" id="PyTorch" href="#PyTorch-table"><b>PyTorch</b></a></li><p><a class="no_dec" href="#data transformspytorch"><font color=#404040>data transforms</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#data loaderpytorch"><font color=#404040>data loader</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#operationpytorch"><font color=#404040>operation</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#modulepytorch"><font color=#404040>module</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#activation functionpytorch"><font color=#404040>activation function</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#optimizerpytorch"><font color=#404040>optimizer</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#huggingfacepytorch"><font color=#404040>huggingface</font></a></p><li><a class="no_dec larger" id="Distributed Training" href="#Distributed Training-table"><b>Distributed Training</b></a></li><p><a class="no_dec" href="#deepspeeddistributed training"><font color=#404040>deepspeed</font></a></p></ul><h2 id="PyTorch-table"><a class="no_dec" href="#PyTorch">PyTorch</a></h2>
             <p class="little_split" id='data transformspytorch'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
@@ -29,12 +29,12 @@
             <p class="paper_title" onclick="toggleTable('data transforms-PyTorch-details')"><i>Data Transforms</i></p>
             
             
-            <p class="paper_detail"><b> <font color=#404040>data transforms</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/vision/stable/transforms.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
+            <p class="paper_detail"><b> <font color=#404040>data transforms</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/vision/stable/transforms.html">Transform and augment data.</a> &nbsp; <font color=#D0D0D0></font></p>
             
             
             <div id='data transforms-PyTorch-details' class="info_detail">
                 <hr class="dashed">
-                <p><font color=#202020>It includes tools to transform and augment data.</font></p>
+                <p><font color=#202020></font></p>
                 
                 <p>
 <table class="center">
@@ -58,6 +58,7 @@
 </td></tr>
 
 </table>
+
 <pre>
 <code class="language-python" style="font-size: 14px;">
 from torchvision import transforms
@@ -138,12 +139,12 @@ image_trans = trans(image)  # Tensor => Tensor
             <p class="paper_title" onclick="toggleTable('data loader-PyTorch-details')"><i>Data Loader</i></p>
             
             
-            <p class="paper_detail"><b> <font color=#404040>data loader</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader">docs</a> &nbsp; <font color=#D0D0D0></font></p>
+            <p class="paper_detail"><b> <font color=#404040>data loader</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader">Data loading.</a> &nbsp; <font color=#D0D0D0></font></p>
             
             
             <div id='data loader-PyTorch-details' class="info_detail">
                 <hr class="dashed">
-                <p><font color=#202020>It includes tools for data loading: <a href="https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader">DataLoader</a>.</font></p>
+                <p><font color=#202020></font></p>
                 
                 <p>
 <pre>
@@ -184,14 +185,12 @@ data_loader = DataLoader(
             <p class="paper_title" onclick="toggleTable('operation-PyTorch-details')"><i>Operation</i></p>
             
             
-            <p class="paper_detail"><b> <font color=#404040>operation</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/index.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
+            <p class="paper_detail"><b> <font color=#404040>operation</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/index.html">Tensor operations.</a> &nbsp; <font color=#D0D0D0></font></p>
             
             
             <div id='operation-PyTorch-details' class="info_detail">
                 <hr class="dashed">
-                <p><font color=#202020>It includes operations: 
-<a href="#data generation">data generation</a>, 
-<a href="#size & reshape">size & reshape</a>.</font></p>
+                <p><font color=#202020></font></p>
                 
                 <p>
 <table class="center">
@@ -364,17 +363,6 @@ arange = torch.arange(start, end, step)
 </code>
 </pre>
 
-<p class="larger" id="size & reshape"><b>Resize & reshape:</b> 
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.permute.html">permute</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.permute.html">permute</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.unsqueeze.html">unsqueeze</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.cat.html">cat</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.squeeze.html">squeeze</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.unbind.html">unbind</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.chunk.html">chunk</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.split.html">split</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.where.html">where</a>.</p>
-
 <p class="larger" id="size & shape">
 <b><a href="https://docs.pytorch.org/docs/stable/generated/torch.Tensor.size.html">size</a> & 
 <a href="https://docs.pytorch.org/docs/stable/generated/torch.Tensor.shape.html">shape</a>:</b> 
@@ -510,59 +498,96 @@ y = torch.where(condition, input, output)
             <p class="paper_title" onclick="toggleTable('module-PyTorch-details')"><i>Module</i></p>
             
             
-            <p class="paper_detail"><b> <font color=#404040>module</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/nn.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
+            <p class="paper_detail"><b> <font color=#404040>module</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/nn.html">Modules to build models.</a> &nbsp; <font color=#D0D0D0></font></p>
             
             
             <div id='module-PyTorch-details' class="info_detail">
                 <hr class="dashed">
                 <p><font color=#202020>
-It includes tools to build neural networks: 
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.parameter.Parameter.html">Parameter</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.parameter.Buffer.html">Buffer</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Linear.html">Linear</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html#conv2d">Conv2d</a>, 
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv3d.html#conv3d">Conv3d</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Dropout.html">Dropout</a>.
 </font></p>
                 
                 <p>
+<table class="center">
+<tr>
+<th>category</th>
+<th>tool (alphabetical)</th>
+</tr>
+
+<tr>
+<td>parameter</td>
+<td>
+<a href="#Parameter & Buffer">Parameter & Buffer</a> &nbsp;&nbsp;
+</td>
+</tr>
+
+<tr>
+<td>convolution</td>
+<td>
+<a href="#Conv2d">Conv2d</a> &nbsp;&nbsp;
+<a href="#Conv3d">Conv3d</a> &nbsp;&nbsp;
+</td>
+</tr>
+
+<tr>
+<td>other module</td>
+<td>
+<a href="#Linear">Linear</a> &nbsp;&nbsp;
+</td>
+</tr>
+
+<tr>
+<td>else</td>
+<td>
+<a href="#Dropout">Dropout</a> &nbsp;&nbsp;
+</td>
+</tr>
+
+</td>
+</tr>
+
+</table>
+
 <pre>
 <code class="language-python" style="font-size: 14px;">
 import torch
 from torch import nn 
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## Parameter
-## --------------------------------------------------------------------------------
+<p class="larger" id="Parameter & Buffer">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.parameter.Parameter.html">Parameter</a> & 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.parameter.Buffer.html">Buffer</a></b>.
+
+<pre>
+<code class="language-python" style="font-size: 14px;">
 data = /  # *** tensor. Parameter tensor
 requires_grad = True
 gamma = torch.Parameter(data, requires_grad)
-## --------------------------------------------------------------------------------
 
-## --------------------------------------------------------------------------------
-## Buffer
-## --------------------------------------------------------------------------------
-data = /  # *** tensor. Buffer tensor
 persistent = True  # whether the buffer is part of the module's state_dict
-gamma = self.register_buffer(data, persistent)  # used in the module class
+gamma = self.register_buffer(data, persistent)  # usually used in __init__
 gamma = nn.paramter.Buffer(data, persistent)  # not usually used
-## --------------------------------------------------------------------------------
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## Linear
-## --------------------------------------------------------------------------------
-in_features = /  # *** int. Size of each input sample
-out_features = /  # *** int. Size of each output sample
-bias = True  # *** bool. If set to False, the layer will not learn an additive bias
+<p class="larger" id="Linear">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Linear.html">Linear</a>:</b> affine linear transformation.
+<pre>
+<code class="language-python" style="font-size: 14px;">
+in_features = /  # *** int. Input features
+out_features = /  # *** int. Output features
+bias = True  # *** bool. If True, learn an additive bias
 device = None  # torch.device or int 
 dtype = None  # torch.dtype
-## [..., H_in] => [..., H_out]
-linear = Linear(in_features, out_features, bias, device, dtype)
-## --------------------------------------------------------------------------------
+linear = Linear(in_features, out_features, bias, device, dtype)  
+y = linear(x)  # [..., H_in] => [..., H_out]
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## Conv2d
-## --------------------------------------------------------------------------------
+<p class="larger" id="Conv2d">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html">Conv2d</a>:</b> 2D convolution.
+<pre>
+<code class="language-python" style="font-size: 14px;">
 in_channels = /  # *** int. Number of channels in the input
 out_channels = /  # *** int. Number of channels in the output
 kernel_size = /  # *** int, tuple. Size of convolving kernel
@@ -576,19 +601,18 @@ device = None  # torch.device or int
 dtype = None  # torch.dtype
 ## Weight. Shape: [out_channels, in_channels/groups, k_size[0], k_size[1]]
 ## Bias. Shape: [out_channels,]
-conv2d = nn.Conv2d(
-    in_channels, out_channels, kernel_size, stride, padding, dilation, groups, 
-    bias, padding_mode, device, dtype
-)
-## [B, C, H_in, W_in] => [B, C, H_out, W_out]
+conv2d = nn.Conv2d(in_channels, out_channels, kernel_size, stride, 
+    padding, dilation, groups, bias, padding_mode, device, dtype)
 ## H_out = [(H_in + 2*padding[0] - dilation[0]*(kernel[0]-1)-1) / stride[0] + 1]
 ## W_out = [(W_in + 2*padding[1] - dilation[1]*(kernel[1]-1)-1) / stride[1] + 1]
-y = conv2d(x)
-## --------------------------------------------------------------------------------
+y = conv2d(x)  # [B, C, H_in, W_in] => [B, C, H_out, W_out]
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## Conv3d
-## --------------------------------------------------------------------------------
+<p class="larger" id="Conv3d">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv3d.html">Conv3d</a>:</b> 3D convolution.
+<pre>
+<code class="language-python" style="font-size: 14px;">
 in_channels = /  # *** int. Number of channels in the input
 out_channels = /  # *** int. Number of channels in the output
 kernel_size = /  # *** int, tuple. Size of convolving kernel
@@ -602,25 +626,23 @@ device = None  # torch.device or int
 dtype = None  # torch.dtype
 ## Weight. Shape: [out_channels, in_channels/groups, k_size[0], k_size[1], k_size[2]]
 ## Bias. Shape: [out_channels,]
-conv3d = nn.Conv3d(
-    in_channels, out_channels, kernel_size, stride, padding, dilation, groups, 
-    bias, padding_mode, device, dtype
-)
-## [B, C, D_in, H_in, W_in] => [B, C, D_out, H_out, W_out]
+conv3d = nn.Conv3d(in_channels, out_channels, kernel_size, stride, 
+    padding, dilation, groups, bias, padding_mode, device, dtype)
 ## D_out = [(D_in + 2*padding[0] - dilation[0]*(kernel[0]-1)-1) / stride[0] + 1]
 ## H_out = [(H_in + 2*padding[1] - dilation[1]*(kernel[1]-1)-1) / stride[1] + 1]
 ## W_out = [(W_in + 2*padding[2] - dilation[2]*(kernel[2]-1)-2) / stride[2] + 1]
-y = conv3d(x)
-## --------------------------------------------------------------------------------
+y = conv3d(x)  # [B, C, D_in, H_in, W_in] => [B, C, D_out, H_out, W_out]
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## Dropout
-## --------------------------------------------------------------------------------
+<p class="larger" id="Dropout">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Dropout.html">Dropout</a></b>.
+<pre>
+<code class="language-python" style="font-size: 14px;">
 p = 0.5  # *** float. Probability of an element to be zeroed
 inplace = False  # bool
 dropout = nn.Dropout(p, inplace)
 y = dropout(x)
-## --------------------------------------------------------------------------------
 </code>
 </pre>
 </p>
@@ -635,38 +657,64 @@ y = dropout(x)
             <p class="paper_title" onclick="toggleTable('activation function-PyTorch-details')"><i>Activation Function</i></p>
             
             
-            <p class="paper_detail"><b> <font color=#404040>activation function</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/nn.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
+            <p class="paper_detail"><b> <font color=#404040>activation function</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/nn.html">activation functions.</a> &nbsp; <font color=#D0D0D0></font></p>
             
             
             <div id='activation function-PyTorch-details' class="info_detail">
                 <hr class="dashed">
                 <p><font color=#202020>
-It includes activation functions: 
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.GELU.html">GeLU</a>,
-<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.SiLU.html">SiLU / swish</a>.
 </font></p>
                 
                 <p>
+<table class="center">
+<tr>
+<th>tool (alphabetical)</th>
+<th>popular applications</th>
+</tr>
+
+<tr>
+<td>
+<a href="#GeLU">GeLU</a> &nbsp;&nbsp;
+</td>
+<td>
+/
+</td>
+</tr>
+
+<tr>
+<td>
+<a href="#SiLU/swish">SiLU/swish</a> &nbsp;&nbsp;
+</td>
+<td>
+/
+</td>
+</tr>
+
+</table>
+
 <pre>
 <code class="language-python" style="font-size: 14px;">
 from torch import nn
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## GeLU (Gaussian Error Linear Units)
-## --------------------------------------------------------------------------------
-## GeLU(x) = x * phi(x)
+<p class="larger" id="GeLU">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.GELU.html">GeLU</a>:</b> Gaussian Error Linear Units function, \(\mathrm{GeLU}(x)=x*\phi(x)\), where \(\phi\) is cumulative distribution function.
+<pre>
+<code class="language-python" style="font-size: 14px;">
 gelu = nn.GeLU()
 y = gelu(x)
-## --------------------------------------------------------------------------------
+</code>
+</pre>
 
-## --------------------------------------------------------------------------------
-## SiLU / swish (Sigmoid Linear Unit)
-## --------------------------------------------------------------------------------
+<p class="larger" id="SiLU/swish">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.SiLU.html">SiLU/swish</a>:</b>  Sigmoid Linear Unit function, \(\mathrm{SiLU}(x)=x*\sigma(x)\), where \(\sigma\) is logistic function.
+
+<pre>
+<code class="language-python" style="font-size: 14px;">
 inplace = False
-## silu(x) = x * sigmoid(x)
 silu = nn.SiLU(inplace)
 y = silu(x)
-## --------------------------------------------------------------------------------
 </code>
 </pre>
 </p>
@@ -681,7 +729,7 @@ y = silu(x)
             <p class="paper_title" onclick="toggleTable('optimizer-PyTorch-details')"><i>Optimizer</i></p>
             
             
-            <p class="paper_detail"><b> <font color=#404040>optimizer</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/optim.html">docs</a> &nbsp; <font color=#D0D0D0></font></p>
+            <p class="paper_detail"><b> <font color=#404040>optimizer</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://docs.pytorch.org/docs/stable/optim.html">optimizers.</a> &nbsp; <font color=#D0D0D0></font></p>
             
             
             <div id='optimizer-PyTorch-details' class="info_detail">
@@ -717,7 +765,7 @@ adam_optim = AdamW(params, lr, betas, weight_decay)
             <p class="paper_title" onclick="toggleTable('huggingface-PyTorch-details')"><i>huggingface</i></p>
             
             
-            <p class="paper_detail"><b> <font color=#404040>huggingface</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://huggingface.co/docs">docs</a> &nbsp; <font color=#D0D0D0></font></p>
+            <p class="paper_detail"><b> <font color=#404040>huggingface</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://huggingface.co/docs">huggingface tools.</a> &nbsp; <font color=#D0D0D0></font></p>
             
             
             <div id='huggingface-PyTorch-details' class="info_detail">
@@ -754,7 +802,7 @@ snapshot_download(repo_id, repo_type, local_dir, token, max_workers)
             <p class="paper_title" onclick="toggleTable('deepspeed-Distributed Training-details')"><i>DeepSpeed</i></p>
             
             
-            <p class="paper_detail"><b> <font color=#404040>deepspeed</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://deepspeed.readthedocs.io/en/latest/">docs</a> &nbsp; <font color=#D0D0D0></font></p>
+            <p class="paper_detail"><b> <font color=#404040>deepspeed</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://deepspeed.readthedocs.io/en/latest/">deepspeed framework.</a> &nbsp; <font color=#D0D0D0></font></p>
             
             
             <div id='deepspeed-Distributed Training-details' class="info_detail">

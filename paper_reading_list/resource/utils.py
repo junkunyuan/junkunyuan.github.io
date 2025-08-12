@@ -109,3 +109,31 @@ TOP_BUTTON = \
     });
 </script>
 """
+
+COPY_BUTTON = \
+"""
+<script>
+    function copy(elementId) {
+        const codeElement = document.getElementById(elementId);
+        const range = document.createRange();
+        range.selectNode(codeElement);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        
+        try {
+            const successful = document.execCommand('copy');
+            const btn = event.target;
+            if (successful) {
+                btn.textContent = '已复制!';
+                setTimeout(() => {
+                    btn.textContent = '复制代码';
+                }, 2000);
+            }
+        } catch (err) {
+            console.error('复制失败:', err);
+        }
+        
+        window.getSelection().removeAllRanges();
+    }
+</script>
+"""
