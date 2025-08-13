@@ -75,7 +75,7 @@ CODING["papers"] = [
 "author": "",
 "organization": "",
 "date": "20240701",
-"venue": "Transform and augment data.",
+"venue": "transform and augment data",
 "pdf_url": "https://docs.pytorch.org/vision/stable/transforms.html",
 "code_url": "",
 "name": "data transforms",
@@ -89,7 +89,7 @@ CODING["papers"] = [
 <table class="center">
 <tr>
 <th>category</th>
-<th>tool (alphabetical)</th>
+<th>class / function (alphabetical)</th>
 </tr>
 
 <tr><td>geometry</td><td>
@@ -101,9 +101,12 @@ CODING["papers"] = [
 </td></tr>
 
 <tr><td>conversion</td><td>
-<a href="#Compose">Compose</a> &nbsp;&nbsp;
-<a href="#Normalize">Normalize</a>
+<a href="#Normalize">Normalize</a> &nbsp;&nbsp;
 <a href="#ToTensor">ToTensor</a> &nbsp;&nbsp;
+</td></tr>
+
+<tr><td>else</td><td>
+<a href="#Compose">Compose</a> &nbsp;&nbsp;
 </td></tr>
 
 </table>
@@ -111,32 +114,38 @@ CODING["papers"] = [
 <pre>
 <code class="language-python" style="font-size: 14px;">
 from torchvision import transforms
-from torchvision.transforms.InterpolationMode import BILINEAR, NEAREST, BICUBIC 
+from torchvision.transforms import InterpolationMode BILINEAR, NEAREST, BICUBIC 
 </code>
 </pre>
 
 <p class="larger" id="RandomHorizontalFlip">
 <b><a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.RandomHorizontalFlip.html">RandomHorizontalFlip</a>: </b>
-horizontally flip the image randomly with a given probability. 
+horizontally flip the image randomly with a probability. 
 <pre>
 <code class="language-python" style="font-size: 14px;">
-p = 0.5  # *** float. Probability to flip image
+p = 0.5  # *** float. Probability to flip
 trans = <b>transforms.RandomHorizontalFlip</b>(p)
-image_trans = trans(image)  # PIL Image => PIL Image or Tensor => Tensor
+image_trans = trans(image)  # PIL Image => PIL Image, or Tensor => Tensor
 </code>
 </pre>
 
 <p class="larger" id="Resize">
 <b><a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Resize.html">Resize</a>: </b>
-resize the image to the given size.
+resize the image to a size.
 <pre>
 <code class="language-python" style="font-size: 14px;">
-size = /  # *** sequence or int. For example (512, 768)
-interpolation = BILINEAR  # InterpolationMode
+## When `size` is int, the image shorter size will be resized to `size` with aspect ratio fixed
+## When `size` is tuple, the image size will be resized to `size` with aspect ratio changed
+size = /  # *** tuple or int
+## NEAREST: fastest; lowest quality, jagged
+## BILINEAR: fast; low quality, blur
+## (recommend) BICUBIC: slow; good quality
+## (recommend) LANCOZ: slowest; best quality
+interpolation = InterpolationMode.BILINEAR  # *** InterpolationMode
+## The shorter size may lower than `size` if longer size exceeds `max_size` after resizing
 max_size = None  # int. Maximum allowed for the longer edge, supported if `size` is int
-antialias = True  # bool. Apply antialiasing, only under bilinear or bicubic modes
-trans = transforms.Resize(size, interpolation, max_size, antialias)
-image_trans = trans(image)  # PIL Image => PIL Image or Tensor => Tensor
+trans = transforms.Resize(size, interpolation, max_size)
+image_trans = trans(image)  # PIL Image => PIL Image, or Tensor => Tensor
 </code>
 </pre>
 
@@ -149,7 +158,7 @@ convert a PIL Image or ndarray to tensor and scale the values accordingly.
 ## Output: torch.FloatTensor of shape (CxHxW) in the range (0.0, 1.0)
 ## Other inputs: only apply type transform
 trans = <b>transforms.ToTensor</b>()
-image_trans = trans(image)  # PIL Image / ndarray => Tensor
+image_trans = trans(image)
 </code>
 </pre>
 
@@ -183,7 +192,7 @@ image_trans = trans(image)  # Tensor => Tensor
 "author": "",
 "organization": "",
 "date": "20240630",
-"venue": "Data loading.",
+"venue": "load data",
 "pdf_url": "https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader",
 "code_url": "",
 "name": "data loader",
@@ -199,25 +208,19 @@ image_trans = trans(image)  # Tensor => Tensor
 import torch
 from torch.utils.data import DataLoader, Dataset, Sampler
 
-## --------------------------------------------------------------------------------
-## DataLoader
-## --------------------------------------------------------------------------------
 dataset = /  # *** Dataset
-batch_size = 1  # *** int. Number of samples per batch.
+batch_size = 1  # *** int. Number of samples per batch
 shuffle = False  # *** bool. If True, have the data shuffled at every epoch
 sampler = None  # Sampler or Iterable. Define how to draw samples
 num_workers = 0  # *** int. Number of subprocesses to use for data loading
-collate_fn = None  # Callable. Merge a list of samples to form a batch of tensors
+collate_fn = None  # Callable. Merge a list of samples to form a batch
 pin_memory = False  # *** bool. If True, copy Tensors into CUDA pinned memory
 drop_last = False  # *** bool. If True, drop the last incomplete batch
 timeout = 0  # numeric. If positive, set timeout for collecting a batch from workers
 prefetch_factor = None  # int. Default = None if num_workers == 0 else 2
 # ...
-data_loader = DataLoader(
-    dataset, batch_size, shuffle, sampler, num_workers, collate_fn, 
-    pin_memory, drop_last, timeout, prefetch_factor
-)
-## --------------------------------------------------------------------------------
+data_loader = DataLoader(dataset, batch_size, shuffle, sampler, num_workers, 
+    collate_fn, pin_memory, drop_last, timeout, prefetch_factor)
 </code>
 </pre>
 """,
@@ -227,7 +230,7 @@ data_loader = DataLoader(
 "author": "",
 "organization": "",
 "date": "20230630",
-"venue": "Tensor operations.",
+"venue": "tensor operations",
 "pdf_url": "https://docs.pytorch.org/docs/stable/index.html",
 "code_url": "",
 "name": "operation",
@@ -242,7 +245,7 @@ data_loader = DataLoader(
 <table class="center">
 <tr>
 <th>category</th>
-<th>tool (alphabetical)</th>
+<th>class / function (alphabetical)</th>
 </tr>
 
 <tr>
@@ -266,9 +269,7 @@ data_loader = DataLoader(
 </td>
 </tr>
 
-<tr>
-<td>size</td>
-<td>
+<tr><td>size</td><td>
 <a href="#cat">cat</a> &nbsp;&nbsp;
 <a href="#chunk & split">chunk & split</a> &nbsp;&nbsp;
 <a href="#flatten">flatten</a> &nbsp;&nbsp;
@@ -279,10 +280,11 @@ data_loader = DataLoader(
 <a href="#tranpose">tranpose</a> &nbsp;&nbsp;
 <a href="#unbind">unbind</a> &nbsp;&nbsp;
 <a href="#unsqueeze">unsqueeze</a> &nbsp;&nbsp;
-<a href="#where">where</a> &nbsp;&nbsp;
+</td></tr>
 
-</td>
-</tr>
+<tr><td>else</td><td>
+<a href="#where">where</a> &nbsp;&nbsp;
+</td></tr>
 
 </table>
 
@@ -305,7 +307,7 @@ y = torch.function(x)  # function: exp, sin, cos, sqrt
 <b><a href="https://docs.pytorch.org/docs/stable/mean.html">mean & var</a></b>. 
 <pre>
 <code class="language-python" style="font-size: 14px;">
-dim = /  # *** int or tuple of ints. The dims to reduce
+dim = /  # *** int or tuple of ints. Dims to reduce
 keepdim = False # *** bool. If True, return tensor with the same dims
 mean = x.mean(dim, keepdim)
 
@@ -319,7 +321,7 @@ var = x.var(dim, keepdim, correction)
 <b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.softmax.html">softmax</a></b>. 
 <pre>
 <code class="language-python" style="font-size: 14px;">
-dim = None  # *** int. The dimension to apply softmax
+dim = None  # *** int. Dim to apply softmax
 y = x.softmax(dim)
 </code>
 </pre>
@@ -374,8 +376,8 @@ fill a tensor with a given value.
 <pre>
 <code class="language-python" style="font-size: 14px;">
 size = /  # *** sequence of int. The shape of output
-y = torch.ones(size)
 y = torch.zeros(size)
+y = torch.ones(size)
 </code>
 </pre>
 
@@ -415,7 +417,7 @@ arange = torch.arange(start, end, step)
 get tensor size.
 <pre>
 <code class="language-python" style="font-size: 14px;">
-dim = None  # int. The dimension to retrieve the size
+dim = None  # int. Dim to retrieve the size
 size = x.size(dim)  # => torch.Size or int
 size = x.shape  #  => torch.Size
 </code>
@@ -427,7 +429,7 @@ size = x.shape  #  => torch.Size
 reshape a tensor with the given shape. 
 <pre>
 <code class="language-python" style="font-size: 14px;">
-shape = /  # sequence of int. The new shape. Note: a single dimension could be -1
+shape = /  # sequence of int. The new shape. A single dim could be -1
 y = x.reshape(shape)  # recommend since it could call .contiguous() if needed
 y = x.view(shape)
 </code>
@@ -449,8 +451,8 @@ y = x.flatten(start_dim, end_dim)
 swap two dimensions. 
 <pre>
 <code class="language-python" style="font-size: 14px;">
-dim0 = /  # *** int. The first dimension to be tranposed
-dim1 = /  # *** int. The second dimension to be tranposed
+dim0 = /  # *** int. The first dim to be tranposed
+dim1 = /  # *** int. The second dim to be tranposed
 y = x.tranpose(dim0, dim1)
 </code>
 </pre>
@@ -514,7 +516,7 @@ dim = 0  # *** int
 y = x.chunk(chunks, dim)
 
 indices_or_sections = /  # *** tensor, int, list, tuple of ints
-dim = 0  # *** int. Dimension along which to split the tensor
+dim = 0  # *** int. Dim along which to split the tensor
 ## If split_size_or_sections is an integer type, split into equally sized chunks
 ## If split_size_or_sections is a list, split into len(split_size_or_sections) chunks
 y = x.split(indices_or_sections, dim)

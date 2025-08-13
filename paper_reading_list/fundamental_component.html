@@ -18,11 +18,79 @@
 
 <h1 id="top">Fundamental Components of Deep Learning</h1>
 <p class="larger"><b>Fundamental components to build deep learning systems.</b></p>
-<p class="larger"><b><font color='#D93053'>3</font> papers</b></p>
+<p class="larger"><b><font color='#D93053'>4</font> papers</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on August 12, 2025 at 16:29 (UTC+8).</font></p>
-<hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#B04040">red</font>.</p><ul><li><a class="no_dec larger" id="Normalization" href="#Normalization-table"><b>Normalization</b></a></li><p><a class="no_dec" href="#Batch Normalizationnormalization"><font color=#B04040>Batch Normalization</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Layer Normalizationnormalization"><font color=#B04040>Layer Normalization</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Instance Normalizationnormalization"><font color=#B04040>Instance Normalization</font></a></p></ul><h2 id="Normalization-table"><a class="no_dec" href="#Normalization">Normalization</a></h2>
+<p><font color=#B0B0B0>Last updated on August 13, 2025 at 19:30 (UTC+8).</font></p>
+<hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#B04040">red</font>.</p><ul><li><a class="no_dec larger" id="Normalization" href="#Normalization-table"><b>Normalization</b></a></li><p><a class="no_dec" href="#Batch Normalizationnormalization"><font color=#B04040>Batch Normalization</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Layer Normalizationnormalization"><font color=#B04040>Layer Normalization</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Instance Normalizationnormalization"><font color=#B04040>Instance Normalization</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Group Normalizationnormalization"><font color=#B04040>Group Normalization</font></a></p></ul><h2 id="Normalization-table"><a class="no_dec" href="#Normalization">Normalization</a></h2>
+            <p class="little_split" id='Group Normalizationnormalization'></p>
+            <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('Group Normalization-Normalization-details')"><i>Group Normalization</i></p>
+            <p class="paper_detail">Yuxin Wu, Kaiming He</p>
+            <p class="paper_detail">Facebook AI Research (FAIR)</p>
+            <p class="paper_detail"><b>Mar 22, 2018 &nbsp; <font color=#B04040>Group Normalization</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/facebookresearch/Detectron/tree/main/projects/GN">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/1803.08494">ECCV 2018</a> &nbsp; <font color=#D0D0D0></font></p>
+            
+            
+            <div id='Group Normalization-Normalization-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>
+It normalizes features along <b>channel groups</b>, achieving stable accuracy even for very small batches.
+</font></p>
+                
+                <p>
+<pre>
+<code class="language-python" style="font-size: 14px;">
+## --------------------------------------------------------------------------------
+## Build customized Group Normalization
+## --------------------------------------------------------------------------------
+import torch
+from torch import nn 
+
+class CustomGroupNorm(nn.Module):
+    def __init__(self, num_features, num_groups, eps=1e-5):
+        super().__init__()
+        self.num_groups = num_groups
+        self.num_features = num_features
+        self.eps = eps
+        self.weight = nn.Parameter(torch.ones(num_features))
+        self.bias = nn.Parameter(torch.zeros(num_features))
+
+    def forward(self, x):
+        N, C, H, W = x.shape
+        x = x.view(N, self.num_groups, -1, H, W)
+        mean = x.mean(dim=(3, 4), keepdim=True)
+        var = x.var(dim=(3, 4), unbiased=False, keepdim=True)
+        x_norm = (x - mean) / torch.sqrt(var + self.eps)
+        x_norm = x_norm.view(N, C, H, W)
+        return self.weight.view(1, C, 1, 1) * x_norm + self.bias.view(1, C, 1, 1)
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## Test the customized Group Normalization
+## --------------------------------------------------------------------------------
+if __name__ == "__main__":
+    N, C, H, W = 4, 6, 224, 224
+    num_groups = 1
+    x = torch.rand(N, C, H, W) * 10
+
+    torch_gn = torch.nn.GroupNorm(num_channels=C, num_groups=num_groups)
+    custom_gn = CustomGroupNorm(num_features=C, num_groups=num_groups)
+
+    custom_gn.weight.data = torch_gn.weight.data.clone()
+    custom_gn.bias.data = torch_gn.bias.data.clone()
+
+    print(torch.allclose(torch_gn(x), custom_gn(x), atol=0.01))  # it prints False
+    print(torch.allclose(torch_gn(x), custom_gn(x), atol=0.1))  # it prints False
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split" id='Instance Normalizationnormalization'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -121,6 +189,7 @@ class CustomLayerNorm(nn.Module):
 ## --------------------------------------------------------------------------------
 C, H, W = 3, 224, 224
 x = torch.randn(4, C, H, W)
+## Note that LayerNorm often applies to the final dim (the feature dim)
 torch_ln = torch.nn.LayerNorm(normalized_shape=(C, H, W))
 custom_ln = CustomLayerNorm((C, H, W))
 print(torch.allclose(custom_ln(x), torch_ln(x), atol=1e-5))  # it prints True
@@ -216,12 +285,12 @@ custom_bn.running_var.copy_(torch_bn.running_var)
 ## Training
 torch_bn.train()
 custom_bn.train()
-print(torch.allclose(torch_bn(x), custom_bn(x)))
+print(torch.allclose(torch_bn(x), custom_bn(x)))  # it prints True
 
 ## Inference
 torch_bn.eval()
 custom_bn.eval()
-print(torch.allclose(torch_bn(x), custom_bn(x)))
+print(torch.allclose(torch_bn(x), custom_bn(x)))  # it prints True
 ## --------------------------------------------------------------------------------
 </code>
 </pre>

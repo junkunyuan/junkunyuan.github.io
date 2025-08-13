@@ -28,6 +28,73 @@ FUNDAMENTAL_COMPONENT["papers"] = [
 # """,
 # },
 {
+"title": "Group Normalization",
+"author": "Yuxin Wu, Kaiming He",
+"organization": "Facebook AI Research (FAIR)",
+"date": "20180322",
+"venue": "ECCV 2018",
+"pdf_url": "https://arxiv.org/pdf/1803.08494",
+"code_url": "https://github.com/facebookresearch/Detectron/tree/main/projects/GN",
+"name": "Group Normalization",
+"comment": "",
+"category": "Normalization",
+"jupyter_notes": "",
+"info": "**",
+"summary": 
+"""
+It normalizes features along <b>channel groups</b>, achieving stable accuracy even for very small batches.
+""",
+"details": 
+"""
+<pre>
+<code class="language-python" style="font-size: 14px;">
+## --------------------------------------------------------------------------------
+## Build customized Group Normalization
+## --------------------------------------------------------------------------------
+import torch
+from torch import nn 
+
+class CustomGroupNorm(nn.Module):
+    def __init__(self, num_features, num_groups, eps=1e-5):
+        super().__init__()
+        self.num_groups = num_groups
+        self.num_features = num_features
+        self.eps = eps
+        self.weight = nn.Parameter(torch.ones(num_features))
+        self.bias = nn.Parameter(torch.zeros(num_features))
+
+    def forward(self, x):
+        N, C, H, W = x.shape
+        x = x.view(N, self.num_groups, -1, H, W)
+        mean = x.mean(dim=(3, 4), keepdim=True)
+        var = x.var(dim=(3, 4), unbiased=False, keepdim=True)
+        x_norm = (x - mean) / torch.sqrt(var + self.eps)
+        x_norm = x_norm.view(N, C, H, W)
+        return self.weight.view(1, C, 1, 1) * x_norm + self.bias.view(1, C, 1, 1)
+## --------------------------------------------------------------------------------
+
+## --------------------------------------------------------------------------------
+## Test the customized Group Normalization
+## --------------------------------------------------------------------------------
+if __name__ == "__main__":
+    N, C, H, W = 4, 6, 224, 224
+    num_groups = 1
+    x = torch.rand(N, C, H, W) * 10
+
+    torch_gn = torch.nn.GroupNorm(num_channels=C, num_groups=num_groups)
+    custom_gn = CustomGroupNorm(num_features=C, num_groups=num_groups)
+
+    custom_gn.weight.data = torch_gn.weight.data.clone()
+    custom_gn.bias.data = torch_gn.bias.data.clone()
+
+    print(torch.allclose(torch_gn(x), custom_gn(x), atol=0.01))  # it prints False
+    print(torch.allclose(torch_gn(x), custom_gn(x), atol=0.1))  # it prints False
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+""",
+},
+{
 "title": "Instance Normalization: The Missing Ingredient for Fast Stylization",
 "author": "Dmitry Ulyanov, Andrea Vedaldi, Victor Lempitsky",
 "organization": "Skoltech & Yandex, University of Oxford",
@@ -37,7 +104,7 @@ FUNDAMENTAL_COMPONENT["papers"] = [
 "code_url": "https://github.com/DmitryUlyanov/texture_nets",
 "name": "Instance Normalization",
 "comment": "",
-"category": "Instance Normalization",
+"category": "Normalization",
 "jupyter_notes": "",
 "info": "**",
 "summary": 
@@ -127,6 +194,7 @@ class CustomLayerNorm(nn.Module):
 ## --------------------------------------------------------------------------------
 C, H, W = 3, 224, 224
 x = torch.randn(4, C, H, W)
+## Note that LayerNorm often applies to the final dim (the feature dim)
 torch_ln = torch.nn.LayerNorm(normalized_shape=(C, H, W))
 custom_ln = CustomLayerNorm((C, H, W))
 print(torch.allclose(custom_ln(x), torch_ln(x), atol=1e-5))  # it prints True
@@ -218,12 +286,12 @@ custom_bn.running_var.copy_(torch_bn.running_var)
 ## Training
 torch_bn.train()
 custom_bn.train()
-print(torch.allclose(torch_bn(x), custom_bn(x)))
+print(torch.allclose(torch_bn(x), custom_bn(x)))  # it prints True
 
 ## Inference
 torch_bn.eval()
 custom_bn.eval()
-print(torch.allclose(torch_bn(x), custom_bn(x)))
+print(torch.allclose(torch_bn(x), custom_bn(x)))  # it prints True
 ## --------------------------------------------------------------------------------
 </code>
 </pre>
