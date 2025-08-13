@@ -18,11 +18,70 @@
 
 <h1 id="top">Fundamental Components of Deep Learning</h1>
 <p class="larger"><b>Fundamental components to build deep learning systems.</b></p>
-<p class="larger"><b><font color='#D93053'>4</font> papers</b></p>
+<p class="larger"><b><font color='#D93053'>5</font> papers</b></p>
 <p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on August 13, 2025 at 19:30 (UTC+8).</font></p>
-<hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#B04040">red</font>.</p><ul><li><a class="no_dec larger" id="Normalization" href="#Normalization-table"><b>Normalization</b></a></li><p><a class="no_dec" href="#Batch Normalizationnormalization"><font color=#B04040>Batch Normalization</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Layer Normalizationnormalization"><font color=#B04040>Layer Normalization</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Instance Normalizationnormalization"><font color=#B04040>Instance Normalization</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Group Normalizationnormalization"><font color=#B04040>Group Normalization</font></a></p></ul><h2 id="Normalization-table"><a class="no_dec" href="#Normalization">Normalization</a></h2>
+<p><font color=#B0B0B0>Last updated on August 13, 2025 at 20:11 (UTC+8).</font></p>
+<hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#B04040">red</font>.</p><ul><li><a class="no_dec larger" id="Normalization" href="#Normalization-table"><b>Normalization</b></a></li><p><a class="no_dec" href="#Batch Normalizationnormalization"><font color=#B04040>Batch Normalization</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Layer Normalizationnormalization"><font color=#B04040>Layer Normalization</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Instance Normalizationnormalization"><font color=#B04040>Instance Normalization</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#Group Normalizationnormalization"><font color=#B04040>Group Normalization</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> <a class="no_dec" href="#RMS Normalizationnormalization"><font color=#B04040>RMS Normalization</font></a></p></ul><h2 id="Normalization-table"><a class="no_dec" href="#Normalization">Normalization</a></h2>
+            <p class="little_split" id='RMS Normalizationnormalization'></p>
+            <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('RMS Normalization-Normalization-details')"><i>Root Mean Square Layer Normalization</i></p>
+            <p class="paper_detail">Biao Zhang, Rico Sennrich</p>
+            <p class="paper_detail">University of Edinburgh, University of Zurich</p>
+            <p class="paper_detail"><b>Oct 16, 2019 &nbsp; <font color=#B04040>RMS Normalization</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/bzhangGo/rmsnorm">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/1910.07467">NeurIPS 2019</a> &nbsp; <font color=#D0D0D0>Advances in Neural Information Processing Systems</font></p>
+            
+            
+            <div id='RMS Normalization-Normalization-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>
+It proposes an <b>efficient layer normalization</b> method that maintains the re-scaling invariance property of LayerNorm while eliminating re-centering.
+</font></p>
+                
+                <p>
+<ul>
+    <li> <b>Why is RMS Norm more efficient than Layer Norm?</b> Layer Norm needs to calculate mean and variance, requiring two passes over the data and extra subtraction operations. RMS Norm only needs one pass, reducing operations and memory accesses and making it GPU-friendly. 
+</ul>
+<pre>
+<code class="language-python" style="font-size: 14px;">
+import torch
+import torch.nn as nn
+
+## --------------------------------------------------------------------------------
+## Build customized RMS Normalization
+## --------------------------------------------------------------------------------
+class RMSNorm(nn.Module):
+    def __init__(self, hidden_size, eps=1e-6):
+        super().__init__()
+        self.eps = eps
+        self.weight = nn.Parameter(torch.ones(hidden_size))
+
+    def forward(self, x):
+        rms = torch.sqrt(torch.mean(x ** 2, dim=-1, keepdim=True) + self.eps)
+        x_normalized = x / rms
+        return self.weight * x_normalized
+
+## --------------------------------------------------------------------------------
+## Test the customized RMS Normalization
+## --------------------------------------------------------------------------------
+batch, token_num, hidden_size = 2, 16, 128
+x = torch.randn(batch, token_num, hidden_size)
+
+custom_rmsn = RMSNorm(hidden_size)
+torch_rmsn = nn.RMSNorm(hidden_size)
+
+custom_rmsn.weight.data = torch_rmsn.weight.data.clone()
+
+print(torch.allclose(custom_rmsn(x), torch_rmsn(x)))
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split" id='Group Normalizationnormalization'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
