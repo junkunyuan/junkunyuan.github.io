@@ -28,6 +28,40 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "Yan: Foundational Interactive Video Generation",
+"author": "Deheng Ye, Fangyun Zhou, Jiacheng Lv, Jianqi Ma, Jun Zhang, Junyan Lv, Junyou Li, Minwen Deng, Mingyu Yang, Qiang Fu, Wei Yang, Wenkai Lv, Yangbin Yu, Yewen Wang, Yonghang Guan, Zhihao Hu, Zhongbin Fang, Zhongqian Sun",
+"organization": "Tencent",
+"date": "20250812",
+"venue": "arXiv 2025",
+"pdf_url": "https://www.arxiv.org/pdf/2508.08601",
+"code_url": "",
+"name": "Yan",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+""",
+"details": 
+"""
+<ul>
+    <li> <b>AAAI-level simulation (Yan-Sim).</b> Design a highly-compressed, low-latency 3D-VAE (32x32x2-16chan with a light decoder) coupled with a KV-cache-based shift-window denoising inference process, achieving real-time 1080P/60FPS interative simulation.
+    <li> <b>Multi-modal generation (Yan-Gen).</b> Use autoregressive caption method to inject game-specific knowledge into open-domain, multimodal, interative video diffusion models.
+    <li> <b>Multi-granularity editing (Yan-Edit).</b> Disentangle interative mechanics simulation from visual rendering, enabling mutli-granularity video content editing during interaction through text.
+    <li><b>Data pipeline.</b> Use agent to collect and clean data (action & image pair) in the game environment of a renowned modern 3D game (Yuanmeng Star). Use VLM and depth model to obtain prompt and depth. Both labeled and unlabled data are used for training.
+</ul>
+fig: fig1.png 500
+cap: <b>Dataset comparisons.</b>
+fig: fig2.png 550
+cap: <b>Yan-Sim structure.</b>
+fig: fig3.png 550
+cap: <b>Yan-Gen structure.</b>
+fig: fig4.png 550
+cap: <b>Yan-Edit structure.</b>
+""",
+},
+{
 "title": "Flow Matching for Generative Modeling",
 "author": "Yaron Lipman, Ricky T. Q. Chen, Heli Ben-Hamu, Maximilian Nickel, Matt Le",
 "organization": "Meta AI (FAIR), Weizmann Institute of Science",
