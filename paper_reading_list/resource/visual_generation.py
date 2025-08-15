@@ -2,7 +2,7 @@ VISUAL_GENERATION = dict()
 VISUAL_GENERATION["file"] = "visual_generation.html"
 VISUAL_GENERATION["title"] = "Visual Generation"
 VISUAL_GENERATION["description"] = "Generate visual signals (e.g., images and videos)."
-VISUAL_GENERATION["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Inference-Time Improvement", "Acceleration", "Datasets & Evaluation", "Editing & Inpainting & Outpainting", "Personalization"]
+VISUAL_GENERATION["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Inference-Time Improvement", "Acceleration", "Datasets & Evaluation", "Editing & Inpainting & Outpainting", "Human", "Style"]
 VISUAL_GENERATION["papers"] = [
 # {
 # "title": "",
@@ -27,6 +27,28 @@ VISUAL_GENERATION["papers"] = [
 # </ul>
 # """,
 # },
+{
+"title": "new paper StyleMaster: Stylize Your Video with Artistic Generation and Translation",
+"author": "Zixuan Ye, Huijuan Huang, Xintao Wang, Pengfei Wan, Di Zhang, Wenhan Luo",
+"organization": "Hong Kong University of Science and Technology, KuaiShou Technology",
+"date": "20241210",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2412.07744",
+"code_url": "",
+"name": "StyleMaster",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+""",
+"details": 
+"""
+fig: fig1.png 900
+cap: <b>Structure.</b> (1) <b>CLIP</b> extracts patch features and embeddings. (2) <b>Patch features</b> with less similarity with text prompt are employed to remove content infomation. (3) <b>Global projection</b>, trained by contrastive data, extracts global style from <b>CLIP embeddings</b>. (4) <b>Local and global features</b> are injected into model by cross-attention. (5) <b>Gray tile ControlNet</b> injects gray information while removing style information.
+""",
+},
 {
 "title": "Yan: Foundational Interactive Video Generation",
 "author": "Deheng Ye, Fangyun Zhou, Jiacheng Lv, Jianqi Ma, Jun Zhang, Junyan Lv, Junyou Li, Minwen Deng, Mingyu Yang, Qiang Fu, Wei Yang, Wenkai Lv, Yangbin Yu, Yewen Wang, Yonghang Guan, Zhihao Hu, Zhongbin Fang, Zhongqian Sun",
@@ -176,7 +198,7 @@ cap: <b>Structure and configuration.</b>
 "code_url": "https://github.com/mayuelala/FollowYourEmoji",
 "name": "Follow-Your-Emoji",
 "comment": "",
-"category": "Personalization",
+"category": "Human",
 "jupyter_notes": "",
 "info": "",
 "summary": """""",

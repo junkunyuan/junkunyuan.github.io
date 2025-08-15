@@ -77,7 +77,7 @@ def build_main_content_of_each_domain(domain):
 
     ## Build table of contents
     catalog = """<hr><p id='table' class="huger"><b>Table of contents:</b></p>"""
-    catalog += """<p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#B04040">red</font>.</p><ul>""" if domain["title"] not in EXCLUDE_TITLE else "<ul>"
+    catalog += """<p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#D04040">red</font>.</p><ul>""" if domain["title"] not in EXCLUDE_TITLE else "<ul>"
     for category in domain["categories"]:
         paper_choose = papers[papers["category"].str.contains(category)]
         if domain["title"] not in EXCLUDE_TITLE:
@@ -86,12 +86,12 @@ def build_main_content_of_each_domain(domain):
         paper_info = paper_choose["info"].to_list()
         names = ""
         for i, name in enumerate(paper_names):
-            color = "#B04040" if "**" in paper_info[i] else "#404040"
+            color = "#D04040" if "**" in paper_info[i] else "#505050"
             if i == len(paper_names) - 1:
                 names += f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name}</font></a>"""
             else:
-                names += f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name}</font></a> <font color=#B0B0B0>&nbsp;|&nbsp;</font> """
-        catalog += f"""<li><a class="no_dec larger" id="{category}" href="#{category}-table"><b>{category}</b></a></li><p>{names}</p>"""
+                names += f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name}</font></a> <font color=#D0D0D0> &nbsp;&nbsp;|&nbsp;&nbsp; </font> """
+        catalog += f"""<li><a class="no_dec larger" id="{category}" href="#{category}-table"><b>{category}</b></a></li><p>{names}</p><br>"""
     catalog += """</ul>"""
     
     ## Build contents
@@ -107,14 +107,14 @@ def build_main_content_of_each_domain(domain):
             paper_choose = paper_choose.sort_values(by="date", ascending=False)
         content_cate = f"""<h2 id="{category}-table"><a class="no_dec" href="#{category}">{category}</a></h2>"""
         for _, paper in paper_choose.iterrows():
-            color = "#B04040" if "**" in paper["info"] else "#404040"
+            color = "#D04040" if "**" in paper["info"] else "#404040"
 
             code = f"""&nbsp;&nbsp;|&nbsp;&nbsp; <a href="{paper['code_url']}">code</a>""" if len(paper['code_url']) > 0 else ""
 
             venue = f"""<a href="{paper["pdf_url"]}">{paper["venue"]}</a>"""
             venue_all = get_venue_all(paper["venue"])
             date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%b %d, %Y") + " &nbsp;" if domain["title"] not in EXCLUDE_TITLE else ""
-            comment = f"""<p class="paper_detail"><font color=#FF000>{paper["comment"]}</font></p>""" if paper["comment"] else ""
+            comment = f"""<p class="paper_detail"><font color=#D04040>{paper["comment"]}</font></p>""" if paper["comment"] else ""
             jupyter_note = ""
             if paper.get("jupyter_notes", ""):
                 jupyter_note = \
