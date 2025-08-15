@@ -28,13 +28,34 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
-"title": "new paper StyleMaster: Stylize Your Video with Artistic Generation and Translation",
+"title": "OmniStyle: Filtering High Quality Style Transfer Data at Scale",
+"author": "Ye Wang, Ruiqi Liu, Jiang Lin, Fei Liu, Zili Yi, Yilin Wang, Rui Ma",
+"organization": "Jilin University, Nanjing University, ByteDance, Adobe, Engineering Research Center of Knowledge-Driven Human-Machine Intelligence, MOE, China",
+"date": "20250520",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2505.14028",
+"code_url": "https://github.com/wangyePHD/OmniStyle",
+"name": "OmniStyle",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It introduces a dataset consisting of <b>150K</b> content-style-stylized image triplets across <b>1,000 styles</b> with textual discriptions and instruction prompts.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "StyleMaster: Stylize Your Video with Artistic Generation and Translation",
 "author": "Zixuan Ye, Huijuan Huang, Xintao Wang, Pengfei Wan, Di Zhang, Wenhan Luo",
 "organization": "Hong Kong University of Science and Technology, KuaiShou Technology",
 "date": "20241210",
 "venue": "CVPR 2025",
 "pdf_url": "https://arxiv.org/pdf/2412.07744",
-"code_url": "",
+"code_url": "https://github.com/KwaiVGI/StyleMaster",
 "name": "StyleMaster",
 "comment": "",
 "category": "Style",
