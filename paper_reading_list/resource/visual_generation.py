@@ -28,6 +28,32 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "V-Stylist: Video Stylization via Collaboration and Reflection of MLLM Agents",
+"author": "Zhengrong Yue, Shaobin Zhuang, Kunchang Li, Yanbo Ding, Yali Wang",
+"organization": "Shanghai Jiao Tong University, Shanghai AI Laboratory, Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences, University of Chinese Academy of Sciences",
+"date": "20250315",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2503.12077",
+"code_url": "https://github.com/ZhengrongYue/V-Stylist",
+"name": "V-Stylist",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It enables video stylization with <b>open style prompt</b> by searching a style tree and asigning the obtained weights to ControlNets.
+""",
+"details": 
+"""
+<ul>
+    <li> <b>Video parser</b> splits the input video into shots and generates their text prompts.
+    <li> <b>Style parser</b> search the matched style ControlNet model combination from a style tree.
+    <li> <b>Style artist</b> renders the video shots by applying the matched style ControlNet models.
+</ul>
+""",
+},
+{
 "title": "OmniStyle: Filtering High Quality Style Transfer Data at Scale",
 "author": "Ye Wang, Ruiqi Liu, Jiang Lin, Fei Liu, Zili Yi, Yilin Wang, Rui Ma",
 "organization": "Jilin University, Nanjing University, ByteDance, Adobe, Engineering Research Center of Knowledge-Driven Human-Machine Intelligence, MOE, China",
