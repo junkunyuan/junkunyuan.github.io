@@ -22,9 +22,9 @@ PAPER["papers"] = [
 "details": 
 """
 <ul>
-    <li> <b>Keep progress updated.</b> Maintain a progress document and update it whenever your achieve new pregress. <a href="resource/else/research progress example.pptx">Example document</a>.
-    <li> <b>Hold regular discussions with collaborators.</b> Share progress summaries and discuss achievements, challenges, insights, and next steps with collaborators. To ensure more efficient discussions, before each meeting, clarify: (1) What progress you need to / not need to share with others? (2) What your team should prepare (e.g., reviewing relevant papers in advance).
-    <li> <b>Document progress frequently.</b> Write concise notes on what you achieved. Keep document clear and well-structured, ensuring quick access and review for the team. So, ask yourself: (1) What should I share with the team? (2) Which progress / results / issues are important to recall?
+    <li> <b>Keep progress updated.</b> Maintain a progress document and update it whenever you achieve new pregress. <a href="resource/else/research progress example.pptx">Example document</a>.
+    <li> <b>Hold regular discussions with collaborators.</b> Share progress summaries, achievements, challenges, insights, and next steps with collaborators. To make meeting efficient, clarify: (1) What progress needs to be shared (or not)? (2) Which issues should be discussed? (3) What team members should prepare (e.g., reviewing relevant papers in advance).
+    <li> <b>Update progress frequently.</b> Write concise notes on achievements and issues. Keep record clear and well-structured, ensuring quick access and review for the team. Ask yourself: (1) What should I share with the team? (2) Which results / issues are important to recall later?
 </ul>
 fig: fig1.png 450
 cap: Example slide of <b>weekly progress summary</b>.
@@ -44,7 +44,7 @@ cap: Example slide of <b>weekly progress summary</b>.
     <li> <b>Find related solutions.</b> Search for relevant solutions (in related papers) to the open problem you find and answer: (1) <i>What they have solved and what have not solved?</i> (2) <i>Is your idea / solution novel or trivial / incremental / just a tweak?</i>
 </ol>
 fig: fig1.png 450 fig2.png 450
-cap: Example slides of <b>"find a research topic"</b> (left) and <b>related work summarization</b> (right).
+cap: Example slides of <b>"find a research topic" (left)</b> and <b>related work summarization (right)</b>.
 """,
 "author": "","organization": "","date": "", "comment": "", "pdf_url": "","code_url": "", "jupyter_notes": "", "info": "", "summary": """""",
 },
