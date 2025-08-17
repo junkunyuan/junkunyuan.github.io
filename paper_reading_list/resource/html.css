@@ -59,8 +59,16 @@ a {
     color: #404040;
     /* text-decoration: none; */
 }
+.gray_color {
+    color: #404040
+}
 .no_dec {
     text-decoration: none;
+}
+.low_margin {
+    margin-top: 0em;
+    margin-bottom: 0em;
+    padding: 0;
 }
 .a_black {
     color: #000000;

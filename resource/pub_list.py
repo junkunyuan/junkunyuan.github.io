@@ -33,14 +33,14 @@ PAPERS = [
 "pdf_url": "https://arxiv.org/pdf/2406.01900",
 "code_url": "https://github.com/mayuelala/FollowYourEmoji"
 },
-{
-"title": "Hunyuan-DiT: A Powerful Multi-Resolution Diffusion Transformer with Fine-Grained Chinese Understanding",
-"author": "Hunyuan Multimodal Generation Group at Tencent (<b><font color=#202020>as an intern</font></b>)",
-"date": "20240514",
-"venue": "arXiv 2024",
-"pdf_url": "https://arxiv.org/pdf/2405.08748",
-"code_url": "https://github.com/Tencent/HunyuanDiT"
-},
+# {
+# "title": "Hunyuan-DiT: A Powerful Multi-Resolution Diffusion Transformer with Fine-Grained Chinese Understanding",
+# "author": "Hunyuan Multimodal Generation Group at Tencent (<b><font color=#202020>as an intern</font></b>)",
+# "date": "20240514",
+# "venue": "arXiv 2024",
+# "pdf_url": "https://arxiv.org/pdf/2405.08748",
+# "code_url": "https://github.com/Tencent/HunyuanDiT"
+# },
 {
 "title": "Domaindiff: Boost Out-of-Distribution Generalization with Synthetic Data",
 "author": "Qiaowei Miao, Junkun Yuan, Shengyu Zhang, Fei Wu, and Kun Kuang##",

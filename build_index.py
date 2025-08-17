@@ -39,12 +39,12 @@ BIOGRAPHY = \
 """
 <h2>Biography</h2>
 <p>
-    I am a research scientist in <a href="https://hunyuan.tencent.com/">Hunyuan Multimodal Generation Group</a> at <a href="https://www.tencent.com/">Tencent</a>, working on multimodal generative foundation models and their applications.
+    I am a research scientist in Hunyuan Multimodal Generation Group at Tencent, working on multimodal generative foundation models and their applications.
     <br><br>
 
-    During Sep 2023 — Jul 2024, I interned in <a href="https://hunyuan.tencent.com/">Hunyuan Multimodal Generation Group</a> at <a href="https://www.tencent.com/">Tencent</a>, working with <a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ">Wei Liu</a>.
+    During Sep 2023 — Jul 2024, I interned in Hunyuan Multimodal Generation Group at Tencent, working with <a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ">Wei Liu</a>.
     
-    During Jul 2022 — Aug 2023, I interned in <a href="http://vis.baidu.com/">Computer Vision Group</a> at <a href="https://home.baidu.com/">Baidu</a>, working with <a href="https://scholar.google.com/citations?user=PSzJxD8AAAAJ">Xinyu Zhang</a> and <a href="https://scholar.google.com/citations?user=z5SPCmgAAAAJ">Jingdong Wang</a>.<br><br>
+    During Jul 2022 — Aug 2023, I interned in Computer Vision Group at Baidu, working with <a href="https://scholar.google.com/citations?user=PSzJxD8AAAAJ">Xinyu Zhang</a> and <a href="https://scholar.google.com/citations?user=z5SPCmgAAAAJ">Jingdong Wang</a>.<br><br>
 
     I received my Ph.D. degree in Computer Science from Zhejiang University (2019 — 2024), co-supervised by professors of <a href="https://scholar.google.com/citations?user=FOsNiMQAAAAJ">Kun Kuang</a>, <a href="https://person.zju.edu.cn/0096005">Lanfen Lin</a>, and 
   <a href="https://scholar.google.com/citations?user=XJLn4MYAAAAJ">Fei Wu</a>. I received my B.S. degree in Automation from Zhejiang University of Technology (2015 — 2019), co-supervised by professors of <a href="https://scholar.google.com.hk/citations?user=smi7bpoAAAAJ&hl=zh-CN&oi=ao">Qi Xuan</a> and <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=CnBn6FwAAAAJ">Li Yu</a>.<br><br>

@@ -4,6 +4,7 @@ from datetime import datetime
 from resource.utils import get_venue_all, border_color_generator, convert_fig_cap_to_figure, TOP_BUTTON
 
 from resource.main_content import MAIN_CONTENT
+from resource.research import PAPER as RESEARCH
 from resource.coding import CODING
 from resource.fundamental import FUNDAMENTAL_COMPONENT
 from resource.visual_understanding import VISUAL_UNDERSTANDING
@@ -13,6 +14,7 @@ from resource.multimodal_understanding import MULTIMODAL_UNDERSTANDING
 from resource.native_multimodal_generation import NATIVE_MULTIMODAL_GENERATION
 
 DOMAINS = [
+    RESEARCH,
     CODING,
     FUNDAMENTAL_COMPONENT,
     # VISUAL_UNDERSTANDING,
@@ -22,7 +24,7 @@ DOMAINS = [
     NATIVE_MULTIMODAL_GENERATION
 ]
 
-EXCLUDE_TITLE = ["Coding and Engineering"]
+EXCLUDE_TITLE = ["Research", "Coding and Engineering"]
 
 time_now = datetime.now().strftime('%B %d, %Y at %H:%M')
 
@@ -45,7 +47,7 @@ f"""
 <h1 id="top">title</h1>
 <p class="larger"><b>description</b></p>
 <p class="larger"><b>total_paper_num</b></p>
-<p>Curated by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
+<p>Written by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
 <p><font color=#B0B0B0>Last updated on time_now (UTC+8).</font></p>
 """
@@ -91,7 +93,7 @@ def build_main_content_of_each_domain(domain):
                 names += f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name}</font></a>"""
             else:
                 names += f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name}</font></a> <font color=#D0D0D0> &nbsp;&nbsp;|&nbsp;&nbsp; </font> """
-        catalog += f"""<li><a class="no_dec larger" id="{category}" href="#{category}-table"><b>{category}</b></a></li><p>{names}</p><br>"""
+        catalog += f"""<li><a class="no_dec larger low_margin" id="{category}" href="#{category}-table"><b>{category}</b></a></li><p>{names}</p><br>"""
     catalog += """</ul>"""
     
     ## Build contents
@@ -111,7 +113,7 @@ def build_main_content_of_each_domain(domain):
 
             code = f"""&nbsp;&nbsp;|&nbsp;&nbsp; <a href="{paper['code_url']}">code</a>""" if len(paper['code_url']) > 0 else ""
 
-            venue = f"""<a href="{paper["pdf_url"]}">{paper["venue"]}</a>"""
+            venue = f"""<a href="{paper["pdf_url"]}">{paper["venue"]}</a>""" if paper["pdf_url"] else paper["venue"]
             venue_all = get_venue_all(paper["venue"])
             date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%b %d, %Y") + " &nbsp;" if domain["title"] not in EXCLUDE_TITLE else ""
             comment = f"""<p class="paper_detail"><font color=#D04040>{paper["comment"]}</font></p>""" if paper["comment"] else ""
