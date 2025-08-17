@@ -21,7 +21,7 @@
 <p class="larger"><b></b></p>
 <p>Written by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on August 17, 2025 at 22:08 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on August 17, 2025 at 22:33 (UTC+8).</font></p>
 <hr><p id='table' class="huger"><b>Table of contents:</b></p><ul><li><a class="no_dec larger low_margin" id="A Guide to the Research Process" href="#A Guide to the Research Process-table"><b>A Guide to the Research Process</b></a></li><p><a class="no_dec" href="#progress managementa guide to the research process"><font color=#505050>progress management</font></a> <font color=#D0D0D0> &nbsp;&nbsp;|&nbsp;&nbsp; </font> <a class="no_dec" href="#paper reviewa guide to the research process"><font color=#505050>paper review</font></a> <font color=#D0D0D0> &nbsp;&nbsp;|&nbsp;&nbsp; </font> <a class="no_dec" href="#experimenta guide to the research process"><font color=#505050>experiment</font></a> <font color=#D0D0D0> &nbsp;&nbsp;|&nbsp;&nbsp; </font> <a class="no_dec" href="#write papera guide to the research process"><font color=#505050>write paper</font></a> <font color=#D0D0D0> &nbsp;&nbsp;|&nbsp;&nbsp; </font> <a class="no_dec" href="#open sourcea guide to the research process"><font color=#505050>open source</font></a></p><br></ul><h2 id="A Guide to the Research Process-table"><a class="no_dec" href="#A Guide to the Research Process">A Guide to the Research Process</a></h2>
             <p class="little_split" id='progress managementa guide to the research process'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
@@ -96,7 +96,7 @@
                 <p><font color=#202020></font></p>
                 
                 <p><ul>
-<li> <b>Code.</b> Choose a suitable codebase from open-sourced projects related to your topic. It should be flexible, reliable, and easy to use.
+<li> <b>Code.</b> Choose a suitable codebase from open-source projects related to your topic. It should be flexible, reliable, and easy to use.
 <li> <b>Data.</b> Select training datasets and evaluation benchmarks, typically following those used in the most relevant works to ensure credibility. Preferably, use datasets on which the chosen codebase has already been tested by previous works.
 <li> <b>Reproduce baseline results.</b> Run the codebase on the selected dataset and verify that you can reproduce the results reported in prior works. This step is very important, so ensure you can either reproduce the results or provide a well-reasoned explanation if reproduction fails.
 <li> <b>Implement ideas.</b> Introduce your methods by modifying or adding as little code as possible, keeping implementation clean and transparent.
@@ -128,21 +128,21 @@
                 
                 <p><ul>
 <li> <b>Prepare LaTex templete.</b> Download LaTex templete from official websites of the target conference or jounal and read instructions carefully.
-<li> <b>Build on online project.</b> Maintain an online LaTex project so collaborators can help write and polish the paper. <a href="https://www.texpage.com/console">TeXPage</a> is recommended for users in China as <a href="https://overleaf.com/project">Overleaf</a> can sometimes be unstable due to heavy traffic. Upload the LaTex templete and share the projecct with collaborators.
+<li> <b>Build online project.</b> Maintain an online LaTex project so collaborators can help write and polish the paper. <a href="https://www.texpage.com/console">TeXPage</a> is recommended for users in China as <a href="https://overleaf.com/project">Overleaf</a> can sometimes be unstable due to heavy traffic. Upload the LaTex templete and share the projecct with collaborators.
 <li> <b>General writing principle.</b> Adhere to Occam's Razor—write only what is essential, and avoid irrelevant or redundant expressions. Constantly remind yourself: "If you remove this sentence, does it affect the clarity of your paper? Is there a more concise way to express the same idea?" Avoid exaggerated or false statements, as they not only damage your reputation but also give reviewers opportunities to challenge your work.
 <li> <b>Abstract.</b> A good abstract (about 200 words) should clearly convey: (1) The problem you address. (2) How you solve it? (3) High-level idea and method. (4) The key results achieved. <b>Note:</b> avoid excessive background or motivation—reserve that for Introduction.
-<li> <b>Introduction.</b> It should cover: (1) Background of the topic. (2) Motivation of the research. (3) Motivation of your idea and method. (4) High-level overview of your method with key components. (5) Experiments with major results and findings. (6) The value of the work to this field. (7) A brief summary of contributions (optional). <b>Note:</b> avoid excessive background or method details—focus on the core contributions.
-<li> <b>Related Works.</b> Provide context by addressing: (1) What previous works have done? (2) What they have overlooked or left unresolved? <b>Note:</b> avoid listing works haphazardly; instead, thoughtfully select represatative works and present them in a ligical, well-organized manner.
+<li> <b>Introduction.</b> It should cover: (1) Background of the topic. (2) Motivation of the research. (3) Motivation of your idea and method. (4) High-level overview of your method with key components. (5) Experiments with major results and findings. (6) The value of the work to this research field. (7) A brief summary of contributions (optional). <b>Note:</b> avoid excessive background or method details—focus on the core contributions.
+<li> <b>Related Works.</b> Provide context by addressing: (1) What previous works have done? (2) What they have overlooked or left unresolved? <b>Note:</b> avoid listing works haphazardly; instead, thoughtfully select representative works and present them in a logical, well-organized manner.
 <li> <b>Method.</b> Clearly present your proposed method by first explaining the high-level motivation and idea. Use figures to illustrate the overall framework and modules. <b>Note:</b> do not overcomplicate your method (such as overusing ineffective symbols or formulas) for sophistication's sake—clarity, simplicity, effectiveness, and scalablity are key values in AI research (think about ResNet, Dropout, Mixup, YOLO, etc.).
-<li> <b>Experiment.</b> This section should address: (1) Datasets / benchmarks used. (2) Implementation details sufficient for reproducibility. (3) Main results compared to relevant and strong baseline methods. (4) Ablation studies to show the role of each component? (5) In-depth visualization, analysis, and insights beyond the numbers. <b>Note:</b> focus on telling readers what the results mean, not just what they are.
-<li> <b>Conclusion.</b> Summarize the achievement, limitations, and broader implications of the work. Highlight future directions that others can build on. <b>Note:</b> keep this forward-looking, while Abstract focuses on current contributions.
+<li> <b>Experiment.</b> This section should address: (1) Datasets / benchmarks used. (2) Implementation details sufficient for reproducibility. (3) Main results compared to relevant and strong baseline methods. (4) Ablation studies to show the role of each component. (5) In-depth visualization, analysis, and insights beyond the numbers. <b>Note:</b> focus on telling readers what the results mean, not just what they are.
+<li> <b>Conclusion.</b> Summarize the achievement, limitations, and broader implications of this work. Highlight future directions that others can build on. <b>Note:</b> keep this forward-looking, while Abstract and Introduction focus on current contributions.
 </ul>
 <figure>
 <img data-src='resource\figs\write paper\write paper-fig1.png' width=100>
 <img data-src='resource\figs\write paper\write paper-fig2.png' width=550>
 <img data-src='resource\figs\write paper\write paper-fig3.png' width=250>
 <figcaption>
-<b>Figure 1.</b> <b>(left)</b> Example of <b>LaTex structure</b>. Each chapter can be added by writing "\input{chapters/abstract}" in "main.tex". <b>(middle)</b> How to <b>cite a paper</b> by obtaining bib info and inserting it into "main.bib". <b>(right)</b> The added bib info should be clean so that you can cite it by "~\cite{CLIP}".
+<b>Figure 1.</b> <b>(left)</b> Example of <b>LaTex structure</b>. Each chapter can be added by writing `\input{chapters/abstract}` in `main.tex`. <b>(middle)</b> How to <b>cite a paper</b> by obtaining bib info and inserting it into `main.bib`. <b>(right)</b> The added bib info should be clean so that you can cite it by `~\cite{CLIP}`.
 </figcaption>
 </figure></p>
             </div>
@@ -156,7 +156,7 @@
             <p class="paper_title" onclick="toggleTable('open source-A Guide to the Research Process-details')"><i>Open Source</i></p>
             
             
-            <p class="paper_detail"><b> <font color=#404040>open source</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; Make the project open-sourced. &nbsp; <font color=#D0D0D0></font></p>
+            <p class="paper_detail"><b> <font color=#404040>open source</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; Make the project open-source. &nbsp; <font color=#D0D0D0></font></p>
             
             
             <div id='open source-A Guide to the Research Process-details' class="info_detail">
