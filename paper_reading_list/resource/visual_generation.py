@@ -22,11 +22,385 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # "details": 
 # """
-# <ul>
-#     <li>
-# </ul>
 # """,
 # },
+{
+"title": "Content-Style Learning from Unaligned Domains: Identifiability under Unknown Latent Dimensions",
+"author": "Sagar Shrestha, Xiao Fu",
+"organization": "Mohamed bin Zayed University of Artificial Intelligence, New York University Shanghai, Carnegie Mellon University",
+"date": "20241106",
+"venue": "ICLR 2025",
+"pdf_url": "https://arxiv.org/pdf/2411.03755",
+"code_url": "https://github.com/Irislucent/variance-versus-invariance",
+"name": "VarInv",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It shows that content and style can be identified from <b>unaligned multi-domain data</b> without knowing their dimensions by distribution matching.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "Less is More: Masking Elements in Image Condition Features Avoids Content Leakages in Style Transfer Diffusion Models",
+"author": "Lin Zhu, Xinbing Wang, Chenghu Zhou, Qinying Gu, Nanyang Ye",
+"organization": "Shanghai Jiao Tong University, Chinese Academy of Sciences, Shanghai Artificial Intelligence Laboratory",
+"date": "20250211",
+"venue": "ICLR 2025",
+"pdf_url": "https://arxiv.org/pdf/2502.07466",
+"code_url": "https://github.com/LinLLLL/MaskST",
+"name": "MaskST",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It <b>masks content-correlated entries</b> in the style-reference feature to achieve training-free, leakage-free text-driven style transfer.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "Semantix: An Energy Guided Sampler for Semantic Style Transfer",
+"author": "Huiang He, Minghui Hu, Chuanxia Zheng, Chaoyue Wang, Tat-Jen Cham",
+"organization": "South China University of Technology, Nanyang Technological University, University of Oxford, The University of Sydney, ",
+"date": "20250328",
+"venue": "ICLR 2025",
+"pdf_url": "https://arxiv.org/pdf/2503.22344",
+"code_url": "",
+"name": "Semantix",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It is a training-free, <b>energy-guided sampler</b> that performs semantic style and appearance transfer for both images and videos.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "RB-Modulation: Training-Free Personalization of Diffusion Models using Stochastic Optimal Control",
+"author": "Litu Rout, Yujia Chen, Nataniel Ruiz, Abhishek Kumar, Constantine Caramanis, Sanjay Shakkottai, Wen-Sheng Chu",
+"organization": "",
+"date": "20240527",
+"venue": "ICLR 2025",
+"pdf_url": "https://arxiv.org/pdf/2405.17401",
+"code_url": "https://github.com/google/RB-Modulation",
+"name": "RB-Modulation",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It introduces a <b>stochastic optimal control</b> for test-time, training-free personalization via style control and a cross-attention disentanglement module.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "ACFun: Abstract-Concrete Fusion Facial Stylization",
+"author": "Jiapeng Ji, Kun Wei, Ziqi Zhang, Cheng Deng",
+"organization": "Xidian University",
+"date": "20240926",
+"venue": "NeurIPS 2024",
+"pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/e10a6a906ef323efaf708f76cf3c1d1e-Abstract-Conference.html",
+"code_url": "",
+"name": "",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It disentangles <b>abstract and concrete style features</b> via CLIP-guided fusion, achieving one-shot, high-fidelity, and controllable facial stylization.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "FineStyle: Fine-grained Controllable Style Personalization for Text-to-image Models",
+"author": "Gong Zhang, Kihyuk Sohn, Meera Hahn, Humphrey Shi, Irfan Essa",
+"organization": "Georgia Tech, Google DeepMind, Meta Reality Labs",
+"date": "20240926",
+"venue": "NeurIPS 2024",
+"pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/5edb0d52b6959d946afac7600f9f1e0c-Abstract-Conference.html",
+"code_url": "https://github.com/SHI-Labs/FineStyle",
+"name": "FineStyle",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It disentangles style from a reference via concept-oriented data scaling and KV-adapter tuning, enabling leakage-free, controllable stylization.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "Towards Compact Reversible Image Representations for Neural Style Transfer",
+"author": "Xiyao Liu, Siyu Yang, Xunli Fan, Jian Zhang, Songtao Wu, Gerald Schaefer, Hui Fang",
+"organization": "Central South University, Loughborough University, Hunan Embroidery Research Institute, Northwest University, Sony R&D Center China",
+"date": "20240929",
+"venue": "ECCV 2024",
+"pdf_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/08321.pdf",
+"code_url": "",
+"name": "CompRever",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It enforces <b>information-theoretic redundancy reduction</b> within a reversible flow to achieve compact yet expressive representations.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "ZipLoRA: Any Subject in Any Style by Effectively Merging LoRAs",
+"author": "Viraj Shah, Nataniel Ruiz, Forrester Cole, Erika Lu, Svetlana Lazebnik, Yuanzhen Li, Varun Jampani",
+"organization": "Google Research, UIUC",
+"date": "20231122",
+"venue": "ECCV 2024",
+"pdf_url": "https://arxiv.org/pdf/2311.13600",
+"code_url": "",
+"name": "ZipLoRA",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It learns <b>column-wise mixing coefficients</b> to orthogonally merge content and style LoRAs.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "StyleTokenizer: Defining Image Style by a Single Instance for Controlling Diffusion Models",
+"author": "Wen Li, Muyuan Fang, Cheng Zou, Biao Gong, Ruobing Zheng, Meng Wang, Jingdong Chen, Ming Yang",
+"organization": "Ant Group, Hangzhou, China",
+"date": "20240904",
+"venue": "ECCV 2024",
+"pdf_url": "https://arxiv.org/pdf/2409.02543",
+"code_url": "https://github.com/alipay/style-tokenizer",
+"name": "StyleTokenizer",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It aligns a single-image <b>style embedding with the textual embedding space</b> via a style tokenizer, enabling zero-shot, disentangled style control.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "InstaStyle: Inversion Noise of a Stylized Image is Secretly a Style Adviser",
+"author": "Xing Cui, Zekun Li, Pei Pei Li, Huaibo Huang, Xuannan Liu, Zhaofeng He",
+"organization": "Beijing University of Posts and Telecommunications, University of California, Santa Barbara, Chinese Academy of Sciences",
+"date": "20231105",
+"venue": "ECCV 2024",
+"pdf_url": "https://arxiv.org/pdf/2311.15040",
+"code_url": "https://github.com/cuixing100876/InstaStyle",
+"name": "InstaStyle",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It leverages the <b>inversion noise of a stylized image</b> and refines a learnable style token, enabling one-shot stylized generation.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "Implicit Style-Content Separation using B-LoRA",
+"author": "Yarden Frenkel, Yael Vinker, Ariel Shamir, Daniel Cohen-Or",
+"organization": "Tel Aviv University, Reichman University",
+"date": "20240321",
+"venue": "ECCV 2024",
+"pdf_url": "https://arxiv.org/pdf/2403.14572",
+"code_url": "https://github.com/yardenfren1996/B-LoRA",
+"name": "B-LoRA",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It implicitly disentangles style and content from an image by training two LoRA adapters on <b>specific SDXL blocks</b>, enabling plug-and-play stylization.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "SCSA: A Plug-and-Play Semantic Continuous-Sparse Attention for Arbitrary Semantic Style Transfer",
+"author": "Chunnan Shang, Zhizhong Wang, Hongwei Wang, Xiangming Meng",
+"organization": "",
+"date": "20250306",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2503.04119",
+"code_url": "",
+"name": "SCSA",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It augments attention-based training-free arbitrary style transfer with semantic-aware continuous sparse attention.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "HSI: A Holistic Style Injector for Arbitrary Style Transfer",
+"author": "Shuhao Zhang, Hui Kang, Yang Liu, Fang Mei, Hongjuan Li",
+"organization": "Jilin University, Jilin University of Arts",
+"date": "20250205",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2502.04369",
+"code_url": "",
+"name": "HSI",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It replaces attention with element-wise <b>global-statistic injection</b>, achieving high-quality arbitrary style transfer.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "UnZipLoRA: Separating Content and Style from a Single Image",
+"author": "Chang Liu, Viraj Shah, Aiyu Cui, Svetlana Lazebnik",
+"organization": "University of Illinois, Urbana-Champaign",
+"date": "20241205",
+"venue": "ICCV 2025",
+"pdf_url": "https://arxiv.org/pdf/2412.04465",
+"code_url": "https://github.com/changLiu77/UnZipLoRA",
+"name": "UnZipLoRA",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It decomposes a single image into two orthogonal yet compatible <b>content / style LoRAs</b> via prompt-, column- and block-separation.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "SCFlow: Implicitly Learning Style and Content Disentanglement with Flow Models",
+"author": "Pingchuan Ma, Xiaopei Yang, Yusong Li, Ming Gui, Felix Krause, Johannes Schusterbauer, Björn Ommer",
+"organization": "LMU Munich, Munich Center for Machine Learning",
+"date": "20250805",
+"venue": "ICCV 2025",
+"pdf_url": "https://arxiv.org/pdf/2508.03402",
+"code_url": "",
+"name": "SCFlow",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It implicitly disentangles style and content by learning an <b>invertible flow</b> between entangled and disentangled latent distributions.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "LoRA.rar: Learning to Merge LoRAs via Hypernetworks for Subject-Style Conditioned Image Generation",
+"author": "Donald Shenaj, Ondrej Bohdal, Mete Ozay, Pietro Zanuttigh, Umberto Michieli",
+"organization": "Samsung R&D Institute UK, University of Padova",
+"date": "20241206",
+"venue": "ICCV 2025",
+"pdf_url": "https://arxiv.org/pdf/2412.05148",
+"code_url": "https://github.com/donaldssh/LoRA.rar",
+"name": "LoRA.rar",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It trains a lightweight hypernetwork to predict <b>adaptive merging coefficients</b> for any unseen subject-style LoRA pair, achieving real-time generation.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "IntroStyle: Training-Free Introspective Style Attribution using Diffusion Features",
+"author": "Anand Kumar, Jiteng Mu, Nuno Vasconcelos",
+"organization": "University of California, San Diego",
+"date": "20241219",
+"venue": "ICCV 2025",
+"pdf_url": "https://arxiv.org/pdf/2412.14432",
+"code_url": "https://anandk27.github.io/IntroStyle/",
+"name": "IntroStyle",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It proposes a training-free style attribution framework that leverages only <b>internal statistics</b> of pre-trained diffusion features for style similarity retrieval.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "Domain Generalizable Portrait Style Transfer",
+"author": "Xinbo Wang, Wenju Xu, Qing Zhang, Wei-Shi Zheng",
+"organization": "Sun Yat-sen University, AMAZON, Key Laboratory of Machine Intelligence and Advanced Computing",
+"date": "20250708",
+"venue": "ICCV 2025",
+"pdf_url": "https://arxiv.org/pdf/2507.04243",
+"code_url": "https://github.com/wangxb29/DGPST",
+"name": "DGPST",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It unifies dense semantic correspondence, AdaIN-Wavelet latent fusion, and dual-conditional diffusion to enable portrait style transfer.""",
+"details": 
+"""
+""",
+},
 {
 "title": "CSD-VAR: Content-Style Decomposition in Visual Autoregressive Models",
 "author": "Quang-Binh Nguyen, Minh Luu, Quang Nguyen, Anh Tran, Khoi Nguyen",
@@ -363,14 +737,14 @@ It proposes a foundation world model (11B), comprising of a <b>video tokenizer</
 "details": 
 """
 <ul>
-    <li> <b>Data.</b> It is trained on 200K hours of Internet gaming videos without action or text annotations.
+    <li> <b>Data.</b> It is trained on 200K hours of Internet gaming videos <b>without action or text annotations</b>.
     <li> <b>Training pipeline.</b> (1) Train the video tokenizer. (2) Co-train the latent action model and the dynamics model.
 </ul>
-fig: fig1.png 550
+fig: fig1.png 700
 cap: <b>Structure.</b>
-fig: fig2.png 350
-cap: <b>Latent action model</b> infers the latent action between each pair of frames. It is a VQ-VAE with discrete set of codes equal the possible actions. The <b>encoder</b> takes an previous frames and the next frame and outputs latent actions. The <b>decoder</b> takes all previous frames and latent actions and predicts the next frame. <b>Inference:</b> the entire LAM is discarded apart from the VQ codebook, and is replaced with user actions.
-fig: fig3.png 350
+fig: fig2.png 400
+cap: <b>Latent action model</b> infers the latent action between each pair of frames. It is a VQ-VAE with discrete set of codes equal the possible actions (e.g., 8). The <b>encoder</b> takes an previous frames and the next frame and outputs latent actions. The <b>decoder</b> takes all previous frames and latent actions and predicts the next frame. <b>Inference:</b> the entire LAM is discarded apart from the VQ codebook, and is replaced with user actions.
+fig: fig3.png 400
 cap: <b>Video tokenizer</b> converts each frame of raw video into discrete tokens.
 fig: fig4.png 200
 cap: <b>Dynamics model</b> takes latent action and past frame tokens and predicts the next frame. It is a decoder-only MaskGIT transformer.

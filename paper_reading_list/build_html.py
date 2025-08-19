@@ -102,7 +102,7 @@ def build_main_content_of_each_domain(domain):
             name_to_add = paper_names[i:i+3]
             for j, name in enumerate(name_to_add):
                 color = "#D04040" if "**" in paper_info[i + j] else "#505050"
-                na = f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name} <font size=1;>({paper_venues[i]})</font></font></a>"""
+                na = f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name} <font size=1;>({paper_venues[i + j]})</font></font></a>"""
                 names.append(f"<td>{na}</td>")
             names.append("</tr>")
         names.append("</table>")

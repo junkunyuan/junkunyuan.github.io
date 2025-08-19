@@ -16,7 +16,7 @@ PAPER["papers"] = [
 # },
 {
 "title": "Progress Management",
-"venue": "Update and discuss research progress.",
+"venue": "synchronize progress",
 "name": "progress management",
 "category": "A Guide to Research",
 "details": 
@@ -33,7 +33,7 @@ cap: Example slide of <b>weekly progress summary</b>.
 },
 {
 "title": "Paper Review",
-"venue": "Track the latest works and discover an open problem.",
+"venue": "discover an open problem",
 "name": "paper review",
 "category": "A Guide to Research",
 "details": 
@@ -50,7 +50,7 @@ cap: Example slides of <b>"find a research topic" (left)</b> and <b>related work
 },
 {
 "title": "Experiment",
-"venue": "Prepare, implement, and monitor experiments.",
+"venue": "prepare, implement, monitor experiments",
 "name": "experiment",
 "category": "A Guide to Research",
 "details": 
@@ -69,7 +69,7 @@ cap: Example log of <b>experiment progress</b>.
 },
 {
 "title": "Write Paper",
-"venue": "Instructions for paper writing.",
+"venue": "instructions for paper writing",
 "name": "write paper",
 "category": "A Guide to Research",
 "details": 
@@ -96,7 +96,7 @@ cap: <b>(left)</b> Example of <b>LaTex structure</b>. Each chapter can be added 
 },
 {
 "title": "Open Source",
-"venue": "Make the project open-source.",
+"venue": "make project open source",
 "name": "open source",
 "category": "A Guide to Research",
 "details": 
