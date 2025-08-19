@@ -85,14 +85,28 @@ def build_main_content_of_each_domain(domain):
         if domain["title"] not in EXCLUDE_TITLE:
             paper_choose = paper_choose.sort_values(by="date", ascending=True)
         paper_names = paper_choose["name"].to_list()
+        paper_venues = paper_choose["venue"].to_list()
         paper_info = paper_choose["info"].to_list()
-        names = ""
-        for i, name in enumerate(paper_names):
-            color = "#D04040" if "**" in paper_info[i] else "#505050"
-            if i == len(paper_names) - 1:
-                names += f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name}</font></a>"""
-            else:
-                names += f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name}</font></a> <font color=#D0D0D0> &nbsp;&nbsp;|&nbsp;&nbsp; </font> """
+        # names = ""
+        # for i, name in enumerate(paper_names):
+        #     color = "#D04040" if "**" in paper_info[i] else "#505050"
+
+            
+        #     if i == len(paper_names) - 1:
+        #         names += f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name} <font size=1 opacity=0.5>({paper_venues[i]})</font></font></a>"""
+        #     else:
+        #         names += f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name} <font size=1 opacity=0.5;>({paper_venues[i]})</font></font></a> <font color=#D0D0D0> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; </font> """
+        names = ["""<table class="center"><tr>"""]
+        for i in range(0, len(paper_names), 3):
+            names.append("<tr>")
+            name_to_add = paper_names[i:i+3]
+            for j, name in enumerate(name_to_add):
+                color = "#D04040" if "**" in paper_info[i + j] else "#505050"
+                na = f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name} <font size=1;>({paper_venues[i]})</font></font></a>"""
+                names.append(f"<td>{na}</td>")
+            names.append("</tr>")
+        names.append("</table>")
+        names = "\n".join(names)
         catalog += f"""<li><a class="no_dec larger low_margin" id="{category}" href="#{category}-table"><b>{category}</b></a></li><p>{names}</p><br>"""
     catalog += """</ul>"""
     

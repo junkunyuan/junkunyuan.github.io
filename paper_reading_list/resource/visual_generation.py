@@ -28,6 +28,69 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "CSD-VAR: Content-Style Decomposition in Visual Autoregressive Models",
+"author": "Quang-Binh Nguyen, Minh Luu, Quang Nguyen, Anh Tran, Khoi Nguyen",
+"organization": "Qualcomm AI Research, MovianAI",
+"date": "20250718",
+"venue": "ICCV 2025",
+"pdf_url": "https://arxiv.org/pdf/2507.13984",
+"code_url": "",
+"name": "CSD-VAR",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It pioneers <b>VAR</b>-based content-style decomposition by scale-aware alternating optimization, SVD rectification, and augmented K-V memories.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "AIComposer: Any Style and Content Image Composition via Feature Integration",
+"author": "Haowen Li, Zhenfeng Fan, Zhang Wen, Zhengzhou Zhu, Yunjin Li",
+"organization": "Peking University, Beijing Yuanli Science and Technology",
+"date": "20250728",
+"venue": "ICCV 2025",
+"pdf_url": "https://arxiv.org/pdf/2507.20721",
+"code_url": "https://github.com/sherlhw/AIComposer",
+"name": "AIComposer",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It achieves text-prompt-free stylization by <b>linearly separating and re-fusing content/style CLIP features</b>, guiding a single-branch 10-step diffusion.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "Balanced Image Stylization with Style Matching Score",
+"author": "Yuxin Jiang, Liming Jiang, Shuai Yang, Jia-Wei Liu, Ivor Tsang, Mike Zheng Shou",
+"organization": "National University of Singapore, Technology and Research (A*STAR), Nanyang Technological University, Peking University",
+"date": "20250310",
+"venue": "ICCV 2025",
+"pdf_url": "https://arxiv.org/pdf/2503.07601",
+"code_url": "https://github.com/showlab/SMS",
+"name": "SMS",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It reframes stylization as <b>style-distribution matching</b> with LoRA priors, regularizing in frequency domain and semantically refining gradients.
+""",
+"details": 
+"""
+""",
+},
+{
 "title": "DuoLoRA : Cycle-consistent and Rank-disentangled Content-Style Personalization",
 "author": "Aniket Roy, Shubhankar Borse, Shreya Kadambi, Debasmit Das, Shweta Mahajan, Risheek Garrepalli, Hyojin Park, Ankita Nayak, Rama Chellappa, Munawar Hayat, Fatih Porikli",
 "organization": "Johns Hopkins University, Qualcomm AI Research",
@@ -481,7 +544,7 @@ cap: <b>Structure.</b> (1) Use VAE to process masked image to preserve original 
 "venue": "arXiv 2025",
 "pdf_url": "https://arxiv.org/pdf/2502.07829",
 "code_url": "",
-"name": "Survey on Preference Alignment of Image Generation",
+"name": "Survey on Pre. Ali.",
 "comment": "",
 "category": "Reinforcement Learning",
 "jupyter_notes": "",
@@ -982,7 +1045,7 @@ cap: It is more <b>efficient & effective</b> than common denoising.
 "venue": "arXiv 2022",
 "pdf_url": "https://arxiv.org/pdf/2208.11970",
 "code_url": "",
-"name": "Unified Perspective on Diffusion Models",
+"name": "Unified Perspective",
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
