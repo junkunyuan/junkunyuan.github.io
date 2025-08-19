@@ -28,6 +28,135 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "DuoLoRA : Cycle-consistent and Rank-disentangled Content-Style Personalization",
+"author": "Aniket Roy, Shubhankar Borse, Shreya Kadambi, Debasmit Das, Shweta Mahajan, Risheek Garrepalli, Hyojin Park, Ankita Nayak, Rama Chellappa, Munawar Hayat, Fatih Porikli",
+"organization": "Johns Hopkins University, Qualcomm AI Research",
+"date": "20250415",
+"venue": "ICCV 2025",
+"pdf_url": "https://arxiv.org/pdf/2504.13206",
+"code_url": "",
+"name": "DuoLoRA",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It disentangles content and style in diffusion LoRA merging by rank-dimension masking, layer priors, and cycle-consistency loss.
+""",
+"details": 
+"""
+<ul>
+    <li>
+</ul>
+""",
+},
+{
+"title": "StyleSSP: Sampling StartPoint Enhancement for Training-free Diffusion-based Method for Style Transfer",
+"author": "Ruojun Xu, Weijie Xi, Xiaodi Wang, Yongbo Mao, Zach Cheng",
+"organization": "Zhejiang University, Dcar",
+"date": "20250120",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2501.11319",
+"code_url": "https://github.com/bytedance/StyleSSP",
+"name": "StyleSSP",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It employs DDIM reversion of content images with low frequency component removed to obtain a <b>better initial noise</b> for training-free style transfer.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "SaMam: Style-aware State Space Model for Arbitrary Image Style Transfer",
+"author": "Hongda Liu, Longguang Wang, Ye Zhang, Ziru Yu, Yulan Guo",
+"organization": "Sun Yat-Sen University, Aviation University of Air Force",
+"date": "20250320",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2503.15934",
+"code_url": "https://github.com/Chernobyllight/SaMam",
+"name": "SaMam",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+Introduce <b>Mamba model</b> into style transfer to improve efficiency.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "Style-Editor: Text-driven Object-centric Style Editing",
+"author": "Jihun Park, Jongmin Gim, Kyoungmin Lee, Seunghun Lee, Sunghoon Im",
+"organization": "Republic of Korea",
+"date": "20240816",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2408.08461",
+"code_url": "",
+"name": "Style-Editor",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It achieves <b>object-level text-driven style editing</b> by identifying an object patches using CLIP and editing its style while preserving the background.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "StyleStudio: Text-Driven Style Transfer with Selective Control of Style Elements",
+"author": "Mingkun Lei, Xue Song, Beier Zhu, Hao Wang, Chi Zhang",
+"organization": "Westlake University, Fudan University, Nanyang Technological University, The Hong Kong University of Science and Technology (Guangzhou)",
+"date": "20241211",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2412.08503",
+"code_url": "https://github.com/Westlake-AGI-Lab/StyleStudio",
+"name": "StyleStudio",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It improves text-driven style transfer by <b>cross-modal AdaIN</b>, teacher model guidance, and <b>style CFG</b> with negative style images.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "K-LoRA: Unlocking Training-Free Fusion of Any Subject and Style LoRAs",
+"author": "Ziheng Ouyang, Zhen Li, Qibin Hou",
+"organization": "Nankai University",
+"date": "20250225",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2502.18461",
+"code_url": "https://github.com/HVision-NKU/K-LoRA",
+"name": "K-LoRA",
+"comment": "",
+"category": "Style",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It introduces <b>training-free LoRA fusion</b> that compares Top-K elements in LoRAs to be fused and determines which LoRA to select for optimal fusion.
+""",
+"details": 
+"""
+""",
+},
+{
 "title": "V-Stylist: Video Stylization via Collaboration and Reflection of MLLM Agents",
 "author": "Zhengrong Yue, Shaobin Zhuang, Kunchang Li, Yanbo Ding, Yali Wang",
 "organization": "Shanghai Jiao Tong University, Shanghai AI Laboratory, Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences, University of Chinese Academy of Sciences",

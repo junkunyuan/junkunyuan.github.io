@@ -1,8 +1,8 @@
 PAPER = dict()
 PAPER["file"] = "research.html"
 PAPER["title"] = "Research"
-PAPER["description"] = "Something about research."
-PAPER["categories"] = ["A Guide to the Research Process"]
+PAPER["description"] = "Things about research."
+PAPER["categories"] = ["A Guide to Research"]
 PAPER["papers"] = [
 # {
 # "title": "",
@@ -18,7 +18,7 @@ PAPER["papers"] = [
 "title": "Progress Management",
 "venue": "Update and discuss research progress.",
 "name": "progress management",
-"category": "A Guide to the Research Process",
+"category": "A Guide to Research",
 "details": 
 """
 <ul>
@@ -35,7 +35,7 @@ cap: Example slide of <b>weekly progress summary</b>.
 "title": "Paper Review",
 "venue": "Track the latest works and discover an open problem.",
 "name": "paper review",
-"category": "A Guide to the Research Process",
+"category": "A Guide to Research",
 "details": 
 """
 <ol>
@@ -52,7 +52,7 @@ cap: Example slides of <b>"find a research topic" (left)</b> and <b>related work
 "title": "Experiment",
 "venue": "Prepare, implement, and monitor experiments.",
 "name": "experiment",
-"category": "A Guide to the Research Process",
+"category": "A Guide to Research",
 "details": 
 """
 <ul>
@@ -71,14 +71,18 @@ cap: Example log of <b>experiment progress</b>.
 "title": "Write Paper",
 "venue": "Instructions for paper writing.",
 "name": "write paper",
-"category": "A Guide to the Research Process",
+"category": "A Guide to Research",
 "details": 
 """
+<b>Writing a paper is the most crucial part of research.</b> Through the paper, you tell people: "What problem are you solving, why are you solving it, how did you solve it, what are your final results and findings, and what is the significance and inspiration of your work to the research community?"<br><br>
+
+<b>There is no one-size-fits-all format for paper writing.</b> The following guidance is based solely on my personal experience. Everyone can develop unique and creative ideas for their papers based on their own thinking and insights and the distinctiveness of each research project.
+
 <ul>
     <li> <b>Prepare LaTex templete.</b> Download LaTex templete from official websites of the target conference or jounal and read instructions carefully.
     <li> <b>Build online project.</b> Maintain an online LaTex project so collaborators can help write and polish the paper. <a href="https://www.texpage.com/console">TeXPage</a> is recommended for users in China as <a href="https://overleaf.com/project">Overleaf</a> can sometimes be unstable due to heavy traffic. Upload the LaTex templete and share the projecct with collaborators.
     <li> <b>General writing principle.</b> Adhere to Occam's Razor—write only what is essential, and avoid irrelevant or redundant expressions. Constantly remind yourself: "If you remove this sentence, does it affect the clarity of your paper? Is there a more concise way to express the same idea?" Avoid exaggerated or false statements, as they not only damage your reputation but also give reviewers opportunities to challenge your work.
-    <li> <b>Abstract.</b> A good abstract (about 200 words) should clearly convey: (1) The problem you address. (2) How you solve it? (3) High-level idea and method. (4) The key results achieved. <b>Note:</b> avoid excessive background or motivation—reserve that for Introduction.
+    <li> <b>Abstract.</b> A good abstract (about 200 words) should clearly convey: (1) The problem you address. (maybe 1 sentence) (2) How you solve it. (maybe 1 sentence) (3) High-level idea and method with important components. (maybe 2-3 sentences) (4) The key results achieved. (maybe 1 sentence) <b>Note:</b> avoid excessive background or motivation—reserve that for Introduction.
     <li> <b>Introduction.</b> It should cover: (1) Background of the topic. (2) Motivation of the research. (3) Motivation of your idea and method. (4) High-level overview of your method with key components. (5) Experiments with major results and findings. (6) The value of the work to this research field. (7) A brief summary of contributions (optional). <b>Note:</b> avoid excessive background or method details—focus on the core contributions.
     <li> <b>Related Works.</b> Provide context by addressing: (1) What previous works have done? (2) What they have overlooked or left unresolved? <b>Note:</b> avoid listing works haphazardly; instead, thoughtfully select representative works and present them in a logical, well-organized manner.
     <li> <b>Method.</b> Clearly present your proposed method by first explaining the high-level motivation and idea. Use figures to illustrate the overall framework and modules. <b>Note:</b> do not overcomplicate your method (such as overusing ineffective symbols or formulas) for sophistication's sake—clarity, simplicity, effectiveness, and scalablity are key values in AI research (think about ResNet, Dropout, Mixup, YOLO, etc.).
@@ -94,7 +98,7 @@ cap: <b>(left)</b> Example of <b>LaTex structure</b>. Each chapter can be added 
 "title": "Open Source",
 "venue": "Make the project open-source.",
 "name": "open source",
-"category": "A Guide to the Research Process",
+"category": "A Guide to Research",
 "details": 
 """
 <ul>
