@@ -25,6 +25,27 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "VisionReward: Fine-Grained Multi-Dimensional Human Preference Learning for Image and Video Generation",
+"author": "Jiazheng Xu, Yu Huang, Jiale Cheng, Yuanming Yang, Jiajun Xu, Yuan Wang, Wenbo Duan, Shen Yang, Qunlin Jin, Shurun Li, Jiayan Teng, Zhuoyi Yang, Wendi Zheng, Xiao Liu, Ming Ding, Xiaohan Zhang, Xiaotao Gu, Shiyu Huang, Minlie Huang, Jie Tang, Yuxiao Dong",
+"organization": "",
+"date": "20241230",
+"venue": "arXiv 2024",
+"pdf_url": "https://arxiv.org/pdf/2412.21059",
+"code_url": "https://github.com/zai-org/VisionReward",
+"name": "VisionReward",
+"comment": "",
+"category": "Datasets & Evaluation",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It disentangles human preference into <b>64 binary questions</b> and learns an <b>interpretable linear reward</b> via multi-dimensional optimization.
+""",
+"details": 
+"""
+""",
+},
+{
 "title": "Content-Style Learning from Unaligned Domains: Identifiability under Unknown Latent Dimensions",
 "author": "Sagar Shrestha, Xiao Fu",
 "organization": "Mohamed bin Zayed University of Artificial Intelligence, New York University Shanghai, Carnegie Mellon University",
@@ -116,7 +137,7 @@ It introduces a <b>stochastic optimal control</b> for test-time, training-free p
 "venue": "NeurIPS 2024",
 "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/e10a6a906ef323efaf708f76cf3c1d1e-Abstract-Conference.html",
 "code_url": "",
-"name": "",
+"name": "ACFun",
 "comment": "",
 "category": "Style",
 "jupyter_notes": "",
@@ -722,8 +743,8 @@ It trains <b>continuous normalizing flows</b> using conditional probability path
 "author": "Jake Bruce, Michael Dennis, Ashley Edwards, Jack Parker-Holder, Yuge Shi, Edward Hughes, Matthew Lai, Aditi Mavalankar, Richie Steigerwald, Chris Apps, Yusuf Aytar, Sarah Bechtle, Feryal Behbahani, Stephanie Chan, Nicolas Heess, Lucy Gonzalez, Simon Osindero, Sherjil Ozair, Scott Reed, Jingwei Zhang, Konrad Zolna, Jeff Clune, Nando de Freitas, Satinder Singh, Tim Rocktäschel",
 "organization": "Google DeepMind, University of British Columbia",
 "date": "20240223",
-"venue": "",
-"pdf_url": "ICML 2024",
+"venue": "ICML 2024",
+"pdf_url": "https://arxiv.org/pdf/2402.15391",
 "code_url": "",
 "name": "Genie",
 "comment": "",
@@ -1257,7 +1278,7 @@ cap: It is observed that <b>self-correction</b> also works in image generation b
 "venue": "ICML 2025",
 "pdf_url": "https://arxiv.org/pdf/2502.13129",
 "code_url": "",
-"name": "noise-unconditional model",
+"name": "uEDM",
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",

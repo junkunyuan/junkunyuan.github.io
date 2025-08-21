@@ -97,9 +97,10 @@ def build_main_content_of_each_domain(domain):
         #     else:
         #         names += f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name} <font size=1 opacity=0.5;>({paper_venues[i]})</font></font></a> <font color=#D0D0D0> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; </font> """
         names = ["""<table class="center"><tr>"""]
-        for i in range(0, len(paper_names), 3):
+        interval = 5
+        for i in range(0, len(paper_names), interval):
             names.append("<tr>")
-            name_to_add = paper_names[i:i+3]
+            name_to_add = paper_names[i:i+interval]
             for j, name in enumerate(name_to_add):
                 color = "#D04040" if "**" in paper_info[i + j] else "#505050"
                 na = f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name} <font size=1;>({paper_venues[i + j]})</font></font></a>"""

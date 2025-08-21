@@ -18,32 +18,28 @@
 
 <h1 id="top">Visual Generation</h1>
 <p class="larger"><b>Generate visual signals (e.g., images and videos).</b></p>
-<p class="larger"><b><font color='#D93053'>101</font> papers</b></p>
+<p class="larger"><b><font color='#D93053'>102</font> papers</b></p>
 <p>Written by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on August 19, 2025 at 20:51 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on August 21, 2025 at 14:48 (UTC+8).</font></p>
 <hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#D04040">red</font>.</p><ul><li><a class="no_dec larger low_margin" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models</b></a></li><p><table class="center"><tr>
 <tr>
 <td><a class="no_dec" href="#VQ-VAEfoundation algorithms & models"><font color=#D04040>VQ-VAE <font size=1;>(NeurIPS 2017)</font></font></a></td>
 <td><a class="no_dec" href="#VQ-VAE-2foundation algorithms & models"><font color=#D04040>VQ-VAE-2 <font size=1;>(NeurIPS 2019)</font></font></a></td>
 <td><a class="no_dec" href="#DDPMfoundation algorithms & models"><font color=#D04040>DDPM <font size=1;>(NeurIPS 2020)</font></font></a></td>
-</tr>
-<tr>
 <td><a class="no_dec" href="#DDIMfoundation algorithms & models"><font color=#D04040>DDIM <font size=1;>(ICLR 2021)</font></font></a></td>
 <td><a class="no_dec" href="#CFGfoundation algorithms & models"><font color=#D04040>CFG <font size=1;>(NeurIPS workshop 2021)</font></font></a></td>
-<td><a class="no_dec" href="#LDMfoundation algorithms & models"><font color=#D04040>LDM <font size=1;>(CVPR 2022)</font></font></a></td>
 </tr>
 <tr>
+<td><a class="no_dec" href="#LDMfoundation algorithms & models"><font color=#D04040>LDM <font size=1;>(CVPR 2022)</font></font></a></td>
 <td><a class="no_dec" href="#CogVideofoundation algorithms & models"><font color=#505050>CogVideo <font size=1;>(ICLR 2023)</font></font></a></td>
 <td><a class="no_dec" href="#Unified Perspectivefoundation algorithms & models"><font color=#505050>Unified Perspective <font size=1;>(arXiv 2022)</font></font></a></td>
 <td><a class="no_dec" href="#Flow Matchingfoundation algorithms & models"><font color=#D04040>Flow Matching <font size=1;>(ICLR 2023)</font></font></a></td>
-</tr>
-<tr>
 <td><a class="no_dec" href="#DiTfoundation algorithms & models"><font color=#D04040>DiT <font size=1;>(ICCV 2023)</font></font></a></td>
-<td><a class="no_dec" href="#SDXLfoundation algorithms & models"><font color=#D04040>SDXL <font size=1;>(ICLR 2024)</font></font></a></td>
-<td><a class="no_dec" href="#Geniefoundation algorithms & models"><font color=#D04040>Genie <font size=1;>()</font></font></a></td>
 </tr>
 <tr>
+<td><a class="no_dec" href="#SDXLfoundation algorithms & models"><font color=#D04040>SDXL <font size=1;>(ICLR 2024)</font></font></a></td>
+<td><a class="no_dec" href="#Geniefoundation algorithms & models"><font color=#D04040>Genie <font size=1;>(ICML 2024)</font></font></a></td>
 <td><a class="no_dec" href="#VARfoundation algorithms & models"><font color=#D04040>VAR <font size=1;>(NeurIPS 2024)</font></font></a></td>
 <td><a class="no_dec" href="#LlamaGenfoundation algorithms & models"><font color=#505050>LlamaGen <font size=1;>(arXiv 2024)</font></font></a></td>
 <td><a class="no_dec" href="#DiT-MoEfoundation algorithms & models"><font color=#505050>DiT-MoE <font size=1;>(arXiv 2024)</font></font></a></td>
@@ -52,23 +48,19 @@
 <td><a class="no_dec" href="#Fluidfoundation algorithms & models"><font color=#505050>Fluid <font size=1;>(ICLR 2025)</font></font></a></td>
 <td><a class="no_dec" href="#Movie Genfoundation algorithms & models"><font color=#505050>Movie Gen <font size=1;>(arXiv 2024)</font></font></a></td>
 <td><a class="no_dec" href="#HunyuanVideofoundation algorithms & models"><font color=#505050>HunyuanVideo <font size=1;>(arXiv 2024)</font></font></a></td>
-</tr>
-<tr>
 <td><a class="no_dec" href="#Infinityfoundation algorithms & models"><font color=#505050>Infinity <font size=1;>(CVPR 2025)</font></font></a></td>
 <td><a class="no_dec" href="#Step-Video-T2Vfoundation algorithms & models"><font color=#505050>Step-Video-T2V <font size=1;>(arXiv 2025)</font></font></a></td>
-<td><a class="no_dec" href="#noise-unconditional modelfoundation algorithms & models"><font color=#505050>noise-unconditional model <font size=1;>(ICML 2025)</font></font></a></td>
 </tr>
 <tr>
+<td><a class="no_dec" href="#uEDMfoundation algorithms & models"><font color=#505050>uEDM <font size=1;>(ICML 2025)</font></font></a></td>
 <td><a class="no_dec" href="#Seedream2.0foundation algorithms & models"><font color=#505050>Seedream2.0 <font size=1;>(arXiv 2025)</font></font></a></td>
 <td><a class="no_dec" href="#Step-Video-TI2Vfoundation algorithms & models"><font color=#505050>Step-Video-TI2V <font size=1;>(arXiv 2025)</font></font></a></td>
 <td><a class="no_dec" href="#Wanfoundation algorithms & models"><font color=#505050>Wan <font size=1;>(arXiv 2025)</font></font></a></td>
+<td><a class="no_dec" href="#Seaweed-7Bfoundation algorithms & models"><font color=#505050>Seaweed-7B <font size=1;>(arXiv 2025)</font></font></a></td>
 </tr>
 <tr>
-<td><a class="no_dec" href="#Seaweed-7Bfoundation algorithms & models"><font color=#505050>Seaweed-7B <font size=1;>(arXiv 2025)</font></font></a></td>
 <td><a class="no_dec" href="#Seedream 3.0foundation algorithms & models"><font color=#505050>Seedream 3.0 <font size=1;>(arXiv 2025)</font></font></a></td>
 <td><a class="no_dec" href="#SimpleARfoundation algorithms & models"><font color=#505050>SimpleAR <font size=1;>(arXiv 2025)</font></font></a></td>
-</tr>
-<tr>
 <td><a class="no_dec" href="#Magi-1foundation algorithms & models"><font color=#505050>Magi-1 <font size=1;>(arXiv 2025)</font></font></a></td>
 <td><a class="no_dec" href="#Lumos-1foundation algorithms & models"><font color=#505050>Lumos-1 <font size=1;>(arXiv 2025)</font></font></a></td>
 <td><a class="no_dec" href="#Qwen-Imagefoundation algorithms & models"><font color=#505050>Qwen-Image <font size=1;>(arXiv 2025)</font></font></a></td>
@@ -81,23 +73,19 @@
 <td><a class="no_dec" href="#promptistreinforcement learning"><font color=#505050>promptist <font size=1;>(NeurIPS 2023)</font></font></a></td>
 <td><a class="no_dec" href="#ReFLreinforcement learning"><font color=#505050>ReFL <font size=1;>(NeurIPS 2023)</font></font></a></td>
 <td><a class="no_dec" href="#DDPOreinforcement learning"><font color=#D04040>DDPO <font size=1;>(ICLR 2024)</font></font></a></td>
-</tr>
-<tr>
 <td><a class="no_dec" href="#Diffusion-DPOreinforcement learning"><font color=#D04040>Diffusion-DPO <font size=1;>(CVPR 2024)</font></font></a></td>
 <td><a class="no_dec" href="#InstructVideoreinforcement learning"><font color=#505050>InstructVideo <font size=1;>(CVPR 2024)</font></font></a></td>
-<td><a class="no_dec" href="#Curriculum DPOreinforcement learning"><font color=#505050>Curriculum DPO <font size=1;>(CVPR 2025)</font></font></a></td>
 </tr>
 <tr>
+<td><a class="no_dec" href="#Curriculum DPOreinforcement learning"><font color=#505050>Curriculum DPO <font size=1;>(CVPR 2025)</font></font></a></td>
 <td><a class="no_dec" href="#SPOreinforcement learning"><font color=#505050>SPO <font size=1;>(CVPR 2025)</font></font></a></td>
 <td><a class="no_dec" href="#PrefPaintreinforcement learning"><font color=#505050>PrefPaint <font size=1;>(NeurIPS 2024)</font></font></a></td>
 <td><a class="no_dec" href="#VideoDPOreinforcement learning"><font color=#505050>VideoDPO <font size=1;>(CVPR 2025)</font></font></a></td>
+<td><a class="no_dec" href="#PPDreinforcement learning"><font color=#505050>PPD <font size=1;>(CVPR 2025)</font></font></a></td>
 </tr>
 <tr>
-<td><a class="no_dec" href="#PPDreinforcement learning"><font color=#505050>PPD <font size=1;>(CVPR 2025)</font></font></a></td>
 <td><a class="no_dec" href="#Flow-RWR, Flow-DPOreinforcement learning"><font color=#505050>Flow-RWR, Flow-DPO <font size=1;>(arXiv 2025)</font></font></a></td>
 <td><a class="no_dec" href="#CaPOreinforcement learning"><font color=#505050>CaPO <font size=1;>(CVPR 2025)</font></font></a></td>
-</tr>
-<tr>
 <td><a class="no_dec" href="#Survey on Pre. Ali.reinforcement learning"><font color=#505050>Survey on Pre. Ali. <font size=1;>(arXiv 2025)</font></font></a></td>
 <td><a class="no_dec" href="#InPOreinforcement learning"><font color=#505050>InPO <font size=1;>(CVPR 2025)</font></font></a></td>
 <td><a class="no_dec" href="#DanceGRPOreinforcement learning"><font color=#505050>DanceGRPO <font size=1;>(arXiv 2025)</font></font></a></td>
@@ -111,8 +99,6 @@
 <td><a class="no_dec" href="#Z-Samplinginference-time improvement"><font color=#505050>Z-Sampling <font size=1;>(ICLR 2025)</font></font></a></td>
 <td><a class="no_dec" href="#Inference-Time Scaling Analysisinference-time improvement"><font color=#D04040>Inference-Time Scaling Analysis <font size=1;>(CVPR 2025)</font></font></a></td>
 <td><a class="no_dec" href="#PARMinference-time improvement"><font color=#505050>PARM <font size=1;>(CVPR 2025)</font></font></a></td>
-</tr>
-<tr>
 <td><a class="no_dec" href="#Inference can Beat Pretraininginference-time improvement"><font color=#505050>Inference can Beat Pretraining <font size=1;>(arXiv 2025)</font></font></a></td>
 </tr>
 </table></p><br><li><a class="no_dec larger low_margin" id="Acceleration" href="#Acceleration-table"><b>Acceleration</b></a></li><p><table class="center"><tr>
@@ -124,24 +110,21 @@
 <td><a class="no_dec" href="#Inception Scoredatasets & evaluation"><font color=#D04040>Inception Score <font size=1;>(NeurIPS 2016)</font></font></a></td>
 <td><a class="no_dec" href="#FIDdatasets & evaluation"><font color=#D04040>FID <font size=1;>(NeurIPS 2017)</font></font></a></td>
 <td><a class="no_dec" href="#FVDdatasets & evaluation"><font color=#505050>FVD <font size=1;>(ICLR workshop 2019)</font></font></a></td>
-</tr>
-<tr>
 <td><a class="no_dec" href="#CLIPScoredatasets & evaluation"><font color=#D04040>CLIPScore <font size=1;>(EMNLP 2021)</font></font></a></td>
 <td><a class="no_dec" href="#HPSdatasets & evaluation"><font color=#505050>HPS <font size=1;>(ICCV 2023)</font></font></a></td>
-<td><a class="no_dec" href="#ImageRewarddatasets & evaluation"><font color=#D04040>ImageReward <font size=1;>(NeurIPS 2023)</font></font></a></td>
 </tr>
 <tr>
+<td><a class="no_dec" href="#ImageRewarddatasets & evaluation"><font color=#D04040>ImageReward <font size=1;>(NeurIPS 2023)</font></font></a></td>
 <td><a class="no_dec" href="#PickScoredatasets & evaluation"><font color=#D04040>PickScore <font size=1;>(NeurIPS 2023)</font></font></a></td>
 <td><a class="no_dec" href="#HPS v2datasets & evaluation"><font color=#D04040>HPS v2 <font size=1;>(arXiv 2023)</font></font></a></td>
 <td><a class="no_dec" href="#T2I-CompBenchdatasets & evaluation"><font color=#505050>T2I-CompBench <font size=1;>(NeurIPS 2023)</font></font></a></td>
+<td><a class="no_dec" href="#GenEvaldatasets & evaluation"><font color=#505050>GenEval <font size=1;>(NeurIPS 2023)</font></font></a></td>
 </tr>
 <tr>
-<td><a class="no_dec" href="#GenEvaldatasets & evaluation"><font color=#505050>GenEval <font size=1;>(NeurIPS 2023)</font></font></a></td>
 <td><a class="no_dec" href="#Vbenchdatasets & evaluation"><font color=#D04040>Vbench <font size=1;>(CVPR 2024)</font></font></a></td>
 <td><a class="no_dec" href="#VQAScoredatasets & evaluation"><font color=#505050>VQAScore <font size=1;>(ECCV 2024)</font></font></a></td>
-</tr>
-<tr>
 <td><a class="no_dec" href="#T2V-CompBenchdatasets & evaluation"><font color=#505050>T2V-CompBench <font size=1;>(T2V-CompBench)</font></font></a></td>
+<td><a class="no_dec" href="#VisionRewarddatasets & evaluation"><font color=#505050>VisionReward <font size=1;>(arXiv 2024)</font></font></a></td>
 <td><a class="no_dec" href="#UnifiedRewarddatasets & evaluation"><font color=#505050>UnifiedReward <font size=1;>(arXiv 2025)</font></font></a></td>
 </tr>
 </table></p><br><li><a class="no_dec larger low_margin" id="Editing & Inpainting & Outpainting" href="#Editing & Inpainting & Outpainting-table"><b>Editing & Inpainting & Outpainting</b></a></li><p><table class="center"><tr>
@@ -149,8 +132,6 @@
 <td><a class="no_dec" href="#BrushNetediting & inpainting & outpainting"><font color=#D04040>BrushNet <font size=1;>(ECCV 2024)</font></font></a></td>
 <td><a class="no_dec" href="#Follow-Your-Canvasediting & inpainting & outpainting"><font color=#505050>Follow-Your-Canvas <font size=1;>(AAAI 2025)</font></font></a></td>
 <td><a class="no_dec" href="#PrefPaintediting & inpainting & outpainting"><font color=#505050>PrefPaint <font size=1;>(NeurIPS 2024)</font></font></a></td>
-</tr>
-<tr>
 <td><a class="no_dec" href="#Step1X-Editediting & inpainting & outpainting"><font color=#505050>Step1X-Edit <font size=1;>(arXiv 2025)</font></font></a></td>
 </tr>
 </table></p><br><li><a class="no_dec larger low_margin" id="Human" href="#Human-table"><b>Human</b></a></li><p><table class="center"><tr>
@@ -162,23 +143,19 @@
 <td><a class="no_dec" href="#InstaStylestyle"><font color=#505050>InstaStyle <font size=1;>(ECCV 2024)</font></font></a></td>
 <td><a class="no_dec" href="#ZipLoRAstyle"><font color=#505050>ZipLoRA <font size=1;>(ECCV 2024)</font></font></a></td>
 <td><a class="no_dec" href="#B-LoRAstyle"><font color=#505050>B-LoRA <font size=1;>(ECCV 2024)</font></font></a></td>
-</tr>
-<tr>
 <td><a class="no_dec" href="#RB-Modulationstyle"><font color=#505050>RB-Modulation <font size=1;>(ICLR 2025)</font></font></a></td>
 <td><a class="no_dec" href="#Style-Editorstyle"><font color=#505050>Style-Editor <font size=1;>(CVPR 2025)</font></font></a></td>
-<td><a class="no_dec" href="#StyleTokenizerstyle"><font color=#505050>StyleTokenizer <font size=1;>(ECCV 2024)</font></font></a></td>
 </tr>
 <tr>
-<td><a class="no_dec" href="#style"><font color=#505050> <font size=1;>(NeurIPS 2024)</font></font></a></td>
+<td><a class="no_dec" href="#StyleTokenizerstyle"><font color=#505050>StyleTokenizer <font size=1;>(ECCV 2024)</font></font></a></td>
+<td><a class="no_dec" href="#ACFunstyle"><font color=#505050>ACFun <font size=1;>(NeurIPS 2024)</font></font></a></td>
 <td><a class="no_dec" href="#FineStylestyle"><font color=#505050>FineStyle <font size=1;>(NeurIPS 2024)</font></font></a></td>
 <td><a class="no_dec" href="#CompReverstyle"><font color=#505050>CompRever <font size=1;>(ECCV 2024)</font></font></a></td>
+<td><a class="no_dec" href="#VarInvstyle"><font color=#505050>VarInv <font size=1;>(ICLR 2025)</font></font></a></td>
 </tr>
 <tr>
-<td><a class="no_dec" href="#VarInvstyle"><font color=#505050>VarInv <font size=1;>(ICLR 2025)</font></font></a></td>
 <td><a class="no_dec" href="#UnZipLoRAstyle"><font color=#505050>UnZipLoRA <font size=1;>(ICCV 2025)</font></font></a></td>
 <td><a class="no_dec" href="#LoRA.rarstyle"><font color=#505050>LoRA.rar <font size=1;>(ICCV 2025)</font></font></a></td>
-</tr>
-<tr>
 <td><a class="no_dec" href="#StyleMasterstyle"><font color=#505050>StyleMaster <font size=1;>(CVPR 2025)</font></font></a></td>
 <td><a class="no_dec" href="#StyleStudiostyle"><font color=#505050>StyleStudio <font size=1;>(CVPR 2025)</font></font></a></td>
 <td><a class="no_dec" href="#IntroStylestyle"><font color=#505050>IntroStyle <font size=1;>(ICCV 2025)</font></font></a></td>
@@ -187,23 +164,19 @@
 <td><a class="no_dec" href="#StyleSSPstyle"><font color=#505050>StyleSSP <font size=1;>(CVPR 2025)</font></font></a></td>
 <td><a class="no_dec" href="#HSIstyle"><font color=#505050>HSI <font size=1;>(CVPR 2025)</font></font></a></td>
 <td><a class="no_dec" href="#MaskSTstyle"><font color=#505050>MaskST <font size=1;>(ICLR 2025)</font></font></a></td>
-</tr>
-<tr>
 <td><a class="no_dec" href="#K-LoRAstyle"><font color=#505050>K-LoRA <font size=1;>(CVPR 2025)</font></font></a></td>
 <td><a class="no_dec" href="#SCSAstyle"><font color=#505050>SCSA <font size=1;>(CVPR 2025)</font></font></a></td>
-<td><a class="no_dec" href="#SMSstyle"><font color=#505050>SMS <font size=1;>(ICCV 2025)</font></font></a></td>
 </tr>
 <tr>
+<td><a class="no_dec" href="#SMSstyle"><font color=#505050>SMS <font size=1;>(ICCV 2025)</font></font></a></td>
 <td><a class="no_dec" href="#V-Styliststyle"><font color=#505050>V-Stylist <font size=1;>(CVPR 2025)</font></font></a></td>
 <td><a class="no_dec" href="#SaMamstyle"><font color=#505050>SaMam <font size=1;>(CVPR 2025)</font></font></a></td>
 <td><a class="no_dec" href="#Semantixstyle"><font color=#505050>Semantix <font size=1;>(ICLR 2025)</font></font></a></td>
+<td><a class="no_dec" href="#DuoLoRAstyle"><font color=#505050>DuoLoRA <font size=1;>(ICCV 2025)</font></font></a></td>
 </tr>
 <tr>
-<td><a class="no_dec" href="#DuoLoRAstyle"><font color=#505050>DuoLoRA <font size=1;>(ICCV 2025)</font></font></a></td>
 <td><a class="no_dec" href="#OmniStylestyle"><font color=#505050>OmniStyle <font size=1;>(CVPR 2025)</font></font></a></td>
 <td><a class="no_dec" href="#DGPSTstyle"><font color=#505050>DGPST <font size=1;>(ICCV 2025)</font></font></a></td>
-</tr>
-<tr>
 <td><a class="no_dec" href="#CSD-VARstyle"><font color=#505050>CSD-VAR <font size=1;>(ICCV 2025)</font></font></a></td>
 <td><a class="no_dec" href="#AIComposerstyle"><font color=#505050>AIComposer <font size=1;>(ICCV 2025)</font></font></a></td>
 <td><a class="no_dec" href="#SCFlowstyle"><font color=#505050>SCFlow <font size=1;>(ICCV 2025)</font></font></a></td>
@@ -585,16 +558,16 @@
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split" id='noise-unconditional modelfoundation algorithms & models'></p>
+            <p class="little_split" id='uEDMfoundation algorithms & models'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('noise-unconditional model-Foundation Algorithms & Models-details')"><i>Is Noise Conditioning Necessary for Denoising Generative Models?</i></p>
+            <p class="paper_title" onclick="toggleTable('uEDM-Foundation Algorithms & Models-details')"><i>Is Noise Conditioning Necessary for Denoising Generative Models?</i></p>
             <p class="paper_detail">Qiao Sun, Zhicheng Jiang, Hanhong Zhao, Kaiming He</p>
             <p class="paper_detail">MiT</p>
-            <p class="paper_detail"><b>Feb 18, 2025 &nbsp; <font color=#404040>noise-unconditional model</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2502.13129">ICML 2025</a> &nbsp; <font color=#D0D0D0>International Conference on Machine Learning</font></p>
+            <p class="paper_detail"><b>Feb 18, 2025 &nbsp; <font color=#404040>uEDM</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2502.13129">ICML 2025</a> &nbsp; <font color=#D0D0D0>International Conference on Machine Learning</font></p>
             
             
-            <div id='noise-unconditional model-Foundation Algorithms & Models-details' class="info_detail">
+            <div id='uEDM-Foundation Algorithms & Models-details' class="info_detail">
                 <hr class="dashed">
                 <p><font color=#202020>Theoretical and empirical analysis on denoising diffusion models <b>without a timestep input</b> for image generation.</font></p>
                 
@@ -912,7 +885,7 @@
             <p class="paper_title" onclick="toggleTable('Genie-Foundation Algorithms & Models-details')"><i>Genie: Generative Interactive Environments</i></p>
             <p class="paper_detail">Jake Bruce, Michael Dennis, Ashley Edwards, Jack Parker-Holder, Yuge Shi, Edward Hughes, Matthew Lai, Aditi Mavalankar, Richie Steigerwald, Chris Apps, Yusuf Aytar, Sarah Bechtle, Feryal Behbahani, Stephanie Chan, Nicolas Heess, Lucy Gonzalez, Simon Osindero, Sherjil Ozair, Scott Reed, Jingwei Zhang, Konrad Zolna, Jeff Clune, Nando de Freitas, Satinder Singh, Tim Rocktäschel</p>
             <p class="paper_detail">Google DeepMind, University of British Columbia</p>
-            <p class="paper_detail"><b>Feb 23, 2024 &nbsp; <font color=#D04040>Genie</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="ICML 2024"></a> &nbsp; <font color=#D0D0D0></font></p>
+            <p class="paper_detail"><b>Feb 23, 2024 &nbsp; <font color=#D04040>Genie</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2402.15391">ICML 2024</a> &nbsp; <font color=#D0D0D0>International Conference on Machine Learning</font></p>
             
             
             <div id='Genie-Foundation Algorithms & Models-details' class="info_detail">
@@ -1877,6 +1850,28 @@ It trains <b>continuous normalizing flows</b> using conditional probability path
                 <p><font color=#202020>It fine-tunes LLaVA-OneVision 7B for both <b>multimodal understanding & generation evaluation</b> by pairwise ranking & pointwise scoring.</font></p>
                 
                 <p></p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
+            <p class="little_split" id='VisionRewarddatasets & evaluation'></p>
+            <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('VisionReward-Datasets & Evaluation-details')"><i>VisionReward: Fine-Grained Multi-Dimensional Human Preference Learning for Image and Video Generation</i></p>
+            <p class="paper_detail">Jiazheng Xu, Yu Huang, Jiale Cheng, Yuanming Yang, Jiajun Xu, Yuan Wang, Wenbo Duan, Shen Yang, Qunlin Jin, Shurun Li, Jiayan Teng, Zhuoyi Yang, Wendi Zheng, Xiao Liu, Ming Ding, Xiaohan Zhang, Xiaotao Gu, Shiyu Huang, Minlie Huang, Jie Tang, Yuxiao Dong</p>
+            
+            <p class="paper_detail"><b>Dec 30, 2024 &nbsp; <font color=#404040>VisionReward</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/zai-org/VisionReward">code</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2412.21059">arXiv 2024</a> &nbsp; <font color=#D0D0D0>arXiv preprint</font></p>
+            
+            
+            <div id='VisionReward-Datasets & Evaluation-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>
+It disentangles human preference into <b>64 binary questions</b> and learns an <b>interpretable linear reward</b> via multi-dimensional optimization.
+</font></p>
+                
+                <p>
+</p>
             </div>
             <div style="height: 0.05em;"></div>
             </div>
@@ -2870,16 +2865,16 @@ It disentangles style from a reference via concept-oriented data scaling and KV-
             </div>
             <p class="little_split"></p>
             
-            <p class="little_split" id='style'></p>
+            <p class="little_split" id='ACFunstyle'></p>
             <div style="border-left: 14px solid #FFBBCC; padding-left: 10px">
             <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('-Style-details')"><i>ACFun: Abstract-Concrete Fusion Facial Stylization</i></p>
+            <p class="paper_title" onclick="toggleTable('ACFun-Style-details')"><i>ACFun: Abstract-Concrete Fusion Facial Stylization</i></p>
             <p class="paper_detail">Jiapeng Ji, Kun Wei, Ziqi Zhang, Cheng Deng</p>
             <p class="paper_detail">Xidian University</p>
-            <p class="paper_detail"><b>Sep 26, 2024 &nbsp; <font color=#404040></font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/e10a6a906ef323efaf708f76cf3c1d1e-Abstract-Conference.html">NeurIPS 2024</a> &nbsp; <font color=#D0D0D0>Advances in Neural Information Processing Systems</font></p>
+            <p class="paper_detail"><b>Sep 26, 2024 &nbsp; <font color=#404040>ACFun</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/e10a6a906ef323efaf708f76cf3c1d1e-Abstract-Conference.html">NeurIPS 2024</a> &nbsp; <font color=#D0D0D0>Advances in Neural Information Processing Systems</font></p>
             
             
-            <div id='-Style-details' class="info_detail">
+            <div id='ACFun-Style-details' class="info_detail">
                 <hr class="dashed">
                 <p><font color=#202020>
 It disentangles <b>abstract and concrete style features</b> via CLIP-guided fusion, achieving one-shot, high-fidelity, and controllable facial stylization.
