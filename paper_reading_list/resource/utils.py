@@ -6,6 +6,7 @@ venue_name_dict = {
     "arXiv": "arXiv preprint",
     "CVPR": "Conference on Computer Vision and Pattern Recognition",
     "ECAI": "European Conference on Artificial Intelligence",
+    "ECCV": "European Conference on Computer Vision",
     "ICCV": "International Conference on Computer Vision",
     "ICASSP": "International Conference on Acoustics, Speech and Signal Processing",
     "ICLR": "International Conference on Learning Representations",

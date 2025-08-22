@@ -79,23 +79,15 @@ def build_main_content_of_each_domain(domain):
 
     ## Build table of contents
     catalog = """<hr><p id='table' class="huger"><b>Table of contents:</b></p>"""
-    catalog += """<p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#D04040">red</font>.</p><ul>""" if domain["title"] not in EXCLUDE_TITLE else "<ul>"
+    catalog += """<p>Papers are displayed in reverse chronological order. Some highly-impact or inspiring works are highlighted in <font color="#D04040">red</font>.</p><ul>""" if domain["title"] not in EXCLUDE_TITLE else "<ul>"
     for category in domain["categories"]:
         paper_choose = papers[papers["category"].str.contains(category)]
         if domain["title"] not in EXCLUDE_TITLE:
-            paper_choose = paper_choose.sort_values(by="date", ascending=True)
+            paper_choose = paper_choose.sort_values(by="date", ascending=False)
         paper_names = paper_choose["name"].to_list()
         paper_venues = paper_choose["venue"].to_list()
         paper_info = paper_choose["info"].to_list()
-        # names = ""
-        # for i, name in enumerate(paper_names):
-        #     color = "#D04040" if "**" in paper_info[i] else "#505050"
 
-            
-        #     if i == len(paper_names) - 1:
-        #         names += f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name} <font size=1 opacity=0.5>({paper_venues[i]})</font></font></a>"""
-        #     else:
-        #         names += f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name} <font size=1 opacity=0.5;>({paper_venues[i]})</font></font></a> <font color=#D0D0D0> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; </font> """
         names = ["""<table class="center"><tr>"""]
         interval = 5
         for i in range(0, len(paper_names), interval):

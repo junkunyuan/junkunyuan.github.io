@@ -25,6 +25,510 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "Trans-Adapter: A Plug-and-Play Framework for Transparent Image Inpainting",
+"author": "Yuekun Dai, Haitian Li, Shangchen Zhou, Chen Change Loy",
+"organization": "Nanyang Technological University",
+"date": "20250801",
+"venue": "ICCV 2025",
+"pdf_url": "https://arxiv.org/pdf/2508.01098",
+"code_url": "https://github.com/ykdai/Trans-Adapter",
+"name": "Trans-Adapter",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+ It proposes a <b>plug-and-play adapter</b> that inflates any diffusion inpainting model to generate aligned RGB and alpha channels for <b>transparent images</b>.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "SAGI: Semantically Aligned and Uncertainty Guided AI Image Inpainting",
+"author": "Paschalis Giakoumoglou, Dimitrios Karageorgiou, Symeon Papadopoulos, Panagiotis C. Petrantonakis",
+"organization": "Aristotle University of Thessaloniki, CERTH",
+"date": "20250210",
+"venue": "ICCV 2025",
+"pdf_url": "https://arxiv.org/pdf/2502.06593",
+"code_url": "https://github.com/mever-team/SAGI",
+"name": "SAGI",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It proposes a pipeline to combine <b>semantically-aligned prompt generation</b> and <b>uncertainty-guided realism filtering</b> for image inpainting.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "Pinco: Position-induced Consistent Adapter for Diffusion Transformer in Foreground-conditioned Inpainting",
+"author": "Guangben Lu, Yuzhen Du, Zhimin Sun, Ran Yi, Yifan Qi, Yizhe Tang, Tianyi Wang, Lizhuang Ma, Fangyuan Zou",
+"organization": "Shanghai Jiao Tong University, Tencent",
+"date": "20241205",
+"venue": "ICCV 2025",
+"pdf_url": "https://arxiv.org/pdf/2412.03812",
+"code_url": "",
+"name": "Pinco",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+ It proposes a <b>foreground-conditioned inpainting adapter</b> that injects subject-aware attention into the self-attention layer.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "OmniPaint: Mastering Object-Oriented Editing via Disentangled Insertion-Removal Inpainting",
+"author": "Yongsheng Yu, Ziyun Zeng, Haitian Zheng, Jiebo Luo",
+"organization": "University of Rochester, Adobe Research",
+"date": "20250311",
+"venue": "ICCV 2025",
+"pdf_url": "https://arxiv.org/pdf/2503.08677",
+"code_url": "",
+"name": "OmniPaint",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It proposes a unified framework that reconceptualizes object removal and insertion as <b>interdependent inverse tasks</b>.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "BVINet: Unlocking Blind Video Inpainting with Zero Annotations",
+"author": "Zhiliang Wu, Kerui Chen, Kun Li, Hehe Fan, Yi Yang",
+"organization": "Zhejiang University",
+"date": "20250203",
+"venue": "ICCV 2025",
+"pdf_url": "https://arxiv.org/pdf/2502.01181",
+"code_url": "",
+"name": "BVINet",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It proposes the first end-to-end blind video inpainting framework that jointly learns mask prediction and inpainting <b>without any manual annotations</b>.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "Paint by Inpaint: Learning to Add Image Objects by Removing Them First",
+"author": "Navve Wasserman, Noam Rotstein, Roy Ganz, Ron Kimmel",
+"organization": "Weizmann Institute of Science, Technion - Israel Institute of Technology",
+"date": "20240428",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2404.18212",
+"code_url": "https://github.com/RotsteinNoam/Paint-by-Inpaint",
+"name": "Paint by Inpaint",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It inverts large-scale inpainting pipelines to <b>synthesize real object-addition pairs</b>, setting new SOTA for text-guided object insertion & general editing.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "ATA: Adaptive Transformation Agent for Text-Guided Subject-Position Variable Background Inpainting",
+"author": "Yizhe Tang, Zhimin Sun, Yuzhen Du, Ran Yi, Guangben Lu, Teng Hu, Luying Li, Lizhuang Ma, Fangyuan Zou",
+"organization": "Shanghai Jiao Tong University, Tencent",
+"date": "20250402",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2504.01603",
+"code_url": "",
+"name": "ATA",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It predicts subject displacement via hierarchical reverse transforms to enable text-guided, position-variable background inpainting.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "RAD: Region-Aware Diffusion Models for Image Inpainting",
+"author": "Sora Kim, Sungho Suh, Minsik Lee",
+"organization": "Hanyang University, Korea University, DFKI, Hanyang University ERICA",
+"date": "20241212",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2412.09191",
+"code_url": "",
+"name": "RAD",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It proposes a <b>pixel-wise spatially-varying</b> diffusion schedule that asynchronously denoises masked regions.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "Towards Enhanced Image Inpainting: Mitigating Unwanted Object Insertion and Preserving Color Consistency",
+"author": "Yikai Wang, Chenjie Cao, Junqiu Yu, Ke Fan, Xiangyang Xue, Yanwei Fu",
+"organization": "Fudan University, Nanyang Technological University, Alibaba DAMO Academy, Hupan Lab",
+"date": "20231208",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2312.04831",
+"code_url": "https://github.com/Yikai-Wang/asuka-misato",
+"name": "ASUKA",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It proposes to align MAE prior and fine-tune a local-harmonization VAE decoder to suppress <b>object hallucination & color inconsistency</b> in inpainting.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "TurboFill: Adapting Few-step Text-to-image Model for Fast Image Inpainting",
+"author": "Liangbin Xie, Daniil Pakhomov, Zhonghao Wang, Zongze Wu, Ziyan Chen, Yuqian Zhou, Haitian Zheng, Zhifei Zhang, Zhe Lin, Jiantao Zhou, Chao Dong",
+"organization": "University of Macau, Shenzhen University of Advanced Technology, Adobe, Chinese Academy of Sciences",
+"date": "20250401",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2504.00996",
+"code_url": "",
+"name": "TurboFill",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It trains a <b>ControlNet-style adapter</b> directly on a <b>distilled</b> text-to-image model via a novel 3-step adversarial training scheme.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "Keyframe-Guided Creative Video Inpainting",
+"author": "Yuwei Guo, Ceyuan Yang, Anyi Rao, Chenlin Meng, Omer Bar-Tal, Shuangrui Ding, Maneesh Agrawala, Dahua Lin, Bo Dai",
+"organization": "CUHK, Shanghai AI Laboratory, Pika Labs, ByteDance, CPII under InnoHK, Stanford, HKUST, HKU, Feeling AI",
+"date": "20250611",
+"venue": "CVPR 2025",
+"pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Guo_Keyframe-Guided_Creative_Video_Inpainting_CVPR_2025_paper.pdf",
+"code_url": "",
+"name": "VideoRepainter",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It introduces a <b>keyframe-guided</b> two-stage pipeline that repurposes an <b>image-to-video model</b> with mask conditioning for creative video inpainting.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "MTADiffusion: Mask Text Alignment Diffusion Model for Object Inpainting",
+"author": "Jun Huang, Ting Liu, Yihang Wu, Xiaochao Qu, Luoqi Liu, Xiaolin Hu",
+"organization": "Meitu, National University of Singapore, Tsinghua University",
+"date": "20250630",
+"venue": "CVPR 2025",
+"pdf_url": "https://arxiv.org/pdf/2506.23482",
+"code_url": "",
+"name": "MTADiffusion",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It leverages <b>25 million</b> fine-grained mask-text pairs and <b>multi-task edge-guided</b> training with Gram-style loss to learn image inpainting.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "HomoGen: Enhanced Video Inpainting via Homography Propagation and Diffusion",
+"author": "Ding Ding, Yueming Pan, Ruoyu Feng, Qi Dai, Kai Qiu, Jianmin Bao, Chong Luo, Zhenzhong Chen",
+"organization": "Wuhan University, Xi'an Jiaotong University, University of Science and Technology of China, Microsoft Research Asia",
+"date": "20250611",
+"venue": "CVPR 2025",
+"pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Ding_HomoGen_Enhanced_Video_Inpainting_via_Homography_Propagation_and_Diffusion_CVPR_2025_paper.pdf",
+"code_url": "",
+"name": "HomoGen",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It employs homography-based pixel propagation to supply semantically coherent priors and a content-adaptive model for video inpainting.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "A Task is Worth One Word: Learning with Task Prompts for High-Quality Versatile Image Inpainting",
+"author": "Junhao Zhuang, Yanhong Zeng, Wenran Liu, Chun Yuan, Kai Chen",
+"organization": "Tsinghua University, Shanghai Artificial Intelligence Laboratory",
+"date": "20231206",
+"venue": "ECCV 2024",
+"pdf_url": "https://arxiv.org/pdf/2312.03594",
+"code_url": "https://github.com/open-mmlab/PowerPaint",
+"name": "PowerPaint",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "**",
+"summary": 
+"""
+It presents <b>unifies multiple tasks</b> through <b>learnable task prompts</b>, achieving SOTA results in object synthesis, removal, and outpainting.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "AVID: Any-Length Video Inpainting with Diffusion Model",
+"author": "Zhixing Zhang, Bichen Wu, Xiaoyan Wang, Yaqiao Luo, Luxin Zhang, Yinan Zhao, Peter Vajda, Dimitris Metaxas, Licheng Yu",
+"organization": "Rutgers University, Meta",
+"date": "20231206",
+"venue": "CVPR 2024",
+"pdf_url": "https://arxiv.org/pdf/2312.03816",
+"code_url": "https://github.com/zhang-zx/AVID",
+"name": "AVID",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It combines motion modules, adjustable structure guidance, and MultiDiffusion sampler with middle-frame attention to <b>inpaint videos of any length</b>.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "Structure Matters: Tackling the Semantic Discrepancy in Diffusion Models for Image Inpainting",
+"author": "Haipeng Liu, Yang Wang, Biao Qian, Meng Wang, Yong Rui",
+"organization": "Hefei University of Technology, Lenovo Research",
+"date": "20240329",
+"venue": "CVPR 2024",
+"pdf_url": "https://arxiv.org/pdf/2403.19898",
+"code_url": "https://github.com/htyjers/StrDiffusion",
+"name": "StrDiffusion",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It progressively <b>injects sparser structural semantics</b> to bridge the semantic gap between masked and unmasked regions.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "Towards Language-Driven Video Inpainting via Multimodal Large Language Models",
+"author": "Jianzong Wu, Xiangtai Li, Chenyang Si, Shangchen Zhou, Jingkang Yang, Jiangning Zhang, Yining Li, Kai Chen, Yunhai Tong, Ziwei Liu, Chen Change Loy",
+"organization": "Peking University, Nanyang Technological University, Shanghai AI Laboratory, PKU-Wuhan Institute for Artificial Intelligence, Zhejiang University",
+"date": "20240118",
+"venue": "CVPR 2024",
+"pdf_url": "https://arxiv.org/pdf/2401.10226",
+"code_url": "https://github.com/jianzongwu/Language-Driven-Video-Inpainting",
+"name": "ROVI",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It introduces language-driven video inpainting, a new task that <B>replaces binary masks with natural language instructions</b>.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "Improving Text-guided Object Inpainting with Semantic Pre-inpainting",
+"author": "Yifu Chen, Jingwen Chen, Yingwei Pan, Yehao Li, Ting Yao, Zhineng Chen, Tao Mei",
+"organization": "Fudan University, Shanghai Collaborative Innovation Center of Intelligent Visual Computing, HiDream.ai Inc.",
+"date": "20240912",
+"venue": "ECCV 2024",
+"pdf_url": "https://arxiv.org/pdf/2409.08260",
+"code_url": "https://github.com/Nnn-s/CATdiffusion",
+"name": "CAT-Diffusion",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It presents a cascaded Transformer-diffusion that <b>semantically pre-inpaints object features in CLIP space</b> and injects them via a reference adapter.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "Don't Look into the Dark: Latent Codes for Pluralistic Image Inpainting",
+"author": "Haiwei Chen, Yajie Zhao",
+"organization": "University of Southern California, USC Institute for Creative Technologies",
+"date": "20240327",
+"venue": "CVPR 2024",
+"pdf_url": "https://arxiv.org/pdf/2403.18186",
+"code_url": "https://github.com/nintendops/latent-code-inpainting",
+"name": "Latent Codes",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It <b>encodes visible regions</b>, <b>infers missing tokens</b>, and <b>fuses them</b> with partial-image priors to achieve inpainting under extreme masks.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "Brush2Prompt: Contextual Prompt Generator for Object Inpainting",
+"author": "Mang Tik Chiu, Yuqian Zhou, Lingzhi Zhang, Zhe Lin, Connelly Barnes, Sohrab Amirghodsi, Eli Shechtman, Humphrey Shi",
+"organization": "UIUC, Adobe, University of Oregon",
+"date": "20240617",
+"venue": "CVPR 2024",
+"pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Chiu_Brush2Prompt_Contextual_Prompt_Generator_for_Object_Inpainting_CVPR_2024_paper.pdf",
+"code_url": "",
+"name": "Brush2Prompt",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It proposes a <b>prompt generator</b> that translates masked-image CLIP embeddings into diverse object labels or captions without user text input.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "Image Inpainting via Tractable Steering of Diffusion Models",
+"author": "Anji Liu, Mathias Niepert, Guy Van den Broeck",
+"organization": "University of California, Los Angeles, University of Stuttgart",
+"date": "20231128",
+"venue": "ICLR 2024",
+"pdf_url": "https://arxiv.org/pdf/2401.03349",
+"code_url": "https://github.com/UCLA-StarAI/Tiramisu",
+"name": "TPM",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+""",
+"details": 
+"""
+It introduces the first framework that steers diffusion models via exact yet efficient <b>probalistic circuits-computed conditional distributions</b>.
+""",
+},
+{
+"title": "Image Inpainting via Iteratively Decoupled Probabilistic Modeling",
+"author": "Wenbo Li, Xin Yu, Kun Zhou, Yibing Song, Zhe Lin, Jiaya Jia",
+"organization": "Huawei Noah's Ark Lab, HKU, CUHK (SZ), Alibaba DAMO Academy, Adobe Research",
+"date": "20221206",
+"venue": "ICLR 2024",
+"pdf_url": "https://arxiv.org/pdf/2212.02963",
+"code_url": "https://github.com/fenglinglwb/PSM",
+"name": "PSM",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It alternates between <b>adversarially-optimized mean prediction</b> and <b>Gaussian-modeled uncertainty</b>, achieving efficient large-hole inpainting.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "TD-Paint: Faster Diffusion Inpainting Through Time Aware Pixel Conditioning",
+"author": "Tsiry Mayet, Pourya Shamsolmoali, Simon Bernard, Eric Granger, Romain Hérault, Clement Chatelain",
+"organization": "INSA Rouen Normandie, University of York, Universit'e Rouen Normandie, LIVIA, Universit'e Caen Normandie,",
+"date": "20241011",
+"venue": "ICLR 2025",
+"pdf_url": "https://arxiv.org/pdf/2410.09306",
+"code_url": "https://github.com/MaugrimEP/td-paint",
+"name": "TD-Paint",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It introduces a <b>pixel-wise time-conditioning</b> scheme that allows cutting sampling steps by an order of magnitude without architectural changes.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "HD-Painter: High-Resolution and Prompt-Faithful Text-Guided Image Inpainting with Diffusion Models",
+"author": "Hayk Manukyan, Andranik Sargsyan, Barsegh Atanyan, Zhangyang Wang, Shant Navasardyan, Humphrey Shi",
+"organization": "Picsart AI Research (PAIR), UT Austin, Georgia Tech",
+"date": "20231221",
+"venue": "ICLR 2025",
+"pdf_url": "https://arxiv.org/pdf/2312.14091",
+"code_url": "https://github.com/Picsart-AI-Research/HD-Painter",
+"name": "HD-Painter",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It introduces plug-and-play PAIntA and RASG to make text-guided inpainting <b>prompt-faithful</b>, <b>high-resolution</b>, and <b>training-free</b>.
+""",
+"details": 
+"""
+""",
+},
+{
 "title": "VisionReward: Fine-Grained Multi-Dimensional Human Preference Learning for Image and Video Generation",
 "author": "Jiazheng Xu, Yu Huang, Jiale Cheng, Yuanming Yang, Jiajun Xu, Yuan Wang, Wenbo Duan, Shen Yang, Qunlin Jin, Shurun Li, Jiayan Teng, Zhuoyi Yang, Wendi Zheng, Xiao Liu, Ming Ding, Xiaohan Zhang, Xiaotao Gu, Shiyu Huang, Minlie Huang, Jie Tang, Yuxiao Dong",
 "organization": "",
