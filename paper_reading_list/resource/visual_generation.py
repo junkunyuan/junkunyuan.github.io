@@ -25,6 +25,27 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "Flow Matching Guide and Code",
+"author": "Yaron Lipman, Marton Havasi, Peter Holderrieth, Neta Shaul, Matt Le, Brian Karrer, Ricky T. Q. Chen, David Lopez-Paz, Heli Ben-Hamu, Itai Gat",
+"organization": "FAIR at Meta, MIT CSAIL, Weizmann Institute of Science",
+"date": "20241209",
+"venue": "arXiv 2024",
+"pdf_url": "https://arxiv.org/pdf/2412.06264",
+"code_url": "https://github.com/facebookresearch/flow_matching",
+"name": "FM Guide",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It offers a comprehensive and self-contained <b>review of flow matching</b>, covering its mathematical foundations, design choices, and extensions.
+""",
+"details": 
+"""
+""",
+},
+{
 "title": "Trans-Adapter: A Plug-and-Play Framework for Transparent Image Inpainting",
 "author": "Yuekun Dai, Haitian Li, Shangchen Zhou, Chen Change Loy",
 "organization": "Nanyang Technological University",
