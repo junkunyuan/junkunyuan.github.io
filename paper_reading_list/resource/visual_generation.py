@@ -25,6 +25,33 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "new paper Mean Flows for One-step Generative Modeling",
+"author": "Zhengyang Geng, Mingyang Deng, Xingjian Bai, J. Zico Kolter, Kaiming He",
+"organization": "CMU, MIT",
+"date": "20250519",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2505.13447",
+"code_url": "https://github.com/Gsunshine/meanflow",
+"name": "MeanFlow",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"info": "**",
+"summary": 
+"""
+It introduces a <b>one-step</b> generative framework that learns an <b>average velocity field</b> via MeanFlow Identity, without distillation or curriculum learning.
+""",
+"details": 
+"""
+Some observations in experiments:
+<ul>
+    <li> <b>25% of sampling \( r\\neq t \)</b> performs the best; while 0% (standard Flow Matching) performs much worse.
+    <li> <b>A correct JVP</b> is important, i.e., \( \mathrm{jvp}=(v, 0, 1) \).
+    <li> <b>\( u_{\\theta}(z, r, t) \) takes (t, t-r)</b> as the positional embedding performs the best.
+</ul>
+""",
+},
+{
 "title": "Flow Matching Guide and Code",
 "author": "Yaron Lipman, Marton Havasi, Peter Holderrieth, Neta Shaul, Matt Le, Brian Karrer, Ricky T. Q. Chen, David Lopez-Paz, Heli Ben-Hamu, Itai Gat",
 "organization": "FAIR at Meta, MIT CSAIL, Weizmann Institute of Science",

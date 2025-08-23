@@ -22,12 +22,12 @@ PAPER["papers"] = [
 "details": 
 """
 <ul>
-    <li> <b>Keep progress updated.</b> Maintain a progress document and update it whenever you achieve new pregress. <a href="resource/else/research progress example.pptx">Example document</a>.
-    <li> <b>Hold regular discussions with collaborators.</b> Share progress summaries, achievements, challenges, insights, and next steps with collaborators. To make meeting efficient, clarify: (1) What progress needs to be shared (or not)? (2) Which issues should be discussed? (3) What team members should prepare (e.g., reviewing relevant papers in advance).
-    <li> <b>Update progress frequently.</b> Write concise notes on achievements and issues. Keep record clear and well-structured, ensuring quick access and review for the team. Ask yourself: (1) What should I share with the team? (2) Which results / issues are important to recall later?
+    <li> <b>Keep progress updated.</b> Maintain an online progress document (such as <a href="https://docs.qq.com/desktop">Tencent Doc</a>, <a href="https://docs.feishu.cn/">Feishu Doc</a>, and <a href="https://docs.google.com/document/">Google Doc</a>), share the link with your team, and update it whenever you achieve new pregress. <a href="resource/else/research progress example.pptx">Example document</a>.
+    <li> <b>Hold regular discussions with collaborators.</b> Share achievements, challenges, and next steps with collaborators in time. To make meeting efficient, clarify what you want to share and what team members should prepare (e.g., reading some papers in advance).
+    <li> <b>Update progress frequently.</b> Write concise notes on achievements and issues. Keep record clear and well-structured, ensuring quick access and review for the team. Ask yourself: (1) <i>What should I share with the team?</i> (2) <i>Which results / issues are important to recall later?</i>
 </ul>
 fig: fig1.png 450
-cap: Example slide of <b>weekly progress summary</b>.
+cap: An example slide of a <b>progress summary</b>.
 """,
 "author": "","organization": "","date": "", "comment": "", "pdf_url": "","code_url": "", "jupyter_notes": "", "info": "", "summary": """""",
 },
@@ -39,9 +39,9 @@ cap: Example slide of <b>weekly progress summary</b>.
 "details": 
 """
 <ol>
-    <li> <b>Find a research topic.</b> Read recent papers and answer: (1) <i>What is the value of this topic?</i> (2) <i>Are there any well-known researchers or institutions involved in this topic?</i> &nbsp;&nbsp;  Some paper sources: <a href="https://proceedings.neurips.cc//">NeurIPS</a>, <a href="https://openreview.net/group?id=ICLR.cc">ICLR</a>, <a href="https://proceedings.mlr.press/">ICML</a>, <a href="https://openaccess.thecvf.com/menu">CVPR & ICCV & ECCV</a>, <a href="https://aclanthology.org/">ACL & EMNLP</a>.
+    <li> <b>Find a research topic.</b> Read recent papers and answer: (1) <i>What is the value of this topic?</i> (2) <i>Are there any well-known researchers or institutions involved in this topic?</i> &nbsp;&nbsp;  Some paper sources: <a href="https://proceedings.neurips.cc//">NeurIPS</a>, <a href="https://openreview.net/group?id=ICLR.cc">ICLR</a>, <a href="https://proceedings.mlr.press/">ICML</a>, <a href="https://openaccess.thecvf.com/menu">CVPR & ICCV & ECCV</a>, and <a href="https://aclanthology.org/">ACL & EMNLP</a>.
     <li> <b>Find an open problem.</b> Summarize motivations & contributions of related works and answer: (1) <i>Is there any open problem or bottleneck in this topic? (you may summarize it based on the Future Work or Limitation section of these papers)</i> (2) <i>Is this problem central or just a side detail for this topic?</i> (3) <i>What impact will solving this problem have on this research field? Does solving it advance just the method, or the entire field?</i>
-    <li> <b>Find related solutions.</b> Search for relevant solutions (in related papers) to the open problem you find and answer: (1) <i>What they have solved and what have not solved?</i> (2) <i>Is your idea / solution novel or trivial / incremental / just a tweak?</i>
+    <li> <b>Find related solutions.</b> Search for relevant solutions (in related papers) to the open problem that you find, and answer: (1) <i>What they have solved and what they have not solved?</i> (2) <i>Is your idea and solution novel or trivial/incremental/just a tweak?</i> Keep questioning yourself.
 </ol>
 fig: fig1.png 450 fig2.png 450
 cap: Example slides of <b>"find a research topic" (left)</b> and <b>related work summarization (right)</b>.
@@ -60,10 +60,10 @@ cap: Example slides of <b>"find a research topic" (left)</b> and <b>related work
     <li> <b>Data.</b> Select training datasets and evaluation benchmarks, typically following those used in the most relevant works to ensure credibility. Preferably, use datasets on which the chosen codebase has already been tested by previous works.
     <li> <b>Reproduce baseline results.</b> Run the codebase on the selected dataset and verify that you can reproduce the results reported in prior works. This step is very important, so ensure you can either reproduce the results or provide a well-reasoned explanation if reproduction fails.
     <li> <b>Implement ideas.</b> Introduce your methods by modifying or adding as little code as possible, keeping implementation clean and transparent.
-    <li> <b>Document experiments.</b> Maintain an experiment log and update it whenever you start / complete a new experiment. <a href="resource/else/experiment progress example.xlsx">Example document</a>.
+    <li> <b>Document experiments.</b> Maintain an experiment log and update it whenever you start or complete a new experiment. <a href="resource/else/experiment progress example.xlsx">Example document</a>.
 </ul>
 fig: fig1.png 800
-cap: Example log of <b>experiment progress</b>.
+cap: An example log of <b>experiment progress</b>.
 """,
 "author": "","organization": "","date": "", "comment": "", "pdf_url": "","code_url": "", "jupyter_notes": "", "info": "", "summary": """""",
 },
@@ -80,7 +80,7 @@ cap: Example log of <b>experiment progress</b>.
 
 <ul>
     <li> <b>Prepare LaTex templete.</b> Download LaTex templete from official websites of the target conference or jounal and read instructions carefully.
-    <li> <b>Build online project.</b> Maintain an online LaTex project so collaborators can help write and polish the paper. <a href="https://www.texpage.com/console">TeXPage</a> is recommended for users in China as <a href="https://overleaf.com/project">Overleaf</a> can sometimes be unstable due to heavy traffic. Upload the LaTex templete and share the projecct with collaborators.
+    <li> <b>Build online project.</b> Maintain an online LaTex project so collaborators can help write and polish the paper. <a href="https://www.texpage.com/console">TeXPage</a> is recommended for users in China as <a href="https://overleaf.com/project">Overleaf</a> can sometimes be unstable due to heavy traffic. Upload the LaTex templete and share the project link with collaborators.
     <li> <b>General writing principle.</b> Adhere to Occam's Razor—write only what is essential, and avoid irrelevant or redundant expressions. Constantly remind yourself: "If you remove this sentence, does it affect the clarity of your paper? Is there a more concise way to express the same idea?" Avoid exaggerated or false statements, as they not only damage your reputation but also give reviewers opportunities to challenge your work.
     <li> <b>Abstract.</b> A good abstract (about 200 words) should clearly convey: (1) The problem you address. (maybe 1 sentence) (2) How you solve it. (maybe 1 sentence) (3) High-level idea and method with important components. (maybe 2-3 sentences) (4) The key results achieved. (maybe 1 sentence) <b>Note:</b> avoid excessive background or motivation—reserve that for Introduction.
     <li> <b>Introduction.</b> It should cover: (1) Background of the topic. (2) Motivation of the research. (3) Motivation of your idea and method. (4) High-level overview of your method with key components. (5) Experiments with major results and findings. (6) The value of the work to this research field. (7) A brief summary of contributions (optional). <b>Note:</b> avoid excessive background or method details—focus on the core contributions.
@@ -96,13 +96,13 @@ cap: <b>(left)</b> Example of <b>LaTex structure</b>. Each chapter can be added 
 },
 {
 "title": "Open Source",
-"venue": "make project open source",
+"venue": "make dataset and project open source",
 "name": "open source",
 "category": "A Guide to Research",
 "details": 
 """
 <ul>
-    <li> <b>Importance of open source.</b> Open source is essential for reproducibility, knowledge sharing, and AI innovation. An open-sourced project also serves as a visible proof of your coding skills, attracting attention to your work and strengthening your research reputation and network.
+    <li> <b>Importance of open source.</b> Open source is essential for reproducibility, knowledge sharing, and AI innovation. An open-sourced project also serves as a visible proof of your coding skills, attracting attention to your work, and strengthening your research reputation and network.
     <li> <b>Code.</b> Ensure your code is clean: (1) Remove unused files, debug prints, or personal content. (2) Use a clear directory structure (e.g., `data/`, `model/`, `train.py`). (3) Add meaningful comments. (4) Verify that releasing the code does not violate any policies. Provide a concise README, including: (1) A brief introduction. (2) Running environment and dependancies (datasets, checkpoints, etc.). (3) Training and evaluation instructions. (4) Acknowledgement of other open-source projects used. (5) Citation instructions. (6) Contribution guidelines. (7) License.
     <li> <b>Data.</b> Ensure your data is clean: (1) Obtain permission to share it. (2) Remove personal information. (3) Ensure compliance with regulations if human data is involved. (4) Filter out harmful, offensive, or biased content. (5) Organize files clearly (`train/`, `val/`, `test/`). Write a concise README, including: (1) A brieft introduction. (2) Instructions to download, load, and use it. (3) Known biases and risks. (4) License.
 </ul>
