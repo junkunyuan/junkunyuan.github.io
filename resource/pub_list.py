@@ -5,7 +5,7 @@ PAPERS = [
 "date": "20250520",
 "venue": "arXiv 2025",
 "pdf_url": "https://arxiv.org/pdf/2505.14135",
-"code_url": "",
+"code_url": "https://github.com/Tencent-Hunyuan/Hunyuan-GameCraft-1.0",
 "comment": ""
 },
 {
@@ -15,7 +15,7 @@ PAPERS = [
 "venue": "arXiv 2024",
 "pdf_url": "https://arxiv.org/pdf/2412.03603",
 "code_url": "https://github.com/Tencent-Hunyuan/HunyuanVideo",
-"comment": "It is an open-sourced large-scale video generation model with 13B parameters. It has 200+ citations and 10K+ GitHub stars (as of Jun 2025)."
+"comment": "It is an open-source large-scale video generation model with 13B parameters. It has over 300 citations and over 10,000 GitHub stars (as of Aug 2025)."
 },
 {
 "title": "Follow-Your-Canvas: Higher-Resolution Video Outpainting with Extensive Content Generation",
@@ -73,7 +73,7 @@ PAPERS = [
 "date": "20231002",
 "venue": "ICCV 2023",
 "pdf_url": "https://openaccess.thecvf.com/content/ICCV2023/papers/Zhang_MAP_Towards_Balanced_Generalization_of_IID_and_OOD_through_Model-Agnostic_ICCV_2023_paper.pdf",
-"code_url": ""
+"code_url": "https://github.com/remiMZ/MAP-ICCV23"
 },
 {
 "title": "Neural Collapse Anchored Prompt Tuning for Generalizable Vision-Language Models",
@@ -162,7 +162,7 @@ PAPERS = [
 "date": "20211004",
 "venue": "TKDD 2023",
 "pdf_url": "https://arxiv.org/pdf/2110.01438",
-"code_url": "",
+"code_url": "https://github.com/junkunyuan/DSBF",
 "comment": ""
 },
 {

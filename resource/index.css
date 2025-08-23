@@ -30,7 +30,7 @@ body {
 /* Define titles */
 /* -------------------------------------------------------------------------------- */
 h1 {
-    color: #404040;
+    color: #505050;
     margin-top: 0.7em;
     margin-bottom: 0.5em;
     padding-top: 0.5em;
@@ -41,7 +41,7 @@ h1 {
 }
 
 h2 {
-    color: #404040;
+    color: #505050;
     margin-top: 0.7em;
     margin-bottom: 0.5em;
     padding-top: 0.5em;
@@ -56,7 +56,7 @@ h2 {
 /* Define others */
 /* -------------------------------------------------------------------------------- */
 a {
-    color: #404040;
+    color: #505050;
     /* text-decoration: none; */
 }
 .no_dec {
@@ -67,7 +67,7 @@ a:hover {
     color: #4169E1;
 }
 p {
-    color: #404040;
+    color: #505050;
     margin-top: 0.0em;
     margin-bottom: 0.8em;
     padding: 0;
@@ -79,7 +79,7 @@ p {
     font-size: 16px;
 }
 li {
-    color: #404040;
+    color: #505050;
     margin-top: 0.0em;
     margin-bottom: 0.8em;
     padding: 0;
@@ -90,14 +90,14 @@ li {
 .paper_title {
     /* cursor: pointer; */
     /* color: #202020; */
-    color: #404040;
+    color: #505050;
     font-size: 16px;
     font-family: Arial, sans-serif;
     margin-bottom: 0.5em;
     /* font-weight:bold; */
 }
 .paper_detail {
-    color: #404040;
+    color: #505050;
     font-size: 13px;
     /* font-family: Arial, sans-serif; */
     /* font-weight:bold; */
@@ -117,7 +117,7 @@ figure {
 }
 figcaption {
     font-size: 14px;
-    color: #404040;
+    color: #505050;
     text-align: center;
     font-family: Arial, sans-serif;
     margin-top: 0.5em;

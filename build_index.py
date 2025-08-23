@@ -26,6 +26,7 @@ f"""
                     <p>yuanjk0921@outlook.com</p>
                     <p>work and live in Shenzhen, China</p>
                     <p><font color=#D0D0D0>Last updated on {time_now} (UTC+8)</font></p>
+                    <p><font color="D04040">I am currently on the job market and welcome potential opportunities. Please feel free to reach out to me.</p>
                 </td>
                 <td style="padding-right: 120px; padding-top: 10px;">
                     <img src="resource/my_photo.jpg" width="160">
@@ -39,12 +40,12 @@ BIOGRAPHY = \
 """
 <h2>Biography</h2>
 <p>
-    I am a research scientist in Hunyuan Multimodal Generation Group at Tencent, working on multimodal generative foundation models and their applications.
+    I have been working as a research scientist in the Foundation Model Team of the Hunyuan Multimodal Model Group at Tencent since Jul 2024, working with <a href="https://scholar.google.com.hk/citations?user=igtXP_kAAAAJ&hl=zh-CN&oi=ao">Zhao Zhong</a> and <a href="https://scholar.google.com.hk/citations?user=FJwtMf0AAAAJ&hl=zh-CN&oi=ao">Liefeng Bo</a>. I am focusing on multimodal generative foundation models and their various downstream applications.
     <br><br>
 
-    During Sep 2023 — Jul 2024, I interned in Hunyuan Multimodal Generation Group at Tencent, working with <a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ">Wei Liu</a>.
+    During Sep 2023 — Jul 2024, I interned in the Hunyuan Multimodal Model Group at Tencent, working with <a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ">Wei Liu</a>.
     
-    During Jul 2022 — Aug 2023, I interned in Computer Vision Group at Baidu, working with <a href="https://scholar.google.com/citations?user=PSzJxD8AAAAJ">Xinyu Zhang</a> and <a href="https://scholar.google.com/citations?user=z5SPCmgAAAAJ">Jingdong Wang</a>.<br><br>
+    During Jul 2022 — Aug 2023, I interned in the Computer Vision Group at Baidu, working with <a href="https://scholar.google.com/citations?user=PSzJxD8AAAAJ">Xinyu Zhang</a> and <a href="https://scholar.google.com/citations?user=z5SPCmgAAAAJ">Jingdong Wang</a>.<br><br>
 
     I received my Ph.D. degree in Computer Science from Zhejiang University (2019 — 2024), co-supervised by professors of <a href="https://scholar.google.com/citations?user=FOsNiMQAAAAJ">Kun Kuang</a>, <a href="https://person.zju.edu.cn/0096005">Lanfen Lin</a>, and 
   <a href="https://scholar.google.com/citations?user=XJLn4MYAAAAJ">Fei Wu</a>. I received my B.S. degree in Automation from Zhejiang University of Technology (2015 — 2019), co-supervised by professors of <a href="https://scholar.google.com.hk/citations?user=smi7bpoAAAAJ&hl=zh-CN&oi=ao">Qi Xuan</a> and <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=CnBn6FwAAAAJ">Li Yu</a>.<br><br>
@@ -88,10 +89,11 @@ def build_paper(papers):
     color_year = ""
     color_bar_generator = border_color_generator()
     for paper in papers:
-        venue = f"""<b><a href="{paper["pdf_url"]}"><font color=#404040>{paper["venue"]}</font></a></b>"""
+        venue = f"""<b><font color=#404040>{paper["venue"]}</font></b>"""
+        paper_ = """<a href="{paper["pdf_url"]}">paper</a>"""
         venue_all = get_venue_all(paper["venue"])
         code = f"""&nbsp;&nbsp;|&nbsp;&nbsp; <a href="{paper['code_url']}">code</a>""" if len(paper['code_url']) > 0 else ""
-        comment = f"""<p class="paper_detail"><font color=#FF000>{paper["comment"]}</font></p>""" if "comment" in paper else ""
+        comment = f"""<p class="paper_detail"><font color=#D04040>{paper["comment"]}</font></p>""" if "comment" in paper else ""
         date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%b %d, %Y")
 
         author = paper["author"].replace("Junkun Yuan", "<b><font color=#404040>Junkun Yuan</font></b>")
@@ -109,7 +111,8 @@ def build_paper(papers):
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>{paper["title"]}</i></p>
         <p class="paper_detail">{author}</p>
-        <p class="paper_detail">{date} {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#D0D0D0>{venue_all}</font></p>
+        <p class="paper_detail">{date} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#D0D0D0>{venue_all}</font></p>
+        <p class="paper_detail">{paper_}{code}</p>
         {comment}
         <div style="height: 0.05em;"></div>
         </div>
