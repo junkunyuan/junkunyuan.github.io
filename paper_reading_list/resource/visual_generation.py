@@ -2,7 +2,7 @@ VISUAL_GENERATION = dict()
 VISUAL_GENERATION["file"] = "visual_generation.html"
 VISUAL_GENERATION["title"] = "Visual Generation"
 VISUAL_GENERATION["description"] = "Generate visual signals (e.g., images and videos)."
-VISUAL_GENERATION["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Inference-Time Improvement", "Acceleration", "Datasets & Evaluation", "Editing & Inpainting & Outpainting", "Human", "Style"]
+VISUAL_GENERATION["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Inference-Time Improvement", "Acceleration", "Datasets & Evaluation", "Editing & Inpainting & Outpainting", "Human", "Style", "Interactive"]
 VISUAL_GENERATION["papers"] = [
 # {
 # "title": "",
@@ -25,7 +25,61 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
-"title": "new paper Mean Flows for One-step Generative Modeling",
+"title": "Matrix-Game: Interactive World Foundation Model",
+"author": "Yifan Zhang, Chunli Peng, Boyang Wang, Puyi Wang, Qingcheng Zhu, Fei Kang, Biao Jiang, Zedong Gao, Eric Li, Yang Liu, Yahui Zhou",
+"organization": "Skywork AI",
+"date": "20250623",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2506.18701",
+"code_url": "https://github.com/SkyworkAI/Matrix-Game/tree/main/Matrix-Game-1",
+"name": "Matrix-Game",
+"comment": "",
+"category": "Interactive",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It introduces an <b>image-to-world</b> diffusion model (17B) that learns from <b>3,700 h of Minecraft data</b> to generate game videos from a reference frame.
+""",
+"details": 
+"""
+<ul>
+    <li><b>Dataset.</b> Propose <b>Matrix-Game-MC</b>, a Minecraft dataset comprising over 2,700 hours of unlabled gameplay video clips (720p, 17 & 33 & 65-frame) and 1,200 hours of high-quality labeled clips (720p, 33-frame, balanced scenes) with keyboard and mouse action annotations.
+    <li><b>Training stage 1.</b> Large-scale unlabled pre-training for environment understanding.
+    <li><b>Training stage 2.</b> Action-labeled training for interactive video generation.
+</ul>
+fig: fig1.png 800
+cap: <b>Structure.</b> It adopts auto-regressive: the last few frames of each generated clip are used as motion conditions for generating the next clip.
+fig: fig2.png 800
+cap: <b>Model blocks.</b>
+""",
+},
+{
+"title": "GameFactory: Creating New Games with Generative Interactive Videos",
+"author": "Jiwen Yu, Yiran Qin, Xintao Wang, Pengfei Wan, Di Zhang, Xihui Liu",
+"organization": "The University of Hong Kong, Kuaishou Technology",
+"date": "20250114",
+"venue": "ICCV 2025",
+"pdf_url": "https://arxiv.org/pdf/2501.08325",
+"code_url": "https://github.com/KwaiVGI/GameFactory",
+"name": "GameFactory",
+"comment": "",
+"category": "Interactive",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It proposes a <b>decoupled-style</b> training pipeline that plugs action-control modules into a pre-trained video diffusion model to create games.
+""",
+"details": 
+"""
+<ul>
+    <li><b>Training.</b> (1) Pre-train a video generation model. (2) Fine-tune with LoRA for game video data to capture style. (3) Train an action control module to learn style-agnoistic control. (4) Disgard the style LoRA and use the action control module for inference.
+</ul>
+""",
+},
+{
+"title": "Mean Flows for One-step Generative Modeling",
 "author": "Zhengyang Geng, Mingyang Deng, Xingjian Bai, J. Zico Kolter, Kaiming He",
 "organization": "CMU, MIT",
 "date": "20250519",
@@ -34,7 +88,7 @@ VISUAL_GENERATION["papers"] = [
 "code_url": "https://github.com/Gsunshine/meanflow",
 "name": "MeanFlow",
 "comment": "",
-"category": "Foundation Algorithms & Models",
+"category": "Acceleration",
 "jupyter_notes": "",
 "info": "**",
 "summary": 
@@ -1245,7 +1299,7 @@ cap: <b>Structure.</b> (1) <b>CLIP</b> extracts patch features and embeddings. (
 "code_url": "",
 "name": "Yan",
 "comment": "",
-"category": "Foundation Algorithms & Models",
+"category": "Interactive",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -1300,7 +1354,7 @@ It trains <b>continuous normalizing flows</b> using conditional probability path
 "code_url": "",
 "name": "Genie",
 "comment": "",
-"category": "Foundation Algorithms & Models",
+"category": "Interactive",
 "jupyter_notes": "",
 "info": "**",
 "summary": 

@@ -120,8 +120,9 @@ def build_main_content_of_each_domain(domain):
 
             code = f"""&nbsp;&nbsp;|&nbsp;&nbsp; <a href="{paper['code_url']}">code</a>""" if len(paper['code_url']) > 0 else ""
 
-            venue = f"""<a href="{paper["pdf_url"]}">{paper["venue"]}</a>""" if paper["pdf_url"] else paper["venue"]
+            venue = paper["venue"]
             venue_all = get_venue_all(paper["venue"])
+            paper_ = f"""<a href="{paper["pdf_url"]}">paper</a>"""
             date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%b %d, %Y") + " &nbsp;" if domain["title"] not in EXCLUDE_TITLE else ""
             comment = f"""<p class="paper_detail"><font color=#D04040>{paper["comment"]}</font></p>""" if paper["comment"] else ""
             jupyter_note = ""
@@ -151,7 +152,8 @@ def build_main_content_of_each_domain(domain):
             <p class="paper_title" onclick="toggleTable('{paper["name"]}-{category}-details')"><i>{paper["title"]}</i></p>
             {author}
             {organization}
-            <p class="paper_detail"><b>{date} <font color={color}>{paper["name"]}</font></b> {code} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#D0D0D0>{venue_all}</font></p>
+            <p class="paper_detail"><b>{date} <font color={color}>{paper["name"]}</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#D0D0D0>{venue_all}</font></p>
+            <p class="paper_detail">{paper_}{code}</p>
             {comment}
             {debug}
             <div id='{paper["name"]}-{category}-details' class="info_detail">

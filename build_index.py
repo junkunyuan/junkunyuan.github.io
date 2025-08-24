@@ -90,7 +90,7 @@ def build_paper(papers):
     color_bar_generator = border_color_generator()
     for paper in papers:
         venue = f"""<b><font color=#404040>{paper["venue"]}</font></b>"""
-        paper_ = """<a href="{paper["pdf_url"]}">paper</a>"""
+        paper_ = f"""<a href="{paper["pdf_url"]}">paper</a>"""
         venue_all = get_venue_all(paper["venue"])
         code = f"""&nbsp;&nbsp;|&nbsp;&nbsp; <a href="{paper['code_url']}">code</a>""" if len(paper['code_url']) > 0 else ""
         comment = f"""<p class="paper_detail"><font color=#D04040>{paper["comment"]}</font></p>""" if "comment" in paper else ""
