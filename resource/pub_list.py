@@ -1,7 +1,7 @@
 PAPERS = [
 {
 "title": "Hunyuan-Game: Industrial-grade Intelligent Game Creation Model",
-"author": "Hunyuan Multimodal Generation Group at Tencent (<b><font color=#404040>as a group member</font></b>)",
+"author": "Hunyuan Multimodal Model Group at Tencent (<b><font color=#404040>as a group member</font></b>)",
 "date": "20250520",
 "venue": "arXiv 2025",
 "pdf_url": "https://arxiv.org/pdf/2505.14135",
@@ -10,7 +10,7 @@ PAPERS = [
 },
 {
 "title": "HunyuanVideo: A Systematic Framework For Large Video Generative Models",
-"author": "Hunyuan Multimodal Generation Group at Tencent (<b><font color=#404040>as a group member</font></b>)",
+"author": "Hunyuan Multimodal Model Group at Tencent (<b><font color=#404040>as a group member</font></b>)",
 "date": "20241203",
 "venue": "arXiv 2024",
 "pdf_url": "https://arxiv.org/pdf/2412.03603",

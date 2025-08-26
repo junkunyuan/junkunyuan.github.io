@@ -22,7 +22,7 @@ f"""
             <tr>
                 <td width="870">
                     <h1>Junkun Yuan &nbsp; 袁俊坤</h1>
-                    <p>Research Scientist, &nbsp;<a href="https://hunyuan.tencent.com/">Hunyuan Multimodal Generation Group</a>&nbsp;&nbsp;@&nbsp;&nbsp;<a href="https://www.tencent.com/">Tencent</a></p>
+                    <p>Research Scientist, &nbsp;Hunyuan Multimodal Model Group&nbsp;&nbsp;@&nbsp;&nbsp;Tencent</p>
                     <p>yuanjk0921@outlook.com</p>
                     <p>work and live in Shenzhen, China</p>
                     <p><font color=#D0D0D0>Last updated on {time_now} (UTC+8)</font></p>
