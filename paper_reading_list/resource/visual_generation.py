@@ -25,6 +25,48 @@ VISUAL_GENERATION["papers"] = [
 # """,
 # },
 {
+"title": "HPSv3: Towards Wide-Spectrum Human Preference Score",
+"author": "Yuhang Ma, Yunhao Shui, Xiaoshi Wu, Keqiang Sun, Hongsheng Li",
+"organization": "",
+"date": "20250805",
+"venue": "ICCV 2025",
+"pdf_url": "https://arxiv.org/pdf/2508.03789",
+"code_url": "https://github.com/MizzenAI/HPSv3",
+"name": "HPSv3",
+"comment": "",
+"category": "Datasets & Evaluation",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It introduces a human-preference dataset with <b>1.08M text-image pairs</b> and <b>1.17M pairwise comparisons</b>, which are used to fine-tune <b>Qwen2VL-7B</b>.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "Matrix-Game 2.0: An Open-Source, Real-Time, and Streaming Interactive World Model",
+"author": "Xianglong He, Chunli Peng, Zexiang Liu, Boyang Wang, Yifan Zhang, Qi Cui, Fei Kang, Biao Jiang, Mengyin An, Yangyang Ren, Baixin Xu, Hao-Xiang Guo, Kaixiong Gong, Cyrus Wu, Wei Li, Xuchen Song, Yang Liu, Eric Li, Yahui Zhou",
+"organization": "Skywork AI",
+"date": "20250818",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2508.13009",
+"code_url": "https://github.com/SkyworkAI/Matrix-Game/tree/main/Matrix-Game-2",
+"name": "Matrix-Game 2.0",
+"comment": "",
+"category": "Interactive",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It introduces a <b>causal few-step auto-regressive diffusion</b> framework distilled via <b>Self-Forcing</b> that enables minute-long, 25 fps videos.
+""",
+"details": 
+"""
+""",
+},
+{
 "title": "Matrix-Game: Interactive World Foundation Model",
 "author": "Yifan Zhang, Chunli Peng, Boyang Wang, Puyi Wang, Qingcheng Zhu, Fei Kang, Biao Jiang, Zedong Gao, Eric Li, Yang Liu, Yahui Zhou",
 "organization": "Skywork AI",

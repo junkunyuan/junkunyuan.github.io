@@ -18,10 +18,10 @@
 
 <h1 id="top">Visual Generation</h1>
 <p class="larger"><b>Generate visual signals (e.g., images and videos).</b></p>
-<p class="larger"><b><font color='#D93053'>130</font> papers</b></p>
+<p class="larger"><b><font color='#D93053'>132</font> papers</b></p>
 <p>Written by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on August 25, 2025 at 14:54 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on August 26, 2025 at 16:16 (UTC+8).</font></p>
 <hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed in reverse chronological order. Some highly-impact or inspiring works are highlighted in <font color="#D04040">red</font>.</p><ul><li><a class="no_dec larger low_margin" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models</b></a></li><p><table class="center"><tr>
 <tr>
 <td><a class="no_dec" href="#Qwen-Imagefoundation algorithms & models"><font color=#505050>Qwen-Image <font size=1;>(arXiv 2025)</font></font></a></td>
@@ -105,24 +105,27 @@
 </tr>
 </table></p><br><li><a class="no_dec larger low_margin" id="Datasets & Evaluation" href="#Datasets & Evaluation-table"><b>Datasets & Evaluation</b></a></li><p><table class="center"><tr>
 <tr>
+<td><a class="no_dec" href="#HPSv3datasets & evaluation"><font color=#505050>HPSv3 <font size=1;>(ICCV 2025)</font></font></a></td>
 <td><a class="no_dec" href="#UnifiedRewarddatasets & evaluation"><font color=#505050>UnifiedReward <font size=1;>(arXiv 2025)</font></font></a></td>
 <td><a class="no_dec" href="#VisionRewarddatasets & evaluation"><font color=#505050>VisionReward <font size=1;>(arXiv 2024)</font></font></a></td>
 <td><a class="no_dec" href="#T2V-CompBenchdatasets & evaluation"><font color=#505050>T2V-CompBench <font size=1;>(T2V-CompBench)</font></font></a></td>
 <td><a class="no_dec" href="#VQAScoredatasets & evaluation"><font color=#505050>VQAScore <font size=1;>(ECCV 2024)</font></font></a></td>
-<td><a class="no_dec" href="#Vbenchdatasets & evaluation"><font color=#D04040>Vbench <font size=1;>(CVPR 2024)</font></font></a></td>
 </tr>
 <tr>
+<td><a class="no_dec" href="#Vbenchdatasets & evaluation"><font color=#D04040>Vbench <font size=1;>(CVPR 2024)</font></font></a></td>
 <td><a class="no_dec" href="#GenEvaldatasets & evaluation"><font color=#505050>GenEval <font size=1;>(NeurIPS 2023)</font></font></a></td>
 <td><a class="no_dec" href="#T2I-CompBenchdatasets & evaluation"><font color=#505050>T2I-CompBench <font size=1;>(NeurIPS 2023)</font></font></a></td>
 <td><a class="no_dec" href="#HPS v2datasets & evaluation"><font color=#D04040>HPS v2 <font size=1;>(arXiv 2023)</font></font></a></td>
 <td><a class="no_dec" href="#PickScoredatasets & evaluation"><font color=#D04040>PickScore <font size=1;>(NeurIPS 2023)</font></font></a></td>
-<td><a class="no_dec" href="#ImageRewarddatasets & evaluation"><font color=#D04040>ImageReward <font size=1;>(NeurIPS 2023)</font></font></a></td>
 </tr>
 <tr>
+<td><a class="no_dec" href="#ImageRewarddatasets & evaluation"><font color=#D04040>ImageReward <font size=1;>(NeurIPS 2023)</font></font></a></td>
 <td><a class="no_dec" href="#HPSdatasets & evaluation"><font color=#505050>HPS <font size=1;>(ICCV 2023)</font></font></a></td>
 <td><a class="no_dec" href="#CLIPScoredatasets & evaluation"><font color=#D04040>CLIPScore <font size=1;>(EMNLP 2021)</font></font></a></td>
 <td><a class="no_dec" href="#FVDdatasets & evaluation"><font color=#505050>FVD <font size=1;>(ICLR workshop 2019)</font></font></a></td>
 <td><a class="no_dec" href="#FIDdatasets & evaluation"><font color=#D04040>FID <font size=1;>(NeurIPS 2017)</font></font></a></td>
+</tr>
+<tr>
 <td><a class="no_dec" href="#Inception Scoredatasets & evaluation"><font color=#D04040>Inception Score <font size=1;>(NeurIPS 2016)</font></font></a></td>
 </tr>
 </table></p><br><li><a class="no_dec larger low_margin" id="Editing & Inpainting & Outpainting" href="#Editing & Inpainting & Outpainting-table"><b>Editing & Inpainting & Outpainting</b></a></li><p><table class="center"><tr>
@@ -215,6 +218,7 @@
 </tr>
 </table></p><br><li><a class="no_dec larger low_margin" id="Interactive" href="#Interactive-table"><b>Interactive</b></a></li><p><table class="center"><tr>
 <tr>
+<td><a class="no_dec" href="#Matrix-Game 2.0interactive"><font color=#505050>Matrix-Game 2.0 <font size=1;>(arXiv 2025)</font></font></a></td>
 <td><a class="no_dec" href="#Yaninteractive"><font color=#505050>Yan <font size=1;>(arXiv 2025)</font></font></a></td>
 <td><a class="no_dec" href="#Matrix-Gameinteractive"><font color=#505050>Matrix-Game <font size=1;>(arXiv 2025)</font></font></a></td>
 <td><a class="no_dec" href="#GameFactoryinteractive"><font color=#505050>GameFactory <font size=1;>(ICCV 2025)</font></font></a></td>
@@ -1881,6 +1885,29 @@ Some observations in experiments:
             </div>
             <p class="little_split"></p>
             <h2 id="Datasets & Evaluation-table"><a class="no_dec" href="#Datasets & Evaluation">Datasets & Evaluation</a></h2>
+            <p class="little_split" id='HPSv3datasets & evaluation'></p>
+            <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('HPSv3-Datasets & Evaluation-details')"><i>HPSv3: Towards Wide-Spectrum Human Preference Score</i></p>
+            <p class="paper_detail">Yuhang Ma, Yunhao Shui, Xiaoshi Wu, Keqiang Sun, Hongsheng Li</p>
+            
+            <p class="paper_detail"><b>Aug 05, 2025 &nbsp; <font color=#404040>HPSv3</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; ICCV 2025 &nbsp; <font color=#D0D0D0>International Conference on Computer Vision</font></p>
+            <p class="paper_detail"><a href="https://arxiv.org/pdf/2508.03789">paper</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/MizzenAI/HPSv3">code</a></p>
+            
+            
+            <div id='HPSv3-Datasets & Evaluation-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>
+It introduces a human-preference dataset with <b>1.08M text-image pairs</b> and <b>1.17M pairwise comparisons</b>, which are used to fine-tune <b>Qwen2VL-7B</b>.
+</font></p>
+                
+                <p>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split" id='UnifiedRewarddatasets & evaluation'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
@@ -3666,6 +3693,29 @@ It leverages the <b>inversion noise of a stylized image</b> and refines a learna
             </div>
             <p class="little_split"></p>
             <h2 id="Interactive-table"><a class="no_dec" href="#Interactive">Interactive</a></h2>
+            <p class="little_split" id='Matrix-Game 2.0interactive'></p>
+            <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+            <div style="height: 0.3em;"></div>
+            <p class="paper_title" onclick="toggleTable('Matrix-Game 2.0-Interactive-details')"><i>Matrix-Game 2.0: An Open-Source, Real-Time, and Streaming Interactive World Model</i></p>
+            <p class="paper_detail">Xianglong He, Chunli Peng, Zexiang Liu, Boyang Wang, Yifan Zhang, Qi Cui, Fei Kang, Biao Jiang, Mengyin An, Yangyang Ren, Baixin Xu, Hao-Xiang Guo, Kaixiong Gong, Cyrus Wu, Wei Li, Xuchen Song, Yang Liu, Eric Li, Yahui Zhou</p>
+            <p class="paper_detail">Skywork AI</p>
+            <p class="paper_detail"><b>Aug 18, 2025 &nbsp; <font color=#404040>Matrix-Game 2.0</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; arXiv 2025 &nbsp; <font color=#D0D0D0>arXiv preprint</font></p>
+            <p class="paper_detail"><a href="https://arxiv.org/pdf/2508.13009">paper</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/SkyworkAI/Matrix-Game/tree/main/Matrix-Game-2">code</a></p>
+            
+            
+            <div id='Matrix-Game 2.0-Interactive-details' class="info_detail">
+                <hr class="dashed">
+                <p><font color=#202020>
+It introduces a <b>causal few-step auto-regressive diffusion</b> framework distilled via <b>Self-Forcing</b> that enables minute-long, 25 fps videos.
+</font></p>
+                
+                <p>
+</p>
+            </div>
+            <div style="height: 0.05em;"></div>
+            </div>
+            <p class="little_split"></p>
+            
             <p class="little_split" id='Yaninteractive'></p>
             <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
             <div style="height: 0.3em;"></div>
