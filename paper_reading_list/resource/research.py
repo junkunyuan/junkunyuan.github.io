@@ -89,6 +89,13 @@ cap: An example log of <b>experiment progress</b>.
     <li> <b>Experiment.</b> This section should address: (1) Datasets / benchmarks used. (2) Implementation details sufficient for reproducibility. (3) Main results compared to relevant and strong baseline methods. (4) Ablation studies to show the role of each component. (5) In-depth visualization, analysis, and insights beyond the numbers. <b>Note:</b> focus on telling readers what the results mean, not just what they are. 
     <li> <b>Conclusion.</b> Summarize the achievement, limitations, and broader implications of this work. Highlight future directions that others can build on. <b>Note:</b> keep this part forward-looking, while Abstract and Introduction focus on current contributions.
 </ul>
+
+<p>Example papers about <b>empirical studies</b>:</p>
+
+<ul>
+    <li> <b><a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Ma_Scaling_Inference_Time_Compute_for_Diffusion_Models_CVPR_2025_paper.pdf">Scaling Inference Time Compute for Diffusion Models (CVPR 2025)</a>:</b> It explores inference-time scaling of diffusion models by introducing: (1) The background of diffusion models and the motivation of scaling; (2) How to scale via search verifiers and search algorithms; (3) Scaling performance and findings; (4) How to arrange inference compute. 
+</ul>
+
 fig: fig1.png 100 fig2.png 550 fig3.png 250
 cap: <b>(left)</b> Example of <b>LaTex structure</b>. Each chapter can be added by writing `\input{chapters/abstract}` in `main.tex`. <b>(middle)</b> How to <b>cite a paper</b> by obtaining bib info and inserting it into `main.bib`. <b>(right)</b> The added bib info should be clean so that you can cite it by `~\cite{CLIP}`.
 """,
