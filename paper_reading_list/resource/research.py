@@ -1,9 +1,9 @@
-PAPER = dict()
-PAPER["file"] = "research.html"
-PAPER["title"] = "Research"
-PAPER["description"] = "Things about research."
-PAPER["categories"] = ["A Guide to Research"]
-PAPER["papers"] = [
+LIST = dict()
+LIST["file"] = "research.html"
+LIST["title"] = "Research"
+LIST["description"] = "Things about research."
+LIST["categories"] = ["A Guide to Research"]
+LIST["papers"] = [
 # {
 # "title": "",
 # "venue": "",

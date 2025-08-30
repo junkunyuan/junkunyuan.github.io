@@ -1,9 +1,9 @@
-LANGUAGE_GENERATION = dict()
-LANGUAGE_GENERATION["file"] = "language_generation.html"
-LANGUAGE_GENERATION["title"] = "Language Generation"
-LANGUAGE_GENERATION["description"] = "Generate text."
-LANGUAGE_GENERATION["categories"] = ["Foundation Algorithms & Models"]
-LANGUAGE_GENERATION["papers"] = [
+LIST = dict()
+LIST["file"] = "language_generation.html"
+LIST["title"] = "Language Generation"
+LIST["description"] = "Generate text."
+LIST["categories"] = ["Foundation Algorithms & Models"]
+LIST["papers"] = [
 {
 "title": "Attention Is All You Need",
 "author": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin",

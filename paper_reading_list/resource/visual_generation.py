@@ -1,9 +1,9 @@
-VISUAL_GENERATION = dict()
-VISUAL_GENERATION["file"] = "visual_generation.html"
-VISUAL_GENERATION["title"] = "Visual Generation"
-VISUAL_GENERATION["description"] = "Generate visual signals (e.g., images and videos)."
-VISUAL_GENERATION["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Inference-Time Improvement", "Acceleration", "Datasets & Evaluation", "Editing & Inpainting & Outpainting", "Human", "Style", "Interactive"]
-VISUAL_GENERATION["papers"] = [
+LIST = dict()
+LIST["file"] = "visual_generation.html"
+LIST["title"] = "Visual Generation"
+LIST["description"] = "Generate visual signals (e.g., images and videos)."
+LIST["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Inference-Time Improvement", "Acceleration", "Datasets & Evaluation", "Editing & Inpainting & Outpainting", "Human", "Style", "Interactive"]
+LIST["papers"] = [
 # {
 # "title": "",
 # "author": "",

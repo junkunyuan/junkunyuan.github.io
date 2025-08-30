@@ -1,9 +1,9 @@
-VISUAL_UNDERSTANDING = dict()
-VISUAL_UNDERSTANDING["file"] = "visual_understanding.html"
-VISUAL_UNDERSTANDING["title"] = "Visual Perception & Understanding"
-VISUAL_UNDERSTANDING["description"] = "Generate visual signals (e.g., images, video, and 3D)."
-VISUAL_UNDERSTANDING["categories"] = ["Foundation Algorithms & Models"]
-VISUAL_UNDERSTANDING["papers"] = [
+LIST = dict()
+LIST["file"] = "visual_understanding.html"
+LIST["title"] = "Visual Perception & Understanding"
+LIST["description"] = "Generate visual signals (e.g., images, video, and 3D)."
+LIST["categories"] = ["Foundation Algorithms & Models"]
+LIST["papers"] = [
 # {
 # "title": "",
 # "author": "",

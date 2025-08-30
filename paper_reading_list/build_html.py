@@ -18,14 +18,15 @@ from resource.utils import (
     TOP_BUTTON,
 )
 from resource.main_content import MAIN_CONTENT
-from resource.research import PAPER as RESEARCH
-from resource.coding import CODING
-from resource.fundamental import FUNDAMENTAL_COMPONENT
-from resource.visual_understanding import VISUAL_UNDERSTANDING
-from resource.language_generation import LANGUAGE_GENERATION
-from resource.visual_generation import VISUAL_GENERATION
-from resource.multimodal_understanding import MULTIMODAL_UNDERSTANDING
-from resource.native_multimodal_generation import NATIVE_MULTIMODAL_GENERATION
+from resource.research import LIST as RESEARCH
+from resource.coding import LIST as CODING
+from resource.fundamental import LIST as FUNDAMENTAL_COMPONENT
+from resource.visual_understanding import LIST as VISUAL_UNDERSTANDING
+from resource.language_generation import LIST as LANGUAGE_GENERATION
+from resource.reinforcement_learning import LIST as REINFORCEMENT_LEARNING
+from resource.visual_generation import LIST as VISUAL_GENERATION
+from resource.multimodal_understanding import LIST as MULTIMODAL_UNDERSTANDING
+from resource.native_multimodal_generation import LIST as NATIVE_MULTIMODAL_GENERATION
 
 # Configuration constants
 DOMAINS: List[Dict[str, Any]] = [
@@ -34,6 +35,7 @@ DOMAINS: List[Dict[str, Any]] = [
     FUNDAMENTAL_COMPONENT,
     # VISUAL_UNDERSTANDING,
     # LANGUAGE_GENERATION,
+    REINFORCEMENT_LEARNING,
     VISUAL_GENERATION,
     MULTIMODAL_UNDERSTANDING,
     NATIVE_MULTIMODAL_GENERATION
@@ -101,7 +103,7 @@ def _build_paper_html(paper: pd.Series, category: str, color_bar: str, domain_ti
         items.append(f"""<a href="{paper["pdf_url"]}">paper</a>""")
     if paper["code_url"].strip():
         items.append(f"""<a href="{paper['code_url']}">code</a>""")
-    links_html = " &nbsp;&nbsp;|&nbsp;&nbsp; ".join(items)
+    links_html = " &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; ".join(items)
 
     # Format date and venue
     venue = paper["venue"]
@@ -109,7 +111,7 @@ def _build_paper_html(paper: pd.Series, category: str, color_bar: str, domain_ti
     date = ""
     if domain_title not in EXCLUDE_TITLE:
         try:
-            date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%b %d, %Y") + " &nbsp;"
+            date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%b %d, %Y")
         except ValueError:
             date = ""
 
@@ -145,7 +147,8 @@ def _build_paper_html(paper: pd.Series, category: str, color_bar: str, domain_ti
     <p class="paper_title" onclick="toggleTable('{paper["name"]}-{category}-details')"><i>{paper["title"]}</i></p>
     {author}
     {organization}
-    <p class="paper_detail"><b>{date} <font color={color}>{paper["name"]}</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#D0D0D0>{venue_all}</font></p>
+    <p class="paper_detail">{venue} &nbsp; <font color=#D0D0D0>{venue_all}</font></p>
+    <p class="paper_detail"><b>{date}</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color={color}>{paper["name"]}</font></b></p>
     <p class="paper_detail">{links_html}</p>
     {comment}
     {debug}

@@ -1,9 +1,9 @@
-FUNDAMENTAL_COMPONENT = dict()
-FUNDAMENTAL_COMPONENT["file"] = "fundamental_component.html"
-FUNDAMENTAL_COMPONENT["title"] = "Fundamental Components of Deep Learning"
-FUNDAMENTAL_COMPONENT["description"] = "Fundamental components to build deep learning systems."
-FUNDAMENTAL_COMPONENT["categories"] = ["Normalization"]
-FUNDAMENTAL_COMPONENT["papers"] = [
+LIST = dict()
+LIST["file"] = "fundamental_component.html"
+LIST["title"] = "Fundamental Components of Deep Learning"
+LIST["description"] = "Fundamental components to build deep learning systems."
+LIST["categories"] = ["Normalization"]
+LIST["papers"] = [
 # {
 # "title": "",
 # "author": "",

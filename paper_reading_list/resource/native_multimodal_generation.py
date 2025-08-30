@@ -1,9 +1,9 @@
-NATIVE_MULTIMODAL_GENERATION = dict()
-NATIVE_MULTIMODAL_GENERATION["file"] = "native_multimodal_generation.html"
-NATIVE_MULTIMODAL_GENERATION["title"] = "Native Multimodal Generation"
-NATIVE_MULTIMODAL_GENERATION["description"] = "Integrate and generate multiple modalities (e.g., text, images, and videos) within a unified model."
-NATIVE_MULTIMODAL_GENERATION["categories"] = ["Foundation Algorithms & Models"]
-NATIVE_MULTIMODAL_GENERATION["papers"] = [
+LIST = dict()
+LIST["file"] = "native_multimodal_generation.html"
+LIST["title"] = "Native Multimodal Generation"
+LIST["description"] = "Integrate and generate multiple modalities (e.g., text, images, and videos) within a unified model."
+LIST["categories"] = ["Foundation Algorithms & Models"]
+LIST["papers"] = [
 # {
 # "title": "",
 # "author": "",

@@ -1,9 +1,9 @@
-CODING = dict()
-CODING["file"] = "coding.html"
-CODING["title"] = "Coding and Engineering"
-CODING["description"] = "Tools used to build AI systems."
-CODING["categories"] = ["PyTorch", "Distributed Training"]
-CODING["papers"] = [
+LIST = dict()
+LIST["file"] = "coding.html"
+LIST["title"] = "Coding and Engineering"
+LIST["description"] = "Tools used to build AI systems."
+LIST["categories"] = ["PyTorch", "Distributed Training"]
+LIST["papers"] = [
 # {
 # "title": "",
 # "author": "",

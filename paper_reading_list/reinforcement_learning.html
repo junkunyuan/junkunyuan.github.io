@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="resource/html.css" type="text/css">
+    <link rel="shortcut icon" href="resource/my_photo.jpg">
+    <title>Paper Reading List</title>
+    <meta name="description" content="Paper Reading List">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div id="layout-content" style="margin-top:25px">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-bash.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <body>
+
+<h1 id="top">Reinforcement Learning</h1>
+<p class="larger"><b>Learn to make decisions in an environment by maximizing long-term rewards.</b></p>
+<p class="larger"><b><font color='#D93053'>2</font> papers</b></p>
+<p>Written by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
+<p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
+<p><font color=#B0B0B0>Last updated on August 30, 2025 at 23:24 (UTC+8).</font></p>
+<hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed in reverse chronological order. Some highly-impact or inspiring works are highlighted in <font color="#D04040">red</font>.</p><ul><li><a class="no_dec larger low_margin" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models</b></a></li><p><table class="center"><tr>
+<tr>
+<td><a class="no_dec" href="#Thompson Samplingfoundation algorithms & models"><font color=#D04040>Thompson Sampling <font size=1;>(NeurIPS 2011)</font></font></a></td>
+<td><a class="no_dec" href="#ε-greedy & UCBfoundation algorithms & models"><font color=#D04040>ε-greedy & UCB <font size=1;>(Machine Learning 2002)</font></font></a></td>
+</tr>
+</table></p><br></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
+    <p class="little_split" id='Thompson Samplingfoundation algorithms & models'></p>
+    <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+    <div style="height: 0.3em;"></div>
+    <p class="paper_title" onclick="toggleTable('Thompson Sampling-Foundation Algorithms & Models-details')"><i>An Empirical Evaluation of Thompson Sampling</i></p>
+    <p class="paper_detail">Olivier Capelle, Lihong Li</p>
+    <p class="paper_detail">Yahoo! Research</p>
+    <p class="paper_detail">NeurIPS 2011 &nbsp; <font color=#D0D0D0>Advances in Neural Information Processing Systems</font></p>
+    <p class="paper_detail"><b>Dec 12, 2011</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#D04040>Thompson Sampling</font></b></p>
+    <p class="paper_detail"><a href="https://proceedings.neurips.cc/paper/2011/file/e53a0a2978c28872a4505bdb51db06dc-Paper.pdf">paper</a></p>
+    
+    
+    <div id='Thompson Sampling-Foundation Algorithms & Models-details' class="info_detail">
+        <hr class="dashed">
+        <p><font color=#202020>
+It introduces the <b>first large-scale empirical demonstration</b> that Thompson sampling achieves SOTA in real-world bandit problems.
+</font></p>
+        
+        <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/Multi-Armed Bandit.ipynb" class="note">(see notes in jupyter)</a></p>
+        
+        <p>
+</p>
+    </div>
+    <div style="height: 0.05em;"></div>
+    </div>
+    <p class="little_split"></p>
+    
+    <p class="little_split" id='ε-greedy & UCBfoundation algorithms & models'></p>
+    <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+    <div style="height: 0.3em;"></div>
+    <p class="paper_title" onclick="toggleTable('ε-greedy & UCB-Foundation Algorithms & Models-details')"><i>Finite-time Analysis of the Multiarmed Bandit Problem</i></p>
+    <p class="paper_detail">Peter Auer, Nicolò Cesa-Bianchi, Paul Fischer</p>
+    <p class="paper_detail">University of Technology Graz, Univerisity of Milan, University Dortmund</p>
+    <p class="paper_detail">Machine Learning 2002 &nbsp; <font color=#D0D0D0></font></p>
+    <p class="paper_detail"><b>May 01, 2002</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#D04040>ε-greedy & UCB</font></b></p>
+    <p class="paper_detail"><a href="https://link.springer.com/content/pdf/10.1023/a:1013689704352.pdf">paper</a></p>
+    <p class="paper_detail"><font color=#D04040>It fundamentally shifted bandit research by providing the first distribution-free, finite-horizon regret bounds that enabled practical, anytime performance guarantees and sparked a wave of refined algorithms and analyses. It has over 9,000 citations (as of Aug 2025).</font></p>
+    
+    <div id='ε-greedy & UCB-Foundation Algorithms & Models-details' class="info_detail">
+        <hr class="dashed">
+        <p><font color=#202020>
+It proposes index-based and ε-greedy policies that achieve <b>finite-time logarithmic regret bounds</b> for multi-armed bandit with <b>bounded rewards</b>.
+</font></p>
+        
+        <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/Multi-Armed Bandit.ipynb" class="note">(see notes in jupyter)</a></p>
+        
+        <p>
+</p>
+    </div>
+    <div style="height: 0.05em;"></div>
+    </div>
+    <p class="little_split"></p>
+    
+    <script>
+        function toggleTable(tableId) {
+            const container = document.getElementById(tableId);
+            const isVisible = window.getComputedStyle(container).display !== 'none';
+            if (!isVisible) {
+                const images = container.querySelectorAll('img');
+                images.forEach(img => {
+                    if (img.dataset.src !== '') {img.src = img.dataset.src;}
+                });
+                container.style.display = 'block';
+            } else {container.style.display = 'none';}
+        }
+    </script>
+    
+<button id="backToTop" title="back to top">↑</button>
+<script>
+    const button = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+        if (document.documentElement.scrollTop > 300) {
+            button.style.display = "block";
+        } else {
+            button.style.display = "none";
+        }
+    });
+
+    function updateButtonPosition() {
+        const bodyRect = document.body.getBoundingClientRect();
+        const windowWidth = window.innerWidth;
+        const rightOffset = Math.max((windowWidth - bodyRect.width) / 2, 10);
+        button.style.right = rightOffset + "px";
+    }
+
+    window.addEventListener("resize", updateButtonPosition);
+    window.addEventListener("load", updateButtonPosition);
+
+    button.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+</body>
+</html>

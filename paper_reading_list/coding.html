@@ -21,7 +21,7 @@
 <p class="larger"><b></b></p>
 <p>Written by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on August 30, 2025 at 15:15 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on August 30, 2025 at 23:24 (UTC+8).</font></p>
 <hr><p id='table' class="huger"><b>Table of contents:</b></p><ul><li><a class="no_dec larger low_margin" id="PyTorch" href="#PyTorch-table"><b>PyTorch</b></a></li><p><table class="center"><tr>
 <tr>
 <td><a class="no_dec" href="#data transformspytorch"><font color=#505050>data transforms <font size=1;>(transform and augment data)</font></font></a></td>
@@ -45,7 +45,8 @@
     <p class="paper_title" onclick="toggleTable('data transforms-PyTorch-details')"><i>Data Transforms</i></p>
     
     
-    <p class="paper_detail"><b> <font color=#404040>data transforms</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; transform and augment data &nbsp; <font color=#D0D0D0></font></p>
+    <p class="paper_detail">transform and augment data &nbsp; <font color=#D0D0D0></font></p>
+    <p class="paper_detail"><b></b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>data transforms</font></b></p>
     <p class="paper_detail"></p>
     
     
@@ -165,7 +166,8 @@ image_trans = trans(image)  # Tensor => Tensor
     <p class="paper_title" onclick="toggleTable('data loader-PyTorch-details')"><i>Data Loader</i></p>
     
     
-    <p class="paper_detail"><b> <font color=#404040>data loader</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; load data &nbsp; <font color=#D0D0D0></font></p>
+    <p class="paper_detail">load data &nbsp; <font color=#D0D0D0></font></p>
+    <p class="paper_detail"><b></b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>data loader</font></b></p>
     <p class="paper_detail"></p>
     
     
@@ -206,7 +208,8 @@ data_loader = DataLoader(dataset, batch_size, shuffle, sampler, num_workers,
     <p class="paper_title" onclick="toggleTable('operation-PyTorch-details')"><i>Operation</i></p>
     
     
-    <p class="paper_detail"><b> <font color=#404040>operation</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; tensor operations &nbsp; <font color=#D0D0D0></font></p>
+    <p class="paper_detail">tensor operations &nbsp; <font color=#D0D0D0></font></p>
+    <p class="paper_detail"><b></b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>operation</font></b></p>
     <p class="paper_detail"></p>
     
     
@@ -519,7 +522,8 @@ y = torch.where(condition, input, output)
     <p class="paper_title" onclick="toggleTable('module-PyTorch-details')"><i>Module</i></p>
     
     
-    <p class="paper_detail"><b> <font color=#404040>module</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; modules to build models &nbsp; <font color=#D0D0D0></font></p>
+    <p class="paper_detail">modules to build models &nbsp; <font color=#D0D0D0></font></p>
+    <p class="paper_detail"><b></b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>module</font></b></p>
     <p class="paper_detail"></p>
     
     
@@ -679,7 +683,8 @@ y = dropout(x)
     <p class="paper_title" onclick="toggleTable('activation function-PyTorch-details')"><i>Activation Function</i></p>
     
     
-    <p class="paper_detail"><b> <font color=#404040>activation function</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; activation functions &nbsp; <font color=#D0D0D0></font></p>
+    <p class="paper_detail">activation functions &nbsp; <font color=#D0D0D0></font></p>
+    <p class="paper_detail"><b></b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>activation function</font></b></p>
     <p class="paper_detail"></p>
     
     
@@ -752,7 +757,8 @@ y = silu(x)
     <p class="paper_title" onclick="toggleTable('optimizer-PyTorch-details')"><i>Optimizer</i></p>
     
     
-    <p class="paper_detail"><b> <font color=#404040>optimizer</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; optimizers &nbsp; <font color=#D0D0D0></font></p>
+    <p class="paper_detail">optimizers &nbsp; <font color=#D0D0D0></font></p>
+    <p class="paper_detail"><b></b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>optimizer</font></b></p>
     <p class="paper_detail"></p>
     
     
@@ -789,7 +795,8 @@ adam_optim = AdamW(params, lr, betas, weight_decay)
     <p class="paper_title" onclick="toggleTable('huggingface-PyTorch-details')"><i>huggingface</i></p>
     
     
-    <p class="paper_detail"><b> <font color=#404040>huggingface</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; huggingface tools &nbsp; <font color=#D0D0D0></font></p>
+    <p class="paper_detail">huggingface tools &nbsp; <font color=#D0D0D0></font></p>
+    <p class="paper_detail"><b></b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>huggingface</font></b></p>
     <p class="paper_detail"></p>
     
     
@@ -827,7 +834,8 @@ snapshot_download(repo_id, repo_type, local_dir, token, max_workers)
     <p class="paper_title" onclick="toggleTable('deepspeed-Distributed Training-details')"><i>DeepSpeed</i></p>
     
     
-    <p class="paper_detail"><b> <font color=#404040>deepspeed</font></b> &nbsp;&nbsp;|&nbsp;&nbsp; deepspeed framework &nbsp; <font color=#D0D0D0></font></p>
+    <p class="paper_detail">deepspeed framework &nbsp; <font color=#D0D0D0></font></p>
+    <p class="paper_detail"><b></b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>deepspeed</font></b></p>
     <p class="paper_detail"></p>
     
     
