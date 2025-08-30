@@ -141,9 +141,9 @@ It introduces a <b>one-step</b> generative framework that learns an <b>average v
 """
 Some observations in experiments:
 <ul>
-    <li> <b>25% of sampling \( r\\neq t \)</b> performs the best; while 0% (standard Flow Matching) performs much worse.
-    <li> <b>A correct JVP</b> is important, i.e., \( \mathrm{jvp}=(v, 0, 1) \).
-    <li> <b>\( u_{\\theta}(z, r, t) \) takes (t, t-r)</b> as the positional embedding performs the best.
+    <li> <b>25% of sampling \\( r\\neq t \\)</b> performs the best; while 0% (standard Flow Matching) performs much worse.
+    <li> <b>A correct JVP</b> is important, i.e., \\( \\mathrm{jvp}=(v, 0, 1) \\).
+    <li> <b>\\( u_{\\theta}(z, r, t) \\) takes (t, t-r)</b> as the positional embedding performs the best.
 </ul>
 """,
 },

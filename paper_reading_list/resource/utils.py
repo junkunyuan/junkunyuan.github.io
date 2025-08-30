@@ -1,7 +1,16 @@
-import re
-import os
+"""
+Utility functions for paper reading list HTML generation.
 
-venue_name_dict = {
+This module provides helper functions for venue name mapping,
+color generation, and figure processing.
+"""
+
+import os
+import re
+from typing import Dict, Iterator, Generator
+
+# Venue abbreviation to full name mapping
+VENUE_NAME_DICT: Dict[str, str] = {
     "AAAI": "AAAI Conference on Artificial Intelligence",
     "arXiv": "arXiv preprint",
     "CVPR": "Conference on Computer Vision and Pattern Recognition",
@@ -22,97 +31,134 @@ venue_name_dict = {
     "TMM": "IEEE Transactions on Multimedia",
 }
 
-def get_venue_all(venue_abbr_date):
+def get_venue_all(venue_abbr_date: str) -> str:
+    """
+    Get the full venue name from abbreviation.
+
+    Args:
+        venue_abbr_date: Venue abbreviation with optional date (e.g., "CVPR 2023")
+
+    Returns:
+        Full venue name or empty string if not found
+    """
     venue_abbr = venue_abbr_date.split(" ", 1)[0]
-    venue_all = venue_name_dict.get(venue_abbr, "")
-    
-    return venue_all
+    return VENUE_NAME_DICT.get(venue_abbr, "")
 
 
-def border_color_generator():
-    colors = ["#ADDEFF","#FFD6AD", "#B2EEC8", "#FFBBCC"]
-    num_color = len(colors)
-    num = 0
+def border_color_generator() -> Generator[str, None, None]:
+    """
+    Generate border colors for paper sections in a cyclic manner.
+
+    Yields:
+        Color hex codes for styling paper sections
+    """
+    colors = ["#ADDEFF", "#FFD6AD", "#B2EEC8", "#FFBBCC"]
+    num_colors = len(colors)
+    index = 0
+
     while True:
-        yield colors[num % num_color]
-        num += 1
+        yield colors[index % num_colors]
+        index += 1
 
-def convert_fig_cap_to_figure(text, name):
-    res = text.split("<pre>", 1)
-    text = res[0]
+def convert_fig_cap_to_figure(text: str, name: str) -> str:
+    """
+    Convert figure markup to HTML figure elements.
 
-    ## Avoid code indent being processed
-    code = ""
-    if len(res) == 2:
-        code = "<pre>" + res[1]
-    
-    lines = text.strip().splitlines()
-    result = []
-    fig_count = 0
-    i = 0
-    path_prefix = f"resource/figs/{name}/{name}-"
+    Processes text containing figure markup in the format:
+    fig: image1.png 300 image2.png 200
+    cap: Figure caption text
+
+    Args:
+        text: Text containing figure markup
+        name: Paper name for constructing image paths
+
+    Returns:
+        HTML string with figure elements
+    """
+    # Split text to avoid processing code blocks
+    parts = text.split("<pre>", 1)
+    content_text = parts[0]
+    code_block = ""
+    if len(parts) == 2:
+        code_block = "<pre>" + parts[1]
+
+    lines = content_text.strip().splitlines()
+    result_lines = []
+    figure_count = 0
+    line_index = 0
+
+    # Build path prefix for images
     path_prefix = os.path.join("resource", "figs", name)
 
-    while i < len(lines):
-        line = lines[i].strip()
+    while line_index < len(lines):
+        line = lines[line_index].strip()
+
         if line.startswith("fig:"):
-            fig_count += 1
-            # Extract image info
-            image_info = re.findall(r"(\S+)\s+(\d+)", line[len("fig:"):])
-            
+            figure_count += 1
+            # Extract image information (filename width pairs)
+            image_matches = re.findall(r"(\S+)\s+(\d+)", line[len("fig:"):])
+
             # Next line should be caption
-            i += 1
-            cap_line = lines[i].strip()
-            caption = cap_line[len("cap:"):].strip()
-            
-            # Build figure block
-            result.append("<figure>")
-            for img, width in image_info:
-                img_path = os.path.join(path_prefix, f"{name}-{img}")
-                result.append(f"<img data-src='{img_path}' width={width}>")
-            result.append("<figcaption>")
-            result.append(f"<b>Figure {fig_count}.</b> {caption}")
-            result.append("</figcaption>")
-            result.append("</figure>")
+            line_index += 1
+            if line_index < len(lines):
+                caption_line = lines[line_index].strip()
+                if caption_line.startswith("cap:"):
+                    caption = caption_line[len("cap:"):].strip()
+
+                    # Build figure HTML
+                    result_lines.append("<figure>")
+                    for img_filename, width in image_matches:
+                        img_path = os.path.join(path_prefix, f"{name}-{img_filename}")
+                        result_lines.append(f"<img data-src='{img_path}' width={width}>")
+                    result_lines.append("<figcaption>")
+                    result_lines.append(f"<b>Figure {figure_count}.</b> {caption}")
+                    result_lines.append("</figcaption>")
+                    result_lines.append("</figure>")
+                else:
+                    # If next line is not a caption, treat current line as regular text
+                    result_lines.append(line)
+                    line_index -= 1  # Process the caption line again as regular text
+            else:
+                # No caption line, treat as regular text
+                result_lines.append(line)
         else:
-            result.append(line)
-        i += 1
-    result_content = "\n".join(result)
+            result_lines.append(line)
 
-    return result_content + code
+        line_index += 1
+
+    return "\n".join(result_lines) + code_block
 
 
-TOP_BUTTON = \
-"""
+# HTML template constants
+TOP_BUTTON: str = """
 <button id="backToTop" title="back to top">↑</button>
 <script>
     const button = document.getElementById("backToTop");
     window.addEventListener("scroll", () => {
-    if (document.documentElement.scrollTop > 300) {
-        button.style.display = "block";
-    } else {
-        button.style.display = "none";
-    }
+        if (document.documentElement.scrollTop > 300) {
+            button.style.display = "block";
+        } else {
+            button.style.display = "none";
+        }
     });
 
     function updateButtonPosition() {
-    const bodyRect = document.body.getBoundingClientRect();
-    const windowWidth = window.innerWidth;
-    const rightOffset = Math.max((windowWidth - bodyRect.width) / 2, 10);
-    button.style.right = rightOffset + "px";
+        const bodyRect = document.body.getBoundingClientRect();
+        const windowWidth = window.innerWidth;
+        const rightOffset = Math.max((windowWidth - bodyRect.width) / 2, 10);
+        button.style.right = rightOffset + "px";
     }
 
     window.addEventListener("resize", updateButtonPosition);
     window.addEventListener("load", updateButtonPosition);
 
     button.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 </script>
 """
 
-COPY_BUTTON = \
-"""
+COPY_BUTTON: str = """
 <script>
     function copy(elementId) {
         const codeElement = document.getElementById(elementId);
@@ -120,7 +166,7 @@ COPY_BUTTON = \
         range.selectNode(codeElement);
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(range);
-        
+
         try {
             const successful = document.execCommand('copy');
             const btn = event.target;
@@ -133,7 +179,7 @@ COPY_BUTTON = \
         } catch (err) {
             console.error('复制失败:', err);
         }
-        
+
         window.getSelection().removeAllRanges();
     }
 </script>

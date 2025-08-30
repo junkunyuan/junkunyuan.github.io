@@ -1,12 +1,21 @@
+"""
+Main index page generator for the personal website.
+
+This module generates the main index.html page with biography,
+publications, and professional service information.
+"""
+
 from datetime import datetime
+from typing import List, Dict, Any
+
 from resource.pub_list import PAPERS
-from paper_reading_list.resource.utils import get_venue_all, border_color_generator
-from paper_reading_list.resource.utils import TOP_BUTTON
+from paper_reading_list.resource.utils import get_venue_all, border_color_generator, TOP_BUTTON
 
-time_now = datetime.now().strftime('%B %d, %Y at %H:%M')
+# Generate current timestamp
+TIME_NOW: str = datetime.now().strftime('%B %d, %Y at %H:%M')
 
-PREFIX = \
-f"""
+# HTML template constants
+PREFIX: str = f"""
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +34,7 @@ f"""
                     <p>Research Scientist, &nbsp;Hunyuan Multimodal Model Group&nbsp;&nbsp;@&nbsp;&nbsp;Tencent</p>
                     <p>yuanjk0921@outlook.com</p>
                     <p>work and live in Shenzhen, China</p>
-                    <p><font color=#D0D0D0>Last updated on {time_now} (UTC+8)</font></p>
+                    <p><font color=#D0D0D0>Last updated on {TIME_NOW} (UTC+8)</font></p>
                     <p><font color="D04040">I am currently on the job market and welcome potential opportunities. Please feel free to reach out to me.</p>
                 </td>
                 <td style="padding-right: 120px; padding-top: 10px;">
@@ -34,6 +43,7 @@ f"""
             </tr>
         </tbody>
     </table>
+</head>
 <body>
 """
 BIOGRAPHY = \
@@ -79,58 +89,98 @@ SUFFIX = \
 """
 
 
-def build_paper(papers):
-    content = \
+def build_paper(papers: List[Dict[str, Any]]) -> str:
     """
+    Build HTML content for publications section.
+
+    Args:
+        papers: List of paper dictionaries containing publication details
+
+    Returns:
+        HTML string containing the publications section
+    """
+    content = """
     <h2>Publications</h2>
     <p class="larger"><a href="https://scholar.google.com/citations?user=j3iFVPsAAAAJ">Google Scholar Profile</a></p>
     """
-    item_content = ""
-    color_year = ""
-    color_bar_generator = border_color_generator()
-    for paper in papers:
-        venue = f"""<b><font color=#404040>{paper["venue"]}</font></b>"""
-        paper_ = f"""<a href="{paper["pdf_url"]}">paper</a>"""
-        venue_all = get_venue_all(paper["venue"])
-        code = f"""&nbsp;&nbsp;|&nbsp;&nbsp; <a href="{paper['code_url']}">code</a>""" if len(paper['code_url']) > 0 else ""
-        comment = f"""<p class="paper_detail"><font color=#D04040>{paper["comment"]}</font></p>""" if "comment" in paper else ""
-        date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%b %d, %Y")
 
+    item_content = ""
+    current_year = ""
+    color_bar_gen = border_color_generator()
+
+    for paper in papers:
+        # Format venue and links
+        venue = f"""<b><font color=#404040>{paper["venue"]}</font></b>"""
+        paper_link = f"""<a href="{paper["pdf_url"]}">paper</a>"""
+        venue_full = get_venue_all(paper["venue"])
+
+        code_link = ""
+        if paper.get('code_url', '').strip():
+            code_link = f"""&nbsp;&nbsp;|&nbsp;&nbsp; <a href="{paper['code_url']}">code</a>"""
+
+        comment_html = ""
+        if "comment" in paper and paper["comment"]:
+            comment_html = f"""<p class="paper_detail"><font color=#D04040>{paper["comment"]}</font></p>"""
+
+        # Parse and format date
+        try:
+            date_obj = datetime.strptime(paper["date"], "%Y%m%d")
+            date_formatted = date_obj.strftime("%b %d, %Y")
+        except ValueError:
+            date_formatted = paper["date"]
+
+        # Format author with highlights
         author = paper["author"].replace("Junkun Yuan", "<b><font color=#404040>Junkun Yuan</font></b>")
         author = author.replace("**", "<sup>&#10035</sup>")
         author = author.replace("##", "<sup>&#9993</sup>")
 
-        if paper["date"][:4] != color_year:
-            color_bar = next(color_bar_generator)
-            color_year = paper["date"][:4]
-        
-        item_content += \
-        f"""
+        # Update color bar for new year
+        paper_year = paper["date"][:4]
+        if paper_year != current_year:
+            color_bar = next(color_bar_gen)
+            current_year = paper_year
+
+        # Build paper HTML
+        item_content += f"""
         <p class="little_split"></p>
         <div style="border-left: 14px solid {color_bar}; padding-left: 10px">
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>{paper["title"]}</i></p>
         <p class="paper_detail">{author}</p>
-        <p class="paper_detail">{date} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#D0D0D0>{venue_all}</font></p>
-        <p class="paper_detail">{paper_}{code}</p>
-        {comment}
+        <p class="paper_detail">{date_formatted} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#D0D0D0>{venue_full}</font></p>
+        <p class="paper_detail">{paper_link}{code_link}</p>
+        {comment_html}
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         """
-    content += item_content
-    return content
+
+    return content + item_content
+
+
+def main() -> None:
+    """Main function to generate the index.html page."""
+    print("Generating main index page...")
+
+    try:
+        # Build paper contents
+        paper_content = build_paper(PAPERS)
+
+        # Combine all content sections
+        html_content = PREFIX + BIOGRAPHY + paper_content + SERVICE + TOP_BUTTON + SUFFIX
+
+        # Write to file
+        html_file = "index.html"
+        with open(html_file, "w", encoding="utf-8-sig") as f:
+            f.write(html_content)
+
+        print(f"Successfully generated {html_file}")
+
+    except Exception as e:
+        print(f"Error generating index page: {e}")
+        raise
 
 
 if __name__ == "__main__":
-    ## Build paper contents
-    paper_content = build_paper(PAPERS)
-
-    ## Build html contents
-    html_content = PREFIX + BIOGRAPHY + paper_content + SERVICE + TOP_BUTTON + SUFFIX
-
-    ## Write contents to html
-    html_file = "index.html"
-    with open(html_file, "w", encoding="utf-8-sig") as f:
-        f.write(html_content)
+    main()
     
