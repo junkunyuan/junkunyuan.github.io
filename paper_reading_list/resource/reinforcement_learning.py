@@ -25,6 +25,27 @@ LIST["papers"] = [
 # """,
 # },
 {
+"title": "Introduction to Reinforcement Learning",
+"author": "Richard S. Sutton, Andrew G. Barto",
+"organization": "University of Massachusetts Amherst, Carnegie Mellon University",
+"date": "19980101",
+"venue": "Cambridge 1998",
+"pdf_url": "https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf",
+"code_url": "",
+"name": "RL Introduction",
+"comment": "It systematizes the foundations of RL by unifying dynamic programming, Monte Carlo methods, and temporal-difference learning into a coherent framework, establishing the theoretical and algorithmic basis for modern RL research. It has over 6,000 citations (as of Aug 2025).",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "Markov Decision Process.ipynb",
+"info": "**",
+"summary": 
+"""
+It formalizes the core concepts, algorithms, and theoretical foundations of RL, establishing it as a coherent and accessible discipline.
+""",
+"details": 
+"""
+""",
+},
+{
 "title": "An Empirical Evaluation of Thompson Sampling",
 "author": "Olivier Capelle, Lihong Li",
 "organization": "Yahoo! Research",
