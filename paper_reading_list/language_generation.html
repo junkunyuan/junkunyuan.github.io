@@ -1,58 +1,64 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="resource/html.css" type="text/css">
-<link rel="shortcut icon" href="resource/my_photo.jpg">
-<title>Paper Reading List</title>
-<meta name="description" content="Paper Reading List">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div id="layout-content" style="margin-top:25px">
+    <link rel="stylesheet" href="resource/html.css" type="text/css">
+    <link rel="shortcut icon" href="resource/my_photo.jpg">
+    <title>Paper Reading List</title>
+    <meta name="description" content="Paper Reading List">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div id="layout-content" style="margin-top:25px">
+</head>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
-            <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css" rel="stylesheet">
-            <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-bash.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-            <body>
+        <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-bash.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <body>
 
 <h1 id="top">Language Generation</h1>
 <p class="larger"><b>Generate text.</b></p>
 <p class="larger"><b><font color='#D93053'>1</font> papers</b></p>
 <p>Written by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on August 18, 2025 at 13:05 (UTC+8).</font></p>
-<hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed chronologically, some important or inspiring works are highlighted in <font color="#D04040">red</font>.</p><ul><li><a class="no_dec larger low_margin" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models</b></a></li><p><a class="no_dec" href="#Transformerfoundation algorithms & models"><font color=#505050>Transformer</font></a></p><br></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
-            <p class="little_split" id='Transformerfoundation algorithms & models'></p>
-            <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
-            <div style="height: 0.3em;"></div>
-            <p class="paper_title" onclick="toggleTable('Transformer-Foundation Algorithms & Models-details')"><i>Attention Is All You Need</i></p>
-            <p class="paper_detail">Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin</p>
-            <p class="paper_detail">Google Brain, Google Research, University of Toronto</p>
-            <p class="paper_detail"><b>Jun 12, 2017 &nbsp; <font color=#404040>Transformer</font></b>  &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://arxiv.org/pdf/1706.03762">NeurIPS 2017</a> &nbsp; <font color=#D0D0D0>Advances in Neural Information Processing Systems</font></p>
-            
-            
-            <div id='Transformer-Foundation Algorithms & Models-details' class="info_detail">
-                <hr class="dashed">
-                <p><font color=#202020>
+<p><font color=#B0B0B0>Last updated on September 04, 2025 at 14:59 (UTC+8).</font></p>
+<hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed in reverse chronological order. Some highly-impact or inspiring works are highlighted in <font color="#D04040">red</font>.</p><ul><li><a class="no_dec larger low_margin" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models</b></a></li><p><table class="center"><tr>
+<tr>
+<td><a class="no_dec" href="#Transformerfoundation algorithms & models"><font color=#D04040>Transformer <font size=1;>(NeurIPS 2017)</font></font></a></td>
+</tr>
+</table></p><br></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
+    <p class="little_split" id='Transformerfoundation algorithms & models'></p>
+    <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+    <div style="height: 0.3em;"></div>
+    <p class="paper_title" onclick="toggleTable('Transformer-Foundation Algorithms & Models-details')"><i>Attention Is All You Need</i></p>
+    <p class="paper_detail">Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin</p>
+    <p class="paper_detail">Google Brain, Google Research, University of Toronto</p>
+    <p class="paper_detail">NeurIPS 2017 &nbsp; <font color=#D0D0D0>Advances in Neural Information Processing Systems</font></p>
+    <p class="paper_detail"><b>Jun 12, 2017</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#D04040>Transformer</font></b></p>
+    <p class="paper_detail"><a href="https://arxiv.org/pdf/1706.03762">paper</a></p>
+    <p class="paper_detail"><font color=#D04040>It revolutionized deep learning by introducing the Transformer architecture, which replaced recurrence with self-attention, enabling massively parallel training and becoming the foundational model for virtually all modern large-scale language systems. It has 192,000 citations (as of Sep, 2025).</font></p>
+    
+    <div id='Transformer-Foundation Algorithms & Models-details' class="info_detail">
+        <hr class="dashed">
+        <p><font color=#202020>
+It introduces sequence transduction architecture <b>relying solely on multi-head self-attention</b>, dramatically reducing training time.
 </font></p>
-                 
-                <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/transformer.ipynb" class="note">(see notes in jupyter)</a></p>
-                
-                <p>
+        
+        <p><a href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/transformer.ipynb" class="note">(see notes in jupyter)</a></p>
+        
+        <p>
 <ul>
     <li>
 </ul>
 </p>
-            </div>
-            <div style="height: 0.05em;"></div>
-            </div>
-            <p class="little_split"></p>
-            
+    </div>
+    <div style="height: 0.05em;"></div>
+    </div>
+    <p class="little_split"></p>
+    
     <script>
         function toggleTable(tableId) {
             const container = document.getElementById(tableId);
-            const button = container.previousElementSibling;
             const isVisible = window.getComputedStyle(container).display !== 'none';
             if (!isVisible) {
                 const images = container.querySelectorAll('img');
@@ -68,27 +74,26 @@
 <script>
     const button = document.getElementById("backToTop");
     window.addEventListener("scroll", () => {
-    if (document.documentElement.scrollTop > 300) {
-        button.style.display = "block";
-    } else {
-        button.style.display = "none";
-    }
+        if (document.documentElement.scrollTop > 300) {
+            button.style.display = "block";
+        } else {
+            button.style.display = "none";
+        }
     });
 
     function updateButtonPosition() {
-    const bodyRect = document.body.getBoundingClientRect();
-    const windowWidth = window.innerWidth;
-    const rightOffset = Math.max((windowWidth - bodyRect.width) / 2, 10);
-    button.style.right = rightOffset + "px";
+        const bodyRect = document.body.getBoundingClientRect();
+        const windowWidth = window.innerWidth;
+        const rightOffset = Math.max((windowWidth - bodyRect.width) / 2, 10);
+        button.style.right = rightOffset + "px";
     }
 
     window.addEventListener("resize", updateButtonPosition);
     window.addEventListener("load", updateButtonPosition);
 
     button.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 </script>
-
 </body>
 </html>
