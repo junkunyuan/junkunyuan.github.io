@@ -4,6 +4,7 @@ PAPERS = [
 "author": "Hunyuan Multimodal Model Group at Tencent (<b><font color=#404040>as a group member</font></b>)",
 "date": "20250520",
 "venue": "arXiv 2025",
+"name": "Hunyuan-Game",
 "pdf_url": "https://arxiv.org/pdf/2505.14135",
 "code_url": "https://github.com/Tencent-Hunyuan/Hunyuan-GameCraft-1.0",
 "comment": ""
@@ -13,6 +14,7 @@ PAPERS = [
 "author": "Hunyuan Multimodal Model Group at Tencent (<b><font color=#404040>as a group member</font></b>)",
 "date": "20241203",
 "venue": "arXiv 2024",
+"name": "HunyuanVideo",
 "pdf_url": "https://arxiv.org/pdf/2412.03603",
 "code_url": "https://github.com/Tencent-Hunyuan/HunyuanVideo",
 "comment": "It is an open-source large-scale video generation model with 13B parameters. It has over 300 citations and over 10,000 GitHub stars (as of Aug 2025)."
@@ -22,6 +24,7 @@ PAPERS = [
 "author": "Qihua Chen**, Yue Ma**, Hongfa Wang**, Junkun Yuan**##, Wenzhe Zhao, Qi Tian, Hongmei Wang, Shaobo Min, Qifeng Chen##, and Wei Liu",
 "date": "20240902",
 "venue": "AAAI 2025",
+"name": "Follow-Your-Canvas",
 "pdf_url": "https://arxiv.org/pdf/2409.01055",
 "code_url": "https://github.com/mayuelala/FollowYourCanvas"
 },
@@ -30,6 +33,7 @@ PAPERS = [
 "author": "Yue Ma**, Hongyu Liu**, Hongfa Wang**, Heng Pan**, Yingqing He, Junkun Yuan, Ailing Zeng, Chengfei Cai, Heung-Yeung Shum, Wei Liu##, and Qifeng Chen##",
 "date": "20240604",
 "venue": "SIGGRAPH-Asia 2024",
+"name": "Follow-Your-Emoji",
 "pdf_url": "https://arxiv.org/pdf/2406.01900",
 "code_url": "https://github.com/mayuelala/FollowYourEmoji"
 },
@@ -38,6 +42,7 @@ PAPERS = [
 "author": "Qiaowei Miao, Junkun Yuan, Shengyu Zhang, Fei Wu, and Kun Kuang##",
 "date": "20240414",
 "venue": "ICASSP 2024",
+"name": "Domaindiff",
 "pdf_url": "https://ieeexplore.ieee.org/iel7/10445798/10445803/10446788.pdf",
 "code_url": "",
 "comment": ""
@@ -47,6 +52,7 @@ PAPERS = [
 "author": "Ziwei Niu, Junkun Yuan, Xu Ma, Yingying Xu, Jing Liu, Yen-Wei Chen, Ruofeng Tong, and Lanfen Lin##",
 "date": "20240101",
 "venue": "TMM 2023",
+"name": "KDDRL",
 "pdf_url": "https://dl.acm.org/doi/10.1109/TMM.2023.3263549",
 "code_url": "",
 "comment": ""
@@ -57,6 +63,7 @@ PAPERS = [
 "date": "20231031",
 "venue": "NeurIPS 2023",
 "pdf_url": "https://arxiv.org/pdf/2310.20695",
+"name": "HAP",
 "code_url": "https://github.com/junkunyuan/HAP"
 },
 {
@@ -65,6 +72,7 @@ PAPERS = [
 "date": "20231002",
 "venue": "ICCV 2023",
 "pdf_url": "https://openaccess.thecvf.com/content/ICCV2023/papers/Zhang_MAP_Towards_Balanced_Generalization_of_IID_and_OOD_through_Model-Agnostic_ICCV_2023_paper.pdf",
+"name": "MAP",
 "code_url": "https://github.com/remiMZ/MAP-ICCV23"
 },
 {
@@ -73,6 +81,7 @@ PAPERS = [
 "date": "20230628",
 "venue": "KDD 2024",
 "pdf_url": "https://arxiv.org/pdf/2306.15955",
+"name": "NPT",
 "code_url": ""
 },
 {
@@ -81,6 +90,7 @@ PAPERS = [
 "date": "20230525",
 "venue": "KDD 2023",
 "pdf_url": "https://arxiv.org/pdf/2305.15889",
+"name": "HTCL",
 "code_url": "https://github.com/YunzeTong/HTCL"
 },
 {
@@ -89,6 +99,7 @@ PAPERS = [
 "date": "20230424",
 "venue": "ICCV 2023",
 "pdf_url": "https://arxiv.org/pdf/2304.11862",
+"name": "CAM",
 "code_url": ""
 },
 {
@@ -97,6 +108,7 @@ PAPERS = [
 "date": "20230330",
 "venue": "IJCV 2024",
 "pdf_url": "https://arxiv.org/pdf/2303.17169",
+"name": "MPL",
 "code_url": ""
 },
 {
@@ -105,6 +117,7 @@ PAPERS = [
 "date": "20230330",
 "venue": "ICCV 2023",
 "pdf_url": "https://arxiv.org/pdf/2303.17169",
+"name": "MPL",
 "code_url": ""
 },
 {
@@ -113,6 +126,7 @@ PAPERS = [
 "date": "20221117",
 "venue": "TMLR 2023",
 "pdf_url": "https://arxiv.org/pdf/2211.09799",
+"name": "CAE v2",
 "code_url": "https://github.com/Atten4Vis/CAE"
 },
 {
@@ -121,6 +135,7 @@ PAPERS = [
 "date": "20220807",
 "venue": "MM 2022",
 "pdf_url": "https://arxiv.org/pdf/2208.03644",
+"name": "CEG",
 "code_url": "https://github.com/junkunyuan/CEG"
 },
 {
@@ -128,6 +143,7 @@ PAPERS = [
 "author": "Xu Ma, Junkun Yuan, Yen-Wei Chen, Ruofeng Tong, and Lanfen Lin##",
 "date": "20220227",
 "venue": "Neurocomputing 2022",
+"name": "ACDA",
 "pdf_url": "https://arxiv.org/pdf/2202.13310",
 "code_url": "",
 "comment": ""
@@ -138,6 +154,7 @@ PAPERS = [
 "date": "20211002",
 "venue": "IJCV 2022",
 "pdf_url": "https://arxiv.org/pdf/2110.00726",
+"name": "DSBF",
 "code_url": "https://github.com/junkunyuan/DSBF"
 },
 {
@@ -146,6 +163,7 @@ PAPERS = [
 "date": "20211013",
 "venue": "TKDE 2023",
 "pdf_url": "https://arxiv.org/pdf/2110.06736",
+"name": "CSAC",
 "code_url": "https://github.com/junkunyuan/CSAC"
 },
 {
@@ -154,6 +172,7 @@ PAPERS = [
 "date": "20211004",
 "venue": "TKDD 2023",
 "pdf_url": "https://arxiv.org/pdf/2110.01438",
+"name": "DSBF",
 "code_url": "https://github.com/junkunyuan/DSBF",
 "comment": ""
 },
@@ -163,6 +182,7 @@ PAPERS = [
 "date": "20210713",
 "venue": "TKDD 2022",
 "pdf_url": "https://arxiv.org/pdf/2107.05884",
+"name": "AutoIV",
 "code_url": "https://github.com/junkunyuan/AutoIV",
 "comment": ""
 },
@@ -171,6 +191,7 @@ PAPERS = [
 "author": "Junkun Yuan, Shaofang Zhou, Lanfen Lin##, Feng Wang, and Jia Cui",
 "date": "20200829",
 "venue": "ECAI 2020",
+"name": "GAPGAN",
 "pdf_url": "https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA200388",
 "code_url": "",
 "comment": ""
@@ -181,6 +202,7 @@ PAPERS = [
 "date": "20200612",
 "venue": "TKDE 2023",
 "pdf_url": "https://arxiv.org/pdf/2006.07040",
+"name": "DeR-CFR",
 "code_url": "https://github.com/anpwu/DeR-CFR",
 "comment": ""
 },
@@ -190,6 +212,7 @@ PAPERS = [
 "date": "20190321",
 "venue": "TKDE 2021",
 "pdf_url": "https://arxiv.org/pdf/1903.09022",
+"name": "SGNs",
 "code_url": "https://github.com/GalateaWang/SGNs-master",
 "comment": ""
 },

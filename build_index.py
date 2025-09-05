@@ -60,7 +60,7 @@ BIOGRAPHY = \
     I received my Ph.D. degree in Computer Science from Zhejiang University (2019 — 2024), co-supervised by professors of <a href="https://scholar.google.com/citations?user=FOsNiMQAAAAJ">Kun Kuang</a>, <a href="https://person.zju.edu.cn/0096005">Lanfen Lin</a>, and 
   <a href="https://scholar.google.com/citations?user=XJLn4MYAAAAJ">Fei Wu</a>. I received my B.S. degree in Automation from Zhejiang University of Technology (2015 — 2019), co-supervised by professors of <a href="https://scholar.google.com.hk/citations?user=smi7bpoAAAAJ&hl=zh-CN&oi=ao">Qi Xuan</a> and <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=CnBn6FwAAAAJ">Li Yu</a>.<br><br>
 
-  I have been fortunate to work closely with some friends such as <a href="https://scholar.google.com.hk/citations?user=F5P_8NkAAAAJ&hl=zh-CN&oi=ao">Defang Chen</a>, <a href="https://scholar.google.com.hk/citations?user=kwBR1ygAAAAJ&hl=zh-CN&oi=ao">Yue Ma</a>, their insights also profoundly shape my approach to research.
+  I have been fortunate to work closely with some friends such as <a href="https://scholar.google.com.hk/citations?user=F5P_8NkAAAAJ&hl=zh-CN&oi=ao">Defang Chen</a> and <a href="https://scholar.google.com.hk/citations?user=kwBR1ygAAAAJ&hl=zh-CN&oi=ao">Yue Ma</a>, their insights also profoundly shape my approach to research.
 </p>
 """
 SERVICE = \
@@ -88,6 +88,34 @@ SUFFIX = \
 </html>
 """
 
+def build_paper_index(papers: List[Dict[str, Any]]) -> str:
+    """
+    Build a compact, beautiful index of all papers with anchor links.
+    Each entry: [name] (venue_abbr, year)
+    """
+    # Assign anchor ids for each paper
+    index_items = []
+    for idx, paper in enumerate(papers):
+        anchor_id = f"paper{idx+1}"
+        # venue_abbr and year
+        try:
+            venue_abbr, venue_year = paper["venue"].rsplit(" ", 1)
+        except Exception:
+            venue_abbr, venue_year = paper["venue"], ""
+        name = paper["name"]
+        # Use a short, tight style
+        index_items.append(
+            f'<a href="#{anchor_id}" class="no_dec"><b>{name}</b> <font style="color:#888;font-size:12px;">({venue_abbr} {venue_year})</font></a>'
+        )
+    # Arrange in a compact multi-row flexbox
+    html = """
+    <div style="margin: 0.5em 0 1.2em 0;">
+      <div style="display: flex; flex-wrap: wrap; gap: 0.7em 1.5em; align-items: center; font-size: 14px;">
+        {}
+      </div>
+    </div>
+    """.format("\n        ".join(index_items))
+    return html
 
 def build_paper(papers: List[Dict[str, Any]]) -> str:
     """
@@ -103,14 +131,21 @@ def build_paper(papers: List[Dict[str, Any]]) -> str:
     <h2>Publications</h2>
     <p class="larger"><a href="https://scholar.google.com/citations?user=j3iFVPsAAAAJ">Google Scholar Profile</a></p>
     """
+    # Add compact index below Google Scholar Profile
+    content += build_paper_index(papers)
 
     item_content = ""
     current_year = ""
     color_bar_gen = border_color_generator()
 
-    for paper in papers:
+    for idx, paper in enumerate(papers):
         # Format venue and links
-        venue = f"""<b><font color=#404040>{paper["venue"]}</font></b>"""
+        try:
+            [venue_name, venue_date] = paper["venue"].rsplit(" ", 1)
+        except Exception:
+            venue_name, venue_date = paper["venue"], ""
+        venue = f"""(<b><font color=#404040>{venue_name}</font></b>), <b>{venue_date}</b>"""
+        name = f"""<b><font color=#404040>{paper["name"]}</font></b>"""
         paper_link = f"""<a href="{paper["pdf_url"]}">paper</a>"""
         venue_full = get_venue_all(paper["venue"])
 
@@ -140,14 +175,16 @@ def build_paper(papers: List[Dict[str, Any]]) -> str:
             color_bar = next(color_bar_gen)
             current_year = paper_year
 
-        # Build paper HTML
+        # Build paper HTML, add anchor for index
+        anchor_id = f"paper{idx+1}"
         item_content += f"""
         <p class="little_split"></p>
-        <div style="border-left: 14px solid {color_bar}; padding-left: 10px">
+        <div id="{anchor_id}" style="border-left: 14px solid {color_bar}; padding-left: 10px">
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>{paper["title"]}</i></p>
         <p class="paper_detail">{author}</p>
-        <p class="paper_detail">{date_formatted} &nbsp;&nbsp;|&nbsp;&nbsp; {venue} &nbsp; <font color=#D0D0D0>{venue_full}</font></p>
+        <p class="paper_detail">{venue_full} {venue}</p>
+        <p class="paper_detail"><b><font color=#404040>{date_formatted}</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; {name}</p>
         <p class="paper_detail">{paper_link}{code_link}</p>
         {comment_html}
         <div style="height: 0.05em;"></div>
@@ -183,4 +220,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-    

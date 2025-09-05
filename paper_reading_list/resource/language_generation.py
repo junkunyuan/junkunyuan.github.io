@@ -2,8 +2,49 @@ LIST = dict()
 LIST["file"] = "language_generation.html"
 LIST["title"] = "Language Generation"
 LIST["description"] = "Generate text."
-LIST["categories"] = ["Foundation Algorithms & Models"]
+LIST["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning"]
 LIST["papers"] = [
+# {
+# "title": "",
+# "author": "",
+# "organization": "",
+# "date": "",
+# "venue": "",
+# "pdf_url": "",
+# "code_url": "",
+# "name": "",
+# "comment": "",
+# "category": "",
+# "jupyter_notes": "",
+# "info": "",
+# "summary": 
+# """
+# """,
+# "details": 
+# """
+# """,
+# },
+{
+"title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+"author": "Rafael Rafailov, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher D. Manning, Chelsea Finn",
+"organization": "Stanford University, CZ Biohub",
+"date": "20230529",
+"venue": "NeurIPS 2023",
+"pdf_url": "https://arxiv.org/pdf/2305.18290",
+"code_url": "",
+"name": "DPO",
+"comment": "It offers a simple, RL-free recipe to turn human preference data into aligned language models with equal or better performance than RLHF while eliminating reward-model training and heavy hyper-parameter tuning overhead. It has over 5,000 citations (as of Sep, 2025).",
+"category": "Reinforcement Learning",
+"jupyter_notes": "",
+"info": "**",
+"summary": 
+"""
+It introduces DPO, a <b>single-stage, RL-free</b> algorithm that directly optimizes a language model on preference data by reparameterizing the Bradley-Terry objective into a simple classification loss.
+""",
+"details": 
+"""
+""",
+},
 {
 "title": "Attention Is All You Need",
 "author": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin",
