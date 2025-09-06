@@ -10,6 +10,7 @@ from typing import List, Dict, Any
 
 from resource.pub_list import PAPERS
 from paper_reading_list.resource.utils import get_venue_all, border_color_generator, TOP_BUTTON
+from paper_reading_list.build_html import build_paper_index
 
 # Generate current timestamp
 TIME_NOW: str = datetime.now().strftime('%B %d, %Y at %H:%M')
@@ -88,34 +89,6 @@ SUFFIX = \
 </html>
 """
 
-def build_paper_index(papers: List[Dict[str, Any]]) -> str:
-    """
-    Build a compact, beautiful index of all papers with anchor links.
-    Each entry: [name] (venue_abbr, year)
-    """
-    # Assign anchor ids for each paper
-    index_items = []
-    for idx, paper in enumerate(papers):
-        anchor_id = f"paper{idx+1}"
-        # venue_abbr and year
-        try:
-            venue_abbr, venue_year = paper["venue"].rsplit(" ", 1)
-        except Exception:
-            venue_abbr, venue_year = paper["venue"], ""
-        name = paper["name"]
-        # Use a short, tight style
-        index_items.append(
-            f'<a href="#{anchor_id}" class="no_dec"><b>{name}</b> <font style="color:#888;font-size:12px;">({venue_abbr} {venue_year})</font></a>'
-        )
-    # Arrange in a compact multi-row flexbox
-    html = """
-    <div style="margin: 0.5em 0 1.2em 0;">
-      <div style="display: flex; flex-wrap: wrap; gap: 0.7em 1.5em; align-items: center; font-size: 14px;">
-        {}
-      </div>
-    </div>
-    """.format("\n        ".join(index_items))
-    return html
 
 def build_paper(papers: List[Dict[str, Any]]) -> str:
     """
@@ -132,7 +105,7 @@ def build_paper(papers: List[Dict[str, Any]]) -> str:
     <p class="larger"><a href="https://scholar.google.com/citations?user=j3iFVPsAAAAJ">Google Scholar Profile</a></p>
     """
     # Add compact index below Google Scholar Profile
-    content += build_paper_index(papers)
+    content += build_paper_index(papers, "Publications")
 
     item_content = ""
     current_year = ""
@@ -151,7 +124,7 @@ def build_paper(papers: List[Dict[str, Any]]) -> str:
 
         code_link = ""
         if paper.get('code_url', '').strip():
-            code_link = f"""&nbsp;&nbsp;|&nbsp;&nbsp; <a href="{paper['code_url']}">code</a>"""
+            code_link = f""" &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="{paper['code_url']}">code</a>"""
 
         comment_html = ""
         if "comment" in paper and paper["comment"]:
@@ -179,7 +152,7 @@ def build_paper(papers: List[Dict[str, Any]]) -> str:
         anchor_id = f"paper{idx+1}"
         item_content += f"""
         <p class="little_split"></p>
-        <div id="{anchor_id}" style="border-left: 14px solid {color_bar}; padding-left: 10px">
+        <div id="{anchor_id}" style="border-left: 16px solid {color_bar}; padding-left: 10px">
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>{paper["title"]}</i></p>
         <p class="paper_detail">{author}</p>

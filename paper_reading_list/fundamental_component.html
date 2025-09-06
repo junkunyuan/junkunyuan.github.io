@@ -21,18 +21,20 @@
 <p class="larger"><b><font color='#D93053'>5</font> papers</b></p>
 <p>Written by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on September 04, 2025 at 20:30 (UTC+8).</font></p>
-<hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed in reverse chronological order. Some highly-impact or inspiring works are highlighted in <font color="#D04040">red</font>.</p><ul><li><a class="no_dec larger low_margin" id="Normalization" href="#Normalization-table"><b>Normalization</b></a></li><p><table class="center"><tr>
-<tr>
-<td><a class="no_dec" href="#RMS Normalizationnormalization"><font color=#D04040>RMS Normalization <font size=1;>(NeurIPS 2019)</font></font></a></td>
-<td><a class="no_dec" href="#Group Normalizationnormalization"><font color=#D04040>Group Normalization <font size=1;>(ECCV 2018)</font></font></a></td>
-<td><a class="no_dec" href="#Instance Normalizationnormalization"><font color=#D04040>Instance Normalization <font size=1;>(arXiv 2016)</font></font></a></td>
-<td><a class="no_dec" href="#Layer Normalizationnormalization"><font color=#D04040>Layer Normalization <font size=1;>(arXiv 2016)</font></font></a></td>
-<td><a class="no_dec" href="#Batch Normalizationnormalization"><font color=#D04040>Batch Normalization <font size=1;>(ICML 2015)</font></font></a></td>
-</tr>
-</table></p><br></ul><h2 id="Normalization-table"><a class="no_dec" href="#Normalization">Normalization</a></h2>
+<p><font color=#B0B0B0>Last updated on September 06, 2025 at 12:55 (UTC+8).</font></p>
+<hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed in reverse chronological order. Some highly-impact or inspiring works are highlighted in <font color="#D04040">red</font>.</p><ul><li><a class="no_dec larger low_margin" id="Normalization" href="#Normalization-table"><b>Normalization</b></a></li>
+    <div style="margin: 0.5em 0 1.2em 0;">
+      <div style="display: flex; flex-wrap: wrap; gap: 0.7em 1.5em; align-items: center; font-size: 14px;">
+        <a href="#RMS Normalizationnormalization" class="no_dec"><font color=#D04040><b>RMS Normalization</b> <font style="color:#888;font-size:12px;">(NeurIPS 2019)</font></font></a>
+        <a href="#Group Normalizationnormalization" class="no_dec"><font color=#D04040><b>Group Normalization</b> <font style="color:#888;font-size:12px;">(ECCV 2018)</font></font></a>
+        <a href="#Instance Normalizationnormalization" class="no_dec"><font color=#D04040><b>Instance Normalization</b> <font style="color:#888;font-size:12px;">(arXiv 2016)</font></font></a>
+        <a href="#Layer Normalizationnormalization" class="no_dec"><font color=#D04040><b>Layer Normalization</b> <font style="color:#888;font-size:12px;">(arXiv 2016)</font></font></a>
+        <a href="#Batch Normalizationnormalization" class="no_dec"><font color=#D04040><b>Batch Normalization</b> <font style="color:#888;font-size:12px;">(ICML 2015)</font></font></a>
+      </div>
+    </div>
+    <br></ul><h2 id="Normalization-table"><a class="no_dec" href="#Normalization">Normalization</a></h2>
     <p class="little_split" id='RMS Normalizationnormalization'></p>
-    <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+    <div style="border-left: 16px solid #9ACAF0; padding-left: 10px">
     <div style="height: 0.3em;"></div>
     <p class="paper_title" onclick="toggleTable('RMS Normalization-Normalization-details')"><i>Root Mean Square Layer Normalization</i></p>
     <p class="paper_detail">Biao Zhang, Rico Sennrich</p>
@@ -93,7 +95,7 @@ print(torch.allclose(custom_rmsn(x), torch_rmsn(x)))
     <p class="little_split"></p>
     
     <p class="little_split" id='Group Normalizationnormalization'></p>
-    <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+    <div style="border-left: 16px solid #9ACAF0; padding-left: 10px">
     <div style="height: 0.3em;"></div>
     <p class="paper_title" onclick="toggleTable('Group Normalization-Normalization-details')"><i>Group Normalization</i></p>
     <p class="paper_detail">Yuxin Wu, Kaiming He</p>
@@ -163,7 +165,7 @@ if __name__ == "__main__":
     <p class="little_split"></p>
     
     <p class="little_split" id='Instance Normalizationnormalization'></p>
-    <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+    <div style="border-left: 16px solid #9ACAF0; padding-left: 10px">
     <div style="height: 0.3em;"></div>
     <p class="paper_title" onclick="toggleTable('Instance Normalization-Normalization-details')"><i>Instance Normalization: The Missing Ingredient for Fast Stylization</i></p>
     <p class="paper_detail">Dmitry Ulyanov, Andrea Vedaldi, Victor Lempitsky</p>
@@ -220,7 +222,7 @@ print(torch.allclose(torch_in(x), custom_in(x), atol=1e-5))  # it prints True
     <p class="little_split"></p>
     
     <p class="little_split" id='Layer Normalizationnormalization'></p>
-    <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+    <div style="border-left: 16px solid #9ACAF0; padding-left: 10px">
     <div style="height: 0.3em;"></div>
     <p class="paper_title" onclick="toggleTable('Layer Normalization-Normalization-details')"><i>Layer Normalization</i></p>
     <p class="paper_detail">Jimmy Lei Ba, Jamie Ryan Kiros, Geoffrey E. Hinton</p>
@@ -278,7 +280,7 @@ print(torch.allclose(custom_ln(x), torch_ln(x), atol=1e-5))  # it prints True
     <p class="little_split"></p>
     
     <p class="little_split" id='Batch Normalizationnormalization'></p>
-    <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+    <div style="border-left: 16px solid #9ACAF0; padding-left: 10px">
     <div style="height: 0.3em;"></div>
     <p class="paper_title" onclick="toggleTable('Batch Normalization-Normalization-details')"><i>Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</i></p>
     <p class="paper_detail">Sergey Ioffe, Christian Szegedy</p>

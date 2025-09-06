@@ -2,7 +2,7 @@ LIST = dict()
 LIST["file"] = "visual_generation.html"
 LIST["title"] = "Visual Generation"
 LIST["description"] = "Generate visual signals (e.g., images and videos)."
-LIST["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Inference-Time Improvement", "Acceleration", "Datasets & Evaluation", "Editing & Inpainting & Outpainting", "Human", "Style", "Interactive"]
+LIST["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Inference-Time Improvement", "Acceleration", "Datasets & Evaluation", "Editing & Inpainting & Outpainting", "Human", "Stylization", "Interactive"]
 LIST["papers"] = [
 # {
 # "title": "",
@@ -703,7 +703,7 @@ It disentangles human preference into <b>64 binary questions</b> and learns an <
 "code_url": "https://github.com/Irislucent/variance-versus-invariance",
 "name": "VarInv",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -724,7 +724,7 @@ It shows that content and style can be identified from <b>unaligned multi-domain
 "code_url": "https://github.com/LinLLLL/MaskST",
 "name": "MaskST",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -745,7 +745,7 @@ It <b>masks content-correlated entries</b> in the style-reference feature to ach
 "code_url": "",
 "name": "Semantix",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -766,7 +766,7 @@ It is a training-free, <b>energy-guided sampler</b> that performs semantic style
 "code_url": "https://github.com/google/RB-Modulation",
 "name": "RB-Modulation",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -787,7 +787,7 @@ It introduces a <b>stochastic optimal control</b> for test-time, training-free p
 "code_url": "",
 "name": "ACFun",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -808,7 +808,7 @@ It disentangles <b>abstract and concrete style features</b> via CLIP-guided fusi
 "code_url": "https://github.com/SHI-Labs/FineStyle",
 "name": "FineStyle",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -829,7 +829,7 @@ It disentangles style from a reference via concept-oriented data scaling and KV-
 "code_url": "",
 "name": "CompRever",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -850,7 +850,7 @@ It enforces <b>information-theoretic redundancy reduction</b> within a reversibl
 "code_url": "",
 "name": "ZipLoRA",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -871,7 +871,7 @@ It learns <b>column-wise mixing coefficients</b> to orthogonally merge content a
 "code_url": "https://github.com/alipay/style-tokenizer",
 "name": "StyleTokenizer",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -892,7 +892,7 @@ It aligns a single-image <b>style embedding with the textual embedding space</b>
 "code_url": "https://github.com/cuixing100876/InstaStyle",
 "name": "InstaStyle",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -913,7 +913,7 @@ It leverages the <b>inversion noise of a stylized image</b> and refines a learna
 "code_url": "https://github.com/yardenfren1996/B-LoRA",
 "name": "B-LoRA",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -934,7 +934,7 @@ It implicitly disentangles style and content from an image by training two LoRA 
 "code_url": "",
 "name": "SCSA",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -955,7 +955,7 @@ It augments attention-based training-free arbitrary style transfer with semantic
 "code_url": "",
 "name": "HSI",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -976,7 +976,7 @@ It replaces attention with element-wise <b>global-statistic injection</b>, achie
 "code_url": "https://github.com/changLiu77/UnZipLoRA",
 "name": "UnZipLoRA",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -997,7 +997,7 @@ It decomposes a single image into two orthogonal yet compatible <b>content / sty
 "code_url": "",
 "name": "SCFlow",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -1018,7 +1018,7 @@ It implicitly disentangles style and content by learning an <b>invertible flow</
 "code_url": "https://github.com/donaldssh/LoRA.rar",
 "name": "LoRA.rar",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -1039,7 +1039,7 @@ It trains a lightweight hypernetwork to predict <b>adaptive merging coefficients
 "code_url": "https://anandk27.github.io/IntroStyle/",
 "name": "IntroStyle",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -1060,7 +1060,7 @@ It proposes a training-free style attribution framework that leverages only <b>i
 "code_url": "https://github.com/wangxb29/DGPST",
 "name": "DGPST",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -1080,7 +1080,7 @@ It unifies dense semantic correspondence, AdaIN-Wavelet latent fusion, and dual-
 "code_url": "",
 "name": "CSD-VAR",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -1101,7 +1101,7 @@ It pioneers <b>VAR</b>-based content-style decomposition by scale-aware alternat
 "code_url": "https://github.com/sherlhw/AIComposer",
 "name": "AIComposer",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -1122,7 +1122,7 @@ It achieves text-prompt-free stylization by <b>linearly separating and re-fusing
 "code_url": "https://github.com/showlab/SMS",
 "name": "SMS",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -1143,7 +1143,7 @@ It reframes stylization as <b>style-distribution matching</b> with LoRA priors, 
 "code_url": "",
 "name": "DuoLoRA",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -1167,7 +1167,7 @@ It disentangles content and style in diffusion LoRA merging by rank-dimension ma
 "code_url": "https://github.com/bytedance/StyleSSP",
 "name": "StyleSSP",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -1188,7 +1188,7 @@ It employs DDIM reversion of content images with low frequency component removed
 "code_url": "https://github.com/Chernobyllight/SaMam",
 "name": "SaMam",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -1209,7 +1209,7 @@ Introduce <b>Mamba model</b> into style transfer to improve efficiency.
 "code_url": "",
 "name": "Style-Editor",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -1230,7 +1230,7 @@ It achieves <b>object-level text-driven style editing</b> by identifying an obje
 "code_url": "https://github.com/Westlake-AGI-Lab/StyleStudio",
 "name": "StyleStudio",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -1251,7 +1251,7 @@ It improves text-driven style transfer by <b>cross-modal AdaIN</b>, teacher mode
 "code_url": "https://github.com/HVision-NKU/K-LoRA",
 "name": "K-LoRA",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -1272,7 +1272,7 @@ It introduces <b>training-free LoRA fusion</b> that compares Top-K elements in L
 "code_url": "https://github.com/ZhengrongYue/V-Stylist",
 "name": "V-Stylist",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -1298,7 +1298,7 @@ It enables video stylization with <b>open style prompt</b> by searching a style 
 "code_url": "https://github.com/wangyePHD/OmniStyle",
 "name": "OmniStyle",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 
@@ -1319,7 +1319,7 @@ It introduces a dataset consisting of <b>150K</b> content-style-stylized image t
 "code_url": "https://github.com/KwaiVGI/StyleMaster",
 "name": "StyleMaster",
 "comment": "",
-"category": "Style",
+"category": "Stylization",
 "jupyter_notes": "",
 "info": "",
 "summary": 

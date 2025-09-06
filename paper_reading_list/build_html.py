@@ -73,24 +73,35 @@ SUFFIX: str = """</body>
 </html>"""
 
 
-def _build_paper_links_table(paper_names: List[str], paper_venues: List[str],
-                           paper_info: List[str], category: str) -> str:
-    """Build HTML table of paper links for table of contents."""
-    names = ['<table class="center"><tr>']
-    interval = 5
-
-    for i in range(0, len(paper_names), interval):
-        names.append("<tr>")
-        name_batch = paper_names[i:i+interval]
-        for j, name in enumerate(name_batch):
-            color = "#D04040" if "**" in paper_info[i + j] else "#505050"
-            venue = paper_venues[i + j]
-            link = f"""<a class="no_dec" href="#{name + category.lower()}"><font color={color}>{name} <font size=1;>({venue})</font></font></a>"""
-            names.append(f"<td>{link}</td>")
-        names.append("</tr>")
-
-    names.append("</table>")
-    return "\n".join(names)
+def build_paper_index(papers: List[Dict[str, Any]], category: str) -> str:
+    """
+    Build a compact, beautiful index of all papers with anchor links.
+    Each entry: [name] (venue_abbr, year)
+    """
+    # Assign anchor ids for each paper
+    index_items = []
+    for idx, paper in enumerate(papers):
+        anchor_id = f"{paper['name']}{category.lower()}"
+        # venue_abbr and year
+        try:
+            venue_abbr, venue_year = paper["venue"].rsplit(" ", 1)
+        except Exception:
+            venue_abbr, venue_year = paper["venue"], ""
+        name = paper["name"]
+        color = "#D04040" if "**" in paper.get("info", "") else "#505050"
+        # Use a short, tight style
+        index_items.append(
+            f'<a href="#{anchor_id}" class="no_dec"><font color={color}><b>{name}</b> <font style="color:#888;font-size:12px;">({venue_abbr} {venue_year})</font></font></a>'
+        )
+    # Arrange in a compact multi-row flexbox
+    html = """
+    <div style="margin: 0.5em 0 1.2em 0;">
+      <div style="display: flex; flex-wrap: wrap; gap: 0.7em 1.5em; align-items: center; font-size: 14px;">
+        {}
+      </div>
+    </div>
+    """.format("\n        ".join(index_items))
+    return html
 
 
 def _build_paper_html(paper: pd.Series, category: str, color_bar: str, domain_title: str) -> str:
@@ -142,7 +153,7 @@ def _build_paper_html(paper: pd.Series, category: str, color_bar: str, domain_ti
     # Build final HTML
     paper_html = f"""
     <p class="little_split" id='{paper["name"] + category.lower()}'></p>
-    <div style="border-left: 14px solid {color_bar}; padding-left: 10px">
+    <div style="border-left: 16px solid {color_bar}; padding-left: 10px">
     <div style="height: 0.3em;"></div>
     <p class="paper_title" onclick="toggleTable('{paper["name"]}-{category}-details')"><i>{paper["title"]}</i></p>
     {author}
@@ -209,12 +220,10 @@ def _build_table_of_contents(domain: Dict[str, Any], papers: pd.DataFrame) -> st
         if domain["title"] not in EXCLUDE_TITLE:
             paper_subset = paper_subset.sort_values(by="date", ascending=False)
 
-        paper_names = paper_subset["name"].tolist()
-        paper_venues = paper_subset["venue"].tolist()
-        paper_info = paper_subset["info"].tolist()
-
-        paper_links_table = _build_paper_links_table(paper_names, paper_venues, paper_info, category)
-        catalog += f"""<li><a class="no_dec larger low_margin" id="{category}" href="#{category}-table"><b>{category}</b></a></li><p>{paper_links_table}</p><br>"""
+        # Convert DataFrame to list of dictionaries for build_paper_index
+        papers_list = paper_subset.to_dict('records')
+        paper_links_table = build_paper_index(papers_list, category)
+        catalog += f"""<li><a class="no_dec larger low_margin" id="{category}" href="#{category}-table"><b>{category}</b></a></li>{paper_links_table}<br>"""
 
     catalog += "</ul>"
     return catalog

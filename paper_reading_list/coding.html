@@ -21,26 +21,28 @@
 <p class="larger"><b></b></p>
 <p>Written by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on September 04, 2025 at 20:30 (UTC+8).</font></p>
-<hr><p id='table' class="huger"><b>Table of contents:</b></p><ul><li><a class="no_dec larger low_margin" id="PyTorch" href="#PyTorch-table"><b>PyTorch</b></a></li><p><table class="center"><tr>
-<tr>
-<td><a class="no_dec" href="#data transformspytorch"><font color=#505050>data transforms <font size=1;>(transform and augment data)</font></font></a></td>
-<td><a class="no_dec" href="#data loaderpytorch"><font color=#505050>data loader <font size=1;>(load data)</font></font></a></td>
-<td><a class="no_dec" href="#operationpytorch"><font color=#505050>operation <font size=1;>(tensor operations)</font></font></a></td>
-<td><a class="no_dec" href="#modulepytorch"><font color=#505050>module <font size=1;>(modules to build models)</font></font></a></td>
-<td><a class="no_dec" href="#activation functionpytorch"><font color=#505050>activation function <font size=1;>(activation functions)</font></font></a></td>
-</tr>
-<tr>
-<td><a class="no_dec" href="#optimizerpytorch"><font color=#505050>optimizer <font size=1;>(optimizers)</font></font></a></td>
-<td><a class="no_dec" href="#huggingfacepytorch"><font color=#505050>huggingface <font size=1;>(huggingface tools)</font></font></a></td>
-</tr>
-</table></p><br><li><a class="no_dec larger low_margin" id="Distributed Training" href="#Distributed Training-table"><b>Distributed Training</b></a></li><p><table class="center"><tr>
-<tr>
-<td><a class="no_dec" href="#deepspeeddistributed training"><font color=#505050>deepspeed <font size=1;>(deepspeed framework)</font></font></a></td>
-</tr>
-</table></p><br></ul><h2 id="PyTorch-table"><a class="no_dec" href="#PyTorch">PyTorch</a></h2>
+<p><font color=#B0B0B0>Last updated on September 06, 2025 at 12:55 (UTC+8).</font></p>
+<hr><p id='table' class="huger"><b>Table of contents:</b></p><ul><li><a class="no_dec larger low_margin" id="PyTorch" href="#PyTorch-table"><b>PyTorch</b></a></li>
+    <div style="margin: 0.5em 0 1.2em 0;">
+      <div style="display: flex; flex-wrap: wrap; gap: 0.7em 1.5em; align-items: center; font-size: 14px;">
+        <a href="#data transformspytorch" class="no_dec"><font color=#505050><b>data transforms</b> <font style="color:#888;font-size:12px;">(transform and augment data)</font></font></a>
+        <a href="#data loaderpytorch" class="no_dec"><font color=#505050><b>data loader</b> <font style="color:#888;font-size:12px;">(load data)</font></font></a>
+        <a href="#operationpytorch" class="no_dec"><font color=#505050><b>operation</b> <font style="color:#888;font-size:12px;">(tensor operations)</font></font></a>
+        <a href="#modulepytorch" class="no_dec"><font color=#505050><b>module</b> <font style="color:#888;font-size:12px;">(modules to build models)</font></font></a>
+        <a href="#activation functionpytorch" class="no_dec"><font color=#505050><b>activation function</b> <font style="color:#888;font-size:12px;">(activation functions)</font></font></a>
+        <a href="#optimizerpytorch" class="no_dec"><font color=#505050><b>optimizer</b> <font style="color:#888;font-size:12px;">(optimizers )</font></font></a>
+        <a href="#huggingfacepytorch" class="no_dec"><font color=#505050><b>huggingface</b> <font style="color:#888;font-size:12px;">(huggingface tools)</font></font></a>
+      </div>
+    </div>
+    <br><li><a class="no_dec larger low_margin" id="Distributed Training" href="#Distributed Training-table"><b>Distributed Training</b></a></li>
+    <div style="margin: 0.5em 0 1.2em 0;">
+      <div style="display: flex; flex-wrap: wrap; gap: 0.7em 1.5em; align-items: center; font-size: 14px;">
+        <a href="#deepspeeddistributed training" class="no_dec"><font color=#505050><b>deepspeed</b> <font style="color:#888;font-size:12px;">(deepspeed framework)</font></font></a>
+      </div>
+    </div>
+    <br></ul><h2 id="PyTorch-table"><a class="no_dec" href="#PyTorch">PyTorch</a></h2>
     <p class="little_split" id='data transformspytorch'></p>
-    <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+    <div style="border-left: 16px solid #9ACAF0; padding-left: 10px">
     <div style="height: 0.3em;"></div>
     <p class="paper_title" onclick="toggleTable('data transforms-PyTorch-details')"><i>Data Transforms</i></p>
     
@@ -161,7 +163,7 @@ image_trans = trans(image)  # Tensor => Tensor
     <p class="little_split"></p>
     
     <p class="little_split" id='data loaderpytorch'></p>
-    <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+    <div style="border-left: 16px solid #9ACAF0; padding-left: 10px">
     <div style="height: 0.3em;"></div>
     <p class="paper_title" onclick="toggleTable('data loader-PyTorch-details')"><i>Data Loader</i></p>
     
@@ -203,7 +205,7 @@ data_loader = DataLoader(dataset, batch_size, shuffle, sampler, num_workers,
     <p class="little_split"></p>
     
     <p class="little_split" id='operationpytorch'></p>
-    <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+    <div style="border-left: 16px solid #9ACAF0; padding-left: 10px">
     <div style="height: 0.3em;"></div>
     <p class="paper_title" onclick="toggleTable('operation-PyTorch-details')"><i>Operation</i></p>
     
@@ -517,7 +519,7 @@ y = torch.where(condition, input, output)
     <p class="little_split"></p>
     
     <p class="little_split" id='modulepytorch'></p>
-    <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+    <div style="border-left: 16px solid #9ACAF0; padding-left: 10px">
     <div style="height: 0.3em;"></div>
     <p class="paper_title" onclick="toggleTable('module-PyTorch-details')"><i>Module</i></p>
     
@@ -678,7 +680,7 @@ y = dropout(x)
     <p class="little_split"></p>
     
     <p class="little_split" id='activation functionpytorch'></p>
-    <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+    <div style="border-left: 16px solid #9ACAF0; padding-left: 10px">
     <div style="height: 0.3em;"></div>
     <p class="paper_title" onclick="toggleTable('activation function-PyTorch-details')"><i>Activation Function</i></p>
     
@@ -752,7 +754,7 @@ y = silu(x)
     <p class="little_split"></p>
     
     <p class="little_split" id='optimizerpytorch'></p>
-    <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+    <div style="border-left: 16px solid #9ACAF0; padding-left: 10px">
     <div style="height: 0.3em;"></div>
     <p class="paper_title" onclick="toggleTable('optimizer-PyTorch-details')"><i>Optimizer</i></p>
     
@@ -790,7 +792,7 @@ adam_optim = AdamW(params, lr, betas, weight_decay)
     <p class="little_split"></p>
     
     <p class="little_split" id='huggingfacepytorch'></p>
-    <div style="border-left: 14px solid #ADDEFF; padding-left: 10px">
+    <div style="border-left: 16px solid #9ACAF0; padding-left: 10px">
     <div style="height: 0.3em;"></div>
     <p class="paper_title" onclick="toggleTable('huggingface-PyTorch-details')"><i>huggingface</i></p>
     
@@ -829,7 +831,7 @@ snapshot_download(repo_id, repo_type, local_dir, token, max_workers)
     <p class="little_split"></p>
     <h2 id="Distributed Training-table"><a class="no_dec" href="#Distributed Training">Distributed Training</a></h2>
     <p class="little_split" id='deepspeeddistributed training'></p>
-    <div style="border-left: 14px solid #FFD6AD; padding-left: 10px">
+    <div style="border-left: 16px solid #F9D0A5; padding-left: 10px">
     <div style="height: 0.3em;"></div>
     <p class="paper_title" onclick="toggleTable('deepspeed-Distributed Training-details')"><i>DeepSpeed</i></p>
     

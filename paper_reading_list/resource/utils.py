@@ -52,7 +52,8 @@ def border_color_generator() -> Generator[str, None, None]:
     Yields:
         Color hex codes for styling paper sections
     """
-    colors = ["#ADDEFF", "#FFD6AD", "#B2EEC8", "#FFBBCC"]
+    # colors = ["#ADDEFF", "#FFD6AD", "#B2EAC8", "#F0BBCC"]
+    colors = ["#9ACAF0", "#F9D0A5", "#A0D0A0", "#F0BBCC"]
     num_colors = len(colors)
     index = 0
 
