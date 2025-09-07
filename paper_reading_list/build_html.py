@@ -223,7 +223,7 @@ def _build_table_of_contents(domain: Dict[str, Any], papers: pd.DataFrame) -> st
         # Convert DataFrame to list of dictionaries for build_paper_index
         papers_list = paper_subset.to_dict('records')
         paper_links_table = build_paper_index(papers_list, category)
-        catalog += f"""<li><a class="no_dec larger low_margin" id="{category}" href="#{category}-table"><b>{category}</b></a></li>{paper_links_table}<br>"""
+        catalog += f"""<li><a class="larger low_margin" id="{category}" href="#{category}-table"><b>{category}</b></a></li>{paper_links_table}<br>"""
 
     catalog += "</ul>"
     return catalog
