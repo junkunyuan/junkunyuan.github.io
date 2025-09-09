@@ -17,7 +17,16 @@ PAPERS = [
 "name": "HunyuanVideo",
 "pdf_url": "https://arxiv.org/pdf/2412.03603",
 "code_url": "https://github.com/Tencent-Hunyuan/HunyuanVideo",
-"comment": "It is an open-source large-scale video generation model with 13B parameters. It has over 300 citations and over 10,000 GitHub stars (as of Aug 2025)."
+"comment": "It is an open-source large-scale video generation model with 13B parameters. It has over 300 citations and over 11,000 GitHub stars (as of Sep 2025)."
+},
+{
+"title": "Mutual Prompt Learning for Vision Language Models",
+"author": "Sifan Long<sup>&#10035</sup>, Zhen Zhao<sup>&#10035</sup>, Junkun Yuan<sup>&#10035</sup>, Zichang Tan<sup>&#10035</sup>, Jiangjiang Liu, Jingyuan Feng, Shengsheng Wang<sup>&#9993</sup>, and Jingdong Wang",
+"date": "20240926",
+"venue": "IJCV 2024",
+"pdf_url": "https://arxiv.org/pdf/2303.17169",
+"name": "MPL",
+"code_url": ""
 },
 {
 "title": "Follow-Your-Canvas: Higher-Resolution Video Outpainting with Extensive Content Generation",
@@ -100,15 +109,6 @@ PAPERS = [
 "venue": "ICCV 2023",
 "pdf_url": "https://arxiv.org/pdf/2304.11862",
 "name": "CAM",
-"code_url": ""
-},
-{
-"title": "Mutual Prompt Learning for Vision Language Models",
-"author": "Sifan Long<sup>&#10035</sup>, Zhen Zhao<sup>&#10035</sup>, Junkun Yuan<sup>&#10035</sup>, Zichang Tan<sup>&#10035</sup>, Jiangjiang Liu, Jingyuan Feng, Shengsheng Wang<sup>&#9993</sup>, and Jingdong Wang",
-"date": "20230330",
-"venue": "IJCV 2024",
-"pdf_url": "https://arxiv.org/pdf/2303.17169",
-"name": "MPL",
 "code_url": ""
 },
 {

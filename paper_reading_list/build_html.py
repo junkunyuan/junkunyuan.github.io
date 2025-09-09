@@ -11,22 +11,22 @@ from typing import Dict, List, Any
 import pandas as pd
 from tqdm import tqdm
 
-from resource.utils import (
+from .resource.utils import (
     get_venue_all,
     border_color_generator,
     convert_fig_cap_to_figure,
     TOP_BUTTON,
 )
-from resource.main_content import MAIN_CONTENT
-from resource.research import LIST as RESEARCH
-from resource.coding import LIST as CODING
-from resource.fundamental import LIST as FUNDAMENTAL_COMPONENT
-from resource.visual_understanding import LIST as VISUAL_UNDERSTANDING
-from resource.language_generation import LIST as LANGUAGE_GENERATION
-from resource.reinforcement_learning import LIST as REINFORCEMENT_LEARNING
-from resource.visual_generation import LIST as VISUAL_GENERATION
-from resource.multimodal_understanding import LIST as MULTIMODAL_UNDERSTANDING
-from resource.native_multimodal_generation import LIST as NATIVE_MULTIMODAL_GENERATION
+from .resource.main_content import MAIN_CONTENT
+from .resource.research import LIST as RESEARCH
+from .resource.coding import LIST as CODING
+from .resource.fundamental import LIST as FUNDAMENTAL_COMPONENT
+from .resource.visual_understanding import LIST as VISUAL_UNDERSTANDING
+from .resource.language_generation import LIST as LANGUAGE_GENERATION
+from .resource.reinforcement_learning import LIST as REINFORCEMENT_LEARNING
+from .resource.visual_generation import LIST as VISUAL_GENERATION
+from .resource.multimodal_understanding import LIST as MULTIMODAL_UNDERSTANDING
+from .resource.native_multimodal_generation import LIST as NATIVE_MULTIMODAL_GENERATION
 
 # Configuration constants
 DOMAINS: List[Dict[str, Any]] = [

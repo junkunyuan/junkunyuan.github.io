@@ -12,7 +12,6 @@ from typing import Dict, Iterator, Generator
 # Venue abbreviation to full name mapping
 VENUE_NAME_DICT: Dict[str, str] = {
     "AAAI": "AAAI Conference on Artificial Intelligence",
-    "arXiv": "arXiv preprint",
     "CVPR": "Conference on Computer Vision and Pattern Recognition",
     "ECAI": "European Conference on Artificial Intelligence",
     "ECCV": "European Conference on Computer Vision",

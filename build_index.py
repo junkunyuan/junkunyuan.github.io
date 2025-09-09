@@ -36,7 +36,6 @@ PREFIX: str = f"""
                     <p>yuanjk0921@outlook.com</p>
                     <p>work and live in Shenzhen, China</p>
                     <p><font color=#D0D0D0>Last updated on {TIME_NOW} (UTC+8)</font></p>
-                    <p><font color="D04040">I am currently on the job market and welcome potential opportunities. Please feel free to reach out to me.</p>
                 </td>
                 <td style="padding-right: 120px; padding-top: 10px;">
                     <img src="resource/my_photo.jpg" width="160">
@@ -112,15 +111,14 @@ def build_paper(papers: List[Dict[str, Any]]) -> str:
     color_bar_gen = border_color_generator()
 
     for idx, paper in enumerate(papers):
-        # Format venue and links
-        try:
-            [venue_name, venue_date] = paper["venue"].rsplit(" ", 1)
-        except Exception:
-            venue_name, venue_date = paper["venue"], ""
-        venue = f"""(<b><font color=#404040>{venue_name}</font></b>), <b>{venue_date}</b>"""
+        venue_full = get_venue_all(paper["venue"])
+        [venue_name, venue_date] = paper["venue"].rsplit(" ", 1)
+        if venue_full.strip():
+            venue = f"""(<b><font color=#404040>{venue_name}</font></b>), <b>{venue_date}</b>"""
+        else:
+            venue = f"""<b><font color=#404040>{venue_name}</font></b> <b>{venue_date}</b>"""
         name = f"""<b><font color=#404040>{paper["name"]}</font></b>"""
         paper_link = f"""<a href="{paper["pdf_url"]}">paper</a>"""
-        venue_full = get_venue_all(paper["venue"])
 
         code_link = ""
         if paper.get('code_url', '').strip():
@@ -149,7 +147,7 @@ def build_paper(papers: List[Dict[str, Any]]) -> str:
             current_year = paper_year
 
         # Build paper HTML, add anchor for index
-        anchor_id = f"paper{idx+1}"
+        anchor_id = f"{paper['name']}publications"
         item_content += f"""
         <p class="little_split"></p>
         <div id="{anchor_id}" style="border-left: 16px solid {color_bar}; padding-left: 10px">
