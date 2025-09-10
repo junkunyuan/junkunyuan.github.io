@@ -1,5 +1,5 @@
 LIST = dict()
-LIST["file"] = "research.html"
+LIST["file"] = "paper_reading_list/research.html"
 LIST["title"] = "Research"
 LIST["description"] = "Things about research."
 LIST["categories"] = ["A Guide to Research"]
@@ -8,6 +8,7 @@ LIST["papers"] = [
 # "title": "",
 # "venue": "",
 # "name": "",
+# "date": "",
 # "category": "",
 # "details": 
 # """
@@ -18,6 +19,7 @@ LIST["papers"] = [
 "title": "Progress Management",
 "venue": "synchronize progress",
 "name": "progress management",
+"date": "20250725",
 "category": "A Guide to Research",
 "details": 
 """
@@ -29,12 +31,13 @@ LIST["papers"] = [
 fig: fig1.png 450
 cap: An example slide of a <b>progress summary</b>.
 """,
-"author": "","organization": "","date": "", "comment": "", "pdf_url": "","code_url": "", "jupyter_notes": "", "info": "", "summary": """""",
+"author": "","organization": "","comment": "", "pdf_url": "","code_url": "", "jupyter_notes": "", "info": "", "summary": """""",
 },
 {
 "title": "Paper Review",
 "venue": "discover an open problem",
 "name": "paper review",
+"date": "20250802",
 "category": "A Guide to Research",
 "details": 
 """
@@ -46,12 +49,13 @@ cap: An example slide of a <b>progress summary</b>.
 fig: fig1.png 450 fig2.png 450
 cap: Example slides of <b>"find a research topic" (left)</b> and <b>related work summarization (right)</b>.
 """,
-"author": "","organization": "","date": "", "comment": "", "pdf_url": "","code_url": "", "jupyter_notes": "", "info": "", "summary": """""",
+"author": "","organization": "","comment": "", "pdf_url": "","code_url": "", "jupyter_notes": "", "info": "", "summary": """""",
 },
 {
 "title": "Experiment",
 "venue": "prepare, implement, monitor experiments",
 "name": "experiment",
+"date": "20250816",
 "category": "A Guide to Research",
 "details": 
 """
@@ -65,12 +69,13 @@ cap: Example slides of <b>"find a research topic" (left)</b> and <b>related work
 fig: fig1.png 800
 cap: An example log of <b>experiment progress</b>.
 """,
-"author": "","organization": "","date": "", "comment": "", "pdf_url": "","code_url": "", "jupyter_notes": "", "info": "", "summary": """""",
+"author": "","organization": "","comment": "", "pdf_url": "","code_url": "", "jupyter_notes": "", "info": "", "summary": """""",
 },
 {
 "title": "Write Paper",
 "venue": "instructions for paper writing",
 "name": "write paper",
+"date": "20250910",
 "category": "A Guide to Research",
 "details": 
 """
@@ -82,6 +87,7 @@ cap: An example log of <b>experiment progress</b>.
     <li> <b>Prepare LaTex templete.</b> Download LaTex templete from official websites of the target conference or jounal and read instructions carefully.
     <li> <b>Build online project.</b> Maintain an online LaTex project so collaborators can help write and polish the paper. <a href="https://www.texpage.com/console">TeXPage</a> is recommended for users in China as <a href="https://overleaf.com/project">Overleaf</a> can sometimes be unstable due to heavy traffic. Upload the LaTex templete and share the project link with collaborators.
     <li> <b>General writing principle.</b> Adhere to Occam's Razor—write only what is essential, and avoid irrelevant or redundant expressions. Constantly remind yourself: "If you remove this sentence, does it affect the clarity of your paper? Is there a more concise way to express the same idea?" Avoid exaggerated or false statements, as they not only damage your reputation but also give reviewers opportunities to challenge your work.
+    <li> <b>Write while comparing and thinking.</b> When writing, it is important to <i>repeatedly read</i> related works—see how they structure the full paper, how they present the ideas and methods, and what experiments they conducted. Enrich your experiments and polish your writing during this process.
     <li> <b>Abstract.</b> A good abstract (about 200 words) should clearly convey: (1) The problem you address. (maybe 1 sentence) (2) How you solve it. (maybe 1 sentence) (3) High-level idea and method with important components. (maybe 2-3 sentences) (4) The key results achieved. (maybe 1 sentence) <b>Note:</b> avoid excessive background or motivation—reserve that for Introduction.
     <li> <b>Introduction.</b> It should cover: (1) Background of the topic. (2) Motivation of the research. (3) Motivation of your idea and method. (4) High-level overview of your method with key components. (5) Experiments with major results and findings. (6) The value of the work to this research field. (7) A brief summary of contributions (optional). <b>Note:</b> avoid excessive background or method details—focus on the core contributions.
     <li> <b>Related Works.</b> Provide context by addressing: (1) What previous works have done? (2) What they have overlooked or left unresolved? <b>Note:</b> avoid listing works haphazardly; instead, thoughtfully select representative works and present them in a logical, well-organized manner.
@@ -99,12 +105,13 @@ cap: An example log of <b>experiment progress</b>.
 fig: fig1.png 100 fig2.png 550 fig3.png 250
 cap: <b>(left)</b> Example of <b>LaTex structure</b>. Each chapter can be added by writing `\input{chapters/abstract}` in `main.tex`. <b>(middle)</b> How to <b>cite a paper</b> by obtaining bib info and inserting it into `main.bib`. <b>(right)</b> The added bib info should be clean so that you can cite it by `~\cite{CLIP}`.
 """,
-"author": "","organization": "","date": "", "comment": "", "pdf_url": "","code_url": "", "jupyter_notes": "", "info": "", "summary": """""",
+"author": "","organization": "","comment": "", "pdf_url": "","code_url": "", "jupyter_notes": "", "info": "", "summary": """""",
 },
 {
 "title": "Open Source",
 "venue": "make dataset and project open source",
 "name": "open source",
+"date": "20250810",
 "category": "A Guide to Research",
 "details": 
 """
@@ -114,6 +121,6 @@ cap: <b>(left)</b> Example of <b>LaTex structure</b>. Each chapter can be added 
     <li> <b>Data.</b> Ensure your data is clean: (1) Obtain permission to share it. (2) Remove personal information. (3) Ensure compliance with regulations if human data is involved. (4) Filter out harmful, offensive, or biased content. (5) Organize files clearly (`train/`, `val/`, `test/`). Write a concise README, including: (1) A brieft introduction. (2) Instructions to download, load, and use it. (3) Known biases and risks. (4) License.
 </ul>
 """,
-"author": "","organization": "","date": "", "comment": "", "pdf_url": "","code_url": "", "jupyter_notes": "", "info": "", "summary": """""",
+"author": "","organization": "","comment": "", "pdf_url": "","code_url": "", "jupyter_notes": "", "info": "", "summary": """""",
 },
 ]

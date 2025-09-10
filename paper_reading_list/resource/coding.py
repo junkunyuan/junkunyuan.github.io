@@ -1,5 +1,5 @@
 LIST = dict()
-LIST["file"] = "coding.html"
+LIST["file"] = "paper_reading_list/coding.html"
 LIST["title"] = "Coding and Engineering"
 LIST["description"] = "Tools used to build AI systems."
 LIST["categories"] = ["PyTorch", "Distributed Training"]

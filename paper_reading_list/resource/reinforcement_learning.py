@@ -1,5 +1,5 @@
 LIST = dict()
-LIST["file"] = "reinforcement_learning.html"
+LIST["file"] = "paper_reading_list/reinforcement_learning.html"
 LIST["title"] = "Reinforcement Learning"
 LIST["description"] = "Learn to make decisions in an environment by maximizing long-term rewards."
 LIST["categories"] = ["Foundation Algorithms & Models"]

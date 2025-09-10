@@ -119,12 +119,10 @@ def _build_paper_html(paper: pd.Series, category: str, color_bar: str, domain_ti
     # Format date and venue
     venue = paper["venue"]
     venue_all = get_venue_all(paper["venue"])
-    date = ""
-    if domain_title not in EXCLUDE_TITLE:
-        try:
-            date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%b %d, %Y")
-        except ValueError:
-            date = ""
+    try:
+        date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%b %d, %Y")
+    except ValueError:
+        date = ""
 
     # Build optional elements
     comment = f"""<p class="paper_detail"><font color=#D04040>{paper["comment"]}</font></p>""" if paper["comment"] else ""
@@ -263,7 +261,6 @@ def _load_papers_data(domain: Dict[str, Any]) -> pd.DataFrame:
         "code_url", "name", "comment", "category", "jupyter_notes",
         "info", "summary", "details"
     ]
-
     papers_data = {field: [] for field in paper_fields}
 
     for paper in tqdm(domain["papers"], desc=f"Reading {domain['title']} papers"):

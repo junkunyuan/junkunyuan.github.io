@@ -1,5 +1,5 @@
 LIST = dict()
-LIST["file"] = "fundamental_component.html"
+LIST["file"] = "paper_reading_list/fundamental_component.html"
 LIST["title"] = "Fundamental Components of Deep Learning"
 LIST["description"] = "Fundamental components to build deep learning systems."
 LIST["categories"] = ["Normalization"]
