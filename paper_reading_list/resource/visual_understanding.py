@@ -1,5 +1,5 @@
 LIST = dict()
-LIST["file"] = "paper_reading_list/visual_understanding.html"
+LIST["file"] = "visual_understanding.html"
 LIST["title"] = "Visual Perception & Understanding"
 LIST["description"] = "Generate visual signals (e.g., images, video, and 3D)."
 LIST["categories"] = ["Foundation Algorithms & Models"]

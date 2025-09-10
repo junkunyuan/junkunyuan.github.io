@@ -6,10 +6,11 @@ It processes domain-specific paper data and creates formatted HTML pages
 with proper styling, navigation, and interactive features.
 """
 
-from datetime import datetime
-from typing import Dict, List, Any
+import os
 import pandas as pd
 from tqdm import tqdm
+from datetime import datetime
+from typing import Dict, List, Any
 
 from .resource.utils import (
     get_venue_all,
@@ -323,6 +324,7 @@ def _build_enhanced_prefix() -> str:
 
 def _write_html_file(filepath: str, content: str) -> None:
     """Write HTML content to file with proper encoding."""
+    filepath = os.path.join("paper_reading_list", filepath)
     try:
         with open(filepath, "w", encoding="utf-8-sig") as f:
             f.write(content)

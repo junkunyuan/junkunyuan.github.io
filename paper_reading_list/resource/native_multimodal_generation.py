@@ -1,5 +1,5 @@
 LIST = dict()
-LIST["file"] = "paper_reading_list/native_multimodal_generation.html"
+LIST["file"] = "native_multimodal_generation.html"
 LIST["title"] = "Native Multimodal Generation"
 LIST["description"] = "Integrate and generate multiple modalities (e.g., text, images, and videos) within a unified model."
 LIST["categories"] = ["Foundation Algorithms & Models"]
