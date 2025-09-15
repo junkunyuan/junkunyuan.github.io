@@ -25,6 +25,48 @@ LIST["papers"] = [
 # """,
 # },
 {
+"title": "OmniStyle2: Scalable and High Quality Artistic Style Transfer Data Generation via Destylization",
+"author": "Ye Wang, Zili Yi, Yibo Zhang, Peng Zheng, Xuping Xie, Jiang Lin, Yilin Wang, Rui Ma",
+"organization": "Jilin University, Nanjing University, Shanghai Innovation Institute, Adobe, Engineering Research Center of Knowledge-Driven Human-Machine Intelligence",
+"date": "20250907",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2509.05970",
+"code_url": "",
+"name": "OmniStyle2",
+"comment": "",
+"category": "Stylization",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It introduces destylization to reverse style transfer and creates the <b>100K-pair DST-100K dataset</b>, enabling a simple <b>FLUX-based</b> model.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "OmniEdit: Building Image Editing Generalist Models Through Specialist Supervision",
+"author": "Cong Wei, Zheyang Xiong, Weiming Ren, Xinrun Du, Ge Zhang, Wenhu Chen",
+"organization": "University of Waterloo, University of Wisconsin-Madison, Vector Institute, M-A-P",
+"date": "20241111",
+"venue": "ICLR 2025",
+"pdf_url": "https://arxiv.org/pdf/2411.07199",
+"code_url": "https://github.com/TIGER-AI-Lab/OmniEdit",
+"name": "OmniEdit",
+"comment": "",
+"category": "Editing & Inpainting & Outpainting",
+"jupyter_notes": "",
+"info": "**",
+"summary": 
+"""
+It introduces a diffusion editor that employs <b>seven task-specific experts</b>, GPT-4o-driven importance sampling and an EditNet transformer.
+""",
+"details": 
+"""
+""",
+},
+{
 "title": "HPSv3: Towards Wide-Spectrum Human Preference Score",
 "author": "Yuhang Ma, Yunhao Shui, Xiaoshi Wu, Keqiang Sun, Hongsheng Li",
 "organization": "",

@@ -18,20 +18,55 @@
 
 <h1 id="top">Native Multimodal Generation</h1>
 <p class="larger"><b>Integrate and generate multiple modalities (e.g., text, images, and videos) within a unified model.</b></p>
-<p class="larger"><b><font color='#D93053'>4</font> papers</b></p>
+<p class="larger"><b><font color='#D93053'>5</font> papers</b></p>
 <p>Written by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on September 10, 2025 at 20:03 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on September 15, 2025 at 16:47 (UTC+8).</font></p>
 <hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed in reverse chronological order. Some highly-impact or inspiring works are highlighted in <font color="#D04040">red</font>.</p><ul><li><a class="larger low_margin" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models</b></a></li>
-    <div style="margin: 0.5em 0 1.2em 0;">
-      <div style="display: flex; flex-wrap: wrap; gap: 0.7em 1.5em; align-items: center; font-size: 14px;">
-        <a href="#BLIP3-ofoundation algorithms & models" class="no_dec"><font color=#505050><b>BLIP3-o</b> <font style="color:#888;font-size:12px;">(arXiv 2025)</font></font></a>
-        <a href="#UniFluidfoundation algorithms & models" class="no_dec"><font color=#505050><b>UniFluid</b> <font style="color:#888;font-size:12px;">(arXiv 2025)</font></font></a>
-        <a href="#GPT-4ofoundation algorithms & models" class="no_dec"><font color=#D04040><b>GPT-4o</b> <font style="color:#888;font-size:12px;">(arXiv 2024)</font></font></a>
-        <a href="#Transfusionfoundation algorithms & models" class="no_dec"><font color=#D04040><b>Transfusion</b> <font style="color:#888;font-size:12px;">(ICLR 2025)</font></font></a>
-      </div>
-    </div>
+    <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
+        <a href="#BAGELfoundation algorithms & models" class="no_dec"><font color=#D04040><b>BAGEL</b> <font style="color:#AAAAAA;font-size:11px;">(arXiv 2025)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#BLIP3-ofoundation algorithms & models" class="no_dec"><font color=#505050><b>BLIP3-o</b> <font style="color:#AAAAAA;font-size:11px;">(arXiv 2025)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#UniFluidfoundation algorithms & models" class="no_dec"><font color=#505050><b>UniFluid</b> <font style="color:#AAAAAA;font-size:11px;">(arXiv 2025)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#GPT-4ofoundation algorithms & models" class="no_dec"><font color=#D04040><b>GPT-4o</b> <font style="color:#AAAAAA;font-size:11px;">(arXiv 2024)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#Transfusionfoundation algorithms & models" class="no_dec"><font color=#D04040><b>Transfusion</b> <font style="color:#AAAAAA;font-size:11px;">(ICLR 2025)</font></font></a>
+    </p>
     <br></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
+    <p class="little_split" id='BAGELfoundation algorithms & models'></p>
+    <div style="border-left: 16px solid #9ACAF0; padding-left: 10px">
+    <div style="height: 0.3em;"></div>
+    <p class="paper_title" onclick="toggleTable('BAGEL-Foundation Algorithms & Models-details')"><i>Emerging Properties in Unified Multimodal Pretraining</i></p>
+    <p class="paper_detail">Chaorui Deng, Deyao Zhu, Kunchang Li, Chenhui Gou, Feng Li, Zeyu Wang, Shu Zhong, Weihao Yu, Xiaonan Nie, Ziang Song, Guang Shi, Haoqi Fan</p>
+    <p class="paper_detail">ByteDance Seed, Shenzhen Institutes of Advanced Technology, Monash University, Hong Kong University of Science and Technology, UC Santa Cruz</p>
+    <p class="paper_detail">arXiv 2025 &nbsp; <font color=#D0D0D0></font></p>
+    <p class="paper_detail"><b>May 20, 2025</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#D04040>BAGEL</font></b></p>
+    <p class="paper_detail"><a href="https://arxiv.org/pdf/2505.14683">paper</a> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <a href="https://github.com/bytedance-seed/BAGEL">code</a></p>
+    
+    
+    <div id='BAGEL-Foundation Algorithms & Models-details' class="info_detail">
+        <hr class="dashed">
+        <p><font color=#202020>
+It introduces unified decoder (14B with 7B activated) with <b>Mixture-of-Transformer-Experts (MoT)</b> trained on <b>trillion-scale interleaved multimodal data</b>, achieving sota open-source performance in generation & understanding while exhibiting emergent reasoning for long-context visual tasks.
+</font></p>
+        
+        <p><figure>
+<img data-src='resource\figs\BAGEL\BAGEL-fig1.png' width=500>
+<figcaption>
+<b>Figure 1.</b> <b>Main structure:</b> one understanding expert & one generation expert, they share the attention. Initialized by Qwen2.5 LLM. <b>Encoder:</b> one visual generation encoder (FLUX VAE, fixed) & one visual understanding encoder (ViT initialized by SigLIP2-so400m/14) & one text tokenizer. <b>Loss:</b> next-token prediction loss on text tokens, and flow matching loss on image tokens. <b>Attention:</b> apply causal attention to text tokens, and bidirectional attention to image tokens. <b>Infra:</b> use PyTorch FlexAttention to achieve 2x spped-up; use KV-cache. <b>Classifier-free guidance:</b> randomly drop text, ViT, and clean VAE tokens by 0.1, 0.5, and 0.1.
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\BAGEL\BAGEL-fig2.png' width=400>
+<figcaption>
+<b>Figure 2.</b> <b>Data.</b>
+</figcaption>
+</figure>
+<figure>
+<img data-src='resource\figs\BAGEL\BAGEL-fig3.png' width=500>
+<figcaption>
+<b>Figure 3.</b> <b>Training recipe.</b> <b>Alignment:</b> Align SigLIP2 ViT encoder to Qwen2.5 LLM by optimizing MLP connector through image captioning. <b>Pre-training:</b> training all parameters on 2.5T tokens. <b>Continued training:</b> increase visual resolution and sampling of interleaved data, trained on 2.6T tokens. <b>Supervised fine-tuning:</b> trained on 72.7B tokens from a subset of LLaVA-OV and Mammoth-VL.
+</figcaption>
+</figure></p>
+    </div>
+    <div style="height: 0.05em;"></div>
+    </div>
+    <p class="little_split"></p>
+    
     <p class="little_split" id='BLIP3-ofoundation algorithms & models'></p>
     <div style="border-left: 16px solid #9ACAF0; padding-left: 10px">
     <div style="height: 0.3em;"></div>

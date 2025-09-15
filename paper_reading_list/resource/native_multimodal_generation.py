@@ -17,20 +17,40 @@ LIST["papers"] = [
 # "category": "",
 # "jupyter_notes": "",
 # "info": "",
-# "summary": """""",
+# "summary": 
+# """
+# """,
 # "details": 
 # """
-# <ul>
-#     <li>
-# </ul>
-# <figure>
-#     <img src='' width=500>
-#     <figcaption>
-#     <b>Figure 1.</b> 
-#     </figcaption>
-# </figure>
 # """,
 # },
+{
+"title": "Emerging Properties in Unified Multimodal Pretraining",
+"author": "Chaorui Deng, Deyao Zhu, Kunchang Li, Chenhui Gou, Feng Li, Zeyu Wang, Shu Zhong, Weihao Yu, Xiaonan Nie, Ziang Song, Guang Shi, Haoqi Fan",
+"organization": "ByteDance Seed, Shenzhen Institutes of Advanced Technology, Monash University, Hong Kong University of Science and Technology, UC Santa Cruz",
+"date": "20250520",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2505.14683",
+"code_url": "https://github.com/bytedance-seed/BAGEL",
+"name": "BAGEL",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"info": "**",
+"summary": 
+"""
+It introduces unified decoder (14B with 7B activated) with <b>Mixture-of-Transformer-Experts (MoT)</b> trained on <b>trillion-scale interleaved multimodal data</b>, achieving sota open-source performance in generation & understanding while exhibiting emergent reasoning for long-context visual tasks.
+""",
+"details": 
+"""
+fig: fig1.png 500
+cap: <b>Main structure:</b> one understanding expert & one generation expert, they share the attention. Initialized by Qwen2.5 LLM. <b>Encoder:</b> one visual generation encoder (FLUX VAE, fixed) & one visual understanding encoder (ViT initialized by SigLIP2-so400m/14) & one text tokenizer. <b>Loss:</b> next-token prediction loss on text tokens, and flow matching loss on image tokens. <b>Attention:</b> apply causal attention to text tokens, and bidirectional attention to image tokens. <b>Infra:</b> use PyTorch FlexAttention to achieve 2x spped-up; use KV-cache. <b>Classifier-free guidance:</b> randomly drop text, ViT, and clean VAE tokens by 0.1, 0.5, and 0.1.
+fig: fig2.png 400
+cap: <b>Data.</b>
+fig: fig3.png 500
+cap: <b>Training recipe.</b> <b>Alignment:</b> Align SigLIP2 ViT encoder to Qwen2.5 LLM by optimizing MLP connector through image captioning. <b>Pre-training:</b> training all parameters on 2.5T tokens. <b>Continued training:</b> increase visual resolution and sampling of interleaved data, trained on 2.6T tokens. <b>Supervised fine-tuning:</b> trained on 72.7B tokens from a subset of LLaVA-OV and Mammoth-VL.
+""",
+},
 {
 "title": "BLIP3-o: A Family of Fully Open Unified Multimodal Models-Architecture, Training and Dataset",
 "author": "Jiuhai Chen, Zhiyang Xu, Xichen Pan, Yushi Hu, Can Qin, Tom Goldstein, Lifu Huang, Tianyi Zhou, Saining Xie, Silvio Savarese, Le Xue, Caiming Xiong, Ran Xu",

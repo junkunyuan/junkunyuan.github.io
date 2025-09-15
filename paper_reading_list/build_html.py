@@ -92,16 +92,21 @@ def build_paper_index(papers: List[Dict[str, Any]], category: str) -> str:
         color = "#D04040" if "**" in paper.get("info", "") else "#505050"
         # Use a short, tight style
         index_items.append(
-            f'<a href="#{anchor_id}" class="no_dec"><font color={color}><b>{name}</b> <font style="color:#888;font-size:12px;">({venue_abbr} {venue_year})</font></font></a>'
+            f'<a href="#{anchor_id}" class="no_dec"><font color={color}><b>{name}</b> <font style="color:#AAAAAA;font-size:11px;">({venue_abbr} {venue_year})</font></font></a>'
         )
     # Arrange in a compact multi-row flexbox
+    # html = """
+    # <div style="margin: 0.5em 0 1.2em 0;">
+    #   <div style="display: flex; flex-wrap: wrap; gap: 0.7em 1.5em; align-items: center; font-size: 14px;">
+    #     {}
+    #   </div>
+    # </div>
+    # """.format("\n        ".join(index_items))
     html = """
-    <div style="margin: 0.5em 0 1.2em 0;">
-      <div style="display: flex; flex-wrap: wrap; gap: 0.7em 1.5em; align-items: center; font-size: 14px;">
+    <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
         {}
-      </div>
-    </div>
-    """.format("\n        ".join(index_items))
+    </p>
+    """.format(" &nbsp; &nbsp; &nbsp; ".join(index_items))
     return html
 
 
