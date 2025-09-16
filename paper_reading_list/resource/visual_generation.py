@@ -2,7 +2,7 @@ LIST = dict()
 LIST["file"] = "visual_generation.html"
 LIST["title"] = "Visual Generation"
 LIST["description"] = "Generate visual signals (e.g., images and videos)."
-LIST["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Inference-Time Improvement", "Acceleration", "Datasets & Evaluation", "Editing & Inpainting & Outpainting", "Human", "Stylization", "Interactive"]
+LIST["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning", "Inference-Time Improvement", "Acceleration", "Datasets & Evaluation", "Editing & Inpainting & Outpainting", "Controllable", "Human", "Stylization", "Interactive"]
 LIST["papers"] = [
 # {
 # "title": "",
@@ -24,6 +24,27 @@ LIST["papers"] = [
 # """
 # """,
 # },
+{
+"title": "Adding Conditional Control to Text-to-Image Diffusion Models",
+"author": "Lvmin Zhang, Anyi Rao, Maneesh Agrawala",
+"organization": "Stanford University",
+"date": "20230210",
+"venue": "ICCV 2023",
+"pdf_url": "https://arxiv.org/pdf/2302.05543",
+"code_url": "",
+"name": "ControlNet",
+"comment": "It introduces a scalable method to condition diffusion models with additional spatial or semantic inputs, enabling precise and flexible control over image generation without retraining the base model. It has over 5,000 citations (as of Sep 2025).",
+"category": "Controllable",
+"jupyter_notes": "",
+"info": "**",
+"summary": 
+"""
+It introduces a zero-convolution bypass architecture that adds spatial conditioning to frozen diffusion models for controllable generation.
+""",
+"details": 
+"""
+""",
+},
 {
 "title": "OmniStyle2: Scalable and High Quality Artistic Style Transfer Data Generation via Destylization",
 "author": "Ye Wang, Zili Yi, Yibo Zhang, Peng Zheng, Xuping Xie, Jiang Lin, Yilin Wang, Rui Ma",
