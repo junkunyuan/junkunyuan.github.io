@@ -117,7 +117,8 @@ def build_paper(papers: List[Dict[str, Any]]) -> str:
             venue = f"""(<b><font color=#404040>{venue_name}</font></b>), <b>{venue_date}</b>"""
         else:
             venue = f"""<b><font color=#404040>{venue_name}</font></b> <b>{venue_date}</b>"""
-        name = f"""<b><font color=#404040>{paper["name"]}</font></b>"""
+        color = "#C55253" if "**" in paper.get("info", "") else "#404040"
+        name = f"""<b><font color={color}>{paper["name"]}</font></b>"""
         paper_link = f"""<a href="{paper["pdf_url"]}">paper</a>"""
 
         code_link = ""
@@ -126,7 +127,7 @@ def build_paper(papers: List[Dict[str, Any]]) -> str:
 
         comment_html = ""
         if "comment" in paper and paper["comment"]:
-            comment_html = f"""<p class="paper_detail"><font color=#D04040>{paper["comment"]}</font></p>"""
+            comment_html = f"""<p class="paper_detail"><font color=#C55253>{paper["comment"]}</font></p>"""
 
         # Parse and format date
         try:
@@ -145,7 +146,7 @@ def build_paper(papers: List[Dict[str, Any]]) -> str:
         if paper_year != current_year:
             color_bar = next(color_bar_gen)
             current_year = paper_year
-
+        
         # Build paper HTML, add anchor for index
         anchor_id = f"{paper['name']}publications"
         item_content += f"""

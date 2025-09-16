@@ -89,8 +89,7 @@ def build_paper_index(papers: List[Dict[str, Any]], category: str) -> str:
         except Exception:
             venue_abbr, venue_year = paper["venue"], ""
         name = paper["name"]
-        color = "#D04040" if "**" in paper.get("info", "") else "#505050"
-        # Use a short, tight style
+        color = "#C55253" if "**" in paper.get("info", "") else "#777777"
         index_items.append(
             f'<a href="#{anchor_id}" class="no_dec"><font color={color}><b>{name}</b> <font style="color:#AAAAAA;font-size:11px;">({venue_abbr} {venue_year})</font></font></a>'
         )
@@ -112,7 +111,7 @@ def build_paper_index(papers: List[Dict[str, Any]], category: str) -> str:
 
 def _build_paper_html(paper: pd.Series, category: str, color_bar: str, domain_title: str) -> str:
     """Build HTML content for a single paper."""
-    color = "#D04040" if "**" in paper["info"] else "#404040"
+    color = "#C55253" if "**" in paper["info"] else "#404040"
 
     # Build links
     items = []
@@ -131,7 +130,7 @@ def _build_paper_html(paper: pd.Series, category: str, color_bar: str, domain_ti
         date = ""
 
     # Build optional elements
-    comment = f"""<p class="paper_detail"><font color=#D04040>{paper["comment"]}</font></p>""" if paper["comment"] else ""
+    comment = f"""<p class="paper_detail"><font color=#C55253>{paper["comment"]}</font></p>""" if paper["comment"] else ""
 
     jupyter_note = ""
     if paper.get("jupyter_notes", ""):
@@ -215,7 +214,7 @@ def _build_table_of_contents(domain: Dict[str, Any], papers: pd.DataFrame) -> st
     catalog = """<hr><p id='table' class="huger"><b>Table of contents:</b></p>"""
 
     if domain["title"] not in EXCLUDE_TITLE:
-        catalog += """<p>Papers are displayed in reverse chronological order. Some highly-impact or inspiring works are highlighted in <font color="#D04040">red</font>.</p><ul>"""
+        catalog += """<p>Papers are displayed in reverse chronological order. Some highly-impact or inspiring works are highlighted in <font color="#C55253">red</font>.</p><ul>"""
     else:
         catalog += "<ul>"
 
@@ -227,7 +226,7 @@ def _build_table_of_contents(domain: Dict[str, Any], papers: pd.DataFrame) -> st
         # Convert DataFrame to list of dictionaries for build_paper_index
         papers_list = paper_subset.to_dict('records')
         paper_links_table = build_paper_index(papers_list, category)
-        catalog += f"""<li><a class="larger low_margin" id="{category}" href="#{category}-table"><b>{category}</b></a></li>{paper_links_table}<br>"""
+        catalog += f"""<li><a class="larger low_margin no_dec" style="font-family: 'Arial, sans-serif'; color: #6D94C5;" id="{category}" href="#{category}-table"><b>{category}</b></a></li>{paper_links_table}<br>"""
 
     catalog += "</ul>"
     return catalog
@@ -355,7 +354,7 @@ def main() -> None:
             num_paper = 0 if domain["title"] in EXCLUDE_TITLE else len(domain["papers"])
             num_papers.append(num_paper)
 
-            paper_num_display = "" if domain["title"] in EXCLUDE_TITLE else f"<font color='#D93053'>{num_paper}</font> papers"
+            paper_num_display = "" if domain["title"] in EXCLUDE_TITLE else f"<font color='#C55253'>{num_paper}</font> papers"
 
             intro = intro_temp.replace("total_paper_num", paper_num_display)
             intro = intro.replace("title", domain["title"])
@@ -372,7 +371,7 @@ def main() -> None:
 
     # Build main content page
     try:
-        intro = intro_temp.replace("total_paper_num", f"<font color='#D93053'>{sum(num_papers)}</font> papers")
+        intro = intro_temp.replace("total_paper_num", f"<font color='#C55253'>{sum(num_papers)}</font> papers")
         intro = intro.replace("title", MAIN_CONTENT["title"])
         intro = intro.replace("description", "Build AI systems.")
         intro = intro.replace("""<p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>""", "")
