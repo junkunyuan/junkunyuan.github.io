@@ -25,6 +25,69 @@ LIST["papers"] = [
 # """,
 # },
 {
+"title": "Exploring Simple Siamese Representation Learning",
+"author": "Xinlei Chen, Kaiming He",
+"organization": "Facebook AI Research (FAIR)",
+"date": "20201120",
+"venue": "CVPR 2021",
+"pdf_url": "https://arxiv.org/pdf/2011.10566",
+"code_url": "https://github.com/facebookresearch/simsiam",
+"name": "SimSiam",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"info": "**",
+"summary": 
+"""
+It introduces a simple yet effective <b>Siamese architecture</b> that learns visual representations by contrasting positive and negative pairs.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "Momentum Contrast for Unsupervised Visual Representation Learning",
+"author": "Kaiming He, Haoqi Fan, Yuxin Wu, Saining Xie, Ross Girshick",
+"organization": "Facebook AI Research (FAIR)",
+"date": "20191113",
+"venue": "CVPR 2020",
+"pdf_url": "https://arxiv.org/pdf/1911.05722",
+"code_url": "https://github.com/facebookresearch/moco",
+"name": "MoCo",
+"comment": "It advances unsupervised visual representation learning by introducing a momentum-updated encoder with a dynamic queue of negatives, enabling scalable contrastive training that rivaled supervised pretraining and shaped subsequent self-supervised learning research. It has over 17,000 citations (as of Sep 2025).",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"info": "**",
+"summary": 
+"""
+It introduces <b>momentum contrast</b> to train Vision Transformers in a self-supervised manner.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "BEiT: BERT Pre-Training of Image Transformers",
+"author": "Hangbo Bao, Li Dong, Songhao Piao, Furu Wei",
+"organization": "Harbin Institute of Technology, Microsoft Research",
+"date": "20210615",
+"venue": "ICLR 2022",
+"pdf_url": "https://arxiv.org/pdf/2106.08254",
+"code_url": "https://github.com/microsoft/unilm",
+"name": "BEiT",
+"comment": "",
+"category": "Foundation Algorithms & Models",
+"jupyter_notes": "",
+"info": "**",
+"summary": 
+"""
+It introduces <b>masked image modeling</b> with discrete visual tokens to pre-train Vision Transformers in a self-supervised BERT-like fashion.
+""",
+"details": 
+"""
+""",
+},
+{
 "title": "An Empirical Study of Training Self-Supervised Vision Transformers",
 "author": "Xinlei Chen, Saining Xie, Kaiming He",
 "organization": "Facebook AI Research (FAIR)",

@@ -218,7 +218,7 @@ Some observations in experiments:
 "venue": "arXiv 2024",
 "pdf_url": "https://arxiv.org/pdf/2412.06264",
 "code_url": "https://github.com/facebookresearch/flow_matching",
-"name": "FM Guide",
+"name": "Flow Matching Guide",
 "comment": "",
 "category": "Foundation Algorithms & Models",
 "jupyter_notes": "",
