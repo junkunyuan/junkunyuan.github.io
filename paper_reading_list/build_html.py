@@ -34,7 +34,7 @@ DOMAINS: List[Dict[str, Any]] = [
     RESEARCH,
     CODING,
     FUNDAMENTAL_COMPONENT,
-    # VISUAL_UNDERSTANDING,
+    VISUAL_UNDERSTANDING,
     LANGUAGE_GENERATION,
     REINFORCEMENT_LEARNING,
     VISUAL_GENERATION,
@@ -122,8 +122,20 @@ def _build_paper_html(paper: pd.Series, category: str, color_bar: str, domain_ti
     links_html = " &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; ".join(items)
 
     # Format date and venue
-    venue = paper["venue"]
     venue_all = get_venue_all(paper["venue"])
+    
+    try:
+        [venue_name, venue_date] = paper["venue"].rsplit(" ", 1)
+        venue_date = f", <b>{venue_date}"
+    except:
+        venue_name = paper["venue"]
+        venue_date = ""
+        
+    if venue_all.strip():
+        venue = f"""(<b><font color=#404040>{venue_name}</font></b>) {venue_date}</b>"""
+    else:
+        venue = f"""<b><font color=#404040>{venue_name}</font></b> {venue_date}</b>"""
+
     try:
         date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%b %d, %Y")
     except ValueError:
@@ -161,7 +173,7 @@ def _build_paper_html(paper: pd.Series, category: str, color_bar: str, domain_ti
     <p class="paper_title" onclick="toggleTable('{paper["name"]}-{category}-details')"><i>{paper["title"]}</i></p>
     {author}
     {organization}
-    <p class="paper_detail">{venue} &nbsp; <font color=#D0D0D0>{venue_all}</font></p>
+    <p class="paper_detail">{venue_all} {venue}</font></p>
     <p class="paper_detail"><b>{date}</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color={color}>{paper["name"]}</font></b></p>
     <p class="paper_detail">{links_html}</p>
     {comment}

@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="resource/html.css" type="text/css">
+    <link rel="shortcut icon" href="resource/my_photo.jpg">
+    <title>Paper Reading List</title>
+    <meta name="description" content="Paper Reading List">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div id="layout-content" style="margin-top:25px">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-bash.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <body>
+
+<h1 id="top">Visual Understanding</h1>
+<p class="larger"><b>Percept and understand visual signals by supervised or unsupervised learning.</b></p>
+<p class="larger"><b><font color='#C55253'>2</font> papers</b></p>
+<p>Written by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
+<p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
+<p><font color=#B0B0B0>Last updated on September 16, 2025 at 14:37 (UTC+8).</font></p>
+<hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed in reverse chronological order. Some highly-impact or inspiring works are highlighted in <font color="#C55253">red</font>.</p><ul><li><a class="larger low_margin no_dec" style="font-family: 'Arial, sans-serif'; color: #6D94C5;" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models</b></a></li>
+    <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
+        <a href="#MAEfoundation algorithms & models" class="no_dec"><font color=#C55253><b>MAE</b> <font style="color:#AAAAAA;font-size:11px;">(CVPR 2022)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#MoCo v3foundation algorithms & models" class="no_dec"><font color=#C55253><b>MoCo v3</b> <font style="color:#AAAAAA;font-size:11px;">(ICCV 2021)</font></font></a>
+    </p>
+    <br></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
+    <p class="little_split" id='MAEfoundation algorithms & models'></p>
+    <div style="border-left: 16px solid #9ACAF0; padding-left: 10px">
+    <div style="height: 0.3em;"></div>
+    <p class="paper_title" onclick="toggleTable('MAE-Foundation Algorithms & Models-details')"><i>Masked Autoencoders Are Scalable Vision Learners</i></p>
+    <p class="paper_detail">Kaiming He, Xinlei Chen, Saining Xie, Yanghao Li, Piotr Dollár, Ross Girshick</p>
+    <p class="paper_detail">Facebook AI Research (FAIR)</p>
+    <p class="paper_detail">Conference on Computer Vision and Pattern Recognition (<b><font color=#404040>CVPR</font></b>) , <b>2022</b></font></p>
+    <p class="paper_detail"><b>Nov 11, 2021</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#C55253>MAE</font></b></p>
+    <p class="paper_detail"><a href="https://arxiv.org/pdf/2111.06377">paper</a> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <a href="https://github.com/facebookresearch/mae">code</a></p>
+    <p class="paper_detail"><font color=#C55253>It introduces an efficient self-supervised learning paradigm that reconstructs missing image patches, enabling scalable pretraining with reduced computational cost, and significantly improving performance and transferability across vision benchmarks. It has over 11,000 citations (as of Sep 2025).</font></p>
+    
+    <div id='MAE-Foundation Algorithms & Models-details' class="info_detail">
+        <hr class="dashed">
+        <p><font color=#202020>
+It introduces a <b>masked autoencoder</b> that reconstructs 75% masked patches, enabling scalable self-supervised pre-training of Vision Transformers.
+</font></p>
+        
+        <p>
+</p>
+    </div>
+    <div style="height: 0.05em;"></div>
+    </div>
+    <p class="little_split"></p>
+    
+    <p class="little_split" id='MoCo v3foundation algorithms & models'></p>
+    <div style="border-left: 16px solid #9ACAF0; padding-left: 10px">
+    <div style="height: 0.3em;"></div>
+    <p class="paper_title" onclick="toggleTable('MoCo v3-Foundation Algorithms & Models-details')"><i>An Empirical Study of Training Self-Supervised Vision Transformers</i></p>
+    <p class="paper_detail">Xinlei Chen, Saining Xie, Kaiming He</p>
+    <p class="paper_detail">Facebook AI Research (FAIR)</p>
+    <p class="paper_detail">International Conference on Computer Vision (<b><font color=#404040>ICCV</font></b>) , <b>2021</b></font></p>
+    <p class="paper_detail"><b>Apr 05, 2021</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#C55253>MoCo v3</font></b></p>
+    <p class="paper_detail"><a href="https://arxiv.org/pdf/2104.02057">paper</a> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <a href="https://github.com/facebookresearch/moco-v3">code</a></p>
+    
+    
+    <div id='MoCo v3-Foundation Algorithms & Models-details' class="info_detail">
+        <hr class="dashed">
+        <p><font color=#202020>
+It introduces a random patch projection trick that <b>freezes the first ViT layer</b> to stabilize contrastive self-supervised training.
+</font></p>
+        
+        <p>
+</p>
+    </div>
+    <div style="height: 0.05em;"></div>
+    </div>
+    <p class="little_split"></p>
+    
+    <script>
+        function toggleTable(tableId) {
+            const container = document.getElementById(tableId);
+            const isVisible = window.getComputedStyle(container).display !== 'none';
+            if (!isVisible) {
+                const images = container.querySelectorAll('img');
+                images.forEach(img => {
+                    if (img.dataset.src !== '') {img.src = img.dataset.src;}
+                });
+                container.style.display = 'block';
+            } else {container.style.display = 'none';}
+        }
+    </script>
+    
+<button id="backToTop" title="back to top">↑</button>
+<script>
+    const button = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+        if (document.documentElement.scrollTop > 300) {
+            button.style.display = "block";
+        } else {
+            button.style.display = "none";
+        }
+    });
+
+    function updateButtonPosition() {
+        const bodyRect = document.body.getBoundingClientRect();
+        const windowWidth = window.innerWidth;
+        const rightOffset = Math.max((windowWidth - bodyRect.width) / 2, 10);
+        button.style.right = rightOffset + "px";
+    }
+
+    window.addEventListener("resize", updateButtonPosition);
+    window.addEventListener("load", updateButtonPosition);
+
+    button.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+</body>
+</html>
