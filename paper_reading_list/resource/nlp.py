@@ -1,7 +1,7 @@
 LIST = dict()
-LIST["file"] = "language_generation.html"
-LIST["title"] = "Language Generation"
-LIST["description"] = "Generate text."
+LIST["file"] = "nlp.html"
+LIST["title"] = "Natural Language Processing (NLP)"
+LIST["description"] = "Understand and generate human language."
 LIST["categories"] = ["Foundation Algorithms & Models", "Reinforcement Learning"]
 LIST["papers"] = [
 # {

@@ -22,24 +22,20 @@ from .resource.main_content import MAIN_CONTENT
 from .resource.research import LIST as RESEARCH
 from .resource.coding import LIST as CODING
 from .resource.fundamental import LIST as FUNDAMENTAL_COMPONENT
-from .resource.visual_understanding import LIST as VISUAL_UNDERSTANDING
-from .resource.language_generation import LIST as LANGUAGE_GENERATION
-from .resource.reinforcement_learning import LIST as REINFORCEMENT_LEARNING
-from .resource.visual_generation import LIST as VISUAL_GENERATION
-from .resource.multimodal_understanding import LIST as MULTIMODAL_UNDERSTANDING
-from .resource.native_multimodal_generation import LIST as NATIVE_MULTIMODAL_GENERATION
+from .resource.nlp import LIST as NLP
+from .resource.rl import LIST as RL
+from .resource.cv import LIST as CV
+from .resource.mm import LIST as MM
 
 # Configuration constants
 DOMAINS: List[Dict[str, Any]] = [
     RESEARCH,
     CODING,
     FUNDAMENTAL_COMPONENT,
-    VISUAL_UNDERSTANDING,
-    LANGUAGE_GENERATION,
-    REINFORCEMENT_LEARNING,
-    VISUAL_GENERATION,
-    MULTIMODAL_UNDERSTANDING,
-    NATIVE_MULTIMODAL_GENERATION
+    RL,
+    CV,
+    NLP,
+    MM,
 ]
 
 EXCLUDE_TITLE: List[str] = ["Research", "Coding and Engineering"]
@@ -201,7 +197,8 @@ def _build_domain_content(domain: Dict[str, Any], papers: pd.DataFrame) -> str:
         color_bar = next(color_bar_generator)
 
         # Filter papers for this category
-        category_mask = papers["category"].str.contains(category)
+        # category_mask = papers["category"].str.contains(category)
+        category_mask = papers["category"] == category
         if category_mask.sum() == 0:
             continue
 
@@ -231,7 +228,8 @@ def _build_table_of_contents(domain: Dict[str, Any], papers: pd.DataFrame) -> st
         catalog += "<ul>"
 
     for category in domain["categories"]:
-        paper_subset = papers[papers["category"].str.contains(category)]
+        # paper_subset = papers[papers["category"].str.contains(category)]
+        paper_subset = papers[papers["category"] == category]
         if domain["title"] not in EXCLUDE_TITLE:
             paper_subset = paper_subset.sort_values(by="date", ascending=False)
 
