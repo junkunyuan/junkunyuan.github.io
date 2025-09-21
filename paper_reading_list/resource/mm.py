@@ -17,14 +17,36 @@ LIST["papers"] = [
 # "category": "",
 # "jupyter_notes": "",
 # "info": "",
-# "summary": """""",
+# "summary": 
+# """
+# """,
 # "details": 
 # """
-# <ul>
-#     <li>
-# </ul>
 # """,
 # },
+{
+"title": "MMaDA: Multimodal Large Diffusion Language Models",
+"author": "Ling Yang, Ye Tian, Bowen Li, Xinchen Zhang, Ke Shen, Yunhai Tong, Mengdi Wang",
+"organization": "Princeton University, Peking University, Tsinghua University, ByteDance Seed",
+"date": "20250521",
+"venue": "NeurIPS 2025",
+"pdf_url": "https://arxiv.org/pdf/2505.15809",
+"code_url": "https://github.com/Gen-Verse/MMaDA",
+"name": "MMaDA",
+"comment": "",
+"category": "Foundation Algorithms & Models of Understanding and Generation",
+"jupyter_notes": "",
+"info": "**",
+"summary": 
+"""
+It introduces a unified <b>discrete-diffusion foundation model</b> that leverages Mixed Long-CoT fine-tuning and UniGRPO.
+""",
+"details": 
+"""
+fig: fig1.png 800
+cap: <b>MMaDA Structure.</b>
+""",
+},
 {
 "title": "Emerging Properties in Unified Multimodal Pretraining",
 "author": "Chaorui Deng, Deyao Zhu, Kunchang Li, Chenhui Gou, Feng Li, Zeyu Wang, Shu Zhong, Weihao Yu, Xiaonan Nie, Ziang Song, Guang Shi, Haoqi Fan",
