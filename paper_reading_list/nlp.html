@@ -18,19 +18,55 @@
 
 <h1 id="top">Natural Language Processing (NLP)</h1>
 <p class="larger"><b>Understand and generate human language.</b></p>
-<p class="larger"><b><font color='#C55253'>2</font> papers</b></p>
+<p class="larger"><b><font color='#C55253'>3</font> papers</b></p>
 <p>Written by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on September 20, 2025 at 11:22 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on September 21, 2025 at 15:19 (UTC+8).</font></p>
 <hr><p id='table' class="huger"><b>Table of contents:</b></p><p>Papers are displayed in reverse chronological order. Some highly-impact or inspiring works are highlighted in <font color="#C55253">red</font>.</p><ul><li><a class="larger low_margin no_dec" style="font-family: 'Arial, sans-serif'; color: #6D94C5;" id="Foundation Algorithms & Models" href="#Foundation Algorithms & Models-table"><b>Foundation Algorithms & Models</b></a></li>
     <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
-        <a href="#Transformerfoundation algorithms & models" class="no_dec"><font color=#C55253><b>Transformer</b> <font style="color:#AAAAAA;font-size:11px;">(NeurIPS 2017)</font></font></a>
+        <a href="#LLaDAfoundation algorithms & models" class="no_dec"><font color=#C55253><b>LLaDA</b> <font style="color:#AAAAAA;font-size:11px;">(arXiv 2025)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#Transformerfoundation algorithms & models" class="no_dec"><font color=#C55253><b>Transformer</b> <font style="color:#AAAAAA;font-size:11px;">(NeurIPS 2017)</font></font></a>
     </p>
     <br><li><a class="larger low_margin no_dec" style="font-family: 'Arial, sans-serif'; color: #6D94C5;" id="Reinforcement Learning" href="#Reinforcement Learning-table"><b>Reinforcement Learning</b></a></li>
     <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
         <a href="#DPOreinforcement learning" class="no_dec"><font color=#C55253><b>DPO</b> <font style="color:#AAAAAA;font-size:11px;">(NeurIPS 2023)</font></font></a>
     </p>
     <br></ul><h2 id="Foundation Algorithms & Models-table"><a class="no_dec" href="#Foundation Algorithms & Models">Foundation Algorithms & Models</a></h2>
+    <p class="little_split" id='LLaDAfoundation algorithms & models'></p>
+    <div style="border-left: 16px solid #9ACAF0; padding-left: 10px">
+    <div style="height: 0.3em;"></div>
+    <p class="paper_title" onclick="toggleTable('LLaDA-Foundation Algorithms & Models-details')"><i>Large Language Diffusion Models</i></p>
+    <p class="paper_detail">Shen Nie, Fengqi Zhu, Zebin You, Xiaolu Zhang, Jingyang Ou, Jun Hu, Jun Zhou, Yankai Lin, Ji-Rong Wen, Chongxuan Li</p>
+    <p class="paper_detail">Renmin University of China, Ant Group</p>
+    <p class="paper_detail"> <b><font color=#404040>arXiv</font></b> , <b>2025</b></font></p>
+    <p class="paper_detail"><b>Feb 14, 2025</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#C55253>LLaDA</font></b></p>
+    <p class="paper_detail"><a href="https://arxiv.org/pdf/2502.09992">paper</a> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <a href="https://github.com/ML-GSAI/LLaDA">code</a></p>
+    
+    
+    <div id='LLaDA-Foundation Algorithms & Models-details' class="info_detail">
+        <hr class="dashed">
+        <p><font color=#202020>
+It introduces a <b>masked diffusion language model</b> (8B) that matches strong autoregressive LLMs while inherently enabling bidirectional reasoning.
+</font></p>
+        
+        <p><ul>
+<li> It argues that the <b>generative modeling</b> is to learn \(\max_{\theta}\mathbb{E}_{p_{data}(x)}\log p_{\theta}(x)\), which <b>not necessarily be auto-regressive</b>.</li>
+<li><b>Intruction-following</b> and <b>in-context learning</b> is also not an exclusive advantage of autoregressive models.</li>
+<li>Auto-regressive models have disadvantages such as <b>high computational costs</b> due to <b>token-by-token generation</b>, and limitations in <b>reversal reasoning</b> due to <b>left-to-right generation</b>.</li>
+<li><b>LLaDA (8B) with 4096 tokens</b> is pre-trained fram scratch on 2.3T tokens using 0.13M H800 GPU hours, followed by SFT on 4.5M pairs.</li>
+<li>LLaDA <b>does not use a causal mask</b>, as it sees the entire context.</li>
+<li>LLaDA uses <b>vanilla multi-head attention</b>, as it is incompatible with KV cache.</li>
+</ul>
+<figure>
+<img data-src='resource\figs\LLaDA\LLaDA-fig1.png' width=900>
+<figcaption>
+<b>Figure 1.</b> <b>Pre-training.</b> Tokens are independently randomly masked by probability of \(t\sim U[0,1]\), the model predicts the masked tokens by minimizing the cross-entropy loss. <b>SFT.</b> Only response tokens are possibly masked. <b>Inference.</b> Stimulate a diffusion process from \(t=1\) to \(t=0\).
+</figcaption>
+</figure></p>
+    </div>
+    <div style="height: 0.05em;"></div>
+    </div>
+    <p class="little_split"></p>
+    
     <p class="little_split" id='Transformerfoundation algorithms & models'></p>
     <div style="border-left: 16px solid #9ACAF0; padding-left: 10px">
     <div style="height: 0.3em;"></div>
@@ -52,7 +88,7 @@ It introduces sequence transduction architecture <b>relying solely on multi-head
         
         <p>
 <ul>
-    <li>
+    <li>Details to be added</li>
 </ul>
 </p>
     </div>

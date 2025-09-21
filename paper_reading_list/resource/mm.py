@@ -1,7 +1,7 @@
 LIST = dict()
 LIST["file"] = "mm.html"
-LIST["title"] = "Multimodal"
-LIST["description"] = "Understand and reason by integrating multiple modalities such as text, images, and videos."
+LIST["title"] = "Multimodal (MM)"
+LIST["description"] = "Understand and generate by integrating multiple modalities such as text, images, and videos."
 LIST["categories"] = ["Foundation Algorithms & Models of Understanding", "Foundation Algorithms & Models of Understanding and Generation"]
 LIST["papers"] = [
 # {
