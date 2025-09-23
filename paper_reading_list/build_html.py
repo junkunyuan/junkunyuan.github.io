@@ -80,14 +80,17 @@ def build_paper_index(papers: List[Dict[str, Any]], category: str) -> str:
     for idx, paper in enumerate(papers):
         anchor_id = f"{paper['name']}{category.lower()}"
         # venue_abbr and year
-        try:
-            venue_abbr, venue_year = paper["venue"].rsplit(" ", 1)
-        except Exception:
-            venue_abbr, venue_year = paper["venue"], ""
+        venue_abbr, venue_year = paper["venue"], ""
+        if any(char.isdigit() for char in paper["venue"]):
+            try:
+                venue_abbr, venue_year = paper["venue"].rsplit(" ", 1)
+                venue_year = " " + venue_year
+            except Exception:
+                ...
         name = paper["name"]
         color = "#C55253" if "**" in paper.get("info", "") else "#777777"
         index_items.append(
-            f'<a href="#{anchor_id}" class="no_dec"><font color={color}><b>{name}</b> <font style="color:#AAAAAA;font-size:11px;">({venue_abbr} {venue_year})</font></font></a>'
+            f'<a href="#{anchor_id}" class="no_dec"><font color={color}><b>{name}</b> <font style="color:#AAAAAA;font-size:11px;">({venue_abbr}{venue_year})</font></font></a>'
         )
     # Arrange in a compact multi-row flexbox
     # html = """
@@ -120,17 +123,19 @@ def _build_paper_html(paper: pd.Series, category: str, color_bar: str, domain_ti
     # Format date and venue
     venue_all = get_venue_all(paper["venue"])
     
-    try:
-        [venue_name, venue_date] = paper["venue"].rsplit(" ", 1)
-        venue_date = f", <b>{venue_date}"
-    except:
-        venue_name = paper["venue"]
-        venue_date = ""
+    venue_name = paper["venue"]
+    venue_date = ""
+    if any(char.isdigit() for char in paper["venue"]):
+        try:
+            [venue_name, venue_date] = paper["venue"].rsplit(" ", 1)
+            venue_date = f", <b>{venue_date}"
+        except:
+            ...
         
     if venue_all.strip():
-        venue = f"""(<b><font color=#404040>{venue_name}</font></b>) {venue_date}</b>"""
+        venue = f"""(<b><font color=#404040>{venue_name}</font></b>){venue_date}</b>"""
     else:
-        venue = f"""<b><font color=#404040>{venue_name}</font></b> {venue_date}</b>"""
+        venue = f"""<b><font color=#404040>{venue_name}</font></b>{venue_date}</b>"""
 
     try:
         date = datetime.strptime(paper["date"], "%Y%m%d").strftime("%b %d, %Y")

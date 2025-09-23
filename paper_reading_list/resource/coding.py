@@ -2,7 +2,7 @@ LIST = dict()
 LIST["file"] = "coding.html"
 LIST["title"] = "Coding and Engineering"
 LIST["description"] = "Tools used to build AI systems."
-LIST["categories"] = ["PyTorch", "Distributed Training"]
+LIST["categories"] = ["PyTorch", "Distributed Training", "Tools"]
 LIST["papers"] = [
 # {
 # "title": "",
@@ -27,10 +27,80 @@ LIST["papers"] = [
 # """,
 # },
 {
+"title": "Git",
+"date": "20250923",
+"venue": "git tools",
+"name": "git",
+"comment": "",
+"category": "Tools",
+"jupyter_notes": "",
+"info": "",
+"summary": """Git is a <b>distributed version control system</b> that allows you to track changes in your code and collaborate with others.""",
+"details": 
+f"""
+<table class="center">
+<tr>
+<th>category</th>
+<th>tool (alphabetical)</th>
+</tr>
+<tr>
+<td>Setup and configure</td>
+<td>
+<a href="#git-config">config</a> &nbsp;&nbsp;
+<a href="#ssh keys">ssh keys</a> &nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>Get and create projects</td>
+<td>
+<a href="#git-clone">clone</a> &nbsp;&nbsp;
+</tr>
+</table>
+
+<p class="larger" id="git-clone">
+<b><a href="https://git-scm.com/docs/git-clone">clone</a>: </b>
+clone a repository into a new directory.
+
+<pre>
+<code class="language-bash" style="font-size: 14px;">
+git clone git@github.com:[user name]/[repo name].git
+</code>
+</pre>
+
+<p class="larger" id="git-config">
+<b><a href="https://git-scm.com/docs/git-config">config</a>: </b>
+get and set repository or global options.
+
+<pre>
+<code class="language-bash" style="font-size: 14px;">
+git config --list  # list all config
+git config user.name [your name] && git config user.email [your email]  # repo config; cd to repo and execute
+git config --global user.name [your name] && git config --global user.email [your email]  # global config
+</code>
+</pre>
+
+<p class="larger" id="ssh keys">
+<b><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">ssh keys</a>: </b>
+generate a new SSH key to use for authentication.
+<pre>
+<code class="language-bash" style="font-size: 14px;">
+## 1. Check if SSH key exists: *.pub
+ls -al ~/.ssh
+## 2. If not, generate a new SSH key
+ssh-keygen -t rsa -b 4096 -C [your GitHub email]
+## 3. Copy SSH key
+cat ~/.ssh/[your key name].pub
+## 4. Open GitHub -> Settings -> SSH and GPG keys -> New SSH key -> paste the SSH key
+## 5. Test
+ssh -T git@github.com  # to see if it prints "Hi *! You've successfully ..."
+</code>
+</pre>
+""",
+},
+{
 "title": "DeepSpeed",
 "author": "",
 "organization": "",
-"date": "",
+"date": "20250821",
 "venue": "deepspeed framework",
 "pdf_url": "",
 "code_url": "",

@@ -21,14 +21,18 @@
 <p class="larger"><b></b></p>
 <p>Written by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on September 21, 2025 at 18:32 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on September 23, 2025 at 15:03 (UTC+8).</font></p>
 <hr><p id='table' class="huger"><b>Table of contents:</b></p><ul><li><a class="larger low_margin no_dec" style="font-family: 'Arial, sans-serif'; color: #6D94C5;" id="PyTorch" href="#PyTorch-table"><b>PyTorch</b></a></li>
     <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
-        <a href="#data transformspytorch" class="no_dec"><font color=#777777><b>data transforms</b> <font style="color:#AAAAAA;font-size:11px;">(transform and augment data)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#data loaderpytorch" class="no_dec"><font color=#777777><b>data loader</b> <font style="color:#AAAAAA;font-size:11px;">(load data)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#operationpytorch" class="no_dec"><font color=#777777><b>operation</b> <font style="color:#AAAAAA;font-size:11px;">(tensor operations)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#modulepytorch" class="no_dec"><font color=#777777><b>module</b> <font style="color:#AAAAAA;font-size:11px;">(modules to build models)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#activation functionpytorch" class="no_dec"><font color=#777777><b>activation function</b> <font style="color:#AAAAAA;font-size:11px;">(activation functions)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#optimizerpytorch" class="no_dec"><font color=#777777><b>optimizer</b> <font style="color:#AAAAAA;font-size:11px;">(optimizers )</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#huggingfacepytorch" class="no_dec"><font color=#777777><b>huggingface</b> <font style="color:#AAAAAA;font-size:11px;">(huggingface tools)</font></font></a>
+        <a href="#data transformspytorch" class="no_dec"><font color=#777777><b>data transforms</b> <font style="color:#AAAAAA;font-size:11px;">(transform and augment data)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#data loaderpytorch" class="no_dec"><font color=#777777><b>data loader</b> <font style="color:#AAAAAA;font-size:11px;">(load data)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#operationpytorch" class="no_dec"><font color=#777777><b>operation</b> <font style="color:#AAAAAA;font-size:11px;">(tensor operations)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#modulepytorch" class="no_dec"><font color=#777777><b>module</b> <font style="color:#AAAAAA;font-size:11px;">(modules to build models)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#activation functionpytorch" class="no_dec"><font color=#777777><b>activation function</b> <font style="color:#AAAAAA;font-size:11px;">(activation functions)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#optimizerpytorch" class="no_dec"><font color=#777777><b>optimizer</b> <font style="color:#AAAAAA;font-size:11px;">(optimizers)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#huggingfacepytorch" class="no_dec"><font color=#777777><b>huggingface</b> <font style="color:#AAAAAA;font-size:11px;">(huggingface tools)</font></font></a>
     </p>
     <br><li><a class="larger low_margin no_dec" style="font-family: 'Arial, sans-serif'; color: #6D94C5;" id="Distributed Training" href="#Distributed Training-table"><b>Distributed Training</b></a></li>
     <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
         <a href="#deepspeeddistributed training" class="no_dec"><font color=#777777><b>deepspeed</b> <font style="color:#AAAAAA;font-size:11px;">(deepspeed framework)</font></font></a>
+    </p>
+    <br><li><a class="larger low_margin no_dec" style="font-family: 'Arial, sans-serif'; color: #6D94C5;" id="Tools" href="#Tools-table"><b>Tools</b></a></li>
+    <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
+        <a href="#gittools" class="no_dec"><font color=#777777><b>git</b> <font style="color:#AAAAAA;font-size:11px;">(git tools)</font></font></a>
     </p>
     <br></ul><h2 id="PyTorch-table"><a class="no_dec" href="#PyTorch">PyTorch</a></h2>
     <p class="little_split" id='data transformspytorch'></p>
@@ -37,7 +41,7 @@
     <p class="paper_title" onclick="toggleTable('data transforms-PyTorch-details')"><i>Data Transforms</i></p>
     
     
-    <p class="paper_detail"> <b><font color=#404040>transform and augment</font></b> , <b>data</b></font></p>
+    <p class="paper_detail"> <b><font color=#404040>transform and augment data</font></b></b></font></p>
     <p class="paper_detail"><b>Jul 01, 2024</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>data transforms</font></b></p>
     <p class="paper_detail"></p>
     
@@ -158,7 +162,7 @@ image_trans = trans(image)  # Tensor => Tensor
     <p class="paper_title" onclick="toggleTable('data loader-PyTorch-details')"><i>Data Loader</i></p>
     
     
-    <p class="paper_detail"> <b><font color=#404040>load</font></b> , <b>data</b></font></p>
+    <p class="paper_detail"> <b><font color=#404040>load data</font></b></b></font></p>
     <p class="paper_detail"><b>Jun 30, 2024</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>data loader</font></b></p>
     <p class="paper_detail"></p>
     
@@ -200,7 +204,7 @@ data_loader = DataLoader(dataset, batch_size, shuffle, sampler, num_workers,
     <p class="paper_title" onclick="toggleTable('operation-PyTorch-details')"><i>Operation</i></p>
     
     
-    <p class="paper_detail"> <b><font color=#404040>tensor</font></b> , <b>operations</b></font></p>
+    <p class="paper_detail"> <b><font color=#404040>tensor operations</font></b></b></font></p>
     <p class="paper_detail"><b>Jun 30, 2023</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>operation</font></b></p>
     <p class="paper_detail"></p>
     
@@ -514,7 +518,7 @@ y = torch.where(condition, input, output)
     <p class="paper_title" onclick="toggleTable('module-PyTorch-details')"><i>Module</i></p>
     
     
-    <p class="paper_detail"> <b><font color=#404040>modules to build</font></b> , <b>models</b></font></p>
+    <p class="paper_detail"> <b><font color=#404040>modules to build models</font></b></b></font></p>
     <p class="paper_detail"><b>Jun 29, 2024</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>module</font></b></p>
     <p class="paper_detail"></p>
     
@@ -675,7 +679,7 @@ y = dropout(x)
     <p class="paper_title" onclick="toggleTable('activation function-PyTorch-details')"><i>Activation Function</i></p>
     
     
-    <p class="paper_detail"> <b><font color=#404040>activation</font></b> , <b>functions</b></font></p>
+    <p class="paper_detail"> <b><font color=#404040>activation functions</font></b></b></font></p>
     <p class="paper_detail"><b>Jun 28, 2024</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>activation function</font></b></p>
     <p class="paper_detail"></p>
     
@@ -749,7 +753,7 @@ y = silu(x)
     <p class="paper_title" onclick="toggleTable('optimizer-PyTorch-details')"><i>Optimizer</i></p>
     
     
-    <p class="paper_detail"> <b><font color=#404040>optimizers</font></b> </b></font></p>
+    <p class="paper_detail"> <b><font color=#404040>optimizers</font></b></b></font></p>
     <p class="paper_detail"><b>Jun 28, 2024</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>optimizer</font></b></p>
     <p class="paper_detail"></p>
     
@@ -787,7 +791,7 @@ adam_optim = AdamW(params, lr, betas, weight_decay)
     <p class="paper_title" onclick="toggleTable('huggingface-PyTorch-details')"><i>huggingface</i></p>
     
     
-    <p class="paper_detail"> <b><font color=#404040>huggingface</font></b> , <b>tools</b></font></p>
+    <p class="paper_detail"> <b><font color=#404040>huggingface tools</font></b></b></font></p>
     <p class="paper_detail"><b>May 30, 2023</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>huggingface</font></b></p>
     <p class="paper_detail"></p>
     
@@ -826,8 +830,8 @@ snapshot_download(repo_id, repo_type, local_dir, token, max_workers)
     <p class="paper_title" onclick="toggleTable('deepspeed-Distributed Training-details')"><i>DeepSpeed</i></p>
     
     
-    <p class="paper_detail"> <b><font color=#404040>deepspeed</font></b> , <b>framework</b></font></p>
-    <p class="paper_detail"><b></b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>deepspeed</font></b></p>
+    <p class="paper_detail"> <b><font color=#404040>deepspeed framework</font></b></b></font></p>
+    <p class="paper_detail"><b>Aug 21, 2025</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>deepspeed</font></b></p>
     <p class="paper_detail"></p>
     
     
@@ -862,6 +866,84 @@ snapshot_download(repo_id, repo_type, local_dir, token, max_workers)
         <td>high</td>
     </tr>
 </table>
+</p>
+    </div>
+    <div style="height: 0.05em;"></div>
+    </div>
+    <p class="little_split"></p>
+    <h2 id="Tools-table"><a class="no_dec" href="#Tools">Tools</a></h2>
+    <p class="little_split" id='gittools'></p>
+    <div style="border-left: 16px solid #A0D0A0; padding-left: 10px">
+    <div style="height: 0.3em;"></div>
+    <p class="paper_title" onclick="toggleTable('git-Tools-details')"><i>Git</i></p>
+    
+    
+    <p class="paper_detail"> <b><font color=#404040>git tools</font></b></b></font></p>
+    <p class="paper_detail"><b>Sep 23, 2025</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>git</font></b></p>
+    <p class="paper_detail"></p>
+    
+    
+    <div id='git-Tools-details' class="info_detail">
+        <hr class="dashed">
+        <p><font color=#202020>Git is a <b>distributed version control system</b> that allows you to track changes in your code and collaborate with others.</font></p>
+        
+        <p>
+<table class="center">
+<tr>
+<th>category</th>
+<th>tool (alphabetical)</th>
+</tr>
+<tr>
+<td>Setup and configure</td>
+<td>
+<a href="#git-config">config</a> &nbsp;&nbsp;
+<a href="#ssh keys">ssh keys</a> &nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>Get and create projects</td>
+<td>
+<a href="#git-clone">clone</a> &nbsp;&nbsp;
+</tr>
+</table>
+
+<p class="larger" id="git-clone">
+<b><a href="https://git-scm.com/docs/git-clone">clone</a>: </b>
+clone a repository into a new directory.
+
+<pre>
+<code class="language-bash" style="font-size: 14px;">
+git clone git@github.com:[user name]/[repo name].git
+</code>
+</pre>
+
+<p class="larger" id="git-config">
+<b><a href="https://git-scm.com/docs/git-config">config</a>: </b>
+get and set repository or global options.
+
+<pre>
+<code class="language-bash" style="font-size: 14px;">
+git config --list  # list all config
+git config user.name [your name] && git config user.email [your email]  # repo config; cd to repo and execute
+git config --global user.name [your name] && git config --global user.email [your email]  # global config
+</code>
+</pre>
+
+<p class="larger" id="ssh keys">
+<b><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">ssh keys</a>: </b>
+generate a new SSH key to use for authentication.
+<pre>
+<code class="language-bash" style="font-size: 14px;">
+## 1. Check if SSH key exists: *.pub
+ls -al ~/.ssh
+## 2. If not, generate a new SSH key
+ssh-keygen -t rsa -b 4096 -C [your GitHub email]
+## 3. Copy SSH key
+cat ~/.ssh/[your key name].pub
+## 4. Open GitHub -> Settings -> SSH and GPG keys -> New SSH key -> paste the SSH key
+## 5. Test
+ssh -T git@github.com  # to see if it prints "Hi *! You've successfully ..."
+</code>
+</pre>
 </p>
     </div>
     <div style="height: 0.05em;"></div>
