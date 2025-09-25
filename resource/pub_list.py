@@ -1,5 +1,15 @@
 PAPERS = [
 {
+"title": "Follow-Your-Emoji-Faster: Towards Efficient, Fine-Controllable, and Expressive Freestyle Portrait Animation",
+"author": "Yue Ma**, Zexuan Yan**, Hongyu Liu**, Hongfa Wang, Heng Pan, Yingqing He, Junkun Yuan, Ailing Zeng, Chengfei Cai, Heung-Yeung Shum, Zhifeng Li, Wei Liu, Linfeng Zhang##, Qifeng Chen##",
+"date": "20250920",
+"venue": "IJCV 2025",
+"name": "Follow-Your-Emoji-Faster",
+"pdf_url": "https://arxiv.org/pdf/2509.16630",
+"code_url": "https://github.com/mayuelala/FollowYourEmoji",
+"comment": ""
+},
+{
 "title": "Hunyuan-Game: Industrial-grade Intelligent Game Creation Model",
 "author": "Hunyuan Multimodal Model Group at Tencent (<b><font color=#404040>as a group member</font></b>)",
 "date": "20250520",

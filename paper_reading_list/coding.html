@@ -21,7 +21,7 @@
 <p class="larger"><b></b></p>
 <p>Written by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on September 23, 2025 at 15:03 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on September 25, 2025 at 14:52 (UTC+8).</font></p>
 <hr><p id='table' class="huger"><b>Table of contents:</b></p><ul><li><a class="larger low_margin no_dec" style="font-family: 'Arial, sans-serif'; color: #6D94C5;" id="PyTorch" href="#PyTorch-table"><b>PyTorch</b></a></li>
     <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
         <a href="#data transformspytorch" class="no_dec"><font color=#777777><b>data transforms</b> <font style="color:#AAAAAA;font-size:11px;">(transform and augment data)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#data loaderpytorch" class="no_dec"><font color=#777777><b>data loader</b> <font style="color:#AAAAAA;font-size:11px;">(load data)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#operationpytorch" class="no_dec"><font color=#777777><b>operation</b> <font style="color:#AAAAAA;font-size:11px;">(tensor operations)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#modulepytorch" class="no_dec"><font color=#777777><b>module</b> <font style="color:#AAAAAA;font-size:11px;">(modules to build models)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#activation functionpytorch" class="no_dec"><font color=#777777><b>activation function</b> <font style="color:#AAAAAA;font-size:11px;">(activation functions)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#optimizerpytorch" class="no_dec"><font color=#777777><b>optimizer</b> <font style="color:#AAAAAA;font-size:11px;">(optimizers)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#huggingfacepytorch" class="no_dec"><font color=#777777><b>huggingface</b> <font style="color:#AAAAAA;font-size:11px;">(huggingface tools)</font></font></a>
@@ -32,7 +32,7 @@
     </p>
     <br><li><a class="larger low_margin no_dec" style="font-family: 'Arial, sans-serif'; color: #6D94C5;" id="Tools" href="#Tools-table"><b>Tools</b></a></li>
     <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
-        <a href="#gittools" class="no_dec"><font color=#777777><b>git</b> <font style="color:#AAAAAA;font-size:11px;">(git tools)</font></font></a>
+        <a href="#gittools" class="no_dec"><font color=#777777><b>git</b> <font style="color:#AAAAAA;font-size:11px;">(git tools)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#dockertools" class="no_dec"><font color=#777777><b>docker</b> <font style="color:#AAAAAA;font-size:11px;">(docker tools)</font></font></a>
     </p>
     <br></ul><h2 id="PyTorch-table"><a class="no_dec" href="#PyTorch">PyTorch</a></h2>
     <p class="little_split" id='data transformspytorch'></p>
@@ -942,6 +942,94 @@ cat ~/.ssh/[your key name].pub
 ## 4. Open GitHub -> Settings -> SSH and GPG keys -> New SSH key -> paste the SSH key
 ## 5. Test
 ssh -T git@github.com  # to see if it prints "Hi *! You've successfully ..."
+</code>
+</pre>
+</p>
+    </div>
+    <div style="height: 0.05em;"></div>
+    </div>
+    <p class="little_split"></p>
+    
+    <p class="little_split" id='dockertools'></p>
+    <div style="border-left: 16px solid #A0D0A0; padding-left: 10px">
+    <div style="height: 0.3em;"></div>
+    <p class="paper_title" onclick="toggleTable('docker-Tools-details')"><i>Docker</i></p>
+    
+    
+    <p class="paper_detail"> <b><font color=#404040>docker tools</font></b></b></font></p>
+    <p class="paper_detail"><b>Sep 23, 2025</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>docker</font></b></p>
+    <p class="paper_detail"></p>
+    
+    
+    <div id='docker-Tools-details' class="info_detail">
+        <hr class="dashed">
+        <p><font color=#202020>
+Docker is a <b>containerization tool</b> that allows you to <b>package your application with all its dependencies</b> into a container.
+</font></p>
+        
+        <p>
+<table class="center">
+<tr>
+<th>category</th>
+<th>tool (alphabetical)</th>
+</tr>
+<tr>
+<td>docker</td>
+<td>
+<a href="#start & restart & stop">start & restart & stop</a> &nbsp;&nbsp;
+</td>
+</tr>
+<tr>
+<td>image</td>
+<td><a href="#docker-ls & pull & rm">ls & pull & rm</a> &nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>container</td>
+<td>
+<a href="#docker-ps & run & enter & stop">ps & run & enter & stop</a> &nbsp;&nbsp;
+</td>
+</tr>
+</table>
+
+<p class="larger" id="docker-ps & run & enter & stop">
+<b><a href="">ps & run & enter & stop</a>: </b>
+list containers, run a container, enter a container, stop a container.
+<pre>
+<code class="language-bash" style="font-size: 14px;">
+docker ps -a  # list all containers
+## --------------------------------------------------------------------------------
+## Recommended params: -i: interactive mode; -d: detached mode; -t: allocate a pseudo-TTY
+## If need mapping: add "-v [local path, e.g., /home/user]:/root"
+## If run GPUs: add "--gpu all", "--ipc host"
+## If run container without executing any commands, append "tail -f /dev/null"
+docker run [params, e.g., -dit] --name [container name] [image name]  # run a container  # run a container
+## --------------------------------------------------------------------------------
+docker exec -it [container name or container id] /bin/bash  # enter a container
+docker stop [container name or container id]  # stop a container
+docker restart [container name or container id]  # restart a container
+docker rm [container name or container id]  # remove a container
+</code>
+</pre>
+
+<p class="larger" id="docker-ls & pull & rm">
+<b><a href="">ls & pull & rm</a>: </b>
+list, pull, and remove images.
+<pre>
+<code class="language-bash" style="font-size: 14px;">
+docker images  # or docker image ls; list all images
+docker pull [image name]  # pull an image from a registry
+docker rmi [image name or image id]  # remove an image
+</code>
+</pre>
+
+<p class="larger" id="start & restart & stop">
+<b><a href="">start & restart & stop</a>: </b>
+start, restart, stop docker.
+<pre>
+<code class="language-bash" style="font-size: 14px;">
+sudo service docker start  # start docker
+sudo service docker restart  # restart docker
+sudo service docker stop  # stop docker
 </code>
 </pre>
 </p>

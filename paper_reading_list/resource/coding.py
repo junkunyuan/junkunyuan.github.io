@@ -6,20 +6,28 @@ LIST["categories"] = ["PyTorch", "Distributed Training", "Tools"]
 LIST["papers"] = [
 # {
 # "title": "",
-# "author": "",
-# "organization": "",
 # "date": "",
 # "venue": "",
-# "pdf_url": "",
-# "code_url": "",
 # "name": "",
-# "comment": "",
 # "category": "",
-# "jupyter_notes": "",
-# "info": "",
-# "summary": """""",
+# "summary": 
+# """
+# """,
 # "details": 
 # """
+# <table class="center">
+# <tr>
+# <th>category</th>
+# <th>tool (alphabetical)</th>
+# </tr>
+# <tr>
+# <td>default</td>
+# <td><a href="#"></a> &nbsp;&nbsp;</td>
+# </tr>
+# </table>
+# <p class="larger" id="">
+# <b><a href=""></a>: </b>
+# .
 # <pre>
 # <code class="language-python" style="font-size: 14px;">
 # </code>
@@ -31,7 +39,6 @@ LIST["papers"] = [
 "date": "20250923",
 "venue": "git tools",
 "name": "git",
-"comment": "",
 "category": "Tools",
 "jupyter_notes": "",
 "info": "",
@@ -92,6 +99,84 @@ cat ~/.ssh/[your key name].pub
 ## 4. Open GitHub -> Settings -> SSH and GPG keys -> New SSH key -> paste the SSH key
 ## 5. Test
 ssh -T git@github.com  # to see if it prints "Hi *! You've successfully ..."
+</code>
+</pre>
+""",
+},
+{
+"title": "Docker",
+"date": "20250923",
+"venue": "docker tools",
+"name": "docker",
+"category": "Tools",
+"summary": 
+"""
+Docker is a <b>containerization tool</b> that allows you to <b>package your application with all its dependencies</b> into a container.
+""",
+"details": 
+"""
+<table class="center">
+<tr>
+<th>category</th>
+<th>tool (alphabetical)</th>
+</tr>
+<tr>
+<td>docker</td>
+<td>
+<a href="#start & restart & stop">start & restart & stop</a> &nbsp;&nbsp;
+</td>
+</tr>
+<tr>
+<td>image</td>
+<td><a href="#docker-ls & pull & rm">ls & pull & rm</a> &nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>container</td>
+<td>
+<a href="#docker-ps & run & enter & stop">ps & run & enter & stop</a> &nbsp;&nbsp;
+</td>
+</tr>
+</table>
+
+<p class="larger" id="docker-ps & run & enter & stop">
+<b><a href="">ps & run & enter & stop</a>: </b>
+list containers, run a container, enter a container, stop a container.
+<pre>
+<code class="language-bash" style="font-size: 14px;">
+docker ps -a  # list all containers
+## --------------------------------------------------------------------------------
+## Recommended params: -i: interactive mode; -d: detached mode; -t: allocate a pseudo-TTY
+## If need mapping: add "-v [local path, e.g., /home/user]:/root"
+## If run GPUs: add "--gpu all", "--ipc host"
+## If run container without executing any commands, append "tail -f /dev/null"
+docker run [params, e.g., -dit] --name [container name] [image name]  # run a container  # run a container
+## --------------------------------------------------------------------------------
+docker exec -it [container name or container id] /bin/bash  # enter a container
+docker stop [container name or container id]  # stop a container
+docker restart [container name or container id]  # restart a container
+docker rm [container name or container id]  # remove a container
+</code>
+</pre>
+
+<p class="larger" id="docker-ls & pull & rm">
+<b><a href="">ls & pull & rm</a>: </b>
+list, pull, and remove images.
+<pre>
+<code class="language-bash" style="font-size: 14px;">
+docker images  # or docker image ls; list all images
+docker pull [image name]  # pull an image from a registry
+docker rmi [image name or image id]  # remove an image
+</code>
+</pre>
+
+<p class="larger" id="start & restart & stop">
+<b><a href="">start & restart & stop</a>: </b>
+start, restart, stop docker.
+<pre>
+<code class="language-bash" style="font-size: 14px;">
+sudo service docker start  # start docker
+sudo service docker restart  # restart docker
+sudo service docker stop  # stop docker
 </code>
 </pre>
 """,
