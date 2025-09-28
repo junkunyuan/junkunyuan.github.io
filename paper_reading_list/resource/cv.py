@@ -25,6 +25,27 @@ LIST["papers"] = [
 # """,
 # },
 {
+"title": "Video Models are Zero-Shot Learners and Reasoners",
+"author": "Thaddäus Wiedemer, Yuxuan Li, Paul Vicol, Shixiang Shane Gu, Nick Matarese, Kevin Swersky, Been Kim, Priyank Jaini, Robert Geirhos",
+"organization": "Google DeepMind",
+"date": "20250924",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2509.20328",
+"code_url": "",
+"name": "Video Zero-shot",
+"comment": "",
+"category": "Foundation Algorithms & Models of Generation",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It proposes that <b>large-scale generative video models</b> can function as <b>zero-shot general-purpose vision foundation models</b>.
+""",
+"details": 
+"""
+""",
+},
+{
 "title": "Seedream 4.0: Toward Next-generation Multimodal Image Generation",
 "author": "ByteDance Seedream Team",
 "organization": "ByteDance",
