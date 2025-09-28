@@ -25,6 +25,32 @@ LIST["papers"] = [
 # """,
 # },
 {
+"title": "Seedream 4.0: Toward Next-generation Multimodal Image Generation",
+"author": "ByteDance Seedream Team",
+"organization": "ByteDance",
+"date": "20250924",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2509.20427",
+"code_url": "",
+"name": "Seedream 4.0",
+"comment": "",
+"category": "Foundation Algorithms & Models of Generation",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It introduces an efficient scalable DiT with high-compression VAE and acceleration, unifying <b>multi-image generation and editing</b> in one framework.
+""",
+"details": 
+"""
+<ul>
+    <li> <b>Structure.</b> It is based on DiT. 
+    <li> <b>Training.</b> 512-reso pre-training => 1024-4096-reso pre-training => continue training => SFT => RLHF => prompt engineering with Seed1.5-VL
+    <li> <b>Acceleration.</b> Integrate: Hyper-SD, RayFlow, APT, ADM, quantization, etc.
+</ul>
+""",
+},
+{
 "title": "Exploring Simple Siamese Representation Learning",
 "author": "Xinlei Chen, Kaiming He",
 "organization": "Facebook AI Research (FAIR)",
