@@ -2,7 +2,7 @@ LIST = dict()
 LIST["file"] = "coding.html"
 LIST["title"] = "Coding and Engineering"
 LIST["description"] = "Tools used to build AI systems."
-LIST["categories"] = ["PyTorch", "Distributed Training", "Tools"]
+LIST["categories"] = ["Python","PyTorch", "Distributed Training", "Tools"]
 LIST["papers"] = [
 # {
 # "title": "",
@@ -34,6 +34,34 @@ LIST["papers"] = [
 # </pre>
 # """,
 # },
+{
+"title": "argparse",
+"date": "20250929",
+"venue": "command-line arguments",
+"name": "argparse",
+"category": "Python",
+"summary": 
+"""
+Parser for command-line options, arguments, and sub-commands.
+""",
+"details": 
+"""
+<pre>
+<code class="language-python" style="font-size: 14px;">
+import argparse
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument("--name", type=str, default="John", help="your name")
+parser.add_argument("--debug", action="store_true", help="debug mode")  # "store_true" means default is False
+
+args = parser.parse_args()
+
+print(args.name)
+</code>
+</pre>
+""",
+},
 {
 "title": "Git",
 "date": "20250923",
@@ -177,6 +205,42 @@ start, restart, stop docker.
 sudo service docker start  # start docker
 sudo service docker restart  # restart docker
 sudo service docker stop  # stop docker
+</code>
+</pre>
+""",
+},
+{
+"title": "torchrun",
+"date": "20250929",
+"venue": "console script for distributed training",
+"name": "torchrun",
+"category": "Distributed Training",
+"summary": 
+"""
+Console script for pytorch distributed training.
+""",
+"details": 
+"""
+<pre>
+<code class="language-bash" style="font-size: 14px;">
+# Method 1: Use rdzv_endpoint (recommended)
+$torchrun
+    --nnodes ${NNODES}
+    --nproc_per_node ${NPROC_PER_NODE}
+    --node_rank ${NODE_RANK}
+    --rdzv_backend c10d
+    --rdzv_endpoint ${MASTER_ADDR}:${MASTER_PORT}
+    --rdzv_id ${RDZV_ID}
+    train.py
+
+# Method 2: Use master_addr and master_port
+$torchrun
+    --nnodes ${NNODES}
+    --nproc_per_node ${NPROC_PER_NODE}
+    --node_rank ${NODE_RANK}
+    --master_addr ${MASTER_ADDR}
+    --master_port ${MASTER_PORT}
+    train.py
 </code>
 </pre>
 """,
