@@ -89,8 +89,18 @@ def build_paper_index(papers: List[Dict[str, Any]], category: str) -> str:
                 ...
         name = paper["name"]
         color = "#C55253" if "**" in paper.get("info", "") else "#777777"
+        mark = ""
+        author = paper["author"]
+        if "Junkun Yuan" in author:
+            if "Junkun Yuan##**" in author or "Junkun Yuan**##" in author:
+                mark = "<sup>&#10035</sup><sup>&#9993</sup>"
+            elif "Junkun Yuan**" in author or author.strip().startswith("Junkun Yuan"):
+                mark = "<sup>&#10035</sup>"
+            elif "Junkun Yuan##" in author:
+                mark = "<sup>&#9993</sup>"
+
         index_items.append(
-            f'<a href="#{anchor_id}" class="no_dec"><font color={color}><b>{name}</b> <font style="color:#AAAAAA;font-size:11px;">({venue_abbr}{venue_year})</font></font></a>'
+            f'<a href="#{anchor_id}" class="no_dec"><font color={color}><b>{name}{mark}</b> <font style="color:#AAAAAA;font-size:11px;">({venue_abbr}{venue_year})</font></font></a>'
         )
     # Arrange in a compact multi-row flexbox
     # html = """

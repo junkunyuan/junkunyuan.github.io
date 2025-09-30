@@ -57,10 +57,9 @@ BIOGRAPHY = \
     
     During Jul 2022 — Aug 2023, I interned in the Computer Vision Group at Baidu, working with <a href="https://scholar.google.com/citations?user=PSzJxD8AAAAJ">Xinyu Zhang</a> and <a href="https://scholar.google.com/citations?user=z5SPCmgAAAAJ">Jingdong Wang</a>.<br><br>
 
-    I received my Ph.D. degree in Computer Science from Zhejiang University (2019 — 2024), co-supervised by professors of <a href="https://scholar.google.com/citations?user=FOsNiMQAAAAJ">Kun Kuang</a>, <a href="https://person.zju.edu.cn/0096005">Lanfen Lin</a>, and 
-  <a href="https://scholar.google.com/citations?user=XJLn4MYAAAAJ">Fei Wu</a>. I received my B.S. degree in Automation from Zhejiang University of Technology (2015 — 2019), co-supervised by professors of <a href="https://scholar.google.com.hk/citations?user=smi7bpoAAAAJ&hl=zh-CN&oi=ao">Qi Xuan</a> and <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=CnBn6FwAAAAJ">Li Yu</a>.<br><br>
+    I received my Ph.D. degree in Computer Science from Zhejiang University (2019 — 2024), co-supervised by professors of <a href="https://scholar.google.com/citations?user=FOsNiMQAAAAJ">Kun Kuang</a>, <a href="https://person.zju.edu.cn/0096005">Lanfen Lin</a>, and <a href="https://scholar.google.com/citations?user=XJLn4MYAAAAJ">Fei Wu</a>. I received my B.S. degree in Automation from Zhejiang University of Technology (2015 — 2019), co-supervised by professors of <a href="https://scholar.google.com.hk/citations?user=smi7bpoAAAAJ&hl=zh-CN&oi=ao">Qi Xuan</a> and <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=CnBn6FwAAAAJ">Li Yu</a>.<br><br>
 
-  I have been fortunate to work closely with some friends such as <a href="https://scholar.google.com.hk/citations?user=F5P_8NkAAAAJ&hl=zh-CN&oi=ao">Defang Chen</a> and <a href="https://scholar.google.com.hk/citations?user=kwBR1ygAAAAJ&hl=zh-CN&oi=ao">Yue Ma</a>, their insights also profoundly shape my approach to research.
+    I have been fortunate to work closely with some friends such as <a href="https://scholar.google.com.hk/citations?user=F5P_8NkAAAAJ&hl=zh-CN&oi=ao">Defang Chen</a> and <a href="https://scholar.google.com.hk/citations?user=kwBR1ygAAAAJ&hl=zh-CN&oi=ao">Yue Ma</a>, their insights also profoundly shape my approach to research.
 </p>
 """
 SERVICE = \
@@ -103,6 +102,7 @@ def build_paper(papers: List[Dict[str, Any]]) -> str:
     content = """
     <h2>Publications</h2>
     <p class="larger"><a href="https://scholar.google.com/citations?user=j3iFVPsAAAAJ">Google Scholar Profile</a></p>
+    <p>&#10035: (co-)first author &nbsp;&nbsp; &#9993: corresponding author</p>
     """
     # Add compact index below Google Scholar Profile
     content += build_paper_index(papers, "Publications")
@@ -111,7 +111,7 @@ def build_paper(papers: List[Dict[str, Any]]) -> str:
     current_year = ""
     color_bar_gen = border_color_generator()
 
-    for idx, paper in enumerate(papers):
+    for _, paper in enumerate(papers):
         venue_full = get_venue_all(paper["venue"])
         [venue_name, venue_date] = paper["venue"].rsplit(" ", 1)
         if venue_full.strip():

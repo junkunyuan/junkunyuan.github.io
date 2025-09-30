@@ -1,5 +1,15 @@
 PAPERS = [
 {
+"title": "Follow-Your-Preference: Towards Preference-Aligned Image Inpainting",
+"author": "Yutao Shen**, Junkun Yuan**##, Toru Aonishi, Hideki Nakayama, Yue Ma##",
+"date": "20250927",
+"venue": "arXiv 2025",
+"name": "Follow-Your-Preference",
+"pdf_url": "https://www.arxiv.org/pdf/2509.23082",
+"code_url": "https://github.com/shenytzzz/Follow-Your-Preference",
+"comment": ""
+},
+{
 "title": "Follow-Your-Emoji-Faster: Towards Efficient, Fine-Controllable, and Expressive Freestyle Portrait Animation",
 "author": "Yue Ma**, Zexuan Yan**, Hongyu Liu**, Hongfa Wang, Heng Pan, Yingqing He, Junkun Yuan, Ailing Zeng, Chengfei Cai, Heung-Yeung Shum, Zhifeng Li, Wei Liu, Linfeng Zhang##, Qifeng Chen##",
 "date": "20250920",
