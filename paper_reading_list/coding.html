@@ -21,7 +21,7 @@
 <p class="larger"><b></b></p>
 <p>Written by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on September 29, 2025 at 19:25 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on October 03, 2025 at 11:05 (UTC+8).</font></p>
 <hr><p id='table' class="huger"><b>Table of contents:</b></p><ul><li><a class="larger low_margin no_dec" style="font-family: 'Arial, sans-serif'; color: #6D94C5;" id="Python" href="#Python-table"><b>Python</b></a></li>
     <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
         <a href="#argparsepython" class="no_dec"><font color=#777777><b>argparse</b> <font style="color:#AAAAAA;font-size:11px;">(command-line arguments)</font></font></a>
@@ -30,9 +30,9 @@
     <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
         <a href="#data transformspytorch" class="no_dec"><font color=#777777><b>data transforms</b> <font style="color:#AAAAAA;font-size:11px;">(transform and augment data)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#data loaderpytorch" class="no_dec"><font color=#777777><b>data loader</b> <font style="color:#AAAAAA;font-size:11px;">(load data)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#operationpytorch" class="no_dec"><font color=#777777><b>operation</b> <font style="color:#AAAAAA;font-size:11px;">(tensor operations)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#modulepytorch" class="no_dec"><font color=#777777><b>module</b> <font style="color:#AAAAAA;font-size:11px;">(modules to build models)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#activation functionpytorch" class="no_dec"><font color=#777777><b>activation function</b> <font style="color:#AAAAAA;font-size:11px;">(activation functions)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#optimizerpytorch" class="no_dec"><font color=#777777><b>optimizer</b> <font style="color:#AAAAAA;font-size:11px;">(optimizers)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#huggingfacepytorch" class="no_dec"><font color=#777777><b>huggingface</b> <font style="color:#AAAAAA;font-size:11px;">(huggingface tools)</font></font></a>
     </p>
-    <br><li><a class="larger low_margin no_dec" style="font-family: 'Arial, sans-serif'; color: #6D94C5;" id="Distributed Training" href="#Distributed Training-table"><b>Distributed Training</b></a></li>
+    <br><li><a class="larger low_margin no_dec" style="font-family: 'Arial, sans-serif'; color: #6D94C5;" id="Distributed Framework" href="#Distributed Framework-table"><b>Distributed Framework</b></a></li>
     <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
-        <a href="#torchrundistributed training" class="no_dec"><font color=#777777><b>torchrun</b> <font style="color:#AAAAAA;font-size:11px;">(console script for distributed training)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#deepspeeddistributed training" class="no_dec"><font color=#777777><b>deepspeed</b> <font style="color:#AAAAAA;font-size:11px;">(deepspeed framework)</font></font></a>
+        <a href="#torchrundistributed framework" class="no_dec"><font color=#777777><b>torchrun</b> <font style="color:#AAAAAA;font-size:11px;">(console script for Distributed Framework)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#deepspeeddistributed framework" class="no_dec"><font color=#777777><b>deepspeed</b> <font style="color:#AAAAAA;font-size:11px;">(deepspeed framework)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#raydistributed framework" class="no_dec"><font color=#777777><b>ray</b> <font style="color:#AAAAAA;font-size:11px;">(ray framework)</font></font></a>
     </p>
     <br><li><a class="larger low_margin no_dec" style="font-family: 'Arial, sans-serif'; color: #6D94C5;" id="Tools" href="#Tools-table"><b>Tools</b></a></li>
     <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
@@ -865,22 +865,22 @@ snapshot_download(repo_id, repo_type, local_dir, token, max_workers)
     <div style="height: 0.05em;"></div>
     </div>
     <p class="little_split"></p>
-    <h2 id="Distributed Training-table"><a class="no_dec" href="#Distributed Training">Distributed Training</a></h2>
-    <p class="little_split" id='torchrundistributed training'></p>
+    <h2 id="Distributed Framework-table"><a class="no_dec" href="#Distributed Framework">Distributed Framework</a></h2>
+    <p class="little_split" id='torchrundistributed framework'></p>
     <div style="border-left: 16px solid #A0D0A0; padding-left: 10px">
     <div style="height: 0.3em;"></div>
-    <p class="paper_title" onclick="toggleTable('torchrun-Distributed Training-details')"><i>torchrun</i></p>
+    <p class="paper_title" onclick="toggleTable('torchrun-Distributed Framework-details')"><i>torchrun</i></p>
     
     
-    <p class="paper_detail"> <b><font color=#404040>console script for distributed training</font></b></b></font></p>
+    <p class="paper_detail"> <b><font color=#404040>console script for Distributed Framework</font></b></b></font></p>
     <p class="paper_detail"><b>Sep 29, 2025</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>torchrun</font></b></p>
     <p class="paper_detail"></p>
     
     
-    <div id='torchrun-Distributed Training-details' class="info_detail">
+    <div id='torchrun-Distributed Framework-details' class="info_detail">
         <hr class="dashed">
         <p><font color=#202020>
-Console script for pytorch distributed training.
+Console script for pytorch Distributed Framework.
 </font></p>
         
         <p>
@@ -912,10 +912,10 @@ $torchrun
     </div>
     <p class="little_split"></p>
     
-    <p class="little_split" id='deepspeeddistributed training'></p>
+    <p class="little_split" id='deepspeeddistributed framework'></p>
     <div style="border-left: 16px solid #A0D0A0; padding-left: 10px">
     <div style="height: 0.3em;"></div>
-    <p class="paper_title" onclick="toggleTable('deepspeed-Distributed Training-details')"><i>DeepSpeed</i></p>
+    <p class="paper_title" onclick="toggleTable('deepspeed-Distributed Framework-details')"><i>DeepSpeed</i></p>
     
     
     <p class="paper_detail"> <b><font color=#404040>deepspeed framework</font></b></b></font></p>
@@ -923,7 +923,7 @@ $torchrun
     <p class="paper_detail"></p>
     
     
-    <div id='deepspeed-Distributed Training-details' class="info_detail">
+    <div id='deepspeed-Distributed Framework-details' class="info_detail">
         <hr class="dashed">
         <p><font color=#202020>DeepSpeed is an open-sourced deep learning optimization library developed by <b>Microsoft Research</b>, designed to simplify and accelerate the training and deployment of <b>large-scale</b> deep learning models.</font></p>
         
@@ -954,6 +954,93 @@ $torchrun
         <td>high</td>
     </tr>
 </table>
+</p>
+    </div>
+    <div style="height: 0.05em;"></div>
+    </div>
+    <p class="little_split"></p>
+    
+    <p class="little_split" id='raydistributed framework'></p>
+    <div style="border-left: 16px solid #A0D0A0; padding-left: 10px">
+    <div style="height: 0.3em;"></div>
+    <p class="paper_title" onclick="toggleTable('ray-Distributed Framework-details')"><i>new paper Ray</i></p>
+    
+    
+    <p class="paper_detail"> <b><font color=#404040>ray framework</font></b></b></font></p>
+    <p class="paper_detail"><b>Oct 01, 2025</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>ray</font></b></p>
+    <p class="paper_detail"></p>
+    
+    <p>
+Ray is a <b>distributed computing framework</b>, developed by UC Berkeley, allowing you to scale machine learning and data processing workflows across multiple machines and GPUs. Ray employs a dynamic task graph computation model.
+
+Some important concepts:
+
+<ul>
+<li>Task: a remote function on a stateless worker. Create by applying `@ray.remote` decorator to a function.</li>
+<li>Actor: a remote class on a stateful worker. Create by applying `@ray.actor` decorator to a class.</li>
+<li>Data edges: data1 -> task1 -> data2 means data1 and data2 are the input and output of task1 respectively.</li>
+<li>Control edges: task1 -> task2 means task2 is executed by task1.</li>
+<li>Ray builds a dynamic task graph consisting of data edges and control edges.</li>
+<li>Driver: a process executing the user program.</li>
+<li>Worker: a stateless process executing tasks (remote functions).</li>
+<li>Actor (another concept): a stateless process executing tasks (remote functions).</li>
+</ul>
+</p><p>
+<table class="center">
+<tr>
+<th>category</th>
+<th>tool (alphabetical)</th>
+</tr>
+<tr>
+<td>default</td>
+<td><a href="#"></a> &nbsp;&nbsp;</td>
+</tr>
+</table>
+<p class="larger" id="">
+<b><a href=""></a>: </b>
+.
+<pre>
+<code class="language-python" style="font-size: 14px;">
+</code>
+</pre>
+</p>
+    <div id='ray-Distributed Framework-details' class="info_detail">
+        <hr class="dashed">
+        <p><font color=#202020>
+Ray is a <b>distributed computing framework</b>, developed by UC Berkeley, allowing you to scale machine learning and data processing workflows across multiple machines and GPUs. Ray employs a dynamic task graph computation model.
+
+Some important concepts:
+
+<ul>
+<li>Task: a remote function on a stateless worker. Create by applying `@ray.remote` decorator to a function.</li>
+<li>Actor: a remote class on a stateful worker. Create by applying `@ray.actor` decorator to a class.</li>
+<li>Data edges: data1 -> task1 -> data2 means data1 and data2 are the input and output of task1 respectively.</li>
+<li>Control edges: task1 -> task2 means task2 is executed by task1.</li>
+<li>Ray builds a dynamic task graph consisting of data edges and control edges.</li>
+<li>Driver: a process executing the user program.</li>
+<li>Worker: a stateless process executing tasks (remote functions).</li>
+<li>Actor (another concept): a stateless process executing tasks (remote functions).</li>
+</ul>
+</font></p>
+        
+        <p>
+<table class="center">
+<tr>
+<th>category</th>
+<th>tool (alphabetical)</th>
+</tr>
+<tr>
+<td>default</td>
+<td><a href="#"></a> &nbsp;&nbsp;</td>
+</tr>
+</table>
+<p class="larger" id="">
+<b><a href=""></a>: </b>
+.
+<pre>
+<code class="language-python" style="font-size: 14px;">
+</code>
+</pre>
 </p>
     </div>
     <div style="height: 0.05em;"></div>

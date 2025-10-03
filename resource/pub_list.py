@@ -78,16 +78,6 @@ PAPERS = [
 "comment": ""
 },
 {
-"title": "Knowledge Distillation-Based Domain-Invariant Representation Learning for Domain Generalization",
-"author": "Ziwei Niu, Junkun Yuan, Xu Ma, Yingying Xu, Jing Liu, Yen-Wei Chen, Ruofeng Tong, and Lanfen Lin##",
-"date": "20240101",
-"venue": "TMM 2023",
-"name": "KDDRL",
-"pdf_url": "https://dl.acm.org/doi/10.1109/TMM.2023.3263549",
-"code_url": "",
-"comment": ""
-},
-{
 "title": "HAP: Structure-Aware Masked Image Modeling for Human-Centric Perception",
 "author": "Junkun Yuan**, Xinyu Zhang**##, Hao Zhou, Jian Wang, Zhongwei Qiu, Zhiyin Shao, Shaofeng Zhang, Sifan Long, and Kun Kuang##, Kun Yao, Junyu Han, Errui Ding, Lanfen Lin, Fei Wu, and Jingdong Wang##",
 "date": "20231031",
@@ -131,6 +121,16 @@ PAPERS = [
 "pdf_url": "https://arxiv.org/pdf/2304.11862",
 "name": "CAM",
 "code_url": ""
+},
+{
+"title": "Knowledge Distillation-Based Domain-Invariant Representation Learning for Domain Generalization",
+"author": "Ziwei Niu, Junkun Yuan, Xu Ma, Yingying Xu, Jing Liu, Yen-Wei Chen, Ruofeng Tong, and Lanfen Lin##",
+"date": "20230405",
+"venue": "TMM 2023",
+"name": "KDDRL",
+"pdf_url": "https://dl.acm.org/doi/10.1109/TMM.2023.3263549",
+"code_url": "",
+"comment": ""
 },
 {
 "title": "Task-Oriented Multi-Modal Mutual Leaning for Vision-Language Models",

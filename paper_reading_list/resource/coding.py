@@ -2,7 +2,7 @@ LIST = dict()
 LIST["file"] = "coding.html"
 LIST["title"] = "Coding and Engineering"
 LIST["description"] = "Tools used to build AI systems."
-LIST["categories"] = ["Python","PyTorch", "Distributed Training", "Tools"]
+LIST["categories"] = ["Python","PyTorch", "Distributed Framework", "Tools"]
 LIST["papers"] = [
 # {
 # "title": "",
@@ -212,12 +212,12 @@ sudo service docker stop  # stop docker
 {
 "title": "torchrun",
 "date": "20250929",
-"venue": "console script for distributed training",
+"venue": "console script for Distributed Framework",
 "name": "torchrun",
-"category": "Distributed Training",
+"category": "Distributed Framework",
 "summary": 
 """
-Console script for pytorch distributed training.
+Console script for pytorch Distributed Framework.
 """,
 "details": 
 """
@@ -255,7 +255,7 @@ $torchrun
 "code_url": "",
 "name": "deepspeed",
 "comment": "",
-"category": "Distributed Training",
+"category": "Distributed Framework",
 "jupyter_notes": "",
 "info": "",
 "summary": """DeepSpeed is an open-sourced deep learning optimization library developed by <b>Microsoft Research</b>, designed to simplify and accelerate the training and deployment of <b>large-scale</b> deep learning models.""",
@@ -287,6 +287,50 @@ $torchrun
         <td>high</td>
     </tr>
 </table>
+""",
+},
+{
+"title": "new paper Ray",
+"date": "20251001",
+"venue": "ray framework",
+"name": "ray",
+"category": "Distributed Framework",
+"summary": 
+"""
+Ray is a <b>distributed computing framework</b>, developed by UC Berkeley, allowing you to scale machine learning and data processing workflows across multiple machines and GPUs. Ray employs a dynamic task graph computation model.
+
+Some important concepts:
+
+<ul>
+<li>Task: a remote function on a stateless worker. Create by applying `@ray.remote` decorator to a function.</li>
+<li>Actor: a remote class on a stateful worker. Create by applying `@ray.actor` decorator to a class.</li>
+<li>Data edges: data1 -> task1 -> data2 means data1 and data2 are the input and output of task1 respectively.</li>
+<li>Control edges: task1 -> task2 means task2 is executed by task1.</li>
+<li>Ray builds a dynamic task graph consisting of data edges and control edges.</li>
+<li>Driver: a process executing the user program.</li>
+<li>Worker: a stateless process executing tasks (remote functions).</li>
+<li>Actor (another concept): a stateless process executing tasks (remote functions).</li>
+</ul>
+""",
+"details": 
+"""
+<table class="center">
+<tr>
+<th>category</th>
+<th>tool (alphabetical)</th>
+</tr>
+<tr>
+<td>default</td>
+<td><a href="#"></a> &nbsp;&nbsp;</td>
+</tr>
+</table>
+<p class="larger" id="">
+<b><a href=""></a>: </b>
+.
+<pre>
+<code class="language-python" style="font-size: 14px;">
+</code>
+</pre>
 """,
 },
 {

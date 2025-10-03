@@ -46,9 +46,16 @@ PREFIX: str = f"""
 </head>
 <body>
 """
+TABLE_OF_CONTENTS = \
+"""
+<p class="larger">
+<a href="#biography" color: #404040; font-weight: 500;">Biography</a> &nbsp;&nbsp; <a href="#publications" color: #404040; font-weight: 500;">Publications</a> &nbsp;&nbsp; <a href="#professional-service" color: #404040; font-weight: 500;">Professional Service</a>
+</p>
+"""
+
 BIOGRAPHY = \
 """
-<h2>Biography</h2>
+<h2 id="biography">Biography</h2>
 <p>
     I have been working as a research scientist in the Foundation Model Team of the Hunyuan Multimodal Model Group at Tencent since Jul 2024, working with <a href="https://scholar.google.com.hk/citations?user=igtXP_kAAAAJ&hl=zh-CN&oi=ao">Zhao Zhong</a> and <a href="https://scholar.google.com.hk/citations?user=FJwtMf0AAAAJ&hl=zh-CN&oi=ao">Liefeng Bo</a>. I am focusing on multimodal generative foundation models and their various downstream applications.
     <br><br>
@@ -64,8 +71,7 @@ BIOGRAPHY = \
 """
 SERVICE = \
 """
-<br>
-<h2>Professional Service</h2>
+<h2 id="professional-service">Professional Service</h2>
 <ul>
 <li> <b>Conference Reviewer.</b>&nbsp;&nbsp; 
 ICLR 2026 &nbsp;&nbsp;<font color=#A0A0A0>|</font>&nbsp;&nbsp;
@@ -100,7 +106,7 @@ def build_paper(papers: List[Dict[str, Any]]) -> str:
         HTML string containing the publications section
     """
     content = """
-    <h2>Publications</h2>
+    <h2 id="publications">Publications</h2>
     <p class="larger"><a href="https://scholar.google.com/citations?user=j3iFVPsAAAAJ">Google Scholar Profile</a></p>
     <p>&#10035: (co-)first author &nbsp;&nbsp; &#9993: corresponding author</p>
     """
@@ -174,10 +180,10 @@ def main() -> None:
 
     try:
         # Build paper contents
-        paper_content = build_paper(PAPERS)
+        PUB_LIST = build_paper(PAPERS)
 
         # Combine all content sections
-        html_content = PREFIX + BIOGRAPHY + paper_content + SERVICE + TOP_BUTTON + SUFFIX
+        html_content = PREFIX + TABLE_OF_CONTENTS + BIOGRAPHY + PUB_LIST + SERVICE + TOP_BUTTON + SUFFIX
 
         # Write to file
         html_file = "index.html"

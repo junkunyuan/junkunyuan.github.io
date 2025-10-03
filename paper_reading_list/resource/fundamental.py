@@ -2,7 +2,7 @@ LIST = dict()
 LIST["file"] = "fundamental_component.html"
 LIST["title"] = "Fundamental Components of Deep Learning"
 LIST["description"] = "Fundamental components to build deep learning systems."
-LIST["categories"] = ["Normalization"]
+LIST["categories"] = ["Normalization", "Framework"]
 LIST["papers"] = [
 # {
 # "title": "",
@@ -27,6 +27,27 @@ LIST["papers"] = [
 # </ul>
 # """,
 # },
+{
+"title": "Ray: A Distributed Framework for Emerging AI Applications",
+"author": "Philipp Moritz, Robert Nishihara, Stephanie Wang, Alexey Tumanov, Richard Liaw, Eric Liang, Melih Elibol, Zongheng Yang, William Paul, Michael I. Jordan, Ion Stoica",
+"organization": "UC Berkeley",
+"date": "20171216",
+"venue": "OSDI 2018",
+"pdf_url": "https://arxiv.org/pdf/1712.05889",
+"code_url": "https://docs.ray.io/en/latest/ray-overview/index.html",
+"name": "Ray",
+"comment": "",
+"category": "Framework",
+"jupyter_notes": "",
+"info": "**",
+"summary": 
+"""
+Ray is a <b>distributed computing framework</b> that scales machine learning and data processing workflows across multiple machines and GPUs.
+""",
+"details": 
+"""
+""",
+},
 {
 "title": "Root Mean Square Layer Normalization",
 "author": "Biao Zhang, Rico Sennrich",
