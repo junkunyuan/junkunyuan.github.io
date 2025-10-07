@@ -193,7 +193,7 @@ PAPERS = [
 "date": "20211004",
 "venue": "TKDD 2023",
 "pdf_url": "https://arxiv.org/pdf/2110.01438",
-"name": "DSBF",
+"name": "IV-DG",
 "code_url": "https://github.com/junkunyuan/DSBF",
 "comment": ""
 },

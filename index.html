@@ -8,6 +8,22 @@
     <meta name="description" content="Junkun Yuan">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function toggleAuthors(paperId) {
+            var etAlElement = document.getElementById('et_al_' + paperId);
+            var hiddenElement = document.getElementById('hidden_authors_' + paperId);
+            
+            if (hiddenElement.style.display === 'none') {
+                // Show hidden authors and hide et al.
+                hiddenElement.style.display = 'inline';
+                etAlElement.style.display = 'none';
+            } else {
+                // Hide hidden authors and show et al.
+                hiddenElement.style.display = 'none';
+                etAlElement.style.display = 'inline';
+            }
+        }
+    </script>
     <div id="layout-content" style="margin-top:25px">
     <table>
         <tbody>
@@ -17,7 +33,7 @@
                     <p>Research Scientist, &nbsp;Hunyuan Multimodal Model Group&nbsp;&nbsp;@&nbsp;&nbsp;Tencent</p>
                     <p>yuanjk0921@outlook.com</p>
                     <p>work and live in Shenzhen, China</p>
-                    <p><font color=#D0D0D0>Last updated on October 03, 2025 at 11:15 (UTC+8)</font></p>
+                    <p><font color=#D0D0D0>Last updated on October 07, 2025 at 10:26 (UTC+8)</font></p>
                 </td>
                 <td style="padding-right: 120px; padding-top: 10px;">
                     <img src="resource/my_photo.jpg" width="160">
@@ -50,330 +66,444 @@
     <p class="larger"><a href="https://scholar.google.com/citations?user=j3iFVPsAAAAJ">Google Scholar Profile</a></p>
     <p>&#10035: (co-)first author &nbsp;&nbsp; &#9993: corresponding author</p>
     
-    <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
-        <a href="#Follow-Your-Preferencepublications" class="no_dec"><font color=#777777><b>Follow-Your-Preference<sup>&#10035</sup><sup>&#9993</sup></b> <font style="color:#AAAAAA;font-size:11px;">(arXiv 2025)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#Follow-Your-Emoji-Fasterpublications" class="no_dec"><font color=#777777><b>Follow-Your-Emoji-Faster</b> <font style="color:#AAAAAA;font-size:11px;">(IJCV 2025)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#Hunyuan-Gamepublications" class="no_dec"><font color=#777777><b>Hunyuan-Game</b> <font style="color:#AAAAAA;font-size:11px;">(arXiv 2025)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#HunyuanVideopublications" class="no_dec"><font color=#C55253><b>HunyuanVideo</b> <font style="color:#AAAAAA;font-size:11px;">(arXiv 2024)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#MPLpublications" class="no_dec"><font color=#777777><b>MPL</b> <font style="color:#AAAAAA;font-size:11px;">(IJCV 2024)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#Follow-Your-Canvaspublications" class="no_dec"><font color=#777777><b>Follow-Your-Canvas<sup>&#10035</sup><sup>&#9993</sup></b> <font style="color:#AAAAAA;font-size:11px;">(AAAI 2025)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#Follow-Your-Emojipublications" class="no_dec"><font color=#777777><b>Follow-Your-Emoji</b> <font style="color:#AAAAAA;font-size:11px;">(SIGGRAPH-Asia 2024)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#Domaindiffpublications" class="no_dec"><font color=#777777><b>Domaindiff</b> <font style="color:#AAAAAA;font-size:11px;">(ICASSP 2024)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#HAPpublications" class="no_dec"><font color=#777777><b>HAP<sup>&#10035</sup></b> <font style="color:#AAAAAA;font-size:11px;">(NeurIPS 2023)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#MAPpublications" class="no_dec"><font color=#777777><b>MAP</b> <font style="color:#AAAAAA;font-size:11px;">(ICCV 2023)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#NPTpublications" class="no_dec"><font color=#777777><b>NPT</b> <font style="color:#AAAAAA;font-size:11px;">(KDD 2024)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#HTCLpublications" class="no_dec"><font color=#777777><b>HTCL</b> <font style="color:#AAAAAA;font-size:11px;">(KDD 2023)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#CAMpublications" class="no_dec"><font color=#777777><b>CAM</b> <font style="color:#AAAAAA;font-size:11px;">(ICCV 2023)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#KDDRLpublications" class="no_dec"><font color=#777777><b>KDDRL</b> <font style="color:#AAAAAA;font-size:11px;">(TMM 2023)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#MPLpublications" class="no_dec"><font color=#777777><b>MPL<sup>&#10035</sup></b> <font style="color:#AAAAAA;font-size:11px;">(ICCV 2023)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#CAE v2publications" class="no_dec"><font color=#777777><b>CAE v2</b> <font style="color:#AAAAAA;font-size:11px;">(TMLR 2023)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#CEGpublications" class="no_dec"><font color=#777777><b>CEG<sup>&#10035</sup></b> <font style="color:#AAAAAA;font-size:11px;">(MM 2022)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#ACDApublications" class="no_dec"><font color=#777777><b>ACDA</b> <font style="color:#AAAAAA;font-size:11px;">(Neurocomputing 2022)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#DSBFpublications" class="no_dec"><font color=#777777><b>DSBF<sup>&#10035</sup></b> <font style="color:#AAAAAA;font-size:11px;">(IJCV 2022)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#CSACpublications" class="no_dec"><font color=#777777><b>CSAC<sup>&#10035</sup></b> <font style="color:#AAAAAA;font-size:11px;">(TKDE 2023)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#DSBFpublications" class="no_dec"><font color=#777777><b>DSBF<sup>&#10035</sup></b> <font style="color:#AAAAAA;font-size:11px;">(TKDD 2023)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#AutoIVpublications" class="no_dec"><font color=#777777><b>AutoIV<sup>&#10035</sup></b> <font style="color:#AAAAAA;font-size:11px;">(TKDD 2022)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#GAPGANpublications" class="no_dec"><font color=#777777><b>GAPGAN<sup>&#10035</sup></b> <font style="color:#AAAAAA;font-size:11px;">(ECAI 2020)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#DeR-CFRpublications" class="no_dec"><font color=#777777><b>DeR-CFR<sup>&#10035</sup></b> <font style="color:#AAAAAA;font-size:11px;">(TKDE 2023)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#SGNspublications" class="no_dec"><font color=#777777><b>SGNs</b> <font style="color:#AAAAAA;font-size:11px;">(TKDE 2021)</font></font></a>
+    <p style="display: flex; flex-wrap: wrap; font-size: 13px; margin-bottom: 8px;">
+        <span style="font-weight: bold; color: #9ACAF0; margin-right: 8px;">2025:</span>
+        <a href="#Follow-Your-Preferencepublications" class="no_dec"><font color=#777777><b>Follow-Your-Preference<sup>&#10035</sup><sup>&#9993</sup></b> <font style="color:#AAAAAA;font-size:11px;">(arXiv 2025)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#Follow-Your-Emoji-Fasterpublications" class="no_dec"><font color=#777777><b>Follow-Your-Emoji-Faster</b> <font style="color:#AAAAAA;font-size:11px;">(IJCV 2025)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#Hunyuan-Gamepublications" class="no_dec"><font color=#777777><b>Hunyuan-Game</b> <font style="color:#AAAAAA;font-size:11px;">(arXiv 2025)</font></font></a>
     </p>
-    
+    <p style="display: flex; flex-wrap: wrap; font-size: 13px; margin-bottom: 8px;">
+        <span style="font-weight: bold; color: #F9D0A5; margin-right: 8px;">2024:</span>
+        <a href="#HunyuanVideopublications" class="no_dec"><font color=#C55253><b>HunyuanVideo</b> <font style="color:#AAAAAA;font-size:11px;">(arXiv 2024)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#MPLpublications" class="no_dec"><font color=#777777><b>MPL</b> <font style="color:#AAAAAA;font-size:11px;">(IJCV 2024)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#Follow-Your-Canvaspublications" class="no_dec"><font color=#777777><b>Follow-Your-Canvas<sup>&#10035</sup><sup>&#9993</sup></b> <font style="color:#AAAAAA;font-size:11px;">(AAAI 2025)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#Follow-Your-Emojipublications" class="no_dec"><font color=#777777><b>Follow-Your-Emoji</b> <font style="color:#AAAAAA;font-size:11px;">(SIGGRAPH-Asia 2024)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#Domaindiffpublications" class="no_dec"><font color=#777777><b>Domaindiff</b> <font style="color:#AAAAAA;font-size:11px;">(ICASSP 2024)</font></font></a>
+    </p>
+    <p style="display: flex; flex-wrap: wrap; font-size: 13px; margin-bottom: 8px;">
+        <span style="font-weight: bold; color: #A0D0A0; margin-right: 8px;">2023:</span>
+        <a href="#HAPpublications" class="no_dec"><font color=#777777><b>HAP<sup>&#10035</sup></b> <font style="color:#AAAAAA;font-size:11px;">(NeurIPS 2023)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#MAPpublications" class="no_dec"><font color=#777777><b>MAP</b> <font style="color:#AAAAAA;font-size:11px;">(ICCV 2023)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#NPTpublications" class="no_dec"><font color=#777777><b>NPT</b> <font style="color:#AAAAAA;font-size:11px;">(KDD 2024)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#HTCLpublications" class="no_dec"><font color=#777777><b>HTCL</b> <font style="color:#AAAAAA;font-size:11px;">(KDD 2023)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#CAMpublications" class="no_dec"><font color=#777777><b>CAM</b> <font style="color:#AAAAAA;font-size:11px;">(ICCV 2023)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#KDDRLpublications" class="no_dec"><font color=#777777><b>KDDRL</b> <font style="color:#AAAAAA;font-size:11px;">(TMM 2023)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#MPLpublications" class="no_dec"><font color=#777777><b>MPL<sup>&#10035</sup></b> <font style="color:#AAAAAA;font-size:11px;">(ICCV 2023)</font></font></a>
+    </p>
+    <p style="display: flex; flex-wrap: wrap; font-size: 13px; margin-bottom: 8px;">
+        <span style="font-weight: bold; color: #F0BBCC; margin-right: 8px;">2022:</span>
+        <a href="#CAE v2publications" class="no_dec"><font color=#777777><b>CAE v2</b> <font style="color:#AAAAAA;font-size:11px;">(TMLR 2023)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#CEGpublications" class="no_dec"><font color=#777777><b>CEG<sup>&#10035</sup></b> <font style="color:#AAAAAA;font-size:11px;">(MM 2022)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#ACDApublications" class="no_dec"><font color=#777777><b>ACDA</b> <font style="color:#AAAAAA;font-size:11px;">(Neurocomputing 2022)</font></font></a>
+    </p>
+    <p style="display: flex; flex-wrap: wrap; font-size: 13px; margin-bottom: 8px;">
+        <span style="font-weight: bold; color: #9ACAF0; margin-right: 8px;">2021:</span>
+        <a href="#DSBFpublications" class="no_dec"><font color=#777777><b>DSBF<sup>&#10035</sup></b> <font style="color:#AAAAAA;font-size:11px;">(IJCV 2022)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#CSACpublications" class="no_dec"><font color=#777777><b>CSAC<sup>&#10035</sup></b> <font style="color:#AAAAAA;font-size:11px;">(TKDE 2023)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#IV-DGpublications" class="no_dec"><font color=#777777><b>IV-DG<sup>&#10035</sup></b> <font style="color:#AAAAAA;font-size:11px;">(TKDD 2023)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#AutoIVpublications" class="no_dec"><font color=#777777><b>AutoIV<sup>&#10035</sup></b> <font style="color:#AAAAAA;font-size:11px;">(TKDD 2022)</font></font></a>
+    </p>
+    <p style="display: flex; flex-wrap: wrap; font-size: 13px; margin-bottom: 8px;">
+        <span style="font-weight: bold; color: #F9D0A5; margin-right: 8px;">2020:</span>
+        <a href="#GAPGANpublications" class="no_dec"><font color=#777777><b>GAPGAN<sup>&#10035</sup></b> <font style="color:#AAAAAA;font-size:11px;">(ECAI 2020)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#DeR-CFRpublications" class="no_dec"><font color=#777777><b>DeR-CFR<sup>&#10035</sup></b> <font style="color:#AAAAAA;font-size:11px;">(TKDE 2023)</font></font></a>
+    </p>
+    <p style="display: flex; flex-wrap: wrap; font-size: 13px; margin-bottom: 8px;">
+        <span style="font-weight: bold; color: #A0D0A0; margin-right: 8px;">2019:</span>
+        <a href="#SGNspublications" class="no_dec"><font color=#777777><b>SGNs</b> <font style="color:#AAAAAA;font-size:11px;">(TKDE 2021)</font></font></a>
+    </p>
         <p class="little_split"></p>
-        <div id="Follow-Your-Preferencepublications" style="border-left: 16px solid #9ACAF0; padding-left: 10px">
+        <div id="Follow-Your-Preferencepublications" style="border-left: 16px solid #9ACAF0; padding-left: 10px; position: relative;">
+        
+            <div style="position: absolute; right: 0; top: 0; font-size: 24px; font-weight: bold; color: #9ACAF0; opacity: 0.8;">
+                2025
+            </div>
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Follow-Your-Preference: Towards Preference-Aligned Image Inpainting</i></p>
-        <p class="paper_detail">Yutao Shen<sup>&#10035</sup>, <b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup><sup>&#9993</sup>, Toru Aonishi, Hideki Nakayama, Yue Ma<sup>&#9993</sup></p>
+        <p class="paper_detail">
+    Yutao Shen<sup>&#10035</sup>, <b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup><sup>&#9993</sup>, Toru Aonishi, Hideki Nakayama, <span id="et_al_follow-your-preference_towards_preference-aligned_image_acaa2a" onclick="toggleAuthors('follow-your-preference_towards_preference-aligned_image_acaa2a')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_follow-your-preference_towards_preference-aligned_image_acaa2a" onclick="toggleAuthors('follow-your-preference_towards_preference-aligned_image_acaa2a')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Yue Ma<sup>&#9993</sup></span>
+    </p>
         <p class="paper_detail"> <b><font color=#404040>arXiv</font></b> <b>2025</b></p>
-        <p class="paper_detail"><b><font color=#404040>Sep 27, 2025</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>Follow-Your-Preference</font></b></p>
-        <p class="paper_detail"><a href="https://www.arxiv.org/pdf/2509.23082">paper</a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/shenytzzz/Follow-Your-Preference">code</a></p>
+        <p class="paper_detail"><font color=#404040>Sep 27, 2025</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://www.arxiv.org/pdf/2509.23082"><font color=#404040>Follow-Your-Preference</font></a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/shenytzzz/Follow-Your-Preference">code</a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="Follow-Your-Emoji-Fasterpublications" style="border-left: 16px solid #9ACAF0; padding-left: 10px">
+        <div id="Follow-Your-Emoji-Fasterpublications" style="border-left: 16px solid #9ACAF0; padding-left: 10px; position: relative;">
+        
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Follow-Your-Emoji-Faster: Towards Efficient, Fine-Controllable, and Expressive Freestyle Portrait Animation</i></p>
-        <p class="paper_detail">Yue Ma<sup>&#10035</sup>, Zexuan Yan<sup>&#10035</sup>, Hongyu Liu<sup>&#10035</sup>, Hongfa Wang, Heng Pan, Yingqing He, <b><font color=#404040>Junkun Yuan</font></b>, Ailing Zeng, Chengfei Cai, Heung-Yeung Shum, Zhifeng Li, Wei Liu, Linfeng Zhang<sup>&#9993</sup>, Qifeng Chen<sup>&#9993</sup></p>
+        <p class="paper_detail">
+    Yue Ma<sup>&#10035</sup>, Zexuan Yan<sup>&#10035</sup>, Hongyu Liu<sup>&#10035</sup>, Hongfa Wang, Heng Pan, Yingqing He, <b><font color=#404040>Junkun Yuan</font></b>, <span id="et_al_follow-your-emoji-faster_towards_efficient_fine-controllable_8075fb" onclick="toggleAuthors('follow-your-emoji-faster_towards_efficient_fine-controllable_8075fb')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_follow-your-emoji-faster_towards_efficient_fine-controllable_8075fb" onclick="toggleAuthors('follow-your-emoji-faster_towards_efficient_fine-controllable_8075fb')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Ailing Zeng, Chengfei Cai, Heung-Yeung Shum, Zhifeng Li, Wei Liu, Linfeng Zhang<sup>&#9993</sup>, Qifeng Chen<sup>&#9993</sup></span>
+    </p>
         <p class="paper_detail">International Journal of Computer Vision (<b><font color=#404040>IJCV</font></b>), <b>2025</b></p>
-        <p class="paper_detail"><b><font color=#404040>Sep 20, 2025</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>Follow-Your-Emoji-Faster</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/2509.16630">paper</a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/mayuelala/FollowYourEmoji">code</a></p>
+        <p class="paper_detail"><font color=#404040>Sep 20, 2025</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2509.16630"><font color=#404040>Follow-Your-Emoji-Faster</font></a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/mayuelala/FollowYourEmoji">code</a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="Hunyuan-Gamepublications" style="border-left: 16px solid #9ACAF0; padding-left: 10px">
+        <div id="Hunyuan-Gamepublications" style="border-left: 16px solid #9ACAF0; padding-left: 10px; position: relative;">
+        
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Hunyuan-Game: Industrial-grade Intelligent Game Creation Model</i></p>
         <p class="paper_detail">Hunyuan Multimodal Model Group at Tencent (<b><font color=#404040>as a group member</font></b>)</p>
         <p class="paper_detail"> <b><font color=#404040>arXiv</font></b> <b>2025</b></p>
-        <p class="paper_detail"><b><font color=#404040>May 20, 2025</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>Hunyuan-Game</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/2505.14135">paper</a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/Tencent-Hunyuan/Hunyuan-GameCraft-1.0">code</a></p>
+        <p class="paper_detail"><font color=#404040>May 20, 2025</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2505.14135"><font color=#404040>Hunyuan-Game</font></a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/Tencent-Hunyuan/Hunyuan-GameCraft-1.0">code</a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="HunyuanVideopublications" style="border-left: 16px solid #F9D0A5; padding-left: 10px">
+        <div id="HunyuanVideopublications" style="border-left: 16px solid #F9D0A5; padding-left: 10px; position: relative;">
+        
+            <div style="position: absolute; right: 0; top: 0; font-size: 24px; font-weight: bold; color: #F9D0A5; opacity: 0.8;">
+                2024
+            </div>
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>HunyuanVideo: A Systematic Framework For Large Video Generative Models</i></p>
         <p class="paper_detail">Hunyuan Multimodal Model Group at Tencent (<b><font color=#404040>as a group member</font></b>)</p>
         <p class="paper_detail"> <b><font color=#404040>arXiv</font></b> <b>2024</b></p>
-        <p class="paper_detail"><b><font color=#404040>Dec 03, 2024</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#C55253>HunyuanVideo</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/2412.03603">paper</a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/Tencent-Hunyuan/HunyuanVideo">code</a></p>
+        <p class="paper_detail"><font color=#404040>Dec 03, 2024</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2412.03603"><font color=#C55253>HunyuanVideo</font></a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/Tencent-Hunyuan/HunyuanVideo">code</a></p>
         <p class="paper_detail"><font color=#C55253>It is an open-source large-scale video generation model with 13B parameters. It has over 300 citations and over 11,000 GitHub stars (as of Sep 2025).</font></p>
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="MPLpublications" style="border-left: 16px solid #F9D0A5; padding-left: 10px">
+        <div id="MPLpublications" style="border-left: 16px solid #F9D0A5; padding-left: 10px; position: relative;">
+        
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Mutual Prompt Learning for Vision Language Models</i></p>
-        <p class="paper_detail">Sifan Long<sup>&#10035</sup>, Zhen Zhao<sup>&#10035</sup>, <b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup>, Zichang Tan<sup>&#10035</sup>, Jiangjiang Liu, Jingyuan Feng, Shengsheng Wang<sup>&#9993</sup>, and Jingdong Wang</p>
+        <p class="paper_detail">
+    Sifan Long<sup>&#10035</sup>, Zhen Zhao<sup>&#10035</sup>, <b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup>, Zichang Tan<sup>&#10035</sup>, <span id="et_al_mutual_prompt_learning_for_87ee03" onclick="toggleAuthors('mutual_prompt_learning_for_87ee03')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_mutual_prompt_learning_for_87ee03" onclick="toggleAuthors('mutual_prompt_learning_for_87ee03')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Jiangjiang Liu, Jingyuan Feng, Shengsheng Wang<sup>&#9993</sup>, and Jingdong Wang</span>
+    </p>
         <p class="paper_detail">International Journal of Computer Vision (<b><font color=#404040>IJCV</font></b>), <b>2024</b></p>
-        <p class="paper_detail"><b><font color=#404040>Sep 26, 2024</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>MPL</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/2303.17169">paper</a></p>
+        <p class="paper_detail"><font color=#404040>Sep 26, 2024</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2303.17169"><font color=#404040>MPL</font></a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="Follow-Your-Canvaspublications" style="border-left: 16px solid #F9D0A5; padding-left: 10px">
+        <div id="Follow-Your-Canvaspublications" style="border-left: 16px solid #F9D0A5; padding-left: 10px; position: relative;">
+        
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Follow-Your-Canvas: Higher-Resolution Video Outpainting with Extensive Content Generation</i></p>
-        <p class="paper_detail">Qihua Chen<sup>&#10035</sup>, Yue Ma<sup>&#10035</sup>, Hongfa Wang<sup>&#10035</sup>, <b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup><sup>&#9993</sup>, Wenzhe Zhao, Qi Tian, Hongmei Wang, Shaobo Min, Qifeng Chen<sup>&#9993</sup>, and Wei Liu</p>
+        <p class="paper_detail">
+    Qihua Chen<sup>&#10035</sup>, Yue Ma<sup>&#10035</sup>, Hongfa Wang<sup>&#10035</sup>, <b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup><sup>&#9993</sup>, <span id="et_al_follow-your-canvas_higher-resolution_video_outpainting_3f8f7d" onclick="toggleAuthors('follow-your-canvas_higher-resolution_video_outpainting_3f8f7d')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_follow-your-canvas_higher-resolution_video_outpainting_3f8f7d" onclick="toggleAuthors('follow-your-canvas_higher-resolution_video_outpainting_3f8f7d')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Wenzhe Zhao, Qi Tian, Hongmei Wang, Shaobo Min, Qifeng Chen<sup>&#9993</sup>, and Wei Liu</span>
+    </p>
         <p class="paper_detail">AAAI Conference on Artificial Intelligence (<b><font color=#404040>AAAI</font></b>), <b>2025</b></p>
-        <p class="paper_detail"><b><font color=#404040>Sep 02, 2024</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>Follow-Your-Canvas</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/2409.01055">paper</a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/mayuelala/FollowYourCanvas">code</a></p>
+        <p class="paper_detail"><font color=#404040>Sep 02, 2024</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2409.01055"><font color=#404040>Follow-Your-Canvas</font></a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/mayuelala/FollowYourCanvas">code</a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="Follow-Your-Emojipublications" style="border-left: 16px solid #F9D0A5; padding-left: 10px">
+        <div id="Follow-Your-Emojipublications" style="border-left: 16px solid #F9D0A5; padding-left: 10px; position: relative;">
+        
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Follow-Your-Emoji: Fine-Controllable and Expressive Freestyle Portrait Animation</i></p>
-        <p class="paper_detail">Yue Ma<sup>&#10035</sup>, Hongyu Liu<sup>&#10035</sup>, Hongfa Wang<sup>&#10035</sup>, Heng Pan<sup>&#10035</sup>, Yingqing He, <b><font color=#404040>Junkun Yuan</font></b>, Ailing Zeng, Chengfei Cai, Heung-Yeung Shum, Wei Liu<sup>&#9993</sup>, and Qifeng Chen<sup>&#9993</sup></p>
+        <p class="paper_detail">
+    Yue Ma<sup>&#10035</sup>, Hongyu Liu<sup>&#10035</sup>, Hongfa Wang<sup>&#10035</sup>, Heng Pan<sup>&#10035</sup>, Yingqing He, <b><font color=#404040>Junkun Yuan</font></b>, <span id="et_al_follow-your-emoji_fine-controllable_and_expressive_181ebd" onclick="toggleAuthors('follow-your-emoji_fine-controllable_and_expressive_181ebd')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_follow-your-emoji_fine-controllable_and_expressive_181ebd" onclick="toggleAuthors('follow-your-emoji_fine-controllable_and_expressive_181ebd')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Ailing Zeng, Chengfei Cai, Heung-Yeung Shum, Wei Liu<sup>&#9993</sup>, and Qifeng Chen<sup>&#9993</sup></span>
+    </p>
         <p class="paper_detail">ACM SIGGRAPH Annual Conference in Asia (<b><font color=#404040>SIGGRAPH-Asia</font></b>), <b>2024</b></p>
-        <p class="paper_detail"><b><font color=#404040>Jun 04, 2024</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>Follow-Your-Emoji</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/2406.01900">paper</a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/mayuelala/FollowYourEmoji">code</a></p>
+        <p class="paper_detail"><font color=#404040>Jun 04, 2024</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2406.01900"><font color=#404040>Follow-Your-Emoji</font></a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/mayuelala/FollowYourEmoji">code</a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="Domaindiffpublications" style="border-left: 16px solid #F9D0A5; padding-left: 10px">
+        <div id="Domaindiffpublications" style="border-left: 16px solid #F9D0A5; padding-left: 10px; position: relative;">
+        
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Domaindiff: Boost Out-of-Distribution Generalization with Synthetic Data</i></p>
-        <p class="paper_detail">Qiaowei Miao, <b><font color=#404040>Junkun Yuan</font></b>, Shengyu Zhang, Fei Wu, and Kun Kuang<sup>&#9993</sup></p>
+        <p class="paper_detail">
+    Qiaowei Miao, <b><font color=#404040>Junkun Yuan</font></b>, Shengyu Zhang, Fei Wu, <span id="et_al_domaindiff_boost_out-of-distribution_generalization_8a1415" onclick="toggleAuthors('domaindiff_boost_out-of-distribution_generalization_8a1415')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_domaindiff_boost_out-of-distribution_generalization_8a1415" onclick="toggleAuthors('domaindiff_boost_out-of-distribution_generalization_8a1415')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">and Kun Kuang<sup>&#9993</sup></span>
+    </p>
         <p class="paper_detail">International Conference on Acoustics, Speech and Signal Processing (<b><font color=#404040>ICASSP</font></b>), <b>2024</b></p>
-        <p class="paper_detail"><b><font color=#404040>Apr 14, 2024</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>Domaindiff</font></b></p>
-        <p class="paper_detail"><a href="https://ieeexplore.ieee.org/iel7/10445798/10445803/10446788.pdf">paper</a></p>
+        <p class="paper_detail"><font color=#404040>Apr 14, 2024</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://ieeexplore.ieee.org/iel7/10445798/10445803/10446788.pdf"><font color=#404040>Domaindiff</font></a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="HAPpublications" style="border-left: 16px solid #A0D0A0; padding-left: 10px">
+        <div id="HAPpublications" style="border-left: 16px solid #A0D0A0; padding-left: 10px; position: relative;">
+        
+            <div style="position: absolute; right: 0; top: 0; font-size: 24px; font-weight: bold; color: #A0D0A0; opacity: 0.8;">
+                2023
+            </div>
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>HAP: Structure-Aware Masked Image Modeling for Human-Centric Perception</i></p>
-        <p class="paper_detail"><b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup>, Xinyu Zhang<sup>&#10035</sup><sup>&#9993</sup>, Hao Zhou, Jian Wang, Zhongwei Qiu, Zhiyin Shao, Shaofeng Zhang, Sifan Long, and Kun Kuang<sup>&#9993</sup>, Kun Yao, Junyu Han, Errui Ding, Lanfen Lin, Fei Wu, and Jingdong Wang<sup>&#9993</sup></p>
+        <p class="paper_detail">
+    <b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup>, Xinyu Zhang<sup>&#10035</sup><sup>&#9993</sup>, Hao Zhou, Jian Wang, <span id="et_al_hap_structure-aware_masked_image_e431a6" onclick="toggleAuthors('hap_structure-aware_masked_image_e431a6')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_hap_structure-aware_masked_image_e431a6" onclick="toggleAuthors('hap_structure-aware_masked_image_e431a6')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Zhongwei Qiu, Zhiyin Shao, Shaofeng Zhang, Sifan Long, and Kun Kuang<sup>&#9993</sup>, Kun Yao, Junyu Han, Errui Ding, Lanfen Lin, Fei Wu, and Jingdong Wang<sup>&#9993</sup></span>
+    </p>
         <p class="paper_detail">Advances in Neural Information Processing Systems (<b><font color=#404040>NeurIPS</font></b>), <b>2023</b></p>
-        <p class="paper_detail"><b><font color=#404040>Oct 31, 2023</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>HAP</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/2310.20695">paper</a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/junkunyuan/HAP">code</a></p>
+        <p class="paper_detail"><font color=#404040>Oct 31, 2023</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2310.20695"><font color=#404040>HAP</font></a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/junkunyuan/HAP">code</a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="MAPpublications" style="border-left: 16px solid #A0D0A0; padding-left: 10px">
+        <div id="MAPpublications" style="border-left: 16px solid #A0D0A0; padding-left: 10px; position: relative;">
+        
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>MAP: Towards Balanced Generalization of IID and OOD through Model-Agnostic Adapters</i></p>
-        <p class="paper_detail">Min Zhang, <b><font color=#404040>Junkun Yuan</font></b>, Yue He, Wenbin Li, Zhengyu Chen, and Kun Kuang<sup>&#9993</sup></p>
+        <p class="paper_detail">
+    Min Zhang, <b><font color=#404040>Junkun Yuan</font></b>, Yue He, Wenbin Li, <span id="et_al_map_towards_balanced_generalization_8c0d80" onclick="toggleAuthors('map_towards_balanced_generalization_8c0d80')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_map_towards_balanced_generalization_8c0d80" onclick="toggleAuthors('map_towards_balanced_generalization_8c0d80')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Zhengyu Chen, and Kun Kuang<sup>&#9993</sup></span>
+    </p>
         <p class="paper_detail">International Conference on Computer Vision (<b><font color=#404040>ICCV</font></b>), <b>2023</b></p>
-        <p class="paper_detail"><b><font color=#404040>Oct 02, 2023</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>MAP</font></b></p>
-        <p class="paper_detail"><a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Zhang_MAP_Towards_Balanced_Generalization_of_IID_and_OOD_through_Model-Agnostic_ICCV_2023_paper.pdf">paper</a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/remiMZ/MAP-ICCV23">code</a></p>
+        <p class="paper_detail"><font color=#404040>Oct 02, 2023</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Zhang_MAP_Towards_Balanced_Generalization_of_IID_and_OOD_through_Model-Agnostic_ICCV_2023_paper.pdf"><font color=#404040>MAP</font></a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/remiMZ/MAP-ICCV23">code</a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="NPTpublications" style="border-left: 16px solid #A0D0A0; padding-left: 10px">
+        <div id="NPTpublications" style="border-left: 16px solid #A0D0A0; padding-left: 10px; position: relative;">
+        
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Neural Collapse Anchored Prompt Tuning for Generalizable Vision-Language Models</i></p>
-        <p class="paper_detail">Didi Zhu, Zexi Li, Min Zhang, <b><font color=#404040>Junkun Yuan</font></b>, Yunfeng Shao, Jiashuo Liu, Kun Kuang<sup>&#9993</sup>, Yinchuan Li, and Chao Wu</p>
+        <p class="paper_detail">
+    Didi Zhu, Zexi Li, Min Zhang, <b><font color=#404040>Junkun Yuan</font></b>, <span id="et_al_neural_collapse_anchored_prompt_7593a3" onclick="toggleAuthors('neural_collapse_anchored_prompt_7593a3')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_neural_collapse_anchored_prompt_7593a3" onclick="toggleAuthors('neural_collapse_anchored_prompt_7593a3')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Yunfeng Shao, Jiashuo Liu, Kun Kuang<sup>&#9993</sup>, Yinchuan Li, and Chao Wu</span>
+    </p>
         <p class="paper_detail">ACM SIGKDD Conference on Knowledge Discovery and Data Mining (<b><font color=#404040>KDD</font></b>), <b>2024</b></p>
-        <p class="paper_detail"><b><font color=#404040>Jun 28, 2023</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>NPT</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/2306.15955">paper</a></p>
+        <p class="paper_detail"><font color=#404040>Jun 28, 2023</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2306.15955"><font color=#404040>NPT</font></a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="HTCLpublications" style="border-left: 16px solid #A0D0A0; padding-left: 10px">
+        <div id="HTCLpublications" style="border-left: 16px solid #A0D0A0; padding-left: 10px; position: relative;">
+        
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Quantitatively Measuring and Contrastively Exploring Heterogeneity for Domain Generalization</i></p>
-        <p class="paper_detail">Yunze Tong, <b><font color=#404040>Junkun Yuan</font></b>, Min Zhang, Didi Zhu, Keli Zhang, Fei Wu, and Kun Kuang<sup>&#9993</sup></p>
+        <p class="paper_detail">
+    Yunze Tong, <b><font color=#404040>Junkun Yuan</font></b>, Min Zhang, Didi Zhu, <span id="et_al_quantitatively_measuring_and_contrastively_3e8f86" onclick="toggleAuthors('quantitatively_measuring_and_contrastively_3e8f86')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_quantitatively_measuring_and_contrastively_3e8f86" onclick="toggleAuthors('quantitatively_measuring_and_contrastively_3e8f86')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Keli Zhang, Fei Wu, and Kun Kuang<sup>&#9993</sup></span>
+    </p>
         <p class="paper_detail">ACM SIGKDD Conference on Knowledge Discovery and Data Mining (<b><font color=#404040>KDD</font></b>), <b>2023</b></p>
-        <p class="paper_detail"><b><font color=#404040>May 25, 2023</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>HTCL</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/2305.15889">paper</a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/YunzeTong/HTCL">code</a></p>
+        <p class="paper_detail"><font color=#404040>May 25, 2023</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2305.15889"><font color=#404040>HTCL</font></a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/YunzeTong/HTCL">code</a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="CAMpublications" style="border-left: 16px solid #A0D0A0; padding-left: 10px">
+        <div id="CAMpublications" style="border-left: 16px solid #A0D0A0; padding-left: 10px; position: relative;">
+        
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Universal Domain Adaptation via Compressive Attention Matching</i></p>
-        <p class="paper_detail">Didi Zhu<sup>&#10035</sup>, Yincuan Li<sup>&#10035</sup>, <b><font color=#404040>Junkun Yuan</font></b>, Zexi Li, Kun Kuang, and Chao Wu<sup>&#9993</sup></p>
+        <p class="paper_detail">
+    Didi Zhu<sup>&#10035</sup>, Yincuan Li<sup>&#10035</sup>, <b><font color=#404040>Junkun Yuan</font></b>, Zexi Li, <span id="et_al_universal_domain_adaptation_via_c5bb34" onclick="toggleAuthors('universal_domain_adaptation_via_c5bb34')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_universal_domain_adaptation_via_c5bb34" onclick="toggleAuthors('universal_domain_adaptation_via_c5bb34')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Kun Kuang, and Chao Wu<sup>&#9993</sup></span>
+    </p>
         <p class="paper_detail">International Conference on Computer Vision (<b><font color=#404040>ICCV</font></b>), <b>2023</b></p>
-        <p class="paper_detail"><b><font color=#404040>Apr 24, 2023</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>CAM</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/2304.11862">paper</a></p>
+        <p class="paper_detail"><font color=#404040>Apr 24, 2023</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2304.11862"><font color=#404040>CAM</font></a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="KDDRLpublications" style="border-left: 16px solid #A0D0A0; padding-left: 10px">
+        <div id="KDDRLpublications" style="border-left: 16px solid #A0D0A0; padding-left: 10px; position: relative;">
+        
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Knowledge Distillation-Based Domain-Invariant Representation Learning for Domain Generalization</i></p>
-        <p class="paper_detail">Ziwei Niu, <b><font color=#404040>Junkun Yuan</font></b>, Xu Ma, Yingying Xu, Jing Liu, Yen-Wei Chen, Ruofeng Tong, and Lanfen Lin<sup>&#9993</sup></p>
+        <p class="paper_detail">
+    Ziwei Niu, <b><font color=#404040>Junkun Yuan</font></b>, Xu Ma, Yingying Xu, <span id="et_al_knowledge_distillation-based_domain-invariant_representation_adbc28" onclick="toggleAuthors('knowledge_distillation-based_domain-invariant_representation_adbc28')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_knowledge_distillation-based_domain-invariant_representation_adbc28" onclick="toggleAuthors('knowledge_distillation-based_domain-invariant_representation_adbc28')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Jing Liu, Yen-Wei Chen, Ruofeng Tong, and Lanfen Lin<sup>&#9993</sup></span>
+    </p>
         <p class="paper_detail">IEEE Transactions on Multimedia (<b><font color=#404040>TMM</font></b>), <b>2023</b></p>
-        <p class="paper_detail"><b><font color=#404040>Apr 05, 2023</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>KDDRL</font></b></p>
-        <p class="paper_detail"><a href="https://dl.acm.org/doi/10.1109/TMM.2023.3263549">paper</a></p>
+        <p class="paper_detail"><font color=#404040>Apr 05, 2023</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://dl.acm.org/doi/10.1109/TMM.2023.3263549"><font color=#404040>KDDRL</font></a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="MPLpublications" style="border-left: 16px solid #A0D0A0; padding-left: 10px">
+        <div id="MPLpublications" style="border-left: 16px solid #A0D0A0; padding-left: 10px; position: relative;">
+        
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Task-Oriented Multi-Modal Mutual Leaning for Vision-Language Models</i></p>
-        <p class="paper_detail">Sifan Long<sup>&#10035</sup>, Zhen Zhao<sup>&#10035</sup>, <b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup>, Zichang Tan, Jiangjiang Liu, Luping Zhou, Shengsheng Wang<sup>&#9993</sup>, and Jingdong Wang<sup>&#9993</sup></p>
+        <p class="paper_detail">
+    Sifan Long<sup>&#10035</sup>, Zhen Zhao<sup>&#10035</sup>, <b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup>, Zichang Tan, <span id="et_al_task-oriented_multi-modal_mutual_leaning_0f5d68" onclick="toggleAuthors('task-oriented_multi-modal_mutual_leaning_0f5d68')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_task-oriented_multi-modal_mutual_leaning_0f5d68" onclick="toggleAuthors('task-oriented_multi-modal_mutual_leaning_0f5d68')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Jiangjiang Liu, Luping Zhou, Shengsheng Wang<sup>&#9993</sup>, and Jingdong Wang<sup>&#9993</sup></span>
+    </p>
         <p class="paper_detail">International Conference on Computer Vision (<b><font color=#404040>ICCV</font></b>), <b>2023</b></p>
-        <p class="paper_detail"><b><font color=#404040>Mar 30, 2023</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>MPL</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/2303.17169">paper</a></p>
+        <p class="paper_detail"><font color=#404040>Mar 30, 2023</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2303.17169"><font color=#404040>MPL</font></a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="CAE v2publications" style="border-left: 16px solid #F0BBCC; padding-left: 10px">
+        <div id="CAE v2publications" style="border-left: 16px solid #F0BBCC; padding-left: 10px; position: relative;">
+        
+            <div style="position: absolute; right: 0; top: 0; font-size: 24px; font-weight: bold; color: #F0BBCC; opacity: 0.8;">
+                2022
+            </div>
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>CAE v2: Context Autoencoder with CLIP Target</i></p>
-        <p class="paper_detail">Xinyu Zhang<sup>&#10035</sup>, Jiahui Chen<sup>&#10035</sup>, <b><font color=#404040>Junkun Yuan</font></b>, Qiang Chen, Jian Wang, Xiaodi Wang, Shumin Han, Xiaokang Chen, Jimin Pi, Kun Yao, Junyu Han, Errui Ding, and Jingdong Wang<sup>&#9993</sup></p>
+        <p class="paper_detail">
+    Xinyu Zhang<sup>&#10035</sup>, Jiahui Chen<sup>&#10035</sup>, <b><font color=#404040>Junkun Yuan</font></b>, Qiang Chen, <span id="et_al_cae_v2_context_autoencoder_fd6b93" onclick="toggleAuthors('cae_v2_context_autoencoder_fd6b93')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_cae_v2_context_autoencoder_fd6b93" onclick="toggleAuthors('cae_v2_context_autoencoder_fd6b93')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Jian Wang, Xiaodi Wang, Shumin Han, Xiaokang Chen, Jimin Pi, Kun Yao, Junyu Han, Errui Ding, and Jingdong Wang<sup>&#9993</sup></span>
+    </p>
         <p class="paper_detail">Transactions on Machine Learning Research (<b><font color=#404040>TMLR</font></b>), <b>2023</b></p>
-        <p class="paper_detail"><b><font color=#404040>Nov 17, 2022</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>CAE v2</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/2211.09799">paper</a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/Atten4Vis/CAE">code</a></p>
+        <p class="paper_detail"><font color=#404040>Nov 17, 2022</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2211.09799"><font color=#404040>CAE v2</font></a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/Atten4Vis/CAE">code</a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="CEGpublications" style="border-left: 16px solid #F0BBCC; padding-left: 10px">
+        <div id="CEGpublications" style="border-left: 16px solid #F0BBCC; padding-left: 10px; position: relative;">
+        
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Label-Efficient Domain Generalization via Collaborative Exploration and Generalization</i></p>
-        <p class="paper_detail"><b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup>, Xu Ma<sup>&#10035</sup>, Defang Chen, Kun Kuang<sup>&#9993</sup>, Fei Wu, and Lanfen Lin</p>
+        <p class="paper_detail">
+    <b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup>, Xu Ma<sup>&#10035</sup>, Defang Chen, Kun Kuang<sup>&#9993</sup>, <span id="et_al_label-efficient_domain_generalization_via_80d5e3" onclick="toggleAuthors('label-efficient_domain_generalization_via_80d5e3')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_label-efficient_domain_generalization_via_80d5e3" onclick="toggleAuthors('label-efficient_domain_generalization_via_80d5e3')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Fei Wu, and Lanfen Lin</span>
+    </p>
         <p class="paper_detail">International Conference on Multimedia (<b><font color=#404040>MM</font></b>), <b>2022</b></p>
-        <p class="paper_detail"><b><font color=#404040>Aug 07, 2022</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>CEG</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/2208.03644">paper</a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/junkunyuan/CEG">code</a></p>
+        <p class="paper_detail"><font color=#404040>Aug 07, 2022</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2208.03644"><font color=#404040>CEG</font></a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/junkunyuan/CEG">code</a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="ACDApublications" style="border-left: 16px solid #F0BBCC; padding-left: 10px">
+        <div id="ACDApublications" style="border-left: 16px solid #F0BBCC; padding-left: 10px; position: relative;">
+        
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Attention-based Cross-Layer Domain Alignment for Unsupervised Domain Adaptation</i></p>
-        <p class="paper_detail">Xu Ma, <b><font color=#404040>Junkun Yuan</font></b>, Yen-Wei Chen, Ruofeng Tong, and Lanfen Lin<sup>&#9993</sup></p>
+        <p class="paper_detail">
+    Xu Ma, <b><font color=#404040>Junkun Yuan</font></b>, Yen-Wei Chen, Ruofeng Tong, <span id="et_al_attention-based_cross-layer_domain_alignment_95f173" onclick="toggleAuthors('attention-based_cross-layer_domain_alignment_95f173')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_attention-based_cross-layer_domain_alignment_95f173" onclick="toggleAuthors('attention-based_cross-layer_domain_alignment_95f173')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">and Lanfen Lin<sup>&#9993</sup></span>
+    </p>
         <p class="paper_detail"> <b><font color=#404040>Neurocomputing</font></b> <b>2022</b></p>
-        <p class="paper_detail"><b><font color=#404040>Feb 27, 2022</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>ACDA</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/2202.13310">paper</a></p>
+        <p class="paper_detail"><font color=#404040>Feb 27, 2022</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2202.13310"><font color=#404040>ACDA</font></a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="DSBFpublications" style="border-left: 16px solid #9ACAF0; padding-left: 10px">
+        <div id="DSBFpublications" style="border-left: 16px solid #9ACAF0; padding-left: 10px; position: relative;">
+        
+            <div style="position: absolute; right: 0; top: 0; font-size: 24px; font-weight: bold; color: #9ACAF0; opacity: 0.8;">
+                2021
+            </div>
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Domain-Specific Bias Filtering for Single Labeled Domain Generalization</i></p>
-        <p class="paper_detail"><b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup>, Xu Ma<sup>&#10035</sup>, Defang Chen, Kun Kuang<sup>&#9993</sup>, Fei Wu, and Lanfen Lin</p>
+        <p class="paper_detail">
+    <b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup>, Xu Ma<sup>&#10035</sup>, Defang Chen, Kun Kuang<sup>&#9993</sup>, <span id="et_al_domain-specific_bias_filtering_for_7859d2" onclick="toggleAuthors('domain-specific_bias_filtering_for_7859d2')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_domain-specific_bias_filtering_for_7859d2" onclick="toggleAuthors('domain-specific_bias_filtering_for_7859d2')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Fei Wu, and Lanfen Lin</span>
+    </p>
         <p class="paper_detail">International Journal of Computer Vision (<b><font color=#404040>IJCV</font></b>), <b>2022</b></p>
-        <p class="paper_detail"><b><font color=#404040>Oct 02, 2021</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>DSBF</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/2110.00726">paper</a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/junkunyuan/DSBF">code</a></p>
+        <p class="paper_detail"><font color=#404040>Oct 02, 2021</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2110.00726"><font color=#404040>DSBF</font></a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/junkunyuan/DSBF">code</a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="CSACpublications" style="border-left: 16px solid #9ACAF0; padding-left: 10px">
+        <div id="CSACpublications" style="border-left: 16px solid #9ACAF0; padding-left: 10px; position: relative;">
+        
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Collaborative Semantic Aggregation and Calibration for Federated Domain Generalization</i></p>
-        <p class="paper_detail"><b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup>, Xu Ma<sup>&#10035</sup>, Defang Chen, Fei Wu, Lanfen Lin, and Kun Kuang<sup>&#9993</sup></p>
+        <p class="paper_detail">
+    <b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup>, Xu Ma<sup>&#10035</sup>, Defang Chen, Fei Wu, <span id="et_al_collaborative_semantic_aggregation_and_240799" onclick="toggleAuthors('collaborative_semantic_aggregation_and_240799')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_collaborative_semantic_aggregation_and_240799" onclick="toggleAuthors('collaborative_semantic_aggregation_and_240799')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Lanfen Lin, and Kun Kuang<sup>&#9993</sup></span>
+    </p>
         <p class="paper_detail">IEEE Transactions on Knowledge and Data Engineering (<b><font color=#404040>TKDE</font></b>), <b>2023</b></p>
-        <p class="paper_detail"><b><font color=#404040>Oct 13, 2021</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>CSAC</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/2110.06736">paper</a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/junkunyuan/CSAC">code</a></p>
+        <p class="paper_detail"><font color=#404040>Oct 13, 2021</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2110.06736"><font color=#404040>CSAC</font></a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/junkunyuan/CSAC">code</a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="DSBFpublications" style="border-left: 16px solid #9ACAF0; padding-left: 10px">
+        <div id="IV-DGpublications" style="border-left: 16px solid #9ACAF0; padding-left: 10px; position: relative;">
+        
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Instrumental Variable-Driven Domain Generalization with Unobserved Confounders</i></p>
-        <p class="paper_detail"><b><font color=#404040>Junkun Yuan</font></b>, Xu Ma, Kun Kuang<sup>&#9993</sup>, Ruoxuan Xiong, Mingming Gong, and Lanfen Lin</p>
+        <p class="paper_detail">
+    <b><font color=#404040>Junkun Yuan</font></b>, Xu Ma, Kun Kuang<sup>&#9993</sup>, Ruoxuan Xiong, <span id="et_al_instrumental_variable-driven_domain_generalization_cac262" onclick="toggleAuthors('instrumental_variable-driven_domain_generalization_cac262')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_instrumental_variable-driven_domain_generalization_cac262" onclick="toggleAuthors('instrumental_variable-driven_domain_generalization_cac262')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Mingming Gong, and Lanfen Lin</span>
+    </p>
         <p class="paper_detail">ACM Transactions on Knowledge Discovery from Data (<b><font color=#404040>TKDD</font></b>), <b>2023</b></p>
-        <p class="paper_detail"><b><font color=#404040>Oct 04, 2021</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>DSBF</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/2110.01438">paper</a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/junkunyuan/DSBF">code</a></p>
+        <p class="paper_detail"><font color=#404040>Oct 04, 2021</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2110.01438"><font color=#404040>IV-DG</font></a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/junkunyuan/DSBF">code</a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="AutoIVpublications" style="border-left: 16px solid #9ACAF0; padding-left: 10px">
+        <div id="AutoIVpublications" style="border-left: 16px solid #9ACAF0; padding-left: 10px; position: relative;">
+        
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Auto IV: Counterfactual Prediction via Automatic Instrumental Variable Decomposition</i></p>
-        <p class="paper_detail"><b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup>, Anpeng Wu<sup>&#10035</sup>, Kun Kuang<sup>&#9993</sup>, Bo Li, Runze Wu, Fei Wu, and Lanfen Lin</p>
+        <p class="paper_detail">
+    <b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup>, Anpeng Wu<sup>&#10035</sup>, Kun Kuang<sup>&#9993</sup>, Bo Li, <span id="et_al_auto_iv_counterfactual_prediction_f729e1" onclick="toggleAuthors('auto_iv_counterfactual_prediction_f729e1')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_auto_iv_counterfactual_prediction_f729e1" onclick="toggleAuthors('auto_iv_counterfactual_prediction_f729e1')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Runze Wu, Fei Wu, and Lanfen Lin</span>
+    </p>
         <p class="paper_detail">ACM Transactions on Knowledge Discovery from Data (<b><font color=#404040>TKDD</font></b>), <b>2022</b></p>
-        <p class="paper_detail"><b><font color=#404040>Jul 13, 2021</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>AutoIV</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/2107.05884">paper</a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/junkunyuan/AutoIV">code</a></p>
+        <p class="paper_detail"><font color=#404040>Jul 13, 2021</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2107.05884"><font color=#404040>AutoIV</font></a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/junkunyuan/AutoIV">code</a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="GAPGANpublications" style="border-left: 16px solid #F9D0A5; padding-left: 10px">
+        <div id="GAPGANpublications" style="border-left: 16px solid #F9D0A5; padding-left: 10px; position: relative;">
+        
+            <div style="position: absolute; right: 0; top: 0; font-size: 24px; font-weight: bold; color: #F9D0A5; opacity: 0.8;">
+                2020
+            </div>
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Black-Box Adversarial Attacks Against Deep Learning Based Malware Binaries Detection with GAN</i></p>
-        <p class="paper_detail"><b><font color=#404040>Junkun Yuan</font></b>, Shaofang Zhou, Lanfen Lin<sup>&#9993</sup>, Feng Wang, and Jia Cui</p>
+        <p class="paper_detail">
+    <b><font color=#404040>Junkun Yuan</font></b>, Shaofang Zhou, Lanfen Lin<sup>&#9993</sup>, Feng Wang, <span id="et_al_black-box_adversarial_attacks_against_6a1005" onclick="toggleAuthors('black-box_adversarial_attacks_against_6a1005')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_black-box_adversarial_attacks_against_6a1005" onclick="toggleAuthors('black-box_adversarial_attacks_against_6a1005')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">and Jia Cui</span>
+    </p>
         <p class="paper_detail">European Conference on Artificial Intelligence (<b><font color=#404040>ECAI</font></b>), <b>2020</b></p>
-        <p class="paper_detail"><b><font color=#404040>Aug 29, 2020</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>GAPGAN</font></b></p>
-        <p class="paper_detail"><a href="https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA200388">paper</a></p>
+        <p class="paper_detail"><font color=#404040>Aug 29, 2020</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA200388"><font color=#404040>GAPGAN</font></a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="DeR-CFRpublications" style="border-left: 16px solid #F9D0A5; padding-left: 10px">
+        <div id="DeR-CFRpublications" style="border-left: 16px solid #F9D0A5; padding-left: 10px; position: relative;">
+        
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Learning Decomposed Representation for Counterfactual Inference</i></p>
-        <p class="paper_detail">Anpeng Wu<sup>&#10035</sup>, <b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup>, Kun Kuang<sup>&#9993</sup>, Bo Li<sup>&#9993</sup>, Runze Wu, Qiang Zhu, Yueting Zhuang, and Fei Wu</p>
+        <p class="paper_detail">
+    Anpeng Wu<sup>&#10035</sup>, <b><font color=#404040>Junkun Yuan</font></b><sup>&#10035</sup>, Kun Kuang<sup>&#9993</sup>, Bo Li<sup>&#9993</sup>, <span id="et_al_learning_decomposed_representation_for_5b5667" onclick="toggleAuthors('learning_decomposed_representation_for_5b5667')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_learning_decomposed_representation_for_5b5667" onclick="toggleAuthors('learning_decomposed_representation_for_5b5667')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Runze Wu, Qiang Zhu, Yueting Zhuang, and Fei Wu</span>
+    </p>
         <p class="paper_detail">IEEE Transactions on Knowledge and Data Engineering (<b><font color=#404040>TKDE</font></b>), <b>2023</b></p>
-        <p class="paper_detail"><b><font color=#404040>Jun 12, 2020</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>DeR-CFR</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/2006.07040">paper</a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/anpwu/DeR-CFR">code</a></p>
+        <p class="paper_detail"><font color=#404040>Jun 12, 2020</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2006.07040"><font color=#404040>DeR-CFR</font></a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/anpwu/DeR-CFR">code</a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
         <p class="little_split"></p>
         
         <p class="little_split"></p>
-        <div id="SGNspublications" style="border-left: 16px solid #A0D0A0; padding-left: 10px">
+        <div id="SGNspublications" style="border-left: 16px solid #A0D0A0; padding-left: 10px; position: relative;">
+        
+            <div style="position: absolute; right: 0; top: 0; font-size: 24px; font-weight: bold; color: #A0D0A0; opacity: 0.8;">
+                2019
+            </div>
         <div style="height: 0.3em;"></div>
         <p class="paper_title"><i>Subgraph Networks with Application to Structural Feature Space Expansion</i></p>
-        <p class="paper_detail">Qi Xuan<sup>&#9993</sup>, Jinhuan Wang, Minghao Zhao, <b><font color=#404040>Junkun Yuan</font></b>, Chenbo Fu, Zhongyuan Ruan<sup>&#9993</sup>, Guanrong Chen</p>
+        <p class="paper_detail">
+    Qi Xuan<sup>&#9993</sup>, Jinhuan Wang, Minghao Zhao, <b><font color=#404040>Junkun Yuan</font></b>, <span id="et_al_subgraph_networks_with_application_f3221d" onclick="toggleAuthors('subgraph_networks_with_application_f3221d')" style="cursor: pointer; color: #404040; text-decoration: underline;">et al.</span>
+    <span id="hidden_authors_subgraph_networks_with_application_f3221d" onclick="toggleAuthors('subgraph_networks_with_application_f3221d')" style="display: none; cursor: pointer; color: #404040; text-decoration: underline;">Chenbo Fu, Zhongyuan Ruan<sup>&#9993</sup>, Guanrong Chen</span>
+    </p>
         <p class="paper_detail">IEEE Transactions on Knowledge and Data Engineering (<b><font color=#404040>TKDE</font></b>), <b>2021</b></p>
-        <p class="paper_detail"><b><font color=#404040>Mar 21, 2019</font></b> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <b><font color=#404040>SGNs</font></b></p>
-        <p class="paper_detail"><a href="https://arxiv.org/pdf/1903.09022">paper</a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/GalateaWang/SGNs-master">code</a></p>
+        <p class="paper_detail"><font color=#404040>Mar 21, 2019</font> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/1903.09022"><font color=#404040>SGNs</font></a> &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp; <a href="https://github.com/GalateaWang/SGNs-master">code</a></p>
         
         <div style="height: 0.05em;"></div>
         </div>
@@ -381,19 +511,18 @@
         
 <h2 id="professional-service">Professional Service</h2>
 <ul>
-<li> <b>Conference Reviewer.</b>&nbsp;&nbsp; 
-ICLR 2026 &nbsp;&nbsp;<font color=#A0A0A0>|</font>&nbsp;&nbsp;
-CVPR 2021 &nbsp;&nbsp;<font color=#A0A0A0>|</font>&nbsp;&nbsp;
-ICCV 2023 &nbsp;&nbsp;<font color=#A0A0A0>|</font>&nbsp;&nbsp;
-AAAI 2023, 2026 &nbsp;&nbsp;<font color=#A0A0A0>|</font>&nbsp;&nbsp;
+<li> <b>Conference Reviewer:</b>&nbsp;&nbsp; 
+ICLR 2026 &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp;
+ICCV 2023 &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp;
+AAAI 2023, 2026 &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp;
 MM 2023
 
-<li> <b>Journal Reviewer.</b>&nbsp;&nbsp; 
-TNNLS 2022 &nbsp;&nbsp;<font color=#A0A0A0>|</font>&nbsp;&nbsp;
-TCSVT 2023 &nbsp;&nbsp;<font color=#A0A0A0>|</font>&nbsp;&nbsp;
-PR 2026 &nbsp;&nbsp;<font color=#A0A0A0>|</font>&nbsp;&nbsp;
-NN 2023 &nbsp;&nbsp;<font color=#A0A0A0>|</font>&nbsp;&nbsp;
-TKDD 2023
+<li> <b>Journal Reviewer:</b>&nbsp;&nbsp;
+TPAMI 2023 &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp;
+TNNLS 2022 &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp;
+TCSVT 2022 &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp;
+PR 2025 &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp;
+NN 2023
 </ul>
 
 <button id="backToTop" title="back to top">↑</button>
