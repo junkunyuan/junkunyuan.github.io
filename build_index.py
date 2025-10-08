@@ -68,11 +68,13 @@ TABLE_OF_CONTENTS = \
 </p>
 """
 
+# , working with <a href="https://scholar.google.com.hk/citations?user=igtXP_kAAAAJ&hl=zh-CN&oi=ao">Zhao Zhong</a> and <a href="https://scholar.google.com.hk/citations?user=FJwtMf0AAAAJ&hl=zh-CN&oi=ao">Liefeng Bo</a>
+
 BIOGRAPHY = \
 """
 <h2 id="biography">Biography</h2>
 <p>
-    I have been working as a research scientist in the Foundation Model Team of the Hunyuan Multimodal Model Group at Tencent since Jul 2024, working with <a href="https://scholar.google.com.hk/citations?user=igtXP_kAAAAJ&hl=zh-CN&oi=ao">Zhao Zhong</a> and <a href="https://scholar.google.com.hk/citations?user=FJwtMf0AAAAJ&hl=zh-CN&oi=ao">Liefeng Bo</a>. I am focusing on multimodal generative foundation models and their various downstream applications.
+    I have been working as a research scientist in the Foundation Model Team of the Hunyuan Multimodal Model Group at Tencent since Jul 2024. I am focusing on multimodal generative foundation models and their various downstream applications.
     <br><br>
 
     During Sep 2023 — Jul 2024, I interned in the Hunyuan Multimodal Model Group at Tencent, working with <a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ">Wei Liu</a>.
