@@ -1,7 +1,17 @@
 PAPERS = [
 {
+"title": "Asynchronous Denoising Diffusion Models for Aligning Text-to-Image Generation",
+"author": "Zijing Hu, Yunze Tong, Fengda Zhang, Junkun Yuan, Jun Xiao, and Kun Kuang##",
+"date": "20251006",
+"venue": "arXiv 2025",
+"name": "AsynDM",
+"pdf_url": "https://arxiv.org/pdf/2510.04504",
+"code_url": "https://github.com/hu-zijing/AsynDM",
+"comment": ""
+},
+{
 "title": "Follow-Your-Preference: Towards Preference-Aligned Image Inpainting",
-"author": "Yutao Shen**, Junkun Yuan**##, Toru Aonishi, Hideki Nakayama, Yue Ma##",
+"author": "Yutao Shen**, Junkun Yuan**##, Toru Aonishi, Hideki Nakayama, and Yue Ma##",
 "date": "20250927",
 "venue": "arXiv 2025",
 "name": "Follow-Your-Preference",
@@ -11,7 +21,7 @@ PAPERS = [
 },
 {
 "title": "Follow-Your-Emoji-Faster: Towards Efficient, Fine-Controllable, and Expressive Freestyle Portrait Animation",
-"author": "Yue Ma**, Zexuan Yan**, Hongyu Liu**, Hongfa Wang, Heng Pan, Yingqing He, Junkun Yuan, Ailing Zeng, Chengfei Cai, Heung-Yeung Shum, Zhifeng Li, Wei Liu, Linfeng Zhang##, Qifeng Chen##",
+"author": "Yue Ma**, Zexuan Yan**, Hongyu Liu**, Hongfa Wang, Heng Pan, Yingqing He, Junkun Yuan, Ailing Zeng, Chengfei Cai, Heung-Yeung Shum, Zhifeng Li, Wei Liu, Linfeng Zhang##, and Qifeng Chen##",
 "date": "20250920",
 "venue": "IJCV 2025",
 "name": "Follow-Your-Emoji-Faster",

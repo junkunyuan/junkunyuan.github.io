@@ -333,7 +333,7 @@ def build_paper(papers: List[Dict[str, Any]]) -> str:
         if is_first_paper_of_year:
             year_color = year_colors[paper_year]
             year_display = f"""
-            <div style="position: absolute; right: 0; top: 0; font-size: 24px; font-weight: bold; color: {year_color}; opacity: 0.8;">
+            <div style="position: absolute; right: 0; top: 0; font-size: 28px; font-weight: bold; color: {year_color}; opacity: 0.8;">
                 {paper_year}
             </div>"""
         
