@@ -99,7 +99,7 @@ MM 2023
 <li> <b>Journal Reviewer:</b>&nbsp;&nbsp;
 TPAMI 2023 &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp;
 TNNLS 2022 &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp;
-TCSVT 2022 &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp;
+TCSVT 2022, 2025 &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp;
 PR 2025 &nbsp;&nbsp;<font color=#CCCCCC>|</font>&nbsp;&nbsp;
 NN 2023
 </ul>
