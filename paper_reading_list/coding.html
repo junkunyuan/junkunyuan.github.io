@@ -21,14 +21,14 @@
 <p class="larger"><b></b></p>
 <p>Written by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on October 15, 2025 at 11:23 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on October 15, 2025 at 12:44 (UTC+8).</font></p>
 <hr><p id='table' class="huger"><b>Table of contents:</b></p><ul><li><a class="larger low_margin no_dec" style="font-family: 'Arial, sans-serif'; color: #6D94C5;" id="Python" href="#Python-table"><b>Python</b></a></li>
     <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
         <a href="#argparsepython" class="no_dec"><font color=#777777><b>argparse</b> <font style="color:#AAAAAA;font-size:11px;">(command-line arguments)</font></font></a>
     </p>
     <br><li><a class="larger low_margin no_dec" style="font-family: 'Arial, sans-serif'; color: #6D94C5;" id="PyTorch" href="#PyTorch-table"><b>PyTorch</b></a></li>
     <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
-        <a href="#data transformspytorch" class="no_dec"><font color=#777777><b>data transforms</b> <font style="color:#AAAAAA;font-size:11px;">(transform and augment data)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#data loaderpytorch" class="no_dec"><font color=#777777><b>data loader</b> <font style="color:#AAAAAA;font-size:11px;">(load data)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#operationpytorch" class="no_dec"><font color=#777777><b>operation</b> <font style="color:#AAAAAA;font-size:11px;">(tensor operations)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#modulepytorch" class="no_dec"><font color=#777777><b>module</b> <font style="color:#AAAAAA;font-size:11px;">(modules to build models)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#activation functionpytorch" class="no_dec"><font color=#777777><b>activation function</b> <font style="color:#AAAAAA;font-size:11px;">(activation functions)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#optimizerpytorch" class="no_dec"><font color=#777777><b>optimizer</b> <font style="color:#AAAAAA;font-size:11px;">(optimizers)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#huggingfacepytorch" class="no_dec"><font color=#777777><b>huggingface</b> <font style="color:#AAAAAA;font-size:11px;">(huggingface tools)</font></font></a>
+        <a href="#data transformspytorch" class="no_dec"><font color=#777777><b>data transforms</b> <font style="color:#AAAAAA;font-size:11px;">(transform and augment data)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#data loaderpytorch" class="no_dec"><font color=#777777><b>data loader</b> <font style="color:#AAAAAA;font-size:11px;">(build and load dataset)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#operationpytorch" class="no_dec"><font color=#777777><b>operation</b> <font style="color:#AAAAAA;font-size:11px;">(tensor operations)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#modulepytorch" class="no_dec"><font color=#777777><b>module</b> <font style="color:#AAAAAA;font-size:11px;">(modules to build models)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#activation functionpytorch" class="no_dec"><font color=#777777><b>activation function</b> <font style="color:#AAAAAA;font-size:11px;">(activation functions)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#optimizerpytorch" class="no_dec"><font color=#777777><b>optimizer</b> <font style="color:#AAAAAA;font-size:11px;">(optimizers)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#huggingfacepytorch" class="no_dec"><font color=#777777><b>huggingface</b> <font style="color:#AAAAAA;font-size:11px;">(huggingface tools)</font></font></a>
     </p>
     <br><li><a class="larger low_margin no_dec" style="font-family: 'Arial, sans-serif'; color: #6D94C5;" id="Distributed Framework" href="#Distributed Framework-table"><b>Distributed Framework</b></a></li>
     <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
@@ -204,7 +204,7 @@ image_trans = trans(image)  # Tensor => Tensor
     <p class="paper_title" onclick="toggleTable('data loader-PyTorch-details')"><i>Data Loader</i></p>
     
     
-    <p class="paper_detail"> <b><font color=#404040>load data</font></b></b></font></p>
+    <p class="paper_detail"> <b><font color=#404040>build and load dataset</font></b></b></font></p>
     <p class="paper_detail"><b>Jun 30, 2024</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>data loader</font></b></p>
     <p class="paper_detail"></p>
     
@@ -217,8 +217,31 @@ image_trans = trans(image)  # Tensor => Tensor
 <pre>
 <code class="language-python" style="font-size: 14px;">
 import torch
-from torch.utils.data import DataLoader, Dataset, Sampler
+from torch.utils.data import DataLoader, Dataset
+from torch.utils.data.distributed import DistributedSampler
 
+# Example: Build a dataset
+class MyDataset(Dataset):
+    def __init__(self, data):
+        self.data = data
+
+    def __len__(self):
+        return len(self.data)
+    
+    def __getitem__(self, index):
+        return self.data[index]
+
+# Example: Build a distributed sampler
+datset = /  # *** Dataset
+num_replicas = world_size  # *** int. Number of replicas
+rank = rank  # *** int. Rank of the current process
+shuffle = False  # *** bool. If True, have the data shuffled at every epoch
+seed = 0  # *** int. Random seed used to shuffle the sampler if `shuffle` is True
+drop_last = False  # *** bool. If True, drop the last incomplete batch
+sampler = DistributedSampler(dataset, num_replicas, rank, shuffle, seed, drop_last)
+
+# Example: Build a data loader
+# Note: if sampler is not None, shuffle must be False, drop_last can be either True or False
 dataset = /  # *** Dataset
 batch_size = 1  # *** int. Number of samples per batch
 shuffle = False  # *** bool. If True, have the data shuffled at every epoch
@@ -229,7 +252,6 @@ pin_memory = False  # *** bool. If True, copy Tensors into CUDA pinned memory
 drop_last = False  # *** bool. If True, drop the last incomplete batch
 timeout = 0  # numeric. If positive, set timeout for collecting a batch from workers
 prefetch_factor = None  # int. Default = None if num_workers == 0 else 2
-# ...
 data_loader = DataLoader(dataset, batch_size, shuffle, sampler, num_workers, 
     collate_fn, pin_memory, drop_last, timeout, prefetch_factor)
 </code>

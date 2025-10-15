@@ -455,7 +455,7 @@ image_trans = trans(image)  # Tensor => Tensor
 "author": "",
 "organization": "",
 "date": "20240630",
-"venue": "load data",
+"venue": "build and load dataset",
 "pdf_url": "",
 "code_url": "",
 "name": "data loader",
@@ -469,8 +469,31 @@ image_trans = trans(image)  # Tensor => Tensor
 <pre>
 <code class="language-python" style="font-size: 14px;">
 import torch
-from torch.utils.data import DataLoader, Dataset, Sampler
+from torch.utils.data import DataLoader, Dataset
+from torch.utils.data.distributed import DistributedSampler
 
+# Example: Build a dataset
+class MyDataset(Dataset):
+    def __init__(self, data):
+        self.data = data
+
+    def __len__(self):
+        return len(self.data)
+    
+    def __getitem__(self, index):
+        return self.data[index]
+
+# Example: Build a distributed sampler
+datset = /  # *** Dataset
+num_replicas = world_size  # *** int. Number of replicas
+rank = rank  # *** int. Rank of the current process
+shuffle = False  # *** bool. If True, have the data shuffled at every epoch
+seed = 0  # *** int. Random seed used to shuffle the sampler if `shuffle` is True
+drop_last = False  # *** bool. If True, drop the last incomplete batch
+sampler = DistributedSampler(dataset, num_replicas, rank, shuffle, seed, drop_last)
+
+# Example: Build a data loader
+# Note: if sampler is not None, shuffle must be False, drop_last can be either True or False
 dataset = /  # *** Dataset
 batch_size = 1  # *** int. Number of samples per batch
 shuffle = False  # *** bool. If True, have the data shuffled at every epoch
@@ -481,7 +504,6 @@ pin_memory = False  # *** bool. If True, copy Tensors into CUDA pinned memory
 drop_last = False  # *** bool. If True, drop the last incomplete batch
 timeout = 0  # numeric. If positive, set timeout for collecting a batch from workers
 prefetch_factor = None  # int. Default = None if num_workers == 0 else 2
-# ...
 data_loader = DataLoader(dataset, batch_size, shuffle, sampler, num_workers, 
     collate_fn, pin_memory, drop_last, timeout, prefetch_factor)
 </code>
