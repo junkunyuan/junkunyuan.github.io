@@ -35,6 +35,23 @@ LIST["papers"] = [
 # """,
 # },
 {
+"title": "Cursor",
+"date": "20251015",
+"venue": "cursor configs",
+"name": "cursor",
+"category": "Tools",
+"summary": 
+"""
+""",
+"details": 
+"""
+<ul>
+<li><b>Extensions:</b> (1) "Remote - SSH": connect to remote servers; (2) "Dev Containers": run containers. </li>
+<li><b>SSH passwordless login:</b> (1) If there is no SSH key at `~/.ssh/`, run `$ssh-keygen -t rsa` to generate it, such as `id_rsa` and `id_rsa.pub`; (2) Edit `~/.ssh/config`: "Host [name] HostName [ip] User [user] IdentityFile [private_key_path, such as `~/.ssh/id_rsa`]";  (3) Copy the public key in `~/.ssh/id_rsa.pub` to remote server at `~/.ssh/authorized_keys`.</li>
+</ul>
+""",
+},
+{
 "title": "argparse",
 "date": "20250929",
 "venue": "command-line arguments",
@@ -290,7 +307,7 @@ $torchrun
 """,
 },
 {
-"title": "new paper Ray",
+"title": "Ray",
 "date": "20251001",
 "venue": "ray framework",
 "name": "ray",
@@ -314,23 +331,6 @@ Some important concepts:
 """,
 "details": 
 """
-<table class="center">
-<tr>
-<th>category</th>
-<th>tool (alphabetical)</th>
-</tr>
-<tr>
-<td>default</td>
-<td><a href="#"></a> &nbsp;&nbsp;</td>
-</tr>
-</table>
-<p class="larger" id="">
-<b><a href=""></a>: </b>
-.
-<pre>
-<code class="language-python" style="font-size: 14px;">
-</code>
-</pre>
 """,
 },
 {

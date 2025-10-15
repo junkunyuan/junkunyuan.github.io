@@ -21,7 +21,7 @@
 <p class="larger"><b></b></p>
 <p>Written by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on October 09, 2025 at 10:38 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on October 15, 2025 at 11:23 (UTC+8).</font></p>
 <hr><p id='table' class="huger"><b>Table of contents:</b></p><ul><li><a class="larger low_margin no_dec" style="font-family: 'Arial, sans-serif'; color: #6D94C5;" id="Python" href="#Python-table"><b>Python</b></a></li>
     <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
         <a href="#argparsepython" class="no_dec"><font color=#777777><b>argparse</b> <font style="color:#AAAAAA;font-size:11px;">(command-line arguments)</font></font></a>
@@ -36,7 +36,7 @@
     </p>
     <br><li><a class="larger low_margin no_dec" style="font-family: 'Arial, sans-serif'; color: #6D94C5;" id="Tools" href="#Tools-table"><b>Tools</b></a></li>
     <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
-        <a href="#gittools" class="no_dec"><font color=#777777><b>git</b> <font style="color:#AAAAAA;font-size:11px;">(git tools)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#dockertools" class="no_dec"><font color=#777777><b>docker</b> <font style="color:#AAAAAA;font-size:11px;">(docker tools)</font></font></a>
+        <a href="#cursortools" class="no_dec"><font color=#777777><b>cursor</b> <font style="color:#AAAAAA;font-size:11px;">(cursor configs)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#gittools" class="no_dec"><font color=#777777><b>git</b> <font style="color:#AAAAAA;font-size:11px;">(git tools)</font></font></a> &nbsp; &nbsp; &nbsp; <a href="#dockertools" class="no_dec"><font color=#777777><b>docker</b> <font style="color:#AAAAAA;font-size:11px;">(docker tools)</font></font></a>
     </p>
     <br></ul><h2 id="Python-table"><a class="no_dec" href="#Python">Python</a></h2>
     <p class="little_split" id='argparsepython'></p>
@@ -963,47 +963,14 @@ $torchrun
     <p class="little_split" id='raydistributed framework'></p>
     <div style="border-left: 16px solid #A0D0A0; padding-left: 10px">
     <div style="height: 0.3em;"></div>
-    <p class="paper_title" onclick="toggleTable('ray-Distributed Framework-details')"><i>new paper Ray</i></p>
+    <p class="paper_title" onclick="toggleTable('ray-Distributed Framework-details')"><i>Ray</i></p>
     
     
     <p class="paper_detail"> <b><font color=#404040>ray framework</font></b></b></font></p>
     <p class="paper_detail"><b>Oct 01, 2025</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>ray</font></b></p>
     <p class="paper_detail"></p>
     
-    <p>
-Ray is a <b>distributed computing framework</b>, developed by UC Berkeley, allowing you to scale machine learning and data processing workflows across multiple machines and GPUs. Ray employs a dynamic task graph computation model.
-
-Some important concepts:
-
-<ul>
-<li>Task: a remote function on a stateless worker. Create by applying `@ray.remote` decorator to a function.</li>
-<li>Actor: a remote class on a stateful worker. Create by applying `@ray.actor` decorator to a class.</li>
-<li>Data edges: data1 -> task1 -> data2 means data1 and data2 are the input and output of task1 respectively.</li>
-<li>Control edges: task1 -> task2 means task2 is executed by task1.</li>
-<li>Ray builds a dynamic task graph consisting of data edges and control edges.</li>
-<li>Driver: a process executing the user program.</li>
-<li>Worker: a stateless process executing tasks (remote functions).</li>
-<li>Actor (another concept): a stateless process executing tasks (remote functions).</li>
-</ul>
-</p><p>
-<table class="center">
-<tr>
-<th>category</th>
-<th>tool (alphabetical)</th>
-</tr>
-<tr>
-<td>default</td>
-<td><a href="#"></a> &nbsp;&nbsp;</td>
-</tr>
-</table>
-<p class="larger" id="">
-<b><a href=""></a>: </b>
-.
-<pre>
-<code class="language-python" style="font-size: 14px;">
-</code>
-</pre>
-</p>
+    
     <div id='ray-Distributed Framework-details' class="info_detail">
         <hr class="dashed">
         <p><font color=#202020>
@@ -1024,29 +991,39 @@ Some important concepts:
 </font></p>
         
         <p>
-<table class="center">
-<tr>
-<th>category</th>
-<th>tool (alphabetical)</th>
-</tr>
-<tr>
-<td>default</td>
-<td><a href="#"></a> &nbsp;&nbsp;</td>
-</tr>
-</table>
-<p class="larger" id="">
-<b><a href=""></a>: </b>
-.
-<pre>
-<code class="language-python" style="font-size: 14px;">
-</code>
-</pre>
 </p>
     </div>
     <div style="height: 0.05em;"></div>
     </div>
     <p class="little_split"></p>
     <h2 id="Tools-table"><a class="no_dec" href="#Tools">Tools</a></h2>
+    <p class="little_split" id='cursortools'></p>
+    <div style="border-left: 16px solid #F0BBCC; padding-left: 10px">
+    <div style="height: 0.3em;"></div>
+    <p class="paper_title" onclick="toggleTable('cursor-Tools-details')"><i>Cursor</i></p>
+    
+    
+    <p class="paper_detail"> <b><font color=#404040>cursor configs</font></b></b></font></p>
+    <p class="paper_detail"><b>Oct 15, 2025</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>cursor</font></b></p>
+    <p class="paper_detail"></p>
+    
+    
+    <div id='cursor-Tools-details' class="info_detail">
+        <hr class="dashed">
+        <p><font color=#202020>
+</font></p>
+        
+        <p>
+<ul>
+<li><b>Extensions:</b> (1) "Remote - SSH": connect to remote servers; (2) "Dev Containers": run containers. </li>
+<li><b>SSH passwordless login:</b> (1) If there is no SSH key at `~/.ssh/`, run `$ssh-keygen -t rsa` to generate it, such as `id_rsa` and `id_rsa.pub`; (2) Edit `~/.ssh/config`: "Host [name] HostName [ip] User [user] IdentityFile [private_key_path, such as `~/.ssh/id_rsa`]";  (3) Copy the public key in `~/.ssh/id_rsa.pub` to remote server at `~/.ssh/authorized_keys`.</li>
+</ul>
+</p>
+    </div>
+    <div style="height: 0.05em;"></div>
+    </div>
+    <p class="little_split"></p>
+    
     <p class="little_split" id='gittools'></p>
     <div style="border-left: 16px solid #F0BBCC; padding-left: 10px">
     <div style="height: 0.3em;"></div>
