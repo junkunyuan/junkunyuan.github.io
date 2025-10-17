@@ -21,7 +21,7 @@
 <p class="larger"><b></b></p>
 <p>Written by <a href="https://junkunyuan.github.io/">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<p><font color=#B0B0B0>Last updated on October 15, 2025 at 12:44 (UTC+8).</font></p>
+<p><font color=#B0B0B0>Last updated on October 17, 2025 at 14:50 (UTC+8).</font></p>
 <hr><p id='table' class="huger"><b>Table of contents:</b></p><ul><li><a class="larger low_margin no_dec" style="font-family: 'Arial, sans-serif'; color: #6D94C5;" id="Python" href="#Python-table"><b>Python</b></a></li>
     <p style="display: flex; flex-wrap: wrap; font-size: 13px;">
         <a href="#argparsepython" class="no_dec"><font color=#777777><b>argparse</b> <font style="color:#AAAAAA;font-size:11px;">(command-line arguments)</font></font></a>
@@ -242,6 +242,7 @@ sampler = DistributedSampler(dataset, num_replicas, rank, shuffle, seed, drop_la
 
 # Example: Build a data loader
 # Note: if sampler is not None, shuffle must be False, drop_last can be either True or False
+# Note: if sampler is None, one can set `torch.manual_seed(SEED)` to fix the random seed
 dataset = /  # *** Dataset
 batch_size = 1  # *** int. Number of samples per batch
 shuffle = False  # *** bool. If True, have the data shuffled at every epoch
@@ -891,18 +892,53 @@ snapshot_download(repo_id, repo_type, local_dir, token, max_workers)
     <p class="little_split" id='torchrundistributed framework'></p>
     <div style="border-left: 16px solid #A0D0A0; padding-left: 10px">
     <div style="height: 0.3em;"></div>
-    <p class="paper_title" onclick="toggleTable('torchrun-Distributed Framework-details')"><i>torchrun</i></p>
+    <p class="paper_title" onclick="toggleTable('torchrun-Distributed Framework-details')"><i>new paper torchrun</i></p>
     
     
     <p class="paper_detail"> <b><font color=#404040>console script for Distributed Framework</font></b></b></font></p>
     <p class="paper_detail"><b>Sep 29, 2025</b> &nbsp;&nbsp;<font color=#BBBBBB>|</font>&nbsp;&nbsp; <b><font color=#404040>torchrun</font></b></p>
     <p class="paper_detail"></p>
     
-    
+    <p>
+Build distributed framework with torchrun.
+</p><p>
+<pre>
+<code class="language-bash" style="font-size: 14px;">
+# Method 1: Use rdzv_endpoint (recommended)
+$torchrun
+    --nnodes ${NNODES}
+    --nproc_per_node ${NPROC_PER_NODE}
+    --node_rank ${NODE_RANK}
+    --rdzv_backend c10d
+    --rdzv_endpoint ${MASTER_ADDR}:${MASTER_PORT}
+    --rdzv_id ${RDZV_ID}
+    train.py
+
+# Method 2: Use master_addr and master_port
+$torchrun
+    --nnodes ${NNODES}
+    --nproc_per_node ${NPROC_PER_NODE}
+    --node_rank ${NODE_RANK}
+    --master_addr ${MASTER_ADDR}
+    --master_port ${MASTER_PORT}
+    train.py
+</code>
+</pre>
+
+<pre>
+<code class="language-python" style="font-size: 14px;">
+from torch.distributed import barrier
+group = None  # ProcessGroup. The process group to work on
+async_op = False  # bool. If True, the barrier is asynchronous
+device_ids = None  # list[int]. If provided, the barrier will only synchronize the devices in this list
+barrier(group, async_op, device_ids)
+</code>
+</pre>
+</p>
     <div id='torchrun-Distributed Framework-details' class="info_detail">
         <hr class="dashed">
         <p><font color=#202020>
-Console script for pytorch Distributed Framework.
+Build distributed framework with torchrun.
 </font></p>
         
         <p>
@@ -926,6 +962,16 @@ $torchrun
     --master_addr ${MASTER_ADDR}
     --master_port ${MASTER_PORT}
     train.py
+</code>
+</pre>
+
+<pre>
+<code class="language-python" style="font-size: 14px;">
+from torch.distributed import barrier
+group = None  # ProcessGroup. The process group to work on
+async_op = False  # bool. If True, the barrier is asynchronous
+device_ids = None  # list[int]. If provided, the barrier will only synchronize the devices in this list
+barrier(group, async_op, device_ids)
 </code>
 </pre>
 </p>

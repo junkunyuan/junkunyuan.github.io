@@ -227,14 +227,14 @@ sudo service docker stop  # stop docker
 """,
 },
 {
-"title": "torchrun",
+"title": "new paper torchrun",
 "date": "20250929",
 "venue": "console script for Distributed Framework",
 "name": "torchrun",
 "category": "Distributed Framework",
 "summary": 
 """
-Console script for pytorch Distributed Framework.
+Build distributed framework with torchrun.
 """,
 "details": 
 """
@@ -258,6 +258,16 @@ $torchrun
     --master_addr ${MASTER_ADDR}
     --master_port ${MASTER_PORT}
     train.py
+</code>
+</pre>
+
+<pre>
+<code class="language-python" style="font-size: 14px;">
+from torch.distributed import barrier
+group = None  # ProcessGroup. The process group to work on
+async_op = False  # bool. If True, the barrier is asynchronous
+device_ids = None  # list[int]. If provided, the barrier will only synchronize the devices in this list
+barrier(group, async_op, device_ids)
 </code>
 </pre>
 """,
@@ -494,6 +504,7 @@ sampler = DistributedSampler(dataset, num_replicas, rank, shuffle, seed, drop_la
 
 # Example: Build a data loader
 # Note: if sampler is not None, shuffle must be False, drop_last can be either True or False
+# Note: if sampler is None, one can set `torch.manual_seed(SEED)` to fix the random seed
 dataset = /  # *** Dataset
 batch_size = 1  # *** int. Number of samples per batch
 shuffle = False  # *** bool. If True, have the data shuffled at every epoch
