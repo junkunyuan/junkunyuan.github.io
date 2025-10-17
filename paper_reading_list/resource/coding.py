@@ -227,7 +227,7 @@ sudo service docker stop  # stop docker
 """,
 },
 {
-"title": "new paper torchrun",
+"title": "torchrun",
 "date": "20250929",
 "venue": "console script for Distributed Framework",
 "name": "torchrun",
