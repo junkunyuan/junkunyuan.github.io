@@ -52,8 +52,8 @@ PREFIX: str = f"""
                     <p>work and live in Shenzhen, China</p>
                     <p><font color=#D0D0D0>Last updated on {TIME_NOW} (UTC+8)</font></p>
                 </td>
-                <td style="padding-right: 120px; padding-top: 10px;">
-                    <img src="resource/my_photo.jpg" width="160">
+                <td style="padding-right: 100px; padding-top: 50px;">
+                    <img src="resource/my_photo.jpg" width="180" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);">
                 </td>
             </tr>
         </tbody>

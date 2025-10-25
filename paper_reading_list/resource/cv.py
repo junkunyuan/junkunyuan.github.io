@@ -25,6 +25,45 @@ LIST["papers"] = [
 # """,
 # },
 {
+"title": "LongLive: Real-time Interactive Long Video Generation",
+"author": "Shuai Yang, Wei Huang, Ruihang Chu, Yicheng Xiao, Yuyang Zhao, Xianbang Wang, Muyang Li, Enze Xie, Yingcong Chen, Yao Lu, Song Han, Yukang Chen",
+"organization": "NVIDIA, MIT, HKUST(GZ), HKU, THU",
+"date": "20250926",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2509.22622",
+"code_url": "https://github.com/NVlabs/LongLive",
+"name": "LongLive",
+"comment": "",
+"category": "Foundation Algorithms & Models of Generation",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It introduces a frame-level auto-regressive model with KV-recache and streaming long tuning for real-time, interactive, minute-level video generation.
+""",
+"details": 
+"""
+""",
+},
+{
+"title": "SANA-Video: Efficient Video Generation with Block Linear Diffusion Transformer",
+"author": "Junsong Chen, Yuyang Zhao, Jincheng Yu, Ruihang Chu, Junyu Chen, Shuai Yang, Xianbang Wang, Yicheng Pan, Daquan Zhou, Huan Ling, Haozhe Liu, Hongwei Yi, Hao Zhang, Muyang Li, Yukang Chen, Han Cai, Sanja Fidler, Ping Luo, Song Han, Enze Xie",
+"organization": "NVIDIA, HKU, MIT, THU, PKU, KAUST",
+"date": "20251013",
+"venue": "arXiv 2025",
+"pdf_url": "https://arxiv.org/pdf/2509.24695",
+"code_url": "https://github.com/NVlabs/Sana",
+"name": "SANA-Video",
+"comment": "",
+"category": "Foundation Algorithms & Models of Generation",
+"jupyter_notes": "",
+"info": "",
+"summary": 
+"""
+It introduces an auto-regressive diffusion model (2B) trained upon SANA-T2I for efficient, high-resolution, and minute-long video generation.
+"""
+},
+{
 "title": "Video Models are Zero-Shot Learners and Reasoners",
 "author": "Thaddäus Wiedemer, Yuxuan Li, Paul Vicol, Shixiang Shane Gu, Nick Matarese, Kevin Swersky, Been Kim, Priyank Jaini, Robert Geirhos",
 "organization": "Google DeepMind",
