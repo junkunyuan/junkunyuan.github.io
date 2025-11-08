@@ -31,7 +31,7 @@ PAPERS = [
 },
 {
 "title": "Hunyuan-Game: Industrial-grade Intelligent Game Creation Model",
-"author": "Hunyuan Multimodal Model Group at Tencent (<b><font color=#404040>as a group member</font></b>)",
+"author": "Hunyuan Multimodal Generation Foundation Model Team at Tencent (<b><font color=#404040>as a group member</font></b>)",
 "date": "20250520",
 "venue": "arXiv 2025",
 "name": "Hunyuan-Game",
@@ -41,14 +41,14 @@ PAPERS = [
 },
 {
 "title": "HunyuanVideo: A Systematic Framework For Large Video Generative Models",
-"author": "Hunyuan Multimodal Model Group at Tencent (<b><font color=#404040>as a group member</font></b>)",
+"author": "Hunyuan Multimodal Generation Foundation Model Team at Tencent (<b><font color=#404040>as a group member</font></b>)",
 "date": "20241203",
 "venue": "arXiv 2024",
 "name": "HunyuanVideo",
 "info": "**",
 "pdf_url": "https://arxiv.org/pdf/2412.03603",
 "code_url": "https://github.com/Tencent-Hunyuan/HunyuanVideo",
-"comment": "It introduces an open-source diffusion model for video generation with 13B parameters. It has over 400 citations and over 11,000 GitHub stars (as of Oct 2025)."
+"comment": "It introduces an open-source diffusion model for video generation with 13B parameters. It has over 500 citations and over 11,000 GitHub stars (as of Nov 2025)."
 },
 {
 "title": "Mutual Prompt Learning for Vision Language Models",

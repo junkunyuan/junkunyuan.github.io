@@ -47,13 +47,13 @@ PREFIX: str = f"""
             <tr>
                 <td width="870">
                     <h1>Junkun Yuan &nbsp; 袁俊坤</h1>
-                    <p>Research Scientist, &nbsp;Hunyuan Multimodal Model Group&nbsp;&nbsp;@&nbsp;&nbsp;Tencent</p>
+                    <p>Research Scientist</p>
                     <p>yuanjk0921@outlook.com</p>
                     <p>work and live in Shenzhen, China</p>
                     <p><font color=#D0D0D0>Last updated on {TIME_NOW} (UTC+8)</font></p>
                 </td>
-                <td style="padding-right: 100px; padding-top: 50px;">
-                    <img src="resource/my_photo.jpg" width="180" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);">
+                <td style="padding-right: 100px; padding-top: 20px;">
+                    <img src="resource/my_photo.jpg" width="160" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);">
                 </td>
             </tr>
         </tbody>
@@ -74,14 +74,11 @@ BIOGRAPHY = \
 """
 <h2 id="biography">Biography</h2>
 <p>
-    I have been working as a research scientist in the Foundation Model Team of the Hunyuan Multimodal Model Group at Tencent since Jul 2024. I am focusing on multimodal generative foundation models and their various downstream applications.
-    <br><br>
-
-    During Sep 2023 — Jul 2024, I interned in the Hunyuan Multimodal Model Group at Tencent, working with <a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ">Wei Liu</a>.
+    During Sep 2023 — Nov 2025, I interned and then worked in Hunyuan Multimodal Generation Foundation Model Team at <b>Tencent (Shenzhen, China)</b>, focusing on multimodal generative foundation models, working with <a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ">Wei Liu</a>, <a href="https://scholar.google.com.hk/citations?user=FJwtMf0AAAAJ&hl=zh-CN&oi=ao">Liefeng Bo</a>, and <a href="https://scholar.google.com.hk/citations?user=igtXP_kAAAAJ&hl=zh-CN&oi=ao">Zhao Zhong</a>.
     
-    During Jul 2022 — Aug 2023, I interned in the Computer Vision Group at Baidu, working with <a href="https://scholar.google.com/citations?user=PSzJxD8AAAAJ">Xinyu Zhang</a> and <a href="https://scholar.google.com/citations?user=z5SPCmgAAAAJ">Jingdong Wang</a>.<br><br>
+    During Jul 2022 — Aug 2023, I interned in the Computer Vision Group at <b>Baidu (Beijing, China)</b>, focusing on visual self-supervised pre-training, working with <a href="https://scholar.google.com/citations?user=PSzJxD8AAAAJ">Xinyu Zhang</a> and <a href="https://scholar.google.com/citations?user=z5SPCmgAAAAJ">Jingdong Wang</a>.<br><br>
 
-    I received my Ph.D. degree in Computer Science from Zhejiang University (2019 — 2024), co-supervised by professors of <a href="https://scholar.google.com/citations?user=FOsNiMQAAAAJ">Kun Kuang</a>, <a href="https://person.zju.edu.cn/0096005">Lanfen Lin</a>, and <a href="https://scholar.google.com/citations?user=XJLn4MYAAAAJ">Fei Wu</a>. I received my B.S. degree in Automation from Zhejiang University of Technology (2015 — 2019), co-supervised by professors of <a href="https://scholar.google.com.hk/citations?user=smi7bpoAAAAJ&hl=zh-CN&oi=ao">Qi Xuan</a> and <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=CnBn6FwAAAAJ">Li Yu</a>.<br><br>
+    I received my Ph.D. degree in Computer Science from Zhejiang University (2019 — 2024), co-supervised by professors of <a href="https://scholar.google.com/citations?user=FOsNiMQAAAAJ">Kun Kuang</a>, <a href="https://person.zju.edu.cn/0096005">Lanfen Lin</a>, and <a href="https://scholar.google.com/citations?user=XJLn4MYAAAAJ">Fei Wu</a>. I received my B.E. degree in Automation from Zhejiang University of Technology (2015 — 2019), co-supervised by professors of <a href="https://scholar.google.com.hk/citations?user=smi7bpoAAAAJ&hl=zh-CN&oi=ao">Qi Xuan</a> and <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=CnBn6FwAAAAJ">Li Yu</a>.<br><br>
 
     I have been fortunate to work closely with some friends such as <a href="https://scholar.google.com.hk/citations?user=F5P_8NkAAAAJ&hl=zh-CN&oi=ao">Defang Chen</a> and <a href="https://scholar.google.com.hk/citations?user=kwBR1ygAAAAJ&hl=zh-CN&oi=ao">Yue Ma</a>, their insights also profoundly shape my approach to research.
 </p>
@@ -276,7 +273,7 @@ def build_paper(papers: List[Dict[str, Any]]) -> str:
     """
     content = """
     <h2 id="publications">Publications</h2>
-    <p class="larger"><a href="https://scholar.google.com/citations?user=j3iFVPsAAAAJ">Google Scholar Profile</a></p>
+    <p class="larger"><a href="https://scholar.google.com/citations?user=j3iFVPsAAAAJ">Google Scholar Profile</a> &nbsp;&nbsp; <a href="https://www.semanticscholar.org/author/Junkun-Yuan/2304610230">Semantic Scholar Profile</a></p>
     <p>&#10035: (co-)first author &nbsp;&nbsp; &#9993: corresponding author</p>
     """
     # Add compact index below Google Scholar Profile
