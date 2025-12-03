@@ -68,8 +68,6 @@ TABLE_OF_CONTENTS = \
 </p>
 """
 
-# , working with <a href="https://scholar.google.com.hk/citations?user=igtXP_kAAAAJ&hl=zh-CN&oi=ao">Zhao Zhong</a> and <a href="https://scholar.google.com.hk/citations?user=FJwtMf0AAAAJ&hl=zh-CN&oi=ao">Liefeng Bo</a>
-
 BIOGRAPHY = \
 """
 <h2 id="biography">Biography</h2>
