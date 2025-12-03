@@ -48,7 +48,7 @@ PAPERS = [
 "info": "**",
 "pdf_url": "https://arxiv.org/pdf/2412.03603",
 "code_url": "https://github.com/Tencent-Hunyuan/HunyuanVideo",
-"comment": "It introduces an open-source diffusion model for video generation with 13B parameters. It has over 500 citations and over 11,000 GitHub stars (as of Nov 2025)."
+"comment": "It introduces an open-source diffusion model (13B) for video generation, which has received over 600 citations and over 11,000 GitHub stars (as of Dec 2025)."
 },
 {
 "title": "Mutual Prompt Learning for Vision Language Models",

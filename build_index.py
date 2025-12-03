@@ -74,13 +74,13 @@ BIOGRAPHY = \
 """
 <h2 id="biography">Biography</h2>
 <p>
-    During Sep 2023 — Nov 2025, I interned and then worked in Hunyuan Multimodal Generation Foundation Model Team at <b>Tencent (Shenzhen, China)</b>, focusing on multimodal generative foundation models, working with <a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ">Wei Liu</a>, <a href="https://scholar.google.com.hk/citations?user=FJwtMf0AAAAJ&hl=zh-CN&oi=ao">Liefeng Bo</a>, and <a href="https://scholar.google.com.hk/citations?user=igtXP_kAAAAJ&hl=zh-CN&oi=ao">Zhao Zhong</a>.
+    During Sep 2023 — Nov 2025, I interned and then worked in Multimodal Generation Foundation Model Team at <b>Tencent Hunyuan (Shenzhen, China)</b>, focusing on multimodal generative foundation models and applications, with <a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ">Wei Liu</a>, <a href="https://scholar.google.com.hk/citations?user=FJwtMf0AAAAJ&hl=zh-CN&oi=ao">Liefeng Bo</a>, and <a href="https://scholar.google.com.hk/citations?user=igtXP_kAAAAJ&hl=zh-CN&oi=ao">Zhao Zhong</a>.
     
-    During Jul 2022 — Aug 2023, I interned in the Computer Vision Group at <b>Baidu (Beijing, China)</b>, focusing on visual self-supervised pre-training, working with <a href="https://scholar.google.com/citations?user=PSzJxD8AAAAJ">Xinyu Zhang</a> and <a href="https://scholar.google.com/citations?user=z5SPCmgAAAAJ">Jingdong Wang</a>.<br><br>
+    During Jul 2022 — Aug 2023, I interned in the Computer Vision Group at <b>Baidu VIS (Beijing, China)</b>, focusing on visual self-supervised pre-training, with <a href="https://scholar.google.com/citations?user=PSzJxD8AAAAJ">Xinyu Zhang</a> and <a href="https://scholar.google.com/citations?user=z5SPCmgAAAAJ">Jingdong Wang</a>.<br><br>
 
     I received my Ph.D. degree in Computer Science from Zhejiang University (2019 — 2024), co-supervised by professors of <a href="https://scholar.google.com/citations?user=FOsNiMQAAAAJ">Kun Kuang</a>, <a href="https://person.zju.edu.cn/0096005">Lanfen Lin</a>, and <a href="https://scholar.google.com/citations?user=XJLn4MYAAAAJ">Fei Wu</a>. I received my B.E. degree in Automation from Zhejiang University of Technology (2015 — 2019), co-supervised by professors of <a href="https://scholar.google.com.hk/citations?user=smi7bpoAAAAJ&hl=zh-CN&oi=ao">Qi Xuan</a> and <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=CnBn6FwAAAAJ">Li Yu</a>.<br><br>
 
-    I have been fortunate to work closely with some friends such as <a href="https://scholar.google.com.hk/citations?user=F5P_8NkAAAAJ&hl=zh-CN&oi=ao">Defang Chen</a> and <a href="https://scholar.google.com.hk/citations?user=kwBR1ygAAAAJ&hl=zh-CN&oi=ao">Yue Ma</a>, their insights also profoundly shape my approach to research.
+    I have been fortunate to work closely with some friends such as <a href="https://scholar.google.com/citations?user=F5P_8NkAAAAJ&hl=zh-CN&oi=ao">Defang Chen</a> and <a href="https://scholar.google.com/citations?user=kwBR1ygAAAAJ&hl=zh-CN&oi=ao">Yue Ma</a>, their insights also profoundly shape my approach to research.
 </p>
 """
 SERVICE = \
