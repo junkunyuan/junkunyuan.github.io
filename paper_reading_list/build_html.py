@@ -12,20 +12,20 @@ from tqdm import tqdm
 from datetime import datetime
 from typing import Dict, List, Any
 
-from .resource.utils import (
+from paper_reading_list.resource.utils import (
     get_venue_all,
     border_color_generator,
     convert_fig_cap_to_figure,
     TOP_BUTTON,
 )
-from .resource.main_content import MAIN_CONTENT
-from .resource.research import LIST as RESEARCH
-from .resource.coding import LIST as CODING
-from .resource.fundamental import LIST as FUNDAMENTAL_COMPONENT
-from .resource.nlp import LIST as NLP
-from .resource.rl import LIST as RL
-from .resource.cv import LIST as CV
-from .resource.mm import LIST as MM
+from paper_reading_list.resource.main_content import MAIN_CONTENT
+from paper_reading_list.resource.research import LIST as RESEARCH
+from paper_reading_list.resource.coding import LIST as CODING
+from paper_reading_list.resource.fundamental import LIST as FUNDAMENTAL_COMPONENT
+from paper_reading_list.resource.nlp import LIST as NLP
+from paper_reading_list.resource.rl import LIST as RL
+from paper_reading_list.resource.cv import LIST as CV
+from paper_reading_list.resource.mm import LIST as MM
 
 # Configuration constants
 DOMAINS: List[Dict[str, Any]] = [

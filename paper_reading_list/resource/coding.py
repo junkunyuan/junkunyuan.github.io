@@ -35,6 +35,67 @@ LIST["papers"] = [
 # """,
 # },
 {
+"title": "FSDP",
+"date": "20251203",
+"venue": "fully sharded data parallel framework",
+"name": "fsdp",
+"category": "Distributed Framework",
+"summary": 
+"""
+Wrap model with FSDP to enable parallelism.
+""",
+"details": 
+"""
+<pre>
+<code class="language-python" style="font-size: 14px;">
+from torch.distributed.fsdp import FullyShardedDataParallel as FSDP
+from torch.distributed.fsdp.ShardingStrategy import FULL_SHARD, SHARD_GRAD_OP, NO_SHARD, HYBRID_SHARD, _HYBRID_SHARD_ZERO2
+from torch.distributed.fsdp.BackwardPrefetch import BACKWARD_PRE, BACKWARD_POST
+
+# FULL_SHARD: shard parameters, gradients, and optimizer
+# SHARD_GRAD_OP: shard gradients and optimizer
+# NO_SHARD: no sharding, like DDP
+# HYBRID_SHARD: apply FULL_SHARD within a node
+# _HYBRID_SHARD_ZERO2: apply SHARD_GRAD_OP within a node
+sharding_strategy = None  # *** ShardingStrategy. The sharding strategy to use
+
+# The auto wrap policy to use. If None, only apply to submodules of `module`
+auto_wrap_policy = None  # *** ModuleWrapPolicy, CustomPolicy. User can specify the classes to wrap
+# My example:
+def custom_auto_wrap_policy(module, recurse, nonwrapped_numel, min_num_params: int = int(1e8)) -> bool:
+    if recurse:
+        return True
+    return nonwrapped_numel >= min_num_params
+my_auto_wrap_policy = functools.partial(custom_auto_wrap_policy, min_num_params=int(1e5))
+
+# BACKWARD_PRE: prefetch the next set of para before current set of para's grad computation
+# BACKWARD_POST: prefetch the next set of para after current set of para's grad computation
+backward_prefetch = BACKWARD_PRE  # BACKWARD_PRE, BACKWARD_POST or None
+
+module = /  # *** nn.Module. The module to be wrapped
+process_group = None  # ProcessGroup. The process group to work on (use the default if None)
+cpu_offload = None  # *** CPUOffload. If True, offload parameters and gradients to CPU
+mixed_precision = None  # *** MixedPrecision. The mixed precision to use
+ignored_modules = None  # Module. Modules to ignore. To be deprecated, use `ignored_states` instead
+param_init_fn = None  # Module. How to initialize parameters onto a device
+device_id = None  # *** int or torch.device. The device to use
+sync_module_states = False  # bool. If True, synchronize module states across processes
+forward_prefetch = False  # bool. If True, prefetch the next foward before current forward
+limit_all_gathers = True  # bool. If True, synchronize CPU thread
+use_orig_params = False  # bool. If True, expose the original para instead of the sharded para
+ignored_states = None  # *** Parameter. States to ignore
+device_mesh = None  # *** DeviceMesh. The device mesh to use
+# Shard module parameters across data parallel workers
+sharded_model = FSDP(
+    module, process_group, sharding_strategy, cpu_offload, auto_wrap_policy, backward_prefetch, 
+    mixed_precision, ignored_modules, param_init_fn, device_id, sync_module_states, 
+    forward_prefetch, limit_all_gathers, use_orig_params, ignored_states, device_mesh
+)
+</code>
+</pre>
+""",
+},
+{
 "title": "Cursor",
 "date": "20251015",
 "venue": "cursor configs",
