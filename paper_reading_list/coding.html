@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding and Engineering</title>
+    <meta name="description" content="Coding and Engineering">
+    <link rel="stylesheet" href="../resource/style.css">
+    <link rel="shortcut icon" href="../resource/my_photo.png">
+    <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js" data-manual></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/keep-markup/prism-keep-markup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-highlight/prism-line-highlight.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>document.addEventListener("DOMContentLoaded",function(){if(window.Prism)Prism.highlightAll();});</script>
+</head>
+<body>
+<div id="layout-content">
+
+<h1 id="top">Coding and Engineering</h1>
+<p class="larger"><b>Tools used to build AI systems.</b></p>
+<p class="larger"></p>
+<p>Written by <a href="../index.html">Junkun Yuan</a>.</p>
+<p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
+<hr><p id="table" class="huger"><b>Table of contents:</b></p><ul><li><a class="larger no_dec" id="cat-python" href="#python-table"><b>Python (1)</b></a></li><p class="paper-index"><a href="#argparse-command-line-arguments-python" class="no_dec ">argparse<span class="venue">(command-line arguments)</span></a></p><br><li><a class="larger no_dec" id="cat-pytorch" href="#pytorch-table"><b>PyTorch (7)</b></a></li><p class="paper-index"><a href="#data-transforms-transform-and-augment-data-pytorch" class="no_dec ">data transforms<span class="venue">(transform and augment data)</span></a> &nbsp;&nbsp;&nbsp; <a href="#data-loader-build-and-load-dataset-pytorch" class="no_dec ">data loader<span class="venue">(build and load dataset)</span></a> &nbsp;&nbsp;&nbsp; <a href="#operation-tensor-operations-pytorch" class="no_dec ">operation<span class="venue">(tensor operations)</span></a> &nbsp;&nbsp;&nbsp; <a href="#module-modules-to-build-models-pytorch" class="no_dec ">module<span class="venue">(modules to build models)</span></a> &nbsp;&nbsp;&nbsp; <a href="#activation-function-activation-functions-pytorch" class="no_dec ">activation function<span class="venue">(activation functions)</span></a> &nbsp;&nbsp;&nbsp; <a href="#optimizer-optimizers-pytorch" class="no_dec ">optimizer<span class="venue">(optimizers)</span></a> &nbsp;&nbsp;&nbsp; <a href="#huggingface-huggingface-tools-pytorch" class="no_dec ">huggingface<span class="venue">(huggingface tools)</span></a></p><br><li><a class="larger no_dec" id="cat-distributed-framework" href="#distributed-framework-table"><b>Distributed Framework (4)</b></a></li><p class="paper-index"><a href="#fsdp-fully-sharded-data-parallel-framework-distributed-framework" class="no_dec ">fsdp<span class="venue">(fully sharded data parallel framework)</span></a> &nbsp;&nbsp;&nbsp; <a href="#torchrun-console-script-for-distributed-framework-distributed-framework" class="no_dec ">torchrun<span class="venue">(console script for Distributed Framework)</span></a> &nbsp;&nbsp;&nbsp; <a href="#deepspeed-deepspeed-framework-distributed-framework" class="no_dec ">deepspeed<span class="venue">(deepspeed framework)</span></a> &nbsp;&nbsp;&nbsp; <a href="#ray-ray-framework-distributed-framework" class="no_dec ">ray<span class="venue">(ray framework)</span></a></p><br><li><a class="larger no_dec" id="cat-tools" href="#tools-table"><b>Tools (4)</b></a></li><p class="paper-index"><a href="#vscode-vscode-configs-tools" class="no_dec ">vscode<span class="venue">(vscode configs)</span></a> &nbsp;&nbsp;&nbsp; <a href="#macbook-reimage-macos-setup-checklist-tools" class="no_dec ">macbook-reimage<span class="venue">(macOS setup checklist)</span></a> &nbsp;&nbsp;&nbsp; <a href="#git-git-tools-tools" class="no_dec ">git<span class="venue">(git tools)</span></a> &nbsp;&nbsp;&nbsp; <a href="#docker-docker-tools-tools" class="no_dec ">docker<span class="venue">(docker tools)</span></a></p><br></ul>
+<input type="search" id="paperSearch" class="search"
+       placeholder="Filter papers by title / author / venue / name…"
+       aria-label="Filter papers">
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const input = document.getElementById("paperSearch");
+    if (!input) return;
+    const papers = Array.from(document.querySelectorAll(".paper[data-search]"));
+    input.addEventListener("input", () => {
+        const q = input.value.trim().toLowerCase();
+        papers.forEach(p => {
+            const hit = !q || p.dataset.search.includes(q);
+            p.classList.toggle("is-hidden", !hit);
+        });
+    });
+});
+</script>
+<h2 id="python-table"><a class="no_dec" href="#cat-python">Python</a></h2><div id="argparse-command-line-arguments-python" class="paper paper--toggle" data-search="argparse   command-line arguments argparse python" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('argparse-command-line-arguments-python-details')">argparse</p><p class="paper__detail"><b>command-line arguments</b></p><p class="paper__detail">Sep 29, 2025 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">argparse</span></p><div id="argparse-command-line-arguments-python-details" class="info_detail"><hr class="dashed"><p>
+Parser for command-line options, arguments, and sub-commands.
+</p><p>
+<pre class="language-python">
+<code class="language-python">
+import argparse
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument("--name", type=str, default="John", help="your name")
+parser.add_argument("--debug", action="store_true", help="debug mode")  # "store_true" means default is False
+
+args = parser.parse_args()
+
+print(args.name)
+</code>
+</pre>
+</p></div></div><h2 id="pytorch-table"><a class="no_dec" href="#cat-pytorch">PyTorch</a></h2><div id="data-transforms-transform-and-augment-data-pytorch" class="paper paper--toggle" data-search="data transforms   transform and augment data data transforms pytorch" style="--paper-accent: var(--accent-2);"><p class="paper__title" onclick="toggleTable('data-transforms-transform-and-augment-data-pytorch-details')">Data Transforms</p><p class="paper__detail"><b>transform and augment data</b></p><p class="paper__detail">Jul 01, 2024 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">data transforms</span></p><div id="data-transforms-transform-and-augment-data-pytorch-details" class="info_detail"><hr class="dashed"><p>
+<table class="center">
+<tr>
+<th>category</th>
+<th>class / function (alphabetical)</th>
+</tr>
+
+<tr><td>geometry</td><td>
+<a href="#RandomHorizontalFlip">RandomHorizontalFlip</a>
+</td></tr>
+
+<tr><td>resizing</td><td>
+<a href="#Resize">Resize</a>
+</td></tr>
+
+<tr><td>conversion</td><td>
+<a href="#Normalize">Normalize</a> &nbsp;&nbsp;
+<a href="#ToTensor">ToTensor</a> &nbsp;&nbsp;
+</td></tr>
+
+<tr><td>else</td><td>
+<a href="#Compose">Compose</a> &nbsp;&nbsp;
+</td></tr>
+
+</table>
+
+<pre class="language-python">
+<code class="language-python">
+from torchvision import transforms
+from torchvision.transforms import InterpolationMode  # InterpolationMode.BILINEAR, NEAREST, BICUBIC, LANCZOS
+</code>
+</pre>
+
+<p class="larger" id="RandomHorizontalFlip">
+<b><a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.RandomHorizontalFlip.html">RandomHorizontalFlip</a>: </b>
+horizontally flip the image randomly with a probability. 
+<pre class="language-python">
+<code class="language-python">
+p = 0.5  # *** float. Probability to flip
+trans = <b>transforms.RandomHorizontalFlip</b>(p)
+image_trans = trans(image)  # PIL Image => PIL Image, or Tensor => Tensor
+</code>
+</pre>
+
+<p class="larger" id="Resize">
+<b><a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Resize.html">Resize</a>: </b>
+resize the image to a size.
+<pre class="language-python">
+<code class="language-python">
+## When `size` is int, the image shorter size will be resized to `size` with aspect ratio fixed
+## When `size` is tuple, the image size will be resized to `size` with aspect ratio changed
+size = /  # *** tuple or int
+## NEAREST: fastest; lowest quality, jagged
+## BILINEAR: fast; low quality, blur
+## (recommend) BICUBIC: slow; good quality
+## (recommend) LANCZOS: slowest; best quality
+interpolation = InterpolationMode.BILINEAR  # *** InterpolationMode
+## The shorter size may be lower than `size` if longer size exceeds `max_size` after resizing
+max_size = None  # int. Maximum allowed for the longer edge, supported if `size` is int
+trans = transforms.Resize(size, interpolation, max_size)
+image_trans = trans(image)  # PIL Image => PIL Image, or Tensor => Tensor
+</code>
+</pre>
+
+<p class="larger" id="ToTensor">
+<b><a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.ToTensor.html">ToTensor</a>: </b>
+convert a PIL Image or ndarray to tensor and scale the values accordingly.
+<pre class="language-python">
+<code class="language-python">
+## Input: PIL Image / numpy.ndarray (np.uint8) of shape (HxWxC) in the range [0, 255]
+## Output: torch.FloatTensor of shape (CxHxW) in the range (0.0, 1.0)
+## Other inputs: only apply type transform
+trans = <b>transforms.ToTensor</b>()
+image_trans = trans(image)
+</code>
+</pre>
+
+<p class="larger" id="Compose">
+<b><a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Compose.html">Compose</a>: </b>
+compose several transforms.
+<pre class="language-python">
+<code class="language-python">
+transforms = /  # *** list of Transform objects
+trans = <b>transforms.Compose</b>(transforms)
+image_trans = trans(image)  # PIL Image / ndarray / Tensor => Tensor
+</code>
+</pre>
+
+<p class="larger" id="Normalize">
+<b><a href="https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Normalize.html">Normalize</a>: </b>
+normalize a tensor image with mean and standard deviation.
+<pre class="language-python">
+<code class="language-python">
+mean = /  # *** sequence. Means for each channel
+std = /  # *** sequence. Standard deviations for each channel
+inplace = False  # bool. Bool to make this operation in-place
+trans = <b>transforms.Normalize</b>(mean, std, inplace)
+image_trans = trans(image)  # Tensor => Tensor
+</code>
+</pre>
+</p></div></div><div id="data-loader-build-and-load-dataset-pytorch" class="paper paper--toggle" data-search="data loader   build and load dataset data loader pytorch" style="--paper-accent: var(--accent-2);"><p class="paper__title" onclick="toggleTable('data-loader-build-and-load-dataset-pytorch-details')">Data Loader</p><p class="paper__detail"><b>build and load dataset</b></p><p class="paper__detail">Jun 30, 2024 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">data loader</span></p><div id="data-loader-build-and-load-dataset-pytorch-details" class="info_detail"><hr class="dashed"><p>
+<pre class="language-python">
+<code class="language-python">
+import torch
+from torch.utils.data import DataLoader, Dataset
+from torch.utils.data.distributed import DistributedSampler
+
+# Example: Build a dataset
+class MyDataset(Dataset):
+    def __init__(self, data):
+        self.data = data
+
+    def __len__(self):
+        return len(self.data)
+    
+    def __getitem__(self, index):
+        return self.data[index]
+
+# Example: Build a distributed sampler
+datset = /  # *** Dataset
+num_replicas = world_size  # *** int. Number of replicas
+rank = rank  # *** int. Rank of the current process
+shuffle = False  # *** bool. If True, have the data shuffled at every epoch
+seed = 0  # *** int. Random seed used to shuffle the sampler if `shuffle` is True
+drop_last = False  # *** bool. If True, drop the last incomplete batch
+sampler = DistributedSampler(dataset, num_replicas, rank, shuffle, seed, drop_last)
+
+# Example: Build a data loader
+# Note: if sampler is not None, shuffle must be False, drop_last can be either True or False
+# Note: if sampler is None, one can set `torch.manual_seed(SEED)` to fix the random seed
+dataset = /  # *** Dataset
+batch_size = 1  # *** int. Number of samples per batch
+shuffle = False  # *** bool. If True, have the data shuffled at every epoch
+sampler = None  # Sampler or Iterable. Define how to draw samples
+num_workers = 0  # *** int. Number of subprocesses to use for data loading
+collate_fn = None  # Callable. Merge a list of samples to form a batch
+pin_memory = False  # *** bool. If True, copy Tensors into CUDA pinned memory
+drop_last = False  # *** bool. If True, drop the last incomplete batch
+timeout = 0  # numeric. If positive, set timeout for collecting a batch from workers
+prefetch_factor = None  # int. Default = None if num_workers == 0 else 2
+data_loader = DataLoader(dataset, batch_size, shuffle, sampler, num_workers, 
+    collate_fn, pin_memory, drop_last, timeout, prefetch_factor)
+</code>
+</pre>
+</p></div></div><div id="operation-tensor-operations-pytorch" class="paper paper--toggle" data-search="operation   tensor operations operation pytorch" style="--paper-accent: var(--accent-2);"><p class="paper__title" onclick="toggleTable('operation-tensor-operations-pytorch-details')">Operation</p><p class="paper__detail"><b>tensor operations</b></p><p class="paper__detail">Jun 30, 2023 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">operation</span></p><div id="operation-tensor-operations-pytorch-details" class="info_detail"><hr class="dashed"><p>
+<table class="center">
+<tr>
+<th>category</th>
+<th>class / function (alphabetical)</th>
+</tr>
+
+<tr>
+<td>operations</td>
+<td>
+<a href="#basic operations">basic operations</a> &nbsp;&nbsp;
+<a href="#einsum">einsum</a> &nbsp;&nbsp;
+<a href="#isclose & allclose">isclose & allclose</a> &nbsp;&nbsp;
+<a href="#matmul">matmul</a> &nbsp;&nbsp;
+<a href="#mean & var">mean & var</a> &nbsp;&nbsp;
+<a href="#softmax">softmax</a> &nbsp;&nbsp;
+</td>
+</tr>
+
+<tr>
+<td>data generation</td>
+<td>
+<a href="#arange">arange</a> &nbsp;&nbsp;
+<a href="#uniform & normal">uniform & normal</a> &nbsp;&nbsp;
+<a href="#zeros & ones">zeros & ones</a> &nbsp;&nbsp;
+</td>
+</tr>
+
+<tr><td>size</td><td>
+<a href="#cat">cat</a> &nbsp;&nbsp;
+<a href="#chunk & split">chunk & split</a> &nbsp;&nbsp;
+<a href="#flatten">flatten</a> &nbsp;&nbsp;
+<a href="#permute">permute</a> &nbsp;&nbsp;
+<a href="#reshape & view">reshape & view</a> &nbsp;&nbsp;
+<a href="#size & shape">size & shape</a> &nbsp;&nbsp;
+<a href="#squeeze & unsqueeze">squeeze & unsqueeze</a> &nbsp;&nbsp;
+<a href="#transpose">transpose</a> &nbsp;&nbsp;
+<a href="#unbind">unbind</a> &nbsp;&nbsp;
+</td></tr>
+
+<tr><td>else</td><td>
+<a href="#where">where</a> &nbsp;&nbsp;
+</td></tr>
+
+</table>
+
+<pre class="language-python">
+<code class="language-python">
+import torch
+</code>
+</pre>
+
+<p class="larger" id="basic operations">
+<b><a href="https://docs.pytorch.org/docs/stable/torch.html">basic operations</a>:</b> 
+exp, sin, cos, sqrt.
+<pre class="language-python">
+<code class="language-python">
+y = torch.function(x)  # function: exp, sin, cos, sqrt
+</code>
+</pre>
+
+<p class="larger" id="mean & var">
+<b><a href="https://docs.pytorch.org/docs/stable/mean.html">mean & var</a></b>. 
+<pre class="language-python">
+<code class="language-python">
+dim = /  # *** int or tuple of ints. Dims to reduce
+keepdim = False # *** bool. If True, return tensor with the same dims
+mean = x.mean(dim, keepdim)
+
+## In version>=2.0, `correction=1` equals to `unbiased=True`, `correction=0` equals to `unbiased=False` 
+correction = 1  # *** int. 
+var = x.var(dim, keepdim, correction)
+</code>
+</pre>
+
+<p class="larger" id="softmax">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.softmax.html">softmax</a></b>. 
+<pre class="language-python">
+<code class="language-python">
+dim = None  # *** int. Dim to apply softmax
+y = x.softmax(dim)
+</code>
+</pre>
+
+<p class="larger" id="matmul">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.matmul.html">matmul</a>:</b> 
+matrix multiplication.
+<pre class="language-python">
+<code class="language-python">
+other = /  # *** tensor
+y = x.matmul(other)
+</code>
+</pre>
+
+<p class="larger" id="einsum">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.einsum.html">einsum</a>:</b> 
+Einstein summation convention. 
+<pre class="language-python">
+<code class="language-python">
+equation = /  # *** str. The subscript for the Einstein summation
+operands = /  # *** list of tensor. The tensor to be computed
+## torch.einsum("ii", tensor)  # trace
+## torch.einsum("ii->i", tensor)  # diagonal
+## torch.einsum("i,j->ij", tensor1, tensor2)  # outer product
+## torch.einsum("bij,bjk->bik", tensor1, tensor2)  # batch matrix multiplication
+## torch.einsum("...ij->...jk", tensor)  # batch permute
+y = torch.einsum(equation, operands)
+</code>
+</pre>
+
+<p class="larger" id="isclose & allclose">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.isclose.html">isclose & allclose</a>:</b> 
+check whether two tensors are close. 
+<pre class="language-python">
+<code class="language-python">
+other = /  # *** tensor. The second tensor to compare
+rtol = 1e-5  # float. Relative tolerance
+atol = 1e-8  # float. Absolute tolerance
+equal_nan = False  # bool. If True, then two NaN will be considered equal
+## Check if elements satisfy: |input - other| <= atol + rtol * other
+x.isclose(other, rtol, atol, equal_nan)  # return a tensor of bool
+x.allclose(other, rtol, atol, equal_nan)  # return True or False
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+
+<p class="larger" id="zeros & ones">
+<b>
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.zeros.html">zeros</a> & 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.ones.html">ones</a>:</b> 
+fill a tensor with a given value. 
+<pre class="language-python">
+<code class="language-python">
+size = /  # *** sequence of int. The shape of output
+y = torch.zeros(size)
+y = torch.ones(size)
+</code>
+</pre>
+
+
+<p class="larger" id="uniform & normal">
+<b>
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.rand.html">uniform</a> & 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.randn.html">normal</a>:</b> 
+fill a tensor with a given value. 
+<pre class="language-python">
+<code class="language-python">
+size = /  # *** sequence of int. The shape of output
+generator = None  # torch.Generator. A pseudorandom number generator for sampling
+requires_grad = False  # bool. If use autograd
+dtype = None  # torch.dtype. The desired data type
+device = None  # torch.device. The desired device 
+y = torch.rand(size, generator, requires_grad, dytpe, device)  # uniform distribution U(0, 1)
+y = torch.randn(size, generator, requires_grad, dytpe, device)  # standard normal distribution N(0, 1)
+</code>
+</pre>
+
+<p class="larger" id="arange">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.arange.html">arange</a>:</b> 
+a sequence in order. 
+<pre class="language-python">
+<code class="language-python">
+start = 0  # *** number. The starting value
+end = /  # *** number. The ending value
+step = 1  # *** number. The gap between adjacent points
+arange = torch.arange(start, end, step)
+</code>
+</pre>
+
+<p class="larger" id="size & shape">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.Tensor.size.html">size</a> & 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.Tensor.shape.html">shape</a>:</b> 
+get tensor size.
+<pre class="language-python">
+<code class="language-python">
+dim = None  # int. Dim to retrieve the size
+size = x.size(dim)  # => torch.Size or int
+size = x.shape  #  => torch.Size
+</code>
+</pre>
+
+<p class="larger" id="reshape & view">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.reshape.html">reshape</a> & 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.Tensor.view.html">view</a>:</b> 
+reshape a tensor with the given shape. 
+<pre class="language-python">
+<code class="language-python">
+shape = /  # sequence of int. The new shape. A single dim could be -1
+y = x.reshape(shape)  # recommend since it could call .contiguous() if needed
+y = x.view(shape)
+</code>
+</pre>
+
+<p class="larger" id="flatten">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.flatten.html">flatten</a>:</b> 
+flatten along the given dimensions. 
+<pre class="language-python">
+<code class="language-python">
+start_dim = 0  # *** int. The first dimension to flatten
+end_dim = -1  # *** int. The last dimension to flatten
+y = x.flatten(start_dim, end_dim)
+</code>
+</pre>
+
+<p class="larger" id="transpose">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.transpose.html">transpose</a>:</b> 
+swap two dimensions. 
+<pre class="language-python">
+<code class="language-python">
+dim0 = /  # *** int. The first dim to be transposed
+dim1 = /  # *** int. The second dim to be transposed
+y = x.transpose(dim0, dim1)
+</code>
+</pre>
+
+<p class="larger" id="permute">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.permute.html">permute</a>:</b> 
+permute dimensions of a tensor. 
+<pre class="language-python">
+<code class="language-python">
+dims = /  # *** sequence of int. The desired ordering of dims
+y = x.permute(dims)
+</code>
+</pre>
+
+<p class="larger" id="squeeze & unsqueeze">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.squeeze.html">squeeze</a> &
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.unsqueeze.html">unsqueeze</a>:</b> 
+insert and remove dimensions. 
+<pre class="language-python">
+<code class="language-python">
+dim = None  # *** int or tuple of ints. If given, only the dim will be squeezed
+y = x.squeeze(dim)
+
+dim = /  # *** int. The index at which to insert the singleton dim
+y = x.unsqueeze(dim)  # Eqaul to y = x[:, :, None, :] when dim = 2
+</code>
+</pre>
+
+<p class="larger" id="cat">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.cat.html">cat</a>:</b> 
+concatenate tensors along a dimension. 
+<pre class="language-python">
+<code class="language-python">
+tensors = /  # *** tuple of tensors. Tensors with the same shape except in the cat dim
+dim = 0  # *** int. The concatenation dim
+y = torch.cat(tensors, dim)
+</code>
+</pre>
+
+<p class="larger" id="unbind">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.unbind.html">unbind</a>:</b> 
+remove a dimension by splitting it. 
+<pre class="language-python">
+<code class="language-python">
+dim = 0  # *** int. Dim to remove
+y = x.unbind(dim)
+</code>
+</pre>
+
+<p class="larger" id="chunk & split">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.chunk.html">chunk</a> &
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.split.html">split</a>:</b> 
+split a tensor with chunk numbers or split sizes.
+<pre class="language-python">
+<code class="language-python">
+chunks = /  # *** int
+dim = 0  # *** int
+## If the given dim is divisible by chunks, all returned chunks will be the same size
+## If the given dim is not divisible by chunks, the last one will not be the same size
+## If such division is not possible, it returns fewer than the specified number of chunks
+y = x.chunk(chunks, dim)
+
+indices_or_sections = /  # *** tensor, int, list, tuple of ints
+dim = 0  # *** int. Dim along which to split the tensor
+## If split_size_or_sections is an integer type, split into equally sized chunks
+## If split_size_or_sections is a list, split into len(split_size_or_sections) chunks
+y = x.split(indices_or_sections, dim)
+</code>
+</pre>
+
+<p class="larger" id="where">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.where.html">where</a>:</b> 
+select elements from a tensor.
+<pre class="language-python">
+<code class="language-python">
+condition = /  # *** bool. When True, yield input, otherwise yield other
+input = /  # *** tensor or scalar
+other = /  # *** tensor or scalar
+y = torch.where(condition, input, output)
+</code>
+</pre>
+</p></div></div><div id="module-modules-to-build-models-pytorch" class="paper paper--toggle" data-search="module   modules to build models module pytorch" style="--paper-accent: var(--accent-2);"><p class="paper__title" onclick="toggleTable('module-modules-to-build-models-pytorch-details')">Module</p><p class="paper__detail"><b>modules to build models</b></p><p class="paper__detail">Jun 29, 2024 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">module</span></p><div id="module-modules-to-build-models-pytorch-details" class="info_detail"><hr class="dashed"><p>
+</p><p>
+<table class="center">
+<tr>
+<th>category</th>
+<th>tool (alphabetical)</th>
+</tr>
+
+<tr>
+<td>parameter</td>
+<td>
+<a href="#Parameter & Buffer">Parameter & Buffer</a> &nbsp;&nbsp;
+</td>
+</tr>
+
+<tr>
+<td>convolution</td>
+<td>
+<a href="#Conv2d">Conv2d</a> &nbsp;&nbsp;
+<a href="#Conv3d">Conv3d</a> &nbsp;&nbsp;
+</td>
+</tr>
+
+<tr>
+<td>other module</td>
+<td>
+<a href="#Linear">Linear</a> &nbsp;&nbsp;
+</td>
+</tr>
+
+<tr>
+<td>else</td>
+<td>
+<a href="#Dropout">Dropout</a> &nbsp;&nbsp;
+</td>
+</tr>
+
+</td>
+</tr>
+
+</table>
+
+<pre class="language-python">
+<code class="language-python">
+import torch
+from torch import nn 
+</code>
+</pre>
+
+<p class="larger" id="Parameter & Buffer">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.parameter.Parameter.html">Parameter</a> & 
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.parameter.Buffer.html">Buffer</a></b>.
+
+<pre class="language-python">
+<code class="language-python">
+data = /  # *** tensor. Parameter tensor
+requires_grad = True
+gamma = torch.Parameter(data, requires_grad)
+
+persistent = True  # whether the buffer is part of the module's state_dict
+gamma = self.register_buffer(data, persistent)  # usually used in __init__
+gamma = nn.parameter.Buffer(data, persistent)  # not usually used
+</code>
+</pre>
+
+<p class="larger" id="Linear">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Linear.html">Linear</a>:</b> affine linear transformation.
+<pre class="language-python">
+<code class="language-python">
+in_features = /  # *** int. Input features
+out_features = /  # *** int. Output features
+bias = True  # *** bool. If True, learn an additive bias
+device = None  # torch.device or int 
+dtype = None  # torch.dtype
+linear = Linear(in_features, out_features, bias, device, dtype)  
+y = linear(x)  # [..., H_in] => [..., H_out]
+</code>
+</pre>
+
+<p class="larger" id="Conv2d">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html">Conv2d</a>:</b> 2D convolution.
+<pre class="language-python">
+<code class="language-python">
+in_channels = /  # *** int. Number of channels in the input
+out_channels = /  # *** int. Number of channels in the output
+kernel_size = /  # *** int, tuple. Size of convolving kernel
+stride = 1  # *** int, tuple. Stride of convolution
+padding = 0  # int, tuple, str. Padding added to all four sides of the input
+dilation = 1  # int, tuple. Spacing between kernel elements
+groups = 1  # int. Number of blocked connections from input channels to output
+bias = True  # bool. If True, add a learnable bias to the output
+padding_mode = "zeros"  # str. "zeros", "reflect", "replicate", or "circular"
+device = None  # torch.device or int
+dtype = None  # torch.dtype
+## Weight. Shape: [out_channels, in_channels/groups, k_size[0], k_size[1]]
+## Bias. Shape: [out_channels,]
+conv2d = nn.Conv2d(in_channels, out_channels, kernel_size, stride, 
+    padding, dilation, groups, bias, padding_mode, device, dtype)
+## H_out = [(H_in + 2*padding[0] - dilation[0]*(kernel[0]-1)-1) / stride[0] + 1]
+## W_out = [(W_in + 2*padding[1] - dilation[1]*(kernel[1]-1)-1) / stride[1] + 1]
+y = conv2d(x)  # [B, C, H_in, W_in] => [B, C, H_out, W_out]
+</code>
+</pre>
+
+<p class="larger" id="Conv3d">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv3d.html">Conv3d</a>:</b> 3D convolution.
+<pre class="language-python">
+<code class="language-python">
+in_channels = /  # *** int. Number of channels in the input
+out_channels = /  # *** int. Number of channels in the output
+kernel_size = /  # *** int, tuple. Size of convolving kernel
+stride = 1  # *** int, tuple. Stride of convolution
+padding = 0  # int, tuple, str. Padding added to all six sides of the input
+dilation = 1  # int, tuple. Spacing between kernel elements
+groups = 1  # int. Number of blocked connections from input channels to output
+bias = True  # bool. If True, add a learnable bias to the output
+padding_mode = "zeros"  # str. "zeros", "reflect", "replicate", or "circular"
+device = None  # torch.device or int
+dtype = None  # torch.dtype
+## Weight. Shape: [out_channels, in_channels/groups, k_size[0], k_size[1], k_size[2]]
+## Bias. Shape: [out_channels,]
+conv3d = nn.Conv3d(in_channels, out_channels, kernel_size, stride, 
+    padding, dilation, groups, bias, padding_mode, device, dtype)
+## D_out = [(D_in + 2*padding[0] - dilation[0]*(kernel[0]-1)-1) / stride[0] + 1]
+## H_out = [(H_in + 2*padding[1] - dilation[1]*(kernel[1]-1)-1) / stride[1] + 1]
+## W_out = [(W_in + 2*padding[2] - dilation[2]*(kernel[2]-1)-2) / stride[2] + 1]
+y = conv3d(x)  # [B, C, D_in, H_in, W_in] => [B, C, D_out, H_out, W_out]
+</code>
+</pre>
+
+<p class="larger" id="Dropout">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Dropout.html">Dropout</a></b>.
+<pre class="language-python">
+<code class="language-python">
+p = 0.5  # *** float. Probability of an element to be zeroed
+inplace = False  # bool
+dropout = nn.Dropout(p, inplace)
+y = dropout(x)
+</code>
+</pre>
+</p></div></div><div id="activation-function-activation-functions-pytorch" class="paper paper--toggle" data-search="activation function   activation functions activation function pytorch" style="--paper-accent: var(--accent-2);"><p class="paper__title" onclick="toggleTable('activation-function-activation-functions-pytorch-details')">Activation Function</p><p class="paper__detail"><b>activation functions</b></p><p class="paper__detail">Jun 28, 2024 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">activation function</span></p><div id="activation-function-activation-functions-pytorch-details" class="info_detail"><hr class="dashed"><p>
+</p><p>
+<table class="center">
+<tr>
+<th>tool (alphabetical)</th>
+<th>popular applications</th>
+</tr>
+
+<tr>
+<td>
+<a href="#GeLU">GeLU</a> &nbsp;&nbsp;
+</td>
+<td>
+/
+</td>
+</tr>
+
+<tr>
+<td>
+<a href="#SiLU/swish">SiLU/swish</a> &nbsp;&nbsp;
+</td>
+<td>
+/
+</td>
+</tr>
+
+</table>
+
+<pre class="language-python">
+<code class="language-python">
+from torch import nn
+</code>
+</pre>
+
+<p class="larger" id="GeLU">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.GELU.html">GeLU</a>:</b> Gaussian Error Linear Units function, \(\mathrm{GeLU}(x)=x*\phi(x)\), where \(\phi\) is cumulative distribution function.
+<pre class="language-python">
+<code class="language-python">
+gelu = nn.GeLU()
+y = gelu(x)
+</code>
+</pre>
+
+<p class="larger" id="SiLU/swish">
+<b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.SiLU.html">SiLU/swish</a>:</b>  Sigmoid Linear Unit function, \(\mathrm{SiLU}(x)=x*\sigma(x)\), where \(\sigma\) is logistic function.
+
+<pre class="language-python">
+<code class="language-python">
+inplace = False
+silu = nn.SiLU(inplace)
+y = silu(x)
+</code>
+</pre>
+</p></div></div><div id="optimizer-optimizers-pytorch" class="paper paper--toggle" data-search="optimizer   optimizers optimizer pytorch" style="--paper-accent: var(--accent-2);"><p class="paper__title" onclick="toggleTable('optimizer-optimizers-pytorch-details')">Optimizer</p><p class="paper__detail"><b>optimizers</b></p><p class="paper__detail">Jun 28, 2024 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">optimizer</span></p><div id="optimizer-optimizers-pytorch-details" class="info_detail"><hr class="dashed"><p>It includes tools for building optimization algorithms: <a href="https://docs.pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW.step">AdamW</a>.</p><p>
+<pre class="language-python">
+<code class="language-python">
+from torch.optim import AdamW
+
+## --------------------------------------------------------------------------------
+## AdamW
+## --------------------------------------------------------------------------------
+params = /  # *** iterable. Parameters / named_parameters / parameter groups to optimize
+lr = 0.001  # *** float, Tensor. Learning rate
+betas = (0.9, 0.999)  # tuple. For computing running averages of gradients & squares
+weight_decay = 0.01  # float. Weight decay coefficient
+# ...
+adam_optim = AdamW(params, lr, betas, weight_decay)
+## --------------------------------------------------------------------------------
+</code>
+</pre>
+</p></div></div><div id="huggingface-huggingface-tools-pytorch" class="paper paper--toggle" data-search="huggingface   huggingface tools huggingface pytorch" style="--paper-accent: var(--accent-2);"><p class="paper__title" onclick="toggleTable('huggingface-huggingface-tools-pytorch-details')">huggingface</p><p class="paper__detail"><b>huggingface tools</b></p><p class="paper__detail">May 30, 2023 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">huggingface</span></p><div id="huggingface-huggingface-tools-pytorch-details" class="info_detail"><hr class="dashed"><p>It includes tools from huggingface: <a href="https://huggingface.co/docs/huggingface_hub/main/en/package_reference/file_download#huggingface_hub.snapshot_download">snapshot_download</a></p><p>
+<pre class="language-python">
+<code class="language-python">
+from huggingface_hub import snapshot_download
+
+## --------------------------------------------------------------------------------
+## Download checkpoints from huggingface
+## --------------------------------------------------------------------------------
+repo_id = /  # *** str. A user name and a repo name, e.g., "Qwen/Qwen-VL-Chat"
+repo_type = None  # *** str. "dataset", "space", or "model"
+local_dir = None  # *** str or Path. If provided, directory to place the downloaded files
+token = None  # str, bool. User token
+max_workers = 8  # int. Number of concurrent threads to download files
+# ...
+
+snapshot_download(repo_id, repo_type, local_dir, token, max_workers)
+</code>
+</pre>
+</p></div></div><h2 id="distributed-framework-table"><a class="no_dec" href="#cat-distributed-framework">Distributed Framework</a></h2><div id="fsdp-fully-sharded-data-parallel-framework-distributed-framework" class="paper paper--toggle" data-search="fsdp   fully sharded data parallel framework fsdp distributed framework" style="--paper-accent: var(--accent-3);"><p class="paper__title" onclick="toggleTable('fsdp-fully-sharded-data-parallel-framework-distributed-framework-details')">FSDP</p><p class="paper__detail"><b>fully sharded data parallel framework</b></p><p class="paper__detail">Dec 03, 2025 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">fsdp</span></p><div id="fsdp-fully-sharded-data-parallel-framework-distributed-framework-details" class="info_detail"><hr class="dashed"><p>
+Wrap model with FSDP to enable parallelism.
+</p><p>
+<pre class="language-python">
+<code class="language-python">
+from torch.distributed.fsdp import FullyShardedDataParallel as FSDP
+from torch.distributed.fsdp.ShardingStrategy import FULL_SHARD, SHARD_GRAD_OP, NO_SHARD, HYBRID_SHARD, _HYBRID_SHARD_ZERO2
+from torch.distributed.fsdp.BackwardPrefetch import BACKWARD_PRE, BACKWARD_POST
+
+# FULL_SHARD: shard parameters, gradients, and optimizer
+# SHARD_GRAD_OP: shard gradients and optimizer
+# NO_SHARD: no sharding, like DDP
+# HYBRID_SHARD: apply FULL_SHARD within a node
+# _HYBRID_SHARD_ZERO2: apply SHARD_GRAD_OP within a node
+sharding_strategy = None  # *** ShardingStrategy. The sharding strategy to use
+
+# The auto wrap policy to use. If None, only apply to submodules of `module`
+auto_wrap_policy = None  # *** ModuleWrapPolicy, CustomPolicy. User can specify the classes to wrap
+# My example:
+def custom_auto_wrap_policy(module, recurse, nonwrapped_numel, min_num_params: int = int(1e8)) -> bool:
+    if recurse:
+        return True
+    return nonwrapped_numel >= min_num_params
+my_auto_wrap_policy = functools.partial(custom_auto_wrap_policy, min_num_params=int(1e5))
+
+# BACKWARD_PRE: prefetch the next set of para before current set of para's grad computation
+# BACKWARD_POST: prefetch the next set of para after current set of para's grad computation
+backward_prefetch = BACKWARD_PRE  # BACKWARD_PRE, BACKWARD_POST or None
+
+module = /  # *** nn.Module. The module to be wrapped
+process_group = None  # ProcessGroup. The process group to work on (use the default if None)
+cpu_offload = None  # *** CPUOffload. If True, offload parameters and gradients to CPU
+mixed_precision = None  # *** MixedPrecision. The mixed precision to use
+ignored_modules = None  # Module. Modules to ignore. To be deprecated, use `ignored_states` instead
+param_init_fn = None  # Module. How to initialize parameters onto a device
+device_id = None  # *** int or torch.device. The device to use
+sync_module_states = False  # bool. If True, synchronize module states across processes
+forward_prefetch = False  # bool. If True, prefetch the next forward before current forward
+limit_all_gathers = True  # bool. If True, synchronize CPU thread
+use_orig_params = False  # bool. If True, expose the original para instead of the sharded para
+ignored_states = None  # *** Parameter. States to ignore
+device_mesh = None  # *** DeviceMesh. The device mesh to use
+# Shard module parameters across data parallel workers
+sharded_model = FSDP(
+    module, process_group, sharding_strategy, cpu_offload, auto_wrap_policy, backward_prefetch, 
+    mixed_precision, ignored_modules, param_init_fn, device_id, sync_module_states, 
+    forward_prefetch, limit_all_gathers, use_orig_params, ignored_states, device_mesh
+)
+</code>
+</pre>
+</p></div></div><div id="torchrun-console-script-for-distributed-framework-distributed-framework" class="paper paper--toggle" data-search="torchrun   console script for distributed framework torchrun distributed framework" style="--paper-accent: var(--accent-3);"><p class="paper__title" onclick="toggleTable('torchrun-console-script-for-distributed-framework-distributed-framework-details')">torchrun</p><p class="paper__detail"><b>console script for Distributed Framework</b></p><p class="paper__detail">Sep 29, 2025 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">torchrun</span></p><div id="torchrun-console-script-for-distributed-framework-distributed-framework-details" class="info_detail"><hr class="dashed"><p>
+Build distributed framework with torchrun.
+</p><p>
+<pre class="language-bash">
+<code class="language-bash">
+# Method 1: Use rdzv_endpoint (recommended)
+$torchrun
+    --nnodes ${NNODES}
+    --nproc_per_node ${NPROC_PER_NODE}
+    --node_rank ${NODE_RANK}
+    --rdzv_backend c10d
+    --rdzv_endpoint ${MASTER_ADDR}:${MASTER_PORT}
+    --rdzv_id ${RDZV_ID}
+    train.py
+
+# Method 2: Use master_addr and master_port
+$torchrun
+    --nnodes ${NNODES}
+    --nproc_per_node ${NPROC_PER_NODE}
+    --node_rank ${NODE_RANK}
+    --master_addr ${MASTER_ADDR}
+    --master_port ${MASTER_PORT}
+    train.py
+</code>
+</pre>
+
+<pre class="language-python">
+<code class="language-python">
+from torch.distributed import barrier
+group = None  # ProcessGroup. The process group to work on
+async_op = False  # bool. If True, the barrier is asynchronous
+device_ids = None  # list[int]. If provided, the barrier will only synchronize the devices in this list
+barrier(group, async_op, device_ids)
+</code>
+</pre>
+</p></div></div><div id="deepspeed-deepspeed-framework-distributed-framework" class="paper paper--toggle" data-search="deepspeed   deepspeed framework deepspeed distributed framework" style="--paper-accent: var(--accent-3);"><p class="paper__title" onclick="toggleTable('deepspeed-deepspeed-framework-distributed-framework-details')">DeepSpeed</p><p class="paper__detail"><b>deepspeed framework</b></p><p class="paper__detail">Aug 21, 2025 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">deepspeed</span></p><div id="deepspeed-deepspeed-framework-distributed-framework-details" class="info_detail"><hr class="dashed"><p>DeepSpeed is an open-sourced deep learning optimization library developed by <b>Microsoft Research</b>, designed to simplify and accelerate the training and deployment of <b>large-scale</b> deep learning models.</p><p>
+<table class="center">
+    <tr>
+        <th>stage</th>
+        <th>partition</th>
+        <th>memory saving</th>
+        <th>complexity</th>
+    </tr>
+    <tr>
+        <td>stage 1</td>
+        <td>optimizer states</td>
+        <td>~40% - 60% (for Adam)</td>
+        <td>low</td>
+    </tr>
+    <tr>
+        <td>stage 2</td>
+        <td>optimizer states & gradients</td>
+        <td> additional ~15% - 25%</td>
+        <td>medium</td>
+    </tr>
+    <tr>
+        <td>stage 3</td>
+        <td>optimizer states & gradients & model parameters</td>
+        <td> up to 80% - 90%</td>
+        <td>high</td>
+    </tr>
+</table>
+</p></div></div><div id="ray-ray-framework-distributed-framework" class="paper paper--toggle" data-search="ray   ray framework ray distributed framework" style="--paper-accent: var(--accent-3);"><p class="paper__title" onclick="toggleTable('ray-ray-framework-distributed-framework-details')">Ray</p><p class="paper__detail"><b>ray framework</b></p><p class="paper__detail">Oct 01, 2025 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">ray</span></p><div id="ray-ray-framework-distributed-framework-details" class="info_detail"><hr class="dashed"><p>
+Ray is a <b>distributed computing framework</b>, developed by UC Berkeley, allowing you to scale machine learning and data processing workflows across multiple machines and GPUs. Ray employs a dynamic task graph computation model.
+
+Some important concepts:
+
+<ul>
+<li>Task: a remote function on a stateless worker. Create by applying `@ray.remote` decorator to a function.</li>
+<li>Actor: a remote class on a stateful worker. Create by applying `@ray.actor` decorator to a class.</li>
+<li>Data edges: data1 -> task1 -> data2 means data1 and data2 are the input and output of task1 respectively.</li>
+<li>Control edges: task1 -> task2 means task2 is executed by task1.</li>
+<li>Ray builds a dynamic task graph consisting of data edges and control edges.</li>
+<li>Driver: a process executing the user program.</li>
+<li>Worker: a stateless process executing tasks (remote functions).</li>
+<li>Actor (another concept): a stateless process executing tasks (remote functions).</li>
+</ul>
+</p><p>
+</p></div></div><h2 id="tools-table"><a class="no_dec" href="#cat-tools">Tools</a></h2><div id="vscode-vscode-configs-tools" class="paper paper--toggle" data-search="vscode   vscode configs vscode tools" style="--paper-accent: var(--accent-4);"><p class="paper__title" onclick="toggleTable('vscode-vscode-configs-tools-details')">VSCode</p><p class="paper__detail"><b>vscode configs</b></p><p class="paper__detail">Oct 15, 2025 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">vscode</span></p><div id="vscode-vscode-configs-tools-details" class="info_detail"><hr class="dashed"><p>
+Extensions (Remote SSH, Dev Containers), SSH keys, and LaTeX (LaTeX Workshop + TeX Live).
+</p><p>
+<ul>
+<li><b>Extensions:</b> (1) "Remote - SSH": connect to remote servers; (2) "Dev Containers": run containers. </li>
+<li><b>SSH passwordless login:</b> (1) If there is no SSH key at `~/.ssh/`, run `$ssh-keygen -t rsa` to generate it, such as `id_rsa` and `id_rsa.pub`; (2) Edit `~/.ssh/config`: "Host [name] HostName [ip] User [user] IdentityFile [private_key_path, such as `~/.ssh/id_rsa`]";  (3) Copy the public key in `~/.ssh/id_rsa.pub` to remote server at `~/.ssh/authorized_keys`.</li>
+<li><b>LaTeX:</b>
+<ol>
+<li>Install the <b>LaTeX Workshop</b> extension.</li>
+<li>Install <b>TeX Live</b>.</li>
+<li>Merge the following into your user <b>settings.json</b>.</li>
+</ol>
+
+<pre class="language-json" id="vscode-latex-workshop-settings">
+<code class="language-json">
+"latex-workshop.latex.recipes": [
+    {
+        "name": "XeLaTeX",
+        "tools": [
+            "xelatexmk"
+        ]
+    },
+    {
+        "name": "PdfLaTeX",
+        "tools": [
+            "pdflatexmk"
+        ]
+    }
+],
+"latex-workshop.latex.tools": [
+    {
+        "args": [
+            "-synctex=1",
+            "-pdfxe",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-outdir=%OUTDIR%",
+            "%DOC%"
+        ],
+        "command": "latexmk",
+        "env": {},
+        "name": "xelatexmk"
+    },
+    {
+        "args": [
+            "-synctex=1",
+            "-pdf",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-outdir=%OUTDIR%",
+            "%DOC%"
+        ],
+        "command": "latexmk",
+        "env": {},
+        "name": "pdflatexmk"
+    }
+],
+</code>
+</pre>
+</li>
+</ul>
+</p></div></div><div id="macbook-reimage-macos-setup-checklist-tools" class="paper paper--toggle" data-search="macbook reimage   macos setup checklist macbook-reimage tools" style="--paper-accent: var(--accent-4);"><p class="paper__title" onclick="toggleTable('macbook-reimage-macos-setup-checklist-tools-details')">MacBook Reimage</p><p class="paper__detail"><b>macOS setup checklist</b></p><p class="paper__detail">Apr 02, 2026 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">macbook-reimage</span></p><div id="macbook-reimage-macos-setup-checklist-tools-details" class="info_detail"><hr class="dashed"><p>
+Checklist after reimaging a MacBook: System Settings, Logi Options+, and daily apps.
+</p><p>
+<ul>
+<li><b>System Settings:</b> <i>Appearance</i> → Dark; <i>Displays</i> → extend screen; <i>Touch ID &amp; Password</i> → Add Fingerprint; <i>Keyboard</i> → Input Sources → + → Pinyin - Simplified; <i>Trackpad</i> → disable Force Click and haptic feedback; search "time" → 24-hour time; <i>Accessibility</i> → Pointer Control → Trackpad options → Dragging style → Three Finger Drag.</li>
+<li><b>Logi Options+:</b> Screen capture → screen capture | region | clipboard; top button → Mission Control; thumb wheel → zoom in/out; forward button → desktop left; back button → desktop right; thumb button → close window; pointer speed → 2300 DPI; scroll wheel → scroll direction → standard.</li>
+<li><b>Daily apps:</b> Microsoft Edge, QQ Music, Weixin Input, Cursor / VSCode.</li>
+</ul>
+</p></div></div><div id="git-git-tools-tools" class="paper paper--toggle" data-search="git   git tools git tools" style="--paper-accent: var(--accent-4);"><p class="paper__title" onclick="toggleTable('git-git-tools-tools-details')">Git</p><p class="paper__detail"><b>git tools</b></p><p class="paper__detail">May 14, 2026 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">git</span></p><div id="git-git-tools-tools-details" class="info_detail"><hr class="dashed"><p>Git is a <b>distributed version control system</b> that allows you to track changes in your code and collaborate with others.</p><p>
+<table class="center">
+<tr>
+<th>category</th>
+<th>tool (alphabetical)</th>
+</tr>
+<tr>
+<td>Setup and configure</td>
+<td>
+<a href="#git-config">config</a> &nbsp;&nbsp;
+<a href="#ssh keys">ssh keys</a> &nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>Get and create projects</td>
+<td>
+<a href="#git-clone">clone</a> &nbsp;&nbsp;
+</tr>
+<tr>
+<td>Branching and workspace</td>
+<td>
+<a href="#git-worktree">worktree</a> &nbsp;&nbsp;
+</td>
+</tr>
+</table>
+
+<p class="larger" id="git-clone">
+<b><a href="https://git-scm.com/docs/git-clone">clone</a>: </b>
+clone a repository into a new directory.
+
+<pre class="language-bash">
+<code class="language-bash">
+git clone git@github.com:[user name]/[repo name].git
+</code>
+</pre>
+
+<p class="larger" id="git-config">
+<b><a href="https://git-scm.com/docs/git-config">config</a>: </b>
+get and set repository or global options.
+
+<pre class="language-bash">
+<code class="language-bash">
+git config --list  # list all config
+git config user.name [your name] && git config user.email [your email]  # repo config; cd to repo and execute
+git config --global user.name [your name] && git config --global user.email [your email]  # global config
+</code>
+</pre>
+
+<p class="larger" id="ssh keys">
+<b><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">ssh keys</a>: </b>
+generate a new SSH key to use for authentication.
+<pre class="language-bash">
+<code class="language-bash">
+## 1. Check if SSH key exists: *.pub
+ls -al ~/.ssh
+## 2. If not, generate a new SSH key
+ssh-keygen -t rsa -b 4096 -C [your GitHub email]
+## 3. Copy SSH key
+cat ~/.ssh/[your key name].pub
+## 4. Open GitHub -> Settings -> SSH and GPG keys -> New SSH key -> paste the SSH key
+## 5. Test
+ssh -T git@github.com  # to see if it prints "Hi *! You've successfully ..."
+</code>
+</pre>
+
+<p class="larger" id="git-worktree">
+<b><a href="https://git-scm.com/docs/git-worktree">worktree</a>: </b>
+check out <b>multiple branches into separate directories</b> from the same repo. All worktrees share the same <code>.git</code> object store, so adding one costs almost no disk space and avoids the <code>stash</code> + <code>checkout</code> dance when switching branches.
+<pre class="language-bash">
+<code class="language-bash">
+## Typical uses: 
+## 1. Handle a hotfix without disturbing in-progress work
+## 2. Run builds/tests on multiple branches in parallel
+## 3. Review a PR branch alongside your own
+## 4. Let an AI agent edit code in an isolated workspace
+## Note: 
+## 1. A branch can only be checked out in one worktree at a time
+## 2. The main repo directory itself is a worktree
+## 3. Deleting a worktree folder with `rm -rf` leaves dangling metadata that `git worktree prune` must clean up
+
+## Add a worktree for a branch
+git worktree add [worktree path] [remote/local branch name]
+
+## Remove a worktree
+git worktree remove [worktree path]
+## Clean up records of worktrees whose directories were deleted
+git worktree prune
+
+## List all worktrees
+git worktree list
+</code>
+</pre>
+</p></div></div><div id="docker-docker-tools-tools" class="paper paper--toggle" data-search="docker   docker tools docker tools" style="--paper-accent: var(--accent-4);"><p class="paper__title" onclick="toggleTable('docker-docker-tools-tools-details')">Docker</p><p class="paper__detail"><b>docker tools</b></p><p class="paper__detail">Sep 23, 2025 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">docker</span></p><div id="docker-docker-tools-tools-details" class="info_detail"><hr class="dashed"><p>
+Docker is a <b>containerization tool</b> that allows you to <b>package your application with all its dependencies</b> into a container.
+</p><p>
+<table class="center">
+<tr>
+<th>category</th>
+<th>tool (alphabetical)</th>
+</tr>
+<tr>
+<td>docker</td>
+<td>
+<a href="#start & restart & stop">start & restart & stop</a> &nbsp;&nbsp;
+</td>
+</tr>
+<tr>
+<td>image</td>
+<td><a href="#docker-ls & pull & rm">ls & pull & rm</a> &nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>container</td>
+<td>
+<a href="#docker-ps & run & enter & stop">ps & run & enter & stop</a> &nbsp;&nbsp;
+</td>
+</tr>
+</table>
+
+<p class="larger" id="docker-ps & run & enter & stop">
+<b><a href="">ps & run & enter & stop</a>: </b>
+list containers, run a container, enter a container, stop a container.
+<pre class="language-bash">
+<code class="language-bash">
+docker ps -a  # list all containers
+## --------------------------------------------------------------------------------
+## Recommended params: -i: interactive mode; -d: detached mode; -t: allocate a pseudo-TTY
+## If need mapping: add "-v [local path, e.g., /home/user]:/root"
+## If run GPUs: add "--gpu all", "--ipc host"
+## If run container without executing any commands, append "tail -f /dev/null"
+docker run [params, e.g., -dit] --name [container name] [image name]  # run a container
+## --------------------------------------------------------------------------------
+docker exec -it [container name or container id] /bin/bash  # enter a container
+docker stop [container name or container id]  # stop a container
+docker restart [container name or container id]  # restart a container
+docker rm [container name or container id]  # remove a container
+</code>
+</pre>
+
+<p class="larger" id="docker-ls & pull & rm">
+<b><a href="">ls & pull & rm</a>: </b>
+list, pull, and remove images.
+<pre class="language-bash">
+<code class="language-bash">
+docker images  # or docker image ls; list all images
+docker pull [image name]  # pull an image from a registry
+docker rmi [image name or image id]  # remove an image
+</code>
+</pre>
+
+<p class="larger" id="start & restart & stop">
+<b><a href="">start & restart & stop</a>: </b>
+start, restart, stop docker.
+<pre class="language-bash">
+<code class="language-bash">
+sudo service docker start  # start docker
+sudo service docker restart  # restart docker
+sudo service docker stop  # stop docker
+</code>
+</pre>
+</p></div></div>
+<p class="faint" style="margin-top: 2em; text-align: center;">Last updated on May 18, 2026 at 10:47 (UTC-7).</p>
+
+<script>
+function toggleTable(id) {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle("is-open");
+}
+</script>
+
+<button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+<script>
+(function () {
+    const btn = document.getElementById("backToTop");
+    if (!btn) return;
+    window.addEventListener("scroll", () => {
+        btn.classList.toggle("is-visible", document.documentElement.scrollTop > 300);
+    });
+    btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+})();
+</script>
+
+<button id="themeToggle" type="button" aria-label="Toggle color theme" title="Theme: auto" data-mode="auto">
+    <svg class="icon-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4 A8 8 0 0 1 12 20 Z" fill="currentColor" stroke="none"/></svg>
+    <svg class="icon-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    <svg class="icon-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor" stroke="none"/></svg>
+</button>
+<script>
+(function () {
+    const btn = document.getElementById("themeToggle");
+    if (!btn) return;
+    const order = ["auto", "light", "dark"];
+    const labels = { auto: "Theme: follow system", light: "Theme: light", dark: "Theme: dark" };
+    function read() {
+        try { const v = localStorage.getItem("theme"); return (v === "light" || v === "dark") ? v : "auto"; }
+        catch (e) { return "auto"; }
+    }
+    function apply(mode) {
+        if (mode === "auto") {
+            document.documentElement.removeAttribute("data-theme");
+            try { localStorage.removeItem("theme"); } catch (e) {}
+        } else {
+            document.documentElement.setAttribute("data-theme", mode);
+            try { localStorage.setItem("theme", mode); } catch (e) {}
+        }
+        btn.dataset.mode = mode;
+        btn.title = labels[mode];
+        btn.setAttribute("aria-label", labels[mode]);
+    }
+    apply(read());
+    btn.addEventListener("click", () => {
+        const cur = btn.dataset.mode || "auto";
+        apply(order[(order.indexOf(cur) + 1) % order.length]);
+    });
+})();
+</script>
+</div>
+</body>
+</html>

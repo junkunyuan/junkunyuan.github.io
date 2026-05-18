@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research</title>
+    <meta name="description" content="Research">
+    <link rel="stylesheet" href="../resource/style.css">
+    <link rel="shortcut icon" href="../resource/my_photo.png">
+    <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js" data-manual></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/keep-markup/prism-keep-markup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-highlight/prism-line-highlight.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>document.addEventListener("DOMContentLoaded",function(){if(window.Prism)Prism.highlightAll();});</script>
+</head>
+<body>
+<div id="layout-content">
+
+<h1 id="top">Research</h1>
+<p class="larger"><b>Things about research.</b></p>
+<p class="larger"></p>
+<p>Written by <a href="../index.html">Junkun Yuan</a>.</p>
+<p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
+<hr><p id="table" class="huger"><b>Table of contents:</b></p><ul><li><a class="larger no_dec" id="cat-a-guide-to-research" href="#a-guide-to-research-table"><b>A Guide to Research (5)</b></a></li><p class="paper-index"><a href="#progress-management-synchronize-progress-a-guide-to-research" class="no_dec ">progress management<span class="venue">(synchronize progress)</span></a> &nbsp;&nbsp;&nbsp; <a href="#paper-review-discover-an-open-problem-a-guide-to-research" class="no_dec ">paper review<span class="venue">(discover an open problem)</span></a> &nbsp;&nbsp;&nbsp; <a href="#experiment-prepare-implement-monitor-experiments-a-guide-to-research" class="no_dec ">experiment<span class="venue">(prepare, implement, monitor experiments)</span></a> &nbsp;&nbsp;&nbsp; <a href="#write-paper-instructions-for-paper-writing-a-guide-to-research" class="no_dec ">write paper<span class="venue">(instructions for paper writing)</span></a> &nbsp;&nbsp;&nbsp; <a href="#open-source-make-dataset-and-project-open-source-a-guide-to-research" class="no_dec ">open source<span class="venue">(make dataset and project open source)</span></a></p><br></ul>
+<input type="search" id="paperSearch" class="search"
+       placeholder="Filter papers by title / author / venue / name…"
+       aria-label="Filter papers">
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const input = document.getElementById("paperSearch");
+    if (!input) return;
+    const papers = Array.from(document.querySelectorAll(".paper[data-search]"));
+    input.addEventListener("input", () => {
+        const q = input.value.trim().toLowerCase();
+        papers.forEach(p => {
+            const hit = !q || p.dataset.search.includes(q);
+            p.classList.toggle("is-hidden", !hit);
+        });
+    });
+});
+</script>
+<h2 id="a-guide-to-research-table"><a class="no_dec" href="#cat-a-guide-to-research">A Guide to Research</a></h2><div id="progress-management-synchronize-progress-a-guide-to-research" class="paper paper--toggle" data-search="progress management   synchronize progress progress management a guide to research" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('progress-management-synchronize-progress-a-guide-to-research-details')">Progress Management</p><p class="paper__detail"><b>synchronize progress</b></p><p class="paper__detail">Jul 25, 2025 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">progress management</span></p><div id="progress-management-synchronize-progress-a-guide-to-research-details" class="info_detail"><hr class="dashed"><p><ul>
+<li> <b>Keep progress updated.</b> Maintain an online progress document (such as <a href="https://docs.qq.com/desktop">Tencent Doc</a>, <a href="https://docs.feishu.cn/">Feishu Doc</a>, and <a href="https://docs.google.com/document/">Google Doc</a>), share the link with your team, and update it whenever you make new progress. <a href="resource/else/research progress example.pptx">Example document</a>.
+<li> <b>Hold regular discussions with collaborators.</b> Share achievements, challenges, and next steps with collaborators in a timely manner. To make meetings efficient, clarify what you want to share and what team members should prepare (e.g., reading some papers in advance).
+<li> <b>Update progress frequently.</b> Write concise notes on achievements and issues. Keep records clear and well-structured, ensuring quick access and review for the team. Ask yourself: (1) <i>What should I share with the team?</i> (2) <i>Which results / issues are important to recall later?</i>
+</ul>
+<figure>
+<img src="resource/figs/progress management/progress management-fig1.png" width="450" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> An example slide of a <b>progress summary</b>.</figcaption>
+</figure></p></div></div><div id="paper-review-discover-an-open-problem-a-guide-to-research" class="paper paper--toggle" data-search="paper review   discover an open problem paper review a guide to research" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('paper-review-discover-an-open-problem-a-guide-to-research-details')">Paper Review</p><p class="paper__detail"><b>discover an open problem</b></p><p class="paper__detail">Aug 02, 2025 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">paper review</span></p><div id="paper-review-discover-an-open-problem-a-guide-to-research-details" class="info_detail"><hr class="dashed"><p><ol>
+<li> <b>Find a research topic.</b> Read recent papers and answer: (1) <i>What is the value of this topic?</i> (2) <i>Are there any well-known researchers or institutions involved in this topic?</i> (Selecting a topic is crucial. By aligning with veterans, one can reduce the risk of pursuing topics with limited value, especially for early-stage researchers.) &nbsp;&nbsp;  Some paper sources: <a href="https://proceedings.neurips.cc//">NeurIPS</a>, <a href="https://openreview.net/group?id=ICLR.cc">ICLR</a>, <a href="https://proceedings.mlr.press/">ICML</a>, <a href="https://openaccess.thecvf.com/menu">CVPR & ICCV & ECCV</a>, and <a href="https://aclanthology.org/">ACL & EMNLP</a>.
+<li> <b>Find an open problem.</b> Summarize motivations & contributions of related works and answer: (1) <i>Is there any open problem or bottleneck in this topic? (you may summarize it based on the Future Work or Limitation section of these papers)</i> (2) <i>Is this problem central or just a side detail for this topic?</i> (3) <i>What impact will solving this problem have on this research field? Does solving it advance just the method, or the entire field?</i>
+<li> <b>Find related solutions.</b> Search for relevant solutions (in related papers) to the open problem that you find, and answer: (1) <i>What have they solved and what have they not solved?</i> (2) <i>Is your idea and solution novel, or trivial / incremental / just a tweak?</i> Keep questioning yourself.
+</ol>
+<figure>
+<img src="resource/figs/paper review/paper review-fig1.png" width="450" loading="lazy" alt="">
+<img src="resource/figs/paper review/paper review-fig2.png" width="450" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> Example slides of <b>"find a research topic" (left)</b> and <b>related work summarization (right)</b>.</figcaption>
+</figure></p></div></div><div id="experiment-prepare-implement-monitor-experiments-a-guide-to-research" class="paper paper--toggle" data-search="experiment   prepare, implement, monitor experiments experiment a guide to research" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('experiment-prepare-implement-monitor-experiments-a-guide-to-research-details')">Experiment</p><p class="paper__detail"><b>prepare, implement, monitor experiments</b></p><p class="paper__detail">Aug 16, 2025 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">experiment</span></p><div id="experiment-prepare-implement-monitor-experiments-a-guide-to-research-details" class="info_detail"><hr class="dashed"><p><ul>
+<li> <b>Code.</b> Choose a suitable codebase from open-source projects related to your topic. It should be flexible, reliable, and easy to use.
+<li> <b>Data.</b> Select training datasets and evaluation benchmarks, typically following those used in the most relevant works to ensure credibility. Preferably, use datasets on which the chosen codebase has already been tested by previous works.
+<li> <b>Reproduce baseline results.</b> Run the codebase on the selected dataset and verify that you can reproduce the results reported in prior works. This step is <i>very important</i>, so ensure you can either reproduce the results or provide a well-reasoned explanation if reproduction fails.
+<li> <b>Implement ideas.</b> Introduce your methods by modifying or adding as little code as possible, keeping implementation clean and transparent.
+<li> <b>Document experiments.</b> Maintain an experiment log and update it whenever you <i>start</i> or <i>complete</i> a new experiment. <a href="resource/else/experiment progress example.xlsx">Example document</a>.
+</ul>
+<figure>
+<img src="resource/figs/experiment/experiment-fig1.png" width="800" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> An example log of <b>experiment progress</b>.</figcaption>
+</figure></p></div></div><div id="write-paper-instructions-for-paper-writing-a-guide-to-research" class="paper paper--toggle" data-search="write paper   instructions for paper writing write paper a guide to research" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('write-paper-instructions-for-paper-writing-a-guide-to-research-details')">Write Paper</p><p class="paper__detail"><b>instructions for paper writing</b></p><p class="paper__detail">Sep 10, 2025 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">write paper</span></p><div id="write-paper-instructions-for-paper-writing-a-guide-to-research-details" class="info_detail"><hr class="dashed"><p><b>Writing a paper is the most crucial part of research.</b> Through the paper, you tell people: "What problem are you solving, why are you solving it, how did you solve it, what are your final results and findings, and what is the significance and inspiration of your work to the research community."<br><br>
+
+<b>There is no one-size-fits-all format for paper writing.</b> The following guidance is based solely on my personal experience. Everyone can develop unique and creative ideas for their papers based on their own thinking/insights and the distinctiveness of each research project.
+
+<ul>
+<li> <b>Prepare LaTeX template.</b> Download a LaTeX template from the official website of the target conference or journal and read the instructions carefully.
+<li> <b>Build online project.</b> Maintain an online LaTeX project so collaborators can help write and polish the paper. <a href="https://www.texpage.com/console">TeXPage</a> is recommended for users in China as <a href="https://overleaf.com/project">Overleaf</a> can sometimes be unstable due to heavy traffic. Upload the LaTeX template and share the project link with collaborators.
+<li> <b>General writing principle.</b> Adhere to Occam's Razor—write only what is essential, and avoid irrelevant or redundant expressions. Constantly remind yourself: "If you remove this sentence, does it affect the clarity of your paper? Is there a more concise way to express the same idea?" Avoid exaggerated or false statements, as they not only damage your reputation but also give reviewers opportunities to challenge your work.
+<li> <b>Write while comparing and thinking.</b> When writing, it is important to <i>repeatedly read</i> related works—see how they structure the full paper, how they present the ideas and methods, and what experiments they conducted. Enrich your experiments and polish your writing during this process.
+<li> <b>Abstract.</b> A good abstract (about 200 words) should clearly convey: (1) The problem you address. (about 1 sentence) (2) How you solve it. (about 1 sentence) (3) High-level idea and method with important components. (about 2-3 sentences) (4) The key results achieved. (about 1 sentence) <b>Note:</b> avoid excessive background or motivation—reserve that for the Introduction.
+<li> <b>Introduction.</b> It should cover: (1) Background of the topic. (2) Motivation of the research. (3) Motivation of your idea and method. (4) High-level overview of your method with key components. (5) Experiments with major results and findings. (6) The value of the work to this research field. (7) A brief summary of contributions (optional). <b>Note:</b> avoid excessive background or method details—focus on the core contributions.
+<li> <b>Related Works.</b> Provide context by addressing: (1) what previous works have done; (2) what they have overlooked or left unresolved. <b>Note:</b> avoid listing works haphazardly; instead, thoughtfully select representative works and present them in a logical, well-organized manner.
+<li> <b>Method.</b> Clearly present your proposed method by first explaining the high-level motivation and idea. An effective paper should be able to communicate its methods and results primarily through figures and tables—akin to a silent presentation—without requiring readers to scrutinize every word of the main text. <b>Note:</b> do not overcomplicate your method (such as overusing ineffective symbols or formulas) for sophistication's sake—clarity, simplicity, effectiveness, and scalability are key values in AI research (think about ResNet, Dropout, Mixup, YOLO, etc.).
+<li> <b>Experiment.</b> This section should address: (1) Datasets / benchmarks used. (2) Implementation details sufficient for reproducibility. (3) Main results compared to relevant and strong baseline methods. (4) Ablation studies to show the role of each component. (5) In-depth visualization, analysis, and insights beyond the numbers. <b>Note:</b> focus on telling readers what the results mean, not just what they are.
+<li> <b>Conclusion.</b> Summarize the achievements, limitations, and broader implications of this work. Highlight future directions that others can build on. <b>Note:</b> keep this part forward-looking, while the Abstract and Introduction focus on current contributions.
+</ul>
+
+<p>Example papers about <b>empirical studies</b>:</p>
+
+<ul>
+<li> <b><a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Ma_Scaling_Inference_Time_Compute_for_Diffusion_Models_CVPR_2025_paper.pdf">Scaling Inference Time Compute for Diffusion Models (CVPR 2025)</a>:</b> It explores inference-time scaling of diffusion models by introducing: (1) The background of diffusion models and the motivation of scaling; (2) How to scale via search verifiers and search algorithms; (3) Scaling performance and findings; (4) How to arrange inference compute.
+</ul>
+
+<figure>
+<img src="resource/figs/write paper/write paper-fig1.png" width="100" loading="lazy" alt="">
+<img src="resource/figs/write paper/write paper-fig2.png" width="550" loading="lazy" alt="">
+<img src="resource/figs/write paper/write paper-fig3.png" width="250" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> <b>(left)</b> Example of <b>LaTeX structure</b>. Each chapter can be added by writing `\input{chapters/abstract}` in `main.tex`. <b>(middle)</b> How to <b>cite a paper</b> by obtaining bib info and inserting it into `main.bib`. <b>(right)</b> The added bib info should be clean so that you can cite it by `~\cite{CLIP}`.</figcaption>
+</figure></p></div></div><div id="open-source-make-dataset-and-project-open-source-a-guide-to-research" class="paper paper--toggle" data-search="open source   make dataset and project open source open source a guide to research" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('open-source-make-dataset-and-project-open-source-a-guide-to-research-details')">Open Source</p><p class="paper__detail"><b>make dataset and project open source</b></p><p class="paper__detail">Aug 10, 2025 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="paper__name">open source</span></p><div id="open-source-make-dataset-and-project-open-source-a-guide-to-research-details" class="info_detail"><hr class="dashed"><p>
+<ul>
+    <li> <b>Importance of open source.</b> Open source is essential for reproducibility, knowledge sharing, and AI innovation. An open-sourced project also serves as a visible proof of your coding skills, attracting attention to your work, and strengthening your research reputation and network.
+    <li> <b>Code.</b> Ensure your code is clean: (1) Remove unused files, debug prints, or personal content. (2) Use a clear directory structure (e.g., `data/`, `model/`, `train.py`). (3) Add meaningful comments. (4) Verify that releasing the code does not violate any policies. Provide a concise README, including: (1) A brief introduction. (2) Running environment and dependencies (datasets, checkpoints, etc.). (3) Training and evaluation instructions. (4) Acknowledgement of other open-source projects used. (5) Citation instructions. (6) Contribution guidelines. (7) License.
+    <li> <b>Data.</b> Ensure your data is clean: (1) Obtain permission to share it. (2) Remove personal information. (3) Ensure compliance with regulations if human data is involved. (4) Filter out harmful, offensive, or biased content. (5) Organize files clearly (`train/`, `val/`, `test/`). Write a concise README, including: (1) A brief introduction. (2) Instructions to download, load, and use it. (3) Known biases and risks. (4) License.
+</ul>
+</p></div></div>
+<p class="faint" style="margin-top: 2em; text-align: center;">Last updated on May 18, 2026 at 10:47 (UTC-7).</p>
+
+<script>
+function toggleTable(id) {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle("is-open");
+}
+</script>
+
+<button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+<script>
+(function () {
+    const btn = document.getElementById("backToTop");
+    if (!btn) return;
+    window.addEventListener("scroll", () => {
+        btn.classList.toggle("is-visible", document.documentElement.scrollTop > 300);
+    });
+    btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+})();
+</script>
+
+<button id="themeToggle" type="button" aria-label="Toggle color theme" title="Theme: auto" data-mode="auto">
+    <svg class="icon-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4 A8 8 0 0 1 12 20 Z" fill="currentColor" stroke="none"/></svg>
+    <svg class="icon-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    <svg class="icon-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor" stroke="none"/></svg>
+</button>
+<script>
+(function () {
+    const btn = document.getElementById("themeToggle");
+    if (!btn) return;
+    const order = ["auto", "light", "dark"];
+    const labels = { auto: "Theme: follow system", light: "Theme: light", dark: "Theme: dark" };
+    function read() {
+        try { const v = localStorage.getItem("theme"); return (v === "light" || v === "dark") ? v : "auto"; }
+        catch (e) { return "auto"; }
+    }
+    function apply(mode) {
+        if (mode === "auto") {
+            document.documentElement.removeAttribute("data-theme");
+            try { localStorage.removeItem("theme"); } catch (e) {}
+        } else {
+            document.documentElement.setAttribute("data-theme", mode);
+            try { localStorage.setItem("theme", mode); } catch (e) {}
+        }
+        btn.dataset.mode = mode;
+        btn.title = labels[mode];
+        btn.setAttribute("aria-label", labels[mode]);
+    }
+    apply(read());
+    btn.addEventListener("click", () => {
+        const cur = btn.dataset.mode || "auto";
+        apply(order[(order.indexOf(cur) + 1) % order.length]);
+    });
+})();
+</script>
+</div>
+</body>
+</html>

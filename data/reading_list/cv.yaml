@@ -1,0 +1,2991 @@
+file: cv.html
+title: Computer Vision (CV)
+description: Understand and generate visual information such as images and videos.
+categories:
+  - 'Understanding: Foundation Algorithms & Models'
+  - 'Understanding: Reinforcement Learning'
+  - 'Generation: Foundation Algorithms & Models'
+  - 'Generation: Reinforcement Learning'
+  - 'Generation: Inference-Time Improvement'
+  - 'Generation: Acceleration'
+  - 'Generation: Datasets & Evaluation'
+  - 'Generation: Controllability'
+  - 'Generation: Editing & Inpainting & Outpainting'
+  - 'Generation: Stylization'
+  - 'Generation: Text Rendering and Editing'
+  - 'Generation: Interaction'
+papers:
+  - title: Co-Evolving Policy Distillation
+    author: Naibin Gu, Chenxu Yang, Qingyi Si, Chuanyu Qin, Dingyu Yao, Peng Fu, Zheng Lin, Weiping Wang, Nan Duan, Jiaqi Wang
+    organization: Institute of Information Engineering, CAS, School of Cyber Security, UCAS, JD.COM
+    date: '20260429'
+    venue: arXiv 2026
+    pdf_url: https://arxiv.org/pdf/2604.27083
+    name: CoPD
+    category: 'Understanding: Reinforcement Learning'
+    summary: |
+      CoPD interleaves RLVR with bidirectional on-policy distillation so experts co-evolve as mutual teachers, surpassing both mixed-RLVR and static-OPD baselines — and even the domain experts themselves.
+    details: |2+
+      <ul>
+        <li><b>RLVR (Reinforcement Learning with Verifiable Rewards)</b> trains a model on mixed-capability data, suffering from capability divergence.</li>
+        <li><b>OPD (On-Policy Distillation)</b> optimizes a student on its own rollout with supervision from the teacher.</li>
+        <li><b>Multi-teacher OPD (MOPD)</b> trains separate copies of the base model with RLVR on each capability and then merge them by OPD.</li>
+        <li>Pilot study shows effective distillation requires teacher and student to remain <b>behaviorally close</b>.</li>
+        <li><b>CoPD (Co-Evolving Policy Distillation):</b></li>
+        <ul>
+          <li><b>RLVR phase:</b> each branch independently optimizes on its own capability data by GRPO.</li>
+          <li><b>Mutual OPD phase:</b> each branch generates rollouts on the other branch's data and receives token-level supervision from the other.</li>
+          <li><b>Final model:</b> parameter merging.</li>
+        </ul>
+      </ul>
+  - title: Improved Distribution Matching Distillation for Fast Image Synthesis
+    author: Tianwei Yin, Michaël Gharbi, Taesung Park, Richard Zhang, Eli Shechtman, Fredo Durand, William T. Freeman
+    organization: Massachusetts Institute of Technology, Adobe Research
+    date: '20240523'
+    venue: NeurIPS 2024
+    pdf_url: https://arxiv.org/pdf/2405.14867
+    code_url: https://github.com/tianweiy/DMD2
+    name: DMD2
+    category: 'Generation: Acceleration'
+    summary: |
+      It upgrades DMD by <b>eliminating the costly regression loss</b>, integrating a GAN objective, and employing a two-time-scale update rule alongside backward simulation.
+    details: |2+
+
+    draft: true
+  - title: One Step Diffusion via Shortcut Models
+    author: Kevin Frans, Danijar Hafner, Sergey Levine, Pieter Abbeel
+    organization: UC Berkeley
+    date: '20241016'
+    venue: ICLR 2025
+    pdf_url: https://arxiv.org/pdf/2410.12557
+    code_url: https://github.com/kvfrans/shortcut-models
+    name: Shortcut Models
+    category: 'Generation: Acceleration'
+    summary: |
+      It enables single/multi-step sampling by conditioning a neural network on both the current noise level and the desired step size <b>without distillation</b>.
+    details: |2+
+
+    draft: true
+  - title: Adversarial Diffusion Distillation
+    author: Axel Sauer, Dominik Lorenz, Andreas Blattmann, Robin Rombach
+    organization: Stability AI
+    date: '20231128'
+    venue: ECCV 2024
+    pdf_url: https://arxiv.org/pdf/2311.17042
+    code_url: https://github.com/Stability-AI/generative-models
+    name: ADD
+    category: 'Generation: Acceleration'
+    summary: |
+      It combines a <b>score distillation objective</b> and an <b>adversarial loss</b>.
+    details: |+
+      <ul>
+        <li><b>Adversarial loss:</b> real image vs. add noise and denoise by student.</li>
+        <li><b>Distillation loss:</b> student output vs. teacher output.</li>
+        <li><b>NOTE:</b> the distillation is seemed not necessary according to Table 1 (d).</li>
+      </ul>
+
+    highlight: true
+  - title: One-step Diffusion with Distribution Matching Distillation
+    author: Tianwei Yin, Michaël Gharbi, Richard Zhang, Eli Shechtman, Fredo Durand, William T. Freeman, Taesung Park
+    organization: Massachusetts Institute of Technology, Adobe Research
+    date: '20231130'
+    venue: CVPR 2024
+    pdf_url: https://arxiv.org/pdf/2311.18828
+    name: DMD
+    category: 'Generation: Acceleration'
+    summary: |
+      It trains one-step image generators by combining a <b>two-score distribution matching objective with a structural regression loss</b>.
+    details: |2+
+
+    highlight: true
+  - title: 'Latent Consistency Models: Synthesizing High-Resolution Images with Few-Step Inference'
+    author: Simian Luo, Yiqin Tan, Longbo Huang, Jian Li, Hang Zhao
+    organization: Tsinghua University
+    date: '20231006'
+    venue: arXiv 2023
+    pdf_url: https://arxiv.org/pdf/2310.04378
+    code_url: https://github.com/luosiallen/latent-consistency-model
+    name: LCM
+    category: 'Generation: Acceleration'
+    summary: |
+      It train consistency models in <b>latent space</b> with some improving tricks.
+    details: |2+
+
+  - title: Improved Techniques for Training Consistency Models
+    author: Yang Song, Prafulla Dhariwal
+    organization: OpenAI
+    date: '20231022'
+    venue: arXiv 2023
+    pdf_url: https://arxiv.org/pdf/2310.14189
+    name: Improved Consistency Models
+    category: 'Generation: Acceleration'
+    summary: |
+      It improves consistency training by eliminating the need for <b>distillation</b> and learned metrics like <b>LPIPS</b>.
+    details: |2+
+
+  - title: 'Efficient Diffusion Models: A Survey'
+    author: Hui Shen, Jingxuan Zhang, Boning Xiong, Rui Hu, Shoufa Chen, Zhongwei Wan, Xin Wang, Yu Zhang, Zixuan Gong, Guangyin Bao, Chaofan Tao, Yongfeng Huang, Ye Yuan, Mi Zhang
+    organization: The Ohio State University, Indiana University, Fudan University, Hangzhou City University, The University of Hong Kong, Tongji University, The Chinese University of Hong Kong, Peking University
+    date: '20250203'
+    venue: TMLR 2025
+    pdf_url: https://arxiv.org/pdf/2502.06805
+    code_url: https://github.com/AIoT-MLSys-Lab/Efficient-Diffusion-Model-Survey
+    name: EffcientDiffSurvey
+    category: 'Generation: Acceleration'
+    summary: |
+      A <b>survey</b> for efficient diffusion models, categorizing advancements across <b>algorithm</b>-level, <b>system-level</b>, and <b>frameworks</b>-level.
+    details: |2+
+
+  - title: Consistency Models
+    author: Yang Song, Prafulla Dhariwal, Mark Chen, Ilya Sutskever
+    organization: OpenAI
+    date: '20220302'
+    venue: ICML 2023
+    pdf_url: https://arxiv.org/pdf/2303.01469
+    name: Consistency Models
+    category: 'Generation: Acceleration'
+    summary: |
+      It maps <b>any point</b> on a probability flow ODE trajectory directly <b>to its data origin</b>, enabling single-step image generation.
+    details: |2+
+
+
+    highlight: true
+  - title: On Distillation of Guided Diffusion Models
+    author: Chenlin Meng, Robin Rombach, Ruiqi Gao, Diederik P. Kingma, Stefano Ermon, Jonathan Ho, Tim Salimans
+    organization: Stanford University, Stability AI & LMU Munich, Google Research, Brain Team
+    date: '20221006'
+    venue: CVPR 2023
+    pdf_url: https://arxiv.org/pdf/2210.03142
+    name: CFG Distill
+    category: 'Generation: Acceleration'
+    summary: |
+      It first matches the <b>combined conditional and unconditional outputs</b> into a single model, and then progressively distills it for as few as 1 to 4 steps.
+    details: |+
+      <ul>
+        <li><b>Stage 1.</b> Align the CFG output of the teacher model and the output of a student model with a CFG input.</li>
+        <li><b>Stage 2.</b> Step distillation.</li>
+        <li><b>After distillation.</b> Introduce stochastic sampling to improve generation quality, forward two ODE steps and backward one SDE step.
+      </ul></li>
+
+    highlight: true
+  - title: Knowledge Distillation in Iterative Generative Models for Improved Sampling Speed
+    author: Eric Luhman, Troy Luhman
+    organization: OpenAI
+    date: '20210107'
+    venue: arXiv 2021
+    pdf_url: https://arxiv.org/pdf/2101.02388
+    code_url: https://github.com/tcl9876/Denoising_Student
+    name: Denoising Student
+    category: 'Generation: Acceleration'
+    summary: |
+      It uses knowledge distillation to compress a DDIM from multi-step into <b>single-step</b>.
+    details: |2+
+
+  - title: Scale-wise Distillation of Diffusion Models
+    author: Nikita Starodubcev, Ilya Drobyshevskiy, Denis Kuznedelev, Artem Babenko, Dmitry Baranchuk
+    organization: Yandex Research, HSE University
+    date: '20250320'
+    venue: ICLR 2026
+    pdf_url: https://arxiv.org/pdf/2503.16397v2
+    code_url: https://github.com/yandex-research/swd
+    name: SWD
+    category: 'Generation: Acceleration'
+    summary: |2
+
+      It distills at <b>lower latent resolutions for high noise levels</b>, achieving ~2-3x speedup while introducing a <b>MMD</b>-based patch-level distillation objective.
+    details: |2+
+
+      fig: fig1.png 800
+      cap: <b>sampling</b> & <b>training</b>.
+      <ul>
+        <li><b>Training.</b> Data => downscale to source and target resolutions => encode them => upsample lower resolution latents => add noise as input</li>
+        <li><b>Sampling.</b> Given a noisy sample => predict the clean sample => upsample to the next resolution => add noise => predict the clean sample</li>
+      </ul>
+
+    draft: true
+  - title: Progressive Distillation for Fast Sampling of Diffusion Models
+    author: Tim Salimans, Jonathan Ho
+    organization: Google Research, Brain team
+    date: '20220201'
+    venue: ICLR 2022
+    pdf_url: https://arxiv.org/pdf/2202.00512
+    name: Progressive Distillation
+    category: 'Generation: Acceleration'
+    summary: |2
+
+      It halves the sampling steps of diffusion models by distilling a deterministic DDIM teacher into a student with fewer steps.
+    details: |2+
+
+    highlight: true
+  - title: Towards Diverse and Consistent Typography Generation
+    author: Wataru Shimoda, Daichi Haraguchi, Seiichi Uchida, Kota Yamaguchi
+    organization: CyberAgent, Kyushu University
+    date: '20230905'
+    venue: WACV 2024
+    pdf_url: https://arxiv.org/pdf/2309.02099
+    code_url: https://github.com/CyberAgentAILab/tdc-typography-generation
+    name: TDC
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It first predicts pairwise consistency relationships among text elements and then samples diverse typographic attributes under these constraints.
+    details: |2+
+
+  - title: Visual Text Generation in the Wild
+    author: Yuanzhi Zhu, Jiawei Liu, Feiyu Gao, Wenyu Liu, Xinggang Wang, Peng Wang, Fei Huang, Cong Yao, Zhibo Yang
+    organization: Alibaba Group, Huazhong University of Science and Technology
+    date: '20240719'
+    venue: ECCV 2024
+    pdf_url: https://arxiv.org/pdf/2407.14138
+    code_url: https://github.com/AlibabaResearch/AdvancedLiterateMachinery/tree/main/OCR/SceneVTG
+    name: SceneVTG
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It leverages Multimodal Large Models for text <b>region/content planning</b> and a local conditional diffusion model for arbitrary-scale text rendering.
+    details: |2+
+
+  - title: 'UniGlyph: Unified Segmentation-Conditioned Diffusion for Precise Visual Text Synthesis'
+    author: Yuanrui Wang, Cong Han, Yafei Li, Zhipeng Jin, Xiawei Li, SiNan Du, Wen Tao, Yi Yang, Shuanglong Li, Chun Yuan, Liu Lin
+    organization: Shenzhen International Graduate School, Tsinghua University, Baidu Inc
+    date: '20250701'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2507.00992
+    name: UniGlyph
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It replaces rendered glyph images with pixel-accurate <b>text segmentation masks</b>, enabling a single-ControlNet architecture.
+    details: |2+
+
+  - title: Towards Diverse and Consistent Typography Generation
+    author: Wataru Shimoda, Daichi Haraguchi, Seiichi Uchida, Kota Yamaguchi
+    organization: CyberAgent, Kyushu University
+    date: '20230905'
+    venue: WACV 2024
+    pdf_url: https://arxiv.org/pdf/2309.02099
+    code_url: https://github.com/CyberAgentAILab/tdc-typography-generation
+    name: Diverse and Consistent
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2+
+
+
+    details: |2+
+
+  - title: 'TextMaster: A Unified Framework for Realistic Text Editing via Glyph-Style Dual-Control'
+    author: Zhenyu Yan, Jian Wang, Aoqiang Wang, Yuhan Li, Wenxiang Shang, Ran Lin
+    organization: Taobao & Tmall Group of Alibaba, Shanghai Jiao Tong University
+    date: '20241013'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2410.09879
+    name: TextMaster
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It decouples glyph structure from style appearance via an Adapter with <b>in-context learning</b>.
+    details: |2+
+
+  - title: Harmonizing Visual Text Comprehension and Generation
+    author: Zhen Zhao, Jingqun Tang, Binghong Wu, Chunhui Lin, Shu Wei, Hao Liu, Xin Tan, Zhizhong Zhang, Can Huang, Yuan Xie
+    organization: East China Normal University, ByteDance, Shanghai Key Laboratory of Computer Software Evaluating and Testing
+    date: '20240723'
+    venue: NeurIPS 2024
+    pdf_url: https://arxiv.org/pdf/2407.16364
+    code_url: https://github.com/bytedance/TextHarmony
+    name: TextHarmony
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It partially decouples the multimodal generation space by aggregating modality-specific and modality-agnostic <b>LoRA experts</b>.
+    details: |2+
+
+  - title: 'STRICT: Stress Test of Rendering Images Containing Text'
+    author: Tianyu Zhang, Xinyu Wang, Lu Li, Zhenghan Tai, Jijun Chi, Jingrui Tian, Hailin He, Suyuchen Wang
+    organization: University of Montreal, McGill University, University of Pennsylvania, University of Toronto, University of California, Los Angeles, Southwestern University of Finance and Economics
+    date: '20250525'
+    venue: EMNLP 2025
+    pdf_url: https://arxiv.org/pdf/2505.18985
+    code_url: https://github.com/tianyu-z/STRICT-Bench/
+    name: STRICT
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It introduces the first <b>stress-test benchmark</b> for evaluating text-to-image models' ability to render multilingual text up to <b>5000 characters</b>.
+    details: |2+
+
+  - title: 'Refining Text-to-Image Generation: Towards Accurate Training-Free Glyph-Enhanced Image Generation'
+    author: Sanyam Lakhanpal, Shivang Chopra, Vinija Jain, Aman Chadha, Man Luo
+    organization: Arizona State University, Georgia Institute of Technology, Meta AI, Amazon GenAI, Intel Lab
+    date: '20240325'
+    venue: WACV 2025
+    pdf_url: https://arxiv.org/pdf/2403.16422
+    name: SA-OcrPaint
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It introduces a <b>training-free</b> framework combining simulated annealing for layout overlap reduction and OCR-aware recursive inpainting for spelling correction, alongside a benchmark for <b>lengthy</b> and <b>complex</b> visual text evaluation.
+    details: |2+
+
+  - title: Precise Parameter Localization for Textual Generation in Diffusion Models
+    author: Łukasz Staniszewski, Bartosz Cywiński, Franziska Boenisch, Kamil Deja, Adam Dziedzic
+    organization: Warsaw University of Technology, CISPA Helmholtz Center for Information Security, Warsaw University of Technology, CISPA Helmholtz Center for Information Security
+    date: '20250214'
+    venue: ICLR 2025
+    pdf_url: https://arxiv.org/pdf/2502.09935
+    code_url: https://github.com/luk-st/t2i-text-localization
+    name: Parameter Localization
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It <b>localizes less than 1% of diffusion models' parameters</b> in cross/joint attention layers that exclusively control textual content generation.
+    details: |2+
+
+  - title: 'PosterMaker: Towards High-Quality Product Poster Generation with Accurate Text Rendering'
+    author: Yifan Gao, Zihang Lin, Chuanbin Liu, Min Zhou, Tiezheng Ge, Bo Zheng, Hongtao Xie
+    organization: University of Science and Technology of China, Taobao & Tmall Group of Alibaba
+    date: '20250409'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2504.06632
+    code_url: https://github.com/alimama-creative/PosterMaker
+    name: PosterMaker
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It takes a character-level visual text representation as a key control signal for <b>multilingual text rendering</b> with a subject fidelity feedback.
+    details: |2+
+
+  - title: 'ViType: High-Fidelity Visual Text Rendering via Glyph-Aware Multimodal Diffusion'
+    author: Lishuai Gao, Jun-Yan He, Yingsen Zeng, Yujie Zhong, Xiaopeng Sun, Jie Hu, XiaomingWei
+    organization: Meituan
+    date: '20260120'
+    venue: AAAI 2026
+    pdf_url: https://s3plus.meituan.net/ddfile/ViType__High_Fidelity_Visual_Text_Rendering_via_Glyph_Aware_Multimodal.pdf
+    name: ViType
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It trains a <b>glyph-encoder</b> to align glyph embeddings to text embeddings, and jointly finetunes both glyph encoder and MMDiT afterwards.
+    details: |2+
+
+  - title: 'PosterCraft: Rethinking High-Quality Aesthetic Poster Generation in a Unified Framework'
+    author: SiXiang Chen, Jianyu Lai, Jialin Gao, Tian Ye, Haoyu Chen, Hengyu Shi, Shitong Shao, Yunlong Lin, Song Fei, Zhaohu Xing, Yeying Jin, Junfeng Luo, Xiaoming Wei, Lei Zhu
+    organization: The Hong Kong University of Science and Technology (Guangzhou), Meituan, Xiamen University, National University of Singapore, The Hong Kong University of Science and Technology
+    date: '20250612'
+    venue: ICLR 2026
+    pdf_url: https://arxiv.org/pdf/2506.10741
+    code_url: https://github.com/Ephemeral182/PosterCraft
+    name: PosterCraft
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It proposes <b>end-to-end aesthetic poster generation</b>, introducing automated stage-specific datasets and joint vision-language feedback.
+    details: |2
+
+      <ul>
+          <li> <b>Stage 1.</b> Finetune the full model on Text-Render-2M with 2M curated samples.
+          <li> <b>Stage 2.</b> Finetune the full model on HQ-Poster-100K with 100K high-quality deduplicated posters after filtering by the HPS reward model.
+          <li> <b>Stage 3.</b> DPO-train the LoRA module on Poster-Preference-100K with 6K preference pairs.
+          <li> <b>Stage 4.</b> Reflection-train the LoRA module on Poster-Reflect-120K with 120K posters with content and aesthetic suggestions.
+      </ul>
+  - title: 'HDLayout: Hierarchical and Directional Layout Planning for Arbitrary Shaped Visual Text Generation'
+    author: Tonghui Feng, Chunsheng Yan, Qianru Wang, Jiangtao Cui, Xiaotian Qiao
+    organization: Xidian University
+    date: '20250225'
+    venue: AAAI 2025
+    pdf_url: https://ojs.aaai.org/index.php/AAAI/article/view/32307/34462
+    name: HDLayout
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It introduces <b>region-level and line-level bounding boxes</b> plus character-level Bézier curves, enabling shaped visual text generation.
+    details: |2+
+
+  - title: 'GlyphDraw2: Automatic Generation of Complex Glyph Posters with Diffusion Models and Large Language Models'
+    author: Jian Ma, Yonglin Deng, Chen Chen, Nanyang Du, Haonan Lu, Zhenyu Yang
+    organization: OPPO AI Center, The Chinese University of Hong Kong, Shenzhen, Tsinghua University
+    date: '20240702'
+    venue: AAAI 2025
+    pdf_url: https://arxiv.org/pdf/2407.02252
+    code_url: https://github.com/OPPO-Mente-Lab/GlyphDraw2
+    name: GlyphDraw2
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It introduces an automatic <b>poster generation</b> framework that combines fine-tuned LLMs for <b>layout prediction</b> with a triple cross-attention mechanism and auxiliary alignment loss.
+    details: |2+
+
+  - title: Empowering Backbone Models for Visual Text Generation with Input Granularity Control and Glyph-Aware Training
+    author: Wenbo Li, Guohao Li, Zhibin Lan, Xue Xu, Wanru Zhuang, Jiachen Liu, Xinyan Xiao, Jinsong Su
+    organization: School of Informatics, Xiamen University, Baidu Inc., Shanghai Artificial Intelligence Laboratory
+    date: '20241006'
+    venue: EMNLP 2024
+    pdf_url: https://arxiv.org/pdf/2410.04439
+    name: Granularity Control
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It treats <b>glyph words</b> as whole units via OCR-extracted features to replace BPE tokenization.
+    details: |2+
+
+  - title: 'DreamText: High Fidelity Scene Text Synthesis'
+    author: Yibin Wang, Weizhong Zhang, Honghui Xu, Cheng Jin
+    organization: Fudan University, Shanghai Innovation Institute, Innovation Center of Calligraphy and Painting Creation Technology, Shanghai Key Laboratory of Intelligent Information Processing, Zhejiang University of Technology
+    date: '20240523'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2405.14701
+    code_url: https://github.com/CodeGoat24/DreamText
+    name: DreamText
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It refines <b>character attention</b> from cross-attention maps, while jointly training the text encoder and generator to handle diverse font styles.
+    details: |2+
+
+  - title: 'ControlText: Unlocking Controllable Fonts in Multilingual Text Rendering without Font Annotations'
+    author: Bowen Jiang, Yuan Yuan, Xinyi Bai, Zhuoqun Hao, Alyson Yin, Yaojie Hu, Wenyu Liao, Lyle Ungar, Camillo J. Taylor
+    organization: University of Pennsylvania, Cornell University, University of California
+    date: '20250216'
+    venue: EMNLP 2025
+    pdf_url: https://arxiv.org/pdf/2502.10999
+    code_url: https://github.com/bowen-upenn/ControlText
+    name: ControlText
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It enables <b>font-controllable multilingual text rendering</b> using <b>only raw images</b> by integrating <b>text segmentation masks</b> as the condition.
+    details: |2+
+
+  - title: 'POSTA: A Go-to Framework for Customized Artistic Poster Generation'
+    author: Haoyu Chen, Xiaojie Xu, Wenbo Li, Jingjing Ren, Tian Ye, Songhua Liu, Ying-Cong Chen, Lei Zhu, Xinchao Wang
+    organization: The Hong Kong University of Science and Technology (Guangzhou), The Chinese University of Hong Kong, National University of Singapore, The Hong Kong University of Science and Technology
+    date: '20250319'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2503.14908
+    name: POSTA
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It proposes a modular framework for customized artistic <b>poster generation</b> that combines (1) FLUX-based background diffusion, (2) MLLM-driven layout and typography planning, and (3) BrushNet-based artistic text stylization, supported by the curated <b>PosterArt dataset</b>.
+    details: |2+
+
+  - title: 'Brush Your Text: Synthesize Any Scene Text on Images via Diffusion Model'
+    author: Lingjun Zhang, Xinyuan Chen, Yaohui Wang, Yue Lu, Yu Qiao
+    organization: East China Normal University, Shanghai Artificial Intelligence Laboratory
+    date: '20231209'
+    venue: AAAI 2024
+    pdf_url: https://arxiv.org/pdf/2312.12232
+    code_url: https://github.com/ecnuljzhang/brush-your-text
+    name: Brush Your Text
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It proposes a <b>training-free framework</b> that leverages <b>rendered sketch images as priors</b> and introduces <b>localized attention constraint</b> to restrict cross-attention maps of text-related keywords to textual regions, along with contrastive image-level prompts to refine text placement.
+    details: |2+
+
+  - title: 'ARTIST: Improving the Generation of Text-rich Images with Disentangled Diffusion Models and Large Language Models'
+    author: Jianyi Zhang, Yufan Zhou, Jiuxiang Gu, Curtis Wigington, Tong Yu, Yiran Chen, Tong Sun, Ruiyi Zhang
+    organization: Duke University, Adobe Research
+    date: '20240617'
+    venue: WACV 2025
+    pdf_url: https://arxiv.org/pdf/2406.12044
+    name: ARTIST
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It separates text structure learning from visual appearance generation by employing <b>two diffusion models</b>.
+    details: |2+
+
+  - title: 'AMO Sampler: Enhancing Text Rendering with Overshooting'
+    author: Xixi Hu, Keyang Xu, Bo Liu, Qiang Liu, Hongliang Fei
+    organization: Google, University of Texas at Austin
+    date: '20241128'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2411.19415
+    code_url: https://github.com/hxixixh/amo-release
+    name: AMO Sampler
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It proposes a <b>training-free sampler</b> for rectified flow models that alternates between ODE overshooting and noise reintroduction to introduce Langevin dynamics correction, while adaptively controlling overshooting strength via <b>cross-attention scores</b>.
+    details: |2+
+
+  - title: 'AnyText2: Visual Text Generation and Editing With Customizable Attributes'
+    author: Yuxiang Tuo, Yifeng Geng, Liefeng Bo
+    organization: Alibaba
+    date: '20241122'
+    venue: arXiv 2024
+    pdf_url: https://arxiv.org/pdf/2411.15245
+    code_url: https://github.com/tyxsspa/AnyText2
+    name: AnyText2
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It introduces <b>encoders for glyph, position, font, and color attributes</b>, enabling multilingual text attribute control with faster inference.
+    details: |2+
+
+  - title: 'Glyph-ByT5-v2: A Strong Aesthetic Baseline for Accurate Multilingual Visual Text Rendering'
+    author: Zeyu Liu, Weicong Liang, Yiming Zhao, Bohan Chen, Lin Liang, Lijuan Wang, Ji Li, Yuhui Yuan
+    organization: Microsoft
+    date: '20240614'
+    venue: arXiv 2024
+    pdf_url: https://arxiv.org/pdf/2406.10208
+    code_url: https://github.com/AIGText/Glyph-ByT5
+    name: Glyph-ByT5-v2
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It extends Glyph-ByT5 to a <b>multilingual</b> visual text rendering model that scales to 10 languages.
+    details: |2+
+
+  - title: How Control Information Influences Multilingual Text Image Generation and Editing?
+    author: Boqiang Zhang, Zuan Gao, Yadong Qu, Hongtao Xie
+    organization: University of Science and Technology of China
+    date: '20240716'
+    venue: NeurIPS 2024
+    pdf_url: https://arxiv.org/pdf/2407.11502
+    name: TextGen
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It proposes a <b>ControlNet</b>-based framework with Fourier-enhanced control information processing and a two-stage coarse-to-fine generation paradigm.
+    details: |2+
+
+  - title: 'TextInVision: Text and Prompt Complexity Driven Visual Text Generation Benchmark'
+    author: Forouzan Fallah, Maitreya Patel, Agneet Chatterjee, Vlad I. Morariu, Chitta Baral, Yezhou Yang
+    organization: Arizona State University, Adobe Research
+    date: '20250317'
+    venue: CVPR 2025
+    pdf_url: ''
+    code_url: https://github.com/TextInVision/TextinVision
+    name: TextInVision
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It introduces a <b>large-scale benchmark</b> for text rendering and provides a good <b>empirical study</b>.
+    details: |2
+
+      <ul>
+          <li> <b>Conclusion 1.</b> Edit distance results are insensitive to word difficulty but sensitive to prompt complexity.
+          <li> <b>Conclusion 2.</b> There is small positive correlation butween frequency of each word in training data and model performance on it.
+          <li> <b>Conclusion 3.</b> Model performance degrades with increasing length of text to render.
+          <li> <b>Conclusion 4.</b> Edit distance has strong correlation with human evaluation.
+          <li> <b>Conclusion 5.</b> VAE can be a bottleneck.
+      </ul>
+  - title: 'DesignDiffusion: High-Quality Text-to-Design Image Generation with Diffusion Models'
+    author: Zhendong Wang, Jianmin Bao, Shuyang Gu, Dong Chen, Wengang Zhou, Houqiang Li
+    organization: University of Science and Technology of China, Microsoft Research Asia
+    date: '20250303'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2503.01645
+    name: DesignDiffusion
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It employs (1) prompt enhancement (<b>encoding rendered words character-by-character</b>), (2) a character localization loss, (3) a <b>DPO</b> strategy.
+    details: |2+
+
+  - title: 'BizGen: Advancing Article-level Visual Text Rendering for Infographics Generation'
+    author: Yuyang Peng, Shishi Xiao, Keming Wu, Qisheng Liao, Bohan Chen, Kevin Lin, Danqing Huang, Ji Li, Yuhui Yuan
+    organization: Tsinghua University, Brown University, University of Liverpool, Microsoft Research Asia
+    date: '20250326'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2503.20672
+    code_url: https://github.com/1230young/bizgen
+    name: BizGen
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It advances <b>article-level</b> visual text rendering for <b>infographics</b> and <b>slides</b> generation.
+    details: |2+
+
+  - title: 'FonTS: Text Rendering with Typography and Style Controls'
+    author: Wenda Shi, Yiren Song, Dengming Zhang, Jiaming Liu, Xingxing Zou
+    organization: The Hong Kong Polytechnic University, National University of Singapore, Zhejiang University, Tiamat AI
+    date: '20250711'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2412.00136
+    code_url: https://github.com/ArtmeScienceLab/FonTS
+    name: FonTS
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It achieves <b>word-level typographic and style control</b> by employing fine-tuning and an adapter, with a built <b>word-level controllable dataset</b>.
+    details: |2+
+
+  - title: 'Glyph-ByT5: A Customized Text Encoder for Accurate Visual Text Rendering'
+    author: Zeyu Liu, Weicong Liang, Zhanhao Liang, Chong Luo, Ji Li, Gao Huang, Yuhui Yuan
+    organization: Microsoft Research Asia, Tsinghua University, Peking University, The Australian National University
+    date: '20240314'
+    venue: ECCV 2024
+    pdf_url: https://arxiv.org/pdf/2403.09622
+    code_url: https://github.com/AIGText/Glyph-ByT5
+    name: Glyph-ByT5
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It <b>fine-tunes ByT5</b> on glyph-text datasets by contrastive learning, and incorporates it into the diffusion model by <b>cross-attention</b>.
+    details: |2+
+
+  - title: 'TextDiffuser-2: Unleashing the Power of Language Models for Text Rendering'
+    author: Jingye Chen, Yupan Huang, Tengchao Lv, Lei Cui, Qifeng Chen, Furu Wei
+    organization: HKUST, Sun Yat-sen University, Microsoft Research
+    date: '20231128'
+    venue: ECCV 2024
+    pdf_url: https://arxiv.org/pdf/2311.16465
+    code_url: https://github.com/microsoft/unilm/tree/master/textdiffuser-2
+    name: TextDiffuser-2
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It fine-tunes a LLM as a <b>chat-able layout planner</b> and augments the CLIP text encoder with <b>line-level coordinate + character tokens</b>.
+    details: |2
+
+      <ul>
+          <li> <b>Model structure.</b> (1) Use a LLM as a planner to provide the keywords and its bbox locations (language-format layout). (2) Let the language-format layout and the text prompt be encoded by the trainable LLM (CLIP) within diffusion models.
+      </ul>
+  - title: 'TextDiffuser: Diffusion Models as Text Painters'
+    author: Jingye Chen, Yupan Huang, Tengchao Lv, Lei Cui, Qifeng Chen, Furu Wei
+    organization: HKUST, Sun Yat-sen University, Microsoft Research
+    date: '20230518'
+    venue: NeurIPS 2023
+    pdf_url: https://arxiv.org/pdf/2305.10855
+    code_url: https://github.com/microsoft/unilm/tree/master/textdiffuser
+    name: TextDiffuser
+    comment: It provides a large-scale text rendering dataset named MARIO-10M and a benchmark named MARIO-Eval. It has over 200 citations as of Jan 2026.
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It first lays out keywords with <b>character-level masks</b> and then performs <b>mask-conditioned diffusion</b> with a character-aware loss.
+    details: |2
+
+      <ul>
+          <li> <b>Training.</b> (1) Generate the layout of keywords by a Layout Transformer. (2) Generate images conditioned on the text prompt and the layout.
+          <li> <b>Training data.</b> MARIO-10M, containing 10M image-text pairs with text recognition, detection, and character-level segmentation annotations.
+          <li> <b>Evaluation data.</b> MARIO-Eval, 5414: 21 from DrawBench, 175 from DrawTextCreative, 218 from ChineseDrawText, 5000 from MARIO-10M.
+          <li> <b>Evaluation metrics.</b> FID, CLIPScore, OCR evaluation with accuracy, precision, recall, F1 score, human evaluation.
+      </ul>
+    highlight: true
+  - title: Character-Aware Models Improve Visual Text Rendering
+    author: Rosanne Liu, Dgit GUIan Garrette, Chitwan Saharia, William Chan, Adam Roberts, Sharan Narang, Irina Blok, RJ Mical, Mohammad Norouzi, Noah Constant
+    organization: Google Research
+    date: '20221220'
+    venue: ACL 2023
+    pdf_url: https://arxiv.org/pdf/2212.10562
+    code_url: https://github.com/google-research/google-research/tree/master/drawtext
+    name: Character-Aware
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It uses a <b>character-aware ByT5</b> as the text encoder and introduces a <b>DrawText benchmark</b> for text rendering.
+    details: |2
+
+      <ul>
+          <li> <b>Character-aware text encoder.</b> ByT5 outperforms character-blind text encoders, such as T5, mT5, PaLM, for the text spelling task.
+          <li> <b>DrawText benchmark.</b> It contains <u>DrawText Spelling</u>, 500 fixed prompts with 100 sampled words; and <u>DrawText Creative</u>, 175 diverse prompts for rendering text in creative styles and settings.
+          <li> <b>Experimental observations.</b> Character-aware text encoder performs the <u>best for text rendering</u> and make fewer types of error, but at the cost of <u>worse prompt alignment</u>.
+      </ul>
+  - title: 'GlyphControl: Glyph Conditional Control for Visual Text Generation'
+    author: Yukang Yang, Dongnan Gui, Yuhui Yuan, Weicong Liang, Haisong Ding, Han Hu, Kai Chen
+    organization: Princeton University, University of Science and Technology of China, Microsoft Research Asia
+    date: '20230529'
+    venue: NeurIPS 2023
+    pdf_url: https://arxiv.org/pdf/2305.18259
+    code_url: https://github.com/AIGText/GlyphControl-release
+    name: GlyphControl
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It presents a <b>glyph-conditional ControlNet</b> to generate legible visual text by treating <b>rendered glyph images as spatial control</b>.
+    details: |2
+
+      <ul>
+          <li> <b>Model structure.</b> (1) An OCR model (PP-OCRv3) to detect text. (2) A Glyph render for rendering the text in a whiteboard image at corresponding locations. (3) A Glyph ConcrolNet to incorporate the Glyph image. (4) VAE, text encoder, and UNet (SD 2.0).
+          <li> <b>Advantages.</b> (1) Specify the text characters by glyph images. (2) Specify the text line information by adjusting the number of rows in Glyph images. (3) Specify the font size by modifying the width of text bounding boxes of glyph images.
+          <li> <b>New training data.</b> LAION-Glyph, from LAION-2B-en, containing 10M images.
+      </ul>
+  - title: 'AnyText: Multilingual Visual Text Generation And Editing'
+    author: Yuxiang Tuo, Wangmeng Xiang, Jun-Yan He, Yifeng Geng, Xuansong Xie
+    organization: Alibaba Group
+    date: '20231106'
+    venue: ICLR 2024
+    pdf_url: https://arxiv.org/pdf/2311.03054
+    code_url: https://github.com/tyxsspa/AnyText
+    name: AnyText
+    comment: It provides a large-scale multilingual text rendering dataset named AnyWord-3M. It has over 4.8k GitHub stars as of Jan 2026.
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It encodes <b>glyph-position-mask conditions</b> and <b>OCR-extracted stroke embeddings</b> to generate or edit multilingual visual text.
+    details: |2
+
+      <ul>
+          <li> <b>Model structure.</b> (1) ControlNet: glyph image, position, masked image, text embeddings.(2) Perceptual loss: L2 loss of OCR-extracted GT stroke embeddings and generated stroke embeddings.
+          <li> <b>Training and test data.</b> AnyWord-3M, multilingual dataset (1.6M in Chinese, 1.39M in English, 10K in other languages), from Noah-Wukong, LAION-400M, and OCR datasets. 1000 images selected for evaluation.
+          <li> <b>Evaluation metrics.</b> Sentence accuracy, Normalized Edit Distance (NED), FID. PP-OCRv3 for building datasets, DuGuangOCR for evaluation.
+      </ul>
+    highlight: true
+  - title: 'GlyphDraw: Seamlessly Rendering Text with Intricate Spatial Structures in Text-to-Image Generation'
+    author: Jian Ma, Mingjun Zhao, Chen Chen, Ruichen Wang, Di Niu, Haonan Lu, Xiaodong Lin
+    organization: OPPO Research Institute, University of Alberta, Rutgers University
+    date: '20230331'
+    venue: arXiv 2023
+    pdf_url: https://arxiv.org/pdf/2303.17870
+    code_url: https://github.com/1073521013/GlyphDraw
+    name: GlyphDraw
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      It injects <b>glyph images</b> and <b>location masks</b> into a Stable Diffusion model to render <b>Chinese/English text</b> in generated images.
+    details: |2
+
+      <ul>
+          <li> <b>Model structure.</b> (1) The glyph image and location mask are concatenated to latents as the model input; (2) The glyph image and text prompt are encoded by CLIP encoders and fused to be the input of Cross-Attention layers.
+          <li> <b>Training data.</b> (1) 792K images with 3.3M characters and 4.8K Chinese characters and (2) 1.9M images with 2.3M English words.
+          <li> <b>Evaluation data.</b> An extension of the DrawText benchmark with both Chinese and English text.
+      </ul>
+  - title: 'UDiffText: A Unified Framework for High-quality Text Synthesis in Arbitrary Images via Character-aware Diffusion Models'
+    author: Yiming Zhao, Zhouhui Lian
+    organization: Peking University
+    date: '20231208'
+    venue: ECCV 2024
+    pdf_url: https://arxiv.org/pdf/2312.04884
+    code_url: https://github.com/ZYM-PKU/UDiffText
+    name: UDiffText
+    category: 'Generation: Text Rendering and Editing'
+    summary: |2
+
+      Inspired by the work of "Character-Aware" (ACL 2023), it trains a <b>character-level text encoder</b> with a codebook to replace the original CLIP text encoder in Stable Diffusion 2.0, and fine-tunes <b>cross-attention layers</b> with <b>character segmentation-map attention loss + OCR loss</b>.
+    details: |2+
+
+  - title: 'LongLive: Real-time Interactive Long Video Generation'
+    author: Shuai Yang, Wei Huang, Ruihang Chu, Yicheng Xiao, Yuyang Zhao, Xianbang Wang, Muyang Li, Enze Xie, Yingcong Chen, Yao Lu, Song Han, Yukang Chen
+    organization: NVIDIA, MIT, HKUST(GZ), HKU, THU
+    date: '20250926'
+    venue: ICLR 2026
+    pdf_url: https://arxiv.org/pdf/2509.22622
+    code_url: https://github.com/NVlabs/LongLive
+    name: LongLive
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: |2
+
+      It introduces a frame-level auto-regressive model with KV-recache and streaming long tuning for real-time, interactive, minute-level video generation.
+    details: |2+
+
+  - title: 'SANA-Video: Efficient Video Generation with Block Linear Diffusion Transformer'
+    author: Junsong Chen, Yuyang Zhao, Jincheng Yu, Ruihang Chu, Junyu Chen, Shuai Yang, Xianbang Wang, Yicheng Pan, Daquan Zhou, Huan Ling, Haozhe Liu, Hongwei Yi, Hao Zhang, Muyang Li, Yukang Chen, Han Cai, Sanja Fidler, Ping Luo, Song Han, Enze Xie
+    organization: NVIDIA, HKU, MIT, THU, PKU, KAUST
+    date: '20251013'
+    venue: ICLR 2026
+    pdf_url: https://arxiv.org/pdf/2509.24695
+    code_url: https://github.com/NVlabs/Sana
+    name: SANA-Video
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: |2
+
+      It introduces an auto-regressive diffusion model (2B) trained upon SANA-T2I for efficient, high-resolution, and minute-long video generation.
+  - title: Video Models are Zero-Shot Learners and Reasoners
+    author: Thaddäus Wiedemer, Yuxuan Li, Paul Vicol, Shixiang Shane Gu, Nick Matarese, Kevin Swersky, Been Kim, Priyank Jaini, Robert Geirhos
+    organization: Google DeepMind
+    date: '20250924'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2509.20328
+    name: Video Zero-shot
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: |2
+
+      It proposes that <b>large-scale generative video models</b> can function as <b>zero-shot general-purpose vision foundation models</b>.
+    details: |2+
+
+  - title: 'Seedream 4.0: Toward Next-generation Multimodal Image Generation'
+    author: ByteDance Seedream Team
+    organization: ByteDance
+    date: '20250924'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2509.20427
+    name: Seedream 4.0
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: |2
+
+      It introduces an efficient scalable DiT with high-compression VAE and acceleration, unifying <b>multi-image generation and editing</b> in one framework.
+    details: "\n<ul>\n    <li> <b>Structure.</b> It is based on DiT. \n    <li> <b>Training.</b> 512-reso pre-training => 1024-4096-reso pre-training => continue training => SFT => RLHF => prompt engineering with Seed1.5-VL\n    <li> <b>Acceleration.</b> Integrate: Hyper-SD, RayFlow, APT, ADM, quantization, etc.\n</ul>\n"
+  - title: Exploring Simple Siamese Representation Learning
+    author: Xinlei Chen, Kaiming He
+    organization: Facebook AI Research (FAIR)
+    date: '20201120'
+    venue: CVPR 2021
+    pdf_url: https://arxiv.org/pdf/2011.10566
+    code_url: https://github.com/facebookresearch/simsiam
+    name: SimSiam
+    category: 'Understanding: Foundation Algorithms & Models'
+    summary: |2
+
+      It introduces a simple yet effective <b>Siamese architecture</b> that learns visual representations by contrasting positive and negative pairs.
+    details: |2+
+
+    highlight: true
+  - title: Momentum Contrast for Unsupervised Visual Representation Learning
+    author: Kaiming He, Haoqi Fan, Yuxin Wu, Saining Xie, Ross Girshick
+    organization: Facebook AI Research (FAIR)
+    date: '20191113'
+    venue: CVPR 2020
+    pdf_url: https://arxiv.org/pdf/1911.05722
+    code_url: https://github.com/facebookresearch/moco
+    name: MoCo
+    comment: It advances unsupervised visual representation learning by introducing a momentum-updated encoder with a dynamic queue of negatives, enabling scalable contrastive training that rivaled supervised pretraining and shaped subsequent self-supervised learning research. It has over 17,000 citations (as of Sep 2025).
+    category: 'Understanding: Foundation Algorithms & Models'
+    summary: |2
+
+      It introduces <b>momentum contrast</b> to train Vision Transformers in a self-supervised manner.
+    details: |2+
+
+    highlight: true
+  - title: 'BEiT: BERT Pre-Training of Image Transformers'
+    author: Hangbo Bao, Li Dong, Songhao Piao, Furu Wei
+    organization: Harbin Institute of Technology, Microsoft Research
+    date: '20210615'
+    venue: ICLR 2022
+    pdf_url: https://arxiv.org/pdf/2106.08254
+    code_url: https://github.com/microsoft/unilm
+    name: BEiT
+    category: 'Understanding: Foundation Algorithms & Models'
+    summary: |2
+
+      It introduces <b>masked image modeling</b> with discrete visual tokens to pre-train Vision Transformers in a self-supervised BERT-like fashion.
+    details: |2+
+
+    highlight: true
+  - title: An Empirical Study of Training Self-Supervised Vision Transformers
+    author: Xinlei Chen, Saining Xie, Kaiming He
+    organization: Facebook AI Research (FAIR)
+    date: '20210405'
+    venue: ICCV 2021
+    pdf_url: https://arxiv.org/pdf/2104.02057
+    code_url: https://github.com/facebookresearch/moco-v3
+    name: MoCo v3
+    category: 'Understanding: Foundation Algorithms & Models'
+    summary: |2
+
+      It introduces a random patch projection trick that <b>freezes the first ViT layer</b> to stabilize contrastive self-supervised training.
+    details: |2+
+
+    highlight: true
+  - title: Masked Autoencoders Are Scalable Vision Learners
+    author: Kaiming He, Xinlei Chen, Saining Xie, Yanghao Li, Piotr Dollár, Ross Girshick
+    organization: Facebook AI Research (FAIR)
+    date: '20211111'
+    venue: CVPR 2022
+    pdf_url: https://arxiv.org/pdf/2111.06377
+    code_url: https://github.com/facebookresearch/mae
+    name: MAE
+    comment: It introduces an efficient self-supervised learning paradigm that reconstructs missing image patches, enabling scalable pretraining with reduced computational cost, and significantly improving performance and transferability across vision benchmarks. It has over 11,000 citations (as of Sep 2025).
+    category: 'Understanding: Foundation Algorithms & Models'
+    summary: |2
+
+      It introduces a <b>masked autoencoder</b> that reconstructs 75% masked patches, enabling scalable self-supervised pre-training of Vision Transformers.
+    details: |2+
+
+    highlight: true
+  - title: 'SmartBrush: Text and Shape Guided Object Inpainting with Diffusion Model'
+    author: Shaoan Xie, Zhifei Zhang, Zhe Lin, Tobias Hinz, Kun Zhang
+    organization: Carnegie Mellon University
+    date: '20221209'
+    venue: CVPR 2023
+    pdf_url: https://arxiv.org/pdf/2212.05034
+    name: SmartBrush
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It jointly leverages text prompts and <b>multi-precision object masks</b>, together with a self-predicted foreground mask, to achieve high-fidelity inpainting.
+    details: |2+
+
+    highlight: true
+  - title: Adding Conditional Control to Text-to-Image Diffusion Models
+    author: Lvmin Zhang, Anyi Rao, Maneesh Agrawala
+    organization: Stanford University
+    date: '20230210'
+    venue: ICCV 2023
+    pdf_url: https://arxiv.org/pdf/2302.05543
+    name: ControlNet
+    comment: It introduces a scalable method to condition diffusion models with additional spatial or semantic inputs, enabling precise and flexible control over image generation without retraining the base model. It has over 5,000 citations (as of Sep 2025).
+    category: 'Generation: Controllability'
+    summary: |2
+
+      It introduces a zero-convolution bypass architecture that adds spatial conditioning to frozen diffusion models for Generation: Controllability.
+    details: |2+
+
+    highlight: true
+  - title: 'OmniStyle2: Scalable and High Quality Artistic Style Transfer Data Generation via Destylization'
+    author: Ye Wang, Zili Yi, Yibo Zhang, Peng Zheng, Xuping Xie, Jiang Lin, Yilin Wang, Rui Ma
+    organization: Jilin University, Nanjing University, Shanghai Innovation Institute, Adobe, Engineering Research Center of Knowledge-Driven Human-Machine Intelligence
+    date: '20250907'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2509.05970
+    name: OmniStyle2
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It introduces destylization to reverse style transfer and creates the <b>100K-pair DST-100K dataset</b>, enabling a simple <b>FLUX-based</b> model.
+    details: |2+
+
+  - title: 'OmniEdit: Building Image Editing Generalist Models Through Specialist Supervision'
+    author: Cong Wei, Zheyang Xiong, Weiming Ren, Xinrun Du, Ge Zhang, Wenhu Chen
+    organization: University of Waterloo, University of Wisconsin-Madison, Vector Institute, M-A-P
+    date: '20241111'
+    venue: ICLR 2025
+    pdf_url: https://arxiv.org/pdf/2411.07199
+    code_url: https://github.com/TIGER-AI-Lab/OmniEdit
+    name: OmniEdit
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It introduces a diffusion editor that employs <b>seven task-specific experts</b>, GPT-4o-driven importance sampling and an EditNet transformer.
+    details: |2+
+
+    highlight: true
+  - title: 'HPSv3: Towards Wide-Spectrum Human Preference Score'
+    author: Yuhang Ma, Yunhao Shui, Xiaoshi Wu, Keqiang Sun, Hongsheng Li
+    date: '20250805'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2508.03789
+    code_url: https://github.com/MizzenAI/HPSv3
+    name: HPSv3
+    category: 'Generation: Datasets & Evaluation'
+    summary: |2
+
+      It introduces a human-preference dataset with <b>1.08M text-image pairs</b> and <b>1.17M pairwise comparisons</b>, which are used to fine-tune <b>Qwen2VL-7B</b>.
+    details: |2+
+
+  - title: 'Matrix-Game 2.0: An Open-Source, Real-Time, and Streaming Interactive World Model'
+    author: Xianglong He, Chunli Peng, Zexiang Liu, Boyang Wang, Yifan Zhang, Qi Cui, Fei Kang, Biao Jiang, Mengyin An, Yangyang Ren, Baixin Xu, Hao-Xiang Guo, Kaixiong Gong, Cyrus Wu, Wei Li, Xuchen Song, Yang Liu, Eric Li, Yahui Zhou
+    organization: Skywork AI
+    date: '20250818'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2508.13009
+    code_url: https://github.com/SkyworkAI/Matrix-Game/tree/main/Matrix-Game-2
+    name: Matrix-Game 2.0
+    category: 'Generation: Interaction'
+    summary: |2
+
+      It introduces a <b>causal few-step auto-regressive diffusion</b> framework distilled via <b>Self-Forcing</b> that enables minute-long, 25 fps videos.
+    details: |2+
+
+  - title: 'Matrix-Game: Interactive World Foundation Model'
+    author: Yifan Zhang, Chunli Peng, Boyang Wang, Puyi Wang, Qingcheng Zhu, Fei Kang, Biao Jiang, Zedong Gao, Eric Li, Yang Liu, Yahui Zhou
+    organization: Skywork AI
+    date: '20250623'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2506.18701
+    code_url: https://github.com/SkyworkAI/Matrix-Game/tree/main/Matrix-Game-1
+    name: Matrix-Game
+    category: 'Generation: Interaction'
+    summary: |2
+
+      It introduces an <b>image-to-world</b> diffusion model (17B) that learns from <b>3,700 h of Minecraft data</b> to generate game videos from a reference frame.
+    details: |2
+
+      <ul>
+          <li><b>Dataset.</b> Propose <b>Matrix-Game-MC</b>, a Minecraft dataset comprising over 2,700 hours of unlabled gameplay video clips (720p, 17 & 33 & 65-frame) and 1,200 hours of high-quality labeled clips (720p, 33-frame, balanced scenes) with keyboard and mouse action annotations.
+          <li><b>Training stage 1.</b> Large-scale unlabled pre-training for environment understanding.
+          <li><b>Training stage 2.</b> Action-labeled training for interactive video generation.
+      </ul>
+      fig: fig1.png 800
+      cap: <b>Structure.</b> It adopts auto-regressive: the last few frames of each generated clip are used as motion conditions for generating the next clip.
+      fig: fig2.png 800
+      cap: <b>Model blocks.</b>
+  - title: 'GameFactory: Creating New Games with Generative Interactive Videos'
+    author: Jiwen Yu, Yiran Qin, Xintao Wang, Pengfei Wan, Di Zhang, Xihui Liu
+    organization: The University of Hong Kong, Kuaishou Technology
+    date: '20250114'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2501.08325
+    code_url: https://github.com/KwaiVGI/GameFactory
+    name: GameFactory
+    category: 'Generation: Interaction'
+    summary: |2
+
+      It proposes a <b>decoupled-style</b> training pipeline that plugs action-control modules into a pre-trained video diffusion model to create games.
+    details: |2
+
+      <ul>
+          <li><b>Training.</b> (1) Pre-train a video generation model. (2) Fine-tune with LoRA for game video data to capture style. (3) Train an action control module to learn style-agnoistic control. (4) Disgard the style LoRA and use the action control module for inference.
+      </ul>
+  - title: Mean Flows for One-step Generative Modeling
+    author: Zhengyang Geng, Mingyang Deng, Xingjian Bai, J. Zico Kolter, Kaiming He
+    organization: CMU, MIT
+    date: '20250519'
+    venue: NeurIPS 2025
+    pdf_url: https://arxiv.org/pdf/2505.13447
+    code_url: https://github.com/Gsunshine/meanflow
+    name: MeanFlow
+    category: 'Generation: Acceleration'
+    summary: |2
+
+      It introduces a <b>one-step</b> generative framework that learns an <b>average velocity field</b> via MeanFlow Identity, without distillation or curriculum learning.
+    details: |2
+
+      Some observations in experiments:
+      <ul>
+          <li> <b>25% of sampling \( r\neq t \)</b> performs the best; while 0% (standard Flow Matching) performs much worse.
+          <li> <b>A correct JVP</b> is important, i.e., \( \mathrm{jvp}=(v, 0, 1) \).
+          <li> <b>\( u_{\theta}(z, r, t) \) takes (t, t-r)</b> as the positional embedding performs the best.
+      </ul>
+    highlight: true
+  - title: Flow Matching Guide and Code
+    author: Yaron Lipman, Marton Havasi, Peter Holderrieth, Neta Shaul, Matt Le, Brian Karrer, Ricky T. Q. Chen, David Lopez-Paz, Heli Ben-Hamu, Itai Gat
+    organization: FAIR at Meta, MIT CSAIL, Weizmann Institute of Science
+    date: '20241209'
+    venue: arXiv 2024
+    pdf_url: https://arxiv.org/pdf/2412.06264
+    code_url: https://github.com/facebookresearch/flow_matching
+    name: Flow Matching Guide
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: |2
+
+      It offers a comprehensive and self-contained <b>review of flow matching</b>, covering its mathematical foundations, design choices, and extensions.
+    details: |2+
+
+  - title: 'Trans-Adapter: A Plug-and-Play Framework for Transparent Image Inpainting'
+    author: Yuekun Dai, Haitian Li, Shangchen Zhou, Chen Change Loy
+    organization: Nanyang Technological University
+    date: '20250801'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2508.01098
+    code_url: https://github.com/ykdai/Trans-Adapter
+    name: Trans-Adapter
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+       It proposes a <b>plug-and-play adapter</b> that inflates any diffusion inpainting model to generate aligned RGB and alpha channels for <b>transparent images</b>.
+    details: |2+
+
+  - title: 'SAGI: Semantically Aligned and Uncertainty Guided AI Image Inpainting'
+    author: Paschalis Giakoumoglou, Dimitrios Karageorgiou, Symeon Papadopoulos, Panagiotis C. Petrantonakis
+    organization: Aristotle University of Thessaloniki, CERTH
+    date: '20250210'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2502.06593
+    code_url: https://github.com/mever-team/SAGI
+    name: SAGI
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It proposes a pipeline to combine <b>semantically-aligned prompt generation</b> and <b>uncertainty-guided realism filtering</b> for image inpainting.
+    details: |2+
+
+  - title: 'Pinco: Position-induced Consistent Adapter for Diffusion Transformer in Foreground-conditioned Inpainting'
+    author: Guangben Lu, Yuzhen Du, Zhimin Sun, Ran Yi, Yifan Qi, Yizhe Tang, Tianyi Wang, Lizhuang Ma, Fangyuan Zou
+    organization: Shanghai Jiao Tong University, Tencent
+    date: '20241205'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2412.03812
+    name: Pinco
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+       It proposes a <b>foreground-conditioned inpainting adapter</b> that injects subject-aware attention into the self-attention layer.
+    details: |2+
+
+  - title: 'OmniPaint: Mastering Object-Oriented Editing via Disentangled Insertion-Removal Inpainting'
+    author: Yongsheng Yu, Ziyun Zeng, Haitian Zheng, Jiebo Luo
+    organization: University of Rochester, Adobe Research
+    date: '20250311'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2503.08677
+    name: OmniPaint
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It proposes a unified framework that reconceptualizes object removal and insertion as <b>interdependent inverse tasks</b>.
+    details: |2+
+
+  - title: 'BVINet: Unlocking Blind Video Inpainting with Zero Annotations'
+    author: Zhiliang Wu, Kerui Chen, Kun Li, Hehe Fan, Yi Yang
+    organization: Zhejiang University
+    date: '20250203'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2502.01181
+    name: BVINet
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It proposes the first end-to-end blind video inpainting framework that jointly learns mask prediction and inpainting <b>without any manual annotations</b>.
+    details: |2+
+
+  - title: 'Paint by Inpaint: Learning to Add Image Objects by Removing Them First'
+    author: Navve Wasserman, Noam Rotstein, Roy Ganz, Ron Kimmel
+    organization: Weizmann Institute of Science, Technion - Israel Institute of Technology
+    date: '20240428'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2404.18212
+    code_url: https://github.com/RotsteinNoam/Paint-by-Inpaint
+    name: Paint by Inpaint
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It inverts large-scale inpainting pipelines to <b>synthesize real object-addition pairs</b>, setting new SOTA for text-guided object insertion & general editing.
+    details: |2+
+
+  - title: 'ATA: Adaptive Transformation Agent for Text-Guided Subject-Position Variable Background Inpainting'
+    author: Yizhe Tang, Zhimin Sun, Yuzhen Du, Ran Yi, Guangben Lu, Teng Hu, Luying Li, Lizhuang Ma, Fangyuan Zou
+    organization: Shanghai Jiao Tong University, Tencent
+    date: '20250402'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2504.01603
+    name: ATA
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It predicts subject displacement via hierarchical reverse transforms to enable text-guided, position-variable background inpainting.
+    details: |2+
+
+  - title: 'RAD: Region-Aware Diffusion Models for Image Inpainting'
+    author: Sora Kim, Sungho Suh, Minsik Lee
+    organization: Hanyang University, Korea University, DFKI, Hanyang University ERICA
+    date: '20241212'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2412.09191
+    name: RAD
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It proposes a <b>pixel-wise spatially-varying</b> diffusion schedule that asynchronously denoises masked regions.
+    details: |2+
+
+  - title: 'Towards Enhanced Image Inpainting: Mitigating Unwanted Object Insertion and Preserving Color Consistency'
+    author: Yikai Wang, Chenjie Cao, Junqiu Yu, Ke Fan, Xiangyang Xue, Yanwei Fu
+    organization: Fudan University, Nanyang Technological University, Alibaba DAMO Academy, Hupan Lab
+    date: '20231208'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2312.04831
+    code_url: https://github.com/Yikai-Wang/asuka-misato
+    name: ASUKA
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It proposes to align MAE prior and fine-tune a local-harmonization VAE decoder to suppress <b>object hallucination & color inconsistency</b> in inpainting.
+    details: |2+
+
+  - title: 'TurboFill: Adapting Few-step Text-to-image Model for Fast Image Inpainting'
+    author: Liangbin Xie, Daniil Pakhomov, Zhonghao Wang, Zongze Wu, Ziyan Chen, Yuqian Zhou, Haitian Zheng, Zhifei Zhang, Zhe Lin, Jiantao Zhou, Chao Dong
+    organization: University of Macau, Shenzhen University of Advanced Technology, Adobe, Chinese Academy of Sciences
+    date: '20250401'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2504.00996
+    name: TurboFill
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It trains a <b>ControlNet-style adapter</b> directly on a <b>distilled</b> text-to-image model via a novel 3-step adversarial training scheme.
+    details: |2+
+
+  - title: Keyframe-Guided Creative Video Inpainting
+    author: Yuwei Guo, Ceyuan Yang, Anyi Rao, Chenlin Meng, Omer Bar-Tal, Shuangrui Ding, Maneesh Agrawala, Dahua Lin, Bo Dai
+    organization: CUHK, Shanghai AI Laboratory, Pika Labs, ByteDance, CPII under InnoHK, Stanford, HKUST, HKU, Feeling AI
+    date: '20250611'
+    venue: CVPR 2025
+    pdf_url: https://openaccess.thecvf.com/content/CVPR2025/papers/Guo_Keyframe-Guided_Creative_Video_Inpainting_CVPR_2025_paper.pdf
+    name: VideoRepainter
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It introduces a <b>keyframe-guided</b> two-stage pipeline that repurposes an <b>image-to-video model</b> with mask conditioning for creative video inpainting.
+    details: |2+
+
+  - title: 'MTADiffusion: Mask Text Alignment Diffusion Model for Object Inpainting'
+    author: Jun Huang, Ting Liu, Yihang Wu, Xiaochao Qu, Luoqi Liu, Xiaolin Hu
+    organization: Meitu, National University of Singapore, Tsinghua University
+    date: '20250630'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2506.23482
+    name: MTADiffusion
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It leverages <b>25 million</b> fine-grained mask-text pairs and <b>multi-task edge-guided</b> training with Gram-style loss to learn image inpainting.
+    details: |2+
+
+  - title: 'HomoGen: Enhanced Video Inpainting via Homography Propagation and Diffusion'
+    author: Ding Ding, Yueming Pan, Ruoyu Feng, Qi Dai, Kai Qiu, Jianmin Bao, Chong Luo, Zhenzhong Chen
+    organization: Wuhan University, Xi'an Jiaotong University, University of Science and Technology of China, Microsoft Research Asia
+    date: '20250611'
+    venue: CVPR 2025
+    pdf_url: https://openaccess.thecvf.com/content/CVPR2025/papers/Ding_HomoGen_Enhanced_Video_Inpainting_via_Homography_Propagation_and_Diffusion_CVPR_2025_paper.pdf
+    name: HomoGen
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It employs homography-based pixel propagation to supply semantically coherent priors and a content-adaptive model for video inpainting.
+    details: |2+
+
+  - title: 'A Task is Worth One Word: Learning with Task Prompts for High-Quality Versatile Image Inpainting'
+    author: Junhao Zhuang, Yanhong Zeng, Wenran Liu, Chun Yuan, Kai Chen
+    organization: Tsinghua University, Shanghai Artificial Intelligence Laboratory
+    date: '20231206'
+    venue: ECCV 2024
+    pdf_url: https://arxiv.org/pdf/2312.03594
+    code_url: https://github.com/open-mmlab/PowerPaint
+    name: PowerPaint
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It presents <b>unifies multiple tasks</b> through <b>learnable task prompts</b>, achieving SOTA results in object synthesis, removal, and outpainting.
+    details: |2+
+
+    highlight: true
+  - title: 'AVID: Any-Length Video Inpainting with Diffusion Model'
+    author: Zhixing Zhang, Bichen Wu, Xiaoyan Wang, Yaqiao Luo, Luxin Zhang, Yinan Zhao, Peter Vajda, Dimitris Metaxas, Licheng Yu
+    organization: Rutgers University, Meta
+    date: '20231206'
+    venue: CVPR 2024
+    pdf_url: https://arxiv.org/pdf/2312.03816
+    code_url: https://github.com/zhang-zx/AVID
+    name: AVID
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It combines motion modules, adjustable structure guidance, and MultiDiffusion sampler with middle-frame attention to <b>inpaint videos of any length</b>.
+    details: |2+
+
+  - title: 'Structure Matters: Tackling the Semantic Discrepancy in Diffusion Models for Image Inpainting'
+    author: Haipeng Liu, Yang Wang, Biao Qian, Meng Wang, Yong Rui
+    organization: Hefei University of Technology, Lenovo Research
+    date: '20240329'
+    venue: CVPR 2024
+    pdf_url: https://arxiv.org/pdf/2403.19898
+    code_url: https://github.com/htyjers/StrDiffusion
+    name: StrDiffusion
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It progressively <b>injects sparser structural semantics</b> to bridge the semantic gap between masked and unmasked regions.
+    details: |2+
+
+  - title: Towards Language-Driven Video Inpainting via Multimodal Large Language Models
+    author: Jianzong Wu, Xiangtai Li, Chenyang Si, Shangchen Zhou, Jingkang Yang, Jiangning Zhang, Yining Li, Kai Chen, Yunhai Tong, Ziwei Liu, Chen Change Loy
+    organization: Peking University, Nanyang Technological University, Shanghai AI Laboratory, PKU-Wuhan Institute for Artificial Intelligence, Zhejiang University
+    date: '20240118'
+    venue: CVPR 2024
+    pdf_url: https://arxiv.org/pdf/2401.10226
+    code_url: https://github.com/jianzongwu/Language-Driven-Video-Inpainting
+    name: ROVI
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It introduces language-driven video inpainting, a new task that <B>replaces binary masks with natural language instructions</b>.
+    details: |2+
+
+  - title: Improving Text-guided Object Inpainting with Semantic Pre-inpainting
+    author: Yifu Chen, Jingwen Chen, Yingwei Pan, Yehao Li, Ting Yao, Zhineng Chen, Tao Mei
+    organization: Fudan University, Shanghai Collaborative Innovation Center of Intelligent Visual Computing, HiDream.ai Inc.
+    date: '20240912'
+    venue: ECCV 2024
+    pdf_url: https://arxiv.org/pdf/2409.08260
+    code_url: https://github.com/Nnn-s/CATdiffusion
+    name: CAT-Diffusion
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It presents a cascaded Transformer-diffusion that <b>semantically pre-inpaints object features in CLIP space</b> and injects them via a reference adapter.
+    details: |2+
+
+  - title: 'Don''t Look into the Dark: Latent Codes for Pluralistic Image Inpainting'
+    author: Haiwei Chen, Yajie Zhao
+    organization: University of Southern California, USC Institute for Creative Technologies
+    date: '20240327'
+    venue: CVPR 2024
+    pdf_url: https://arxiv.org/pdf/2403.18186
+    code_url: https://github.com/nintendops/latent-code-inpainting
+    name: Latent Codes
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It <b>encodes visible regions</b>, <b>infers missing tokens</b>, and <b>fuses them</b> with partial-image priors to achieve inpainting under extreme masks.
+    details: |2+
+
+  - title: 'Brush2Prompt: Contextual Prompt Generator for Object Inpainting'
+    author: Mang Tik Chiu, Yuqian Zhou, Lingzhi Zhang, Zhe Lin, Connelly Barnes, Sohrab Amirghodsi, Eli Shechtman, Humphrey Shi
+    organization: UIUC, Adobe, University of Oregon
+    date: '20240617'
+    venue: CVPR 2024
+    pdf_url: https://openaccess.thecvf.com/content/CVPR2024/papers/Chiu_Brush2Prompt_Contextual_Prompt_Generator_for_Object_Inpainting_CVPR_2024_paper.pdf
+    name: Brush2Prompt
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It proposes a <b>prompt generator</b> that translates masked-image CLIP embeddings into diverse object labels or captions without user text input.
+    details: |2+
+
+  - title: Image Inpainting via Tractable Steering of Diffusion Models
+    author: Anji Liu, Mathias Niepert, Guy Van den Broeck
+    organization: University of California, Los Angeles, University of Stuttgart
+    date: '20231128'
+    venue: ICLR 2024
+    pdf_url: https://arxiv.org/pdf/2401.03349
+    code_url: https://github.com/UCLA-StarAI/Tiramisu
+    name: TPM
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2+
+
+    details: |2
+
+      It introduces the first framework that steers diffusion models via exact yet efficient <b>probalistic circuits-computed conditional distributions</b>.
+  - title: Image Inpainting via Iteratively Decoupled Probabilistic Modeling
+    author: Wenbo Li, Xin Yu, Kun Zhou, Yibing Song, Zhe Lin, Jiaya Jia
+    organization: Huawei Noah's Ark Lab, HKU, CUHK (SZ), Alibaba DAMO Academy, Adobe Research
+    date: '20221206'
+    venue: ICLR 2024
+    pdf_url: https://arxiv.org/pdf/2212.02963
+    code_url: https://github.com/fenglinglwb/PSM
+    name: PSM
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It alternates between <b>adversarially-optimized mean prediction</b> and <b>Gaussian-modeled uncertainty</b>, achieving efficient large-hole inpainting.
+    details: |2+
+
+  - title: 'TD-Paint: Faster Diffusion Inpainting Through Time Aware Pixel Conditioning'
+    author: Tsiry Mayet, Pourya Shamsolmoali, Simon Bernard, Eric Granger, Romain Hérault, Clement Chatelain
+    organization: INSA Rouen Normandie, University of York, Universit'e Rouen Normandie, LIVIA, Universit'e Caen Normandie,
+    date: '20241011'
+    venue: ICLR 2025
+    pdf_url: https://arxiv.org/pdf/2410.09306
+    code_url: https://github.com/MaugrimEP/td-paint
+    name: TD-Paint
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It introduces a <b>pixel-wise time-conditioning</b> scheme that allows cutting sampling steps by an order of magnitude without architectural changes.
+    details: |2+
+
+  - title: 'HD-Painter: High-Resolution and Prompt-Faithful Text-Guided Image Inpainting with Diffusion Models'
+    author: Hayk Manukyan, Andranik Sargsyan, Barsegh Atanyan, Zhangyang Wang, Shant Navasardyan, Humphrey Shi
+    organization: Picsart AI Research (PAIR), UT Austin, Georgia Tech
+    date: '20231221'
+    venue: ICLR 2025
+    pdf_url: https://arxiv.org/pdf/2312.14091
+    code_url: https://github.com/Picsart-AI-Research/HD-Painter
+    name: HD-Painter
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: |2
+
+      It introduces plug-and-play PAIntA and RASG to make text-guided inpainting <b>prompt-faithful</b>, <b>high-resolution</b>, and <b>training-free</b>.
+    details: |2+
+
+  - title: 'VisionReward: Fine-Grained Multi-Dimensional Human Preference Learning for Image and Video Generation'
+    author: Jiazheng Xu, Yu Huang, Jiale Cheng, Yuanming Yang, Jiajun Xu, Yuan Wang, Wenbo Duan, Shen Yang, Qunlin Jin, Shurun Li, Jiayan Teng, Zhuoyi Yang, Wendi Zheng, Xiao Liu, Ming Ding, Xiaohan Zhang, Xiaotao Gu, Shiyu Huang, Minlie Huang, Jie Tang, Yuxiao Dong
+    date: '20241230'
+    venue: AAAI 2026
+    pdf_url: https://arxiv.org/pdf/2412.21059
+    code_url: https://github.com/zai-org/VisionReward
+    name: VisionReward
+    category: 'Generation: Datasets & Evaluation'
+    summary: |2
+
+      It disentangles human preference into <b>64 binary questions</b> and learns an <b>interpretable linear reward</b> via multi-dimensional optimization.
+    details: |2+
+
+  - title: 'Content-Style Learning from Unaligned Domains: Identifiability under Unknown Latent Dimensions'
+    author: Sagar Shrestha, Xiao Fu
+    organization: Mohamed bin Zayed University of Artificial Intelligence, New York University Shanghai, Carnegie Mellon University
+    date: '20241106'
+    venue: ICLR 2025
+    pdf_url: https://arxiv.org/pdf/2411.03755
+    code_url: https://github.com/Irislucent/variance-versus-invariance
+    name: VarInv
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It shows that content and style can be identified from <b>unaligned multi-domain data</b> without knowing their dimensions by distribution matching.
+    details: |2+
+
+  - title: 'Less is More: Masking Elements in Image Condition Features Avoids Content Leakages in Style Transfer Diffusion Models'
+    author: Lin Zhu, Xinbing Wang, Chenghu Zhou, Qinying Gu, Nanyang Ye
+    organization: Shanghai Jiao Tong University, Chinese Academy of Sciences, Shanghai Artificial Intelligence Laboratory
+    date: '20250211'
+    venue: ICLR 2025
+    pdf_url: https://arxiv.org/pdf/2502.07466
+    code_url: https://github.com/LinLLLL/MaskST
+    name: MaskST
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It <b>masks content-correlated entries</b> in the style-reference feature to achieve training-free, leakage-free text-driven style transfer.
+    details: |2+
+
+  - title: 'Semantix: An Energy Guided Sampler for Semantic Style Transfer'
+    author: Huiang He, Minghui Hu, Chuanxia Zheng, Chaoyue Wang, Tat-Jen Cham
+    organization: 'South China University of Technology, Nanyang Technological University, University of Oxford, The University of Sydney, '
+    date: '20250328'
+    venue: ICLR 2025
+    pdf_url: https://arxiv.org/pdf/2503.22344
+    name: Semantix
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It is a training-free, <b>energy-guided sampler</b> that performs semantic style and appearance transfer for both images and videos.
+    details: |2+
+
+  - title: 'RB-Modulation: Training-Free Personalization of Diffusion Models using Stochastic Optimal Control'
+    author: Litu Rout, Yujia Chen, Nataniel Ruiz, Abhishek Kumar, Constantine Caramanis, Sanjay Shakkottai, Wen-Sheng Chu
+    date: '20240527'
+    venue: ICLR 2025
+    pdf_url: https://arxiv.org/pdf/2405.17401
+    code_url: https://github.com/google/RB-Modulation
+    name: RB-Modulation
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It introduces a <b>stochastic optimal control</b> for test-time, training-free personalization via style control and a cross-attention disentanglement module.
+    details: |2+
+
+  - title: 'ACFun: Abstract-Concrete Fusion Facial Stylization'
+    author: Jiapeng Ji, Kun Wei, Ziqi Zhang, Cheng Deng
+    organization: Xidian University
+    date: '20240926'
+    venue: NeurIPS 2024
+    pdf_url: https://proceedings.neurips.cc/paper_files/paper/2024/hash/e10a6a906ef323efaf708f76cf3c1d1e-Abstract-Conference.html
+    name: ACFun
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It disentangles <b>abstract and concrete style features</b> via CLIP-guided fusion, achieving one-shot, high-fidelity, and controllable facial stylization.
+    details: |2+
+
+  - title: 'FineStyle: Fine-grained Controllable Style Personalization for Text-to-image Models'
+    author: Gong Zhang, Kihyuk Sohn, Meera Hahn, Humphrey Shi, Irfan Essa
+    organization: Georgia Tech, Google DeepMind, Meta Reality Labs
+    date: '20240926'
+    venue: NeurIPS 2024
+    pdf_url: https://proceedings.neurips.cc/paper_files/paper/2024/hash/5edb0d52b6959d946afac7600f9f1e0c-Abstract-Conference.html
+    code_url: https://github.com/SHI-Labs/FineStyle
+    name: FineStyle
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It disentangles style from a reference via concept-oriented data scaling and KV-adapter tuning, enabling leakage-free, controllable stylization.
+    details: |2+
+
+  - title: Towards Compact Reversible Image Representations for Neural Style Transfer
+    author: Xiyao Liu, Siyu Yang, Xunli Fan, Jian Zhang, Songtao Wu, Gerald Schaefer, Hui Fang
+    organization: Central South University, Loughborough University, Hunan Embroidery Research Institute, Northwest University, Sony R&D Center China
+    date: '20240929'
+    venue: ECCV 2024
+    pdf_url: https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/08321.pdf
+    name: CompRever
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It enforces <b>information-theoretic redundancy reduction</b> within a reversible flow to achieve compact yet expressive representations.
+    details: |2+
+
+  - title: 'ZipLoRA: Any Subject in Any Style by Effectively Merging LoRAs'
+    author: Viraj Shah, Nataniel Ruiz, Forrester Cole, Erika Lu, Svetlana Lazebnik, Yuanzhen Li, Varun Jampani
+    organization: Google Research, UIUC
+    date: '20231122'
+    venue: ECCV 2024
+    pdf_url: https://arxiv.org/pdf/2311.13600
+    name: ZipLoRA
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It learns <b>column-wise mixing coefficients</b> to orthogonally merge content and style LoRAs.
+    details: |2+
+
+  - title: 'StyleTokenizer: Defining Image Style by a Single Instance for Controlling Diffusion Models'
+    author: Wen Li, Muyuan Fang, Cheng Zou, Biao Gong, Ruobing Zheng, Meng Wang, Jingdong Chen, Ming Yang
+    organization: Ant Group, Hangzhou, China
+    date: '20240904'
+    venue: ECCV 2024
+    pdf_url: https://arxiv.org/pdf/2409.02543
+    code_url: https://github.com/alipay/style-tokenizer
+    name: StyleTokenizer
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It aligns a single-image <b>style embedding with the textual embedding space</b> via a style tokenizer, enabling zero-shot, disentangled style control.
+    details: |2+
+
+  - title: 'InstaStyle: Inversion Noise of a Stylized Image is Secretly a Style Adviser'
+    author: Xing Cui, Zekun Li, Pei Pei Li, Huaibo Huang, Xuannan Liu, Zhaofeng He
+    organization: Beijing University of Posts and Telecommunications, University of California, Santa Barbara, Chinese Academy of Sciences
+    date: '20231105'
+    venue: ECCV 2024
+    pdf_url: https://arxiv.org/pdf/2311.15040
+    code_url: https://github.com/cuixing100876/InstaStyle
+    name: InstaStyle
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It leverages the <b>inversion noise of a stylized image</b> and refines a learnable style token, enabling one-shot stylized generation.
+    details: |2+
+
+  - title: Implicit Style-Content Separation using B-LoRA
+    author: Yarden Frenkel, Yael Vinker, Ariel Shamir, Daniel Cohen-Or
+    organization: Tel Aviv University, Reichman University
+    date: '20240321'
+    venue: ECCV 2024
+    pdf_url: https://arxiv.org/pdf/2403.14572
+    code_url: https://github.com/yardenfren1996/B-LoRA
+    name: B-LoRA
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It implicitly disentangles style and content from an image by training two LoRA adapters on <b>specific SDXL blocks</b>, enabling plug-and-play stylization.
+    details: |2+
+
+  - title: 'SCSA: A Plug-and-Play Semantic Continuous-Sparse Attention for Arbitrary Semantic Style Transfer'
+    author: Chunnan Shang, Zhizhong Wang, Hongwei Wang, Xiangming Meng
+    date: '20250306'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2503.04119
+    name: SCSA
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It augments attention-based training-free arbitrary style transfer with semantic-aware continuous sparse attention.
+    details: |2+
+
+  - title: 'HSI: A Holistic Style Injector for Arbitrary Style Transfer'
+    author: Shuhao Zhang, Hui Kang, Yang Liu, Fang Mei, Hongjuan Li
+    organization: Jilin University, Jilin University of Arts
+    date: '20250205'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2502.04369
+    name: HSI
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It replaces attention with element-wise <b>global-statistic injection</b>, achieving high-quality arbitrary style transfer.
+    details: |2+
+
+  - title: 'UnZipLoRA: Separating Content and Style from a Single Image'
+    author: Chang Liu, Viraj Shah, Aiyu Cui, Svetlana Lazebnik
+    organization: University of Illinois, Urbana-Champaign
+    date: '20241205'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2412.04465
+    code_url: https://github.com/changLiu77/UnZipLoRA
+    name: UnZipLoRA
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It decomposes a single image into two orthogonal yet compatible <b>content / style LoRAs</b> via prompt-, column- and block-separation.
+    details: |2+
+
+  - title: 'SCFlow: Implicitly Learning Style and Content Disentanglement with Flow Models'
+    author: Pingchuan Ma, Xiaopei Yang, Yusong Li, Ming Gui, Felix Krause, Johannes Schusterbauer, Björn Ommer
+    organization: LMU Munich, Munich Center for Machine Learning
+    date: '20250805'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2508.03402
+    name: SCFlow
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It implicitly disentangles style and content by learning an <b>invertible flow</b> between entangled and disentangled latent distributions.
+    details: |2+
+
+  - title: 'LoRA.rar: Learning to Merge LoRAs via Hypernetworks for Subject-Style Conditioned Image Generation'
+    author: Donald Shenaj, Ondrej Bohdal, Mete Ozay, Pietro Zanuttigh, Umberto Michieli
+    organization: Samsung R&D Institute UK, University of Padova
+    date: '20241206'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2412.05148
+    code_url: https://github.com/donaldssh/LoRA.rar
+    name: LoRA.rar
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It trains a lightweight hypernetwork to predict <b>adaptive merging coefficients</b> for any unseen subject-style LoRA pair, achieving real-time generation.
+    details: |2+
+
+  - title: 'IntroStyle: Training-Free Introspective Style Attribution using Diffusion Features'
+    author: Anand Kumar, Jiteng Mu, Nuno Vasconcelos
+    organization: University of California, San Diego
+    date: '20241219'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2412.14432
+    code_url: https://anandk27.github.io/IntroStyle/
+    name: IntroStyle
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It proposes a training-free style attribution framework that leverages only <b>internal statistics</b> of pre-trained diffusion features for style similarity retrieval.
+    details: |2+
+
+  - title: Domain Generalizable Portrait Style Transfer
+    author: Xinbo Wang, Wenju Xu, Qing Zhang, Wei-Shi Zheng
+    organization: Sun Yat-sen University, AMAZON, Key Laboratory of Machine Intelligence and Advanced Computing
+    date: '20250708'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2507.04243
+    code_url: https://github.com/wangxb29/DGPST
+    name: DGPST
+    category: 'Generation: Stylization'
+    summary: |2-
+
+      It unifies dense semantic correspondence, AdaIN-Wavelet latent fusion, and dual-conditional diffusion to enable portrait style transfer.
+    details: |2+
+
+  - title: 'CSD-VAR: Content-Style Decomposition in Visual Autoregressive Models'
+    author: Quang-Binh Nguyen, Minh Luu, Quang Nguyen, Anh Tran, Khoi Nguyen
+    organization: Qualcomm AI Research, MovianAI
+    date: '20250718'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2507.13984
+    name: CSD-VAR
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It pioneers <b>VAR</b>-based content-style decomposition by scale-aware alternating optimization, SVD rectification, and augmented K-V memories.
+    details: |2+
+
+  - title: 'AIComposer: Any Style and Content Image Composition via Feature Integration'
+    author: Haowen Li, Zhenfeng Fan, Zhang Wen, Zhengzhou Zhu, Yunjin Li
+    organization: Peking University, Beijing Yuanli Science and Technology
+    date: '20250728'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2507.20721
+    code_url: https://github.com/sherlhw/AIComposer
+    name: AIComposer
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It achieves text-prompt-free stylization by <b>linearly separating and re-fusing content/style CLIP features</b>, guiding a single-branch 10-step diffusion.
+    details: |2+
+
+  - title: Balanced Image Stylization with Style Matching Score
+    author: Yuxin Jiang, Liming Jiang, Shuai Yang, Jia-Wei Liu, Ivor Tsang, Mike Zheng Shou
+    organization: National University of Singapore, Technology and Research (A*STAR), Nanyang Technological University, Peking University
+    date: '20250310'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2503.07601
+    code_url: https://github.com/showlab/SMS
+    name: SMS
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It reframes stylization as <b>style-distribution matching</b> with LoRA priors, regularizing in frequency domain and semantically refining gradients.
+    details: |2+
+
+  - title: 'DuoLoRA : Cycle-consistent and Rank-disentangled Content-Style Personalization'
+    author: Aniket Roy, Shubhankar Borse, Shreya Kadambi, Debasmit Das, Shweta Mahajan, Risheek Garrepalli, Hyojin Park, Ankita Nayak, Rama Chellappa, Munawar Hayat, Fatih Porikli
+    organization: Johns Hopkins University, Qualcomm AI Research
+    date: '20250415'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2504.13206
+    name: DuoLoRA
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It disentangles content and style in diffusion LoRA merging by rank-dimension masking, layer priors, and cycle-consistency loss.
+    details: |2
+
+      <ul>
+          <li>
+      </ul>
+  - title: 'StyleSSP: Sampling StartPoint Enhancement for Training-free Diffusion-based Method for Style Transfer'
+    author: Ruojun Xu, Weijie Xi, Xiaodi Wang, Yongbo Mao, Zach Cheng
+    organization: Zhejiang University, Dcar
+    date: '20250120'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2501.11319
+    code_url: https://github.com/bytedance/StyleSSP
+    name: StyleSSP
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It employs DDIM reversion of content images with low frequency component removed to obtain a <b>better initial noise</b> for training-free style transfer.
+    details: |2+
+
+  - title: 'SaMam: Style-aware State Space Model for Arbitrary Image Style Transfer'
+    author: Hongda Liu, Longguang Wang, Ye Zhang, Ziru Yu, Yulan Guo
+    organization: Sun Yat-Sen University, Aviation University of Air Force
+    date: '20250320'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2503.15934
+    code_url: https://github.com/Chernobyllight/SaMam
+    name: SaMam
+    category: 'Generation: Stylization'
+    summary: |2
+
+      Introduce <b>Mamba model</b> into style transfer to improve efficiency.
+    details: |2+
+
+  - title: 'Style-Editor: Text-driven Object-centric Style Editing'
+    author: Jihun Park, Jongmin Gim, Kyoungmin Lee, Seunghun Lee, Sunghoon Im
+    organization: Republic of Korea
+    date: '20240816'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2408.08461
+    name: Style-Editor
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It achieves <b>object-level text-driven style editing</b> by identifying an object patches using CLIP and editing its style while preserving the background.
+    details: |2+
+
+  - title: 'StyleStudio: Text-Driven Style Transfer with Selective Control of Style Elements'
+    author: Mingkun Lei, Xue Song, Beier Zhu, Hao Wang, Chi Zhang
+    organization: Westlake University, Fudan University, Nanyang Technological University, The Hong Kong University of Science and Technology (Guangzhou)
+    date: '20241211'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2412.08503
+    code_url: https://github.com/Westlake-AGI-Lab/StyleStudio
+    name: StyleStudio
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It improves text-driven style transfer by <b>cross-modal AdaIN</b>, teacher model guidance, and <b>style CFG</b> with negative style images.
+    details: |2+
+
+  - title: 'K-LoRA: Unlocking Training-Free Fusion of Any Subject and Style LoRAs'
+    author: Ziheng Ouyang, Zhen Li, Qibin Hou
+    organization: Nankai University
+    date: '20250225'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2502.18461
+    code_url: https://github.com/HVision-NKU/K-LoRA
+    name: K-LoRA
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It introduces <b>training-free LoRA fusion</b> that compares Top-K elements in LoRAs to be fused and determines which LoRA to select for optimal fusion.
+    details: |2+
+
+  - title: 'V-Stylist: Video Stylization via Collaboration and Reflection of MLLM Agents'
+    author: Zhengrong Yue, Shaobin Zhuang, Kunchang Li, Yanbo Ding, Yali Wang
+    organization: Shanghai Jiao Tong University, Shanghai AI Laboratory, Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences, University of Chinese Academy of Sciences
+    date: '20250315'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2503.12077
+    code_url: https://github.com/ZhengrongYue/V-Stylist
+    name: V-Stylist
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It enables video stylization with <b>open style prompt</b> by searching a style tree and asigning the obtained weights to ControlNets.
+    details: |2
+
+      <ul>
+          <li> <b>Video parser</b> splits the input video into shots and generates their text prompts.
+          <li> <b>Style parser</b> search the matched style ControlNet model combination from a style tree.
+          <li> <b>Style artist</b> renders the video shots by applying the matched style ControlNet models.
+      </ul>
+  - title: 'OmniStyle: Filtering High Quality Style Transfer Data at Scale'
+    author: Ye Wang, Ruiqi Liu, Jiang Lin, Fei Liu, Zili Yi, Yilin Wang, Rui Ma
+    organization: Jilin University, Nanjing University, ByteDance, Adobe, Engineering Research Center of Knowledge-Driven Human-Machine Intelligence, MOE, China
+    date: '20250520'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2505.14028
+    code_url: https://github.com/wangyePHD/OmniStyle
+    name: OmniStyle
+    category: 'Generation: Stylization'
+    summary: |2
+
+      It introduces a dataset consisting of <b>150K</b> content-style-stylized image triplets across <b>1,000 styles</b> with textual discriptions and instruction prompts.
+    details: |2+
+
+  - title: 'StyleMaster: Stylize Your Video with Artistic Generation and Translation'
+    author: Zixuan Ye, Huijuan Huang, Xintao Wang, Pengfei Wan, Di Zhang, Wenhan Luo
+    organization: Hong Kong University of Science and Technology, KuaiShou Technology
+    date: '20241210'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2412.07744
+    code_url: https://github.com/KwaiVGI/StyleMaster
+    name: StyleMaster
+    category: 'Generation: Stylization'
+    summary: |2+
+
+    details: |2
+
+      fig: fig1.png 900
+      cap: <b>Structure.</b> (1) <b>CLIP</b> extracts patch features and embeddings. (2) <b>Patch features</b> with less similarity with text prompt are employed to remove content infomation. (3) <b>Global projection</b>, trained by contrastive data, extracts global style from <b>CLIP embeddings</b>. (4) <b>Local and global features</b> are injected into model by cross-attention. (5) <b>Gray tile ControlNet</b> injects gray information while removing style information.
+  - title: 'Yan: Foundational Interactive Video Generation'
+    author: Deheng Ye, Fangyun Zhou, Jiacheng Lv, Jianqi Ma, Jun Zhang, Junyan Lv, Junyou Li, Minwen Deng, Mingyu Yang, Qiang Fu, Wei Yang, Wenkai Lv, Yangbin Yu, Yewen Wang, Yonghang Guan, Zhihao Hu, Zhongbin Fang, Zhongqian Sun
+    organization: Tencent
+    date: '20250812'
+    venue: arXiv 2025
+    pdf_url: https://www.arxiv.org/pdf/2508.08601
+    name: Yan
+    category: 'Generation: Interaction'
+    summary: |2+
+
+    details: |2
+
+      <ul>
+          <li> <b>AAAI-level simulation (Yan-Sim).</b> Design a highly-compressed, low-latency 3D-VAE (32x32x2-16chan with a light decoder) coupled with a KV-cache-based shift-window denoising inference process, achieving real-time 1080P/60FPS interactive simulation.
+          <li> <b>Multi-modal generation (Yan-Gen).</b> Use autoregressive caption method to inject game-specific knowledge into open-domain, multimodal, interactive video diffusion models.
+          <li> <b>Multi-granularity editing (Yan-Edit).</b> Disentangle interactive mechanics simulation from visual rendering, enabling multi-granularity video content editing during interaction through text.
+          <li><b>Data pipeline.</b> Use agent to collect and clean data (action & image pair) in the game environment of a renowned modern 3D game (Yuanmeng Star). Use VLM and depth model to obtain prompt and depth. Both labeled and unlabled data are used for training.
+      </ul>
+      fig: fig1.png 500
+      cap: <b>Dataset comparisons.</b>
+      fig: fig2.png 550
+      cap: <b>Yan-Sim structure.</b>
+      fig: fig3.png 550
+      cap: <b>Yan-Gen structure.</b>
+      fig: fig4.png 550
+      cap: <b>Yan-Edit structure.</b>
+  - title: Flow Matching for Generative Modeling
+    author: Yaron Lipman, Ricky T. Q. Chen, Heli Ben-Hamu, Maximilian Nickel, Matt Le
+    organization: Meta AI (FAIR), Weizmann Institute of Science
+    date: '20221006'
+    venue: ICLR 2023
+    pdf_url: https://arxiv.org/pdf/2210.02747
+    name: Flow Matching
+    comment: It proposes a simple yet powerful framework for training continuous-time generative models by directly learning the vector field of an optimal transport path between data and noise, enabling fast training, stable optimization, and high sample quality. It has over 1,800 citations (as of Aug 2025).
+    category: 'Generation: Foundation Algorithms & Models'
+    jupyter_notes: FlowMatching.ipynb
+    summary: |2
+
+      It trains <b>continuous normalizing flows</b> using conditional probability paths, resulting in fast training, high sample quality, and efficient sampling.
+    details: |2+
+
+    highlight: true
+  - title: 'Genie: Generative Interactive Environments'
+    author: Jake Bruce, Michael Dennis, Ashley Edwards, Jack Parker-Holder, Yuge Shi, Edward Hughes, Matthew Lai, Aditi Mavalankar, Richie Steigerwald, Chris Apps, Yusuf Aytar, Sarah Bechtle, Feryal Behbahani, Stephanie Chan, Nicolas Heess, Lucy Gonzalez, Simon Osindero, Sherjil Ozair, Scott Reed, Jingwei Zhang, Konrad Zolna, Jeff Clune, Nando de Freitas, Satinder Singh, Tim Rocktäschel
+    organization: Google DeepMind, University of British Columbia
+    date: '20240223'
+    venue: ICML 2024
+    pdf_url: https://arxiv.org/pdf/2402.15391
+    name: Genie
+    category: 'Generation: Interaction'
+    summary: |2
+
+      It proposes a foundation world model (11B), comprising of a <b>video tokenizer</b>, an <b>autoregressive dynamics world</b>, and a <b>latent action model</b>. It is trained on 200K hours of Internet <b>gaming videos</b> without action or text labels, is controllable on frame-by-frame via a learned latent action space.
+    details: |2
+
+      <ul>
+          <li> <b>Data.</b> It is trained on 200K hours of Internet gaming videos <b>without action or text annotations</b>.
+          <li> <b>Training pipeline.</b> (1) Train the video tokenizer. (2) Co-train the latent action model and the dynamics model.
+      </ul>
+      fig: fig1.png 700
+      cap: <b>Structure.</b>
+      fig: fig2.png 400
+      cap: <b>Latent action model</b> infers the latent action between each pair of frames. It is a VQ-VAE with discrete set of codes equal the possible actions (e.g., 8). The <b>encoder</b> takes an previous frames and the next frame and outputs latent actions. The <b>decoder</b> takes all previous frames and latent actions and predicts the next frame. <b>Inference:</b> the entire LAM is discarded apart from the VQ codebook, and is replaced with user actions.
+      fig: fig3.png 400
+      cap: <b>Video tokenizer</b> converts each frame of raw video into discrete tokens.
+      fig: fig4.png 200
+      cap: <b>Dynamics model</b> takes latent action and past frame tokens and predicts the next frame. It is a decoder-only MaskGIT transformer.
+    highlight: true
+  - title: Qwen-Image Technical Report
+    author: Chenfei Wu, Jiahao Li, Jingren Zhou, Junyang Lin, Kaiyuan Gao, Kun Yan, Sheng-ming Yin, Shuai Bai, Xiao Xu, Yilei Chen, Yuxiang Chen, Zecheng Tang, Zekai Zhang, Zhengyi Wang, An Yang, Bowen Yu, Chen Cheng, Dayiheng Liu, Deqing Li, Hang Zhang, Hao Meng, Hu Wei, Jingyuan Ni, Kai Chen, Kuan Cao, Liang Peng, Lin Qu, Minggang Wu, Peng Wang, Shuting Yu, Tingkun Wen, Wensen Feng, Xiaoxiao Xu, Yi Wang, Yichang Zhang, Yongqiang Zhu, Yujia Wu, Yuxuan Cai, Zenan Liu
+    organization: Qwen Team
+    date: '20250804'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2508.02324
+    code_url: https://github.com/QwenLM/Qwen-Image
+    name: Qwen-Image
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: <b>Alibaba Qwen Team</b>'s image generation foundation model, excelling in <b>complex text rendering</b> and <b>precise image editing</b>.
+    details: "\n<ul>\n    <li> <b>Structure.</b> It employs the standard <b>MMDiT</b> structure with <b>Qwen2.5 VL</b> as the text encoder.\n    <li> <b>VAE.</b> It finetunes an <b>image decoder</b> and a <b>video decoder</b> upon <b>Wan-2.1-VAE</b> by optimizing only a reconstruction loss and a perceptual loss.\n    <li> <b>Positional embedding.</b> It introduces Multimodal Scalable RoPE (MSRoPE), a <b>diagonal</b> position encoding.\n    <li> <b>Data balance.</b> Nature: 55%. Design: 27%. People: 13%. Synthetic: 5%.\n    <li> <b>Data filtering.</b> <b>Stage 1.</b> Initial pre-training. 256p. Broken files + resolution + deduplication + NSFW. <b>Stage 2.</b> Quality improvement. Rotation + brightness + saturation + entropy + texture. <b>Stage 3.</b> Alignment improvement. Chinese CLIP + SigLIP 2 + token length. <b>Stage 4.</b> Text-rendering enhancement. Intense filter + small character filter. <b>Stage 5.</b> High-resolution refinement. 640p. Image quality + resolution + aesthetic + abnormal element. <b>Stage 6.</b> Category balance and portrait augmentation. <b>Stage 7.</b> Balanced multi-scale training. 640p and 1328p.\n    <li> <b>Data synthesis.</b> (1) Pure rendering in simple background. (2) Compositional rendering in contextual scenes. (3) Complex rendering in structured frames.\n    <li> <b>RL.</b> DPO + GRPO.\n    <li> <b>Editing.</b> Channel concatenation of the original image and the edited image. \n</ul>\nfig: fig2.png 550 fig1.png 350\ncap: <b>Structure and configuration.</b>\n"
+  - title: 'D-Fusion: Direct Preference Optimization for Aligning Diffusion Models with Visually Consistent Samples'
+    author: Zijing Hu, Fengda Zhang, Kun Kuang
+    organization: Zhejiang University, Nanyang Technological University
+    date: '20250528'
+    venue: ICML 2025
+    pdf_url: https://arxiv.org/pdf/2505.22002
+    code_url: https://github.com/hu-zijing/D-Fusion
+    name: D-Fusion
+    category: 'Generation: Reinforcement Learning'
+    summary: It constructs new winning samples that are <b>visually consistent</b> with losing samples while aligning with winning samples in <b>prompt-following</b>.
+    details: |2
+
+      <ul>
+          <li> <b>Method details.</b> (1) It extracts a mask by <b>averaging cross-attention maps</b> across all heads and blocks in the first up-sampling layer. (2) It <b>binarizes the mask</b> by applying a fixed threshold, generating segmentation of attention, i.e., the importance map for the prompt. (3) It <b>fuses the self-attention key and value</b> by applying the segmentation mask to winning samples and losing samples.
+      </ul>
+  - title: 'Follow-Your-Emoji: Fine-Controllable and Expressive Freestyle Portrait Animation'
+    author: Yue Ma, Hongyu Liu, Hongfa Wang, Heng Pan, Yingqing He, Junkun Yuan, Ailing Zeng, Chengfei Cai, Heung-Yeung Shum, Wei Liu, Qifeng Chen
+    date: '20240604'
+    venue: SIGGRAPH-Asia 2024
+    pdf_url: https://arxiv.org/pdf/2406.01900
+    code_url: https://github.com/mayuelala/FollowYourEmoji
+    name: Follow-Your-Emoji
+    category: 'Generation: Controllability'
+    summary: ''
+    details: |2
+
+      <ul>
+          <li>
+      </ul>
+  - title: 'Follow-Your-Canvas: Higher-Resolution Video Outpainting with Extensive Content Generation'
+    author: Qihua Chen, Yue Ma, Hongfa Wang, Junkun Yuan, Wenzhe Zhao, Qi Tian, Hongmei Wang, Shaobo Min, Qifeng Chen, Wei Liu
+    organization: Tencent, HKUST, USTC, Tsinghua University
+    date: '20240902'
+    venue: AAAI 2025
+    pdf_url: https://arxiv.org/pdf/2409.01055
+    code_url: https://github.com/mayuelala/FollowYourCanvas
+    name: Follow-Your-Canvas
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: It enables <b>higher-resolution</b> video outpainting with <b>extensive content</b> generation through sliding window and source video layout injection.
+    details: |2
+
+      fig: fig1.png 600
+      cap: <b>Training framework.</b> An anchor window and a target window are randomly sampled, mimicking the "source video" and "region to perform outpaint" for inference. The anchor window is injected into the model through a layout encoder, as well as a relative region embedding calculated by the positional relation between the anchor window and the target window, aligning generated layout of the target window with the anchor window.
+      fig: fig2.png 600
+      cap: <b>Inference framework.</b> The given source video is covered by N spatial windows. During each denoising step t, outpainting is performed within each window in parallel on separate GPUs to accelerate inference. The windows are then merged through Gaussian weights to get outcome at step t-1. These windows may cover layer upon layer, allowing outpainting any videos to a higher resolution without being limited by GPU memory.
+  - title: 'DanceGRPO: Unleashing GRPO on Visual Generation'
+    author: Zeyue Xue, Jie Wu, Yu Gao, Fangyuan Kong, Lingting Zhu, Mengzhao Chen, Zhiheng Liu, Wei Liu, Qiushan Guo, Weilin Huang, Ping Luo
+    organization: ByteDance Seed, The University of Hong Kong
+    date: '20250512'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2505.07818
+    code_url: https://github.com/XueZeyue/DanceGRPO
+    name: DanceGRPO
+    category: 'Generation: Reinforcement Learning'
+    summary: It reformulates ODE sampling to <b>SDE</b>, and adapts <b>GRPO</b> to visual generation, validating on different models, tasks, and reward models.
+    details: |2
+
+      <ul>
+          <li> It <b>omits the KL regularization</b> of GRPO because it brings little benefits.
+          <li> It <b>assigns shared initialization noise</b> to samples from the same prompt to solve reward hacking and training instability.
+      </ul>
+      fig: fig1.png 550
+      cap: <b>Algorithm.</b>
+      fig: fig2.png 600
+      cap: Left: Sampling top k and bottom k with <b>best-of-N</b> improves results. Right: Training with some <b>timestep subsets</b> is potential.
+  - title: 'BrushNet: A Plug-and-Play Image Inpainting Model with Decomposed Dual-Branch Diffusion'
+    author: 'Xuan Ju, Xian Liu, Xintao Wang, Yuxuan Bian, Ying Shan, Qiang Xu '
+    organization: Tencent PCG ARC Lab, The Chinese University of Hong Kong
+    date: '20240311'
+    venue: ECCV 2024
+    pdf_url: https://arxiv.org/pdf/2403.06976
+    code_url: https://github.com/TencentARC/BrushNet
+    name: BrushNet
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: It introduces a <b>plug-and-play</b> dual-branch model and a segmentation-based inpainting training dataset <b>BrushData</b> and a benchmark <b>BrushBench</b>.
+    details: "\nfig: fig1.png 550\ncap: <b>Comparisons.</b> (a) lacks knowledge of mask boundaries. (b) struggles to obtain pure masked image features due to the text's influence. \nfig: fig2.png 550\ncap: <b>Structure.</b> (1) Use VAE to process masked image to preserve original details. (2) Masked image, mask, noisy masked image are concatenated as the input. (3) Adopt hierarchical approach to incorporate UNet features. (4) Remove text cross-attention. (5) Use blurred blending.\n"
+    highlight: true
+  - title: Training Diffusion Models with Reinforcement Learning
+    author: Kevin Black, Michael Janner, Yilun Du, Ilya Kostrikov, Sergey Levine
+    organization: University of California, Berkeley, Massachusetts Institute of Technology
+    date: '20230522'
+    venue: ICLR 2024
+    pdf_url: https://arxiv.org/pdf/2305.13301
+    code_url: https://github.com/jannerm/ddpo
+    name: DDPO
+    category: 'Generation: Reinforcement Learning'
+    summary: It applies policy gradient to diffusion models, the reward is estimated from a VLM, to improve its aesthetics.
+    details: |2+
+
+    highlight: true
+  - title: 'Preference Alignment on Diffusion Model: A Comprehensive Survey for Image Generation and Editing'
+    author: Sihao Wu, Xiaonan Si, Chi Xing, Jianhong Wang, Gaojie Jin, Guangliang Cheng, Lijun Zhang, Xiaowei Huang
+    organization: University of Liverpool, Institute of Software Chinese Academy of Sciences, University of Edinburgh, University of Bristol, University of Exeter
+    date: '20250210'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2502.07829
+    name: Survey on Pre. Ali.
+    category: 'Generation: Reinforcement Learning'
+    summary: A survey on preference alignment of image generation and editing.
+    details: |2
+
+      fig: fig1.png 700
+      cap: <b>Preference Alignment methods for Image Generation.</b>
+  - title: 'PrefPaint: Aligning Image Inpainting Diffusion Model with Human Preference'
+    author: Kendong Liu, Zhiyu Zhu, Chuanhao Li, Hui Liu, Huanqiang Zeng, Junhui Hou
+    organization: City University of Hong Kong, Yale University, Saint Francis University, Huaqiao University
+    date: '20241029'
+    venue: NeurIPS 2024
+    pdf_url: https://arxiv.org/pdf/2410.21966
+    code_url: https://github.com/Kenkenzaii/PrefPaint
+    name: PrefPaint
+    category:
+      - 'Generation: Reinforcement Learning'
+      - 'Generation: Editing & Inpainting & Outpainting'
+    summary: It trains a reward model on 51K images with human preferences, and uses it to perform reinforcement learning of diffusion models.
+    details: |2+
+
+  - title: Calibrated Multi-Preference Optimization for Aligning Diffusion Models
+    author: Kyungmin Lee, Xiahong Li, Qifei Wang, Junfeng He, Junjie Ke, Ming-Hsuan Yang, Irfan Essa, Jinwoo Shin, Feng Yang, Yinxiao Li1
+    organization: Google DeepMind, KAIST, Google, Google Research, Georgia Institute of Technology
+    date: '20250204'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2502.02588
+    name: CaPO
+    category: 'Generation: Reinforcement Learning'
+    summary: It proposes calibrated preference optimization by calculating average win-rate of each sample to other samples as the reward.
+    details: |2+
+
+  - title: Curriculum Direct Preference Optimization for Diffusion and Consistency Models
+    author: Florinel-Alin Croitoru, Vlad Hondru, Radu Tudor Ionescu, Nicu Sebe, Mubarak Shah
+    organization: University of Bucharest, Romania, University of Trento, Italy, University of Central Florida, US
+    date: '20240522'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2405.13637
+    code_url: https://github.com/CroitoruAlin/Curriculum-DPO
+    name: Curriculum DPO
+    category: 'Generation: Reinforcement Learning'
+    summary: It applies <b>curriculum learning</b> to DPO by learning from win samples and lose samples with their differences from small to large.
+    details: |2+
+
+  - title: Aesthetic Post-Training Diffusion Models from Generic Preferences with Step-by-step Preference Optimization
+    author: Zhanhao Liang, Yuhui Yuan, Shuyang Gu, Bohan Chen, Tiankai Hang, Mingxi Cheng, Ji Li, Liang Zheng
+    organization: The Australian National University, University of Liverpool, Southeast University, Microsoft, Microsoft Research Asia
+    date: '20240606'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2406.04314
+    code_url: https://github.com/RockeyCoss/SPO
+    name: SPO
+    category: 'Generation: Reinforcement Learning'
+    summary: It trains a noise-aware reward model, and constructs DPO data from noisy samples.
+    details: |2
+
+      <ul>
+          <li> <b>DPO data construcion.</b> Start from a initial noise, denoise to some steps and build DPO samples from a noise-aware reward model.
+      </ul>
+  - title: 'InPO: Inversion Preference Optimization with Reparametrized DDIM for Efficient Diffusion Model Alignment'
+    author: Yunhong Lu, Qichao Wang, Hengyuan Cao, Xierui Wang, Xiaoyin Xu, Min Zhang
+    organization: Zhejiang University, Shanghai Institute for Advanced Study-Zhejiang University
+    date: '20250324'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2503.18454
+    code_url: https://github.com/JaydenLyh/InPO
+    name: InPO
+    category: 'Generation: Reinforcement Learning'
+    summary: Instead of maximizing accumulative rewards, it only maximizes the reward of the latent variable that have a strong correlation with the data.
+    details: |2
+
+      fig: fig2.png 300
+      cap: It is more <b>trainig efficient</b>.
+  - title: Personalized Preference Fine-tuning of Diffusion Models
+    author: Meihua Dang, Anikait Singh, Linqi Zhou, Stefano Ermon, Jiaming Song
+    organization: Stanford University, Luma AI
+    date: '20250111'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2501.06655
+    name: PPD
+    category: 'Generation: Reinforcement Learning'
+    summary: It introduces <b>personalized preference alignment</b> by injecting VLM embeddings into diffusion models through cross-attention.
+    details: |2
+
+      <ul>
+          <li> <b>VLM.</b> Use LLaVA-OneVision to extract user preference embeddings from few-shot pairwise preference examples for each user.
+          <li> <b>Cross-attention.</b> Similar to IP-Adapter, it injects VLM-based user embeddin via cross-attention, and adds the embeddings to text embeddings.
+      </ul>
+      fig: fig1.png 450
+      cap: <b>Structure.</b> Only the cross-attention module is optimized.
+  - title: 'VideoDPO: Omni-Preference Alignment for Video Diffusion Generation'
+    author: Runtao Liu, Haoyu Wu, Zheng Ziqiang, Chen Wei, Yingqing He, Renjie Pi, Qifeng Chen
+    organization: HKUST, Renmin University of China, Johns Hopkins University
+    date: '20241218'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2412.14167
+    code_url: https://github.com/CIntellifusion/VideoDPO
+    name: VideoDPO
+    category: 'Generation: Reinforcement Learning'
+    summary: It builds a metric for quality and semantic alignment evaluation, then uses the metric to build DPO data for preference alignment of video generation.
+    details: |2+
+
+  - title: 'RDPO: Real Data Preference Optimization for Physics Consistency Video Generation'
+    author: Wenxu Qian, Chaoyue Wang, Hou Peng, Zhiyu Tan, Hao Li, Anxiang Zeng
+    organization: Fudan University, Shopee Inc
+    date: '20250623'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2506.18655
+    name: RDPO
+    category: 'Generation: Reinforcement Learning'
+    summary: It constructs positive DPO data by <b>reversing-then-denoising real data</b> to overcome the large domain gap between synthetic data and real data.
+    details: "\n<ul>\n    <li> <b>DPO data construction.</b> Positive samples: reversing-then-denoising real data. Negative samples: denoising from noise.\n    <li> <b>Rejection sampling.</b> select the instance that is closest (L2 distance) to model's own sample at the same timestep.\n    <li> <b>Progressive training.</b> Apply reversing-then-denoising sequentially from heavy to light. 8K preference pairs.\n</ul>\nfig: fig1.png 500\ncap: <b>Construct DPO samples</b> (left) & <b>progressive training</b> (right).\nfig: fig2.png 650\ncap: Apply <b>SFT loss</b> to DPO loss improves performance. \nfig: fig3.png 700\ncap: Mix <b>human-annotation data</b> improves performance.\nfig: fig4.png 350\ncap: <b>Progressive training.</b> Stage 1 requres larger reversing/sampling steps, e.g., 42. Stage 2 requries smaller, e.g., 40.\nfig: fig5.png 700\ncap: <b>Progressive training</b> is effective.\n"
+  - title: 'Lumos-1: On Autoregressive Video Generation from a Unified Model Perspective'
+    author: Hangjie Yuan, Weihua Chen, Jun Cen, Hu Yu, Jingyun Liang, Shuning Chang, Zhihui Lin, Tao Feng, Pengwei Liu, Jiazheng Xing, Hao Luo, Jiasheng Tang, Fan Wang, Yi Yang
+    organization: DAMO Academy, Alibaba Group, Hupan Lab, Zhejiang University, Tsinghua University
+    date: '20250711'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2507.08801
+    code_url: https://github.com/alibaba-damo-academy/Lumos
+    name: Lumos-1
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: It employs LLM architecture to achieve auto-regressive video generation with some improvement on RoPE and masking strategy.
+    details: |2
+
+      <ul>
+          <li><b>Structure:</b> Llama with a new RoPE strategy to model multimodal spatiotemporal dependency.
+          <li><b>Tokenizer:</b> Cosmos's visual tokenizer with spatiotemporal compression rates of 8x8x4; Chameleon's text encoder.
+          <li> <b>Model size:</b> 0.5B, 1B, and 3B.
+      </ul>
+  - title: 'MAGI-1: Autoregressive Video Generation at Scale'
+    author: Hansi Teng, Hongyu Jia, Lei Sun, Lingzhi Li, Maolin Li, Mingqiu Tang, Shuai Han, Tianning Zhang, W.Q. Zhang, Weifeng Luo, Xiaoyang Kang, Yuchen Sun, Yue Cao, Yunpeng Huang, Yutong Lin, Yuxin Fang, Zewei Tao, Zheng Zhang, Zhongshu Wang, Zixun Liu, Dai Shi, Guoli Su, Hanwen Sun, Hong Pan, Jie Wang, Jiexin Sheng, Min Cui, Min Hu, Ming Yan, Shucheng Yin, Siran Zhang, Tingting Liu, Xianping Yin, Xiaoyu Yang, Xin Song, Xuan Hu, Yankai Zhang, Yuqiao Li
+    organization: Sand AI
+    date: '20250519'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2505.13211
+    code_url: https://github.com/SandAI-org/Magi-1
+    name: Magi-1
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: It achieves <b>chunk-wise</b> auto-regressive video generation by employing transformer-based VAE, progressive-noise causal modeling with flow matching, advanced attention/distillation techniques to enable streaming-capable video generation with fixed peak inference costs regardless of video length.
+    details: "\n<ul>\n    <li> <b>VAE training.</b> (1) Stage 1: use training data of fixed-size videos with 256x256 resolution and 16 frames; (2) Stage 2: use mixed training data of images and 16-frame videos, and use variable resolution and aspect ratio. Training loss: <i>L = L_1 + L_KL + L_LPIPS + L_GAN</i>.\n    <li> <b>VAE inference.</b> Use sliding window with size of 256x256 with a stride of 192 (25% overlap). Sliding windows are not applied to temporal frames.\n    <li> <b>Model structure.</b> It is based on DiT with some modifications: (1) Use T5 as the text encoder; (2) Use learnable 3D RoPE to encode temporal positional information; (3) Use new kernel called Flexible-Flash-Attention; (4) Replace multi-head attention by grouped-query attention; (5) Apply LayerNorm before and after FFN and use SwiGLU to stabilize training; (6) Constrain scaling value of AdaLN to [-1, 1] to stabilize training.\n    <li> <b>Guidance.</b> <i>output = (1 - w_prev) * output_current + (w_prev - w_text) * output_prev + w_text * output_prev</i> (see the paper for details).\n    <li> <b>Prompt enhancement</b> for inference. Use distilled MLLM to enhance prompts. (1) Stage 1: analyze and describe the image content; (2) Stage 2: predict the temporal evolution of the scene or objects in the first frame, such as actions, motion trajectories, and transitions.\n</ul>\nfig: fig2.png 350\ncap: <b>VAE structure.</b> Videos are compressed by 8x8 spatially and 4 temporally, generating 16-channel features.\nfig: fig3.png 450\ncap: <b>VAE performance.</b> Despite having the largest model size, its encoding and decoding is efficient. \nfig: fig1.png 800\ncap: <b>Model design.</b> It generates videos chunk-by-chunk, where a chunk (usually 24 frames) is denoised to a certain extent and the next chunk begins generation (conditioned on all preceding chunks). The earlier chunks are cleaner than later ones. It allows multiple chunks (often 4) to be processed concurrently. It unifies text-to-video, video continuation, and image-to-video generation.\nfig: fig4.png 400 fig5.png 400\ncap: <b>Model structure.</b>\nfig: fig6.png 400\ncap: <b>Data processing pipeline.</b> (1) Video quality: DOVER technical score; (2) Aesthetics: LAION aesthetic; (3) Overexposed & underexposed: average brightness on HSI color space; (4) Motion: RAFT optical flow model with saliency detection model; (5) Camera movement stability: evaluate consistency of optical flow between adjacent frames; (6) Slides movement: if divergence of optical flow remains consistently low; (7) Border: edge detection & Hough transform; (8) Text; (9) Logo: Florence-2; (10) Corner face: face detection model; (11) Transition: use CLIP to compute similarity between adjacent keyframes; (12) Deduplication: use pairwise similarity scores from CLIP & DINOv2; (13) Complex filtering: MLLM.\nfig: fig7.png 400\ncap: <b>Attributes for caption instruction.</b> Captioning by two stages: answer predefined attributes & final caption based on observed attributes. Based on the advantages of auto-regressive video generation, it applies fine-grained second-by-second descriptions for each video clip.\nfig: fig8.png 300\ncap: <b>Data configuration.</b>\n"
+  - title: 'Step1X-Edit: A Practical Framework for General Image Editing'
+    author: Step1X-Image Team
+    organization: StepFun
+    date: '20250424'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2504.17761
+    code_url: https://github.com/stepfun-ai/Step1X-Edit/
+    name: Step1X-Edit
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: It uses a <b>MLLM to generate condition embedding</b> of the reference image and instructions for image generation editing.
+    details: |2
+
+      <ul>
+          <li> <b>Training date:</b> 1M images & 20M instruction-image data.
+          <li><b>Data construction.</b> (1) Subject addition and removal; (2) Subject replacement and background change; (3) Color Alteration and material modification; (4) Text modification; (5) Motion change; (6) Portrait editing; (7) Style transfer; (8) Tone transformation.
+          <li><b>Caption strategy.</b> Redundancy-enhanced annotation: multi-round annotation strategy. Stylized annotation via contextual examples: use style-aligned examples as contextual references. Use GPT-4o to annotate data for training in-house annotators. Bilingual: Chinese and English.
+      </ul>
+      fig: fig1.png 600
+      cap: <b>Structure.</b> <b>Multimodal large language model (Qwen-VL)</b> is used to generate embeddings of instruction and reference images.
+  - title: Denoising Diffusion Implicit Models
+    author: Jiaming Song, Chenlin Meng, Stefano Ermon
+    organization: Stanford University
+    date: '20201006'
+    venue: ICLR 2021
+    pdf_url: https://arxiv.org/pdf/2010.02502
+    code_url: https://github.com/ermongroup/ddim/
+    name: DDIM
+    category: 'Generation: Foundation Algorithms & Models'
+    jupyter_notes: DDIM.ipynb
+    summary: Accelerate sampling of diffusion models by introducing a <b>non-Markovian, deterministic process</b> that achieves high-quality results with fewer steps while preserving training consistency.
+    details: |2
+
+      fig: fig1.png 500
+      cap: Comparisons between <b>Markovian DDPM</b> (left) and <b>non-Markovian DDIM</b> (right).
+      fig: fig2.png 250
+      cap: <b>Accelerate sampling</b> by skipping time steps.
+    highlight: true
+  - title: Improving Video Generation with Human Feedback
+    author: Jie Liu, Gongye Liu, Jiajun Liang, Ziyang Yuan, Xiaokun Liu, Mingwu Zheng, Xiele Wu, Qiulin Wang, Wenyu Qin, Menghan Xia, Xintao Wang, Xiaohong Liu, Fei Yang, Pengfei Wan, Di Zhang, Kun Gai, Yujiu Yang, Wanli Ouyang
+    organization: CUHK, Tsinghua University, Kuaishou Technology, Shanghai Jiao Tong University, Shanghai AI Lab
+    date: '20250123'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2501.13918
+    code_url: https://github.com/KwaiVGI/VideoAlign/
+    name: Flow-RWR, Flow-DPO
+    category: 'Generation: Reinforcement Learning'
+    summary: It introduces a human preference video dataset, and adapts diffusion-based reinforcement learning to flow-based video generation models.
+    details: |2+
+
+  - title: Can We Generate Images with CoT? Let's Verify and Reinforce Image Generation Step by Step
+    author: Ziyu Guo, Renrui Zhang, Chengzhuo Tong, Zhizheng Zhao, Peng Gao, Hongsheng Li, Pheng-Ann Heng
+    organization: CUHK, Peking University, Shanghai AI Lab
+    date: '20250123'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2501.13926
+    code_url: https://github.com/ZiyuGuo99/Image-Generation-CoT/
+    name: PARM
+    category: 'Generation: Inference-Time Improvement'
+    summary: It applies the idea of <b>Chain-of-Thought</b> into image generation and combines it with reinforcement learning to further improve performance.
+    details: |2
+
+      fig: fig1.png 600
+      cap: <b>Strategy comparisons.</b> ORM is coarse, PRM does not know when to make decision, PARM combines them.
+      fig: fig2.png 250
+      cap: It is observed that <b>self-correction</b> also works in image generation by fine-tuning Show-o.
+  - title: Is Noise Conditioning Necessary for Denoising Generative Models?
+    author: Qiao Sun, Zhicheng Jiang, Hanhong Zhao, Kaiming He
+    organization: MiT
+    date: '20250218'
+    venue: ICML 2025
+    pdf_url: https://arxiv.org/pdf/2502.13129
+    name: uEDM
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: Theoretical and empirical analysis on denoising diffusion models <b>without a timestep input</b> for image generation.
+    details: |2
+
+      <ul>
+          <li> Many denoising generative models perform <b>robustly</b> even in the absence of noise conditioning.
+          <li> <b>Flow</b>-based ones can even produce <b>improved results</b> without noise conditioning.
+      </ul>
+  - title: 'InstructVideo: Instructing Video Diffusion Models with Human Feedback'
+    author: Hangjie Yuan, Shiwei Zhang, Xiang Wang, Yujie Wei, Tao Feng, Yining Pan, Yingya Zhang, Ziwei Liu, Samuel Albanie, Dong Ni
+    organization: Zhejiang University, Alibaba Group, Tsinghua University, Singapore University of Technology and Design, Nanyang Technological University, University of Cambridge
+    date: '20231219'
+    venue: CVPR 2024
+    pdf_url: https://arxiv.org/pdf/2312.12490
+    code_url: https://github.com/ali-vilab/VGen/
+    name: InstructVideo
+    category: 'Generation: Reinforcement Learning'
+    summary: It uses HPS v2 to provide reward feedback and train video generation models in an editing manner.
+    details: |2+
+
+  - title: Optimizing Prompts for Text-to-Image Generation
+    author: Yaru Hao, Zewen Chi, Li Dong, Furu Wei
+    organization: Microsoft Research
+    date: '20221219'
+    venue: NeurIPS 2023
+    pdf_url: https://arxiv.org/pdf/2212.09611
+    code_url: https://github.com/microsoft/LMOps/
+    name: promptist
+    category: 'Generation: Reinforcement Learning'
+    summary: It uses <b>LLM to refine prompts</b> for preference-aligned image generation by taking relevance and aesthetics as rewards.
+    details: |2
+
+      fig: fig1.png 500
+      cap: <b>Training pipeline.</b> (1) Fine-tune a language model (LM) to learn to optimize prompts; (2) Further fine-tune LM with PPO.
+  - title: Ideas in Inference-time Scaling can Benefit Generative Pre-training Algorithms
+    author: Jiaming Song, Linqi Zhou
+    organization: Luma AI
+    date: '20250310'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2503.07154
+    name: Inference can Beat Pretraining
+    category: 'Generation: Inference-Time Improvement'
+    summary: Analyze generative pre-training from an <b>inference-first</b> idea, and scaling inference from a perspective of scaling sequence length & refinement steps.
+    details: |2
+
+      <ul>
+          <li> Pre-training algorithms should have <b>inference-scalability</b> in sequence length and refinement steps.
+          <li> Algorithms should scale training efficiently by <b>reduing inference computation</b>.
+          <li> One should verify whether the model has <b>enough capacity</b> to represent the target distribution during inference.
+          <li> <b>Not scalable in either sequence length or refinement steps:</b> VAE, GAN, Normalizing Flows.
+          <li> <b>Scalable in sequence length but not refinement steps:</b> GPT, PixelCNN, MaskGiT, VAR.
+          <li> <b>Scalable in refinement steps but not in sequence length:</b> diffusion models, energy-based models, consistency models.
+          <li> <b>Scalable in both, with sequence length in the outer loop:</b> AR-Diffusion, Rolling diffusion, MAR.
+          <li> <b>Scalable in both, with refinement steps in the outer loop:</b> autoregression distribution smoothing.
+      </ul>
+  - title: Evaluating Text-to-Visual Generation with Image-to-Text Generation
+    author: Zhiqiu Lin, Deepak Pathak, Baiqi Li, Jiayao Li, Xide Xia, Graham Neubig, Pengchuan Zhang, Deva Ramanan
+    organization: Crnegie Mellon University, Meta
+    date: '20240401'
+    venue: ECCV 2024
+    pdf_url: https://arxiv.org/pdf/2404.01291
+    code_url: https://github.com/linzhiqiu/t2v_metrics/
+    name: VQAScore
+    category: 'Generation: Datasets & Evaluation'
+    summary: 'VQAScore: alignment probability of "yes" answer from a VQA model (CLIP-FlanT5); GenAI-Bench: 1600 prompts for image generation evaluation.'
+    details: |2+
+
+  - title: 'T2V-CompBench: A Comprehensive Benchmark for Compositional Text-to-video Generation'
+    author: Kaiyue Sun, Kaiyi Huang, Xian Liu, Yue Wu, Zihan Xu, Zhenguo Li, Xihui Liu
+    organization: The University of Hong Kong, The Chinese University of Hong Kong, Huawei Noah's Ark Lab
+    date: '20240719'
+    venue: T2V-CompBench
+    pdf_url: https://arxiv.org/pdf/2407.14505
+    code_url: https://github.com/KaiyueSun98/T2V-CompBench/
+    name: T2V-CompBench
+    category: 'Generation: Datasets & Evaluation'
+    summary: 'Evaluate compositional video generation capability: consistent attribute, dynamic attribute, spatial relationships, motion, action, object interactions, numeracy.'
+    details: |2
+
+      <ul>
+          <li> Find nouns and verbs by identifying them using WordNet from <b>Pika Discord channels</b>, used to generate prompts by GPT-4.
+          <li> <b>Consistent attribute binding:</b> two objects, two attributes, and at least one active verb from color, shape, texture, and human-related attributes.
+          <li> <b>Dynamic attribute binding:</b> color and light change, shape and size change, texture change, combined change.
+          <li> <b>Spatial relationships:</b> two objects with spatial relationships like "on the left of".
+          <li> <b>Motion binding:</b> one or two objects with specified moving direction like "leftwards".
+          <li> <b>Action binding:</b> bind actions to corresponding objects.
+          <li> <b>Object interactions:</b> dynamic interactions like pysical interactions.
+          <li> <b>Generative numeracy:</b> a specific number of objects.
+          <li> <b>Video LLM-based metrics (Grid-LLaVa)</b> is used for evaluating consistent attribute binding, action binding, object interactions.
+          <li> <b>Image LLM-based metrics (LLaVa)</b> is used for evaluating dynamic attribute binding.
+          <li> <b>Grounding DINO</b> is used for evaluating spatial relationships and numeracy.
+          <li> <b>Grounding SAM + DOT</b> is used for evaluating motion binding.
+      </ul>
+      fig: fig1.png 800
+      cap: <b>Categories (left), evaluation methods (middle), and benchmarking model performance (right).</b>
+  - title: 'Zigzag Diffusion Sampling: Diffusion Models Can Self-Improve via Self-Reflection'
+    author: Lichen Bai, Shitong Shao, Zikai Zhou, Zipeng Qi, Zhiqiang Xu, Haoyi Xiong, Zeke Xie
+    organization: The Hong Kong University of Science and Technology (Guangzhou), Mohamed bin Zayed University of Artificial Intelligence, Baidu Inc
+    date: '20241214'
+    venue: ICLR 2025
+    pdf_url: https://arxiv.org/pdf/2412.10891
+    code_url: https://github.com/xie-lab-ml/Zigzag-Diffusion-Sampling/
+    name: Z-Sampling
+    category: 'Generation: Inference-Time Improvement'
+    summary: It exploits the <b>guidance gap between denoising and inversion</b> by iteratively performing them to improve image generation quality.
+    details: |2
+
+      fig: fig2.png 300
+      cap: It capture more <b>semantics</b> by denoising more times.
+      fig: fig1.png 300
+      cap: It is more <b>efficient & effective</b> than common denoising.
+  - title: 'Understanding Diffusion Models: A Unified Perspective'
+    author: Calvin Luo
+    organization: Google Brain
+    date: '20220825'
+    venue: arXiv 2022
+    pdf_url: https://arxiv.org/pdf/2208.11970
+    name: Unified Perspective
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: Introduction to VAE, DDPM, score-based generative model, guidance from a <b>unified generative perspective</b>.
+    details: |2+
+
+  - title: Inference-Time Scaling for Diffusion Models beyond Scaling Denoising Steps
+    author: Nanye Ma, Shangyuan Tong, Haolin Jia, Hexiang Hu, Yu-Chuan Su, Mingda Zhang, Xuan Yang, Yandong Li, Tommi Jaakkola, Xuhui Jia, Saining Xie
+    organization: NYU, MIT, Google
+    date: '20250116'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2501.09732
+    name: Inference-Time Scaling Analysis
+    category: 'Generation: Inference-Time Improvement'
+    summary: Analysis on <b>inference-time scaling</b> of diffusion models for image generation from the axes of <b>verifiers</b> and <b>algorithms</b>.
+    details: |2
+
+      <ul>
+          <li>Use some <b>verifiers</b> to provide feedback: FID, IS, CLIP, DINO; Aesthetic Score Predictor, CLIPScore, ImageReward, Ensemble.</li>
+          <li>Use some <b>algorithms</b> to find better noise: Random Search, Zero-Order Search, Search Over Paths.</li>
+          <li><b>Random Search:</b> run using different initial random noise and select the best final result by the verifier.</li>
+          <li><b>Zero-Order Search:</b> run under different random noise around a pivot noise and select the best final result by the verifier, the best one is then served as a new pivot for next round search.</li>
+          <li><b>Search Over Paths:</b> run under different random noise to a specific step, sample noises for each noisy sample and simulate forward process, then perform denoising and select the best candiate using the verifier, continue this process until finish denoising.</li>
+          <li><b>Scaling through search</b> leads to substantial improvement across model sizes.</li>
+          <li>No single <b>verifier-algorithm configuration</b> is universally optimal.</li>
+          <li><b>Inference-time search</b> further improves performance of the model which has already been fine-tuned.</li>
+          <li><b>Fewer denoising steps but more searching iterations</b> enables efficient convergence but lower final performance.</li>
+          <li>With a fixed inference compute budget, performing <b>search on small models</b> can outperform larger models without search.</li>
+      </ul>
+      fig: fig1.png 400
+      cap: <b>Scale with search</b> is more effective than scale with denoising steps.
+      fig: fig2.png 400
+      cap: <b>Random Search performs the best</b> because it has larger space that converges the fastest.
+    highlight: true
+  - title: Diffusion Model Alignment Using Direct Preference Optimization
+    author: Bram Wallace, Meihua Dang, Rafael Rafailov, Linqi Zhou, Aaron Lou, Senthil Purushwalkam, Stefano Ermon, Caiming Xiong, Shafiq Joty, Nikhil Naik
+    organization: Salesforce AI, Stanford University
+    date: '20231121'
+    venue: CVPR 2024
+    pdf_url: https://arxiv.org/pdf/2311.12908
+    code_url: https://github.com/SalesforceAIResearch/DiffusionDPO/
+    name: Diffusion-DPO
+    category: 'Generation: Reinforcement Learning'
+    jupyter_notes: Diffusion-DPO.ipynb
+    summary: It adapts <b>Direct Preference Optimization (DPO)</b> from large language models to diffusion models.
+    details: |2
+
+      <ul>
+          <li> <b>Model & dataset.</b> It trains SD1.5 and SDXL1.0 on <i>Pick-a-Pic</i> human preference data consisting of 850K pairs from 59K unique prompts.
+          <li> <b>Evaluations</b> are performed on Pick-a-Pic validation set, Partiprompt, and HPS v2.
+      </ul>
+    highlight: true
+  - title: Fast High-Resolution Image Synthesis with Latent Adversarial Diffusion Distillation
+    author: Axel Sauer, Frederic Boesel, Tim Dockhorn, Andreas Blattmann, Patrick Esser, Robin Rombach
+    organization: Stability AI
+    date: '20240318'
+    venue: SIGGRAPH Asia 2024
+    pdf_url: https://export.arxiv.org/pdf/2403.12015
+    name: LADD
+    category: 'Generation: Acceleration'
+    summary: It performs distillation of diffusion models in <b>latent space</b> using <b>teacher-synthetic data</b> and optimizing adversarial loss with <b>teacher as discriminator</b>.
+    details: |2
+
+      fig: fig1.png 500
+      cap: <b>ADD:</b> (1) An adversarial loss for deceiving a discriminator (DINO v2); (2) A distillation loss for matching denoised output to that of a teacher. <b>The proposed LADD:</b> (1) Use <i>teacher-generated images</i> as the student input; (2) Use <i>the teacher</i> as the discrinimator. <b>Advantages:</b> (1) It is <i>efficient</i> to distill model in latent space; (2) Diffusion model as the discriminator provides <i>noise-level feedback</i>, handles <i>multi-aspect ratio data</i>.
+      fig: fig2.png 700
+      cap: (1) Training on <b>synthetic data</b> works better than real data. (2) Training on synthetic data only needs the <b>adversarial loss</b>. CS: CLIPScore.
+      fig: fig3.png 700
+      cap: Training using <b>LADD performs better than LCM</b>.
+      fig: fig4.png 700
+      cap: <b>Student model size</b> significant impacts performance, while the benefits of teacher models and data quality plateau.
+      fig: fig5.png 500
+      cap: Use LoRA for DPO-traning, and apply <b>DPO-LoRA</b> after LADD training.
+    highlight: true
+  - title: 'GenEval: An Object-Focused Framework for Evaluating Text-to-Image Alignment'
+    author: Dhruba Ghosh, Hanna Hajishirzi, Ludwig Schmidt
+    organization: University of Washington, Allen Institute for AI, LAION
+    date: '20231017'
+    venue: NeurIPS 2023
+    pdf_url: https://arxiv.org/pdf/2310.11513
+    code_url: https://github.com/djghosh13/geneval/
+    name: GenEval
+    category: 'Generation: Datasets & Evaluation'
+    summary: An <b>object-focused</b> framework for image generation evaluation.
+    details: |2
+
+      fig: fig1.png 600
+      cap: <b>GenEval pipeline.</b> Detect objects using Mask2Former detector and evaluate attributes of them.
+      fig: fig2.png 550
+      cap: <b>Evaluation perspectives.</b>
+  - title: 'VBench: Comprehensive Benchmark Suite for Video Generative Models'
+    author: Ziqi Huang, Yinan He, Jiashuo Yu, Fan Zhang, Chenyang Si, Yuming Jiang, Yuanhan Zhang, Tianxing Wu, Qingyang Jin, Nattapol Chanpaisit, Yaohui Wang, Xinyuan Chen, Limin Wang, Dahua Lin, Yu Qiao, Ziwei Liu
+    organization: Nanyang Technological University, Shanghai Artificial Intelligence Laboratory, The Chinese University of Hong Kong, Nanjing University
+    date: '20231129'
+    venue: CVPR 2024
+    pdf_url: https://arxiv.org/pdf/2311.17982
+    code_url: https://github.com/Vchitect/VBench/
+    name: Vbench
+    category: 'Generation: Datasets & Evaluation'
+    summary: It evaluates video generation from 16 dimensions within the perspectives of video quality and video-prompt consistency.
+    details: |2
+
+      <ul>
+          <li> <b>Content Categories:</b> animal, architecture, food, human, lifestyle, plant, scenary, vehicles.
+          <li> <b>Temporal quality-subject consistency:</b> DINO feature similarity across frames.
+          <li> <b>Temporal quality-background consistency:</b> CLIP feature similarity across frames.
+          <li> <b>Temporal quality-temporal flickering:</b> mean absolute difference across frames.
+          <li> <b>Temporal quality-motion smoothness:</b> use video frame interpolation model to evaluate motion smoothness.
+          <li> <b>Temporal quality-dynamic degree:</b> use RAFT to estimate degree of dynamics.
+          <li> <b>Frame-wise quality-aesthetic quality:</b> use LAION aesthetic predictor.
+          <li> <b>Frame-wise quality-imaging quality:</b> use MUSIQ image quality predictor.
+          <li> <b>Semantics-object class:</b> use GRiT to detect classes.
+          <li> <b>Semantics-multiple objects:</b> detect success rate of generating all objects.
+          <li> <b>Semantics-human action:</b> use UMT to detect specific actions.
+          <li> <b>Semantics-color:</b> use GRiT for color captioning.
+          <li> <b>Semantics-spatial relationship:</b> use rule-based evaluation.
+          <li> <b>Semantics-scene:</b> use Tag2Text for scene captioning.
+          <li> <b>Style-appearance style:</b> use CLIP feature similarity.
+          <li> <b>Style-temporal style:</b> use ViCLIP to calculate video feature and temporal style description feature similarity.
+          <li> <b>Overall consistency:</b> use ViCLIP to evaluate overall semantics and style consistency.
+      </ul>
+    highlight: true
+  - title: 'T2I-CompBench: A Comprehensive Benchmark for Open-world Compositional Text-to-image Generation'
+    author: Kaiyi Huang, Kaiyue Sun, Enze Xie, Zhenguo Li, Xihui Liu
+    organization: The University of Hong Kong, Huawei Noah's Ark Lab
+    date: '20230712'
+    venue: NeurIPS 2023
+    pdf_url: https://arxiv.org/pdf/2307.06350
+    code_url: https://github.com/Karine-Huang/T2I-CompBench/
+    name: T2I-CompBench
+    category: 'Generation: Datasets & Evaluation'
+    summary: It uses 6000 prompts to evaluate model capability on compositional generation, including attribute binding, object relationship, complex compositions.
+    details: |2
+
+      <ul>
+          <li> <b>Attribute binding prompts:</b> at least two objects with two attributes from color, shape, texture.
+          <li> <b>Object relationship prompts:</b> at least two objects with spatial relationship or non-spatial relationship.
+          <li> <b>Complex compositions prompts:</b> more than two objects or more than two sub-categories.
+      </ul>
+      fig: fig1.png 700
+      cap: <b>Evaluation methods.</b> Use disentangled BLIP-VQA to evaluate attribute binding, UniDet-based metric to evaluate spatial relationship, CLIPScore to evaluate non-spatial relationship, and 3-in-1 metric (average score of the three metrics) to evaluate complex compositions.
+  - title: 'CLIPScore: A Reference-free Evaluation Metric for Image Captioning'
+    author: Jack Hessel, Ari Holtzman, Maxwell Forbes, Ronan Le Bras, Yejin Choi
+    organization: Allen Institute for AI, University of Washington
+    date: '20210418'
+    venue: EMNLP 2021
+    pdf_url: https://arxiv.org/pdf/2104.08718
+    code_url: https://github.com/jmhessel/clipscore
+    name: CLIPScore
+    category: 'Generation: Datasets & Evaluation'
+    summary: It proposes a reference-free metric mainly focusing on semantic alignment for image generation evaluation.
+    details: |2
+
+      <ul>
+          <li> It calculates the <b>cosine similarity between a caption and an image</b>, multiplying the result by 2.5 (some use 1.).
+          <li> It is <b>sensitive</b> to adversarially constructed image captions.
+          <li> It <b>generalizes well</b> on never-before-seen images.
+          <li> It frees from the shortcomings of <b>n-gram matching</b> that disfavors good captions with new words and favors captions with familiar words.
+      </ul>
+    highlight: true
+  - title: 'Pick-a-Pic: An Open Dataset of User Preferences for Text-to-Image Generation'
+    author: Yuval Kirstain, Adam Polyak, Uriel Singer, Shahbuland Matiana, Joe Penna, Omer Levy
+    organization: Tel Aviv University, Stability AI
+    date: '20230502'
+    venue: NeurIPS 2023
+    pdf_url: https://arxiv.org/pdf/2305.01569
+    code_url: https://github.com/yuvalkirstain/PickScore/
+    name: PickScore
+    category: 'Generation: Datasets & Evaluation'
+    summary: 'Pick-a-Pic: use a web app to collect user preferences; PickScore: train a CLIP-based model on preference data for image generation evaluation.'
+    details: |2+
+
+    highlight: true
+  - title: 'ImageReward: Learning and Evaluating Human Preferences for Text-to-Image Generation'
+    author: Jiazheng Xu, Xiao Liu, Yuchen Wu, Yuxuan Tong, Qinkai Li, Ming Ding, Jie Tang, Yuxiao Dong
+    organization: Tsinghua University, Zhipu AI, Beijing University of Posts and Telecommunications
+    date: '20230412'
+    venue: NeurIPS 2023
+    pdf_url: https://arxiv.org/pdf/2304.05977
+    code_url: https://github.com/THUDM/ImageReward/
+    name: ImageReward
+    category: 'Generation: Datasets & Evaluation'
+    summary: It trains BLIP on 137K human preference image pairs for preference evaluation and use it to tune models by Reward Feedback Learning (ReFL).
+    details: |2
+
+      fig: fig1.png 600
+      cap: <b>Training pipeline.</b> (1) Use DiffusionDB prompts to generate images; (2) Rank; (3) Train model on ranking data; (4) Tune model via ReFL.
+      fig: fig2.png 300
+      cap: <b>ReFL algorithm.</b>
+    highlight: true
+  - title: 'ImageReward: Learning and Evaluating Human Preferences for Text-to-Image Generation'
+    author: Jiazheng Xu, Xiao Liu, Yuchen Wu, Yuxuan Tong, Qinkai Li, Ming Ding, Jie Tang, Yuxiao Dong
+    organization: Tsinghua University, Zhipu AI, Beijing University of Posts and Telecommunications
+    date: '20230412'
+    venue: NeurIPS 2023
+    pdf_url: https://arxiv.org/pdf/2304.05977
+    code_url: https://github.com/THUDM/ImageReward/
+    name: ReFL
+    category: 'Generation: Reinforcement Learning'
+    summary: It trains BLIP on 137K human preference image pairs for preference evaluation and use it to tune models by Reward Feedback Learning (ReFL).
+    details: |2
+
+      fig: fig1.png 600
+      cap: <b>Training pipeline.</b> (1) Use DiffusionDB prompts to generate images; (2) Rank; (3) Train model on ranking data; (4) Tune model via ReFL.
+      fig: fig2.png 300
+      cap: <b>ReFL algorithm.</b>
+  - title: 'SimpleAR: Pushing the Frontier of Autoregressive Visual Generation through Pretraining, SFT, and RL'
+    author: Junke Wang, Zhi Tian, Xun Wang, Xinyu Zhang, Weilin Huang, Zuxuan Wu, Yu-Gang Jiang
+    organization: Fudan University, ByteDance Seed
+    date: '20250415'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2504.11455
+    code_url: https://github.com/wdrink/SimpleAR/
+    name: SimpleAR
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: A vanilla, open-sourced AR model (0.5B) for 1K text-to-image generation, trained by pre-training, SFT, RL (GRPO), and acceleration.
+    details: |2
+
+      <ul>
+          <li> <b>Structure.</b> Use <i>Qwen</i> structure and taking <i>Cosmos</i> as the visual tokenizer with 64K codebook and 16 ratio downsampling.
+          <li> <b>Training stages.</b> (1) Pre-training on 512 resolution; (2) SFT on 1024 resolution; (3) RL on 1024 resolution.
+          <li> Use <b>LLM initialization</b> does not improve DPG-Bench performance.
+          <li> Use <b>2D RoPE</b> will not improve performance, but is necessary for dynamic resolution generation.
+          <li> Use <b>GRPO</b> with CLIP as the reward model improves more than using HPS v2.
+      </ul>
+  - title: Seedream 3.0 Technical Report
+    author: ByteDance Seed Vision Team
+    organization: ByteDance
+    date: '20250415'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2504.11346
+    name: Seedream 3.0
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: <b>ByteDance Seed Vision Team</b>'s text-to-image generation model, improving Seedream 2.0 by representation alignment, larger reward models.
+    details: |2
+
+      <ul>
+          <li> Propose <b>defect-aware training:</b> stop gradient on watermarks, subtitles, overlaid text, mosaic pattern.
+          <li> Introduce a <b>representation alignment loss</b>: cosine distance between the feature of MMDiT and DINOv2-L.
+          <li> Find <b>scaling property of VLM-based reward model</b>.
+          <li> Other improvements: (1) mixed-resolution training; (2) <b>cross-modality RoPE</b>; (3) diverse aesthetic captions in SFT.
+      </ul>
+  - title: 'Seaweed-7B: Cost-Effective Training of Video Generation Foundation Model'
+    author: ByteDance Seaweed Team
+    organization: ByteDance
+    date: '20250411'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2504.08685
+    name: Seaweed-7B
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: <b>ByteDance Seaweed Team</b>'s text-to-video and image-to-video generation model (7B), trained on O(100M) videos using 665K H100 GPU hours.
+    details: |2
+
+      fig: fig2.png 450
+      cap: <b>VAE</b> with compression ratio of 16x16x4 (48 channels) or 8x8x4 (16 channels). Using L1 + KL + LPIPS + adversarial losses. Using an <i>image discriminator and a video discriminator</i> is better than using either one. <i>Compressing using VAE outperforms patchification in DiT, and faster</i>.
+      fig: fig3.png 200
+      cap: <b>VAE training stages</b> for images and videos.
+      fig: fig4.png 800
+      cap: Use <b>mixed resolution & durations & frame rate</b> VAE training converges slower but performs better than training on a low resolution.
+      fig: fig6.png 650
+      cap: <b>Full attention</b> enjoys training scalability.
+      fig: fig5.png 250
+      cap: <b>Figure 5.</b> The proposed <b>hybrid-stream</b> is better than dual-stream (MMDiT).
+      fig: fig7.png 500
+      cap: <b>4-stage pre-training.</b> (1) <b>Multi-task pre-training:</b> text-to-video, image-to-video, video-to-video. Input features and conditions are channel-concatenated, with a binary mask indicating the condition. Ratio of image-to-video is 20% during pre-training, and is later increased to 50%–75% for fine-tuning. (2) <b>SFT:</b> use 700K good videos and 50K top videos; The semantic alignment ability drops a little. (3) <b>RLHF:</b> lr=1e-7, beta=100, select win-lose from 4 candidates. (4) <b>Distillation:</b> trajectory segmented consistency distillation + CFG distillation + adversarial training, distill to 8 steps.
+  - title: 'Wan: Open and Advanced Large-Scale Video Generative Models'
+    author: Tongyi Wanxiang
+    organization: Alibaba
+    date: '20250326'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2503.20314
+    code_url: https://github.com/Wan-Video/Wan2.1/
+    name: Wan
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: <b>Alibaba Tongyi Wanxiang</b>'s text-to-video and image-to-video generation models (14B) with DiT structure.
+    details: |2
+
+      <p><b>Data procssing pipeline</b>. <i>Fundamental dimensions:</i> text, aesthetic, NSFW score, watermark and logo, black border, overexposure, synthetic image, blur, duration and resolution. <i>Visual quality:</i> clustering, scoring. <i>Motion quality:</i> optimal motion, medium-quality motion, static videos, camera-driven motion, low-quality motion, shaky camera footage. <i>Visual text data:</i> hundreds of millions of text-containing images by rendering Chinese characters on a pure white background and large amounts from real-world data. <i>Captions:</i> celebrities, landmarks, movie characters, object counting, OCR, camera angle and motion, categories, relational understanding, re-caption, editing instruction caption, group image description, human-annotated captions.</p>
+      fig: fig1.png 450 fig2.png 450
+      cap: <b>VAE</b> with 127M parameters and 8x8x4 compression ratio. Three-stage training: (1) Train 2D image VAE. (2) Train 3D causal VAE with 128x128x5. (3) Adversarial training with a 3D discriminator. It optimizes <i>L = L_1 loss + KL loss + L_LPIPS</i> loss. It replace all GroupNorm layers with RMSNorm layers to preserve temporal causality. It then applies <i>temporal cache</i> to save GPU memory by employing the causality.
+      fig: fig3.png 500
+      cap: <b>Architecture</b>. Text prompt encoded by umT5 is injected by cross-attention; timestep is embedded by MLP; using flow-matching loss.
+      fig: fig4.png 550
+      cap: <b>I2V framework.</b> Image condition is incorporated through channel-concat and <i>CLIP image encodings</i>.
+  - title: 'Step-Video-TI2V Technical Report: A State-of-the-Art Text-Driven Image-to-Video Generation Model'
+    author: Step-Video Team
+    organization: StepFun
+    date: '20250314'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2503.11251
+    code_url: https://github.com/stepfun-ai/Step-Video-TI2V/
+    name: Step-Video-TI2V
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: <b>StepFun</b>'s image-to-video generation model (30B), trained upon Step-Video-T2V, by incorporating conditions of motion and channel-concat image.
+    details: |2
+
+      fig: fig1.png 600
+      cap: <b>Image condition:</b> channel-concat of <i>noise-augmented</i> image condition. <b>Motion condition:</b> optical flow-based motion + timestep.
+  - title: 'Seedream 2.0: A Native Chinese-English Bilingual Image Generation Foundation Model'
+    author: ByteDance's Seed Vision Team
+    organization: ByteDance
+    date: '20250310'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2503.07703
+    name: Seedream2.0
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: <b>ByteDance Seed Vision Team</b>'s image generation model that employs MMDiT structure and has Chinese-English bilingual capability.
+    details: |2
+
+      <ul>
+          <li> <b>Structure innovation:</b> <i>self-developed bilingual LLM</i> and ByT5 as text encoders; <i>self-developed VAE</i>; learned positional embeddings on text tokens and scaled 2D RoPE on image tokens.
+          <li> <b>Training stages:</b> pre-training => continue training => supervised fine-tuning => human feedback alignment.
+          <li> <b>Inference stages:</b> user prompt => prompt engineering => text encoding => generation => refinement => output.
+          <li> <b>User experience platform:</b> Doubao & Dreamina.
+      </ul>
+      fig: fig3.png 600
+      cap: <b>Model structure</b> is similar to MMDiT (SD3).
+  - title: Unified Reward Model for Multimodal Understanding and Generation
+    author: Yibin Wang, Yuhang Zang, Hao Li, Cheng Jin, Jiaqi Wang
+    organization: Fudan University, Shanghai Innovation Institute, Shanghai AI Lab, Shanghai Academy of Artificial Intelligence for Science
+    date: '20250307'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2503.05236
+    code_url: https://github.com/CodeGoat24/UnifiedReward/
+    name: UnifiedReward
+    category: 'Generation: Datasets & Evaluation'
+    summary: It fine-tunes LLaVA-OneVision 7B for both <b>multimodal understanding & generation evaluation</b> by pairwise ranking & pointwise scoring.
+    details: ''
+  - title: 'Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model'
+    author: Step-Video Team
+    organization: StepFun
+    date: '20250214'
+    venue: arXiv 2025
+    pdf_url: https://arxiv.org/pdf/2502.10248
+    code_url: https://github.com/stepfun-ai/Step-Video-T2V/
+    name: Step-Video-T2V
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: <b>StepFun</b>'s open-sourced model (30B) with DiT structure for text-to-video generation.
+    details: |2
+
+      fig: fig1.png 500
+      cap: <b>Structure.</b> A VAE with a 8x8x4 compression ratio and 16 feature channels, bilingual text encoders (HunyuanCLIP and Step-LLM), DiT with RoPE-3D and QK-Norm, and a DPO pipeline. Text prompt conditions are incorporated into DiT by cross-attention modules.
+      fig: fig2.png 400
+      cap: <b>VAE</b> compresses videos by 16x16x8 with 16 feature channels.
+      fig: fig4.png 500
+      cap: <b>DPO framework.</b> Use training data prompts and handcrafted prompts to generate samples, which are scored through human annotation or reward models. Diffusion-DPO method is adapted here by reducing beta and increasing learning rate for achieving faster convergence.
+      fig: fig5.png 900
+      cap: <b>Data pool with 2B video-text pairs & 3.8B image-text pairs.</b> <i>Filters:</i> video segmentation, video quality assessment, aesthetic score, NSFW score, watermark detection, subtitle detection, saturation score, blur score, black border detection, video motion assessment, K-means-based concept balancing, and CLIP score alignment. <i>Video captioning:</i> short caption, dense caption, and original title.
+      fig: fig3.png 550
+      cap: <b>Pre-training stages.</b>
+  - title: 'Infinity: Scaling Bitwise AutoRegressive Modeling for High-Resolution Image Synthesis'
+    author: Jian Han, Jinlai Liu, Yi Jiang, Bin Yan, Yuqi Zhang, Zehuan Yuan, Bingyue Peng, Xiaobing Liu
+    organization: ByteDance
+    date: '20241205'
+    venue: CVPR 2025
+    pdf_url: https://arxiv.org/pdf/2412.04431
+    code_url: https://github.com/FoundationVision/Infinity/
+    name: Infinity
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: It improves VAR by applying <b>bitwise modeling</b> that makes vocabulary "infinity" to open up new possibilities of discrete text-to-image generation.
+    details: |2
+
+      fig: fig1.png 450
+      cap: <b>Viusal tokenization and quantization.</b> Instead of predicting <i>2**d</i> indices, infinite-vocabulary classifier predicts <i>d</i> bits instead.
+      fig: fig3.png 350
+      cap: <b>Infinity</b> is fast and better.
+      fig: fig4.png 300
+      cap: <b>Tokenizer</b> outperforms continuous SD VAE.
+      fig: fig5.png 450
+      cap: <b>Inifinite-Vocabulary Classifier</b> needs low memory but performs better.
+      fig: fig8.png 400
+      cap: <b>Self-correction</b> mitigates the train-test discrepancy.
+      fig: fig6.png 700
+      cap: <b>Vocabulary scales well.</b>
+      fig: fig7.png 650
+      cap: <b>Scaling up model size.</b> There is strong correlation between validation loss and evaluation metrics (as observed by Fluid).
+      fig: fig2.png 700
+      cap: Using <b>2D RoPE</b> outperforms using APE.
+  - title: 'HunyuanVideo: A Systematic Framework For Large Video Generative Models'
+    author: Hunyuan Multimodal Generation Team
+    organization: Tencent
+    date: '20241203'
+    venue: arXiv 2024
+    pdf_url: https://arxiv.org/pdf/2412.03603
+    code_url: https://github.com/Tencent/HunyuanVideo/
+    name: HunyuanVideo
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: <b>Tencent Hunyuan Team</b>'s open-sourced text-to-video and image-to-video generation model (13B) with diffusion transformer (FLUX structure).
+    details: |2+
+
+  - title: 'Movie Gen: A Cast of Media Foundation Models'
+    author: Movie Gen Team
+    organization: Meta
+    date: '20241017'
+    venue: arXiv 2024
+    pdf_url: https://arxiv.org/pdf/2410.13720
+    name: Movie Gen
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: <b>Meta Movie Gen Team</b>'s diffusion transformer-based model (30B) for 16s / 1080p / 16fps video and synchronized audio generation.
+    details: |2+
+
+  - title: 'Fluid: Scaling Autoregressive Text-to-image Generative Models with Continuous Tokens'
+    author: Lijie Fan, Tianhong Li, Siyang Qin, Yuanzhen Li, Chen Sun, Michael Rubinstein, Deqing Sun, Kaiming He, Yonglong Tian
+    organization: Google DeepMind, MIT
+    date: '20241017'
+    venue: ICLR 2025
+    pdf_url: https://arxiv.org/pdf/2410.13863
+    name: Fluid
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: It shows auto-regressive models with <b>continuous tokens beat discrete tokens counterpart</b>, and finds some empirical observations during scaling.
+    details: |2
+
+      fig: fig1.png 450
+      cap: <b>Image tokenizer:</b> discrete (VQGAN) or continuous (VAE). <b>Text tokenizer:</b> discrete (T5-XXL). <b>Model structure:</b> transformer with cross-attention modules attending to text embeddings. <b>Loss:</b> cross-entropy loss on text tokens and diffusion loss on image tokens.
+      fig: fig2.png 600
+      cap: <b>Scaling</b> behavior of validation loss on <b>model size</b>.
+      fig: fig3.png 600
+      cap: <b>Random-order masks</b> on <b>continuous image tokens</b> perform the best. Continuous prefers random order, discrete prefers raster order.
+      fig: fig4.png 550
+      cap: Random-order masks on continuous tokens <b>scale with training computes</b>.
+      fig: fig5.png 550
+      cap: Strong correlation between <b>validation loss</b> and <b>evaluation metrics</b>.
+  - title: Scaling Diffusion Transformers to 16 Billion Parameters
+    author: Zhengcong Fei, Mingyuan Fan, Changqian Yu, Debang Li, Junshi Huang
+    organization: Kunlun Inc.
+    date: '20240716'
+    venue: arXiv 2024
+    pdf_url: https://arxiv.org/pdf/2407.11633
+    code_url: https://github.com/feizc/DiT-MoE/
+    name: DiT-MoE
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: It proposes diffusion transformer (16B) with <b>Mixture-of-Experts</b> by inserting experts into DiT blocks for image generation.
+    details: |2
+
+      <ul>
+          <li> Incorporating <b>shared expert routing</b> improves convergence and performance, but the improvement is little when using more than one.
+          <li> <b>Increasing experts</b> reduces loss but introduces more loss spikes.
+      </ul>
+      fig: fig1.png 550
+      cap: <b>Structure.</b> It is built upon DiT and replaces MLP within Transformer blocks by sparsely activated mixture of MLPs as experts.
+  - title: 'Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation'
+    author: Peize Sun, Yi Jiang, Shoufa Chen, Shilong Zhang, Bingyue Peng, Ping Luo, Zehuan Yuan
+    organization: The University of Hong Kong, ByteDance
+    date: '20240610'
+    venue: arXiv 2024
+    pdf_url: https://arxiv.org/pdf/2406.06525
+    code_url: https://github.com/FoundationVision/LlamaGen/
+    name: LlamaGen
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: It shows that applying "next-token prediction" to <b>vanilla autoregressive language models</b> can achieve good image generation performance.
+    details: |2
+
+      <ul>
+          <li> It trains a <b>discrete visual tokenizer</b> that is competitive to the continuous ones, e.g., SD VAE, SDXL VAE, Consistency Decoder from OpenAI.
+          <li> It shows that <b>vanilla autoregressive models</b>, e.g., LlaMA, without visual inductive biases can serve as the basis of image generation system.
+          <li> <b>Training data.</b> 50M subset of LAION-COCO and 10M internal high aesthetics quality images.
+      </ul>
+  - title: 'Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction'
+    author: Keyu Tian, Yi Jiang, Zehuan Yuan, Bingyue Peng, Liwei Wang
+    organization: Peking University, ByteDance
+    date: '20240403'
+    venue: NeurIPS 2024
+    pdf_url: https://arxiv.org/pdf/2404.02905
+    code_url: https://github.com/FoundationVision/VAR/
+    name: VAR
+    comment: NeurIPS 2024 best paper award.
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: It improves auto-regressive image generation on image quality, inference speed, data efficiency, and scalability, by proposing <b>next-scale prediction</b>.
+    details: |2
+
+      fig: fig1.png 650
+      cap: <b>Next-scale prediction.</b> Start from 1x1 token map; at each step, it predicts the next higher-resolution token map given all previous ones.
+      fig: fig3.png 750
+      cap: <b>Training pipeline of tokenzier and VAR.</b>  Tokenzier (similar to VQ-VAE): the same architecture and training data (OpenImages), using codebook of 4096 and spatial downsample ratio of 16. VAR: the standard transformer with AdaLN; not use RoPE, SwiGLU MLP, RMS Norm.
+      fig: fig4.png 650
+      cap: <b>Encoding & decoding of tokenizer.</b>
+      fig: fig2.png 350
+      cap: VAR shows good <b>scaling behavior</b>, and significantly outperforms DiT.
+    highlight: true
+  - title: 'SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis'
+    author: Dustin Podell, Zion English, Kyle Lacey, Andreas Blattmann, Tim Dockhorn, Jonas Müller, Joe Penna, Robin Rombach
+    organization: Stability AI
+    date: '20230704'
+    venue: ICLR 2024
+    pdf_url: https://arxiv.org/pdf/2307.01952
+    code_url: https://github.com/Stability-AI/generative-models/
+    name: SDXL
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: It improves older SD by employing <b>larger UNet backbone</b>, <b>resolution conditions</b>, <b>two text encoders</b>, and a <b>refinement model</b>.
+    details: |2
+
+      <p><b>Architecture of SDXL:</b>.<br>
+      (1) It has 2.6B parameters with different transformer blocks, SD 1.4/1.5/2.0/2.1 has about 860M parameters.<br>
+      (2) It uses two text encoders: OpenCLIP ViT-bigG & CLIP ViT-L.<br>
+      (3) The embeddings of height & width and cropping top & left and bucketing heigh & width are added to timestep embeddings as conditions.<br>
+      (4) It improves VAE by employing EMA and a larger batchsize of 256.<br>
+      (5) It employs a refinement model of SDEdit to refine visual details.</p>
+      <p><b>Training stages:</b> (1) reso=256x256, steps=600,000, batchsize=2048; (2) reso=512x512, steps=200,000; (3) mixed resolution and aspect ratio training.</p>
+      fig: fig1.png 500
+      cap: <b>SDXL Structure.</b>
+    highlight: true
+  - title: 'Human Preference Score v2: A Solid Benchmark for Evaluating Human Preferences of Text-to-Image Synthesis'
+    author: Xiaoshi Wu, Yiming Hao, Keqiang Sun, Yixiong Chen, Feng Zhu, Rui Zhao, Hongsheng Li
+    organization: CUHK, SenseTime Research, Shanghai Jiao Tong University, Centre for Perceptual and Interactive Intelligence
+    date: '20230615'
+    venue: arXiv 2023
+    pdf_url: https://arxiv.org/pdf/2306.09341
+    code_url: https://github.com/tgxs002/HPSv2/
+    name: HPS v2
+    category: 'Generation: Datasets & Evaluation'
+    summary: 'It proposes HPD v2: 798K human preferences on 433K pairs of images; HPS v2: fine-tuned CLIP on HPD v2 for image generation evaluation.'
+    details: |2
+
+      fig: fig1.png 750
+      cap: <b>Training pipeline.</b> (1) Clean prompts from COCO captions and DiffusionDB by ChatGPT; (2) Generate images using 9 image generation models; (3) Rank and annotate each pair of images by humans; (4) Finetune CLIP and obtain a preference model to give HPS v2 evaluation score.
+    highlight: true
+  - title: 'Human Preference Score: Better Aligning Text-to-Image Models with Human Preference'
+    author: Xiaoshi Wu, Keqiang Sun, Feng Zhu, Rui Zhao, Hongsheng Li
+    organization: CUHK, SenseTime Research, Shanghai Jiao Tong University, Centre for Perceptual and Interactive Intelligence, Shanghai AI Lab
+    date: '20230325'
+    venue: ICCV 2023
+    pdf_url: https://arxiv.org/pdf/2303.14420
+    code_url: https://github.com/tgxs002/align_sd/
+    name: HPS
+    category: 'Generation: Datasets & Evaluation'
+    summary: It fine-tunes CLIP on annotated 98K SD generated images from 25K prompts for image generation evaluation.
+    details: |2
+
+      fig: fig1.png 650
+      cap: <b>Train score model:</b> the same as CLIP except for the sample with the highest preference is taken as the positive; <b>Finetune image generation model using the score model:</b> append a special token to the prompts of worse images for training; remove that token during inference.
+  - title: Scalable Diffusion Models with Transformers
+    author: William Peebles, Saining Xie
+    organization: UC Berkeley, New York University
+    date: '20221219'
+    venue: ICCV 2023
+    pdf_url: https://arxiv.org/pdf/2212.09748
+    code_url: https://github.com/facebookresearch/DiT/
+    name: DiT
+    category: 'Generation: Foundation Algorithms & Models'
+    jupyter_notes: DiT.ipynb
+    summary: It replaces the conventional U-Net structure with <b>transformer</b> for scalable image generation, the timestep and condition are injected by adaLN-Zero.
+    details: |2
+
+      fig: fig1.png 700
+      cap: <b>Model structure.</b> Use <i>adaLN-Zero</i> structure to inject timestep and class condition performs better than using cross-attention or in-context.
+    highlight: true
+  - title: 'CogVideo: Large-scale Pretraining for Text-to-Video Generation via Transformers'
+    author: Wenyi Hong, Ming Ding, Wendi Zheng, Xinghan Liu, Jie Tang
+    organization: Tsinghua University, BAAI
+    date: '20220529'
+    venue: ICLR 2023
+    pdf_url: https://arxiv.org/pdf/2205.15868
+    code_url: https://github.com/THUDM/CogVideo/
+    name: CogVideo
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: It proposes a transformer-based video generation model (9B) that performs <b>auto-regressive</b> frame generation and recursive frame interpolation
+    details: |2
+
+      fig: fig1.png 450
+      cap: <b>Model structure & training.</b> CogVideo is trained upon CogView2. It generates frames autoregressively and interpolates them recursively.
+  - title: High-Resolution Image Synthesis with Latent Diffusion Models
+    author: Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, Björn Ommer
+    organization: Heidelberg University, Runway ML
+    date: '20211220'
+    venue: CVPR 2022
+    pdf_url: https://arxiv.org/pdf/2112.10752
+    code_url: https://github.com/CompVis/latent-diffusion/
+    name: LDM
+    comment: It significantly advances visual generation field by enabling efficient, high-quality synthesis via latent-space diffusion. It has over 20,000 citations (as of Jul 2025).
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: It achieves efficient high-resolution image generation by applying diffusion and denoising processes in the <b>compressed VAE latent space</b>.
+    details: |2
+
+      fig: fig1.png 350
+      cap: <b>Strucuture.</b> The conditions are injected by cross-attention.
+    highlight: true
+  - title: Classifier-Free Diffusion Guidance
+    author: Jonathan Ho, Tim Salimans
+    organization: Google Research, Brain team
+    date: '20211208'
+    venue: NeurIPS workshop 2021
+    pdf_url: https://arxiv.org/pdf/2207.12598
+    name: CFG
+    category: 'Generation: Foundation Algorithms & Models'
+    jupyter_notes: CFG.ipynb
+    summary: It improves conditional image generation with <b>classifier-free condition guidance</b> by jointly training a conditional model and an unconditional model.
+    details: ''
+    highlight: true
+  - title: Denoising Diffusion Probabilistic Models
+    author: Jonathan Ho, Ajay Jain, Pieter Abbeel
+    organization: UC Berkeley
+    date: '20200619'
+    venue: NeurIPS 2020
+    pdf_url: https://arxiv.org/pdf/2006.11239
+    code_url: https://github.com/hojonathanho/diffusion/
+    name: DDPM
+    comment: It shows that a simple, theoretically grounded denoising process can rival and even surpass GANs in sample quality, sparking an explosion of diffusion-based research and applications across images, videos, audio, and beyond. It has over 20,000 citations (as of Jul 2025).
+    category: 'Generation: Foundation Algorithms & Models'
+    jupyter_notes: DDPM.ipynb
+    summary: It proposes <b>denoising diffusion probabilistic models</b> that iteratively denoises data from random noise.
+    details: |2
+
+      fig: fig1.png 400
+      cap: <b>Diffusion (forward) & denoising (reverse) processes.</b>
+      fig: fig2.png 550
+      cap: <b>Training & sampling algorithms.</b>
+    highlight: true
+  - title: Generating Diverse High-Fidelity Images with VQ-VAE-2
+    author: Ali Razavi, Aaron van den Oord, Oriol Vinyals
+    organization: DeepMind
+    date: '20190602'
+    venue: NeurIPS 2019
+    pdf_url: https://arxiv.org/pdf/1906.00446
+    name: VQ-VAE-2
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: In order to generate large scale images efficiently, it improves VQ-VAE by employing a <b>hierarchical organization</b>.
+    details: |2
+
+      <ul>
+          <li><b>Structure:</b> (1) a top-level encoder to learn top-level priors from images; (2) a bottom-level encoder to learn bottom-level priors from images and top-level priors; (3) a decoder to generate images from both top-level and bottom-level priors.</li>
+          <li><b>Training stage 1:</b> training the top-level encoder and the bottom-level encoder to encode images onto the two levels of discrete latent space.</li>
+          <li><b>Training stage 2:</b> training PixelCNN to predict bottom-level priors from top-level priors, while fixing the two encoders.</li>
+          <li><b>Sampling:</b> (1) sampling a top-level prior; (2) predicting bottom-level prior from the top-level prior using the trained PixelCNN; (3) generating images from both the top-level and the bottom-level priors by the trained decoder.</li>
+      </ul>
+      fig: fig1.png 850
+      cap: <b>Training (left) & sampling (right) frameworks.</b>
+      fig: fig2.png 500
+      cap: <b>Training & sampling algorithms.</b>
+    highlight: true
+  - title: 'FVD: A new Metric for Video Generation'
+    author: Thomas Unterthiner, Sjoerd van Steenkiste, Karol Kurach, Raphaël Marinier, Marcin Michalski, Sylvain Gelly
+    organization: Johannes Kepler University, IDSIA, Google Brain
+    date: '20190504'
+    venue: ICLR workshop 2019
+    pdf_url: https://openreview.net/pdf?id=rylgEULtdN
+    name: FVD
+    category: 'Generation: Datasets & Evaluation'
+    summary: Extend FID for video generation evaluation by replacing 2D InceptionNet with pre-trained Inflated 3D convnet.
+    details: |2+
+
+  - title: Neural Discrete Representation Learning
+    author: Aaron van den Oord, Oriol Vinyals, Koray Kavukcuoglu
+    organization: DeepMind
+    date: '20171102'
+    venue: NeurIPS 2017
+    pdf_url: https://arxiv.org/pdf/1711.00937
+    name: VQ-VAE
+    category: 'Generation: Foundation Algorithms & Models'
+    summary: It proposes <b>vector quantised variational autoencoder</b> to generate discrete codes while the prior is also learned.
+    details: |2
+
+      <ul>
+          <li><b>Posterior collapse problem:</b> a strong decoder and a strong KL constraint could make the learned posterior <i>q(z|x)</i> very close to prior <i>p(z)</i>, so that the conditional generation task collapses to an unconditional generation task.</li>
+          <li><b>How VQ-VAE avoids the collapse problem by employing discrete codes/latents?</b> (1) It learns <i>q(z|x)</i> by choosing one from some candidates rather than directly generating a simple prior; (2) The learned <i>q(z|x)</i> is continuous but <i>p(z)</i> is discrete, so the encoder can not be "lazy".</li>
+          <li><b>Optimization objectives:</b> (1) The decoder is optimized by a recontruction loss; (2) The encoder is optimized by a reconstruction loss and a matching loss; (3) The embedding is optimized by a matching loss.</li>
+          <li><b>How to back-propagate gradient with quantization exists? Straight-Through Estimator:</b> directly let the graident of loss to the quantized embedding equal to the gradient of loss to the embedding that before being quantized.</li>
+      </ul>
+      fig: fig1.png 900
+      cap: <b>Model structure.</b>
+    highlight: true
+  - title: GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium
+    author: Martin Heusel, Hubert Ramsauer, Thomas Unterthiner, Bernhard Nessler, Sepp Hochreiter
+    organization: Johannes Kepler University Linz
+    date: '20170626'
+    venue: NeurIPS 2017
+    pdf_url: https://arxiv.org/pdf/1706.08500
+    name: FID
+    category: 'Generation: Datasets & Evaluation'
+    summary: Calculate <b>Fréchet distance</b> between Gaussian distributions of InceptionNet features of real-world and synthetic data for image generation evaluation.
+    details: |2+
+
+    highlight: true
+  - title: Improved Techniques for Training GANs
+    author: Tim Salimans, Ian Goodfellow, Wojciech Zaremba, Vicki Cheung, Alec Radford, Xi Chen
+    organization: OpenAI
+    date: '20160610'
+    venue: NeurIPS 2016
+    pdf_url: https://arxiv.org/pdf/1606.03498
+    code_url: https://github.com/openai/improved-gan/
+    name: Inception Score
+    category: 'Generation: Datasets & Evaluation'
+    summary: Calculate <b>KL divergence between p(y|x) and p(y)</b> that aims to minimize the entropy across predictions and maximize the entropy across predictions of classes for image generation evaluation.
+    details: |2+
+
+    highlight: true

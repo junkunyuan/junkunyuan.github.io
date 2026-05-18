@@ -1,0 +1,602 @@
+/* ============================================================================
+   Design tokens — light + dark via prefers-color-scheme.
+   ============================================================================ */
+:root {
+    --color-bg-page: #eeeeee;
+    --color-bg-body: #ffffff;
+    --color-text: #404040;
+    --color-text-soft: #5a5a5a;
+    --color-text-muted: #777777;
+    --color-text-faint: #aaaaaa;
+    --color-text-very-faint: #cccccc;
+    --color-link: #404040;
+    --color-link-hover: #4169e1;
+    --color-accent: #4169e1;
+    --color-highlight: #c55253;
+    --color-highlight-soft: #b04040;
+    --color-junkun: #1d3a8a;
+    --color-divider: #cccccc;
+    --color-code-bg: #f6f8fa;
+    --color-code-border: #e1e4e8;
+    --color-code-chrome: #eef1f4;
+    --color-table-head: #e2e2e2;
+    --color-table-border: #dddddd;
+    --color-shadow: rgba(0, 0, 0, 0.15);
+
+    /* Prism token palette — light (Tomorrow-inspired). */
+    --token-comment: #8e908c;
+    --token-keyword: #8959a8;
+    --token-string:  #718c00;
+    --token-number:  #f5871f;
+    --token-function:#4271ae;
+    --token-builtin: #3e999f;
+    --token-class:   #c82829;
+    --token-operator:#4d4d4c;
+    --token-emphasis:#1d3a8a;
+    --token-line-hl: rgba(255, 235, 130, 0.45);
+
+    /* Year / category accent palette (cyclic). */
+    --accent-1: #a8cfee;
+    --accent-2: #f9d3aa;
+    --accent-3: #a8d3a8;
+    --accent-4: #f0bfcf;
+
+    --max-width: 960px;
+    --side-padding: 50px;
+    --side-padding-mobile: 16px;
+
+    /* Typography */
+    --font-sans: Arial, Helvetica, sans-serif;
+    --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Source Serif Pro", "Charter", Georgia, "Times New Roman", serif;
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+/* Dark tokens — applied via system preference (auto mode) or explicit override. */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --color-bg-page: #0e0e10;
+        --color-bg-body: #1c1c1d;
+        --color-text: #e8e8e8;
+        --color-text-soft: #c2c6cd;
+        --color-text-muted: #adb2b9;
+        --color-text-faint: #868c95;
+        --color-text-very-faint: #6c7178;
+        --color-link: #e8e8e8;
+        --color-link-hover: #7fa8ec;
+        --color-accent: #7fa8ec;
+        --color-highlight: #e88c8c;
+        --color-highlight-soft: #d97373;
+        --color-junkun: #e8c364;
+        --color-divider: #424246;
+        --color-code-bg: #1f2429;
+        --color-code-border: #2d333b;
+        --color-code-chrome: #262c33;
+        --color-table-head: #2a2f36;
+        --color-table-border: #424246;
+        --color-shadow: rgba(0, 0, 0, 0.5);
+        --token-comment: #6a737d;
+        --token-keyword: #c594c5;
+        --token-string:  #99c794;
+        --token-number:  #f9ae58;
+        --token-function:#6699cc;
+        --token-builtin: #5fb3b3;
+        --token-class:   #ec5f67;
+        --token-operator:#cdd3de;
+        --token-emphasis:#e8c364;
+        --token-line-hl: rgba(125, 156, 255, 0.18);
+        --accent-1: #8cb6d6;
+        --accent-2: #d8b485;
+        --accent-3: #8eb88e;
+        --accent-4: #d29eb0;
+    }
+}
+
+:root[data-theme="dark"] {
+    --color-bg-page: #0e0e10;
+    --color-bg-body: #1c1c1d;
+    --color-text: #e8e8e8;
+    --color-text-soft: #c2c6cd;
+    --color-text-muted: #adb2b9;
+    --color-text-faint: #868c95;
+    --color-text-very-faint: #6c7178;
+    --color-link: #e8e8e8;
+    --color-link-hover: #7fa8ec;
+    --color-accent: #7fa8ec;
+    --color-highlight: #e88c8c;
+    --color-highlight-soft: #d97373;
+    --color-junkun: #e8c364;
+    --color-divider: #424246;
+    --color-code-bg: #1f2429;
+    --color-code-border: #2d333b;
+    --color-code-chrome: #262c33;
+    --color-table-head: #2a2f36;
+    --color-table-border: #424246;
+    --color-shadow: rgba(0, 0, 0, 0.5);
+    --token-comment: #6a737d;
+    --token-keyword: #c594c5;
+    --token-string:  #99c794;
+    --token-number:  #f9ae58;
+    --token-function:#6699cc;
+    --token-builtin: #5fb3b3;
+    --token-class:   #ec5f67;
+    --token-operator:#cdd3de;
+    --token-emphasis:#e8c364;
+    --token-line-hl: rgba(125, 156, 255, 0.18);
+    --accent-1: #8cb6d6;
+    --accent-2: #d8b485;
+    --accent-3: #8eb88e;
+    --accent-4: #d29eb0;
+}
+
+/* ============================================================================
+   Base layout
+   ============================================================================ */
+html {
+    background-color: var(--color-bg-page);
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background-color: var(--color-bg-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: left;
+    margin: 20px auto;
+    padding: 20px var(--side-padding);
+    max-width: var(--max-width);
+    box-shadow: 0 0 14px var(--color-shadow);
+    border-radius: 4px;
+}
+
+@media (max-width: 720px) {
+    body {
+        padding: 16px var(--side-padding-mobile);
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+}
+
+/* ============================================================================
+   Typography
+   ============================================================================ */
+h1, h2 {
+    color: var(--color-text);
+    margin-top: 0.7em;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.2em;
+    line-height: 1.1;
+    font-family: var(--font-sans);
+}
+h1 { font-size: 150%; }
+h2 { font-size: 120%; }
+
+p, li {
+    color: var(--color-text);
+    margin: 0 0 0.8em 0;
+    padding: 0;
+    line-height: 1.5;
+    font-family: var(--font-sans);
+    font-size: 14px;
+}
+
+.larger  { font-size: 16px; }
+.huger   { font-size: 17px; }
+.muted   { color: var(--color-text-muted); }
+.faint   { color: var(--color-text-faint); }
+.subtle  { color: var(--color-text-very-faint); }
+.highlight { color: var(--color-highlight); }
+.divider { display: none; }
+.low_margin { margin: 0; padding: 0; }
+
+/* ============================================================================
+   Links
+   ============================================================================ */
+a {
+    color: var(--color-link);
+}
+a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+.no_dec {
+    text-decoration: none;
+}
+
+/* ============================================================================
+   Header (main page)
+   ============================================================================ */
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+    justify-content: space-between;
+}
+.profile__text { flex: 1 1 320px; }
+.profile__photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px var(--color-shadow);
+    transform: translate(-16px, 24px);
+}
+@media (max-width: 720px) {
+    .profile__photo { transform: none; }
+}
+.profile__updated {
+    color: var(--color-text-faint);
+    font-size: 12px;
+}
+
+/* ============================================================================
+   Paper entry
+   ============================================================================ */
+.paper {
+    padding: 0 0 0 20px;
+    position: relative;
+    margin: 0 0 16px 0;
+}
+.paper::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -6px;
+    bottom: -6px;
+    width: 10px;
+    background-color: var(--paper-accent, var(--accent-1));
+}
+.paper__title {
+    color: var(--color-text);
+    font-size: 16px;
+    font-family: var(--font-sans);
+    font-style: italic;
+    font-weight: normal;
+    line-height: 24px;
+    margin: 0;
+}
+.paper--toggle .paper__title {
+    cursor: pointer;
+}
+.paper--toggle .paper__title:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+.paper__detail {
+    color: var(--color-text-soft);
+    font-size: 13px;
+    line-height: 21px;
+    margin: 0;
+}
+/* Last line of a paper (date + links): demoted to muted grey, like Kaiming He. */
+.paper__detail:has(a) {
+    color: var(--color-text-muted);
+}
+.paper__detail:has(a) a,
+.paper__detail:has(a) .paper__name,
+.paper__detail:has(a) .divider {
+    color: inherit;
+}
+.paper__detail:has(a) a:hover {
+    color: var(--color-link-hover);
+}
+.paper__name { color: var(--color-text); }
+.paper__name--highlight { color: var(--color-highlight); }
+.paper__comment { color: var(--color-highlight); }
+.paper__year-badge {
+    position: absolute;
+    right: 0;
+    top: 0.5em;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    opacity: 0.85;
+    color: var(--paper-accent, var(--accent-1));
+}
+@media (max-width: 720px) {
+    .paper__year-badge { display: none; }
+}
+.paper-split { display: none; }
+
+.author--junkun {
+    font-weight: bold;
+}
+
+/* Author mark superscripts. */
+.author-mark {
+    font-size: 0.8em;
+    line-height: 0;
+    vertical-align: baseline;
+    position: relative;
+    top: -0.5em;
+}
+.author-mark--mail { font-size: 1em; }
+
+/* Inline index lists (year-grouped or flat). */
+.paper-index {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 13px;
+    margin-bottom: 8px;
+    gap: 0 16px;
+}
+.paper-index__year {
+    font-weight: bold;
+    margin-right: -4px;
+    color: var(--paper-accent, var(--accent-1));
+}
+.paper-index a {
+    color: var(--color-text-muted);
+}
+.paper-index a.is-highlight {
+    color: var(--color-highlight);
+}
+.paper-index .venue {
+    color: var(--color-text-faint);
+    font-size: 11px;
+    margin-left: 2px;
+}
+
+/* Expandable info block. */
+.info_detail {
+    display: none;
+}
+.info_detail.is-open {
+    display: block;
+}
+
+/* Figures. */
+figure {
+    margin: 0 10px;
+    text-align: center;
+}
+figcaption {
+    font-size: 14px;
+    color: var(--color-text);
+    text-align: center;
+    font-family: var(--font-sans);
+    margin: 0.5em 0 1.5em 0;
+}
+img { vertical-align: middle; max-width: 100%; height: auto; }
+
+hr.dashed {
+    border: none;
+    height: 1px;
+    border-top: 1px dashed var(--color-divider);
+    margin: 15px 0;
+}
+
+/* ============================================================================
+   Code blocks
+   ============================================================================ */
+.coder, pre[class*="language-"], pre {
+    color: var(--color-text);
+    background-color: var(--color-code-bg);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    white-space: pre;
+    tab-size: 4;
+    margin: 12px 0;
+    padding: 14px 16px;
+    line-height: 1.55;
+    border: 1px solid var(--color-code-border);
+    border-radius: 6px;
+    overflow-x: auto;
+    position: relative;
+}
+
+/* Inline `<code>` (outside <pre>). */
+:not(pre) > code[class*="language-"], :not(pre) > code {
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+    background-color: var(--color-code-bg);
+    border: 1px solid var(--color-code-border);
+    border-radius: 3px;
+    padding: 1px 5px;
+    color: var(--color-text);
+}
+
+pre[class*="language-"] > code, pre > code {
+    font-family: inherit;
+    font-size: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    display: block;
+}
+
+/* Prism token colors — applied via CSS vars so themes flip in lockstep. */
+.token.comment, .token.prolog, .token.doctype, .token.cdata { color: var(--token-comment); font-style: italic; }
+.token.punctuation { color: var(--token-operator); }
+.token.namespace { opacity: 0.7; }
+.token.property, .token.tag, .token.boolean, .token.constant, .token.symbol, .token.deleted { color: var(--token-class); }
+.token.number { color: var(--token-number); }
+.token.selector, .token.attr-name, .token.string, .token.char, .token.inserted { color: var(--token-string); }
+.token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string { color: var(--token-operator); }
+.token.atrule, .token.attr-value, .token.keyword { color: var(--token-keyword); }
+.token.function, .token.class-name { color: var(--token-function); }
+.token.builtin { color: var(--token-builtin); }
+.token.regex, .token.important, .token.variable { color: var(--token-number); }
+.token.important, .token.bold { font-weight: bold; }
+.token.italic { font-style: italic; }
+.token.entity { cursor: help; }
+
+/* Emphasis preserved by prism-keep-markup: <b>...</b> inside <code>. */
+pre[class*="language-"] code b,
+pre code b {
+    color: var(--token-emphasis);
+    font-weight: 700;
+    background: linear-gradient(transparent 75%, var(--token-line-hl) 0);
+    padding: 0 1px;
+}
+
+/* Prism toolbar — language label + copy button, top-right corner. */
+div.code-toolbar { position: relative; }
+div.code-toolbar > .toolbar {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    display: flex;
+    gap: 6px;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    z-index: 2;
+}
+div.code-toolbar:hover > .toolbar,
+div.code-toolbar:focus-within > .toolbar { opacity: 1; }
+div.code-toolbar > .toolbar .toolbar-item > * {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    line-height: 1;
+    padding: 4px 8px;
+    color: var(--color-text-muted);
+    background-color: var(--color-code-chrome);
+    border: 1px solid var(--color-code-border);
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+div.code-toolbar > .toolbar .toolbar-item > button:hover,
+div.code-toolbar > .toolbar .toolbar-item > a:hover {
+    color: var(--color-text);
+    border-color: var(--color-accent);
+}
+
+/* Prism line-highlight plugin. */
+pre[data-line] { position: relative; }
+.line-highlight {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: inherit 0;
+    margin-top: 0;
+    background: var(--token-line-hl);
+    pointer-events: none;
+    line-height: inherit;
+    white-space: pre;
+}
+
+/* ============================================================================
+   Tables
+   ============================================================================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid var(--color-table-border);
+    vertical-align: middle;
+    color: var(--color-text);
+    line-height: 1.5;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    padding: 4px 8px;
+}
+th {
+    background-color: var(--color-table-head);
+}
+.center { text-align: center; }
+
+/* ============================================================================
+   Back-to-top floating button
+   ============================================================================ */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: max(10px, calc((100vw - var(--max-width)) / 2 - 60px));
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px var(--color-shadow);
+    display: none;
+    z-index: 1000;
+}
+#backToTop.is-visible { display: block; }
+
+/* ============================================================================
+   Theme toggle (top-right floating button)
+   ============================================================================ */
+#themeToggle {
+    position: fixed;
+    top: 20px;
+    right: max(14px, calc((100vw - var(--max-width)) / 2 - 60px));
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid var(--color-divider);
+    border-radius: 50%;
+    background-color: var(--color-bg-body);
+    color: var(--color-text);
+    cursor: pointer;
+    box-shadow: 0 2px 8px var(--color-shadow);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    transition: transform 0.25s ease, background-color 0.25s ease,
+                color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+#themeToggle:hover {
+    transform: translateY(-1px) rotate(-12deg);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    box-shadow: 0 4px 14px var(--color-shadow);
+}
+#themeToggle:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+#themeToggle svg {
+    width: 20px;
+    height: 20px;
+    display: none;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+#themeToggle[data-mode="auto"]  .icon-auto  { display: block; }
+#themeToggle[data-mode="light"] .icon-light { display: block; }
+#themeToggle[data-mode="dark"]  .icon-dark  { display: block; }
+
+@media (max-width: 720px) {
+    #themeToggle {
+        top: 12px;
+        right: 12px;
+        width: 38px;
+        height: 38px;
+    }
+    #themeToggle svg { width: 18px; height: 18px; }
+}
+
+/* ============================================================================
+   Reading-list search box
+   ============================================================================ */
+.search {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    margin: 12px 0 16px;
+    font-size: 14px;
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background-color: var(--color-bg-body);
+    border: 1px solid var(--color-divider);
+    border-radius: 4px;
+}
+.search:focus {
+    outline: none;
+    border-color: var(--color-accent);
+}
+.is-hidden { display: none !important; }

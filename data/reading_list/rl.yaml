@@ -1,0 +1,53 @@
+file: rl.html
+title: Reinforcement Learning (RL)
+description: Learn to make decisions in an environment by maximizing long-term rewards.
+categories:
+  - Foundation Algorithms & Models
+papers:
+  - title: 'Reinforcement Learning: An Introduction'
+    author: Richard S. Sutton, Andrew G. Barto
+    organization: University of Massachusetts Amherst, Carnegie Mellon University
+    date: '19980101'
+    venue: Cambridge 1998
+    pdf_url: https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf
+    name: RL Introduction
+    comment: It systematizes the foundations of RL by unifying dynamic programming, Monte Carlo methods, and temporal-difference learning into a coherent framework, establishing the theoretical and algorithmic basis for modern RL research. It has over 80,000 citations (as of Aug 2025).
+    category: Foundation Algorithms & Models
+    jupyter_notes: Markov Decision Process.ipynb
+    summary: |2
+
+      It formalizes the core concepts, algorithms, and theoretical foundations of RL, establishing it as a coherent and accessible discipline.
+    details: |2+
+
+    highlight: true
+  - title: An Empirical Evaluation of Thompson Sampling
+    author: Olivier Chapelle, Lihong Li
+    organization: Yahoo! Research
+    date: '20111212'
+    venue: NeurIPS 2011
+    pdf_url: https://proceedings.neurips.cc/paper/2011/file/e53a0a2978c28872a4505bdb51db06dc-Paper.pdf
+    name: Thompson Sampling
+    category: Foundation Algorithms & Models
+    jupyter_notes: Multi-Armed Bandit.ipynb
+    summary: |2
+
+      It introduces the <b>first large-scale empirical demonstration</b> that Thompson sampling achieves SOTA in real-world bandit problems.
+    details: |2+
+
+    highlight: true
+  - title: Finite-time Analysis of the Multiarmed Bandit Problem
+    author: Peter Auer, Nicolò Cesa-Bianchi, Paul Fischer
+    organization: University of Technology Graz, University of Milan, University Dortmund
+    date: '20020501'
+    venue: Machine Learning 2002
+    pdf_url: https://link.springer.com/content/pdf/10.1023/a:1013689704352.pdf
+    name: ε-greedy & UCB
+    comment: It fundamentally shifted bandit research by providing the first distribution-free, finite-horizon regret bounds that enabled practical, anytime performance guarantees and sparked a wave of refined algorithms and analyses. It has over 9,000 citations (as of Aug 2025).
+    category: Foundation Algorithms & Models
+    jupyter_notes: Multi-Armed Bandit.ipynb
+    summary: |2
+
+      It proposes index-based and ε-greedy policies that achieve <b>finite-time logarithmic regret bounds</b> for multi-armed bandit with <b>bounded rewards</b>.
+    details: |2+
+
+    highlight: true

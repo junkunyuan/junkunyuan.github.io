@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Language Processing (NLP)</title>
+    <meta name="description" content="Natural Language Processing (NLP)">
+    <link rel="stylesheet" href="../resource/style.css">
+    <link rel="shortcut icon" href="../resource/my_photo.png">
+    <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js" data-manual></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/keep-markup/prism-keep-markup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-highlight/prism-line-highlight.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>document.addEventListener("DOMContentLoaded",function(){if(window.Prism)Prism.highlightAll();});</script>
+</head>
+<body>
+<div id="layout-content">
+
+<h1 id="top">Natural Language Processing (NLP)</h1>
+<p class="larger"><b>Understand and generate human language.</b></p>
+<p class="larger"><b><span class="highlight">3</span> papers</b></p>
+<p>Written by <a href="../index.html">Junkun Yuan</a>.</p>
+<p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
+<hr><p id="table" class="huger"><b>Table of contents:</b></p><p>Papers are displayed in reverse chronological order. High-impact or inspiring works are highlighted in <span class="highlight">red</span>.</p><ul><li><a class="larger no_dec" id="cat-foundation-algorithms-models" href="#foundation-algorithms-models-table"><b>Foundation Algorithms & Models (2)</b></a></li><p class="paper-index"><a href="#llada-arxiv-2025-foundation-algorithms-models" class="no_dec is-highlight">LLaDA<span class="venue">(arXiv 2025)</span></a> &nbsp;&nbsp;&nbsp; <a href="#transformer-neurips-2017-foundation-algorithms-models" class="no_dec is-highlight">Transformer<span class="venue">(NeurIPS 2017)</span></a></p><br><li><a class="larger no_dec" id="cat-reinforcement-learning" href="#reinforcement-learning-table"><b>Reinforcement Learning (1)</b></a></li><p class="paper-index"><a href="#dpo-neurips-2023-reinforcement-learning" class="no_dec is-highlight">DPO<span class="venue">(NeurIPS 2023)</span></a></p><br></ul>
+<input type="search" id="paperSearch" class="search"
+       placeholder="Filter papers by title / author / venue / name…"
+       aria-label="Filter papers">
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const input = document.getElementById("paperSearch");
+    if (!input) return;
+    const papers = Array.from(document.querySelectorAll(".paper[data-search]"));
+    input.addEventListener("input", () => {
+        const q = input.value.trim().toLowerCase();
+        papers.forEach(p => {
+            const hit = !q || p.dataset.search.includes(q);
+            p.classList.toggle("is-hidden", !hit);
+        });
+    });
+});
+</script>
+<h2 id="foundation-algorithms-models-table"><a class="no_dec" href="#cat-foundation-algorithms-models">Foundation Algorithms & Models</a></h2><div id="llada-arxiv-2025-foundation-algorithms-models" class="paper paper--toggle" data-search="large language diffusion models shen nie, fengqi zhu, zebin you, xiaolu zhang, jingyang ou, jun hu, jun zhou, yankai lin, ji-rong wen, chongxuan li renmin university of china, ant group arxiv 2025 llada foundation algorithms & models" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('llada-arxiv-2025-foundation-algorithms-models-details')">Large Language Diffusion Models</p><p class="paper__detail">Shen Nie, Fengqi Zhu, Zebin You, Xiaolu Zhang, Jingyang Ou, Jun Hu, Jun Zhou, Yankai Lin, Ji-Rong Wen, Chongxuan Li</p><p class="paper__detail">Renmin University of China, Ant Group</p><p class="paper__detail"><b>arXiv</b>, 2025</p><p class="paper__detail">Feb 14, 2025 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2502.09992"><span class="paper__name paper__name--highlight">LLaDA</span></a> &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://github.com/ML-GSAI/LLaDA">code</a></p><div id="llada-arxiv-2025-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>
+It introduces a <b>masked diffusion language model</b> (8B) that matches strong autoregressive LLMs while inherently enabling bidirectional reasoning.
+</p><p><ul>
+<li> It argues that <b>generative modeling</b> is to learn \(\max_{\theta}\mathbb{E}_{p_{data}(x)}\log p_{\theta}(x)\), which <b>need not be auto-regressive</b>.</li>
+<li><b>Instruction-following</b> and <b>in-context learning</b> are also not exclusive advantages of autoregressive models.</li>
+<li>Auto-regressive models have disadvantages such as <b>high computational costs</b> due to <b>token-by-token generation</b>, and limitations in <b>reversal reasoning</b> due to <b>left-to-right generation</b>.</li>
+<li><b>LLaDA (8B) with 4096 tokens</b> is pre-trained from scratch on 2.3T tokens using 0.13M H800 GPU hours, followed by SFT on 4.5M pairs.</li>
+<li>LLaDA <b>does not use a causal mask</b>, as it sees the entire context.</li>
+<li>LLaDA uses <b>vanilla multi-head attention</b>, as it is incompatible with KV cache.</li>
+</ul>
+<figure>
+<img src="resource/figs/LLaDA/LLaDA-fig1.png" width="900" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> <b>Pre-training.</b> Tokens are independently randomly masked by probability of \(t\sim U[0,1]\), the model predicts the masked tokens by minimizing the cross-entropy loss. <b>SFT.</b> Only response tokens are possibly masked. <b>Inference.</b> Stimulate a diffusion process from \(t=1\) to \(t=0\).</figcaption>
+</figure></p></div></div><div id="transformer-neurips-2017-foundation-algorithms-models" class="paper paper--toggle" data-search="attention is all you need ashish vaswani, noam shazeer, niki parmar, jakob uszkoreit, llion jones, aidan n. gomez, lukasz kaiser, illia polosukhin google brain, google research, university of toronto neurips 2017 transformer foundation algorithms & models" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('transformer-neurips-2017-foundation-algorithms-models-details')">Attention Is All You Need</p><p class="paper__detail">Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin</p><p class="paper__detail">Google Brain, Google Research, University of Toronto</p><p class="paper__detail">Advances in Neural Information Processing Systems (<b>NeurIPS</b>), 2017</p><p class="paper__detail">Jun 12, 2017 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/1706.03762"><span class="paper__name paper__name--highlight">Transformer</span></a></p><p class="paper__detail paper__comment">It revolutionized deep learning by introducing the Transformer architecture, which replaced recurrence with self-attention, enabling massively parallel training and becoming the foundational model for virtually all modern large-scale language systems. It has 192,000 citations (as of Sep 2025).</p><div id="transformer-neurips-2017-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>
+It introduces sequence transduction architecture <b>relying solely on multi-head self-attention</b>, dramatically reducing training time.
+</p><p><a class="note" href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/transformer.ipynb">(see notes in jupyter)</a></p><p>
+<ul>
+    <li>Details to be added</li>
+</ul>
+</p></div></div><h2 id="reinforcement-learning-table"><a class="no_dec" href="#cat-reinforcement-learning">Reinforcement Learning</a></h2><div id="dpo-neurips-2023-reinforcement-learning" class="paper paper--toggle" data-search="direct preference optimization: your language model is secretly a reward model rafael rafailov, archit sharma, eric mitchell, stefano ermon, christopher d. manning, chelsea finn stanford university, cz biohub neurips 2023 dpo reinforcement learning" style="--paper-accent: var(--accent-2);"><p class="paper__title" onclick="toggleTable('dpo-neurips-2023-reinforcement-learning-details')">Direct Preference Optimization: Your Language Model is Secretly a Reward Model</p><p class="paper__detail">Rafael Rafailov, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher D. Manning, Chelsea Finn</p><p class="paper__detail">Stanford University, CZ Biohub</p><p class="paper__detail">Advances in Neural Information Processing Systems (<b>NeurIPS</b>), 2023</p><p class="paper__detail">May 29, 2023 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2305.18290"><span class="paper__name paper__name--highlight">DPO</span></a></p><p class="paper__detail paper__comment">It offers a simple, RL-free recipe to turn human preference data into aligned language models with equal or better performance than RLHF while eliminating reward-model training and heavy hyper-parameter tuning overhead. It has over 5,000 citations (as of Sep 2025).</p><div id="dpo-neurips-2023-reinforcement-learning-details" class="info_detail"><hr class="dashed"><p>
+It introduces DPO, a <b>single-stage, RL-free</b> algorithm that directly optimizes a language model on preference data by reparameterizing the Bradley-Terry objective into a simple classification loss.
+</p><p>
+</p></div></div>
+<p class="faint" style="margin-top: 2em; text-align: center;">Last updated on May 18, 2026 at 10:47 (UTC-7).</p>
+
+<script>
+function toggleTable(id) {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle("is-open");
+}
+</script>
+
+<button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+<script>
+(function () {
+    const btn = document.getElementById("backToTop");
+    if (!btn) return;
+    window.addEventListener("scroll", () => {
+        btn.classList.toggle("is-visible", document.documentElement.scrollTop > 300);
+    });
+    btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+})();
+</script>
+
+<button id="themeToggle" type="button" aria-label="Toggle color theme" title="Theme: auto" data-mode="auto">
+    <svg class="icon-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4 A8 8 0 0 1 12 20 Z" fill="currentColor" stroke="none"/></svg>
+    <svg class="icon-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    <svg class="icon-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor" stroke="none"/></svg>
+</button>
+<script>
+(function () {
+    const btn = document.getElementById("themeToggle");
+    if (!btn) return;
+    const order = ["auto", "light", "dark"];
+    const labels = { auto: "Theme: follow system", light: "Theme: light", dark: "Theme: dark" };
+    function read() {
+        try { const v = localStorage.getItem("theme"); return (v === "light" || v === "dark") ? v : "auto"; }
+        catch (e) { return "auto"; }
+    }
+    function apply(mode) {
+        if (mode === "auto") {
+            document.documentElement.removeAttribute("data-theme");
+            try { localStorage.removeItem("theme"); } catch (e) {}
+        } else {
+            document.documentElement.setAttribute("data-theme", mode);
+            try { localStorage.setItem("theme", mode); } catch (e) {}
+        }
+        btn.dataset.mode = mode;
+        btn.title = labels[mode];
+        btn.setAttribute("aria-label", labels[mode]);
+    }
+    apply(read());
+    btn.addEventListener("click", () => {
+        const cur = btn.dataset.mode || "auto";
+        apply(order[(order.indexOf(cur) + 1) % order.length]);
+    });
+})();
+</script>
+</div>
+</body>
+</html>

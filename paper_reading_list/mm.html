@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimodal (MM)</title>
+    <meta name="description" content="Multimodal (MM)">
+    <link rel="stylesheet" href="../resource/style.css">
+    <link rel="shortcut icon" href="../resource/my_photo.png">
+    <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js" data-manual></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/keep-markup/prism-keep-markup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-highlight/prism-line-highlight.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>document.addEventListener("DOMContentLoaded",function(){if(window.Prism)Prism.highlightAll();});</script>
+</head>
+<body>
+<div id="layout-content">
+
+<h1 id="top">Multimodal (MM)</h1>
+<p class="larger"><b>Understand and generate by integrating multiple modalities such as text, images, and videos.</b></p>
+<p class="larger"><b><span class="highlight">17</span> papers</b></p>
+<p>Written by <a href="../index.html">Junkun Yuan</a>.</p>
+<p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
+<hr><p id="table" class="huger"><b>Table of contents:</b></p><p>Papers are displayed in reverse chronological order. High-impact or inspiring works are highlighted in <span class="highlight">red</span>.</p><ul><li><a class="larger no_dec" id="cat-understanding-foundation-algorithms-models" href="#understanding-foundation-algorithms-models-table"><b>Understanding: Foundation Algorithms & Models (11)</b></a></li><p class="paper-index"><a href="#qwen2-5-vl-arxiv-2025-understanding-foundation-algorithms-models" class="no_dec is-highlight">Qwen2.5-VL<span class="venue">(arXiv 2025)</span></a> &nbsp;&nbsp;&nbsp; <a href="#qwen2-vl-arxiv-2024-understanding-foundation-algorithms-models" class="no_dec is-highlight">Qwen2-VL<span class="venue">(arXiv 2024)</span></a> &nbsp;&nbsp;&nbsp; <a href="#blip-3-arxiv-2024-understanding-foundation-algorithms-models" class="no_dec ">BLIP-3<span class="venue">(arXiv 2024)</span></a> &nbsp;&nbsp;&nbsp; <a href="#minigpt-v2-arxiv-2024-understanding-foundation-algorithms-models" class="no_dec ">MiniGPT-v2<span class="venue">(arXiv 2024)</span></a> &nbsp;&nbsp;&nbsp; <a href="#qwen-vl-arxiv-2023-understanding-foundation-algorithms-models" class="no_dec is-highlight">Qwen-VL<span class="venue">(arXiv 2023)</span></a> &nbsp;&nbsp;&nbsp; <a href="#minigpt-4-iclr-2024-understanding-foundation-algorithms-models" class="no_dec is-highlight">MiniGPT-4<span class="venue">(ICLR 2024)</span></a> &nbsp;&nbsp;&nbsp; <a href="#llava-neurips-2023-understanding-foundation-algorithms-models" class="no_dec is-highlight">LLaVA<span class="venue">(NeurIPS 2023)</span></a> &nbsp;&nbsp;&nbsp; <a href="#blip-2-icml-2023-understanding-foundation-algorithms-models" class="no_dec is-highlight">BLIP-2<span class="venue">(ICML 2023)</span></a> &nbsp;&nbsp;&nbsp; <a href="#flamingo-neurips-2022-understanding-foundation-algorithms-models" class="no_dec is-highlight">Flamingo<span class="venue">(NeurIPS 2022)</span></a> &nbsp;&nbsp;&nbsp; <a href="#blip-icml-2022-understanding-foundation-algorithms-models" class="no_dec is-highlight">BLIP<span class="venue">(ICML 2022)</span></a> &nbsp;&nbsp;&nbsp; <a href="#clip-icml-2021-understanding-foundation-algorithms-models" class="no_dec is-highlight">CLIP<span class="venue">(ICML 2021)</span></a></p><br><li><a class="larger no_dec" id="cat-understanding-and-generation-foundation-algorithms-models" href="#understanding-and-generation-foundation-algorithms-models-table"><b>Understanding and Generation: Foundation Algorithms & Models (6)</b></a></li><p class="paper-index"><a href="#mmada-neurips-2025-understanding-and-generation-foundation-algorithms-models" class="no_dec is-highlight">MMaDA<span class="venue">(NeurIPS 2025)</span></a> &nbsp;&nbsp;&nbsp; <a href="#bagel-arxiv-2025-understanding-and-generation-foundation-algorithms-models" class="no_dec is-highlight">BAGEL<span class="venue">(arXiv 2025)</span></a> &nbsp;&nbsp;&nbsp; <a href="#blip3-o-arxiv-2025-understanding-and-generation-foundation-algorithms-models" class="no_dec ">BLIP3-o<span class="venue">(arXiv 2025)</span></a> &nbsp;&nbsp;&nbsp; <a href="#unifluid-arxiv-2025-understanding-and-generation-foundation-algorithms-models" class="no_dec ">UniFluid<span class="venue">(arXiv 2025)</span></a> &nbsp;&nbsp;&nbsp; <a href="#gpt-4o-arxiv-2024-understanding-and-generation-foundation-algorithms-models" class="no_dec is-highlight">GPT-4o<span class="venue">(arXiv 2024)</span></a> &nbsp;&nbsp;&nbsp; <a href="#transfusion-iclr-2025-understanding-and-generation-foundation-algorithms-models" class="no_dec is-highlight">Transfusion<span class="venue">(ICLR 2025)</span></a></p><br></ul>
+<input type="search" id="paperSearch" class="search"
+       placeholder="Filter papers by title / author / venue / name…"
+       aria-label="Filter papers">
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const input = document.getElementById("paperSearch");
+    if (!input) return;
+    const papers = Array.from(document.querySelectorAll(".paper[data-search]"));
+    input.addEventListener("input", () => {
+        const q = input.value.trim().toLowerCase();
+        papers.forEach(p => {
+            const hit = !q || p.dataset.search.includes(q);
+            p.classList.toggle("is-hidden", !hit);
+        });
+    });
+});
+</script>
+<h2 id="understanding-foundation-algorithms-models-table"><a class="no_dec" href="#cat-understanding-foundation-algorithms-models">Understanding: Foundation Algorithms & Models</a></h2><div id="qwen2-5-vl-arxiv-2025-understanding-foundation-algorithms-models" class="paper paper--toggle" data-search="qwen2.5-vl technical report shuai bai, keqin chen, xuejing liu, jialin wang, wenbin ge, sibo song, kai dang, peng wang, shijie wang, jun tang, humen zhong, yuanzhi zhu, mingkun yang, zhaohai li, jianqiang wan, pengfei wang, wei ding, zheren fu, yiheng xu, jiabo ye, xi zhang, tianbao xie, zesen cheng, hang zhang, zhibo yang, haiyang xu, junyang lin alibaba group arxiv 2025 qwen2.5-vl understanding: foundation algorithms & models" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('qwen2-5-vl-arxiv-2025-understanding-foundation-algorithms-models-details')">Qwen2.5-VL Technical Report</p><p class="paper__detail">Shuai Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin Ge, Sibo Song, Kai Dang, Peng Wang, Shijie Wang, Jun Tang, Humen Zhong, Yuanzhi Zhu, Mingkun Yang, Zhaohai Li, Jianqiang Wan, Pengfei Wang, Wei Ding, Zheren Fu, Yiheng Xu, Jiabo Ye, Xi Zhang, Tianbao Xie, Zesen Cheng, Hang Zhang, Zhibo Yang, Haiyang Xu, Junyang Lin</p><p class="paper__detail">Alibaba Group</p><p class="paper__detail"><b>arXiv</b>, 2025</p><p class="paper__detail">Feb 19, 2025 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2502.13923"><span class="paper__name paper__name--highlight">Qwen2.5-VL</span></a> &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://github.com/QwenLM/Qwen2.5-VL">code</a></p><div id="qwen2-5-vl-arxiv-2025-understanding-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>It improves Qwen2-VL by employing window attention, native dynamic resolution, absolute time encoding, and more high-quality data.</p><p><ul>
+<li> <b>Visual encoder.</b> The used ViT is trained from scratch. It employs self-attention + window attention to improve efficiency. It employs MRoPE as position embedding. Images and videos are sampled at native resolutions and dynamic frame rates.
+<li> <b>Vision-Language Merger.</b> Group adjacent four visual patches, concat them along feature dimensions, and project them using a two-layer MLP.
+<li> <b>Language model.</b> Qwen2.5 LLM.
+<li> <b>Pre-training stages.</b> (1) Stage 1: ViT is trained to learn visual knowledge; (2) Stage 2: all model parameters are optimized to learn diverse knowledge and tasks; (3) Stage 3: all model parameters are optimized to learn long sequences by incorporating video and agent-based data.
+<li> <b>Post-training stages.</b> SFT and DPO are employed to optimize the language model.
+<li> <b>Sparkling capabilities.</b> Omni-document parsing, precise object grounding (based on real resolution), ultra-long video understanding and grounding, and enhanced agent functionality.
+</ul>
+<figure>
+<img src="resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig1.png" width="700" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> <b>Model structure.</b></figcaption>
+</figure>
+<figure>
+<img src="resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig2.png" width="450" loading="lazy" alt="">
+<figcaption><b>Figure 2.</b> <b>Model structure details.</b></figcaption>
+</figure>
+<figure>
+<img src="resource/figs/Qwen2.5-VL/Qwen2.5-VL-fig3.png" width="500" loading="lazy" alt="">
+<figcaption><b>Figure 3.</b> <b>Pre-training data.</b></figcaption>
+</figure></p></div></div><div id="qwen2-vl-arxiv-2024-understanding-foundation-algorithms-models" class="paper paper--toggle" data-search="qwen2-vl: enhancing vision-language model's perception of the world at any resolution peng wang, shuai bai, sinan tan, shijie wang, zhihao fan, jinze bai, keqin chen, xuejing liu, jialin wang, wenbin ge, yang fan, kai dang, mengfei du, xuancheng ren, rui men, dayiheng liu, chang zhou, jingren zhou, junyang lin alibaba group arxiv 2024 qwen2-vl understanding: foundation algorithms & models" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('qwen2-vl-arxiv-2024-understanding-foundation-algorithms-models-details')">Qwen2-VL: Enhancing Vision-Language Model's Perception of the World at Any Resolution</p><p class="paper__detail">Peng Wang, Shuai Bai, Sinan Tan, Shijie Wang, Zhihao Fan, Jinze Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin Ge, Yang Fan, Kai Dang, Mengfei Du, Xuancheng Ren, Rui Men, Dayiheng Liu, Chang Zhou, Jingren Zhou, Junyang Lin</p><p class="paper__detail">Alibaba Group</p><p class="paper__detail"><b>arXiv</b>, 2024</p><p class="paper__detail">Sep 18, 2024 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2409.12191"><span class="paper__name paper__name--highlight">Qwen2-VL</span></a> &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://github.com/QwenLM/Qwen2.5-VL">code</a></p><div id="qwen2-vl-arxiv-2024-understanding-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>It improves Qwen-VL by using a <b>Naive Dynamic Resolution</b> mechanism with <b>multimodal RoPE</b>, and a <b>unified image-video processing</b> paradigm.</p><p><ul>
+<li> <b>Visual encoder (675M).</b> Use self-developed ViT. Employ Naive Dynamic Resolution with 2D-RoPE to provide a variable number of visual tokens for images or videos with different resolution and frame number. Compress visual tokens by 2x2 using MLP.
+<li> <b>Language model (1.5B, 7.6B, 72B).</b> Qwen series.
+<li> <b>Unified image and video processing:</b> (1) Sample each video at two frames per second; (2) Compress video inputs by 4x using 3D convs; (3) Each image is treated as two identical frames for consistency. (4) The limit of tokens per video is set to 16,384 by adjusting the resolution.
+<li> <b>Three-stage training (same as Qwen-VL).</b> (1) Pre-training on 600B tokens by optimizing ViT; (2) Multi-task pre-training on 600B + 800B tokens by optimizing all model parameters; (3) Instruction tuning on instruction-following data (ChatML format) by optimizing LLM.
+<li> <b>Three model sizes:</b> Qwen2-VL-2B (on-device), Qwen2-VL-7B (performance-optimized), Qwen2-VL-72B (most capable).
+<li> <b>Capabilities:</b> general chat, multilingual image text understanding, formula recognition, function calling, UI interaction, long document understanding, code/math reasoning, video understanding, grounding, live chat, and agent potential.
+</ul>
+<figure>
+<img src="resource/figs/Qwen2-VL/Qwen2-VL-fig1.png" width="600" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> <b>Qwen2-VL Structure.</b> It discards the multimodal connector module used in Qwen-VL.</figcaption>
+</figure>
+<figure>
+<img src="resource/figs/Qwen2-VL/Qwen2-VL-fig2.png" width="600" loading="lazy" alt="">
+<figcaption><b>Figure 2.</b> <b>Unified Multimodal Rotary Position Embedding (M-RoPE)</b> for text, images, and videos.</figcaption>
+</figure>
+<figure>
+<img src="resource/figs/Qwen2-VL/Qwen2-VL-fig3.png" width="500" loading="lazy" alt="">
+<img src="resource/figs/Qwen2-VL/Qwen2-VL-fig4.png" width="500" loading="lazy" alt="">
+<img src="resource/figs/Qwen2-VL/Qwen2-VL-fig5.png" width="500" loading="lazy" alt="">
+<figcaption><b>Figure 3.</b> <b>Dataset format</b> example.</figcaption>
+</figure></p></div></div><div id="blip-3-arxiv-2024-understanding-foundation-algorithms-models" class="paper paper--toggle" data-search="xgen-mm (blip-3): a family of open large multimodal models le xue, manli shu, anas awadalla, jun wang, an yan, senthil purushwalkam, honglu zhou, viraj prabhu, yutong dai, michael s ryoo, shrikant kendre, jieyu zhang, shaoyen tseng, gustavo a lujan-moreno, matthew l olson, musashi hinck, david cobbley, vasudev lal, can qin, shu zhang, chia-chih chen, ning yu, juntao tan, tulika manoj awalgaonkar, shelby heinecke, huan wang, yejin choi, ludwig schmidt, zeyuan chen, silvio savarese, juan carlos niebles, caiming xiong, ran xu salesforce ai research, intel labs, university of washington arxiv 2024 blip-3 understanding: foundation algorithms & models" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('blip-3-arxiv-2024-understanding-foundation-algorithms-models-details')">xGen-MM (BLIP-3): A Family of Open Large Multimodal Models</p><p class="paper__detail">Le Xue, Manli Shu, Anas Awadalla, Jun Wang, An Yan, Senthil Purushwalkam, Honglu Zhou, Viraj Prabhu, Yutong Dai, Michael S Ryoo, Shrikant Kendre, Jieyu Zhang, Shaoyen Tseng, Gustavo A Lujan-Moreno, Matthew L Olson, Musashi Hinck, David Cobbley, Vasudev Lal, Can Qin, Shu Zhang, Chia-Chih Chen, Ning Yu, Juntao Tan, Tulika Manoj Awalgaonkar, Shelby Heinecke, Huan Wang, Yejin Choi, Ludwig Schmidt, Zeyuan Chen, Silvio Savarese, Juan Carlos Niebles, Caiming Xiong, Ran Xu</p><p class="paper__detail">Salesforce AI Research, Intel Labs, University of Washington</p><p class="paper__detail"><b>arXiv</b>, 2024</p><p class="paper__detail">Aug 16, 2024 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2408.08872"><span class="paper__name">BLIP-3</span></a> &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://github.com/salesforce/LAVIS/tree/xgen-mm">code</a></p><div id="blip-3-arxiv-2024-understanding-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>It improves BLIP-2 by introducing interleaved multimodal data, unified training objective, and visual resampler.</p><p><ul>
+<li> <b>Training.</b> (1) Stage 1: base resolution pre-training on 100B tokens with 384x384 visual resolution; (2) Stage 2: high resolution pre-training on high-quality data; (3) Stage 3: SFT on single-image instruction-following data; (4) Stage 4: SFT on multi-image interleaved data.
+</ul>
+<figure>
+<img src="resource/figs/BLIP-3/BLIP-3-fig1.png" width="700" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> BLIP-3 improves BLIP-2 by introducing <b>interleaved data</b>, using <b>unified training objective</b>, and <b>fine-grained training stages</b>.</figcaption>
+</figure>
+<figure>
+<img src="resource/figs/BLIP-3/BLIP-3-fig2.png" width="400" loading="lazy" alt="">
+<figcaption><b>Figure 2.</b> <b>Structure.</b> It replaces Q-Former in BLIP-2 by a <b>sampler</b> (inspired by Flamingo). Only the sampler and the LLM (Phi-3) are trained.</figcaption>
+</figure></p></div></div><div id="minigpt-v2-arxiv-2024-understanding-foundation-algorithms-models" class="paper paper--toggle" data-search="minigpt-v2: large language model as a unified interface for vision-language multi-task learning jun chen, deyao zhu, xiaoqian shen, xiang li, zechun liu, pengchuan zhang, raghuraman krishnamoorthi, vikas chandra, yunyang xiong, mohamed elhoseiny king abdullah university of science and technology (kaust), meta ai research arxiv 2024 minigpt-v2 understanding: foundation algorithms & models" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('minigpt-v2-arxiv-2024-understanding-foundation-algorithms-models-details')">MiniGPT-v2: Large Language Model as a Unified Interface for Vision-Language Multi-Task Learning</p><p class="paper__detail">Jun Chen, Deyao Zhu, Xiaoqian Shen, Xiang Li, Zechun Liu, Pengchuan Zhang, Raghuraman Krishnamoorthi, Vikas Chandra, Yunyang Xiong, Mohamed Elhoseiny</p><p class="paper__detail">King Abdullah University of Science and Technology (KAUST), Meta AI Research</p><p class="paper__detail"><b>arXiv</b>, 2024</p><p class="paper__detail">Oct 14, 2023 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2310.09478v1"><span class="paper__name">MiniGPT-v2</span></a> &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://github.com/Vision-CAIR/MiniGPT-4">code</a></p><div id="minigpt-v2-arxiv-2024-understanding-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>It makes the model learn to tackle 6 tasks with different <b>task identifiers</b> through three-stage training (maybe inspired by Qwen-VL).</p><p><ul>
+<li> <b>Visual structure.</b> Use ViT-G/14 from EVA-CLIP with a Q-Former (same as MiniGPT-4). Image resolution is increased from 224x224 to 448x448, and every four neighboring visual tokens are concatenated into a single token to save compute by reducing tokens.
+<li> <b>Language structure.</b> Language model is upgraded from Vicuna to LLaMA2-chat (7B).
+<li> <b>Task identifiers</b> are used by the model to identify tasks. VQA: [vqa]; captioning: [caption]; grounded captioning: [grounding]; referring expression comprehension: [refer]; referring expression generation: [identify]; object parsing and grounding: [detection].
+<li> The <b>grounding task</b> is introduced to improve MiniGPT (maybe inspired by Qwen-VL).
+</ul>
+<figure>
+<img src="resource/figs/MiniGPT-v2/MiniGPT-v2-fig1.png" width="500" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> <b>Training data.</b></figcaption>
+</figure></p></div></div><div id="qwen-vl-arxiv-2023-understanding-foundation-algorithms-models" class="paper paper--toggle" data-search="qwen-vl: a frontier large vision-language model with versatile abilities jinze bai, shuai bai, shusheng yang, shijie wang, sinan tan, peng wang, junyang lin, chang zhou, jingren zhou alibaba group arxiv 2023 qwen-vl understanding: foundation algorithms & models" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('qwen-vl-arxiv-2023-understanding-foundation-algorithms-models-details')">Qwen-VL: A Frontier Large Vision-Language Model with Versatile Abilities</p><p class="paper__detail">Jinze Bai, Shuai Bai, Shusheng Yang, Shijie Wang, Sinan Tan, Peng Wang, Junyang Lin, Chang Zhou, Jingren Zhou</p><p class="paper__detail">Alibaba Group</p><p class="paper__detail"><b>arXiv</b>, 2023</p><p class="paper__detail">Aug 24, 2023 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2308.12966"><span class="paper__name paper__name--highlight">Qwen-VL</span></a> &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://github.com/QwenLM/Qwen-VL">code</a></p><div id="qwen-vl-arxiv-2023-understanding-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>Built upon the language model Qwen-7B, it makes Qwen-VL learn image description, QA, <b>grounding</b>, and <b>text-reading</b> through three-stage training.</p><p><ul>
+<li> <b>Visual encoder (1.9B):</b> ViT (OpenCLIP's ViT-bigG).
+<li> <b>Vision-language adapter (0.08B):</b> Q-Former with 2D absolute positional encodings to produce 256 visual tokens.
+<li> <b>LLM (7.7B):</b> Qwen-7B.
+<li> <b>Special tokens:</b> `&lt;img&gt; &lt;/img&gt;`: images; `&lt;box&gt; &lt;/box&gt;`: normalized bounding box; `&lt;ref&gt; &lt;/ref&gt;`: the content referred by bounding box.
+<li> <b>Stage 1 (pre-training):</b> large-scale, weakly labeled, web-crawled image-text pairs. 5B data, 1.4B cleaned data (77% English and 23% Chinese). Freeze LLM and optimize the vision encoder and VL adapter. Train 50K steps with batchsize of 30720, consume 1.5B samples. Image: 224x224.
+<li> <b>Stage 2 (multi-task pre-training).</b> Captioning, VQA, grounding, ref grounding, grounded captioning, OCR, pure-text autoregression. Image: 448x448. Train the whole model.
+<li> <b>Stage 3 (instruction tuning).</b> Use 350K instruction tuning data. Freeze visual encoder and optimize the LLM and adapter.
+<li> <b>Capabilities:</b> multi-lingual, multi-image, and multi-round conversation.
+</ul>
+<figure>
+<img src="resource/figs/Qwen-VL/Qwen-VL-fig3.png" width="500" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> <b>Three-stage Training.</b></figcaption>
+</figure>
+<figure>
+<img src="resource/figs/Qwen-VL/Qwen-VL-fig4.png" width="350" loading="lazy" alt="">
+<figcaption><b>Figure 2.</b> Data for training <b>stage 1</b>.</figcaption>
+</figure>
+<figure>
+<img src="resource/figs/Qwen-VL/Qwen-VL-fig5.png" width="500" loading="lazy" alt="">
+<figcaption><b>Figure 3.</b> Data for training <b>stage 2</b>.</figcaption>
+</figure></p></div></div><div id="minigpt-4-iclr-2024-understanding-foundation-algorithms-models" class="paper paper--toggle" data-search="minigpt-4: enhancing vision-language understanding with advanced large language models deyao zhu, jun chen, xiaoqian shen, xiang li, mohamed elhoseiny king abdullah university of science and technology iclr 2024 minigpt-4 understanding: foundation algorithms & models" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('minigpt-4-iclr-2024-understanding-foundation-algorithms-models-details')">MiniGPT-4: Enhancing Vision-Language Understanding with Advanced Large Language Models</p><p class="paper__detail">Deyao Zhu, Jun Chen, Xiaoqian Shen, Xiang Li, Mohamed Elhoseiny</p><p class="paper__detail">King Abdullah University of Science and Technology</p><p class="paper__detail">International Conference on Learning Representations (<b>ICLR</b>), 2024</p><p class="paper__detail">Apr 20, 2023 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2304.10592"><span class="paper__name paper__name--highlight">MiniGPT-4</span></a> &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://github.com/Vision-CAIR/MiniGPT-4">code</a></p><div id="minigpt-4-iclr-2024-understanding-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>It aligns a frozen visual encoder with a frozen LLM (Vicuna) using <b>one projection layer</b>.</p><p>
+<ul>
+    <li> <b>Structure.</b> The same pretrained vision module as BLIP-2: ViT-G/14 from EVA-CLIP with a Q-Former. Language model: Vicuna. Connector: a single projection layer.
+    <li> <b>Training.</b> Pre-training + instruction-tuning. It only fine-tunes the projection layer.
+    <li> <b>Training data.</b> Pre-training: LAION, Conceptual Captions, SBU. Instruction-tuning: 3500 images from Conceptual Caption with captions generated by the pre-trained model (cleaned by ChatGPT).
+</ul>
+</p></div></div><div id="llava-neurips-2023-understanding-foundation-algorithms-models" class="paper paper--toggle" data-search="visual instruction tuning haotian liu, chunyuan li, qingyang wu, yong jae lee university of wisconsin-madison, microsoft research, columbia university neurips 2023 llava understanding: foundation algorithms & models" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('llava-neurips-2023-understanding-foundation-algorithms-models-details')">Visual Instruction Tuning</p><p class="paper__detail">Haotian Liu, Chunyuan Li, Qingyang Wu, Yong Jae Lee</p><p class="paper__detail">University of Wisconsin-Madison, Microsoft Research, Columbia University</p><p class="paper__detail">Advances in Neural Information Processing Systems (<b>NeurIPS</b>), 2023</p><p class="paper__detail">Apr 17, 2023 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2304.08485"><span class="paper__name paper__name--highlight">LLaVA</span></a> &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://github.com/haotian-liu/LLaVA">code</a></p><div id="llava-neurips-2023-understanding-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>It makes the first attempt to use GPT-4 to generate multimodal instruction-following data and performs multimodal <b>instruction fine-tuning</b>.</p><p><ul>
+<li> <b>Structure.</b> (1) Vision encoder: pre-trained CLIP; (2) Connector: a linear layer; (3) Language model: Vicuna.
+<li> <b>Instruction-following data.</b> 158K: 25K conversations + 23K detailed description + 77K complex reasoning.
+<li> <b>Training.</b> (1) Stage 1: train connector on CC3M instruction-following data; (2) Stage 2: train connector & LLM on 158K instruction-following data.
+</ul>
+<figure>
+<img src="resource/figs/LLaVA/LLaVA-fig2.png" width="350" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> <b>Structure.</b></figcaption>
+</figure>
+<figure>
+<img src="resource/figs/LLaVA/LLaVA-fig1.png" width="500" loading="lazy" alt="">
+<figcaption><b>Figure 2.</b> Use the context to build <b>instruction-following data</b> by prompting GPT.</figcaption>
+</figure></p></div></div><div id="blip-2-icml-2023-understanding-foundation-algorithms-models" class="paper paper--toggle" data-search="blip-2: bootstrapping language-image pre-training with frozen image encoders and large language models junnan li, dongxu li, silvio savarese, steven hoi salesforce research icml 2023 blip-2 understanding: foundation algorithms & models" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('blip-2-icml-2023-understanding-foundation-algorithms-models-details')">BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models</p><p class="paper__detail">Junnan Li, Dongxu Li, Silvio Savarese, Steven Hoi</p><p class="paper__detail">Salesforce Research</p><p class="paper__detail">International Conference on Machine Learning (<b>ICML</b>), 2023</p><p class="paper__detail">Jan 30, 2023 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2301.12597"><span class="paper__name paper__name--highlight">BLIP-2</span></a> &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://github.com/salesforce/LAVIS/tree/main/projects/blip2">code</a></p><div id="blip-2-icml-2023-understanding-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p><ul>
+<li> <b>Vision encoder.</b> ViT-L/14 from CLIP or ViT-G/14 from EVA-CLIP.
+<li> <b>Language model.</b> OPT model or FlanT5.
+<li> <b>Querying Transformer (Q-Former).</b> An image transformer & a text transformer, they are initialized from BERT and share the self-attention layer.
+<li> <b>Training.</b> (1) Stage 1 (250K steps): learn vision-langauge representations from a frozen image encoder by optimizing the three losses used in BLIP; (2) Stage 2 (80K steps): learn vision-to-language generation from a frozen LLM.
+<li> <b>Data.</b> Basically same as BLIP. Only the Q-Former is trained.
+</ul>
+<figure>
+<img src="resource/figs/BLIP-2/BLIP-2-fig1.png" width="400" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> <b>Overall structure</b>. Visual query embeddings are projected and prepended to the input text embeddings as Q-Former output & LLM input.</figcaption>
+</figure>
+<figure>
+<img src="resource/figs/BLIP-2/BLIP-2-fig2.png" width="700" loading="lazy" alt="">
+<figcaption><b>Figure 2.</b> <b>Q-Former</b> (left) with 32 query tokens, and <b>self-attention masking strategy</b> (right) for different training tasks.</figcaption>
+</figure></p></div></div><div id="flamingo-neurips-2022-understanding-foundation-algorithms-models" class="paper paper--toggle" data-search="flamingo: a visual language model for few-shot learning jean-baptiste alayrac, jeff donahue, pauline luc, antoine miech, iain barr, yana hasson, karel lenc, arthur mensch, katie millican, malcolm reynolds, roman ring, eliza rutherford, serkan cabi, tengda han, zhitao gong, sina samangooei, marianne monteiro, jacob menick, sebastian borgeaud, andrew brock, aida nematzadeh, sahand sharifzadeh, mikolaj binkowski, ricardo barreira, oriol vinyals, andrew zisserman, karen simonyan deepmind neurips 2022 flamingo understanding: foundation algorithms & models" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('flamingo-neurips-2022-understanding-foundation-algorithms-models-details')">Flamingo: a Visual Language Model for Few-Shot Learning</p><p class="paper__detail">Jean-Baptiste Alayrac, Jeff Donahue, Pauline Luc, Antoine Miech, Iain Barr, Yana Hasson, Karel Lenc, Arthur Mensch, Katie Millican, Malcolm Reynolds, Roman Ring, Eliza Rutherford, Serkan Cabi, Tengda Han, Zhitao Gong, Sina Samangooei, Marianne Monteiro, Jacob Menick, Sebastian Borgeaud, Andrew Brock, Aida Nematzadeh, Sahand Sharifzadeh, Mikolaj Binkowski, Ricardo Barreira, Oriol Vinyals, Andrew Zisserman, Karen Simonyan</p><p class="paper__detail">DeepMind</p><p class="paper__detail">Advances in Neural Information Processing Systems (<b>NeurIPS</b>), 2022</p><p class="paper__detail">Apr 29, 2022 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2204.14198"><span class="paper__name paper__name--highlight">Flamingo</span></a></p><div id="flamingo-neurips-2022-understanding-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>It achieves <b>few-shot in-context learning</b> ability by bridging vision and language models and training on interleaved visual and textual data.</p><p><ul>
+<li> <b>Visual encoder.</b> Use pre-trained and frozen Normalizer-Free ResNet, and pre-train it using contrastive loss. Images and videos (sample_fps=1) are compressed to spatio-temporal grid of features.
+<li> <b>Perceiver resampler (Q-Former).</b> It processes a variable number of image or video tokens and produces a fixed number of visual tokens (64).
+<li> <b>Gated xattn-dense layers.</b> They are inserted to the pre-trained, frozen language model (Chinchilla) and are trained from scratch.
+<li> <b>Model size.</b> Flamingo-3B, Flamingo-9B, and Flamingo-80B.
+</ul>
+<figure>
+<img src="resource/figs/Flamingo/Flamingo-fig2.png" width="500" loading="lazy" alt="">
+<img src="resource/figs/Flamingo/Flamingo-fig3.png" width="600" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> <b>Overall structure</b> (top) and <b>gated xattn-dense layers</b> (bottom).</figcaption>
+</figure></p></div></div><div id="blip-icml-2022-understanding-foundation-algorithms-models" class="paper paper--toggle" data-search="blip: bootstrapping language-image pre-training for unified vision-language understanding and generation junnan li, dongxu li, caiming xiong, steven hoi salesforce research icml 2022 blip understanding: foundation algorithms & models" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('blip-icml-2022-understanding-foundation-algorithms-models-details')">BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation</p><p class="paper__detail">Junnan Li, Dongxu Li, Caiming Xiong, Steven Hoi</p><p class="paper__detail">Salesforce Research</p><p class="paper__detail">International Conference on Machine Learning (<b>ICML</b>), 2022</p><p class="paper__detail">Jan 28, 2022 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2201.12086"><span class="paper__name paper__name--highlight">BLIP</span></a> &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://github.com/salesforce/BLIP">code</a></p><div id="blip-icml-2022-understanding-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>It enables both vision-language <b>understanding & generation</b> by multi-task learning with a unified framework, as well as a data bootstrapping strategy.</p><p><figure>
+<img src="resource/figs/BLIP/BLIP-fig1.png" width="650" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> <b>Structure.</b> (1) Unimodal encoder is trained with an image-text contrastive (ITC) loss; (2) Image-grounded text encoder uses cross-attention layers, trained with an image-text matching (ITM) loss; (3) Image-grounded text decoder is trained with a language modeling (LM) loss.</figcaption>
+</figure></p></div></div><div id="clip-icml-2021-understanding-foundation-algorithms-models" class="paper paper--toggle" data-search="learning transferable visual models from natural language supervision alec radford, jong wook kim, chris hallacy, aditya ramesh, gabriel goh, sandhini agarwal, girish sastry, amanda askell, pamela mishkin, jack clark, gretchen krueger, ilya sutskever openai icml 2021 clip understanding: foundation algorithms & models" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('clip-icml-2021-understanding-foundation-algorithms-models-details')">Learning Transferable Visual Models From Natural Language Supervision</p><p class="paper__detail">Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever</p><p class="paper__detail">OpenAI</p><p class="paper__detail">International Conference on Machine Learning (<b>ICML</b>), 2021</p><p class="paper__detail">Feb 26, 2021 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2103.00020"><span class="paper__name paper__name--highlight">CLIP</span></a> &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://github.com/OpenAI/CLIP">code</a></p><p class="paper__detail paper__comment">CLIP shifts computer vision research from high-quality, crowd-labeled data with pre-defined labels, e.g., ImageNet, to web-scale data with natural language supervision. CLIP generalizes well on visual benchmarks, and spurs research on multimodal foundation models. It has over 30,000 citations (as of Jul 2025).</p><div id="clip-icml-2021-understanding-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>By training on 400M internet text-image pairs through contrastive learning, it shows great generalization on visual benchmarks.</p><p><figure>
+<img src="resource/figs/CLIP/CLIP-fig1.png" width="650" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> <b>Training and inference pipelines.</b></figcaption>
+</figure>
+<figure>
+<img src="resource/figs/CLIP/CLIP-fig2.png" width="300" loading="lazy" alt="">
+<figcaption><b>Figure 2.</b> <b>Pseudocode for training CLIP.</b></figcaption>
+</figure>
+<figure>
+<img src="resource/figs/CLIP/CLIP-fig3.png" width="400" loading="lazy" alt="">
+<figcaption><b>Figure 3.</b> <b>Zero-shot CLIP</b> outperforms few-shot probes of SoTA visual models.</figcaption>
+</figure>
+<figure>
+<img src="resource/figs/CLIP/CLIP-fig4.png" width="500" loading="lazy" alt="">
+<figcaption><b>Figure 4.</b> <b>Linear probe CLIP</b> outperforms SoTA visual models.</figcaption>
+</figure>
+<figure>
+<img src="resource/figs/CLIP/CLIP-fig5.png" width="700" loading="lazy" alt="">
+<figcaption><b>Figure 5.</b> CLIP is much more robust to <b>distribution shift</b>.</figcaption>
+</figure></p></div></div><h2 id="understanding-and-generation-foundation-algorithms-models-table"><a class="no_dec" href="#cat-understanding-and-generation-foundation-algorithms-models">Understanding and Generation: Foundation Algorithms & Models</a></h2><div id="mmada-neurips-2025-understanding-and-generation-foundation-algorithms-models" class="paper paper--toggle" data-search="mmada: multimodal large diffusion language models ling yang, ye tian, bowen li, xinchen zhang, ke shen, yunhai tong, mengdi wang princeton university, peking university, tsinghua university, bytedance seed neurips 2025 mmada understanding and generation: foundation algorithms & models" style="--paper-accent: var(--accent-2);"><p class="paper__title" onclick="toggleTable('mmada-neurips-2025-understanding-and-generation-foundation-algorithms-models-details')">MMaDA: Multimodal Large Diffusion Language Models</p><p class="paper__detail">Ling Yang, Ye Tian, Bowen Li, Xinchen Zhang, Ke Shen, Yunhai Tong, Mengdi Wang</p><p class="paper__detail">Princeton University, Peking University, Tsinghua University, ByteDance Seed</p><p class="paper__detail">Advances in Neural Information Processing Systems (<b>NeurIPS</b>), 2025</p><p class="paper__detail">May 21, 2025 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2505.15809"><span class="paper__name paper__name--highlight">MMaDA</span></a> &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://github.com/Gen-Verse/MMaDA">code</a></p><div id="mmada-neurips-2025-understanding-and-generation-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>
+It introduces a unified <b>discrete-diffusion foundation model</b> that leverages Mixed Long-CoT fine-tuning and UniGRPO.
+</p><p><figure>
+<img src="resource/figs/MMaDA/MMaDA-fig1.png" width="800" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> <b>MMaDA Structure.</b></figcaption>
+</figure></p></div></div><div id="bagel-arxiv-2025-understanding-and-generation-foundation-algorithms-models" class="paper paper--toggle" data-search="emerging properties in unified multimodal pretraining chaorui deng, deyao zhu, kunchang li, chenhui gou, feng li, zeyu wang, shu zhong, weihao yu, xiaonan nie, ziang song, guang shi, haoqi fan bytedance seed, shenzhen institutes of advanced technology, monash university, hong kong university of science and technology, uc santa cruz arxiv 2025 bagel understanding and generation: foundation algorithms & models" style="--paper-accent: var(--accent-2);"><p class="paper__title" onclick="toggleTable('bagel-arxiv-2025-understanding-and-generation-foundation-algorithms-models-details')">Emerging Properties in Unified Multimodal Pretraining</p><p class="paper__detail">Chaorui Deng, Deyao Zhu, Kunchang Li, Chenhui Gou, Feng Li, Zeyu Wang, Shu Zhong, Weihao Yu, Xiaonan Nie, Ziang Song, Guang Shi, Haoqi Fan</p><p class="paper__detail">ByteDance Seed, Shenzhen Institutes of Advanced Technology, Monash University, Hong Kong University of Science and Technology, UC Santa Cruz</p><p class="paper__detail"><b>arXiv</b>, 2025</p><p class="paper__detail">May 20, 2025 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2505.14683"><span class="paper__name paper__name--highlight">BAGEL</span></a> &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://github.com/bytedance-seed/BAGEL">code</a></p><div id="bagel-arxiv-2025-understanding-and-generation-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>
+It introduces unified decoder (14B with 7B activated) with <b>Mixture-of-Transformer-Experts (MoT)</b> trained on <b>trillion-scale interleaved multimodal data</b>, achieving sota open-source performance in generation & understanding while exhibiting emergent reasoning for long-context visual tasks.
+</p><p><figure>
+<img src="resource/figs/BAGEL/BAGEL-fig1.png" width="500" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> <b>Main structure:</b> one understanding expert & one generation expert, they share the attention. Initialized by Qwen2.5 LLM. <b>Encoder:</b> one visual generation encoder (FLUX VAE, fixed) & one visual understanding encoder (ViT initialized by SigLIP2-so400m/14) & one text tokenizer. <b>Loss:</b> next-token prediction loss on text tokens, and flow matching loss on image tokens. <b>Attention:</b> apply causal attention to text tokens, and bidirectional attention to image tokens. <b>Infra:</b> use PyTorch FlexAttention to achieve 2x speed-up; use KV-cache. <b>Classifier-free guidance:</b> randomly drop text, ViT, and clean VAE tokens by 0.1, 0.5, and 0.1.</figcaption>
+</figure>
+<figure>
+<img src="resource/figs/BAGEL/BAGEL-fig2.png" width="400" loading="lazy" alt="">
+<figcaption><b>Figure 2.</b> <b>Data.</b></figcaption>
+</figure>
+<figure>
+<img src="resource/figs/BAGEL/BAGEL-fig3.png" width="500" loading="lazy" alt="">
+<figcaption><b>Figure 3.</b> <b>Training recipe.</b> <b>Alignment:</b> Align SigLIP2 ViT encoder to Qwen2.5 LLM by optimizing MLP connector through image captioning. <b>Pre-training:</b> training all parameters on 2.5T tokens. <b>Continued training:</b> increase visual resolution and sampling of interleaved data, trained on 2.6T tokens. <b>Supervised fine-tuning:</b> trained on 72.7B tokens from a subset of LLaVA-OV and Mammoth-VL.</figcaption>
+</figure></p></div></div><div id="blip3-o-arxiv-2025-understanding-and-generation-foundation-algorithms-models" class="paper paper--toggle" data-search="blip3-o: a family of fully open unified multimodal models-architecture, training and dataset jiuhai chen, zhiyang xu, xichen pan, yushi hu, can qin, tom goldstein, lifu huang, tianyi zhou, saining xie, silvio savarese, le xue, caiming xiong, ran xu salesforce research, university of maryland, virginia tech, new york university, university of washington, uc davis arxiv 2025 blip3-o understanding and generation: foundation algorithms & models" style="--paper-accent: var(--accent-2);"><p class="paper__title" onclick="toggleTable('blip3-o-arxiv-2025-understanding-and-generation-foundation-algorithms-models-details')">BLIP3-o: A Family of Fully Open Unified Multimodal Models-Architecture, Training and Dataset</p><p class="paper__detail">Jiuhai Chen, Zhiyang Xu, Xichen Pan, Yushi Hu, Can Qin, Tom Goldstein, Lifu Huang, Tianyi Zhou, Saining Xie, Silvio Savarese, Le Xue, Caiming Xiong, Ran Xu</p><p class="paper__detail">Salesforce Research, University of Maryland, Virginia Tech, New York University, University of Washington, UC Davis</p><p class="paper__detail"><b>arXiv</b>, 2025</p><p class="paper__detail">May 14, 2025 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2505.09568"><span class="paper__name">BLIP3-o</span></a> &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://github.com/JiuhaiChen/BLIP3o">code</a></p><div id="blip3-o-arxiv-2025-understanding-and-generation-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>It finds it is beneficial to generate CLIP features by employing flow matching loss, and use sequential training of understanding and generation.</p><p><ul>
+<li> <b>Structure.</b> Use Qwen 2.5-VL-7B-Instruct and freeze it, and train a 1.4B diffusion transformer (Lumina-Next) on it.
+<li> <b>Data.</b> Pre-training data: 25M open-source data and 30M proprietary data, with captions generated by Qwen 2.5-VL. Instruction tuning data: 60K.
+</ul>
+<figure>
+<img src="resource/figs/BLIP3-o/BLIP3-o-fig1.png" width="550" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> <b>Structure.</b> It unifies the visual understanding and generation by using CLIP encoder.</figcaption>
+</figure>
+<figure>
+<img src="resource/figs/BLIP3-o/BLIP3-o-fig2.png" width="550" loading="lazy" alt="">
+<figcaption><b>Figure 2.</b> <b>Design choices</b> on image generation in unified multimodal model.</figcaption>
+</figure>
+<figure>
+<img src="resource/figs/BLIP3-o/BLIP3-o-fig3.png" width="600" loading="lazy" alt="">
+<figcaption><b>Figure 3.</b> Performance on different <b>design choices</b>. CLIP + Flow Matching is a better choice.</figcaption>
+</figure>
+<figure>
+<img src="resource/figs/BLIP3-o/BLIP3-o-fig4.png" width="600" loading="lazy" alt="">
+<figcaption><b>Figure 4.</b> <b>Joint training vs. sequential training.</b></figcaption>
+</figure></p></div></div><div id="unifluid-arxiv-2025-understanding-and-generation-foundation-algorithms-models" class="paper paper--toggle" data-search="unified autoregressive visual generation and understanding with continuous tokens lijie fan, luming tang, siyang qin, tianhong li, xuan yang, siyuan qiao, andreas steiner, chen sun, yuanzhen li, tao zhu, michael rubinstein, michalis raptis, deqing sun, radu soricut google deepmind, mit arxiv 2025 unifluid understanding and generation: foundation algorithms & models" style="--paper-accent: var(--accent-2);"><p class="paper__title" onclick="toggleTable('unifluid-arxiv-2025-understanding-and-generation-foundation-algorithms-models-details')">Unified Autoregressive Visual Generation and Understanding with Continuous Tokens</p><p class="paper__detail">Lijie Fan, Luming Tang, Siyang Qin, Tianhong Li, Xuan Yang, Siyuan Qiao, Andreas Steiner, Chen Sun, Yuanzhen Li, Tao Zhu, Michael Rubinstein, Michalis Raptis, Deqing Sun, Radu Soricut</p><p class="paper__detail">Google DeepMind, MIT</p><p class="paper__detail"><b>arXiv</b>, 2025</p><p class="paper__detail">Mar 17, 2025 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2503.13436"><span class="paper__name">UniFluid</span></a></p><div id="unifluid-arxiv-2025-understanding-and-generation-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>It achieves visual generation and understanding by applying diffusion loss on continuous visual tokens and cross-entropy loss on discrete text tokens.</p><p><figure>
+<img src="resource/figs/UniFluid/UniFluid-fig1.png" width="500" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> <b>Framework:</b> joint training of visual generation and understanding tasks through next-token prediction. <b>Tokenizer:</b> use VAE to provide tokens for visual generation, use SigLIP to provide tokens for visual understanding, use SentencePiece to provide text tokens. <b>Prediction head:</b> use <i>modality-specific prediction heads</i> to calculate losses and sampling for each modality. <b>Loss:</b> image understanding loss on text answer + image generation loss on image tokens. <b>Training details:</b> batchsize=2048, optimizer=AdamW, lr=1e-4, steps=1M, init_ckpt=Gemma-2.</figcaption>
+</figure>
+<figure>
+<img src="resource/figs/UniFluid/UniFluid-fig3.png" width="800" loading="lazy" alt="">
+<figcaption><b>Figure 2.</b> There is <b>trade-off</b> between generation & understanding.</figcaption>
+</figure>
+<figure>
+<img src="resource/figs/UniFluid/UniFluid-fig2.png" width="250" loading="lazy" alt="">
+<figcaption><b>Figure 3.</b> <b>Unified training improves generation.</b></figcaption>
+</figure>
+<figure>
+<img src="resource/figs/UniFluid/UniFluid-fig4.png" width="500" loading="lazy" alt="">
+<figcaption><b>Figure 4.</b> <b>Better pre-trained LLM backbone</b> leads to better visual generation and understanding performance.</figcaption>
+</figure></p></div></div><div id="gpt-4o-arxiv-2024-understanding-and-generation-foundation-algorithms-models" class="paper paper--toggle" data-search="gpt-4o system card  openai arxiv 2024 gpt-4o understanding and generation: foundation algorithms & models" style="--paper-accent: var(--accent-2);"><p class="paper__title" onclick="toggleTable('gpt-4o-arxiv-2024-understanding-and-generation-foundation-algorithms-models-details')">GPT-4o System Card</p><p class="paper__detail">OpenAI</p><p class="paper__detail"><b>arXiv</b>, 2024</p><p class="paper__detail">Oct 25, 2024 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2410.21276?"><span class="paper__name paper__name--highlight">GPT-4o</span></a></p><div id="gpt-4o-arxiv-2024-understanding-and-generation-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>It proposes a unified autoregressive model trained end-to-end across text, vision, and audio.</p><p><figure>
+<img src="resource/figs/GPT-4o/GPT-4o-fig1.png" width="500" loading="lazy" alt="">
+<img src="resource/figs/GPT-4o/GPT-4o-fig2.png" width="500" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> <b>Visual generation capability of GPT-4o evaluated by <a href="https://arxiv.org/pdf/2504.05979">this paper</a>.</b> <i>Text rendering:</i> spelling, alignment, formatting in document. <i>Compositional generation and prompt following:</i> assemble complex scene elements, styles, attributes. <i>Geometric consistency and viewpoint realism:</i> 3D view synthesis, camera control, depth-conditioned rendering. <i>Comprehensive image transformation:</i> from low-level to high-level tasks.</figcaption>
+</figure></p></div></div><div id="transfusion-iclr-2025-understanding-and-generation-foundation-algorithms-models" class="paper paper--toggle" data-search="transfusion: predict the next token and diffuse images with one multi-modal model chunting zhou, lili yu, arun babu, kushal tirumala, michihiro yasunaga, leonid shamis, jacob kahn, xuezhe ma, luke zettlemoyer, omer levy meta, waymo, university of southern california iclr 2025 transfusion understanding and generation: foundation algorithms & models" style="--paper-accent: var(--accent-2);"><p class="paper__title" onclick="toggleTable('transfusion-iclr-2025-understanding-and-generation-foundation-algorithms-models-details')">Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Model</p><p class="paper__detail">Chunting Zhou, Lili Yu, Arun Babu, Kushal Tirumala, Michihiro Yasunaga, Leonid Shamis, Jacob Kahn, Xuezhe Ma, Luke Zettlemoyer, Omer Levy</p><p class="paper__detail">Meta, Waymo, University of Southern California</p><p class="paper__detail">International Conference on Learning Representations (<b>ICLR</b>), 2025</p><p class="paper__detail">Aug 20, 2024 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://arxiv.org/pdf/2408.11039"><span class="paper__name paper__name--highlight">Transfusion</span></a></p><div id="transfusion-iclr-2025-understanding-and-generation-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>It trains a unified model (7B) on 2T multi-modal tokens by predicting discrete text tokens and diffusing continuous image tokens.</p><p><ul>
+<li> <b>Data.</b> Use total 2T tokens from: (1) Llama 2 tokenizer and corpus (2T tokens), (2) 380M Shutterstock images and captions (resized to 256x256).
+<li> <b>Structure.</b> It applies next-token prediction on discrete text tokens and diffusion loss on continuous image tokens: <i>L=L_LM+lambda*L_diffusion</i>. It uses <i>modality-specific</i> components with unshared parameters: embedding layer for text, and VAE (U-Net or linear structure, 8x8-8c) with linear or up/down blocks for images. It applies causal mask on text tokens and bidirectional mask on image tokens.
+<li> <b>Training details.</b> Optimizer=AdamW, lr=3e-4, 250K steps, lambda=5, train_timesteps=1000, infer_timesteps=250, cfg=3.
+<li> <b>Performance.</b> In text-to-image generation task, Transfusion exceeds Chameleon at less than a third of the compute. In image-to-text generation task, Transfusion exceeds Chameleon at 21.8% of the FLOPs. In text-to-text generation task, Transfusion exceeds Chameleon at 50% of FLOPs.
+</ul>
+<figure>
+<img src="resource/figs/Transfusion/Transfusion-fig1.png" width="500" loading="lazy" alt="">
+<figcaption><b>Figure 1.</b> <b>Transfusion structure.</b></figcaption>
+</figure>
+<figure>
+<img src="resource/figs/Transfusion/Transfusion-fig2.png" width="500" loading="lazy" alt="">
+<figcaption><b>Figure 2.</b> Transfusion outperforms Chameleon while <b>scaling</b>.</figcaption>
+</figure>
+<figure>
+<img src="resource/figs/Transfusion/Transfusion-fig3.png" width="400" loading="lazy" alt="">
+<figcaption><b>Figure 3.</b> Transfusion outperforms Chameleon by using few <b>FLOPs</b>, both are 7B.</figcaption>
+</figure>
+<figure>
+<img src="resource/figs/Transfusion/Transfusion-fig4.png" width="500" loading="lazy" alt="">
+<figcaption><b>Figure 4.</b> Transfusion achieves competitive results compared with <b>Llama2</b>.</figcaption>
+</figure>
+<figure>
+<img src="resource/figs/Transfusion/Transfusion-fig5.png" width="400" loading="lazy" alt="">
+<figcaption><b>Figure 5.</b> <b>Encoder:</b> U-Net is better than linear (maybe due to it brings more inductive bias). <b>Attention:</b> bidirectional is better than causal.</figcaption>
+</figure>
+<figure>
+<img src="resource/figs/Transfusion/Transfusion-fig6.png" width="500" loading="lazy" alt="">
+<figcaption><b>Figure 6.</b> <b>Small patch size</b> leads to better performance by providing more visual tokens.</figcaption>
+</figure>
+<figure>
+<img src="resource/figs/Transfusion/Transfusion-fig7.png" width="500" loading="lazy" alt="">
+<figcaption><b>Figure 7.</b> <b>Overall performance.</b></figcaption>
+</figure></p></div></div>
+<p class="faint" style="margin-top: 2em; text-align: center;">Last updated on May 18, 2026 at 10:47 (UTC-7).</p>
+
+<script>
+function toggleTable(id) {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle("is-open");
+}
+</script>
+
+<button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+<script>
+(function () {
+    const btn = document.getElementById("backToTop");
+    if (!btn) return;
+    window.addEventListener("scroll", () => {
+        btn.classList.toggle("is-visible", document.documentElement.scrollTop > 300);
+    });
+    btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+})();
+</script>
+
+<button id="themeToggle" type="button" aria-label="Toggle color theme" title="Theme: auto" data-mode="auto">
+    <svg class="icon-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4 A8 8 0 0 1 12 20 Z" fill="currentColor" stroke="none"/></svg>
+    <svg class="icon-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    <svg class="icon-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor" stroke="none"/></svg>
+</button>
+<script>
+(function () {
+    const btn = document.getElementById("themeToggle");
+    if (!btn) return;
+    const order = ["auto", "light", "dark"];
+    const labels = { auto: "Theme: follow system", light: "Theme: light", dark: "Theme: dark" };
+    function read() {
+        try { const v = localStorage.getItem("theme"); return (v === "light" || v === "dark") ? v : "auto"; }
+        catch (e) { return "auto"; }
+    }
+    function apply(mode) {
+        if (mode === "auto") {
+            document.documentElement.removeAttribute("data-theme");
+            try { localStorage.removeItem("theme"); } catch (e) {}
+        } else {
+            document.documentElement.setAttribute("data-theme", mode);
+            try { localStorage.setItem("theme", mode); } catch (e) {}
+        }
+        btn.dataset.mode = mode;
+        btn.title = labels[mode];
+        btn.setAttribute("aria-label", labels[mode]);
+    }
+    apply(read());
+    btn.addEventListener("click", () => {
+        const cur = btn.dataset.mode || "auto";
+        apply(order[(order.indexOf(cur) + 1) % order.length]);
+    });
+})();
+</script>
+</div>
+</body>
+</html>

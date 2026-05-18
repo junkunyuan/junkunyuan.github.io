@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artificial Intelligence</title>
+    <meta name="description" content="Artificial Intelligence">
+    <link rel="stylesheet" href="../resource/style.css">
+    <link rel="shortcut icon" href="../resource/my_photo.png">
+    <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+<div id="layout-content">
+
+<h1 id="top">Artificial Intelligence</h1>
+<p class="larger"><b>Build AI systems.</b></p>
+<p class="larger"><b><span class="highlight">220</span> papers</b></p>
+<p>Written by <a href="../index.html">Junkun Yuan</a>.</p>
+<hr><p id="table" class="huger"><b>Table of contents:</b></p><ul><li class="larger"><a class="no_dec" href="research.html"><b>Research</b></a></li><li class="larger"><a class="no_dec" href="coding.html"><b>Coding and Engineering</b></a></li><li class="larger"><a class="no_dec" href="fundamental_component.html"><b>Fundamental Components of Deep Learning</b></a> (6 papers)</li><li class="larger"><a class="no_dec" href="rl.html"><b>Reinforcement Learning (RL)</b></a> (3 papers)</li><li class="larger"><a class="no_dec" href="cv.html"><b>Computer Vision (CV)</b></a> (191 papers)</li><li class="larger"><a class="no_dec" href="nlp.html"><b>Natural Language Processing (NLP)</b></a> (3 papers)</li><li class="larger"><a class="no_dec" href="mm.html"><b>Multimodal (MM)</b></a> (17 papers)</li></ul>
+<p class="faint" style="margin-top: 2em; text-align: center;">Last updated on May 18, 2026 at 10:47 (UTC-7).</p>
+
+<button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+<script>
+(function () {
+    const btn = document.getElementById("backToTop");
+    if (!btn) return;
+    window.addEventListener("scroll", () => {
+        btn.classList.toggle("is-visible", document.documentElement.scrollTop > 300);
+    });
+    btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+})();
+</script>
+
+<button id="themeToggle" type="button" aria-label="Toggle color theme" title="Theme: auto" data-mode="auto">
+    <svg class="icon-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4 A8 8 0 0 1 12 20 Z" fill="currentColor" stroke="none"/></svg>
+    <svg class="icon-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    <svg class="icon-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor" stroke="none"/></svg>
+</button>
+<script>
+(function () {
+    const btn = document.getElementById("themeToggle");
+    if (!btn) return;
+    const order = ["auto", "light", "dark"];
+    const labels = { auto: "Theme: follow system", light: "Theme: light", dark: "Theme: dark" };
+    function read() {
+        try { const v = localStorage.getItem("theme"); return (v === "light" || v === "dark") ? v : "auto"; }
+        catch (e) { return "auto"; }
+    }
+    function apply(mode) {
+        if (mode === "auto") {
+            document.documentElement.removeAttribute("data-theme");
+            try { localStorage.removeItem("theme"); } catch (e) {}
+        } else {
+            document.documentElement.setAttribute("data-theme", mode);
+            try { localStorage.setItem("theme", mode); } catch (e) {}
+        }
+        btn.dataset.mode = mode;
+        btn.title = labels[mode];
+        btn.setAttribute("aria-label", labels[mode]);
+    }
+    apply(read());
+    btn.addEventListener("click", () => {
+        const cur = btn.dataset.mode || "auto";
+        apply(order[(order.indexOf(cur) + 1) % order.length]);
+    });
+})();
+</script>
+</div>
+</body>
+</html>

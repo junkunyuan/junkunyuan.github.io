@@ -1,0 +1,542 @@
+file: coding.html
+title: Coding and Engineering
+description: Tools used to build AI systems.
+categories:
+  - Python
+  - PyTorch
+  - Distributed Framework
+  - Tools
+papers:
+  - title: FSDP
+    date: '20251203'
+    venue: fully sharded data parallel framework
+    name: fsdp
+    category: Distributed Framework
+    summary: |2
+
+      Wrap model with FSDP to enable parallelism.
+    details: "\n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\nfrom torch.distributed.fsdp import FullyShardedDataParallel as FSDP\nfrom torch.distributed.fsdp.ShardingStrategy import FULL_SHARD, SHARD_GRAD_OP, NO_SHARD, HYBRID_SHARD, _HYBRID_SHARD_ZERO2\nfrom torch.distributed.fsdp.BackwardPrefetch import BACKWARD_PRE, BACKWARD_POST\n\n# FULL_SHARD: shard parameters, gradients, and optimizer\n# SHARD_GRAD_OP: shard gradients and optimizer\n# NO_SHARD: no sharding, like DDP\n# HYBRID_SHARD: apply FULL_SHARD within a node\n# _HYBRID_SHARD_ZERO2: apply SHARD_GRAD_OP within a node\nsharding_strategy = None  # *** ShardingStrategy. The sharding strategy to use\n\n# The auto wrap policy to use. If None, only apply to submodules of `module`\nauto_wrap_policy = None  # *** ModuleWrapPolicy, CustomPolicy. User can specify the classes to wrap\n# My example:\ndef custom_auto_wrap_policy(module, recurse, nonwrapped_numel, min_num_params: int = int(1e8)) -> bool:\n    if recurse:\n        return True\n    return nonwrapped_numel >= min_num_params\nmy_auto_wrap_policy = functools.partial(custom_auto_wrap_policy, min_num_params=int(1e5))\n\n# BACKWARD_PRE: prefetch the next set of para before current set of para's grad computation\n# BACKWARD_POST: prefetch the next set of para after current set of para's grad computation\nbackward_prefetch = BACKWARD_PRE  # BACKWARD_PRE, BACKWARD_POST or None\n\nmodule = /  # *** nn.Module. The module to be wrapped\nprocess_group = None  # ProcessGroup. The process group to work on (use the default if None)\ncpu_offload = None  # *** CPUOffload. If True, offload parameters and gradients to CPU\nmixed_precision = None  # *** MixedPrecision. The mixed precision to use\nignored_modules = None  # Module. Modules to ignore. To be deprecated, use `ignored_states` instead\nparam_init_fn = None  # Module. How to initialize parameters onto a device\ndevice_id = None  # *** int or torch.device. The device to use\nsync_module_states = False  # bool. If True, synchronize module states across processes\nforward_prefetch = False  # bool. If True, prefetch the next forward before current forward\nlimit_all_gathers = True  # bool. If True, synchronize CPU thread\nuse_orig_params = False  # bool. If True, expose the original para instead of the sharded para\nignored_states = None  # *** Parameter. States to ignore\ndevice_mesh = None  # *** DeviceMesh. The device mesh to use\n# Shard module parameters across data parallel workers\nsharded_model = FSDP(\n    module, process_group, sharding_strategy, cpu_offload, auto_wrap_policy, backward_prefetch, \n    mixed_precision, ignored_modules, param_init_fn, device_id, sync_module_states, \n    forward_prefetch, limit_all_gathers, use_orig_params, ignored_states, device_mesh\n)\n</code>\n</pre>\n"
+  - title: VSCode
+    date: '20251015'
+    venue: vscode configs
+    name: vscode
+    category: Tools
+    summary: |2
+
+      Extensions (Remote SSH, Dev Containers), SSH keys, and LaTeX (LaTeX Workshop + TeX Live).
+    details: |2
+
+      <ul>
+      <li><b>Extensions:</b> (1) "Remote - SSH": connect to remote servers; (2) "Dev Containers": run containers. </li>
+      <li><b>SSH passwordless login:</b> (1) If there is no SSH key at `~/.ssh/`, run `$ssh-keygen -t rsa` to generate it, such as `id_rsa` and `id_rsa.pub`; (2) Edit `~/.ssh/config`: "Host [name] HostName [ip] User [user] IdentityFile [private_key_path, such as `~/.ssh/id_rsa`]";  (3) Copy the public key in `~/.ssh/id_rsa.pub` to remote server at `~/.ssh/authorized_keys`.</li>
+      <li><b>LaTeX:</b>
+      <ol>
+      <li>Install the <b>LaTeX Workshop</b> extension.</li>
+      <li>Install <b>TeX Live</b>.</li>
+      <li>Merge the following into your user <b>settings.json</b>.</li>
+      </ol>
+      <p style="margin: 0.4em 0 0.25em 0;"><button type="button" onclick="copyCodeBlock('vscode-latex-workshop-settings', this)" style="cursor:pointer;padding:4px 12px;font-size:13px;font-family:Helvetica,sans-serif;border:1px solid #ccc;border-radius:3px;background:#f8f8f8;color:#404040;">Copy</button></p>
+      <pre id="vscode-latex-workshop-settings">
+      <code class="language-json" style="font-size: 14px;">
+      "latex-workshop.latex.recipes": [
+          {
+              "name": "XeLaTeX",
+              "tools": [
+                  "xelatexmk"
+              ]
+          },
+          {
+              "name": "PdfLaTeX",
+              "tools": [
+                  "pdflatexmk"
+              ]
+          }
+      ],
+      "latex-workshop.latex.tools": [
+          {
+              "args": [
+                  "-synctex=1",
+                  "-pdfxe",
+                  "-interaction=nonstopmode",
+                  "-file-line-error",
+                  "-outdir=%OUTDIR%",
+                  "%DOC%"
+              ],
+              "command": "latexmk",
+              "env": {},
+              "name": "xelatexmk"
+          },
+          {
+              "args": [
+                  "-synctex=1",
+                  "-pdf",
+                  "-interaction=nonstopmode",
+                  "-file-line-error",
+                  "-outdir=%OUTDIR%",
+                  "%DOC%"
+              ],
+              "command": "latexmk",
+              "env": {},
+              "name": "pdflatexmk"
+          }
+      ],
+      </code>
+      </pre>
+      </li>
+      </ul>
+  - title: MacBook Reimage
+    date: '20260402'
+    venue: macOS setup checklist
+    name: macbook-reimage
+    category: Tools
+    summary: |2
+
+      Checklist after reimaging a MacBook: System Settings, Logi Options+, and daily apps.
+    details: |2
+
+      <ul>
+      <li><b>System Settings:</b> <i>Appearance</i> → Dark; <i>Displays</i> → extend screen; <i>Touch ID &amp; Password</i> → Add Fingerprint; <i>Keyboard</i> → Input Sources → + → Pinyin - Simplified; <i>Trackpad</i> → disable Force Click and haptic feedback; search "time" → 24-hour time; <i>Accessibility</i> → Pointer Control → Trackpad options → Dragging style → Three Finger Drag.</li>
+      <li><b>Logi Options+:</b> Screen capture → screen capture | region | clipboard; top button → Mission Control; thumb wheel → zoom in/out; forward button → desktop left; back button → desktop right; thumb button → close window; pointer speed → 2300 DPI; scroll wheel → scroll direction → standard.</li>
+      <li><b>Daily apps:</b> Microsoft Edge, QQ Music, Weixin Input, Cursor / VSCode.</li>
+      </ul>
+  - title: argparse
+    date: '20250929'
+    venue: command-line arguments
+    name: argparse
+    category: Python
+    summary: |2
+
+      Parser for command-line options, arguments, and sub-commands.
+    details: |2
+
+      <pre>
+      <code class="language-python" style="font-size: 14px;">
+      import argparse
+
+      parser = argparse.ArgumentParser()
+
+      parser.add_argument("--name", type=str, default="John", help="your name")
+      parser.add_argument("--debug", action="store_true", help="debug mode")  # "store_true" means default is False
+
+      args = parser.parse_args()
+
+      print(args.name)
+      </code>
+      </pre>
+  - title: Git
+    date: '20260514'
+    venue: git tools
+    name: git
+    category: Tools
+    summary: Git is a <b>distributed version control system</b> that allows you to track changes in your code and collaborate with others.
+    details: |2
+
+      <table class="center">
+      <tr>
+      <th>category</th>
+      <th>tool (alphabetical)</th>
+      </tr>
+      <tr>
+      <td>Setup and configure</td>
+      <td>
+      <a href="#git-config">config</a> &nbsp;&nbsp;
+      <a href="#ssh keys">ssh keys</a> &nbsp;&nbsp;</td>
+      </tr>
+      <tr>
+      <td>Get and create projects</td>
+      <td>
+      <a href="#git-clone">clone</a> &nbsp;&nbsp;
+      </tr>
+      <tr>
+      <td>Branching and workspace</td>
+      <td>
+      <a href="#git-worktree">worktree</a> &nbsp;&nbsp;
+      </td>
+      </tr>
+      </table>
+
+      <p class="larger" id="git-clone">
+      <b><a href="https://git-scm.com/docs/git-clone">clone</a>: </b>
+      clone a repository into a new directory.
+
+      <pre>
+      <code class="language-bash" style="font-size: 14px;">
+      git clone git@github.com:[user name]/[repo name].git
+      </code>
+      </pre>
+
+      <p class="larger" id="git-config">
+      <b><a href="https://git-scm.com/docs/git-config">config</a>: </b>
+      get and set repository or global options.
+
+      <pre>
+      <code class="language-bash" style="font-size: 14px;">
+      git config --list  # list all config
+      git config user.name [your name] && git config user.email [your email]  # repo config; cd to repo and execute
+      git config --global user.name [your name] && git config --global user.email [your email]  # global config
+      </code>
+      </pre>
+
+      <p class="larger" id="ssh keys">
+      <b><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">ssh keys</a>: </b>
+      generate a new SSH key to use for authentication.
+      <pre>
+      <code class="language-bash" style="font-size: 14px;">
+      ## 1. Check if SSH key exists: *.pub
+      ls -al ~/.ssh
+      ## 2. If not, generate a new SSH key
+      ssh-keygen -t rsa -b 4096 -C [your GitHub email]
+      ## 3. Copy SSH key
+      cat ~/.ssh/[your key name].pub
+      ## 4. Open GitHub -> Settings -> SSH and GPG keys -> New SSH key -> paste the SSH key
+      ## 5. Test
+      ssh -T git@github.com  # to see if it prints "Hi *! You've successfully ..."
+      </code>
+      </pre>
+
+      <p class="larger" id="git-worktree">
+      <b><a href="https://git-scm.com/docs/git-worktree">worktree</a>: </b>
+      check out <b>multiple branches into separate directories</b> from the same repo. All worktrees share the same <code>.git</code> object store, so adding one costs almost no disk space and avoids the <code>stash</code> + <code>checkout</code> dance when switching branches.
+      <pre>
+      <code class="language-bash" style="font-size: 14px;">
+      ## Typical uses: 
+      ## 1. Handle a hotfix without disturbing in-progress work
+      ## 2. Run builds/tests on multiple branches in parallel
+      ## 3. Review a PR branch alongside your own
+      ## 4. Let an AI agent edit code in an isolated workspace
+      ## Note: 
+      ## 1. A branch can only be checked out in one worktree at a time
+      ## 2. The main repo directory itself is a worktree
+      ## 3. Deleting a worktree folder with `rm -rf` leaves dangling metadata that `git worktree prune` must clean up
+
+      ## Add a worktree for a branch
+      git worktree add [worktree path] [remote/local branch name]
+
+      ## Remove a worktree
+      git worktree remove [worktree path]
+      ## Clean up records of worktrees whose directories were deleted
+      git worktree prune
+
+      ## List all worktrees
+      git worktree list
+      </code>
+      </pre>
+  - title: Docker
+    date: '20250923'
+    venue: docker tools
+    name: docker
+    category: Tools
+    summary: |2
+
+      Docker is a <b>containerization tool</b> that allows you to <b>package your application with all its dependencies</b> into a container.
+    details: |2
+
+      <table class="center">
+      <tr>
+      <th>category</th>
+      <th>tool (alphabetical)</th>
+      </tr>
+      <tr>
+      <td>docker</td>
+      <td>
+      <a href="#start & restart & stop">start & restart & stop</a> &nbsp;&nbsp;
+      </td>
+      </tr>
+      <tr>
+      <td>image</td>
+      <td><a href="#docker-ls & pull & rm">ls & pull & rm</a> &nbsp;&nbsp;</td>
+      </tr>
+      <tr>
+      <td>container</td>
+      <td>
+      <a href="#docker-ps & run & enter & stop">ps & run & enter & stop</a> &nbsp;&nbsp;
+      </td>
+      </tr>
+      </table>
+
+      <p class="larger" id="docker-ps & run & enter & stop">
+      <b><a href="">ps & run & enter & stop</a>: </b>
+      list containers, run a container, enter a container, stop a container.
+      <pre>
+      <code class="language-bash" style="font-size: 14px;">
+      docker ps -a  # list all containers
+      ## --------------------------------------------------------------------------------
+      ## Recommended params: -i: interactive mode; -d: detached mode; -t: allocate a pseudo-TTY
+      ## If need mapping: add "-v [local path, e.g., /home/user]:/root"
+      ## If run GPUs: add "--gpu all", "--ipc host"
+      ## If run container without executing any commands, append "tail -f /dev/null"
+      docker run [params, e.g., -dit] --name [container name] [image name]  # run a container
+      ## --------------------------------------------------------------------------------
+      docker exec -it [container name or container id] /bin/bash  # enter a container
+      docker stop [container name or container id]  # stop a container
+      docker restart [container name or container id]  # restart a container
+      docker rm [container name or container id]  # remove a container
+      </code>
+      </pre>
+
+      <p class="larger" id="docker-ls & pull & rm">
+      <b><a href="">ls & pull & rm</a>: </b>
+      list, pull, and remove images.
+      <pre>
+      <code class="language-bash" style="font-size: 14px;">
+      docker images  # or docker image ls; list all images
+      docker pull [image name]  # pull an image from a registry
+      docker rmi [image name or image id]  # remove an image
+      </code>
+      </pre>
+
+      <p class="larger" id="start & restart & stop">
+      <b><a href="">start & restart & stop</a>: </b>
+      start, restart, stop docker.
+      <pre>
+      <code class="language-bash" style="font-size: 14px;">
+      sudo service docker start  # start docker
+      sudo service docker restart  # restart docker
+      sudo service docker stop  # stop docker
+      </code>
+      </pre>
+  - title: torchrun
+    date: '20250929'
+    venue: console script for Distributed Framework
+    name: torchrun
+    category: Distributed Framework
+    summary: |2
+
+      Build distributed framework with torchrun.
+    details: |2
+
+      <pre>
+      <code class="language-bash" style="font-size: 14px;">
+      # Method 1: Use rdzv_endpoint (recommended)
+      $torchrun
+          --nnodes ${NNODES}
+          --nproc_per_node ${NPROC_PER_NODE}
+          --node_rank ${NODE_RANK}
+          --rdzv_backend c10d
+          --rdzv_endpoint ${MASTER_ADDR}:${MASTER_PORT}
+          --rdzv_id ${RDZV_ID}
+          train.py
+
+      # Method 2: Use master_addr and master_port
+      $torchrun
+          --nnodes ${NNODES}
+          --nproc_per_node ${NPROC_PER_NODE}
+          --node_rank ${NODE_RANK}
+          --master_addr ${MASTER_ADDR}
+          --master_port ${MASTER_PORT}
+          train.py
+      </code>
+      </pre>
+
+      <pre>
+      <code class="language-python" style="font-size: 14px;">
+      from torch.distributed import barrier
+      group = None  # ProcessGroup. The process group to work on
+      async_op = False  # bool. If True, the barrier is asynchronous
+      device_ids = None  # list[int]. If provided, the barrier will only synchronize the devices in this list
+      barrier(group, async_op, device_ids)
+      </code>
+      </pre>
+  - title: DeepSpeed
+    date: '20250821'
+    venue: deepspeed framework
+    pdf_url: ''
+    name: deepspeed
+    category: Distributed Framework
+    summary: DeepSpeed is an open-sourced deep learning optimization library developed by <b>Microsoft Research</b>, designed to simplify and accelerate the training and deployment of <b>large-scale</b> deep learning models.
+    details: |2
+
+      <table class="center">
+          <tr>
+              <th>stage</th>
+              <th>partition</th>
+              <th>memory saving</th>
+              <th>complexity</th>
+          </tr>
+          <tr>
+              <td>stage 1</td>
+              <td>optimizer states</td>
+              <td>~40% - 60% (for Adam)</td>
+              <td>low</td>
+          </tr>
+          <tr>
+              <td>stage 2</td>
+              <td>optimizer states & gradients</td>
+              <td> additional ~15% - 25%</td>
+              <td>medium</td>
+          </tr>
+          <tr>
+              <td>stage 3</td>
+              <td>optimizer states & gradients & model parameters</td>
+              <td> up to 80% - 90%</td>
+              <td>high</td>
+          </tr>
+      </table>
+  - title: Ray
+    date: '20251001'
+    venue: ray framework
+    name: ray
+    category: Distributed Framework
+    summary: |2
+
+      Ray is a <b>distributed computing framework</b>, developed by UC Berkeley, allowing you to scale machine learning and data processing workflows across multiple machines and GPUs. Ray employs a dynamic task graph computation model.
+
+      Some important concepts:
+
+      <ul>
+      <li>Task: a remote function on a stateless worker. Create by applying `@ray.remote` decorator to a function.</li>
+      <li>Actor: a remote class on a stateful worker. Create by applying `@ray.actor` decorator to a class.</li>
+      <li>Data edges: data1 -> task1 -> data2 means data1 and data2 are the input and output of task1 respectively.</li>
+      <li>Control edges: task1 -> task2 means task2 is executed by task1.</li>
+      <li>Ray builds a dynamic task graph consisting of data edges and control edges.</li>
+      <li>Driver: a process executing the user program.</li>
+      <li>Worker: a stateless process executing tasks (remote functions).</li>
+      <li>Actor (another concept): a stateless process executing tasks (remote functions).</li>
+      </ul>
+    details: |2+
+
+  - title: Data Transforms
+    date: '20240701'
+    venue: transform and augment data
+    pdf_url: ''
+    name: data transforms
+    category: PyTorch
+    summary: ''
+    details: "\n<table class=\"center\">\n<tr>\n<th>category</th>\n<th>class / function (alphabetical)</th>\n</tr>\n\n<tr><td>geometry</td><td>\n<a href=\"#RandomHorizontalFlip\">RandomHorizontalFlip</a>\n</td></tr>\n\n<tr><td>resizing</td><td>\n<a href=\"#Resize\">Resize</a>\n</td></tr>\n\n<tr><td>conversion</td><td>\n<a href=\"#Normalize\">Normalize</a> &nbsp;&nbsp;\n<a href=\"#ToTensor\">ToTensor</a> &nbsp;&nbsp;\n</td></tr>\n\n<tr><td>else</td><td>\n<a href=\"#Compose\">Compose</a> &nbsp;&nbsp;\n</td></tr>\n\n</table>\n\n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\nfrom torchvision import transforms\nfrom torchvision.transforms import InterpolationMode  # InterpolationMode.BILINEAR, NEAREST, BICUBIC, LANCZOS\n</code>\n</pre>\n\n<p class=\"larger\" id=\"RandomHorizontalFlip\">\n<b><a href=\"https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.RandomHorizontalFlip.html\">RandomHorizontalFlip</a>: </b>\nhorizontally flip the image randomly with a probability. \n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\np = 0.5  # *** float. Probability to flip\ntrans = <b>transforms.RandomHorizontalFlip</b>(p)\nimage_trans = trans(image)  # PIL Image => PIL Image, or Tensor => Tensor\n</code>\n</pre>\n\n<p class=\"larger\" id=\"Resize\">\n<b><a href=\"https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Resize.html\">Resize</a>: </b>\nresize the image to a size.\n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\n## When `size` is int, the image shorter size will be resized to `size` with aspect ratio fixed\n## When `size` is tuple, the image size will be resized to `size` with aspect ratio changed\nsize = /  # *** tuple or int\n## NEAREST: fastest; lowest quality, jagged\n## BILINEAR: fast; low quality, blur\n## (recommend) BICUBIC: slow; good quality\n## (recommend) LANCZOS: slowest; best quality\ninterpolation = InterpolationMode.BILINEAR  # *** InterpolationMode\n## The shorter size may be lower than `size` if longer size exceeds `max_size` after resizing\nmax_size = None  # int. Maximum allowed for the longer edge, supported if `size` is int\ntrans = transforms.Resize(size, interpolation, max_size)\nimage_trans = trans(image)  # PIL Image => PIL Image, or Tensor => Tensor\n</code>\n</pre>\n\n<p class=\"larger\" id=\"ToTensor\">\n<b><a href=\"https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.ToTensor.html\">ToTensor</a>: </b>\nconvert a PIL Image or ndarray to tensor and scale the values accordingly.\n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\n## Input: PIL Image / numpy.ndarray (np.uint8) of shape (HxWxC) in the range [0, 255]\n## Output: torch.FloatTensor of shape (CxHxW) in the range (0.0, 1.0)\n## Other inputs: only apply type transform\ntrans = <b>transforms.ToTensor</b>()\nimage_trans = trans(image)\n</code>\n</pre>\n\n<p class=\"larger\" id=\"Compose\">\n<b><a href=\"https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Compose.html\">Compose</a>: </b>\ncompose several transforms.\n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\ntransforms = /  # *** list of Transform objects\ntrans = <b>transforms.Compose</b>(transforms)\nimage_trans = trans(image)  # PIL Image / ndarray / Tensor => Tensor\n</code>\n</pre>\n\n<p class=\"larger\" id=\"Normalize\">\n<b><a href=\"https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Normalize.html\">Normalize</a>: </b>\nnormalize a tensor image with mean and standard deviation.\n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\nmean = /  # *** sequence. Means for each channel\nstd = /  # *** sequence. Standard deviations for each channel\ninplace = False  # bool. Bool to make this operation in-place\ntrans = <b>transforms.Normalize</b>(mean, std, inplace)\nimage_trans = trans(image)  # Tensor => Tensor\n</code>\n</pre>\n"
+  - title: Data Loader
+    date: '20240630'
+    venue: build and load dataset
+    pdf_url: ''
+    name: data loader
+    category: PyTorch
+    summary: ''
+    details: "\n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\nimport torch\nfrom torch.utils.data import DataLoader, Dataset\nfrom torch.utils.data.distributed import DistributedSampler\n\n# Example: Build a dataset\nclass MyDataset(Dataset):\n    def __init__(self, data):\n        self.data = data\n\n    def __len__(self):\n        return len(self.data)\n    \n    def __getitem__(self, index):\n        return self.data[index]\n\n# Example: Build a distributed sampler\ndatset = /  # *** Dataset\nnum_replicas = world_size  # *** int. Number of replicas\nrank = rank  # *** int. Rank of the current process\nshuffle = False  # *** bool. If True, have the data shuffled at every epoch\nseed = 0  # *** int. Random seed used to shuffle the sampler if `shuffle` is True\ndrop_last = False  # *** bool. If True, drop the last incomplete batch\nsampler = DistributedSampler(dataset, num_replicas, rank, shuffle, seed, drop_last)\n\n# Example: Build a data loader\n# Note: if sampler is not None, shuffle must be False, drop_last can be either True or False\n# Note: if sampler is None, one can set `torch.manual_seed(SEED)` to fix the random seed\ndataset = /  # *** Dataset\nbatch_size = 1  # *** int. Number of samples per batch\nshuffle = False  # *** bool. If True, have the data shuffled at every epoch\nsampler = None  # Sampler or Iterable. Define how to draw samples\nnum_workers = 0  # *** int. Number of subprocesses to use for data loading\ncollate_fn = None  # Callable. Merge a list of samples to form a batch\npin_memory = False  # *** bool. If True, copy Tensors into CUDA pinned memory\ndrop_last = False  # *** bool. If True, drop the last incomplete batch\ntimeout = 0  # numeric. If positive, set timeout for collecting a batch from workers\nprefetch_factor = None  # int. Default = None if num_workers == 0 else 2\ndata_loader = DataLoader(dataset, batch_size, shuffle, sampler, num_workers, \n    collate_fn, pin_memory, drop_last, timeout, prefetch_factor)\n</code>\n</pre>\n"
+  - title: Operation
+    date: '20230630'
+    venue: tensor operations
+    pdf_url: ''
+    name: operation
+    category: PyTorch
+    summary: ''
+    details: "\n<table class=\"center\">\n<tr>\n<th>category</th>\n<th>class / function (alphabetical)</th>\n</tr>\n\n<tr>\n<td>operations</td>\n<td>\n<a href=\"#basic operations\">basic operations</a> &nbsp;&nbsp;\n<a href=\"#einsum\">einsum</a> &nbsp;&nbsp;\n<a href=\"#isclose & allclose\">isclose & allclose</a> &nbsp;&nbsp;\n<a href=\"#matmul\">matmul</a> &nbsp;&nbsp;\n<a href=\"#mean & var\">mean & var</a> &nbsp;&nbsp;\n<a href=\"#softmax\">softmax</a> &nbsp;&nbsp;\n</td>\n</tr>\n\n<tr>\n<td>data generation</td>\n<td>\n<a href=\"#arange\">arange</a> &nbsp;&nbsp;\n<a href=\"#uniform & normal\">uniform & normal</a> &nbsp;&nbsp;\n<a href=\"#zeros & ones\">zeros & ones</a> &nbsp;&nbsp;\n</td>\n</tr>\n\n<tr><td>size</td><td>\n<a href=\"#cat\">cat</a> &nbsp;&nbsp;\n<a href=\"#chunk & split\">chunk & split</a> &nbsp;&nbsp;\n<a href=\"#flatten\">flatten</a> &nbsp;&nbsp;\n<a href=\"#permute\">permute</a> &nbsp;&nbsp;\n<a href=\"#reshape & view\">reshape & view</a> &nbsp;&nbsp;\n<a href=\"#size & shape\">size & shape</a> &nbsp;&nbsp;\n<a href=\"#squeeze & unsqueeze\">squeeze & unsqueeze</a> &nbsp;&nbsp;\n<a href=\"#transpose\">transpose</a> &nbsp;&nbsp;\n<a href=\"#unbind\">unbind</a> &nbsp;&nbsp;\n</td></tr>\n\n<tr><td>else</td><td>\n<a href=\"#where\">where</a> &nbsp;&nbsp;\n</td></tr>\n\n</table>\n\n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\nimport torch\n</code>\n</pre>\n\n<p class=\"larger\" id=\"basic operations\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/torch.html\">basic operations</a>:</b> \nexp, sin, cos, sqrt.\n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\ny = torch.function(x)  # function: exp, sin, cos, sqrt\n</code>\n</pre>\n\n<p class=\"larger\" id=\"mean & var\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/mean.html\">mean & var</a></b>. \n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\ndim = /  # *** int or tuple of ints. Dims to reduce\nkeepdim = False # *** bool. If True, return tensor with the same dims\nmean = x.mean(dim, keepdim)\n\n## In version>=2.0, `correction=1` equals to `unbiased=True`, `correction=0` equals to `unbiased=False` \ncorrection = 1  # *** int. \nvar = x.var(dim, keepdim, correction)\n</code>\n</pre>\n\n<p class=\"larger\" id=\"softmax\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.softmax.html\">softmax</a></b>. \n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\ndim = None  # *** int. Dim to apply softmax\ny = x.softmax(dim)\n</code>\n</pre>\n\n<p class=\"larger\" id=\"matmul\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.matmul.html\">matmul</a>:</b> \nmatrix multiplication.\n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\nother = /  # *** tensor\ny = x.matmul(other)\n</code>\n</pre>\n\n<p class=\"larger\" id=\"einsum\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.einsum.html\">einsum</a>:</b> \nEinstein summation convention. \n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\nequation = /  # *** str. The subscript for the Einstein summation\noperands = /  # *** list of tensor. The tensor to be computed\n## torch.einsum(\"ii\", tensor)  # trace\n## torch.einsum(\"ii->i\", tensor)  # diagonal\n## torch.einsum(\"i,j->ij\", tensor1, tensor2)  # outer product\n## torch.einsum(\"bij,bjk->bik\", tensor1, tensor2)  # batch matrix multiplication\n## torch.einsum(\"...ij->...jk\", tensor)  # batch permute\ny = torch.einsum(equation, operands)\n</code>\n</pre>\n\n<p class=\"larger\" id=\"isclose & allclose\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.isclose.html\">isclose & allclose</a>:</b> \ncheck whether two tensors are close. \n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\nother = /  # *** tensor. The second tensor to compare\nrtol = 1e-5  # float. Relative tolerance\natol = 1e-8  # float. Absolute tolerance\nequal_nan = False  # bool. If True, then two NaN will be considered equal\n## Check if elements satisfy: |input - other| <= atol + rtol * other\nx.isclose(other, rtol, atol, equal_nan)  # return a tensor of bool\nx.allclose(other, rtol, atol, equal_nan)  # return True or False\n## --------------------------------------------------------------------------------\n</code>\n</pre>\n\n<p class=\"larger\" id=\"zeros & ones\">\n<b>\n<a href=\"https://docs.pytorch.org/docs/stable/generated/torch.zeros.html\">zeros</a> & \n<a href=\"https://docs.pytorch.org/docs/stable/generated/torch.ones.html\">ones</a>:</b> \nfill a tensor with a given value. \n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\nsize = /  # *** sequence of int. The shape of output\ny = torch.zeros(size)\ny = torch.ones(size)\n</code>\n</pre>\n\n\n<p class=\"larger\" id=\"uniform & normal\">\n<b>\n<a href=\"https://docs.pytorch.org/docs/stable/generated/torch.rand.html\">uniform</a> & \n<a href=\"https://docs.pytorch.org/docs/stable/generated/torch.randn.html\">normal</a>:</b> \nfill a tensor with a given value. \n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\nsize = /  # *** sequence of int. The shape of output\ngenerator = None  # torch.Generator. A pseudorandom number generator for sampling\nrequires_grad = False  # bool. If use autograd\ndtype = None  # torch.dtype. The desired data type\ndevice = None  # torch.device. The desired device \ny = torch.rand(size, generator, requires_grad, dytpe, device)  # uniform distribution U(0, 1)\ny = torch.randn(size, generator, requires_grad, dytpe, device)  # standard normal distribution N(0, 1)\n</code>\n</pre>\n\n<p class=\"larger\" id=\"arange\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.arange.html\">arange</a>:</b> \na sequence in order. \n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\nstart = 0  # *** number. The starting value\nend = /  # *** number. The ending value\nstep = 1  # *** number. The gap between adjacent points\narange = torch.arange(start, end, step)\n</code>\n</pre>\n\n<p class=\"larger\" id=\"size & shape\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.Tensor.size.html\">size</a> & \n<a href=\"https://docs.pytorch.org/docs/stable/generated/torch.Tensor.shape.html\">shape</a>:</b> \nget tensor size.\n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\ndim = None  # int. Dim to retrieve the size\nsize = x.size(dim)  # => torch.Size or int\nsize = x.shape  #  => torch.Size\n</code>\n</pre>\n\n<p class=\"larger\" id=\"reshape & view\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.reshape.html\">reshape</a> & \n<a href=\"https://docs.pytorch.org/docs/stable/generated/torch.Tensor.view.html\">view</a>:</b> \nreshape a tensor with the given shape. \n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\nshape = /  # sequence of int. The new shape. A single dim could be -1\ny = x.reshape(shape)  # recommend since it could call .contiguous() if needed\ny = x.view(shape)\n</code>\n</pre>\n\n<p class=\"larger\" id=\"flatten\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.flatten.html\">flatten</a>:</b> \nflatten along the given dimensions. \n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\nstart_dim = 0  # *** int. The first dimension to flatten\nend_dim = -1  # *** int. The last dimension to flatten\ny = x.flatten(start_dim, end_dim)\n</code>\n</pre>\n\n<p class=\"larger\" id=\"transpose\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.transpose.html\">transpose</a>:</b> \nswap two dimensions. \n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\ndim0 = /  # *** int. The first dim to be transposed\ndim1 = /  # *** int. The second dim to be transposed\ny = x.transpose(dim0, dim1)\n</code>\n</pre>\n\n<p class=\"larger\" id=\"permute\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.permute.html\">permute</a>:</b> \npermute dimensions of a tensor. \n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\ndims = /  # *** sequence of int. The desired ordering of dims\ny = x.permute(dims)\n</code>\n</pre>\n\n<p class=\"larger\" id=\"squeeze & unsqueeze\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.squeeze.html\">squeeze</a> &\n<a href=\"https://docs.pytorch.org/docs/stable/generated/torch.unsqueeze.html\">unsqueeze</a>:</b> \ninsert and remove dimensions. \n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\ndim = None  # *** int or tuple of ints. If given, only the dim will be squeezed\ny = x.squeeze(dim)\n\ndim = /  # *** int. The index at which to insert the singleton dim\ny = x.unsqueeze(dim)  # Eqaul to y = x[:, :, None, :] when dim = 2\n</code>\n</pre>\n\n<p class=\"larger\" id=\"cat\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.cat.html\">cat</a>:</b> \nconcatenate tensors along a dimension. \n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\ntensors = /  # *** tuple of tensors. Tensors with the same shape except in the cat dim\ndim = 0  # *** int. The concatenation dim\ny = torch.cat(tensors, dim)\n</code>\n</pre>\n\n<p class=\"larger\" id=\"unbind\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.unbind.html\">unbind</a>:</b> \nremove a dimension by splitting it. \n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\ndim = 0  # *** int. Dim to remove\ny = x.unbind(dim)\n</code>\n</pre>\n\n<p class=\"larger\" id=\"chunk & split\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.chunk.html\">chunk</a> &\n<a href=\"https://docs.pytorch.org/docs/stable/generated/torch.split.html\">split</a>:</b> \nsplit a tensor with chunk numbers or split sizes.\n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\nchunks = /  # *** int\ndim = 0  # *** int\n## If the given dim is divisible by chunks, all returned chunks will be the same size\n## If the given dim is not divisible by chunks, the last one will not be the same size\n## If such division is not possible, it returns fewer than the specified number of chunks\ny = x.chunk(chunks, dim)\n\nindices_or_sections = /  # *** tensor, int, list, tuple of ints\ndim = 0  # *** int. Dim along which to split the tensor\n## If split_size_or_sections is an integer type, split into equally sized chunks\n## If split_size_or_sections is a list, split into len(split_size_or_sections) chunks\ny = x.split(indices_or_sections, dim)\n</code>\n</pre>\n\n<p class=\"larger\" id=\"where\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.where.html\">where</a>:</b> \nselect elements from a tensor.\n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\ncondition = /  # *** bool. When True, yield input, otherwise yield other\ninput = /  # *** tensor or scalar\nother = /  # *** tensor or scalar\ny = torch.where(condition, input, output)\n</code>\n</pre>\n"
+  - title: Module
+    date: '20240629'
+    venue: modules to build models
+    pdf_url: ''
+    name: module
+    category: PyTorch
+    summary: |2+
+
+    details: "\n<table class=\"center\">\n<tr>\n<th>category</th>\n<th>tool (alphabetical)</th>\n</tr>\n\n<tr>\n<td>parameter</td>\n<td>\n<a href=\"#Parameter & Buffer\">Parameter & Buffer</a> &nbsp;&nbsp;\n</td>\n</tr>\n\n<tr>\n<td>convolution</td>\n<td>\n<a href=\"#Conv2d\">Conv2d</a> &nbsp;&nbsp;\n<a href=\"#Conv3d\">Conv3d</a> &nbsp;&nbsp;\n</td>\n</tr>\n\n<tr>\n<td>other module</td>\n<td>\n<a href=\"#Linear\">Linear</a> &nbsp;&nbsp;\n</td>\n</tr>\n\n<tr>\n<td>else</td>\n<td>\n<a href=\"#Dropout\">Dropout</a> &nbsp;&nbsp;\n</td>\n</tr>\n\n</td>\n</tr>\n\n</table>\n\n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\nimport torch\nfrom torch import nn \n</code>\n</pre>\n\n<p class=\"larger\" id=\"Parameter & Buffer\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.nn.parameter.Parameter.html\">Parameter</a> & \n<a href=\"https://docs.pytorch.org/docs/stable/generated/torch.nn.parameter.Buffer.html\">Buffer</a></b>.\n\n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\ndata = /  # *** tensor. Parameter tensor\nrequires_grad = True\ngamma = torch.Parameter(data, requires_grad)\n\npersistent = True  # whether the buffer is part of the module's state_dict\ngamma = self.register_buffer(data, persistent)  # usually used in __init__\ngamma = nn.parameter.Buffer(data, persistent)  # not usually used\n</code>\n</pre>\n\n<p class=\"larger\" id=\"Linear\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.nn.Linear.html\">Linear</a>:</b> affine linear transformation.\n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\nin_features = /  # *** int. Input features\nout_features = /  # *** int. Output features\nbias = True  # *** bool. If True, learn an additive bias\ndevice = None  # torch.device or int \ndtype = None  # torch.dtype\nlinear = Linear(in_features, out_features, bias, device, dtype)  \ny = linear(x)  # [..., H_in] => [..., H_out]\n</code>\n</pre>\n\n<p class=\"larger\" id=\"Conv2d\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html\">Conv2d</a>:</b> 2D convolution.\n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\nin_channels = /  # *** int. Number of channels in the input\nout_channels = /  # *** int. Number of channels in the output\nkernel_size = /  # *** int, tuple. Size of convolving kernel\nstride = 1  # *** int, tuple. Stride of convolution\npadding = 0  # int, tuple, str. Padding added to all four sides of the input\ndilation = 1  # int, tuple. Spacing between kernel elements\ngroups = 1  # int. Number of blocked connections from input channels to output\nbias = True  # bool. If True, add a learnable bias to the output\npadding_mode = \"zeros\"  # str. \"zeros\", \"reflect\", \"replicate\", or \"circular\"\ndevice = None  # torch.device or int\ndtype = None  # torch.dtype\n## Weight. Shape: [out_channels, in_channels/groups, k_size[0], k_size[1]]\n## Bias. Shape: [out_channels,]\nconv2d = nn.Conv2d(in_channels, out_channels, kernel_size, stride, \n    padding, dilation, groups, bias, padding_mode, device, dtype)\n## H_out = [(H_in + 2*padding[0] - dilation[0]*(kernel[0]-1)-1) / stride[0] + 1]\n## W_out = [(W_in + 2*padding[1] - dilation[1]*(kernel[1]-1)-1) / stride[1] + 1]\ny = conv2d(x)  # [B, C, H_in, W_in] => [B, C, H_out, W_out]\n</code>\n</pre>\n\n<p class=\"larger\" id=\"Conv3d\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv3d.html\">Conv3d</a>:</b> 3D convolution.\n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\nin_channels = /  # *** int. Number of channels in the input\nout_channels = /  # *** int. Number of channels in the output\nkernel_size = /  # *** int, tuple. Size of convolving kernel\nstride = 1  # *** int, tuple. Stride of convolution\npadding = 0  # int, tuple, str. Padding added to all six sides of the input\ndilation = 1  # int, tuple. Spacing between kernel elements\ngroups = 1  # int. Number of blocked connections from input channels to output\nbias = True  # bool. If True, add a learnable bias to the output\npadding_mode = \"zeros\"  # str. \"zeros\", \"reflect\", \"replicate\", or \"circular\"\ndevice = None  # torch.device or int\ndtype = None  # torch.dtype\n## Weight. Shape: [out_channels, in_channels/groups, k_size[0], k_size[1], k_size[2]]\n## Bias. Shape: [out_channels,]\nconv3d = nn.Conv3d(in_channels, out_channels, kernel_size, stride, \n    padding, dilation, groups, bias, padding_mode, device, dtype)\n## D_out = [(D_in + 2*padding[0] - dilation[0]*(kernel[0]-1)-1) / stride[0] + 1]\n## H_out = [(H_in + 2*padding[1] - dilation[1]*(kernel[1]-1)-1) / stride[1] + 1]\n## W_out = [(W_in + 2*padding[2] - dilation[2]*(kernel[2]-1)-2) / stride[2] + 1]\ny = conv3d(x)  # [B, C, D_in, H_in, W_in] => [B, C, D_out, H_out, W_out]\n</code>\n</pre>\n\n<p class=\"larger\" id=\"Dropout\">\n<b><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.nn.Dropout.html\">Dropout</a></b>.\n<pre>\n<code class=\"language-python\" style=\"font-size: 14px;\">\np = 0.5  # *** float. Probability of an element to be zeroed\ninplace = False  # bool\ndropout = nn.Dropout(p, inplace)\ny = dropout(x)\n</code>\n</pre>\n"
+  - title: Activation Function
+    date: '20240628'
+    venue: activation functions
+    pdf_url: ''
+    name: activation function
+    category: PyTorch
+    summary: |2+
+
+    details: |2
+
+      <table class="center">
+      <tr>
+      <th>tool (alphabetical)</th>
+      <th>popular applications</th>
+      </tr>
+
+      <tr>
+      <td>
+      <a href="#GeLU">GeLU</a> &nbsp;&nbsp;
+      </td>
+      <td>
+      /
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+      <a href="#SiLU/swish">SiLU/swish</a> &nbsp;&nbsp;
+      </td>
+      <td>
+      /
+      </td>
+      </tr>
+
+      </table>
+
+      <pre>
+      <code class="language-python" style="font-size: 14px;">
+      from torch import nn
+      </code>
+      </pre>
+
+      <p class="larger" id="GeLU">
+      <b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.GELU.html">GeLU</a>:</b> Gaussian Error Linear Units function, \(\mathrm{GeLU}(x)=x*\phi(x)\), where \(\phi\) is cumulative distribution function.
+      <pre>
+      <code class="language-python" style="font-size: 14px;">
+      gelu = nn.GeLU()
+      y = gelu(x)
+      </code>
+      </pre>
+
+      <p class="larger" id="SiLU/swish">
+      <b><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.SiLU.html">SiLU/swish</a>:</b>  Sigmoid Linear Unit function, \(\mathrm{SiLU}(x)=x*\sigma(x)\), where \(\sigma\) is logistic function.
+
+      <pre>
+      <code class="language-python" style="font-size: 14px;">
+      inplace = False
+      silu = nn.SiLU(inplace)
+      y = silu(x)
+      </code>
+      </pre>
+  - title: Optimizer
+    date: '20240628'
+    venue: optimizers
+    pdf_url: ''
+    name: optimizer
+    category: PyTorch
+    summary: 'It includes tools for building optimization algorithms: <a href="https://docs.pytorch.org/docs/stable/generated/torch.optim.AdamW.html#torch.optim.AdamW.step">AdamW</a>.'
+    details: |2
+
+      <pre>
+      <code class="language-python" style="font-size: 14px;">
+      from torch.optim import AdamW
+
+      ## --------------------------------------------------------------------------------
+      ## AdamW
+      ## --------------------------------------------------------------------------------
+      params = /  # *** iterable. Parameters / named_parameters / parameter groups to optimize
+      lr = 0.001  # *** float, Tensor. Learning rate
+      betas = (0.9, 0.999)  # tuple. For computing running averages of gradients & squares
+      weight_decay = 0.01  # float. Weight decay coefficient
+      # ...
+      adam_optim = AdamW(params, lr, betas, weight_decay)
+      ## --------------------------------------------------------------------------------
+      </code>
+      </pre>
+  - title: huggingface
+    date: '20230530'
+    venue: huggingface tools
+    pdf_url: ''
+    name: huggingface
+    category: PyTorch
+    summary: 'It includes tools from huggingface: <a href="https://huggingface.co/docs/huggingface_hub/main/en/package_reference/file_download#huggingface_hub.snapshot_download">snapshot_download</a>'
+    details: |2
+
+      <pre>
+      <code class="language-python" style="font-size: 14px;">
+      from huggingface_hub import snapshot_download
+
+      ## --------------------------------------------------------------------------------
+      ## Download checkpoints from huggingface
+      ## --------------------------------------------------------------------------------
+      repo_id = /  # *** str. A user name and a repo name, e.g., "Qwen/Qwen-VL-Chat"
+      repo_type = None  # *** str. "dataset", "space", or "model"
+      local_dir = None  # *** str or Path. If provided, directory to place the downloaded files
+      token = None  # str, bool. User token
+      max_workers = 8  # int. Number of concurrent threads to download files
+      # ...
+
+      snapshot_download(repo_id, repo_type, local_dir, token, max_workers)
+      </code>
+      </pre>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reinforcement Learning (RL)</title>
+    <meta name="description" content="Reinforcement Learning (RL)">
+    <link rel="stylesheet" href="../resource/style.css">
+    <link rel="shortcut icon" href="../resource/my_photo.png">
+    <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js" data-manual></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/keep-markup/prism-keep-markup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-highlight/prism-line-highlight.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>document.addEventListener("DOMContentLoaded",function(){if(window.Prism)Prism.highlightAll();});</script>
+</head>
+<body>
+<div id="layout-content">
+
+<h1 id="top">Reinforcement Learning (RL)</h1>
+<p class="larger"><b>Learn to make decisions in an environment by maximizing long-term rewards.</b></p>
+<p class="larger"><b><span class="highlight">3</span> papers</b></p>
+<p>Written by <a href="../index.html">Junkun Yuan</a>.</p>
+<p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
+<hr><p id="table" class="huger"><b>Table of contents:</b></p><p>Papers are displayed in reverse chronological order. High-impact or inspiring works are highlighted in <span class="highlight">red</span>.</p><ul><li><a class="larger no_dec" id="cat-foundation-algorithms-models" href="#foundation-algorithms-models-table"><b>Foundation Algorithms & Models (3)</b></a></li><p class="paper-index"><a href="#thompson-sampling-neurips-2011-foundation-algorithms-models" class="no_dec is-highlight">Thompson Sampling<span class="venue">(NeurIPS 2011)</span></a> &nbsp;&nbsp;&nbsp; <a href="#greedy-ucb-machine-learning-2002-foundation-algorithms-models" class="no_dec is-highlight">ε-greedy & UCB<span class="venue">(Machine Learning 2002)</span></a> &nbsp;&nbsp;&nbsp; <a href="#rl-introduction-cambridge-1998-foundation-algorithms-models" class="no_dec is-highlight">RL Introduction<span class="venue">(Cambridge 1998)</span></a></p><br></ul>
+<input type="search" id="paperSearch" class="search"
+       placeholder="Filter papers by title / author / venue / name…"
+       aria-label="Filter papers">
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const input = document.getElementById("paperSearch");
+    if (!input) return;
+    const papers = Array.from(document.querySelectorAll(".paper[data-search]"));
+    input.addEventListener("input", () => {
+        const q = input.value.trim().toLowerCase();
+        papers.forEach(p => {
+            const hit = !q || p.dataset.search.includes(q);
+            p.classList.toggle("is-hidden", !hit);
+        });
+    });
+});
+</script>
+<h2 id="foundation-algorithms-models-table"><a class="no_dec" href="#cat-foundation-algorithms-models">Foundation Algorithms & Models</a></h2><div id="thompson-sampling-neurips-2011-foundation-algorithms-models" class="paper paper--toggle" data-search="an empirical evaluation of thompson sampling olivier chapelle, lihong li yahoo! research neurips 2011 thompson sampling foundation algorithms & models" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('thompson-sampling-neurips-2011-foundation-algorithms-models-details')">An Empirical Evaluation of Thompson Sampling</p><p class="paper__detail">Olivier Chapelle, Lihong Li</p><p class="paper__detail">Yahoo! Research</p><p class="paper__detail">Advances in Neural Information Processing Systems (<b>NeurIPS</b>), 2011</p><p class="paper__detail">Dec 12, 2011 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://proceedings.neurips.cc/paper/2011/file/e53a0a2978c28872a4505bdb51db06dc-Paper.pdf"><span class="paper__name paper__name--highlight">Thompson Sampling</span></a></p><div id="thompson-sampling-neurips-2011-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>
+It introduces the <b>first large-scale empirical demonstration</b> that Thompson sampling achieves SOTA in real-world bandit problems.
+</p><p><a class="note" href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/Multi-Armed Bandit.ipynb">(see notes in jupyter)</a></p><p>
+</p></div></div><div id="greedy-ucb-machine-learning-2002-foundation-algorithms-models" class="paper paper--toggle" data-search="finite-time analysis of the multiarmed bandit problem peter auer, nicolò cesa-bianchi, paul fischer university of technology graz, university of milan, university dortmund machine learning 2002 ε-greedy & ucb foundation algorithms & models" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('greedy-ucb-machine-learning-2002-foundation-algorithms-models-details')">Finite-time Analysis of the Multiarmed Bandit Problem</p><p class="paper__detail">Peter Auer, Nicolò Cesa-Bianchi, Paul Fischer</p><p class="paper__detail">University of Technology Graz, University of Milan, University Dortmund</p><p class="paper__detail"><b>Machine Learning</b>, 2002</p><p class="paper__detail">May 01, 2002 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://link.springer.com/content/pdf/10.1023/a:1013689704352.pdf"><span class="paper__name paper__name--highlight">ε-greedy & UCB</span></a></p><p class="paper__detail paper__comment">It fundamentally shifted bandit research by providing the first distribution-free, finite-horizon regret bounds that enabled practical, anytime performance guarantees and sparked a wave of refined algorithms and analyses. It has over 9,000 citations (as of Aug 2025).</p><div id="greedy-ucb-machine-learning-2002-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>
+It proposes index-based and ε-greedy policies that achieve <b>finite-time logarithmic regret bounds</b> for multi-armed bandit with <b>bounded rewards</b>.
+</p><p><a class="note" href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/Multi-Armed Bandit.ipynb">(see notes in jupyter)</a></p><p>
+</p></div></div><div id="rl-introduction-cambridge-1998-foundation-algorithms-models" class="paper paper--toggle" data-search="reinforcement learning: an introduction richard s. sutton, andrew g. barto university of massachusetts amherst, carnegie mellon university cambridge 1998 rl introduction foundation algorithms & models" style="--paper-accent: var(--accent-1);"><p class="paper__title" onclick="toggleTable('rl-introduction-cambridge-1998-foundation-algorithms-models-details')">Reinforcement Learning: An Introduction</p><p class="paper__detail">Richard S. Sutton, Andrew G. Barto</p><p class="paper__detail">University of Massachusetts Amherst, Carnegie Mellon University</p><p class="paper__detail"><b>Cambridge</b>, 1998</p><p class="paper__detail">Jan 01, 1998 &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <a href="https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf"><span class="paper__name paper__name--highlight">RL Introduction</span></a></p><p class="paper__detail paper__comment">It systematizes the foundations of RL by unifying dynamic programming, Monte Carlo methods, and temporal-difference learning into a coherent framework, establishing the theoretical and algorithmic basis for modern RL research. It has over 80,000 citations (as of Aug 2025).</p><div id="rl-introduction-cambridge-1998-foundation-algorithms-models-details" class="info_detail"><hr class="dashed"><p>
+It formalizes the core concepts, algorithms, and theoretical foundations of RL, establishing it as a coherent and accessible discipline.
+</p><p><a class="note" href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/Markov Decision Process.ipynb">(see notes in jupyter)</a></p><p>
+</p></div></div>
+<p class="faint" style="margin-top: 2em; text-align: center;">Last updated on May 18, 2026 at 10:47 (UTC-7).</p>
+
+<script>
+function toggleTable(id) {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle("is-open");
+}
+</script>
+
+<button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+<script>
+(function () {
+    const btn = document.getElementById("backToTop");
+    if (!btn) return;
+    window.addEventListener("scroll", () => {
+        btn.classList.toggle("is-visible", document.documentElement.scrollTop > 300);
+    });
+    btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+})();
+</script>
+
+<button id="themeToggle" type="button" aria-label="Toggle color theme" title="Theme: auto" data-mode="auto">
+    <svg class="icon-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4 A8 8 0 0 1 12 20 Z" fill="currentColor" stroke="none"/></svg>
+    <svg class="icon-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    <svg class="icon-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor" stroke="none"/></svg>
+</button>
+<script>
+(function () {
+    const btn = document.getElementById("themeToggle");
+    if (!btn) return;
+    const order = ["auto", "light", "dark"];
+    const labels = { auto: "Theme: follow system", light: "Theme: light", dark: "Theme: dark" };
+    function read() {
+        try { const v = localStorage.getItem("theme"); return (v === "light" || v === "dark") ? v : "auto"; }
+        catch (e) { return "auto"; }
+    }
+    function apply(mode) {
+        if (mode === "auto") {
+            document.documentElement.removeAttribute("data-theme");
+            try { localStorage.removeItem("theme"); } catch (e) {}
+        } else {
+            document.documentElement.setAttribute("data-theme", mode);
+            try { localStorage.setItem("theme", mode); } catch (e) {}
+        }
+        btn.dataset.mode = mode;
+        btn.title = labels[mode];
+        btn.setAttribute("aria-label", labels[mode]);
+    }
+    apply(read());
+    btn.addEventListener("click", () => {
+        const cur = btn.dataset.mode || "auto";
+        apply(order[(order.indexOf(cur) + 1) % order.length]);
+    });
+})();
+</script>
+</div>
+</body>
+</html>
