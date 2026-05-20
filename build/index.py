@@ -177,7 +177,7 @@ def _paper_card(paper: dict, accent_var: str, *, show_year_badge: str = "") -> s
     return (
         f'<div id="{anchor}" class="paper" style="--paper-accent: var({accent_var});">'
         f'{year_badge}'
-        f'<p class="paper__title">{paper["title"]}</p>'
+        f'<p class="paper__title">{paper["title"].removeprefix("**").lstrip()}</p>'
         f'<p class="paper__detail">{authors}</p>'
         f'<p class="paper__detail">{venue_label}</p>'
         f'<p class="paper__detail">{date_str} &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; {pdf_link}{code_link}</p>'
@@ -194,6 +194,7 @@ def _publications_section(
     show_year_index: bool = True,
     show_year_badges: bool = True,
 ) -> str:
+    papers = sorted(papers, key=lambda p: p["date"], reverse=True)
     full_link_html = (
         f'<a href="{full_link_url}"><b>Full Publication List &rarr;</b></a> &nbsp;&nbsp; '
         if full_link_url

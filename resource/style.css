@@ -283,8 +283,9 @@ a:hover {
 .paper__detail:has(a) a:hover {
     color: var(--color-link-hover);
 }
-.paper__name { color: var(--color-text); }
-.paper__name--highlight { color: var(--color-highlight); }
+.paper__name { color: var(--color-text-muted); }
+.paper__name--highlight,
+.paper__detail:has(a) .paper__name--highlight { color: var(--color-highlight); }
 .paper__comment { color: var(--color-highlight); }
 .paper__year-badge {
     position: absolute;

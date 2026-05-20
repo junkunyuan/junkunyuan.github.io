@@ -5,6 +5,31 @@ categories:
   - Foundation Algorithms & Models
   - Reinforcement Learning
 papers:
+  - title: On-Policy Distillation
+    author: Thinking Machines
+    organization: Thinking Machines
+    date: '20251027'
+    venue: Website 2025
+    pdf_url: https://thinkingmachines.ai/blog/on-policy-distillation/
+    name: OPD
+    category: Reinforcement Learning
+    summary:
+      It grades every token of the <b>student's own rollouts</b> against a frozen teacher via reverse KL, achieving faster training.
+    details:
+      |2
+      <ul>
+          <li><b>On-policy learning (RL):</b> uses sparse feedback which is inefficient.</li>
+          <li><b>Off-policy learning (distillation):</b> students may not follow the teacher well.</li>
+          <li><b>OPD (On-Policy Distillation):</b> provide feedback at each student step.</li>
+          <li><b>Advantages of OPD:</b> 
+            <ul>
+                <li>Training fast: shorter rollout; self-rollout; dense signals; smaller batchsize.
+                <li>Generalizable: distribution learning; unhackable; anti-forgetting.
+            </ul>
+          </li>
+      </ul>
+    highlight: true
+
   - title: Large Language Diffusion Models
     author: Shen Nie, Fengqi Zhu, Zebin You, Xiaolu Zhang, Jingyang Ou, Jun Hu, Jun Zhou, Yankai Lin, Ji-Rong Wen, Chongxuan Li
     organization: Renmin University of China, Ant Group

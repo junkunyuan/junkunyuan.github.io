@@ -86,6 +86,9 @@ def _search_blob(paper: dict) -> str:
 
 
 def _paper_card(paper: dict, accent_var: str, category: str) -> str:
+    raw_title = paper["title"]
+    debug_open = raw_title.startswith("aa")
+    display_title = raw_title[2:].lstrip() if debug_open else raw_title
     name_cls = "paper__name paper__name--highlight" if paper.get("highlight") else "paper__name"
     venue_full = get_venue_full(paper["venue"])
     abbr_html, year_html = _format_venue(paper["venue"])
@@ -149,12 +152,12 @@ def _paper_card(paper: dict, accent_var: str, category: str) -> str:
         f'<div id="{anchor}" class="paper paper--toggle" '
         f'data-search="{_search_blob(paper)}" '
         f'style="--paper-accent: var({accent_var});">'
-        f'<p class="paper__title" onclick="toggleTable(\'{details_id}\')">{paper["title"]}</p>'
+        f'<p class="paper__title" onclick="toggleTable(\'{details_id}\')">{display_title}</p>'
         f'{author}{organization}'
         f'<p class="paper__detail">{venue_label}</p>'
         f'<p class="paper__detail">{date_str} &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; {pdf_link}{code_link}</p>'
         f'{comment}'
-        f'<div id="{details_id}" class="info_detail">'
+        f'<div id="{details_id}" class="info_detail{" is-open" if debug_open else ""}">'
         f'<hr class="dashed">{summary_block}{jupyter}<p>{details}</p>'
         f'</div>'
         f'</div>'
