@@ -15,6 +15,17 @@ categories:
   - 'Generation: Text Rendering and Editing'
   - 'Generation: Interaction'
 papers:
+  - title: 'DiffusionOPD: A Unified Perspective of On-Policy Distillation in Diffusion Models'
+    author: Quanhao Li, Junqiu Yu, Kaixun Jiang, Yujie Wei, Zhen Xing, Pandeng Li, Ruihang Chu, Shiwei Zhang, Yu Liu, Zuxuan Wu
+    organization: Fudan University, Wan Team, Alibaba Group
+    date: '20260514'
+    venue: arXiv 2026
+    pdf_url: https://arxiv.org/pdf/2605.15055
+    name: DiffusionOPD
+    category: 'Generation: Reinforcement Learning'
+    summary: |
+      It distills task-specific teachers into a student on its own rollout using a <b>closed-form per-step KL objective</b>, surpassing joint & cascade multi-task RL.
+
   - title: Co-Evolving Policy Distillation
     author: Naibin Gu, Chenxu Yang, Qingyi Si, Chuanyu Qin, Dingyu Yao, Peng Fu, Zheng Lin, Weiping Wang, Nan Duan, Jiaqi Wang
     organization: Institute of Information Engineering, CAS, School of Cyber Security, UCAS, JD.COM
@@ -50,7 +61,6 @@ papers:
     summary: |
       It upgrades DMD by <b>eliminating the costly regression loss</b>, integrating a GAN objective, and employing a two-time-scale update rule alongside backward simulation.
     details: |2+
-
     draft: true
   - title: One Step Diffusion via Shortcut Models
     author: Kevin Frans, Danijar Hafner, Sergey Levine, Pieter Abbeel
@@ -64,7 +74,6 @@ papers:
     summary: |
       It enables single/multi-step sampling by conditioning a neural network on both the current noise level and the desired step size <b>without distillation</b>.
     details: |2+
-
     draft: true
   - title: Adversarial Diffusion Distillation
     author: Axel Sauer, Dominik Lorenz, Andreas Blattmann, Robin Rombach
@@ -83,7 +92,6 @@ papers:
         <li><b>Distillation loss:</b> student output vs. teacher output (with the noised student output as the input).</li>
         <li><b>NOTE:</b> the distillation is seemed not necessary according to Table 1 (d).</li>
       </ul>
-
     highlight: true
   - title: One-step Diffusion with Distribution Matching Distillation
     author: Tianwei Yin, Michaël Gharbi, Richard Zhang, Eli Shechtman, Fredo Durand, William T. Freeman, Taesung Park
@@ -100,7 +108,7 @@ papers:
       <ul>
         <li>Minimize \(\mathcal{L}_{\mathrm{KL}}=D_{\mathrm{KL}} (p_{\text{fake}} \parallel p_{\text{real}}) = \mathop{\mathbb{E}}_{x \sim p_{\text{fake}}} \left( \log \left( \frac{p_{\text{fake}}(x)}{p_{\text{real}}(x)} \right) \right) \nonumber= \mathop{\mathbb{E}}_{\substack{z \sim \mathcal{N}(0;\mathbf{I}) \\ x=G_\theta(z)}} - ( \log p_{\text{real}}(x) - \log p_{\text{fake}}(x) )\).</li>
         <li>Gradient: \(\nabla_\theta \mathcal{L}_{\mathrm{KL}} = \mathop{\mathbb{E}}_{\substack{z \sim \mathcal{N}(0;\mathbf{I}) \\ x=G_\theta(z)}} \left[ - (s_{\text{real}}(x) - s_{\text{fake}}(x)) \frac{dG}{d\theta} \right]\).</li>
-        <li>Regression loss: \(\mathcal{L}_{\mathrm{reg}}=\mathbb{E}_{(z,y)\sim\mathcal{D}}\ell^{\mathrm{LPIPS}}(G_{\theta}(z),y)\).</li>
+        <li>Regression loss on static teacher's output: \(\mathcal{L}_{\mathrm{reg}}=\mathbb{E}_{(z,y)\sim\mathcal{D}}\ell^{\mathrm{LPIPS}}(G_{\theta}(z),y)\).</li>
         <li>Loss to update generator \(G_{\theta}\): \(\mathcal{L}_{\mathrm{KL}} + \lambda_{\mathrm{reg}}\mathcal{L}_{\mathrm{reg}}\).</li>
         <li>Loss to update fake denoiser \(\mu_{\text{fake}}^{\phi}\): \(||\mu_{\text{fake}}^{\phi}(x_t, t) - x_0||_2^2\).</li>
       </ul>
@@ -117,7 +125,6 @@ papers:
     summary: |
       It train consistency models in <b>latent space</b> with some improving tricks.
     details: |2+
-
   - title: Improved Techniques for Training Consistency Models
     author: Yang Song, Prafulla Dhariwal
     organization: OpenAI

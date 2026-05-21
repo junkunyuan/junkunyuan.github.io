@@ -51,7 +51,7 @@ def _profile_block(time_now: str) -> str:
 <section class="profile">
     <div class="profile__text">
         <h1>Junkun Yuan &nbsp; 袁俊坤</h1>
-        <p>Research Scientist, ByteDance (US)</p>
+        <p>Senior Research Scientist, ByteDance (US)</p>
         <p>Work and live in San Jose (US) &nbsp;&amp;&nbsp; Shenzhen (China)</p>
         <p>yuanjk0921@outlook.com</p>
     </div>

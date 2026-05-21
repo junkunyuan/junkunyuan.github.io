@@ -349,6 +349,23 @@ a:hover {
     display: block;
 }
 
+/* Collapsible table of contents. */
+.toc-toggle {
+    cursor: pointer;
+    user-select: none;
+}
+.toc-indicator {
+    display: inline-block;
+    font-size: 0.85em;
+    margin-left: 0.25em;
+}
+.toc-content {
+    display: none;
+}
+.toc-content.is-open {
+    display: block;
+}
+
 /* Figures. */
 figure {
     margin: 0 10px;

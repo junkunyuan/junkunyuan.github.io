@@ -29,7 +29,7 @@
 <p class="larger"></p>
 <p>Written by <a href="../index.html">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<hr><p id="table" class="huger"><b>Table of contents:</b></p><ul><li><a class="larger no_dec" id="cat-a-guide-to-research" href="#a-guide-to-research-table"><b>A Guide to Research (5)</b></a></li><p class="paper-index"><a href="#progress-management-synchronize-progress-a-guide-to-research" class="no_dec ">progress management<span class="venue">(synchronize progress)</span></a> &nbsp;&nbsp;&nbsp; <a href="#paper-review-discover-an-open-problem-a-guide-to-research" class="no_dec ">paper review<span class="venue">(discover an open problem)</span></a> &nbsp;&nbsp;&nbsp; <a href="#experiment-prepare-implement-monitor-experiments-a-guide-to-research" class="no_dec ">experiment<span class="venue">(prepare, implement, monitor experiments)</span></a> &nbsp;&nbsp;&nbsp; <a href="#write-paper-instructions-for-paper-writing-a-guide-to-research" class="no_dec ">write paper<span class="venue">(instructions for paper writing)</span></a> &nbsp;&nbsp;&nbsp; <a href="#open-source-make-dataset-and-project-open-source-a-guide-to-research" class="no_dec ">open source<span class="venue">(make dataset and project open source)</span></a></p><br></ul>
+<hr><p id="table" class="huger toc-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="toc-content"><b>Table of contents</b> <span class="toc-indicator">▶</span></p><div id="toc-content" class="toc-content"><ul><li><a class="larger no_dec" id="cat-a-guide-to-research" href="#a-guide-to-research-table"><b>A Guide to Research (5)</b></a></li><p class="paper-index"><a href="#progress-management-synchronize-progress-a-guide-to-research" class="no_dec ">progress management<span class="venue">(synchronize progress)</span></a> &nbsp;&nbsp;&nbsp; <a href="#paper-review-discover-an-open-problem-a-guide-to-research" class="no_dec ">paper review<span class="venue">(discover an open problem)</span></a> &nbsp;&nbsp;&nbsp; <a href="#experiment-prepare-implement-monitor-experiments-a-guide-to-research" class="no_dec ">experiment<span class="venue">(prepare, implement, monitor experiments)</span></a> &nbsp;&nbsp;&nbsp; <a href="#write-paper-instructions-for-paper-writing-a-guide-to-research" class="no_dec ">write paper<span class="venue">(instructions for paper writing)</span></a> &nbsp;&nbsp;&nbsp; <a href="#open-source-make-dataset-and-project-open-source-a-guide-to-research" class="no_dec ">open source<span class="venue">(make dataset and project open source)</span></a></p><br></ul></div>
 <input type="search" id="paperSearch" class="search"
        placeholder="Filter papers by title / author / venue / name…"
        aria-label="Filter papers">
@@ -109,13 +109,37 @@ document.addEventListener("DOMContentLoaded", () => {
     <li> <b>Data.</b> Ensure your data is clean: (1) Obtain permission to share it. (2) Remove personal information. (3) Ensure compliance with regulations if human data is involved. (4) Filter out harmful, offensive, or biased content. (5) Organize files clearly (`train/`, `val/`, `test/`). Write a concise README, including: (1) A brief introduction. (2) Instructions to download, load, and use it. (3) Known biases and risks. (4) License.
 </ul>
 </p></div></div>
-<p class="faint" style="margin-top: 2em; text-align: center;">Last updated on May 19, 2026 at 20:35 (UTC-7).</p>
+<p class="faint" style="margin-top: 2em; text-align: center;">Last updated on May 21, 2026 at 10:35 (UTC-7).</p>
 
 <script>
 function toggleTable(id) {
     const el = document.getElementById(id);
     if (el) el.classList.toggle("is-open");
 }
+</script>
+
+<script>
+(function () {
+    const header = document.getElementById("table");
+    const content = document.getElementById("toc-content");
+    if (!header || !content) return;
+    const indicator = header.querySelector(".toc-indicator");
+    function setOpen(open) {
+        content.classList.toggle("is-open", open);
+        if (indicator) indicator.textContent = open ? "▼" : "▶";
+        header.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    setOpen(false);
+    header.addEventListener("click", () => {
+        setOpen(!content.classList.contains("is-open"));
+    });
+    header.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setOpen(!content.classList.contains("is-open"));
+        }
+    });
+})();
 </script>
 
 <button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>

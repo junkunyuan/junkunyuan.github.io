@@ -18,6 +18,7 @@ from build.lib.templates import (
     READING_LIST_HEAD_EXTRA,
     SEARCH_SCRIPT,
     THEME_TOGGLE,
+    TOC_TOGGLE_SCRIPT,
     format_now,
     page_head,
 )
@@ -178,7 +179,12 @@ def _category_block(papers: List[dict], category: str, domain_title: str,
 
 
 def _domain_toc(domain: dict, papers: List[dict]) -> str:
-    out = ['<hr><p id="table" class="huger"><b>Table of contents:</b></p>']
+    out = [
+        '<hr><p id="table" class="huger toc-toggle" role="button" '
+        'tabindex="0" aria-expanded="false" aria-controls="toc-content">'
+        '<b>Table of contents</b> <span class="toc-indicator">▶</span></p>'
+        '<div id="toc-content" class="toc-content">'
+    ]
     if domain["title"] not in PRESERVE_ORDER_TITLES:
         out.append(
             '<p>Papers are displayed in reverse chronological order. '
@@ -201,7 +207,7 @@ def _domain_toc(domain: dict, papers: List[dict]) -> str:
             f'href="#{cat_slug}-table"><b>{category} ({len(in_cat)})</b></a></li>'
             f"{index_html}<br>"
         )
-    out.append("</ul>")
+    out.append("</ul></div>")
     return "".join(out)
 
 
@@ -241,7 +247,7 @@ def _domain_html(domain: dict, time_now: str) -> str:
     )
     return (
         head + intro + toc + "".join(body_parts) + footer
-        + PAPER_TOGGLE_SCRIPT + BACK_TO_TOP + THEME_TOGGLE + PAGE_FOOT
+        + PAPER_TOGGLE_SCRIPT + TOC_TOGGLE_SCRIPT + BACK_TO_TOP + THEME_TOGGLE + PAGE_FOOT
     )
 
 
@@ -253,7 +259,10 @@ def _main_index_html(domains: List[dict], counts: List[int], time_now: str) -> s
 <p class="larger"><b><span class="highlight">{sum(counts)}</span> papers</b></p>
 <p>Written by <a href="../index.html">Junkun Yuan</a>.</p>
 """,
-        '<hr><p id="table" class="huger"><b>Table of contents:</b></p><ul>',
+        '<hr><p id="table" class="huger toc-toggle" role="button" '
+        'tabindex="0" aria-expanded="false" aria-controls="toc-content">'
+        '<b>Table of contents</b> <span class="toc-indicator">▶</span></p>'
+        '<div id="toc-content" class="toc-content"><ul>',
     ]
     for domain, n in zip(domains, counts):
         n_display = "" if n == 0 else f" ({n} papers)"
@@ -261,7 +270,7 @@ def _main_index_html(domains: List[dict], counts: List[int], time_now: str) -> s
             f'<li class="larger"><a class="no_dec" href="{domain["file"]}">'
             f'<b>{domain["title"]}</b></a>{n_display}</li>'
         )
-    parts.append("</ul>")
+    parts.append("</ul></div>")
 
     head = page_head(
         title=MAIN_CONTENT["title"],
@@ -272,7 +281,10 @@ def _main_index_html(domains: List[dict], counts: List[int], time_now: str) -> s
         f'\n<p class="faint" style="margin-top: 2em; text-align: center;">'
         f'Last updated on {time_now}.</p>\n'
     )
-    return head + "".join(parts) + footer + BACK_TO_TOP + THEME_TOGGLE + PAGE_FOOT
+    return (
+        head + "".join(parts) + footer
+        + TOC_TOGGLE_SCRIPT + BACK_TO_TOP + THEME_TOGGLE + PAGE_FOOT
+    )
 
 
 _PRE_CODE_RE = re.compile(

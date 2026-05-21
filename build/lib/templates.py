@@ -155,6 +155,33 @@ function toggleTable(id) {
 """
 
 
+TOC_TOGGLE_SCRIPT: str = """
+<script>
+(function () {
+    const header = document.getElementById("table");
+    const content = document.getElementById("toc-content");
+    if (!header || !content) return;
+    const indicator = header.querySelector(".toc-indicator");
+    function setOpen(open) {
+        content.classList.toggle("is-open", open);
+        if (indicator) indicator.textContent = open ? "▼" : "▶";
+        header.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    setOpen(false);
+    header.addEventListener("click", () => {
+        setOpen(!content.classList.contains("is-open"));
+    });
+    header.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setOpen(!content.classList.contains("is-open"));
+        }
+    });
+})();
+</script>
+"""
+
+
 SEARCH_SCRIPT: str = """
 <input type="search" id="paperSearch" class="search"
        placeholder="Filter papers by title / author / venue / name…"

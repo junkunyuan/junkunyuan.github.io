@@ -5,6 +5,20 @@ categories:
   - Foundation Algorithms & Models
   - Reinforcement Learning
 papers:
+  - title: 'On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes'
+    author: Rishabh Agarwal, Nino Vieillard, Yongchao Zhou, Piotr Stanczyk, Sabela Ramos, Matthieu Geist, Olivier Bachem
+    organization: Google
+    date: '20230623'
+    venue: ICLR 2024
+    pdf_url: https://arxiv.org/pdf/2306.13649
+    name: GKD
+    category: 'Reinforcement Learning'
+    summary: |
+      It trains the student on its <b>own self-generated sequences</b> using token-level feedback from the teacher, fixing the train-inference mismatch.
+      <ul>
+          <li>It proposes <b>Generalized KD (GKD)</b> that uses a mixture of either ground-truth, teacher-generated, and student generated sequences.</li>
+      </ul>
+    highlight: true
   - title: On-Policy Distillation
     author: Thinking Machines
     organization: Thinking Machines
@@ -28,7 +42,6 @@ papers:
             </ul>
           </li>
       </ul>
-    highlight: true
 
   - title: Large Language Diffusion Models
     author: Shen Nie, Fengqi Zhu, Zebin You, Xiaolu Zhang, Jingyang Ou, Jun Hu, Jun Zhou, Yankai Lin, Ji-Rong Wen, Chongxuan Li

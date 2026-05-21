@@ -29,7 +29,7 @@
 <p class="larger"><b><span class="highlight">3</span> papers</b></p>
 <p>Written by <a href="../index.html">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<hr><p id="table" class="huger"><b>Table of contents:</b></p><p>Papers are displayed in reverse chronological order. High-impact or inspiring works are highlighted in <span class="highlight">red</span>.</p><ul><li><a class="larger no_dec" id="cat-foundation-algorithms-models" href="#foundation-algorithms-models-table"><b>Foundation Algorithms & Models (3)</b></a></li><p class="paper-index"><a href="#thompson-sampling-neurips-2011-foundation-algorithms-models" class="no_dec is-highlight">Thompson Sampling<span class="venue">(NeurIPS 2011)</span></a> &nbsp;&nbsp;&nbsp; <a href="#greedy-ucb-machine-learning-2002-foundation-algorithms-models" class="no_dec is-highlight">ε-greedy & UCB<span class="venue">(Machine Learning 2002)</span></a> &nbsp;&nbsp;&nbsp; <a href="#rl-introduction-cambridge-1998-foundation-algorithms-models" class="no_dec is-highlight">RL Introduction<span class="venue">(Cambridge 1998)</span></a></p><br></ul>
+<hr><p id="table" class="huger toc-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="toc-content"><b>Table of contents</b> <span class="toc-indicator">▶</span></p><div id="toc-content" class="toc-content"><p>Papers are displayed in reverse chronological order. High-impact or inspiring works are highlighted in <span class="highlight">red</span>.</p><ul><li><a class="larger no_dec" id="cat-foundation-algorithms-models" href="#foundation-algorithms-models-table"><b>Foundation Algorithms & Models (3)</b></a></li><p class="paper-index"><a href="#thompson-sampling-neurips-2011-foundation-algorithms-models" class="no_dec is-highlight">Thompson Sampling<span class="venue">(NeurIPS 2011)</span></a> &nbsp;&nbsp;&nbsp; <a href="#greedy-ucb-machine-learning-2002-foundation-algorithms-models" class="no_dec is-highlight">ε-greedy & UCB<span class="venue">(Machine Learning 2002)</span></a> &nbsp;&nbsp;&nbsp; <a href="#rl-introduction-cambridge-1998-foundation-algorithms-models" class="no_dec is-highlight">RL Introduction<span class="venue">(Cambridge 1998)</span></a></p><br></ul></div>
 <input type="search" id="paperSearch" class="search"
        placeholder="Filter papers by title / author / venue / name…"
        aria-label="Filter papers">
@@ -57,13 +57,37 @@ It proposes index-based and ε-greedy policies that achieve <b>finite-time logar
 It formalizes the core concepts, algorithms, and theoretical foundations of RL, establishing it as a coherent and accessible discipline.
 </p><p><a class="note" href="https://github.com/junkunyuan/junkunyuan.github.io/blob/main/paper_reading_list/resource/jupyters/Markov Decision Process.ipynb">(see notes in jupyter)</a></p><p>
 </p></div></div>
-<p class="faint" style="margin-top: 2em; text-align: center;">Last updated on May 19, 2026 at 20:35 (UTC-7).</p>
+<p class="faint" style="margin-top: 2em; text-align: center;">Last updated on May 21, 2026 at 10:35 (UTC-7).</p>
 
 <script>
 function toggleTable(id) {
     const el = document.getElementById(id);
     if (el) el.classList.toggle("is-open");
 }
+</script>
+
+<script>
+(function () {
+    const header = document.getElementById("table");
+    const content = document.getElementById("toc-content");
+    if (!header || !content) return;
+    const indicator = header.querySelector(".toc-indicator");
+    function setOpen(open) {
+        content.classList.toggle("is-open", open);
+        if (indicator) indicator.textContent = open ? "▼" : "▶";
+        header.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    setOpen(false);
+    header.addEventListener("click", () => {
+        setOpen(!content.classList.contains("is-open"));
+    });
+    header.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setOpen(!content.classList.contains("is-open"));
+        }
+    });
+})();
 </script>
 
 <button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
