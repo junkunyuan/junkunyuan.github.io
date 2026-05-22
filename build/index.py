@@ -69,9 +69,9 @@ def _profile_block(time_now: str) -> str:
 BIOGRAPHY = """
 <h2 id="biography">Biography</h2>
 <p>
-    I am a Research Scientist at ByteDance (US), working on visual generative foundation models, such as Seedance 2.0, and their applications and products.<br><br>
+    I am a Senior Research Scientist at ByteDance (US), working on visual generative foundation models, such as Seedance 2.0, and their applications.<br><br>
 
-    During 2023–2025, I worked as a Research Scientist in the Hunyuan Multimodal Generation Team at Tencent with <a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ">Wei Liu</a>, <a href="https://scholar.google.com.hk/citations?user=igtXP_kAAAAJ&hl=zh-CN&oi=ao">Zhao Zhong</a>, and <a href="https://scholar.google.com.hk/citations?user=FJwtMf0AAAAJ&hl=zh-CN&oi=ao">Liefeng Bo</a>, where my research focused on multimodal generative foundation models and downstream generation tasks.
+    During 2023–2025, I worked as a Research Scientist in the Hunyuan Multimodal Foundation Model Team at Tencent with <a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ">Wei Liu</a>, <a href="https://scholar.google.com.hk/citations?user=igtXP_kAAAAJ&hl=zh-CN&oi=ao">Zhao Zhong</a>, and <a href="https://scholar.google.com.hk/citations?user=FJwtMf0AAAAJ&hl=zh-CN&oi=ao">Liefeng Bo</a>, where my research focused on visual generative foundation models and downstream generation tasks.
 
     During 2022–2023, I was a research intern in the Computer Vision Group at Baidu with <a href="https://scholar.google.com/citations?user=PSzJxD8AAAAJ">Xinyu Zhang</a> and <a href="https://scholar.google.com/citations?user=z5SPCmgAAAAJ">Jingdong Wang</a>, where my research focused on visual self-supervised pre-training.<br><br>
 
