@@ -54,8 +54,8 @@
 /* Dark tokens — applied via system preference (auto mode) or explicit override. */
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-        --color-bg-page: #0e0e10;
-        --color-bg-body: #1c1c1d;
+        --color-bg-page: #1c1c1d;
+        --color-bg-body: #232325;
         --color-text: #e8e8e8;
         --color-text-soft: #c2c6cd;
         --color-text-muted: #adb2b9;
@@ -73,7 +73,7 @@
         --color-code-chrome: #262c33;
         --color-table-head: #2a2f36;
         --color-table-border: #424246;
-        --color-shadow: rgba(0, 0, 0, 0.5);
+        --color-shadow: rgba(0, 0, 0, 0.25);
         --token-comment: #6a737d;
         --token-keyword: #c594c5;
         --token-string:  #99c794;
@@ -92,8 +92,8 @@
 }
 
 :root[data-theme="dark"] {
-    --color-bg-page: #0e0e10;
-    --color-bg-body: #1c1c1d;
+    --color-bg-page: #1c1c1d;
+    --color-bg-body: #232325;
     --color-text: #e8e8e8;
     --color-text-soft: #c2c6cd;
     --color-text-muted: #adb2b9;
@@ -111,7 +111,7 @@
     --color-code-chrome: #262c33;
     --color-table-head: #2a2f36;
     --color-table-border: #424246;
-    --color-shadow: rgba(0, 0, 0, 0.5);
+    --color-shadow: rgba(0, 0, 0, 0.25);
     --token-comment: #6a737d;
     --token-keyword: #c594c5;
     --token-string:  #99c794;

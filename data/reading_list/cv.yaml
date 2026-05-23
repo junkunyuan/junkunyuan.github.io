@@ -15,6 +15,22 @@ categories:
   - 'Generation: Text Rendering and Editing'
   - 'Generation: Interaction'
 papers:
+  - title: Adversarial Distribution Matching for Diffusion Distillation Towards Efficient Image and Video Synthesis
+    author: Yanzuo Lu, Yuxi Ren, Xin Xia, Shanchuan Lin, Xing Wang, Xuefeng Xiao, Andy J. Ma, Xiaohua Xie, Jian-Huang Lai
+    organization: Sun Yat-Sen University, ByteDance Seed Vision, Guangdong Provincial Key Laboratory of Information Security Technology, Key Laboratory of Machine Intelligence and Advanced Computing, Pazhou Lab (HuangPu)
+    date: '20250724'
+    venue: ICCV 2025
+    pdf_url: https://arxiv.org/pdf/2507.18569
+    name: ADM
+    category: 'Generation: Acceleration'
+    summary:
+      This paper replaces reverse-KL-based distillation with <b>adversarial score distribution matching</b>, enabling faster one/few-step image/video generation.
+    details: |2+
+      <ul>
+        <li><b>Adversarial score distribution matching:</b> align real/fake score distribution by a discriminator.</li>
+        <li><b>Adversarial distillation pre-training:</b> warm up the student on the teacher's rollout.</li>
+      </ul>
+
   - title: 'DiffusionOPD: A Unified Perspective of On-Policy Distillation in Diffusion Models'
     author: Quanhao Li, Junqiu Yu, Kaixun Jiang, Yujie Wei, Zhen Xing, Pandeng Li, Ruihang Chu, Shiwei Zhang, Yu Liu, Zuxuan Wu
     organization: Fudan University, Wan Team, Alibaba Group
@@ -59,9 +75,14 @@ papers:
     name: DMD2
     category: 'Generation: Acceleration'
     summary: |
-      It upgrades DMD by <b>eliminating the costly regression loss</b>, integrating a GAN objective, and employing a two-time-scale update rule alongside backward simulation.
+      It upgrades DMD by <b>eliminating the regression loss</b>, integrating a <b>GAN objective</b>, and a two-time-scale update rule alongside <b>backward simulation</b>.
     details: |2+
-    draft: true
+      <ul>
+        <li><b>Remove regression loss:</b> reduce cost.</li>
+        <li><b>Stablize training:</b> update fake denoiser 5 times per generator update.</li>
+        <li><b>Surpass DMD:</b> GAN loss on fake-data vs. real-data.</li>
+        <li><b>Build training-inference gap:</b> backward training on self-denoised data rather than noisy real data.</li>
+      </ul>
   - title: One Step Diffusion via Shortcut Models
     author: Kevin Frans, Danijar Hafner, Sergey Levine, Pieter Abbeel
     organization: UC Berkeley
