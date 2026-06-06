@@ -1,4 +1,11 @@
 papers:
+  - title: 'Follow-Your-Preference++: Rethinking Preference Alignment for Image Inpainting'
+    author: Junkun Yuan**, Yutao Shen**, Toru Aonishi, Hideki Nakayama, Yue Ma##
+    date: '20260602'
+    venue: Tech Report 2026
+    name: Follow-Your-Preference++
+    pdf_url: https://arxiv.org/pdf/2606.03216
+    code_url: https://github.com/shenytzzz/Follow-Your-Preference
   - title: 'Reinforcement Learning in Generative Multimodal AI: A Survey'
     author: Zijing Hu**, Junkun Yuan**, Kairong Han, Yunze Tong, Shengyu Zhang, Fei Wu, Kun Kuang##
     date: '20260227'
@@ -42,7 +49,7 @@ papers:
     name: HunyuanVideo
     pdf_url: https://arxiv.org/pdf/2412.03603
     code_url: https://github.com/Tencent-Hunyuan/HunyuanVideo
-    comment: It introduces an open-source diffusion model for video generation, which has received over 1000 citations and over 12,000 GitHub stars (as of May 2026).
+    comment: It introduces an open-source diffusion model for video generation, which has received over 1,200 citations and over 12,000 GitHub stars (as of Jun 2026).
     highlight: true
     selected: true
   - title: Mutual Prompt Learning for Vision Language Models

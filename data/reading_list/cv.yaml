@@ -15,6 +15,35 @@ categories:
   - 'Generation: Text Rendering and Editing'
   - 'Generation: Interaction'
 papers:
+  - title: 'SpongeBob: Sync-Aware Harmonious Audio-Visual Generative Editing'
+    author: Sen Liang, Cong Wang, Fengbin Guan, Zhentao Yu, Yiting Lu, Yuanzhi Wang, Yuan Zhou, Xin Li, Zhibo Chen
+    organization: University of Science and Technology of China, Tencent Hunyuan
+    date: '20260524'
+    venue: arXiv 2026
+    pdf_url: https://arxiv.org/pdf/2605.25193
+    name: SpongeBob
+    category: 'Generation: Editing & Inpainting & Outpainting'
+    summary: It <b>jointly edits video and audio</b> with synchronized, context-aware generation by inpainting.
+    details: |
+      <ul>
+        <li><b>Problem:</b> existing audio-visual editing methods usually decouple video editing and audio generation.</li>
+        <li><b>Task reformulation:</b> recasts subject-level audio-visual editing as self-supervised inpainting.</li>
+        <li><b>Dual-stream DiT:</b> simultaneously denoises video latents and target-audio latents.</li>
+        <li><b>Sync-Aware Editing Mechanism:</b></li>
+        <ul>
+          <li><b>Bidirectional cross-modal attention:</b> lets visual motion and sound events interact during denoising.</li>
+          <li><b>RoPE temporal alignment:</b> maps video and audio tokens onto a shared timeline for frame-level synchronization.</li>
+          <li><b>Mask-guided asymmetric routing:</b> injects audio only into the edited visual region while allowing video-to-audio gloabl attention.</li>
+        </ul>
+        <li><b>Context-Aware Module:</b></li>
+        <ul>
+          <li><b>Visual Context Attention:</b> uses unedited video regions to guide target-audio generation.</li>
+          <li><b>Acoustic Context Attention:</b> attends to base audio to preserve ambient sounds and avoid non-target speaker overlap.</li>
+        </ul>
+        <li><b>SPTG:</b> combines multi-task alignment training with two-stage inference guidance: early context CFG and later sync CFG.</li>
+        <li><b>Data and benchmark:</b> builds a scalable pipeline producing 400K samples / 390 hours, and introduces SpongeBob-Bench for evaluation.</li>
+      </ul>
+
   - title: Adversarial Distribution Matching for Diffusion Distillation Towards Efficient Image and Video Synthesis
     author: Yanzuo Lu, Yuxi Ren, Xin Xia, Shanchuan Lin, Xing Wang, Xuefeng Xiao, Andy J. Ma, Xiaohua Xie, Jian-Huang Lai
     organization: Sun Yat-Sen University, ByteDance Seed Vision, Guangdong Provincial Key Laboratory of Information Security Technology, Key Laboratory of Machine Intelligence and Advanced Computing, Pazhou Lab (HuangPu)
