@@ -1,0 +1,835 @@
+/* ============================================================================
+   Design tokens — light + dark via prefers-color-scheme.
+   ============================================================================ */
+:root {
+    /* Tells the browser to render its own furniture — scrollbars, form
+       controls, the canvas behind the page — in the matching theme. Without
+       it a dark page grows a white scrollbar down the side of every code
+       block. */
+    color-scheme: light;
+
+    --color-bg-page: #eeeeee;
+    --color-bg-body: #ffffff;
+    --color-text: #3d3d3d;
+    --color-text-soft: #565656;
+    /* The light ramp used to bottom out far below the dark one: #777 was
+       4.48:1 and #aaa only 2.32:1, so the smallest text on a white background
+       was the least legible thing on the site. Every step now clears 4.5:1,
+       and the gaps between steps match the dark ramp's. */
+    --color-text-muted: #626262;
+    --color-text-faint: #767676;
+    --color-text-very-faint: #cccccc;
+    /* Deliberately quiet, but never below a 3:1 contrast. Each theme needs its
+       own value: the faint tokens sit at very different contrasts on white and
+       on near-black, so one shared value cannot be quiet in both. */
+    --color-aside: #8f8f8f;
+    /* Above --color-text: for the two lines an entry is identified by. */
+    --color-text-strong: #2b2b2b;
+    --color-link: #404040;
+    --color-link-hover: #4169e1;
+    --color-accent: #4169e1;
+    --color-highlight: #b8474a;
+    --color-highlight-soft: #b04040;
+    --color-junkun: #1d3a8a;
+    --color-divider: #cccccc;
+    --color-code-bg: #f6f8fa;
+    --color-code-border: #e1e4e8;
+    --color-code-chrome: #eef1f4;
+    --color-table-head: #e2e2e2;
+    --color-table-border: #dddddd;
+    --color-shadow: rgba(0, 0, 0, 0.15);
+
+    /* Syntax token palette — VS Code's Light (Visual Studio) theme, taken
+       from its light_vs.json. Deliberately minimal: only comments, keywords,
+       strings and numbers are colored; names, operators and everything else
+       stay at the plain editor foreground. (The "+" themes add the extra
+       colors on top; this is the classic look underneath.) */
+    --token-plain:   #000000;
+    --token-comment: #008000;
+    --token-keyword: #0000ff;
+    --token-string:  #a31515;
+    --token-number:  #098658;
+    --token-emphasis:#1d3a8a;
+    --token-line-hl: rgba(255, 235, 130, 0.45);
+
+    /* Year / category accent palette (cyclic). */
+    --accent-1: #a8cfee;
+    --accent-2: #f9d3aa;
+    --accent-3: #a8d3a8;
+    --accent-4: #f0bfcf;
+
+    --max-width: 960px;
+    --side-padding: 50px;
+    /* What the panel actually occupies. `body` is content-box, so its padding
+       sits outside --max-width; the floating buttons were positioned against
+       960px while the panel is 1060px wide, which parked them on its edge. */
+    --panel-width: calc(var(--max-width) + 2 * var(--side-padding));
+    --side-padding-mobile: 16px;
+
+    /* Typography */
+    --font-sans: Arial, Helvetica, sans-serif;
+    --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Source Serif Pro", "Charter", Georgia, "Times New Roman", serif;
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+/* Dark tokens — applied via system preference (auto mode) or explicit override. */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        color-scheme: dark;
+        --color-bg-page: #1c1c1d;
+        --color-bg-body: #232325;
+        --color-text: #dcdee1;
+        --color-text-soft: #b9bec6;
+        --color-text-muted: #adb2b9;
+        --color-text-faint: #868c95;
+        --color-text-very-faint: #6c7178;
+        --color-aside: #70757d;
+        --color-text-strong: #ebedf0;
+        --color-link: #e8e8e8;
+        --color-link-hover: #7fa8ec;
+        --color-accent: #7fa8ec;
+        /* Calmer than #e88c8c (6.4:1): highlighted names and comments were
+           shouting on a dark page. 4.9:1 still clears the 4.5 floor for text
+           this small. */
+        --color-highlight: #d47575;
+        --color-highlight-soft: #d97373;
+        --color-junkun: #e8c364;
+        --color-divider: #424246;
+        --color-code-bg: #191d21;
+        --color-code-border: #2d333b;
+        --color-code-chrome: #262c33;
+        --color-table-head: #2a2f36;
+        --color-table-border: #424246;
+        --color-shadow: rgba(0, 0, 0, 0.25);
+        --token-plain:   #d4d4d4;
+        --token-comment: #6a9955;
+        --token-keyword: #569cd6;
+        --token-string:  #ce9178;
+        --token-number:  #b5cea8;
+        --token-emphasis:#e8c364;
+        --token-line-hl: rgba(125, 156, 255, 0.18);
+        --accent-1: #8cb6d6;
+        --accent-2: #d8b485;
+        --accent-3: #8eb88e;
+        --accent-4: #d29eb0;
+    }
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --color-bg-page: #1c1c1d;
+    --color-bg-body: #232325;
+    --color-text: #dcdee1;
+    --color-text-soft: #b9bec6;
+    --color-text-muted: #adb2b9;
+    --color-text-faint: #868c95;
+    --color-text-very-faint: #6c7178;
+    --color-aside: #70757d;
+    --color-text-strong: #ebedf0;
+    --color-link: #e8e8e8;
+    --color-link-hover: #7fa8ec;
+    --color-accent: #7fa8ec;
+    --color-highlight: #d47575;
+    --color-highlight-soft: #d97373;
+    --color-junkun: #e8c364;
+    --color-divider: #424246;
+    --color-code-bg: #191d21;
+    --color-code-border: #2d333b;
+    --color-code-chrome: #262c33;
+    --color-table-head: #2a2f36;
+    --color-table-border: #424246;
+    --color-shadow: rgba(0, 0, 0, 0.25);
+    --token-plain:   #d4d4d4;
+    --token-comment: #6a9955;
+    --token-keyword: #569cd6;
+    --token-string:  #ce9178;
+    --token-number:  #b5cea8;
+    --token-emphasis:#e8c364;
+    --token-line-hl: rgba(125, 156, 255, 0.18);
+    --accent-1: #8cb6d6;
+    --accent-2: #d8b485;
+    --accent-3: #8eb88e;
+    --accent-4: #d29eb0;
+}
+
+/* ============================================================================
+   Base layout
+   ============================================================================ */
+html {
+    background-color: var(--color-bg-page);
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background-color: var(--color-bg-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: left;
+    margin: 20px auto;
+    padding: 20px var(--side-padding);
+    max-width: var(--max-width);
+    box-shadow: 0 0 14px var(--color-shadow);
+    border-radius: 4px;
+}
+
+@media (max-width: 720px) {
+    body {
+        padding: 16px var(--side-padding-mobile);
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+}
+
+/* ============================================================================
+   Typography
+   ============================================================================ */
+h1, h2 {
+    color: var(--color-text);
+    margin-top: 0.7em;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.2em;
+    line-height: 1.1;
+    font-family: var(--font-sans);
+}
+h1 { font-size: 150%; }
+h2 { font-size: 120%; }
+
+p, li {
+    color: var(--color-text);
+    margin: 0 0 0.8em 0;
+    padding: 0;
+    line-height: 1.5;
+    font-family: var(--font-sans);
+    font-size: 14px;
+}
+
+.larger  { font-size: 16px; }
+.huger   { font-size: 17px; }
+.faint   { color: var(--color-text-faint); }
+.highlight { color: var(--color-highlight); }
+
+/* ============================================================================
+   Links
+   ============================================================================ */
+a {
+    color: var(--color-link);
+}
+a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+.no_dec {
+    text-decoration: none;
+}
+
+/* ============================================================================
+   Header (main page)
+   ============================================================================ */
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+    justify-content: space-between;
+}
+.profile__text { flex: 1 1 320px; }
+/* The photo is the way into the reading notes. */
+.profile__photo-link {
+    display: block;
+    transform: translate(-16px, 24px);
+    border-radius: 8px;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.profile__photo-link:hover,
+.profile__photo-link:focus-visible {
+    transform: translate(-16px, 21px);
+    box-shadow: 0 8px 20px var(--color-shadow);
+}
+.profile__photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px var(--color-shadow);
+}
+@media (max-width: 720px) {
+    .profile__photo-link,
+    .profile__photo-link:hover { transform: none; }
+}
+/* Housekeeping, not content: legible if you look for it, invisible if you
+   are not. It brightens on hover so the reading-list link stays findable. */
+/* The link inside inherits this line's color: at full link contrast it would
+   shout inside a line that is deliberately quiet. The underline still marks
+   it as a link. */
+.page__updated a { color: inherit; }
+.page__updated {
+    color: var(--color-aside);
+    font-size: 11px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    margin-top: 2em;
+}
+
+/* ============================================================================
+   Paper entry
+   ============================================================================ */
+.paper {
+    padding: 0 0 0 20px;
+    position: relative;
+    margin: 0 0 16px 0;
+}
+.paper::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -6px;
+    bottom: -6px;
+    width: 10px;
+    background-color: var(--paper-accent, var(--accent-1));
+}
+.paper__title {
+    color: var(--color-text-strong);
+    font-size: 16px;
+    font-family: var(--font-sans);
+    font-style: italic;
+    font-weight: normal;
+    line-height: 24px;
+    margin: 0;
+}
+.paper--toggle .paper__title {
+    cursor: pointer;
+}
+.paper--toggle .paper__title:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+/* The method name leads the title — bold and upright against the italic
+   title, because it is what the list gets scanned by. On hover it joins the
+   title's color so the whole line reads as the one click target it is. */
+.paper__title .paper__name {
+    font-style: normal;
+    font-weight: 700;
+    color: var(--color-text-strong);
+}
+.paper__title .paper__name--impact { color: var(--color-highlight); }
+.paper--toggle .paper__title:hover .paper__name { color: inherit; }
+.paper__sep {
+    font-style: normal;
+    color: var(--color-text-faint);
+}
+.paper__detail {
+    color: var(--color-text);
+    /* One step below the 13px the rest of the site's small text uses: the
+       title carries the entry, the rows under it are its particulars.
+       Line height is left alone so entry heights do not move. */
+    font-size: 12px;
+    line-height: 21px;
+    margin: 0;
+}
+/* Last line of a paper (date + links): demoted to muted gray, like Kaiming He. */
+.paper__detail:has(a) {
+    color: var(--color-text-muted);
+}
+.paper__detail:has(a) a,
+.paper__detail:has(a) .paper__name {
+    color: inherit;
+}
+.paper__detail:has(a) a:hover {
+    color: var(--color-link-hover);
+}
+/* The author line and the venue line used to be the same gray as everything
+   else in an entry, so authors, affiliation and venue read as one flat block.
+   Authors carry the most weight — they are what a reading list gets scanned
+   for — and the affiliation carries the least, since the venue is stated on
+   its own line anyway. */
+/* Doubled class so the authors line beats `.paper__detail:has(a)` — that
+   rule demotes the date-and-links line, and once every author became a link
+   it started matching this line too. */
+.paper__detail.paper__authors { color: var(--color-text-strong); }
+/* Every author is a Google Scholar search link, but the line must still read
+   as a byline, not a link farm: names keep the text color until hovered. */
+.paper__authors a { color: inherit; text-decoration: none; }
+.paper__authors a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+/* An author's citation count rides the name the way a paper's rides its link,
+   but fainter — the byline is read for names, the numbers are context. */
+.paper__authors .author-cites { color: var(--color-text-faint); }
+.paper__authors a:hover .author-cites { color: inherit; }
+.paper__affiliation { color: var(--color-text-faint); }
+
+/* The date is context; the links after it are things to click. Keeping it
+   fainter makes the links the only thing on the line asking for attention.
+   (Citation and star counts ride inside the link text itself.) */
+.paper__detail:has(a) .paper__date { color: var(--color-text-faint); }
+
+.paper__name { color: var(--color-text-muted); }
+.paper__name--impact,
+.paper__detail:has(a) .paper__name--impact { color: var(--color-highlight); }
+.paper__impact { color: var(--color-highlight); }
+
+/* Tags carry the axes a category tree cannot: modality, paradigm, application.
+   They are metadata about a paper, not part of reading it, so they sit at the
+   quietest weight on the card and only firm up when you look for them. */
+.paper__tags {
+    margin: 4px 0 0 0;
+    line-height: 1.9;
+}
+.tag {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 0 6px;
+    font-size: 10px;
+    letter-spacing: 0.02em;
+    color: var(--color-aside);
+    background-color: var(--color-code-bg);
+    border: 1px solid var(--color-code-border);
+    border-radius: 9px;
+    white-space: nowrap;
+}
+.paper__year-badge {
+    position: absolute;
+    right: 0;
+    top: 0.5em;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    opacity: 0.85;
+    color: var(--paper-accent, var(--accent-1));
+}
+@media (max-width: 720px) {
+    .paper__year-badge { display: none; }
+}
+.author--junkun {
+    font-weight: bold;
+}
+
+/* Author mark superscripts. */
+.author-mark {
+    font-size: 0.8em;
+    line-height: 0;
+    vertical-align: baseline;
+    position: relative;
+    top: -0.5em;
+}
+.author-mark--mail { font-size: 1em; }
+
+/* Inline index lists (year-grouped or flat). */
+.paper-index {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 13px;
+    margin-bottom: 8px;
+    gap: 0 16px;
+}
+.paper-index__year {
+    font-weight: bold;
+    margin-right: -4px;
+    color: var(--paper-accent, var(--accent-1));
+}
+.paper-index a {
+    color: var(--color-text-muted);
+}
+.paper-index a.is-impact {
+    color: var(--color-highlight);
+}
+.paper-index .venue {
+    color: var(--color-text-faint);
+    font-size: 11px;
+    margin-left: 2px;
+}
+
+/* Expandable info block. */
+.info_detail {
+    display: none;
+}
+.info_detail.is-open {
+    display: block;
+}
+
+/* Collapsible table of contents. */
+.toc-toggle {
+    cursor: pointer;
+    user-select: none;
+}
+.toc-indicator {
+    display: inline-block;
+    font-size: 0.85em;
+    margin-left: 0.25em;
+}
+.toc-content {
+    display: none;
+}
+.toc-content.is-open {
+    display: block;
+}
+
+/* Figures. */
+figure {
+    margin: 0 10px;
+    text-align: center;
+}
+/* A figure and the code that implements it, read together: the paper's procedure
+   on the left, the source on the right. Inside the pair the figure keeps its
+   caption underneath — the horizontal room belongs to the code. */
+.pair {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin: 12px 0;
+}
+/* `.figure--side` is more specific than `.pair figure`, so name it here too, or
+   the caption jumps back alongside and the figure grows to fit it. `min-content`
+   makes the figure exactly as wide as its image, letting the caption wrap. */
+.pair figure,
+.pair figure.figure--side {
+    display: block;
+    margin: 0;
+    flex: 0 0 auto;
+    width: min-content;
+    text-align: center;
+}
+/* Without this the image is caught in a loop: `min-content` asks the caption how
+   narrow it can be, `max-width: 100%` then shrinks the image to that. Let the
+   image keep the width it declared, and min-content resolves to it. */
+.pair figure img { max-width: none; }
+.pair figure figcaption { text-align: left; margin: 6px 0 0; }
+.pair pre.highlight { flex: 1 1 0; margin: 0; min-width: 0; }
+/* Several figures against one code block: stack them in a column of their own,
+   so the code stays a single tall column beside them rather than becoming a
+   third one. Wrapping is what makes this explicit — a flex row cannot stack
+   some of its children and not others. */
+.pair__figs {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+@media (max-width: 720px) {
+    .pair { display: block; }
+    .pair__figs { display: block; }
+    .pair figure, .pair figure.figure--side { width: auto; }
+    .pair figure img { max-width: 100%; }
+    .pair figure + figure { margin-top: 14px; }
+    .pair pre.highlight { margin-top: 12px; }
+}
+
+/* A figure narrower than half the column leaves room for its caption alongside,
+   which keeps the two together instead of stacking 300px of image above 40px of
+   text. Narrow screens stack it back. */
+figure.figure--side {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-align: left;
+}
+figure.figure--side img { flex: 0 0 auto; }
+/* Flex centres the margin box, so a bottom margin would push the text up. */
+figure.figure--side figcaption { flex: 1 1 auto; margin: 0; text-align: left; }
+@media (max-width: 720px) {
+    figure.figure--side { display: block; text-align: center; }
+    figure.figure--side figcaption { text-align: left; }
+}
+figcaption {
+    font-size: 14px;
+    color: var(--color-text);
+    text-align: center;
+    font-family: var(--font-sans);
+    margin: 0.5em 0 1.5em 0;
+}
+img { vertical-align: middle; max-width: 100%; height: auto; }
+
+hr.dashed {
+    border: none;
+    height: 1px;
+    border-top: 1px dashed var(--color-divider);
+    margin: 15px 0;
+}
+
+/* ============================================================================
+   Code blocks
+   ============================================================================ */
+pre {
+    color: var(--color-text);
+    background-color: var(--color-code-bg);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    white-space: pre;
+    tab-size: 4;
+    margin: 12px 0;
+    padding: 14px 16px;
+    line-height: 1.55;
+    border: 1px solid var(--color-code-border);
+    border-radius: 6px;
+    overflow-x: auto;
+    position: relative;
+}
+
+/* Inline `<code>` (outside <pre>). */
+:not(pre) > code {
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+    background-color: var(--color-code-bg);
+    border: 1px solid var(--color-code-border);
+    border-radius: 3px;
+    padding: 1px 5px;
+    color: var(--color-text);
+}
+
+pre > code {
+    font-family: inherit;
+    font-size: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    display: block;
+}
+
+/* The horizontal scrollbar under a wide snippet is part of the page, not a
+   bright band across it. `color-scheme` handles this in current browsers;
+   this states it outright for the rest. */
+pre.highlight {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-divider) transparent;
+}
+pre.highlight::-webkit-scrollbar { height: 8px; }
+pre.highlight::-webkit-scrollbar-track { background: transparent; }
+pre.highlight::-webkit-scrollbar-thumb {
+    background: var(--color-divider);
+    border-radius: 4px;
+}
+
+/* Syntax colors. Pygments emits these classes at build time; the values are
+   VS Code's Light/Dark (Visual Studio) themes on variables, so the two flip
+   together. Those themes color exactly four families — comments, keywords,
+   strings, numbers — and every other token inherits the plain foreground
+   from the pre, so no rule is needed for names, operators or punctuation.
+   `pre.highlight` states that foreground itself: `.highlight` is also the
+   page's red-emphasis class, and without the restatement everything the
+   four rules miss would inherit that red. */
+pre.highlight { color: var(--token-plain); }
+.tok-c, .tok-c1, .tok-cm, .tok-cp, .tok-cpf, .tok-cs { color: var(--token-comment); }
+.tok-k, .tok-kc, .tok-kd, .tok-kn, .tok-kp, .tok-kr, .tok-kt,
+.tok-ow, .tok-bp { color: var(--token-keyword); }
+.tok-s, .tok-s1, .tok-s2, .tok-sa, .tok-sb, .tok-sc, .tok-sd, .tok-se,
+.tok-sh, .tok-si, .tok-sr, .tok-ss, .tok-sx, .tok-dl { color: var(--token-string); }
+.tok-m, .tok-mb, .tok-mf, .tok-mh, .tok-mi, .tok-mo, .tok-il { color: var(--token-number); }
+.tok-gs { font-weight: 700; }
+.tok-ge { font-style: italic; }
+
+/* A note can bold part of a snippet with <b>; highlighting keeps it. */
+pre code b {
+    color: var(--token-emphasis);
+    font-weight: 700;
+    background: linear-gradient(transparent 75%, var(--token-line-hl) 0);
+    padding: 0 1px;
+}
+
+/* Copy button, added by resource/site.js, top-right of each block. */
+.code-copy {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    line-height: 1;
+    padding: 4px 8px;
+    color: var(--color-text-muted);
+    background-color: var(--color-code-chrome);
+    border: 1px solid var(--color-code-border);
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    z-index: 2;
+}
+pre.highlight:hover .code-copy,
+.code-copy:focus { opacity: 1; }
+.code-copy:hover {
+    color: var(--color-text);
+    border-color: var(--color-accent);
+}
+
+/* Math is MathML, rendered by the browser. */
+math { font-size: 1.05em; }
+.math-error { color: var(--color-highlight); }
+
+
+/* ============================================================================
+   Tables
+   ============================================================================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid var(--color-table-border);
+    vertical-align: middle;
+    color: var(--color-text);
+    line-height: 1.5;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    padding: 4px 8px;
+}
+th {
+    background-color: var(--color-table-head);
+}
+.center { text-align: center; }
+
+/* ============================================================================
+   Back-to-top floating button
+   ============================================================================ */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: max(10px, calc((100% - var(--panel-width)) / 2 - 44px - 14px));
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px var(--color-shadow);
+    display: none;
+    z-index: 1000;
+}
+#backToTop.is-visible { display: block; }
+
+/* ============================================================================
+   Theme toggle (top-right floating button)
+   ============================================================================ */
+#themeToggle {
+    position: fixed;
+    top: 20px;
+    right: max(14px, calc((100% - var(--panel-width)) / 2 - 42px - 14px));
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid var(--color-divider);
+    border-radius: 50%;
+    background-color: var(--color-bg-body);
+    color: var(--color-text);
+    cursor: pointer;
+    box-shadow: 0 2px 8px var(--color-shadow);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    transition: transform 0.25s ease, background-color 0.25s ease,
+                color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+#themeToggle:hover {
+    transform: translateY(-1px) rotate(-12deg);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    box-shadow: 0 4px 14px var(--color-shadow);
+}
+#themeToggle:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+#themeToggle svg {
+    width: 20px;
+    height: 20px;
+    display: none;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+#themeToggle[data-mode="auto"]  .icon-auto  { display: block; }
+#themeToggle[data-mode="light"] .icon-light { display: block; }
+#themeToggle[data-mode="dark"]  .icon-dark  { display: block; }
+
+@media (max-width: 720px) {
+    #themeToggle {
+        top: 12px;
+        right: 12px;
+        width: 38px;
+        height: 38px;
+    }
+    #themeToggle svg { width: 18px; height: 18px; }
+}
+
+/* ============================================================================
+   Reading-list search box
+   ============================================================================ */
+.search {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    margin: 12px 0 16px;
+    font-size: 14px;
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background-color: var(--color-bg-body);
+    border: 1px solid var(--color-divider);
+    border-radius: 4px;
+}
+.search:focus {
+    outline: none;
+    border-color: var(--color-accent);
+}
+.is-hidden { display: none !important; }
+
+/* Cross-page search results, listed under the filter box by resource/site.js. */
+.search-elsewhere { margin: -6px 0 14px 0; }
+.search-elsewhere__head {
+    color: var(--color-text-faint);
+    font-size: 13px;
+    margin: 6px 0 4px 0;
+}
+.search-elsewhere__hit {
+    display: block;
+    font-size: 14px;
+    padding: 2px 0;
+    text-decoration: none;
+}
+.search-elsewhere__hit:hover { text-decoration: underline; }
+
+/* ============================================================================
+   Print
+   ============================================================================ */
+@media print {
+    /* Controls have no meaning on paper. */
+    #themeToggle, #backToTop, .code-copy, .search, .search-elsewhere { display: none !important; }
+
+    /* Always the light palette, whatever the screen was set to. */
+    :root, :root[data-theme="dark"] {
+        --color-bg-body: #fff;
+        --color-text: #000;
+        --color-text-muted: #333;
+        --color-text-faint: #555;
+        --color-code-bg: #f6f8fa;
+    }
+    body { background: #fff; color: #000; }
+
+    /* Every note printed, not just the ones expanded on screen. */
+    .info_detail { display: block !important; }
+    .toc-content { display: block !important; }
+
+    /* Keep a note, and a figure with its caption, on one page. */
+    .paper, figure, pre { break-inside: avoid; page-break-inside: avoid; }
+    h2 { break-after: avoid; page-break-after: avoid; }
+
+    /* A printed link is useless unless you can read where it goes. */
+    .paper__detail a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #555;
+        word-break: break-all;
+    }
+
+    #layout-content { max-width: none; padding: 0; }
+    pre { white-space: pre-wrap; word-break: break-word; }
+}
+
