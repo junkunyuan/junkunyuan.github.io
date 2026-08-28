@@ -23,6 +23,15 @@
        own value: the faint tokens sit at very different contrasts on white and
        on near-black, so one shared value cannot be quiet in both. */
     --color-aside: #8f8f8f;
+    /* One step below aside, for the numeric annotations riding on links
+       (citation and star counts, contents-list venues). They repeat on
+       every line, so they can sit under 3:1: the link text carries the
+       meaning, the number is a whisper beside it. Per-theme values keep
+       the whisper equally quiet on white and on near-black (~2.6:1). */
+    --color-meta: #a0a0a0;
+    /* Highlighter ink for ==marked== spans, prose and code alike. Per theme:
+       a wash light enough to keep text at full contrast on both grounds. */
+    --color-mark: #fdeb9c;
     /* Above --color-text: for the two lines an entry is identified by. */
     --color-text-strong: #2b2b2b;
     --color-link: #404040;
@@ -78,14 +87,16 @@
         color-scheme: dark;
         --color-bg-page: #1c1c1d;
         --color-bg-body: #232325;
-        --color-text: #dcdee1;
-        --color-text-soft: #b9bec6;
-        --color-text-muted: #adb2b9;
+        --color-text: #cfd1d5;
+        --color-text-soft: #aeb3ba;
+        --color-text-muted: #a2a7ae;
         --color-text-faint: #868c95;
         --color-text-very-faint: #6c7178;
         --color-aside: #70757d;
-        --color-text-strong: #ebedf0;
-        --color-link: #e8e8e8;
+        --color-meta: #60656c;
+        --color-mark: #52481f;
+        --color-text-strong: #dbdde1;
+        --color-link: #d6d6d6;
         --color-link-hover: #7fa8ec;
         --color-accent: #7fa8ec;
         /* Calmer than #e88c8c (6.4:1): highlighted names and comments were
@@ -119,14 +130,16 @@
     color-scheme: dark;
     --color-bg-page: #1c1c1d;
     --color-bg-body: #232325;
-    --color-text: #dcdee1;
-    --color-text-soft: #b9bec6;
-    --color-text-muted: #adb2b9;
+    --color-text: #cfd1d5;
+    --color-text-soft: #aeb3ba;
+    --color-text-muted: #a2a7ae;
     --color-text-faint: #868c95;
     --color-text-very-faint: #6c7178;
     --color-aside: #70757d;
-    --color-text-strong: #ebedf0;
-    --color-link: #e8e8e8;
+    --color-meta: #60656c;
+    --color-mark: #52481f;
+    --color-text-strong: #dbdde1;
+    --color-link: #d6d6d6;
     --color-link-hover: #7fa8ec;
     --color-accent: #7fa8ec;
     --color-highlight: #d47575;
@@ -306,20 +319,6 @@ a:hover {
     color: var(--color-link-hover);
     text-decoration: underline;
 }
-/* The method name leads the title — bold and upright against the italic
-   title, because it is what the list gets scanned by. On hover it joins the
-   title's color so the whole line reads as the one click target it is. */
-.paper__title .paper__name {
-    font-style: normal;
-    font-weight: 700;
-    color: var(--color-text-strong);
-}
-.paper__title .paper__name--impact { color: var(--color-highlight); }
-.paper--toggle .paper__title:hover .paper__name { color: inherit; }
-.paper__sep {
-    font-style: normal;
-    color: var(--color-text-faint);
-}
 .paper__detail {
     color: var(--color-text);
     /* One step below the 13px the rest of the site's small text uses: the
@@ -329,9 +328,11 @@ a:hover {
     line-height: 21px;
     margin: 0;
 }
-/* Last line of a paper (date + links): demoted to muted gray, like Kaiming He. */
+/* Last line of a paper (date + name + code): the same ink as the venue line,
+   so authors, venue and links read as one block; hover alone says what is
+   clickable, and the counts beside the links stay their fainter meta gray. */
 .paper__detail:has(a) {
-    color: var(--color-text-muted);
+    color: var(--color-text);
 }
 .paper__detail:has(a) a,
 .paper__detail:has(a) .paper__name {
@@ -356,18 +357,49 @@ a:hover {
     color: var(--color-link-hover);
     text-decoration: underline;
 }
-/* An author's citation count rides the name the way a paper's rides its link,
-   but fainter — the byline is read for names, the numbers are context. */
-.paper__authors .author-cites { color: var(--color-text-faint); }
-.paper__authors a:hover .author-cites { color: inherit; }
-.paper__affiliation { color: var(--color-text-faint); }
+/* Every count — an author's citations, a paper's, a repo's stars — rides its
+   line fainter and a step smaller, the same 11px the contents list gives a
+   venue: numbers are context, not the thing being read. On hover they join
+   the link's color, so the whole link still reads as one target. */
+.scholar .paper__title .author-cites,
+.paper__authors .author-cites,
+.paper__detail .count {
+    font-size: 11px;
+    color: var(--color-meta);
+}
+.paper__authors a:hover .author-cites,
+.paper__detail a:hover .count { color: inherit; }
 
-/* The date is context; the links after it are things to click. Keeping it
-   fainter makes the links the only thing on the line asking for attention.
-   (Citation and star counts ride inside the link text itself.) */
-.paper__detail:has(a) .paper__date { color: var(--color-text-faint); }
+/* Scholars I Follow: a paper card in every respect — accent bar, italic
+   title line for the name, author-style rows for the directions. Only the
+   title's link behavior and the count's upright face are its own. */
+/* One quiet line under the heading: the bar for being listed at all. */
+.scholars__hint {
+    color: var(--color-aside);
+    font-size: 12px;
+    margin: -8px 0 14px;
+}
+.scholar .paper__title a { color: inherit; text-decoration: none; }
+.scholar .paper__title a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+.scholar .paper__title .author-cites { font-style: normal; }
+.scholar .paper__title .tag {
+    font-style: normal;
+    margin-left: 5px;
+    margin-right: 0;
+    vertical-align: 2px;
+}
+.paper__affiliation { color: var(--color-text-strong); }
 
-.paper__name { color: var(--color-text-muted); }
+/* The date shares the line's color with the name and the links — one quiet
+   gray for the whole row; hover alone says what is clickable. */
+
+.paper__name {
+    color: var(--color-text);
+    font-weight: 700;
+}
 .paper__name--impact,
 .paper__detail:has(a) .paper__name--impact { color: var(--color-highlight); }
 .paper__impact { color: var(--color-highlight); }
@@ -438,7 +470,7 @@ a:hover {
     color: var(--color-highlight);
 }
 .paper-index .venue {
-    color: var(--color-text-faint);
+    color: var(--color-meta);
     font-size: 11px;
     margin-left: 2px;
 }
@@ -516,6 +548,33 @@ figure {
     .pair figure img { max-width: 100%; }
     .pair figure + figure { margin-top: 14px; }
     .pair pre.highlight { margin-top: 12px; }
+}
+
+/* Two sub-600px figures sharing one row, each with its caption underneath —
+   for when a side caption would leave most of its column empty (a tall figure
+   with two lines of text beside it). The row overrides `.figure--side`, or
+   the captions would jump back alongside. Narrow screens stack the pair. */
+.figrow {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin: 12px 0;
+}
+.figrow figure,
+.figrow figure.figure--side {
+    display: block;
+    margin: 0;
+    flex: 0 0 auto;
+    width: min-content;
+    text-align: center;
+}
+.figrow figure img { max-width: none; }
+.figrow figure figcaption { text-align: left; margin: 6px 0 0; }
+@media (max-width: 720px) {
+    .figrow { display: block; }
+    .figrow figure, .figrow figure.figure--side { width: auto; }
+    .figrow figure img { max-width: 100%; }
+    .figrow figure + figure { margin-top: 14px; }
 }
 
 /* A figure narrower than half the column leaves room for its caption alongside,
@@ -623,6 +682,13 @@ pre.highlight { color: var(--token-plain); }
 .tok-ge { font-style: italic; }
 
 /* A note can bold part of a snippet with <b>; highlighting keeps it. */
+/* ==Marked== spans, prose and code: highlighter wash, never a color change —
+   the text keeps its own ink so highlights compose with syntax tokens. */
+mark {
+    background: var(--color-mark);
+    color: inherit;
+    border-radius: 2px;
+}
 pre code b {
     color: var(--token-emphasis);
     font-weight: 700;
