@@ -32,14 +32,30 @@
     /* Highlighter ink for ==marked== spans, prose and code alike. Per theme:
        a wash light enough to keep text at full contrast on both grounds. */
     --color-mark: #fdeb9c;
+    /* The red ink, ===marked===: the same wash, for the one thing on a card
+       the eye must not pass over. */
+    --color-mark-red: #f9c9c5;
     /* Above --color-text: for the two lines an entry is identified by. */
     --color-text-strong: #2b2b2b;
+    /* Below --color-text: a card's particulars (venue, date, affiliation)
+       sit one notch lighter than running text, so the black emphasis ink
+       on the name, the venue abbreviation and Junkun's name stands off
+       them. Two steps: authors and affiliation at the first, the venue
+       and date lines one further down. */
+    --color-detail-strong: #4d4d4d;
+    --color-detail: #5c5c5c;
     --color-link: #404040;
     --color-link-hover: #4169e1;
     --color-accent: #4169e1;
     --color-highlight: #b8474a;
     --color-highlight-soft: #b04040;
-    --color-junkun: #1d3a8a;
+    /* Emphasis ink for what a card is identified by — its name, its venue's
+       abbreviation, Junkun's name in a byline. Not a hue: the same ink as
+       the text, pushed to the end of the scale (yanzuo.lu sets its bylines
+       in #737373 and the bold parts in #000000). Pure black on white,
+       pure white on near-black, so the bold reads as a step up in weight
+       and darkness together. */
+    --color-emphasis: #000000;
     --color-divider: #cccccc;
     --color-code-bg: #f6f8fa;
     --color-code-border: #e1e4e8;
@@ -95,7 +111,10 @@
         --color-aside: #70757d;
         --color-meta: #60656c;
         --color-mark: #52481f;
+        --color-mark-red: #5c2a27;
         --color-text-strong: #dbdde1;
+        --color-detail-strong: #bfc2c7;
+        --color-detail: #b0b3b9;
         --color-link: #d6d6d6;
         --color-link-hover: #7fa8ec;
         --color-accent: #7fa8ec;
@@ -104,7 +123,7 @@
            this small. */
         --color-highlight: #d47575;
         --color-highlight-soft: #d97373;
-        --color-junkun: #e8c364;
+        --color-emphasis: #ffffff;
         --color-divider: #424246;
         --color-code-bg: #191d21;
         --color-code-border: #2d333b;
@@ -138,13 +157,16 @@
     --color-aside: #70757d;
     --color-meta: #60656c;
     --color-mark: #52481f;
+    --color-mark-red: #5c2a27;
     --color-text-strong: #dbdde1;
+    --color-detail-strong: #bfc2c7;
+    --color-detail: #b0b3b9;
     --color-link: #d6d6d6;
     --color-link-hover: #7fa8ec;
     --color-accent: #7fa8ec;
     --color-highlight: #d47575;
     --color-highlight-soft: #d97373;
-    --color-junkun: #e8c364;
+    --color-emphasis: #ffffff;
     --color-divider: #424246;
     --color-code-bg: #191d21;
     --color-code-border: #2d333b;
@@ -320,7 +342,7 @@ a:hover {
     text-decoration: underline;
 }
 .paper__detail {
-    color: var(--color-text);
+    color: var(--color-detail);
     /* One step below the 13px the rest of the site's small text uses: the
        title carries the entry, the rows under it are its particulars.
        Line height is left alone so entry heights do not move. */
@@ -332,7 +354,7 @@ a:hover {
    so authors, venue and links read as one block; hover alone says what is
    clickable, and the counts beside the links stay their fainter meta gray. */
 .paper__detail:has(a) {
-    color: var(--color-text);
+    color: var(--color-detail);
 }
 .paper__detail:has(a) a,
 .paper__detail:has(a) .paper__name {
@@ -349,7 +371,7 @@ a:hover {
 /* Doubled class so the authors line beats `.paper__detail:has(a)` — that
    rule demotes the date-and-links line, and once every author became a link
    it started matching this line too. */
-.paper__detail.paper__authors { color: var(--color-text-strong); }
+.paper__detail.paper__authors { color: var(--color-detail-strong); }
 /* Every author is a Google Scholar search link, but the line must still read
    as a byline, not a link farm: names keep the text color until hovered. */
 .paper__authors a { color: inherit; text-decoration: none; }
@@ -391,15 +413,39 @@ a:hover {
     margin-right: 0;
     vertical-align: 2px;
 }
-.paper__affiliation { color: var(--color-text-strong); }
+.paper__affiliation { color: var(--color-detail-strong); }
+/* A landmark work in a scholar's row links to its arXiv page. The row still
+   has to read as prose, not as a list of links, so the name keeps the text
+   color and wears only a faint underline — enough to say "this is a target".
+   Works with no paper to point at (a tech report, a model release) stay plain
+   italics, so the underline is also the sign that a link exists at all. */
+.scholar .paper__authors a.scholar-work {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--color-aside);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+.scholar .paper__authors a.scholar-work:hover {
+    color: var(--color-link-hover);
+    text-decoration-color: currentColor;
+}
 
 /* The date shares the line's color with the name and the links — one quiet
    gray for the whole row; hover alone says what is clickable. */
 
-.paper__name {
-    color: var(--color-text);
-    font-weight: 700;
+/* The three things a card is identified by share one emphasis ink (see the
+   token): the name, the venue's abbreviation, Junkun's name in a byline.
+   Impact names keep their red — the rule below this one still wins — and a
+   hovered name follows its link like any other text on the line. */
+.paper__name,
+.paper__detail:has(a) .paper__name,
+.paper__venue,
+.author--junkun {
+    color: var(--color-emphasis);
 }
+.paper__name { font-weight: 700; }
+.paper__detail:has(a) a:hover .paper__name:not(.paper__name--impact) { color: inherit; }
 .paper__name--impact,
 .paper__detail:has(a) .paper__name--impact { color: var(--color-highlight); }
 .paper__impact { color: var(--color-highlight); }
@@ -689,6 +735,8 @@ mark {
     color: inherit;
     border-radius: 2px;
 }
+/* `===marked===`: the red ink. Same rules, one token swapped. */
+mark.mark--red { background: var(--color-mark-red); }
 pre code b {
     color: var(--token-emphasis);
     font-weight: 700;
