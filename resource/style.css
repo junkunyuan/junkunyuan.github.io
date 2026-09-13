@@ -311,8 +311,10 @@ a:hover {
 /* ============================================================================
    Paper entry
    ============================================================================ */
+/* The accent bar is 14px wide and the text starts 10px after it, so the
+   padding is the sum of the two — change them together. */
 .paper {
-    padding: 0 0 0 20px;
+    padding: 0 0 0 24px;
     position: relative;
     margin: 0 0 16px 0;
 }
@@ -322,7 +324,7 @@ a:hover {
     left: 0;
     top: -6px;
     bottom: -6px;
-    width: 10px;
+    width: 14px;
     background-color: var(--paper-accent, var(--accent-1));
 }
 .paper__title {
@@ -344,10 +346,12 @@ a:hover {
 .paper__detail {
     color: var(--color-detail);
     /* One step below the 13px the rest of the site's small text uses: the
-       title carries the entry, the rows under it are its particulars.
-       Line height is left alone so entry heights do not move. */
+       title carries the entry, the rows under it are its particulars. The
+       rows sit at a 25px pitch — a fifth more than the 21px they had, so
+       authors, affiliation, venue and date read as separate lines rather
+       than a block; the same leading opens the gap under the title. */
     font-size: 12px;
-    line-height: 21px;
+    line-height: 25px;
     margin: 0;
 }
 /* Last line of a paper (date + name + code): the same ink as the venue line,
@@ -472,8 +476,10 @@ a:hover {
 .paper__year-badge {
     position: absolute;
     right: 0;
-    top: 0.5em;
-    font-size: 14px;
+    /* Sits on the title's first line: an 18px badge has a ~21px line box,
+       so 1px from the top centers it on the title's 24px line. */
+    top: 1px;
+    font-size: 18px;
     font-weight: bold;
     letter-spacing: 0.04em;
     opacity: 0.85;
