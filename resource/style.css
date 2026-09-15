@@ -55,7 +55,7 @@
        bylines in #737373 and the bold parts in #000000; a step short of
        that here, which read as too loud). Above the title's ink in both
        themes, so the bold reads as a step up in weight and darkness. */
-    --color-emphasis: #151515;
+    --color-emphasis: #202020;
     --color-divider: #cccccc;
     --color-code-bg: #f6f8fa;
     --color-code-border: #e1e4e8;
@@ -123,7 +123,7 @@
            this small. */
         --color-highlight: #d47575;
         --color-highlight-soft: #d97373;
-        --color-emphasis: #f2f3f5;
+        --color-emphasis: #e9eaed;
         --color-divider: #424246;
         --color-code-bg: #191d21;
         --color-code-border: #2d333b;
@@ -166,7 +166,7 @@
     --color-accent: #7fa8ec;
     --color-highlight: #d47575;
     --color-highlight-soft: #d97373;
-    --color-emphasis: #f2f3f5;
+    --color-emphasis: #e9eaed;
     --color-divider: #424246;
     --color-code-bg: #191d21;
     --color-code-border: #2d333b;
