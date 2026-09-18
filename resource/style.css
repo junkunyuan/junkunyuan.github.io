@@ -302,7 +302,9 @@ a:hover {
 .page__updated a { color: inherit; }
 .page__updated {
     color: var(--color-aside);
-    font-size: 11px;
+    /* 13px, the contents list's size: an aside, but one that can be read
+       without leaning in (it was 11px). */
+    font-size: 13px;
     letter-spacing: 0.01em;
     text-align: center;
     margin-top: 2em;
@@ -328,7 +330,9 @@ a:hover {
     background-color: var(--paper-accent, var(--accent-1));
 }
 .paper__title {
-    color: var(--color-text-strong);
+    /* A notch above text-strong: the emphasis ink, shared with the venue
+       abbreviation and Junkun's byline, at the title's regular weight. */
+    color: var(--color-emphasis);
     font-size: 16px;
     font-family: var(--font-sans);
     font-style: italic;
@@ -438,17 +442,19 @@ a:hover {
 /* The date shares the line's color with the name and the links — one quiet
    gray for the whole row; hover alone says what is clickable. */
 
-/* The three things a card is identified by share one emphasis ink (see the
-   token): the name, the venue's abbreviation, Junkun's name in a byline.
-   Impact names keep their red — the rule below this one still wins — and a
-   hovered name follows its link like any other text on the line. */
-.paper__name,
-.paper__detail:has(a) .paper__name,
+/* The things a card is identified by share one emphasis ink (see the token):
+   the venue's abbreviation and Junkun's name on every card, the paper's name
+   only on a reading note (`.paper--toggle`) — on the home and publications
+   pages HAP, MAP and their kin stay the line's own color beside the date and
+   the code link, at the line's own weight too. Impact names keep their red,
+   and a hovered name follows its link like any other text on the line. */
+.paper--toggle .paper__name:not(.paper__name--impact),
+.paper--toggle .paper__detail:has(a) .paper__name:not(.paper__name--impact),
 .paper__venue,
 .author--junkun {
     color: var(--color-emphasis);
 }
-.paper__name { font-weight: 700; }
+.paper--toggle .paper__name { font-weight: 700; }
 .paper__detail:has(a) a:hover .paper__name:not(.paper__name--impact) { color: inherit; }
 .paper__name--impact,
 .paper__detail:has(a) .paper__name--impact { color: var(--color-highlight); }
