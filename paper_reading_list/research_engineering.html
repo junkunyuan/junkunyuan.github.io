@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="../resource/favicon.png">
     <script src="../resource/site.js?v=e095bf57" defer></script>
     <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-    <script src="search-index.js?v=274cc7bb" defer></script>
+    <script src="search-index.js?v=4ffc87d3" defer></script>
 </head>
 <body>
 <div id="layout-content">
@@ -28,16 +28,16 @@
 <p class="larger"></p>
 <p>Written by <a href="../index.html">Junkun Yuan</a>.</p>
 <p>Click <a href="paper_reading_list.html">here</a> to go back to main contents.</p>
-<hr><p id="table" class="huger toc-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="toc-content"><b>Table of contents</b> <span class="toc-indicator">▶</span></p><div id="toc-content" class="toc-content"><ul><li><a class="larger no_dec" id="cat-agent-skills" href="#agent-skills-table"><b>Agent skills (1)</b></a></li><p class="paper-index"><a href="#drawing-skill-agent-skills" class="no_dec ">Drawing<span class="venue">(Skill)</span></a></p><br></ul></div>
+<hr><p id="table" class="huger toc-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="toc-content"><b>Table of contents</b> <span class="toc-indicator">▶</span></p><div id="toc-content" class="toc-content"><ul><li><a class="larger no_dec" id="cat-agent-skills" href="#agent-skills-table"><b>Agent skills (2)</b></a></li><p class="paper-index"><a href="#drawing-skill-agent-skills" class="no_dec ">Drawing<span class="venue">(Skill)</span></a> &nbsp;&nbsp;&nbsp; <a href="#paper-polish-skill-agent-skills" class="no_dec ">Paper Polish<span class="venue">(Skill)</span></a></p><br></ul></div>
 <input type="search" id="paperSearch" class="search"
        placeholder="Filter these notes — any words, or tag:diffusion, venue:cvpr…"
        aria-label="Filter these notes — any words, or tag:diffusion, venue:cvpr…">
-<h2 id="agent-skills-table"><a class="no_dec" href="#cat-agent-skills">Agent skills</a></h2><div id="drawing-skill-agent-skills" class="paper paper--toggle" data-search="|t:drawing |v:skill |n:drawing |c:agent-skills" style="--paper-accent: var(--accent-2);"><p class="paper__title">Drawing</p><p class="paper__detail"><b class="paper__venue">Skill</b></p><p class="paper__detail"><span class="paper__date">Sep 21, 2026</span> &nbsp;&nbsp;&nbsp;&nbsp; <span class="paper__name">Drawing</span></p><div id="drawing-skill-agent-skills-details" class="info_detail"><hr class="dashed"><p>Create <strong>publication-quality</strong> architecture diagrams and data charts, guided by the visual clarity of Kaiming He’s papers.</p><ul>
+<h2 id="agent-skills-table"><a class="no_dec" href="#cat-agent-skills">Agent skills</a></h2><div id="drawing-skill-agent-skills" class="paper paper--toggle" data-search="|t:drawing |v:skill |n:drawing |c:agent-skills" style="--paper-accent: var(--accent-2);"><p class="paper__title">Drawing</p><p class="paper__detail"><b class="paper__venue">Skill</b></p><p class="paper__detail"><span class="paper__date">Sep 21, 2026</span> &nbsp;&nbsp;&nbsp;&nbsp; <span class="paper__name">Drawing</span></p><div id="drawing-skill-agent-skills-details" class="info_detail"><hr class="dashed"><p>Create <strong>publication-quality</strong> architecture diagrams and data charts.</p><ul>
 <li>
 <p><strong>Standard.</strong> Aim for the visual quality of ICLR, NeurIPS, ICML, CVPR, and Nature: beautiful, refined, and concise. Start from the one message the figure must convey; let every element explain the method or support the comparison.</p>
 </li>
 <li>
-<p><strong>References.</strong> Study original figures in Kaiming He’s <a href="https://arxiv.org/abs/2111.06377">MAE</a>, <a href="https://arxiv.org/abs/1911.05722">MoCo</a>, and <a href="https://arxiv.org/abs/2505.13447">MeanFlow</a>. Adapt their composition, abstraction, typography, color roles, and visual hierarchy to the task; use the references to guide design decisions, not as fixed templates.</p>
+<p><strong>References.</strong> Study original figures in <a href="https://arxiv.org/abs/2111.06377">MAE</a> and <a href="https://arxiv.org/abs/2505.13447">MeanFlow</a>, and the matplotlib scripts in <a href="https://github.com/ChenLiu-1996/figures4papers">figures4papers</a>. Adapt their composition, abstraction, typography, color roles, and visual hierarchy to the task; use the references to guide design decisions, not as fixed templates.</p>
 </li>
 <li>
 <p><strong>Diagrams.</strong> Use simple geometry, aligned modules, balanced whitespace, and unambiguous arrows. Keep the main path easy to follow; use consistent symbols and colors for repeated concepts, reserving emphasis for the core contribution.</p>
@@ -48,8 +48,60 @@
 <li>
 <p><strong>Finish.</strong> Use a clean background and consistent fonts, sizes, and line weights. Inspect at the final publication size for legibility, spacing, and overlaps; deliver editable source and vector PDF or SVG, with a PNG preview.</p>
 </li>
+</ul></div></div><div id="paper-polish-skill-agent-skills" class="paper paper--toggle" data-search="|t:paper polishing |v:skill |n:paper polish |c:agent-skills" style="--paper-accent: var(--accent-2);"><p class="paper__title">Paper Polishing</p><p class="paper__detail"><b class="paper__venue">Skill</b></p><p class="paper__detail"><span class="paper__date">Sep 22, 2026</span> &nbsp;&nbsp;&nbsp;&nbsp; <span class="paper__name">Paper Polish</span></p><div id="paper-polish-skill-agent-skills-details" class="info_detail"><hr class="dashed"><p>Polish <strong>artificial intelligence papers</strong>, section by section.</p><ul>
+<li>
+<p><strong>Before any polish.</strong> The user names two things up front, or nothing is touched: the output (revision notes or direct edits) and the mode (major polish, minor polish, or reviewer). A request missing either gets the question back, never a guess; nothing is polished until both are named.</p>
+</li>
+<li>
+<p><strong>Standard.</strong> Aim for the writing quality of ICLR, NeurIPS, ICML, CVPR, and Nature: clear, precise, concise, and calm. Start from the one message each section must convey and cut any sentence that does not advance it; settle what is new and what supports it before touching the wording.</p>
+</li>
+<li>
+<p><strong>References.</strong> Study the original text of <a href="https://arxiv.org/abs/1911.05722">MoCo</a>, <a href="https://arxiv.org/abs/2111.06377">MAE</a>, and <a href="https://arxiv.org/abs/2505.13447">MeanFlow</a>. Adapt their structure, argumentation, sentence rhythm, and use of evidence; let them guide decisions as references, never serve as templates, and never copy their sentences. Framing follows the <a href="https://github.com/Michael-Jiahao-Zhang/game-the-llm-reviewer/blob/main/skills/game-the-llm-reviewer/references/strategies.md">strategy cards</a>.</p>
+</li>
+<li>
+<p><strong>Language and claims.</strong> Plain words, short declarative sentences, active voice with &quot;we&quot;, precise verbs (&quot;outperforms by 2.1 AP&quot;), no hype or filler. Match each claim to its evidence, one name per concept, one definition per abbreviation, present tense for what the paper shows.</p>
+</li>
+<li>
+<p><strong>Framing.</strong> Recast a supported difference as an achievement (&quot;removes the need for D&quot;, not &quot;does not require D&quot;), a comparison as an effect (&quot;cuts error from 10 to 6.2&quot;), a scope as coverage beside its untested boundary; move a key result earlier in the abstract; no self-dismissal.</p>
+</li>
+<li>
+<p><strong>Equivalence check.</strong> A reframing keeps every comparator, condition, unit, uncertainty, and adverse finding: no new &quot;first&quot;, no significance without a test, no best case as an average, no &quot;may&quot; turned into &quot;does&quot;. Revert an edit that shifts what a reader can judge, even if stronger.</p>
+</li>
+<li>
+<p><strong>Abstract.</strong> Open with the thesis as a finding (&quot;This paper shows that X is a scalable Y&quot;); then gap, core idea, why it works, two or three headline numbers with dataset and metric, the broader implication. One paragraph of 150–220 words; no citations, undefined abbreviations, or equations.</p>
+</li>
+<li>
+<p><strong>Introduction.</strong> Reach the problem within three sentences and frame the gap as a question the reader can hold; answer it by analysis, then state the idea in one sentence before any detail. Cite a teaser figure early, give results as numbers, prefer prose to a contributions list, close modestly.</p>
+</li>
+<li>
+<p><strong>Related work.</strong> Organize by theme, a bold run-in heading per paragraph (&quot;Masked language modeling.&quot;), not one paper per sentence: summarize the idea, cite key work, end by placing this paper against it. Generous to prior work, never dismissive; keep it short.</p>
+</li>
+<li>
+<p><strong>Method.</strong> Open with a one-paragraph overview and its figure, then build from concept to formulation to implementation. Name each component once; state every target’s source and every loss’s computation; define symbols at first use; give each choice its rationale and ablation.</p>
+</li>
+<li>
+<p><strong>Experiments.</strong> State the setup first: datasets, metrics, backbone, budget, baselines. Each ablation answers one question, named by it (&quot;Masking ratio.&quot;): numbers first, interpretation second. Keep comparisons fair or say when not, and ablations apart from system comparisons.</p>
+</li>
+<li>
+<p><strong>Conclusion and appendix.</strong> One or two short paragraphs: the thesis against the evidence, a broader implication, honest limitations, no new results. The appendix enables reproduction: hyperparameters, data, architecture, compute, protocols, each cited from the main text.</p>
+</li>
+<li>
+<p><strong>Figures and tables.</strong> Captions stand alone: a bold message, then what is shown, what colors and symbols mean, the setting, the conclusion stated. Table captions sit above, takeaway first; booktabs rules, default row in gray, best in bold, consistent units, decimals, method order.</p>
+</li>
+<li>
+<p><strong>Revision notes.</strong> Return the text with review notes after the phrase, <code>\yjk{…}</code> (orange, <code>\color[RGB]{200,135,0}</code>, printed <code>[Junkun: …]</code>); nothing else changes. Each note states the problem, then the advice, and the fix when clear. Leave a passage alone if no edit keeps it true.</p>
+</li>
+<li>
+<p><strong>Direct edits.</strong> The text is changed in place, and every line of an edited passage runs full. A last line under half the column is cut until it disappears, one over it is filled with real detail (a condition, a number, a reason), never padding; aim at nine-tenths, never at the cost of clarity.</p>
+</li>
+<li>
+<p><strong>Polish modes.</strong> <strong>Major:</strong> structure and content are open; a key problem (a thesis the evidence does not carry, a section out of order) gets a large rewrite, a small one a small edit. <strong>Minor:</strong> structure and content stay as they are; only small edits and wording, sentence by sentence.</p>
+</li>
+<li>
+<p><strong>Reviewer mode.</strong> Read as a strict ICLR, NeurIPS, ICML, or CVPR reviewer: list concerns from major (novelty over prior work, missing baselines or ablations, claims beyond the evidence, unfair comparisons) to minor (clarity, notation, typos, figures), each with a direction for revision.</p>
+</li>
 </ul></div></div>
-<p class="page__updated">Last updated on September 21, 2026</p>
+<p class="page__updated">Last updated on September 23, 2026</p>
 
 <button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
 
