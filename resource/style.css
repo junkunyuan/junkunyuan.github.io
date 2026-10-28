@@ -415,6 +415,14 @@ a:hover {
     text-decoration: underline;
 }
 .scholar .paper__title .author-cites { font-style: normal; }
+/* Full-time employers, newest first: the career after the count, upright and
+   a notch under the name so the name still leads the line. */
+.scholar .paper__title .scholar-employers {
+    font-style: normal;
+    font-size: 13px;
+    color: var(--color-detail-strong);
+    margin-left: 4px;
+}
 .scholar .paper__title .tag {
     font-style: normal;
     margin-left: 5px;
@@ -563,51 +571,6 @@ figure {
     margin: 0 10px;
     text-align: center;
 }
-/* A figure and the code that implements it, read together: the paper's procedure
-   on the left, the source on the right. Inside the pair the figure keeps its
-   caption underneath — the horizontal room belongs to the code. */
-.pair {
-    display: flex;
-    align-items: flex-start;
-    gap: 18px;
-    margin: 12px 0;
-}
-/* `.figure--side` is more specific than `.pair figure`, so name it here too, or
-   the caption jumps back alongside and the figure grows to fit it. `min-content`
-   makes the figure exactly as wide as its image, letting the caption wrap. */
-.pair figure,
-.pair figure.figure--side {
-    display: block;
-    margin: 0;
-    flex: 0 0 auto;
-    width: min-content;
-    text-align: center;
-}
-/* Without this the image is caught in a loop: `min-content` asks the caption how
-   narrow it can be, `max-width: 100%` then shrinks the image to that. Let the
-   image keep the width it declared, and min-content resolves to it. */
-.pair figure img { max-width: none; }
-.pair figure figcaption { text-align: left; margin: 6px 0 0; }
-.pair pre.highlight { flex: 1 1 0; margin: 0; min-width: 0; }
-/* Several figures against one code block: stack them in a column of their own,
-   so the code stays a single tall column beside them rather than becoming a
-   third one. Wrapping is what makes this explicit — a flex row cannot stack
-   some of its children and not others. */
-.pair__figs {
-    flex: 0 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-@media (max-width: 720px) {
-    .pair { display: block; }
-    .pair__figs { display: block; }
-    .pair figure, .pair figure.figure--side { width: auto; }
-    .pair figure img { max-width: 100%; }
-    .pair figure + figure { margin-top: 14px; }
-    .pair pre.highlight { margin-top: 12px; }
-}
-
 /* Two sub-600px figures sharing one row, each with its caption underneath —
    for when a side caption would leave most of its column empty (a tall figure
    with two lines of text beside it). The row overrides `.figure--side`, or
@@ -633,6 +596,22 @@ figure {
     .figrow figure, .figrow figure.figure--side { width: auto; }
     .figrow figure img { max-width: 100%; }
     .figrow figure + figure { margin-top: 14px; }
+}
+
+/* Two small figures sharing one row, each with its caption alongside — when
+   both read well at half size. The figures dissolve into one grid, so the two
+   captions take equal shares of what the images leave. Narrow screens stack. */
+.figrow.figrow--side {
+    display: grid;
+    grid-template-columns: auto 1fr auto 1fr;
+    column-gap: 14px;
+    align-items: center;
+}
+.figrow.figrow--side figure { display: contents; }
+.figrow.figrow--side figcaption { margin: 0; }
+@media (max-width: 720px) {
+    .figrow.figrow--side, .figrow.figrow--side figure { display: block; }
+    .figrow.figrow--side figcaption { margin: 6px 0 0; }
 }
 
 /* A figure narrower than half the column leaves room for its caption alongside,
