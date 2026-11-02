@@ -82,6 +82,10 @@
     --accent-2: #f9d3aa;
     --accent-3: #a8d3a8;
     --accent-4: #f0bfcf;
+    /* The reviewed chip: green, the one tag Junkun wrote by reading. */
+    --color-reviewed-bg: #eaf4ea;
+    --color-reviewed-border: #a8d3a8;
+    --color-reviewed-text: #3c7a3c;
 
     --max-width: 960px;
     --side-padding: 50px;
@@ -142,6 +146,9 @@
         --accent-2: #d8b485;
         --accent-3: #8eb88e;
         --accent-4: #d29eb0;
+        --color-reviewed-bg: #1f2b20;
+        --color-reviewed-border: #4f7a4f;
+        --color-reviewed-text: #9ccc9c;
     }
 }
 
@@ -185,6 +192,9 @@
     --accent-2: #d8b485;
     --accent-3: #8eb88e;
     --accent-4: #d29eb0;
+    --color-reviewed-bg: #1f2b20;
+    --color-reviewed-border: #4f7a4f;
+    --color-reviewed-text: #9ccc9c;
 }
 
 /* ============================================================================
@@ -486,6 +496,13 @@ a:hover {
     border: 1px solid var(--color-code-border);
     border-radius: 9px;
     white-space: nowrap;
+}
+/* Reviewed: Junkun has read this note word by word. Same chip, its own green,
+   so the one tag a person wrote by reading stands apart from the facets. */
+.tag--reviewed {
+    color: var(--color-reviewed-text);
+    background-color: var(--color-reviewed-bg);
+    border-color: var(--color-reviewed-border);
 }
 .paper__year-badge {
     position: absolute;
