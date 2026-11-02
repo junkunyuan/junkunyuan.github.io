@@ -86,6 +86,7 @@
     --color-reviewed-bg: #eaf4ea;
     --color-reviewed-border: #a8d3a8;
     --color-reviewed-text: #3c7a3c;
+    --color-lineage-edge: #8fb0cf;
 
     --max-width: 960px;
     --side-padding: 50px;
@@ -149,6 +150,7 @@
         --color-reviewed-bg: #1f2b20;
         --color-reviewed-border: #4f7a4f;
         --color-reviewed-text: #9ccc9c;
+        --color-lineage-edge: #5d7b98;
     }
 }
 
@@ -195,6 +197,7 @@
     --color-reviewed-bg: #1f2b20;
     --color-reviewed-border: #4f7a4f;
     --color-reviewed-text: #9ccc9c;
+    --color-lineage-edge: #5d7b98;
 }
 
 /* ============================================================================
@@ -901,6 +904,87 @@ th {
     outline: none;
     border-color: var(--color-accent);
 }
+
+/* The lineage figure (sitegen/lineage.py): an HTML grid, a column per
+   research line and a row per generation — a paper below every paper it builds
+   on — so it grows down as papers arrive, never sideways. The arrows are
+   drawn by resource/site.js into the SVG behind it, through the empty gaps
+   between columns and rows. Gray text, red impact names as in the table of
+   contents, and muted blue arrows, so a line never reads as a venue. */
+.lineage { margin: 4px 0 18px; text-align: left; }
+/* Under its sub-domain's line in the table of contents: the year column starts at
+   the line's bullet, so the lanes get the list's indent back. */
+.toc-content .lineage { margin: 6px 0 22px -22px; }
+/* A phone is the one place it scrolls sideways: four lines of labels need about 680px. */
+.lineage__scroll { overflow-x: auto; overflow-y: hidden; }
+.lineage__canvas { position: relative; min-width: 680px; }
+.lineage__edges { position: absolute; top: 0; left: 0; overflow: visible; pointer-events: none; }
+.lineage__edge { fill: none; stroke: var(--color-lineage-edge); stroke-width: 1; }
+/* Hovering a paper: its own arrows and the papers they join stay, the rest fade. */
+.lineage__edge, .lineage [data-node] { transition: opacity 0.15s; }
+.lineage--focus .lineage__edge:not(.is-on) { opacity: 0.15; }
+.lineage--focus .lineage__edge.is-on { stroke-width: 1.6; }
+.lineage--focus [data-node]:not(.is-on) { opacity: 0.35; }
+.lineage__arrow { fill: var(--color-lineage-edge); }
+.lineage__grid {
+    position: relative;
+    display: grid;
+    column-gap: 28px;
+    row-gap: 18px;
+    padding-right: 20px;  /* the gap after the last column */
+    font-family: var(--font-sans);
+}
+.lineage__lane {
+    align-self: end;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--color-table-border);
+    font-size: 11px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--color-text-faint);
+}
+.lineage__cell {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+.lineage__paper {
+    padding: 0 4px;
+    line-height: 20px;
+    background-color: var(--color-bg-body);
+}
+.lineage__paper { font-size: 12.5px; color: var(--color-text-strong); text-decoration: none; }
+.lineage__paper:hover .lineage__name { text-decoration: underline; }
+/* Concurrent, equivalent papers: one dashed frame, tagged on its top edge; the
+   arrows to their successors leave the frame. */
+.lineage__group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-left: -5px;
+    padding: 6px 4px 5px;
+    border: 1px dashed var(--color-lineage-edge);
+    border-radius: 4px;
+}
+.lineage__group-tag {
+    position: absolute;
+    top: -7px;
+    right: 6px;
+    padding: 0 3px;
+    font-size: 10px;
+    line-height: 12px;
+    font-style: italic;
+    color: var(--color-meta);
+    background-color: var(--color-bg-body);
+}
+.lineage__paper--impact .lineage__name { color: var(--color-highlight); }
+.lineage__venue { color: var(--color-meta); white-space: nowrap; }
+.lineage__stats { display: block; font-size: 10.5px; line-height: 13px; color: var(--color-meta); }
 .is-hidden { display: none !important; }
 
 /* Cross-page search results, listed under the filter box by resource/site.js. */
