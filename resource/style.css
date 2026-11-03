@@ -957,6 +957,13 @@ th {
     background-color: var(--color-bg-body);
 }
 .lineage__paper { font-size: 12.5px; color: var(--color-text-strong); text-decoration: none; }
+/* Not reviewed yet (no `reviewed:` stamp): a quiet dotted underline under the name,
+   gone once Junkun has read the note word by word. Hover keeps its solid line. */
+.lineage__paper--unreviewed .lineage__name {
+    text-decoration: underline dotted var(--color-meta);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
 .lineage__paper:hover .lineage__name { text-decoration: underline; }
 /* Concurrent, equivalent papers: one dashed frame, tagged on its top edge; the
    arrows to their successors leave the frame. */
