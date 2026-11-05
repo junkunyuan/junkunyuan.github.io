@@ -1010,6 +1010,99 @@ th {
 .search-elsewhere__hit:hover { text-decoration: underline; }
 
 /* ============================================================================
+   Conference proceedings (paper_reading_list/proceedings.html): the reading
+   list's search box and paper cards, filled by resource/proceedings.js. Only
+   the help line, the venue/track chips and the paging button are its own.
+   ============================================================================ */
+.proceedings__help {
+    margin: -8px 0 12px;
+    font-size: 12px;
+    color: var(--color-text-faint);
+}
+.proceedings__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 0 8px;
+}
+.proceedings__chips:empty { display: none; }
+.proceedings__chip {
+    padding: 2px 10px;
+    font: 13px/20px var(--font-sans);
+    color: var(--color-text);
+    background-color: var(--color-code-bg);
+    border: 1px solid var(--color-code-border);
+    border-radius: 12px;
+    cursor: pointer;
+}
+.proceedings__chip:hover { border-color: var(--color-accent); }
+/* Pressed: the cards' accent blue, so a chosen venue reads as the cards' own. */
+.proceedings__chip[aria-pressed="true"] {
+    color: var(--color-text-strong);
+    background-color: var(--accent-1);
+    border-color: var(--accent-1);
+}
+.proceedings__chip-count {
+    margin-left: 5px;
+    font-size: 11px;
+    color: var(--color-meta);
+}
+.proceedings__chip[aria-pressed="true"] .proceedings__chip-count { color: inherit; }
+/* The match count on the left, the sort on the right, one quiet line. */
+.proceedings__bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px 16px;
+    margin: 8px 0 18px;
+    font-size: 13px;
+    color: var(--color-text-faint);
+}
+.proceedings__count, .proceedings__sort { margin: 0; }
+.proceedings__sort[hidden] { display: none; }
+.proceedings__sort button {
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+.proceedings__sort button:hover { color: var(--color-link-hover); }
+.proceedings__sort button[aria-pressed="true"] { color: var(--color-text-strong); font-weight: bold; }
+/* The title is the paper's link; like a scholar's name, it keeps the title ink. */
+.proceedings__results .paper__title a { color: inherit; text-decoration: none; }
+.proceedings__results .paper__title a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+.proceedings__more-authors {
+    padding: 0;
+    font: inherit;
+    color: var(--color-meta);
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+.proceedings__more-authors:hover { color: var(--color-link-hover); }
+.proceedings__more {
+    display: block;
+    margin: 4px auto 0;
+    padding: 5px 14px;
+    font: 13px var(--font-sans);
+    color: var(--color-text);
+    background-color: var(--color-code-bg);
+    border: 1px solid var(--color-code-border);
+    border-radius: 4px;
+    cursor: pointer;
+}
+.proceedings__sources {
+    margin: 28px 0 0;
+    font-size: 12px;
+    color: var(--color-text-faint);
+}
+
+/* ============================================================================
    Print
    ============================================================================ */
 @media print {
